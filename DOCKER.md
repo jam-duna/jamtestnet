@@ -8,7 +8,7 @@ TEAM_NAME=strongly-web3
 docker build -t $TEAM_NAME/jam .
 ```
 
-Be sure your binary can work with the public `genesis.json` and accept the required parameter of `validatorindex`.
+Be sure your binary can work with the public `genesis.json` and accept the required parameter of `seed`.
 
 Launch JAM Testnet:
 ```

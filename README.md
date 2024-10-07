@@ -10,7 +10,7 @@ This repository serves as a collaborative space for teams to develop and test JA
 
 Each team is responsible for submitting a Docker image, following the [build instructions](./DOCKER.md). The Docker image should run a binary that accepts the following parameters:
 
-- **`validatorindex`** (required): Index ranging from 0 to `V-1`.
+- **`seed`** (required): 32-byte development seed that matches with a public `genesis.json`
 - **`ts`** (optional): Unix timestamp for when the validator starts. If not provided, the binary should default to the next timestamp that's a multiple of 12 seconds from the point of launch.
 - **`port`** (optional): Port on which the validator should run. Defaults to _9000_ if not provided.
 - **`mode`** (optional): Operating mode for the validator. Defaults to `safrole`. Other available modes are `assurance`, `finality`, and `conformance`.
