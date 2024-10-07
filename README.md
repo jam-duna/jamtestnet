@@ -1,163 +1,144 @@
 # JAM TestNet
 
-[JAM](https://jam.web3.foundation/) is the expected future protocol for Polkadot and is being implemented by dozens of teams in a variety of languages.  The [JAM Gray paper](https://graypaper.com/) details the protocol, and initial test vectors have been shared with teams by Web3 Foundation.  
+[JAM](https://jam.web3.foundation/) is the anticipated future protocol for Polkadot, being implemented by multiple teams across different programming languages. The [JAM Gray Paper](https://graypaper.com/) outlines the protocol, and the Web3 Foundation has shared initial test vectors with participating teams.
 
-This repo is for teams to collaborate in getting working JAM TestNets, on their own at first and then compatible with each other.  
+This repository serves as a collaborative space for teams to develop and test JAM TestNets independently and eventually work towards cross-team compatibility. As of October 2024, this project is in the ideation-to-Proof-of-Concept (PoC) stage.
 
-The way it works at present
-* *JAM Binaries*: Each team submits a binary into the `bin` directory within a subfolder.  Each binary should be able to read "basic" arguments concerning genesis state an in the same way.
+## How It Works
 
-```
-jam --ts 1727976792 --port=9005 --validatorindex=5 --genesis=genesis.json --datadir /tmp/node5
-```
+### JAM Docker Images
 
-* *JAM TestNet is spawned*:  A local testnet is spawned with `jamtestnet --config=tiny.toml` using a TOML file that launches `V` binaries, with each binary representing a single validator.  Within the config of the testnet is information to spawn all validators. We are starting with [tiny.toml](./tiny.toml) and a [genesis.json](./genesis.json) with V=6 validators.  All genesis validators have secret keys deterministically derived from publicly known seeds (0x00...00 through 00x00..05) for Ed25519, Bandersnatch, and BLS Keys.  See below.
+Each team is responsible for submitting a Docker image, following the [build instructions](./DOCKER.md). The Docker image should run a binary that accepts the following parameters:
 
-* *JAM Validators run!*: Each binary uses JAMNP's QUIC to share tickets, blocks and reach consensus.  At this point, we are not aiming for Guaranteeing, Assuring, Auditing and Preimages -- or finalization, GRANDPA or BEEFY -- only ticket sharing and basic block authoring.  Each validator should output logs to stdout with a date/time in ISO form a JSON blob (starting with `{` for objects, `[` for arrays) _and_ then a JAM codec in hex string form (with 0x prefix) for:
- - blocks: (a) after authoring and broadcasting a block to V-1 validators (b) when receiving a block
- - tickets: after broadcasting a ticket
+- **`validatorindex`** (required): Index ranging from 0 to `V-1`.
+- **`ts`** (optional): Unix timestamp for when the validator starts. If not provided, the binary should default to the next timestamp that's a multiple of 12 seconds from the point of launch.
+- **`port`** (optional): Port on which the validator should run. Defaults to _9000_ if not provided.
+- **`mode`** (optional): Operating mode for the validator. Defaults to `safrole`. Other available modes are `assurance`, `finality`, and `conformance`.
 
-* *JAM Network is shutdown*: A kill signal on `jamtestnet` should shut down all the validators
+### JAM TestNet Deployment
 
-## Build
+A JAM TestNet can be spawned using a [docker-compose.yml](./docker-compose.yml) file. This file launches `V` Docker images using the following command:
 
-This will build the `jamtestnet` binary that spawns a JAM testnet using a TOML config file:
-
-```
-make jamtestnet
+```bash
+docker-compose up
 ```
 
-## Spawn the TestNet
+Each Docker image represents a single validator, all sharing a common [genesis.json](./genesis.json). This configuration is based on a "tiny" setup, which is a simplified version of the "full" configuration outlined in the Gray Paper:
 
-
-This will spawn the testnet:
-
-```
-./jamtestnet --config=tiny.toml --delay=12
-```
-
-Each of the binaries should log their blocks and tickets.
-
-## TestNet Configurations
-
-`tiny.toml`:
-  - `V`=6: # of validators.
-  - `C`=2: # of cores.
-  - `E`=12: The length of an epoch in timeslots.
-  - `P`=6: The slot period, in seconds.
-  - `Y`=8: The number of slots into an epoch at which ticket-submission ends.
-
-It is not possible to have `full` (V=1023, C=341) running locally but we would expect to be able to increase to:
-* `small.toml` (V=9, C=3)
-* `medium.toml` (V=12, C=4)
-* `large.toml` (V=15, C=5)
-* `xlarge.toml` (V=18, C=6)
-* `xxlarge.toml` (V=21, C=7)
-* `xxxlarge.toml` (V=24, C=8)
-with a greater number of validators and cores.
-
-## JAM Binary Submission
-
-Fork this repo and submit a PR.  This approach depends on teams supplying binaries rather than
-compiling from source.  The PR should:
-- adjust `Makefile` to to wget/curl fetch your teams binary into `bin/${YOURTEAM}/${BINARY}`
-- adjust `.gitignore` to reference the expected location of your binary
-
-Please use a team name and binary name that is identical or very
-similar to that of [clients list](https://jamcha.in/clients).
-
-Important: Every team should vet every other team for trustworthiness and
-exercise suitable precaution.  Do not run testnets ONLY on machines
-connected to any critical infrastructure.  
-
-## JAM Binary arguments
-
-```
-Usage: jam [options]
-  -bandersnatch string
-    	Bandersnatch Seed (only for development)
-  -bls string
-    	BLS Seed (only for development)
-  -datadir string
-    	Specifies the directory for the blockchain, keystore, and other data.
-  -ed25519 string
-    	Ed25519 Seed (only for development)
-  -genesis string
-    	Specifies the genesis state json file.
-  -metadata string
-    	Node metadata (default "Alice")
-  -port int
-    	Specifies the network listening port. (default 9900)
-  -ts int
-    	Epoch0 Unix timestamp (will override genesis config)
-  -validatorindex int
-    	Validator Index (only for development)
-```
-
-To make every node start their validators "at the same time" there is
-a single parameter `ts` that has a UNIX timestamp.  The `jamtestnet` can programmatically generate and supply this input.  In particular the `tiny.toml` shows a set of macros usable 
-* `TIMESTAMP`  - the time at which nodes can expect the first epoch to start after a fixed delay while binaries are bing launched
-* `VALIDATORINDEX` - the integer index within a validator set (0...V-1)
-* `NODENAME" - a string to 
-
-## Sharable Logs
-
-TBD
-
+- `V` = 6: Number of validators.
+- `C` = 2: Number of cores.
+- `E` = 12: Length of an epoch in timeslots.
+- `P` = 6: Slot period, in seconds.
+- `Y` = 10: Number of slots into an epoch at which ticket-submission ends.
 
 ## Genesis: Public Secret Keys
 
-The basic strategy is to have `V` 32-byte seeds (0x00....00 through
-0x00..05 for tiny `V`=6) generate secret keys and public keys
-programmatically, and have a programmatically `genesis.json` that
-every JAM team can run their own `tiny.toml` on their own.  This is
-for development purposes only.
+All genesis validators derive their secret keys deterministically from publicly known seeds (0x00...00 through 0x00...05) for Ed25519, Bandersnatch, and BLS keys.
+
+The strategy is to use a public `genesis.json` with public `V` 32-byte seeds (from 0x00...00 to 0x00...05 for tiny `V=6`). Using these seeds, secret and public keys can be programmatically generated, ensuring each JAM team can run the public testnet consistently. This is strictly for development purposes.
+
+### Example: Ed25519 Keys
+
+For each seed, we generate the corresponding Ed25519 secret and public keys:
+
+- **Seed**: `0x0000000000000000000000000000000000000000000000000000000000000000`
+  - **Secret**: `00000000000000000000000000000000000000000000000000000000000000003b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29`
+  - **Public**: `3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29`
+
+_...and so on for seeds from 0x00...01 through 0x00...05._
+
+**TODOs:**
+- Develop a `key` utility that maps any 32-byte development seed to Ed25519, Bandersnatch, and BLS private + public keys using:
+  ```bash
+  key 0x0000000000000000000000000000000000000000000000000000000000000005
+  ```
+- Create a mapping for Bandersnatch public keys.
+- Create a mapping for BLS-12 public keys (G1 + G2).
+
+## JAM TestNet Modes
+
+Each validator communicates with other nodes using JAMNP's QUIC protocol. Depending on the mode, different aspects of the JAM protocol are tested.
+
+| `mode`         | `safrole` | `assurance` | `finality` | `conformance`  |
+|---------------|-----------|-------------|------------|----------------|
+| QUIC / JAM Codec | Block, Ticket | WorkPackage, Guarantee, Assurance, EC TBD | TBD: Announcement, Vote, ...  | TBD: Dispute |
+| Tickets: E_T           |   x       |       x     |     x      |     x          |
+| Guarantees: E_G           |           |       x     |     x      |     x          |
+| Assurances: E_A           |           |       x     |     x      |     x          |
+| Preimages: E_P           |           |       x     |     x      |     x          |
+| Refine/Accumulate PVM  |         |       x     |     x      |     x          |
+| Audit/Announcements |     |             |     x      |     x          |
+| GRANDPA       |           |             |     x      |     x          |
+| Disputes: E_D |           |             |            |     x          |
+| BLS           |           |             |            |     x          |
+| BEEFY         |           |             |            |     x          |
+| Authorization Pool/Queue |           |             |            |     x          |
+| Privileged Services |     |             |            |     x          |
+| State         | C4, C6, C7, C8, C9, C11, C13 | C10, C12 | - | C1, C2, C3, C5 |
+| Timeline      | Q4 2024   | Q1 2025     | early Q2 2025 | late Q2 2025 |
+
+We aim for 5-10 teams to successfully establish their own working testnets in Q4, with collaborative efforts beginning around sub0@Devcon7+JAM0 in mid-November.
+
+The presence of M1+M2 test vectors will guide adjustments to the above.
+
+## Traces
+
+By using a public genesis state, teams can collaborate by sharing traces of key objects (blocks, tickets, and state snapshots) for the first 4-10 epochs for any mode. This allows for verifying that different implementations can read key objects and derive identical state roots, etc. in accordance with the GP Spec.
+
+Here is a draft of the shape of `mode=safrole` here:
+* [JAM Safrole Model](https://docs.google.com/spreadsheets/d/1ueAisCMOx7B-m_fXMLT0FXBxfVzydJyr-udE8jKwDN8/edit?gid=615049643#gid=615049643)
+
+Teams can submit what they believe to be a valid trace of blocks, state snapshots and inputs in  `traces/${mode}/${team}` (e.g. `traces/safrole/strongly-web3`)
 
 
-### Ed25519
+## Work Packages 
 
-```
---Seed: 0000000000000000000000000000000000000000000000000000000000000000
-Secret: 00000000000000000000000000000000000000000000000000000000000000003b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29
-Public: 3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29
+If you have a workpackage that you believe is suitable for `mode=assurances`, put it in `workpackages/${team}/${workpackagename}` (e.g.  `workpackages/strongly-web3/fib`)
 
---Seed: 0000000000000000000000000000000000000000000000000000000000000001
-Secret: 00000000000000000000000000000000000000000000000000000000000000014cb5abf6ad79fbf5abbccafcc269d85cd2651ed4b885b5869f241aedf0a5ba29
-Public: 4cb5abf6ad79fbf5abbccafcc269d85cd2651ed4b885b5869f241aedf0a5ba29
+* TODO: Create a way for builders to submit work packages to a core.
 
---Seed: 0000000000000000000000000000000000000000000000000000000000000002
-Secret: 00000000000000000000000000000000000000000000000000000000000000027422b9887598068e32c4448a949adb290d0f4e35b9e01b0ee5f1a1e600fe2674
-Public: 7422b9887598068e32c4448a949adb290d0f4e35b9e01b0ee5f1a1e600fe2674
+## JAM Implementer Submissions
 
---Seed: 0000000000000000000000000000000000000000000000000000000000000003
-Secret: 0000000000000000000000000000000000000000000000000000000000000003f381626e41e7027ea431bfe3009e94bdd25a746beec468948d6c3c7c5dc9a54b
-Public: f381626e41e7027ea431bfe3009e94bdd25a746beec468948d6c3c7c5dc9a54b
+Building a collaborative JAM Testnet requires teams share Docker image URLs, Traces, and Testnet configurations, but not code.
 
---Seed: 0000000000000000000000000000000000000000000000000000000000000004
-Secret: 0000000000000000000000000000000000000000000000000000000000000004fd50b8e3b144ea244fbf7737f550bc8dd0c2650bbc1aada833ca17ff8dbf329b
-Public: fd50b8e3b144ea244fbf7737f550bc8dd0c2650bbc1aada833ca17ff8dbf329b
+To contribute:
 
---Seed: 0000000000000000000000000000000000000000000000000000000000000005
-Secret: 0000000000000000000000000000000000000000000000000000000000000005fde4fba030ad002f7c2f7d4c331f49d13fb0ec747eceebec634f1ff4cbca9def
-Public: fde4fba030ad002f7c2f7d4c331f49d13fb0ec747eceebec634f1ff4cbca9def
-```
+- Submit a PR to add a Docker image URL below.   
+- Add your fully working `docker-compose.yml` to  `testnet/${mode}/${team}` (e.g. `testnet/safrole/jam-duna/docker-compose.yml`)
+- Add your sample trace to `traces/${mode}/${team}` (e.g. `traces/safrole/jam-duna/data`)
 
-### Bandersnatch
+| team          | Docker Image URL                                       |
+|---------------|--------------------------------------------------------|
+| blockcowboys  | TBD                                                    |
+| boka          | TBD                                                    |
+| clawbird      | TBD                                                    |
+| gossamer      | TBD                                                    |
+| graymatter    | TBD                                                    |
+| jam-forge     | TBD                                                    |
+| jamlabs       | TBD                                                    |
+| jam-with-zig  | TBD                                                    |
+| jam4s         | TBD                                                    |
+| jamzig        | TBD                                                    |
+| jamaica       | TBD                                                    |
+| jamgo         | TBD                                                    |
+| jamixir       | TBD                                                    |
+| jampy         | TBD                                                    |
+| jam-duna      | TBD                                                    |
+| javajam       | TBD                                                    |
+| jelly         | TBD                                                    |
+| morum         | TBD                                                    |
+| marmalade     | TBD                                                    |
+| po-jam-l      | TBD                                                    |
+| polkajam      | TBD                                                    |
+| pyjamaz       | TBD                                                    |
+| rjam          | TBD                                                    |
+| strawberry    | TBD                                                    |
+| tsjam         | TBD                                                    |
+| tessera       | TBD                                                    |
+| typeberry     | TBD                                                    |
+| universaldot  | TBD                                                    |
+| vinwolf       | TBD                                                    |
+| goberryjam    | TBD                                                    |
+| subjam        | TBD                                                    |
 
-TODO: map the same seeds above (in Rust) to Bandersnatch Public keys
-
-### BLS
-
-TODO: map the same seeds above (in Rust) to BLS-12 Public keys (G1 + G2)
-
-
-# JAM Testnet Roadmap
-
-Here is a 6-9 month plan of how teams can execute together:
-
-* Q4 2024: We hope 5-10 teams can succeed on their own in Q4 and begin collaborating each other at sub0@Devcon7+JAM0 in mid-November.
-* Q1 2024: We hope a similar number of teams can run through guaranteeing, assuring and auditing with preimages with a small battery of work packages.  We imagine M1 test vectors would be available at this time for teams to test against as well.  
-* Q2 2024: We hope a similar number of teams can finalize with GRANDPA and BEEFY, use BLS and reach conformed
-
-
-
+For simplicity, use lowercase for `${team}` and `${mode}`.  Dashes and underscores are ok, spaces/punctations are not.
