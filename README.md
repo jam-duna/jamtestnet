@@ -30,12 +30,13 @@ Each Docker image represents a single validator, all sharing a common [genesis.j
 - `E` = 12: Length of an epoch in timeslots.
 - `P` = 6: Slot period, in seconds.
 - `Y` = 10: Number of slots into an epoch at which ticket-submission ends.
+- `N` = 3: The number of ticket entries per validator.
 
 ## Genesis: Public Secret Keys
 
 All genesis validators derive their secret keys deterministically from publicly known seeds (0x00...00 through 0x00...05) for Ed25519, Bandersnatch, and BLS keys.
 
-The strategy is to use a public `genesis.json` with public `V` 32-byte seeds (from 0x00...00 to 0x00...05 for tiny `V=6`). Using these seeds, secret and public keys can be programmatically generated, ensuring each JAM team can run the public testnet consistently. This is strictly for development purposes.
+The strategy is to use a public `genesis.json` with public `V` 32-byte seeds (from 0x00...00 to 0x00...05 for tiny `V=6`). Using these seeds, secret and public keys can be programmatically generated, ensuring each JAM team can run the public testnet consistently. This is strictly for development purposes.  Any set of `V` seeds can be used to determine other genesis files.
 
 ### Example: Ed25519 Keys
 
