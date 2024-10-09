@@ -38,23 +38,7 @@ All genesis validators derive their secret keys deterministically from publicly 
 
 The strategy is to use a public `genesis.json` with public `V` 32-byte seeds (from 0x00...00 to 0x00...05 for tiny `V=6`). Using these seeds, secret and public keys can be programmatically generated, ensuring each JAM team can run the public testnet consistently. This is strictly for development purposes.  Any set of `V` seeds can be used to determine other genesis files.
 
-### Example: Ed25519 Keys
-
-For each seed, we generate the corresponding Ed25519 secret and public keys:
-
-- **Seed**: `0x0000000000000000000000000000000000000000000000000000000000000000`
-  - **Secret**: `00000000000000000000000000000000000000000000000000000000000000003b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29`
-  - **Public**: `3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29`
-
-_...and so on for seeds from 0x00...01 through 0x00...05._
-
-**TODOs:**
-- Develop a `key` utility that maps any 32-byte development seed to Ed25519, Bandersnatch, and BLS private + public keys using:
-  ```bash
-  key 0x0000000000000000000000000000000000000000000000000000000000000005
-  ```
-- Create a mapping for Bandersnatch public keys.
-- Create a mapping for BLS-12 public keys (G1 + G2).
+An open-source `key` program is used to map seeds into  Bandersnatch/Ed25519/BLS secret and public keys.  See [here](./key) showing how to map seeds from `0x00...00` through `0x00...05` in a way that maps to [genesis.json](./genesis.json).
 
 ## JAM TestNet Modes
 
