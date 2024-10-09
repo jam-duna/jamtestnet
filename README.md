@@ -68,12 +68,15 @@ The presence of M1+M2 test vectors will guide adjustments to the above.
 
 ## Traces
 
-By using a public genesis state, teams can collaborate by sharing traces of key objects (blocks, tickets, and state snapshots) for the first 4-10 epochs for any mode. This allows for verifying that different implementations can read key objects and derive identical state roots, etc. in accordance with the GP Spec.
+By using a public genesis state, teams can collaborate by sharing traces of key objects (blocks and state snapshots) for the first 4-10 epochs for any `mode` starting with `safrole`. This allows for verifying that different implementations can read key objects and derive identical state roots, etc. in accordance with the GP Spec.
 
 Here is a draft of the shape of `mode=safrole` here:
 * [JAM Safrole Model](https://docs.google.com/spreadsheets/d/1ueAisCMOx7B-m_fXMLT0FXBxfVzydJyr-udE8jKwDN8/edit?gid=615049643#gid=615049643)
 
-Teams can submit what they believe to be a valid trace of blocks, state snapshots and inputs in  `traces/${mode}/${team}` (e.g. `traces/safrole/strongly-web3`)
+Teams can submit what they believe to be a valid trace of blocks state
+snapshots and inputs in `traces/${mode}/${team}`
+(e.g. `traces/safrole/strongly-web3`) in the [traces](./traces)
+directory. 
 
 
 ## Work Packages 
