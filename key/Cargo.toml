@@ -1,0 +1,38 @@
+[package]
+name = "key"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+w3f-bls = "0.1.4" 
+ring = "0.16"
+arrayref = { version = "0.3", default-features = false }
+rand = { version = "0.8.5", default-features = false}
+rand_core = { version = "0.6", default-features = false }
+rand_chacha = { version = "0.3", default-features = false }
+sha3 = { version = "0.10", default-features = false }
+sha2 = { version = "0.10", default-features = false }
+digest = { version = "0.10", default-features = false }
+hex = "0.4"
+ark-ff = { version = "0.4.0", default-features = false }
+ark-ec = { version = "0.4.0", default-features = false }
+ark-serialize = { version = "0.4.0", default-features = false, features = [ "derive" ] }
+ark-serialize-derive = { version = "0.4.0", default-features = false }
+ark-bls12-381 = { version = "0.4.0", default-features = false, features = [ "curve" ] }
+ark-bls12-377 = { version = "0.4.0", default-features = false, features = [ "curve" ] }
+zeroize = { version = "1.0", default-features = false, features = [ "zeroize_derive" ] }
+ark-ec-vrfs ={ git = "https://github.com/davxy/ark-ec-vrfs", rev = "ea35e22", default-features = false, features = ["bandersnatch", "ring", "parallel", "test-vectors"] }
+thiserror = { version = "1.0", default-features = false }
+constcat = "0.3.0"
+
+serde_json = "1.0"
+
+[lib]
+name = "key_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "key"
+path = "src/main.rs"
+
