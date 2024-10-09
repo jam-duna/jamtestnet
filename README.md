@@ -79,11 +79,11 @@ snapshots and inputs in `traces/${mode}/${team}`
 directory. 
 
 
-## Work Packages 
+## Services
 
-If you have a workpackage that you believe is suitable for `mode=assurances`, put it in `workpackages/${team}/${workpackagename}` (e.g.  `workpackages/strongly-web3/fib`)
+If you have service code (in any language, including privileged services) suitable for `mode=assurances`, put it in `services/${team}/${servicename}` (e.g.  `services/strongly-web3/fib`).  See [services](./services) for examples in progress.
 
-* TODO: Create a way for builders to submit work packages to a core.
+To model submission of work packages utilizing a service, traces can include the receipt by the first validator, e.g in `traces/${mode}/${team}/workpackages/${core}.{codec,json}$`
 
 ## JAM Implementer Submissions
 
