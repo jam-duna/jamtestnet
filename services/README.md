@@ -4,7 +4,9 @@
 
 JAM Services consist of PVM Byte code placed on-chain with 4 entry points.  
 To support the testing of these JAM Services, JAM Implementation teams are encouraged to place
-JAM Service code, in any language here.  
+JAM Service code, in any language here.  Note that JAM Service code is not necessary for teams to
+collaborate on JAM testnet, but it may support useful debugging.  Services may include a
+_bootstrap service_ included in genesis state.
 
 * Raw assembly, with [polkatool](https://github.com/koute/polkavm/tree/master/tools/polkatool)
 * Rust, see [polkatool](https://github.com/koute/polkavm/tree/master/tools/polkatool)
@@ -21,10 +23,13 @@ Each JAM Service should have raw source code, build instructions, and a _JAM-rea
 * `accumulate` (entry point 10) 
 * `on_transfer` (entry point 15) 
 
-Furthermore, as privileged services themselves are needed to place
-code blobs on-chain and create JAM Services utilizing these code
-blobs, it is critical that teams have a "generic" privileged service
-to have a JAM Testnet in "assurances" mode.  This is an open question.
+Furthermore, a _bootstrap service_ is needed in genesis state to support many different privileged operations:
+* create JAM Services 
+* assigning coretime
+* requesting preimages
+* changing the validator keysets
+
+These always-accumulate/privileged services use the same JAMSNP work package submission+sharing processes as non-privileged service.  Teams are encouraged to share Bootstrap service code along with their genesis configs.
 
 ## Raw PVM Assembly code
 

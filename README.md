@@ -46,20 +46,21 @@ Each validator communicates with other nodes using JAMNP's QUIC protocol. Depend
 
 | `mode`         | `safrole` | `assurance` | `finality` | `conformance`  |
 |---------------|-----------|-------------|------------|----------------|
-| QUIC / JAM Codec | Block, Ticket | WorkPackage, Guarantee, Assurance, EC TBD | TBD: Announcement, Vote, ...  | TBD: Dispute |
 | Tickets: E_T           |   x       |       x     |     x      |     x          |
 | Guarantees: E_G           |           |       x     |     x      |     x          |
 | Assurances: E_A           |           |       x     |     x      |     x          |
 | Preimages: E_P           |           |       x     |     x      |     x          |
 | Refine/Accumulate PVM  |         |       x     |     x      |     x          |
+| Bootstrap Services: Assign |         |     x      |     x       |     x          |
 | Audit/Announcements |     |             |     x      |     x          |
 | GRANDPA       |           |             |     x      |     x          |
 | Disputes: E_D |           |             |            |     x          |
 | BLS           |           |             |            |     x          |
 | BEEFY         |           |             |            |     x          |
 | Authorization Pool/Queue |           |             |            |     x          |
-| Privileged Services |     |             |            |     x          |
+| Bootstrap Services: Other |     |             |            |     x          |
 | State         | C4, C6, C7, C8, C9, C11, C13 | C10, C12 | - | C1, C2, C3, C5 |
+| JAMSNP        | CE128,129,131 | + CE133-135,137,141 | + CE142,143,144,145 | + CE132 |
 | Timeline      | Q4 2024   | Q1 2025     | early Q2 2025 | late Q2 2025 |
 
 We aim for 5-10 teams to successfully establish their own working testnets in Q4, with collaborative efforts beginning around sub0@Devcon7+JAM0 in mid-November.
@@ -83,17 +84,15 @@ directory.
 
 If you have service code (in any language, including privileged services) suitable for `mode=assurances`, put it in `services/${team}/${servicename}` (e.g.  `services/strongly-web3/fib`).  See [services](./services) for examples in progress.
 
-To model submission of work packages utilizing a service, traces can include the receipt by the first validator, e.g in `traces/${mode}/${team}/workpackages/${core}.{codec,json}$`
-
 ## JAM Implementer Submissions
 
-Building a collaborative JAM Testnet requires teams share Docker image URLs, Traces, and Testnet configurations, but not code.
+Building a collaborative JAM Testnet requires teams share Traces (supporting validation independent of JAMSNP) and Docker image URLs (requiring JAMSNP), but not code.
 
 To contribute:
 
-- Submit a PR to add a Docker image URL below.   
-- Add your fully working `docker-compose.yml` to  `testnet/${mode}/${team}` (e.g. `testnet/safrole/jam-duna/docker-compose.yml`)
-- Add your sample trace to `traces/${mode}/${team}` (e.g. `traces/safrole/jam-duna/data`)
+- Submit a PR to add your traces and/or a Docker image URL below.  
+- For traces of blocks and states, add your sample trace to `traces/${mode}/${team}` (e.g. `traces/safrole/jam-duna`)
+- For Docker image urls, add below and a fully working `docker-compose.yml` to  `testnet/${mode}/${team}` (e.g. `testnet/safrole/jam-duna/docker-compose.yml`)
 
 | team          | Docker Image URL                                       |
 |---------------|--------------------------------------------------------|
@@ -130,3 +129,5 @@ To contribute:
 | subjam        | TBD                                                    |
 
 For simplicity, use lowercase for `${team}` and `${mode}`.  Dashes and underscores are ok, spaces/punctations are not.
+
+Everyone must follow JAM Prize rules and can politely refuse collaboration with any team for any reason.
