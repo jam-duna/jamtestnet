@@ -12,43 +12,75 @@
 5. Validators (who will author a block _soon_ in a smart implementation, or all validators in a _lazy_ implementation) then request the actual preimage from N6 with **[CE143: Preimage Request](https://github.com/zdave-parity/jam-np/blob/main/simple.md#ce-143-preimage-request)** with the Preimage Hash received previously and receive the preimage from N6, checking against the Hash, and if it matches, forms (42, 242 bytes of code hashing to the preimage `0x1234...4321`).  This will be aggregated with other preimages and included in ${\bf E}_P$.   Alice can check new blocks as they are proposed / finalized for inclusion of her preimage and/or look in storage $C(255, 42)$ for the newly created service.
 6. Alice's service is available for everyone to submit work packages against at the new serviceID (e.g. 42).  
 
-### Sketch of bootstrap service code
+### Implementation of bootstrap service code
 
-This is a sketch of what the genesis bootstrap service described above.  This has not been tested yet but we believe this can be executed against.  
+* `main.rs` contains an implementation of the above bootstrap service, which is included in the [genesis state](../../../traces/safrole/genesis.json)
+   - The `refine` service expects a `codehash` (32 bytes) starting at `0xFEFF0004`
+   - The `accumulate` does a `new` and then a `write`
+* `bootstrapblob.pvm` has the disassembleable code (see below `polkatool`) with "magic bytes"
+* `bootstrap.pvm` has the JAM-ready code blob (no magic bytes).  We used `polkatool` to do this, with [PR #190](https://github.com/paritytech/polkavm/pull/190) actually mapping `main.rs` into the above.  See links: [Building JAM Services in Rust](https://forum.polkadot.network/t/building-jam-services-in-rust/10161) for background
 
-Notes:
-* `refine` has `codehash` expecting 32 byte payload starting at `0xFEFF0004` because there is 4 bytes of 0 right before the payload ${\bf y}$
-* `accumulate` does a `new` and then a `write`
+
+Our test does the following:
+* submits a few service code blobs (fib, trib, megatron) in 3 work packages using the bootstrap service "0"
+* for each work package, we retrieve the new service indexes left by the `write` after "rho" is cleared (the service has been accumulated)
+* our test then runs work packages through fib + trib.  Our next goal is to do ordered accumulation with queues.
 
 
 ```
-pub @refine:
-    a10 = 0xFEFF0004 // preceded by $s$
-    a11 = 32         // output is 32 bytes, containing the code hash eg 0x1234...4321
-    trap
+# cargo run -p polkatool disassemble ~/go/src/github.com/jam-duna/jamtestnet/services/jam-duna/bootstrap/bootstrapblob.pvm  --show-raw-bytes
+warning: /root/go/src/github.com/colorfulnotion/polkavm/Cargo.toml: unused manifest key: workspace.lints.rust.unexpected_cfgs.check-cfg
+    Finished dev [unoptimized + debuginfo] target(s) in 0.06s
+     Running `target/debug/polkatool disassemble /root/go/src/github.com/jam-duna/jamtestnet/services/jam-duna/bootstrap/bootstrapblob.pvm --show-raw-bytes`
+// RO data = 0/0 bytes
+// RW data = 0/0 bytes
+// Stack size = 4096 bytes
+// Jump table entry point size = 0 bytes
+// RO data = []
+// RW data = []
+// Instructions = 34
+// Code size = 115 bytes
 
-pub @accumulate:
-    a7 = 0xFEFF0000 // input is the output of @refine
-    a8 = 0          // Figure out sane values of this
-    a9 = 0x2000     
-    a10 = 0x1000
-    a11 = 0x3000
-    a12 = 0x4000
-    ecalli 9        // new will output a new service key to a7
-
-    // write storage key (0) with new service key value copied from a7 into 0xFEFE0004
-    u32 [0xFEFE0000] = 0    // key
-    u32 [0xFEFE0004] = a7   // value
-    a7 = 0xFEFE0000         // key is 0
-    a8 = 4                  // key is 4 bytes
-    a9 = 0xFEFE0004         // value is the new serviceID
-    a10 = 4                 // value is 4 bytes
-    ecalli 3         
-    trap
-
-pub @authorization:
-    fallthrough
-
-pub @on_transfer:
-    fallthrough
+      :                          @0
+     0: 05 11 00 00 00           jump @4
+      :                          @1
+     5: 05 10 00 00 00           jump @5
+      :                          @2
+    10: 05 18 00 00 00           jump @6
+      :                          @3
+    15: 05 60                    jump @7
+      :                          @4 [export #0: 'is_authorized']
+    17: 04 07                    a0 = 0x0
+    19: 13 00                    ret
+      :                          @5 [export #1: 'refine']
+    21: 04 0a 04 00 ff fe        a3 = 0xfeff0004
+    27: 04 0b 20                 a4 = 0x20
+    30: 04 07                    a0 = 0x0
+    32: 13 00                    ret
+      :                          @6 [export #2: 'accumulate']
+    34: 02 11 f8                 sp = sp - 8
+    37: 03 10 04                 u32 [sp + 4] = ra
+    40: 03 15                    u32 [sp] = s0
+    42: 04 05 00 00 ff fe        s0 = 0xfeff0000
+    48: 04 07 00 00 ff fe        a0 = 0xfeff0000
+    54: 04 08 ce 00              a1 = 0xce
+    58: 04 09 00 20              a2 = 0x2000
+    62: 04 0a 00 10              a3 = 0x1000
+    66: 04 0b 00 30              a4 = 0x3000
+    70: 04 0c 00 40              a5 = 0x4000
+    74: 4e 09                    ecalli 9 // 'new'
+    76: 0d 05                    u32 [s0 + 0] = 0
+    78: 03 57 04                 u32 [s0 + 4] = a0
+    81: 04 09 04 00 ff fe        a2 = 0xfeff0004
+    87: 04 07 00 00 ff fe        a0 = 0xfeff0000
+    93: 04 08 04                 a1 = 0x4
+    96: 04 0a 04                 a3 = 0x4
+    99: 4e 03                    ecalli 3 // 'write'
+   101: 01 10 04                 ra = u32 [sp + 4]
+   104: 01 15                    s0 = u32 [sp]
+   106: 02 11 08                 sp = sp + 0x8
+   109: 13 00                    ret
+      :                          @7 [export #3: 'on_transfer']
+   111: 04 07                    a0 = 0x0
+   113: 13 00                    ret
 ```
