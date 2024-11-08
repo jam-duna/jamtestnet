@@ -1,20 +1,20 @@
-package main
+package jamnp
 
 import (
-	"math/big"
 	"fmt"
+	"math/big"
 	"testing"
 )
 
 func generateSeedSet(ringSize int) ([][]byte, error) {
 
-        ringSet := make([][]byte, ringSize)
-        for i := 0; i < ringSize; i++ {
-                seed := make([]byte, 32)
-                idxBytes := big.NewInt(int64(i)).Bytes()
-                copy(seed[32-len(idxBytes):], idxBytes)
-                ringSet[i] = seed
-        }
+	ringSet := make([][]byte, ringSize)
+	for i := 0; i < ringSize; i++ {
+		seed := make([]byte, 32)
+		idxBytes := big.NewInt(int64(i)).Bytes()
+		copy(seed[32-len(idxBytes):], idxBytes)
+		ringSet[i] = seed
+	}
 	return ringSet, nil
 }
 
@@ -30,7 +30,7 @@ func SetupQuicNetwork() (peers []string, peerList map[uint16]*Peer, validatorSec
 		if err == nil {
 			validators[i] = validator
 		} else {
-			return 
+			return
 		}
 	}
 
@@ -48,7 +48,7 @@ func SetupQuicNetwork() (peers []string, peerList map[uint16]*Peer, validatorSec
 	for i := 0; i < numNodes; i++ {
 		validatorSecret, err0 := InitValidatorSecret(seeds[i])
 		if err0 != nil {
-			return 
+			return
 		}
 		validatorSecrets[i] = validatorSecret
 	}
@@ -56,7 +56,7 @@ func SetupQuicNetwork() (peers []string, peerList map[uint16]*Peer, validatorSec
 }
 
 func TestNodeSafrole(t *testing.T) {
-	_, peerList, validatorSecrets,  err := SetupQuicNetwork()
+	_, peerList, validatorSecrets, err := SetupQuicNetwork()
 	if err != nil {
 		t.Fatalf("Error Setting up nodes: %v\n", err)
 	}
@@ -73,4 +73,3 @@ func TestNodeSafrole(t *testing.T) {
 	for {
 	}
 }
-
