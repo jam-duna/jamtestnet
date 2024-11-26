@@ -9,11 +9,11 @@ collaborate on JAM testnet, but it may support useful debugging.  Services may i
 _bootstrap service_ included in genesis state.
 
 * Raw assembly, with [polkatool](https://github.com/koute/polkavm/tree/master/tools/polkatool)
-* Rust, see [polkatool](https://github.com/koute/polkavm/tree/master/tools/polkatool)
+* Rust, see [polkatool](https://github.com/koute/polkavm/tree/master/tools/polkatool) and [Parity JAM SDK](https://hackmd.io/@polkadot/jamsdk)
 * C/C++, see [JAMBrains](https://github.com/JamBrains/polkavm-examples)
-* Solidity, see [revive](https://github.com/paritytech/revive)
 
 Having a battery of services and workpackages testing a wide variety of _simple_ JAM Services will be invaluable for testing JAM implementations of PVM and support experimentation with the JAM refine-accumulate workflow.
+
 
 
 Each JAM Service should have raw source code, build instructions, and a _JAM-ready_ polkavm code blob with 4 entry points:
@@ -29,9 +29,14 @@ Furthermore, a _bootstrap service_ is needed in genesis state to support many di
 * requesting preimages
 * changing the validator keysets
 
-These always-accumulate/privileged services use the same JAMSNP work package submission+sharing processes as non-privileged service.  Teams are encouraged to share Bootstrap service code along with their genesis configs.
+These always-accumulate/privileged services use the same JAMSNP work package submission+sharing processes as non-privileged service. 
 
-## Raw PVM Assembly code
+## Parity Rust SDK
+
+See [Parity JAM SDK](https://hackmd.io/@polkadot/jamsdk) - NEW!
+
+
+## polkatool - Raw PVM Assembly code
 
 Teams can develop PVM byte code from assembly following this method to
 generate code by hand as described [here](https://github.com/w3f/jamtestvectors/pull/3#issuecomment-2257688558):

@@ -1,0 +1,17 @@
+[package]
+name = "jam-null-authorizer"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+publish = true
+description = "A JAM authorizer which always authorizes"
+
+[lints]
+workspace = true
+
+[dependencies]
+jam-types = { path = "../../crates/jam-types", version = "0.1.3", default-features = false }
+jam-pvm-common = { path = "../../crates/jam-pvm-common", version = "0.1.3", default-features = false, features = ["authorizer"] }
+polkavm-derive = { workspace = true }
