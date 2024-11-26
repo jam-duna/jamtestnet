@@ -14,24 +14,33 @@ The combination of JSON + codec is useful for debugging purposes.
 
 Here is a sample output:
 ```
-# ls safrole/$TEAM_NAME/blocks
-349445_0.bin    349445_2.bin   349445_6.bin   349446_0.bin    349446_2.bin   349446_6.bin   349447_0.bin    349447_2.bin   349447_6.bin   349448_0.bin    349448_2.bin   349448_6.bin   349449_0.bin
-349445_0.json   349445_2.json  349445_6.json  349446_0.json   349446_2.json  349446_6.json  349447_0.json   349447_2.json  349447_6.json  349448_0.json   349448_2.json  349448_6.json  349449_0.json
-349445_1.bin    349445_3.bin   349445_7.bin   349446_1.bin    349446_3.bin   349446_7.bin   349447_1.bin    349447_3.bin   349447_7.bin   349448_1.bin    349448_3.bin   349448_7.bin   349449_1.bin
-349445_1.json   349445_3.json  349445_7.json  349446_1.json   349446_3.json  349446_7.json  349447_1.json   349447_3.json  349447_7.json  349448_1.json   349448_3.json  349448_7.json  349449_1.json
-349445_10.bin   349445_4.bin   349445_8.bin   349446_10.bin   349446_4.bin   349446_8.bin   349447_10.bin   349447_4.bin   349447_8.bin   349448_10.bin   349448_4.bin   349448_8.bin
-349445_10.json  349445_4.json  349445_8.json  349446_10.json  349446_4.json  349446_8.json  349447_10.json  349447_4.json  349447_8.json  349448_10.json  349448_4.json  349448_8.json
-349445_11.bin   349445_5.bin   349445_9.bin   349446_11.bin   349446_5.bin   349446_9.bin   349447_11.bin   349447_5.bin   349447_9.bin   349448_11.bin   349448_5.bin   349448_9.bin
-349445_11.json  349445_5.json  349445_9.json  349446_11.json  349446_5.json  349446_9.json  349447_11.json  349447_5.json  349447_9.json  349448_11.json  349448_5.json  349448_9.json
-# ls safrole/$TEAM_NAME/state_snapshots
-349445_0.bin    349445_2.bin   349445_6.bin   349446_0.bin    349446_2.bin   349446_6.bin   349447_0.bin    349447_2.bin   349447_6.bin   349448_0.bin    349448_2.bin   349448_6.bin   349449_0.bin
-349445_0.json   349445_2.json  349445_6.json  349446_0.json   349446_2.json  349446_6.json  349447_0.json   349447_2.json  349447_6.json  349448_0.json   349448_2.json  349448_6.json  349449_0.json
-349445_1.bin    349445_3.bin   349445_7.bin   349446_1.bin    349446_3.bin   349446_7.bin   349447_1.bin    349447_3.bin   349447_7.bin   349448_1.bin    349448_3.bin   349448_7.bin   349449_1.bin
-349445_1.json   349445_3.json  349445_7.json  349446_1.json   349446_3.json  349446_7.json  349447_1.json   349447_3.json  349447_7.json  349448_1.json   349448_3.json  349448_7.json  349449_1.json
-349445_10.bin   349445_4.bin   349445_8.bin   349446_10.bin   349446_4.bin   349446_8.bin   349447_10.bin   349447_4.bin   349447_8.bin   349448_10.bin   349448_4.bin   349448_8.bin
-349445_10.json  349445_4.json  349445_8.json  349446_10.json  349446_4.json  349446_8.json  349447_10.json  349447_4.json  349447_8.json  349448_10.json  349448_4.json  349448_8.json
-349445_11.bin   349445_5.bin   349445_9.bin   349446_11.bin   349446_5.bin   349446_9.bin   349447_11.bin   349447_5.bin   349447_9.bin   349448_11.bin   349448_5.bin   349448_9.bin
-349445_11.json  349445_5.json  349445_9.json  349446_11.json  349446_5.json  349446_9.json  349447_11.json  349447_5.json  349447_9.json  349448_11.json  349448_5.json  349448_9.json
+# ls safrole/jam_duna/blocks/
+395479_000.bin   395479_004.bin   395479_008.bin   395480_000.bin   395480_004.bin   395480_008.bin   395481_000.bin   395481_004.bin   395481_008.bin   395482_000.bin   395482_004.bin   395482_008.bin   395483_000.bin
+395479_000.json  395479_004.json  395479_008.json  395480_000.json  395480_004.json  395480_008.json  395481_000.json  395481_004.json  395481_008.json  395482_000.json  395482_004.json  395482_008.json  395483_000.json
+395479_001.bin   395479_005.bin   395479_009.bin   395480_001.bin   395480_005.bin   395480_009.bin   395481_001.bin   395481_005.bin   395481_009.bin   395482_001.bin   395482_005.bin   395482_009.bin   395483_001.bin
+395479_001.json  395479_005.json  395479_009.json  395480_001.json  395480_005.json  395480_009.json  395481_001.json  395481_005.json  395481_009.json  395482_001.json  395482_005.json  395482_009.json  395483_001.json
+395479_002.bin   395479_006.bin   395479_010.bin   395480_002.bin   395480_006.bin   395480_010.bin   395481_002.bin   395481_006.bin   395481_010.bin   395482_002.bin   395482_006.bin   395482_010.bin
+395479_002.json  395479_006.json  395479_010.json  395480_002.json  395480_006.json  395480_010.json  395481_002.json  395481_006.json  395481_010.json  395482_002.json  395482_006.json  395482_010.json
+395479_003.bin   395479_007.bin   395479_011.bin   395480_003.bin   395480_007.bin   395480_011.bin   395481_003.bin   395481_007.bin   395481_011.bin   395482_003.bin   395482_007.bin   395482_011.bin
+395479_003.json  395479_007.json  395479_011.json  395480_003.json  395480_007.json  395480_011.json  395481_003.json  395481_007.json  395481_011.json  395482_003.json  395482_007.json  395482_011.json
+# ls safrole/jam_duna/state_snapshots
+395479_000.bin   395479_004.bin   395479_008.bin   395480_000.bin   395480_004.bin   395480_008.bin   395481_000.bin   395481_004.bin   395481_008.bin   395482_000.bin   395482_004.bin   395482_008.bin   395483_000.bin
+395479_000.json  395479_004.json  395479_008.json  395480_000.json  395480_004.json  395480_008.json  395481_000.json  395481_004.json  395481_008.json  395482_000.json  395482_004.json  395482_008.json  395483_000.json
+395479_001.bin   395479_005.bin   395479_009.bin   395480_001.bin   395480_005.bin   395480_009.bin   395481_001.bin   395481_005.bin   395481_009.bin   395482_001.bin   395482_005.bin   395482_009.bin   395483_001.bin
+395479_001.json  395479_005.json  395479_009.json  395480_001.json  395480_005.json  395480_009.json  395481_001.json  395481_005.json  395481_009.json  395482_001.json  395482_005.json  395482_009.json  395483_001.json
+395479_002.bin   395479_006.bin   395479_010.bin   395480_002.bin   395480_006.bin   395480_010.bin   395481_002.bin   395481_006.bin   395481_010.bin   395482_002.bin   395482_006.bin   395482_010.bin   genesis.bin
+395479_002.json  395479_006.json  395479_010.json  395480_002.json  395480_006.json  395480_010.json  395481_002.json  395481_006.json  395481_010.json  395482_002.json  395482_006.json  395482_010.json  genesis.json
+395479_003.bin   395479_007.bin   395479_011.bin   395480_003.bin   395480_007.bin   395480_011.bin   395481_003.bin   395481_007.bin   395481_011.bin   395482_003.bin   395482_007.bin   395482_011.bin
+395479_003.json  395479_007.json  395479_011.json  395480_003.json  395480_007.json  395480_011.json  395481_003.json  395481_007.json  395481_011.json  395482_003.json  395482_007.json  395482_011.json
+# ls safrole/jam_duna/traces
+395479_000.bin   395479_004.bin   395479_008.bin   395480_000.bin   395480_004.bin   395480_008.bin   395481_000.bin   395481_004.bin   395481_008.bin   395482_000.bin   395482_004.bin   395482_008.bin   395483_000.bin
+395479_000.json  395479_004.json  395479_008.json  395480_000.json  395480_004.json  395480_008.json  395481_000.json  395481_004.json  395481_008.json  395482_000.json  395482_004.json  395482_008.json  395483_000.json
+395479_001.bin   395479_005.bin   395479_009.bin   395480_001.bin   395480_005.bin   395480_009.bin   395481_001.bin   395481_005.bin   395481_009.bin   395482_001.bin   395482_005.bin   395482_009.bin   395483_001.bin
+395479_001.json  395479_005.json  395479_009.json  395480_001.json  395480_005.json  395480_009.json  395481_001.json  395481_005.json  395481_009.json  395482_001.json  395482_005.json  395482_009.json  395483_001.json
+395479_002.bin   395479_006.bin   395479_010.bin   395480_002.bin   395480_006.bin   395480_010.bin   395481_002.bin   395481_006.bin   395481_010.bin   395482_002.bin   395482_006.bin   395482_010.bin   genesis.bin
+395479_002.json  395479_006.json  395479_010.json  395480_002.json  395480_006.json  395480_010.json  395481_002.json  395481_006.json  395481_010.json  395482_002.json  395482_006.json  395482_010.json  genesis.json
+395479_003.bin   395479_007.bin   395479_011.bin   395480_003.bin   395480_007.bin   395480_011.bin   395481_003.bin   395481_007.bin   395481_011.bin   395482_003.bin   395482_007.bin   395482_011.bin
+395479_003.json  395479_007.json  395479_011.json  395480_003.json  395480_007.json  395480_011.json  395481_003.json  395481_007.json  395481_011.json  395482_003.json  395482_007.json  395482_011.json
 ```
 
 Teams should be able to take a directory of `$mode/$TEAM_NAME/blocks` and:
@@ -65,14 +74,39 @@ attribute names for some state variables outside the test vectors, so
 validation between two teams should be based on the JAM codec files
 instead of the JSON content.
 
+## States
+
+Both a "human-readable" JSON representation and "machine-readable" JAM Codec for the genesis state _and_ all subsequent states should be included:
+* `traces` has the machine-readable state, where key-value follows [GP here](https://graypaper.fluffylabs.dev/#/293bf5a/33be0033be00)
+* `state_snapshots` has the human-reasonable state, following the attribute names from the [codec testvectors] as closely as possible
+
+C1-C15 coverage and a small number of service keys (δ, a_s, a_p, a_l) -- the latter is not easily distinguishable without teams adding additional metadata.  We all do so though with a little extra work though.
+
+
 ## Modes
 
+* For mode `fallback`, no tickets are included.
 * For mode `safrole`, only the first 4 epochs are useful or needed following this [JAM Safrole Model](https://docs.google.com/spreadsheets/d/1ueAisCMOx7B-m_fXMLT0FXBxfVzydJyr-udE8jKwDN8/edit?gid=615049643#gid=615049643)
-
 * For mode `assurance`, `finality`, and `conformance` additional epochs may be required using sample work packages.
-
 * Additional modes can be added between based on JAM implementer community interest.
 
-## Notes
+## Team Notes
+
+Once you have a trace that you think others should validate, submit a PR!
 
 This is a PoC at this point and any team submission should not be taken as authoritative in any way.  
+
+### JAM DUNA 
+
+Nov 2024:
+* added fallback based on JAM0 meeting
+* genesis state fixes [thanks to Daniel from Jamixir] 
+* made the phases 3 digits (000, 001, ... 011) rather than variable (0, 1, .. 11) [thank you Boy Maas]
+* fixed parent hash to be header hash rather than block hash [thank you Arjan, PyJAMaz]
+
+In progress: C14+C15 (Ordered Accumulation), 64-bit PVM, [jamblocks](https://hackmd.io/nk0Tr0iIQHmLm7WIXe_OoQ)
+
+## Join us on Telegram + Matrix/Element
+
+* [JAM Testnet on Telegram](https://t.me/jamtestnet) - Public, anyone can join
+* [JAM0 on Matrix/Element](https://docs.google.com/spreadsheets/d/1_Ar0CWH8cDq_mAoVkqZ20fXjfNQQ9ziv1jsVJBAfd1c/edit?gid=0#gid=0) - Private, ask for an invite from a fellow JAM Implementer
