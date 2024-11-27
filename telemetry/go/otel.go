@@ -6,6 +6,7 @@ import (
 	"time"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/stdout/stdoutmetric"
+	"go.opentelemetry.io/otel/attribute"
 	metricx "go.opentelemetry.io/otel/metric"
 	"go.opentelemetry.io/otel/sdk/metric"
 	"go.opentelemetry.io/otel/sdk/resource"
@@ -78,36 +79,34 @@ func NewOpenTelemetryLogger(namespace string, validatorIndex uint16) (logger *Op
 			panic(err)
 		}
 		logger.counters[counterName] = counterSent
-		/*counterReceived, err := meter.Int64Counter(
-			fmt.Sprintf("jamnp.%s.Sent", eventType),
-			metric.WithDescription(fmt.Sprintf("%sSent", eventType)),
-			metric.WithUnit("{call}"),
-		)
+		counterName = fmt.Sprintf("%sReceived", eventType)
+		counterReceived, err := meter.Int64Counter(counterName, nil)
 		if err != nil {
-			return 
-		} */
+			panic(err)
+		} 
+		logger.counters[counterName] = counterReceived
 	}
 	return
 }
 
-// Generic log function
+// Generic logSent function
 func (l *OpenTelemetryLogger) logSent(eventType string, receiver uint16, attributes map[string]interface{}) {
-	// use counter -- TODO: incorporate receiver
 	counterName := fmt.Sprintf("%sSent", eventType)
 	counter, ok :=  l.counters[counterName]
 	if ! ok {
 		return
 	}
-	counter.Add(context.Background(), 1)
-	/* 
-	// TODO: Convert map[string]interface{} to OpenTelemetry attributes
+	// TODO: adjust this so its useful!
 	var otelAttributes []attribute.KeyValue
+	otelAttributes = append(otelAttributes, attribute.Int("receiver", int(receiver)))
 	for k, v := range attributes {
 		otelAttributes = append(otelAttributes, attribute.String(k, fmt.Sprintf("%v", v)))
 	}
-	*/
+	options := metricx.WithAttributes(otelAttributes...)
+	counter.Add(context.Background(), 1, options)
 }
 
+// Generic logReceived function
 func (l *OpenTelemetryLogger) logReceived(eventType string, sender uint16, attributes map[string]interface{}) {
 	// use counter -- TODO: incorporate sender in the same way as above
 	counterName := fmt.Sprintf("%sReceived", eventType)
@@ -115,14 +114,14 @@ func (l *OpenTelemetryLogger) logReceived(eventType string, sender uint16, attri
 	if ! ok {
 		return
 	}
-	counter.Add(context.Background(), 1)
-	/* 
-	// TODO: Convert map[string]interface{} to OpenTelemetry attributes
+	// TODO: adjust this so its useful!
 	var otelAttributes []attribute.KeyValue
+	otelAttributes = append(otelAttributes, attribute.Int("sender", int(sender)))
 	for k, v := range attributes {
 		otelAttributes = append(otelAttributes, attribute.String(k, fmt.Sprintf("%v", v)))
 	}
-	*/
+	options := metricx.WithAttributes(otelAttributes...)
+	counter.Add(context.Background(), 1, options)
 }
 
 
