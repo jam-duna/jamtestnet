@@ -1,0 +1,97 @@
+{
+    "tiny": {
+        "num_validators": 6,
+        "num_cores": 2,
+        "slot_duration": 6,
+        "epoch_duration": 12,
+        "contest_duration": 10,
+        "tickets_per_validator": 3,
+        "max_tickets_per_extrinsic": 3,
+        "rotation_period": 4,
+        "max_authorization_pool_items": 2,
+        "max_authorization_queue_items": 6
+    },
+    "small": {
+        "num_validators": 24,
+        "num_cores": 8,
+        "slot_duration": 6,
+        "epoch_duration": 36,
+        "contest_duration": 30,
+        "tickets_per_validator": 2,
+        "max_tickets_per_extrinsic": 3,
+        "rotation_period": 4,
+        "max_authorization_pool_items": 2,
+        "max_authorization_queue_items": 6
+    },
+    "medium": {
+        "num_validators": 48,
+        "num_cores": 16,
+        "slot_duration": 6,
+        "epoch_duration": 60,
+        "contest_duration": 50,
+        "tickets_per_validator": 2,
+        "max_tickets_per_extrinsic": 3,
+        "rotation_period": 4,
+        "max_authorization_pool_items": 2,
+        "max_authorization_queue_items": 6
+    },
+    "large": {
+        "num_validators": 96,
+        "num_cores": 32,
+        "slot_duration": 6,
+        "epoch_duration": 120,
+        "contest_duration": 100,
+        "tickets_per_validator": 2,
+        "max_tickets_per_extrinsic": 3,
+        "rotation_period": 4,
+        "max_authorization_pool_items": 8,
+        "max_authorization_queue_items": 80
+    },
+    "xlarge": {
+        "num_validators": 192,
+        "num_cores": 64,
+        "slot_duration": 6,
+        "epoch_duration": 240,
+        "contest_duration": 200,
+        "tickets_per_validator": 2,
+        "rotation_period": 10,
+        "max_authorization_pool_items": 8,
+        "max_authorization_queue_items": 80
+    },
+    "2xlarge": {
+        "num_validators": 384,
+        "num_cores": 128,
+        "slot_duration": 6,
+        "epoch_duration": 300,
+        "contest_duration": 250,
+        "tickets_per_validator": 2,
+        "max_tickets_per_extrinsic": 16,
+        "rotation_period": 10,
+        "max_authorization_pool_items": 8,
+        "max_authorization_queue_items": 80
+    },
+    "3xlarge": {
+        "num_validators": 576,
+        "num_cores": 192,
+        "slot_duration": 6,
+        "epoch_duration": 600,
+        "contest_duration": 500,
+        "tickets_per_validator": 2,
+        "max_tickets_per_extrinsic": 16,
+        "rotation_period": 10,
+        "max_authorization_pool_items": 8,
+        "max_authorization_queue_items": 80
+    },
+    "full": {
+        "num_validators": 1023,
+        "num_cores": 341,
+        "slot_duration": 6,
+        "epoch_duration": 600,
+        "contest_duration": 500,
+        "tickets_per_validator": 2,
+        "rotation_period": 10,
+        "max_authorization_pool_items": 8,
+        "max_authorization_queue_items": 80
+    }
+}
+
