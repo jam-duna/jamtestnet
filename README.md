@@ -96,7 +96,7 @@ Based on [JAM0 - JAM Implementers Meetup @ sub0/Devcon 7](https://forum.polkadot
 * [fallback](./fallback)
 * [safrole](./safrole)
 * [assurances](./assurances)
-* orderedaccumulation (Dec 2024)
+* [orderedaccumulation](./orderedaccumulation)
 
 
 | `mode`                    | `fallback`|   `safrole` | `assurance` | `orderedaccumulation` | 
@@ -113,11 +113,10 @@ The importblocks tool is documented [here](https://docs.jamcha.in/testing/import
 
 Additional modes:
 * `authorization`: same as assurances, but also adjusting C(1)+C(2)
-* `recenthistory`: same as assurances, but also adjusting C(3)
 * `blessed`: same as assurances, but also adjusting C(5), C(12)
 * `basichostfunctions`: same as assurances, but using most common host functions
 * `finalization`: combines all of the above, adjusting everything in C(1)-C(15), except disputes
-* `disputes`: combines all of the above , including dispute extrinsics (
+* `disputes`: combines all of the above, including dispute extrinsics
 
 The presence of W3F test vectors will guide adjustments to the above.
 
@@ -155,11 +154,14 @@ Nov 2024:
 * made the phases 3 digits (000, 001, ... 011) rather than variable (0, 1, .. 11) [thank you Boy Maas]
 * fixed parent hash to be header hash rather than block hash [thank you Arjan, PyJAMaz]
 
-Dec 2024 WIP:
-* mode=orderedaccumulation (C14+C15)
-* C3 Recent Blocks support 
-* 64-bit PVM support 
+Dec 2024:
+* mode=orderedaccumulation added (C14+C15)
+* C3 Recent Blocks support consistent with E.2 0.5.2 Beefy root and w3f STF reports test vectors 
+* 64-bit PVM support with [new opcodes](https://docs.google.com/spreadsheets/d/1R7syeL7GYq4KH2B3Zh03v3CAFnK1iNNF0J4c2r-vKWw/edit?gid=1743195954#gid=1743195954) (with 96% coverage (see [community test vectors](https://github.com/FluffyLabs/jamtestvectors/pull/5)))
+* state_transitions output with service k,v metadata
 
+Jan 2025:
+* [importblocks CLI PoC](https://docs.jamcha.in/testing/import-blocks)
 
 ## JAM Implementers
 
