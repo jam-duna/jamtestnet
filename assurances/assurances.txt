@@ -1,62 +1,67 @@
-[N2]  Blk 0000..0000<-dc22..aa99  e'=425536,m'=00, len(γ_a')=0   	[N2] H_t=5106432 H_r=dc7c..326f  EpochMarker(η1'=6f6a..24af, η2'=835a..574e) 2:[b=1] 
-[N0]  Blk dc22..aa99<-26a8..0133  e'=425536,m'=01, len(γ_a')=3   	[N0] H_t=5106433 H_r=176a..eeaf   |E_T|=3 0:[b=1|t=3] 2:[b=1] 
-1: fib Code Hash: 701623c7c517e327b2578d01c3fc67619ded80feaefd60833238073bfe4d18b3 (Code Length: 210)
-[N4]  Blk 26a8..0133<-9c6b..e6d1  e'=425536,m'=02, len(γ_a')=6   	[N4] H_t=5106434 H_r=9066..110f   |E_T|=3 0:[b=1|t=3] 2:[b=1] 4:[b=1|t=3] 
-Builder storing TestService fib (7016..4d18)
-[N1] (core 0) [broadcastWorkPackage in slot 5106433] broadcasted guarantee with validator : v1  v2  v3 
-[N1]  Blk 9c6b..e6d1<-f21d..112a  e'=425536,m'=03, len(γ_a')=9   	[N1] H_t=5106435 H_r=edd9..51bb   |E_T|=3  |E_G|=1 0:[b=1|t=3] 1:[b=1|t=3|r=1] 2:[b=1] 4:[b=1|t=3] 
-[N1]  Blk f21d..112a<-9550..4239  e'=425536,m'=04, len(γ_a')=12   	[N1] H_t=5106436 H_r=2312..347a   |E_T|=3  |E_A|=6 0:[b=1|t=3] 1:[b=2|t=6|r=1|a=1] 2:[b=1] 4:[b=1|t=3] 
-[N0]  Blk 9550..4239<-5501..2e7e  e'=425536,m'=05, len(γ_a')=12   	[N0] H_t=5106437 H_r=98ee..22c4   |E_T|=3 0:[b=2|t=6] 1:[b=2|t=6|r=1|a=1] 2:[b=1] 4:[b=1|t=3] 
-fib Service Index: 1367088810
-[N5]  Blk 5501..2e7e<-ca1d..2b97  e'=425536,m'=06, len(γ_a')=12   	[N5] H_t=5106438 H_r=b74e..2239   |E_T|=3 0:[b=2|t=6] 1:[b=2|t=6|r=1|a=1] 2:[b=1] 4:[b=1|t=3] 5:[b=1|t=3] 
-[N1]  Blk ca1d..2b97<-d0bd..70b1  e'=425536,m'=07, len(γ_a')=12   	[N1] H_t=5106439 H_r=91e2..dc98   |E_T|=1  |E_P|=1 0:[b=2|t=6] 1:[b=3|t=7|p=1|o=210|r=1|a=1] 2:[b=1] 4:[b=1|t=3] 5:[b=1|t=3] 
+[N2]  Blk 0000..0000<-ec9f..0ef4  e'=453875,m'=00, len(γ_a')=0   	[N2] H_t=5446500 H_r=14ae..ecd7  EpochMarker(η1'=6f6a..24af, η2'=835a..574e) 2:[b=1] 
+[N0]  Blk ec9f..0ef4<-7ef2..5648  e'=453875,m'=01, len(γ_a')=3   	[N0] H_t=5446501 H_r=7ec8..a8ed   |E_T|=3 0:[b=1|t=3] 2:[b=1] 
+1: fib Code Hash: aaa07fc2adf1029dff7eb8cf0eee084ff3501f61425924efd4bb4a3e5d22912a (Code Length: 210)
+Waiting for the first block to be ready...
+[N4]  Blk 7ef2..5648<-1de3..581a  e'=453875,m'=02, len(γ_a')=6   	[N4] H_t=5446502 H_r=8190..22c1   |E_T|=3 0:[b=1|t=3] 2:[b=1] 4:[b=1|t=3] 
+Builder storing TestService fib (aaa0..2291)
+Waiting for fib service to be ready...
+[N1] (core 0) [broadcastWorkPackage in slot 5446501] broadcasted guarantee with validator : v1  v2  v3 
+[N1]  Blk 1de3..581a<-2d9e..7847  e'=453875,m'=03, len(γ_a')=9   	[N1] H_t=5446503 H_r=5196..af3c   |E_T|=3  |E_G|=1 0:[b=1|t=3] 1:[b=1|t=3|r=1] 2:[b=1] 4:[b=1|t=3] 
+[N1]  Blk 2d9e..7847<-1c4a..5872  e'=453875,m'=04, len(γ_a')=12   	[N1] H_t=5446504 H_r=51b7..cce0   |E_T|=3  |E_A|=6 0:[b=1|t=3] 1:[b=2|t=6|r=1|a=1] 2:[b=1] 4:[b=1|t=3] 
+[N0]  Blk 1c4a..5872<-1088..2bee  e'=453875,m'=05, len(γ_a')=12   	[N0] H_t=5446505 H_r=aaec..47e7   |E_T|=3 0:[b=2|t=6] 1:[b=2|t=6|r=1|a=1] 2:[b=1] 4:[b=1|t=3] 
+fib Service Index: 331144686
+All services are ready, Send preimage announcement
+Wait until all the preimage blobs are ready
+[N5]  Blk 1088..2bee<-1c00..d1a4  e'=453875,m'=06, len(γ_a')=12   	[N5] H_t=5446506 H_r=cba4..f729   |E_T|=3 0:[b=2|t=6] 1:[b=2|t=6|r=1|a=1] 2:[b=1] 4:[b=1|t=3] 5:[b=1|t=3] 
+[N1]  Blk 1c00..d1a4<-ba8c..f394  e'=453875,m'=07, len(γ_a')=12   	[N1] H_t=5446507 H_r=ed58..b302   |E_T|=3  |E_P|=1 0:[b=2|t=6] 1:[b=3|t=9|p=1|o=210|r=1|a=1] 2:[b=1] 4:[b=1|t=3] 5:[b=1|t=3] 
+Start FIB
 
-**  FIB=1  workPackage: bcc5..8792 **
-[N4] (core 0) [broadcastWorkPackage in slot 5106439] broadcasted guarantee with validator : v0  v4  v5 
-[N2]  Blk d0bd..70b1<-6252..bbf1  e'=425536,m'=08, len(γ_a')=12   	[N2] H_t=5106440 H_r=c72b..ad8d   |E_G|=1 0:[b=2|t=6] 1:[b=3|t=7|p=1|o=210|r=1|a=1] 2:[b=2|r=1] 4:[b=1|t=3] 5:[b=1|t=3] 
-[N2]  Blk 6252..bbf1<-253e..da4c  e'=425536,m'=09, len(γ_a')=12   	[N2] H_t=5106441 H_r=5176..4b4d   |E_A|=6 0:[b=2|t=6] 1:[b=3|t=7|p=1|o=210|r=1|a=1] 2:[b=3|r=1|a=1] 4:[b=1|t=3] 5:[b=1|t=3] 
+**  FIB=1  workPackage: a36f..1d46 **
+[N4] (core 0) [broadcastWorkPackage in slot 5446507] broadcasted guarantee with validator : v0  v4  v5 
+[N2]  Blk ba8c..f394<-b263..a85e  e'=453875,m'=08, len(γ_a')=12   	[N2] H_t=5446508 H_r=8c39..dc9a   |E_G|=1 0:[b=2|t=6] 1:[b=3|t=9|p=1|o=210|r=1|a=1] 2:[b=2|r=1] 4:[b=1|t=3] 5:[b=1|t=3] 
+[N2]  Blk b263..a85e<-bc2c..7169  e'=453875,m'=09, len(γ_a')=12   	[N2] H_t=5446509 H_r=120f..2151   |E_A|=6 0:[b=2|t=6] 1:[b=3|t=9|p=1|o=210|r=1|a=1] 2:[b=3|r=1|a=1] 4:[b=1|t=3] 5:[b=1|t=3] 
 
-**  FIB=2  workPackage: f46b..3b45 **
-[N1] (core 0) [broadcastWorkPackage in slot 5106441] broadcasted guarantee with validator : v1  v2  v3 
-[N1]  Blk 253e..da4c<-8e92..c7e3  e'=425536,m'=10, len(γ_a')=12   	[N1] H_t=5106442 H_r=1f5c..3f8c   WinningTickets(12)  |E_G|=1 0:[b=2|t=6] 1:[b=4|t=7|p=1|o=210|r=2|a=1] 2:[b=3|r=1|a=1] 4:[b=1|t=3] 5:[b=1|t=3] 
-[N4]  Blk 8e92..c7e3<-6ede..a4b5  e'=425536,m'=11, len(γ_a')=12   	[N4] H_t=5106443 H_r=fbd1..100e   |E_A|=6 0:[b=2|t=6] 1:[b=4|t=7|p=1|o=210|r=2|a=1] 2:[b=3|r=1|a=1] 4:[b=2|t=3|a=1] 5:[b=1|t=3] 
+**  FIB=2  workPackage: 08b7..2f56 **
+[N1] (core 0) [broadcastWorkPackage in slot 5446509] broadcasted guarantee with validator : v1  v2  v3 
+[N1]  Blk bc2c..7169<-ceba..6c69  e'=453875,m'=10, len(γ_a')=12   	[N1] H_t=5446510 H_r=84ca..f7ae   WinningTickets(12)  |E_G|=1 0:[b=2|t=6] 1:[b=4|t=9|p=1|o=210|r=2|a=1] 2:[b=3|r=1|a=1] 4:[b=1|t=3] 5:[b=1|t=3] 
+[N4]  Blk ceba..6c69<-7b05..629d  e'=453875,m'=11, len(γ_a')=12   	[N4] H_t=5446511 H_r=0177..01a8   |E_A|=6 0:[b=2|t=6] 1:[b=4|t=9|p=1|o=210|r=2|a=1] 2:[b=3|r=1|a=1] 4:[b=2|t=3|a=1] 5:[b=1|t=3] 
 
-**  FIB=3  workPackage: 9124..5312 **
-[N3] (core 0) [broadcastWorkPackage in slot 5106443] broadcasted guarantee with validator : v1  v2  v3 
-[N2]  Blk 6ede..a4b5<-14a7..5c62  e'=425537,m'=00, len(γ_a')=3   	[N2] H_t=5106444 H_r=a681..8333  EpochMarker(η1'=0de5..01c2, η2'=6f6a..24af)  |E_T|=3  |E_G|=1 2:[b=1|t=3|r=1] 
-[N5]  Blk 14a7..5c62<-429e..c920  e'=425537,m'=01, len(γ_a')=6   	[N5] H_t=5106445 H_r=c520..1232   |E_T|=3  |E_A|=6 2:[b=1|t=3|r=1] 5:[b=1|t=3|a=1] 
+**  FIB=3  workPackage: 3492..6e6f **
+[N3] (core 0) [broadcastWorkPackage in slot 5446510] broadcasted guarantee with validator : v1  v2  v3 
+[N2]  Blk 7b05..629d<-48c7..ea84  e'=453876,m'=00, len(γ_a')=3   	[N2] H_t=5446512 H_r=b458..8488  EpochMarker(η1'=0de5..01c2, η2'=6f6a..24af)  |E_T|=3  |E_G|=1 2:[b=1|t=3|r=1] 
+[N5]  Blk 48c7..ea84<-cdc8..2703  e'=453876,m'=01, len(γ_a')=6   	[N5] H_t=5446513 H_r=36d1..d0f3   |E_T|=3  |E_A|=6 2:[b=1|t=3|r=1] 5:[b=1|t=3|a=1] 
 
-**  FIB=4  workPackage: 0a12..54dc **
-[N5] (core 0) [broadcastWorkPackage in slot 5106445] broadcasted guarantee with validator : v1  v2  v5 
-[N4]  Blk 429e..c920<-3585..83a1  e'=425537,m'=02, len(γ_a')=9   	[N4] H_t=5106446 H_r=9641..4148   |E_T|=3  |E_G|=1 2:[b=1|t=3|r=1] 4:[b=1|t=3|r=1] 5:[b=1|t=3|a=1] 
-[N3]  Blk 3585..83a1<-fcf4..c868  e'=425537,m'=03, len(γ_a')=12   	[N3] H_t=5106447 H_r=3f6a..63a4   |E_T|=3  |E_A|=6 2:[b=1|t=3|r=1] 3:[b=1|t=3|a=1] 4:[b=1|t=3|r=1] 5:[b=1|t=3|a=1] 
+**  FIB=4  workPackage: 37d2..de3e **
+[N5] (core 0) [broadcastWorkPackage in slot 5446513] broadcasted guarantee with validator : v1  v2  v5 
+[N4]  Blk cdc8..2703<-4fa1..021a  e'=453876,m'=02, len(γ_a')=9   	[N4] H_t=5446514 H_r=cc23..795c   |E_T|=3  |E_G|=1 2:[b=1|t=3|r=1] 4:[b=1|t=3|r=1] 5:[b=1|t=3|a=1] 
+[N3]  Blk 4fa1..021a<-b0b4..208b  e'=453876,m'=03, len(γ_a')=12   	[N3] H_t=5446515 H_r=698d..c7f3   |E_T|=3  |E_A|=6 2:[b=1|t=3|r=1] 3:[b=1|t=3|a=1] 4:[b=1|t=3|r=1] 5:[b=1|t=3|a=1] 
 
-**  FIB=5  workPackage: 3444..d782 **
-[N2] (core 0) [broadcastWorkPackage in slot 5106447] broadcasted guarantee with validator : v1  v2  v5 
-[N5]  Blk fcf4..c868<-8156..1db1  e'=425537,m'=04, len(γ_a')=12   	[N5] H_t=5106448 H_r=571c..dcf6   |E_T|=3  |E_G|=1 2:[b=1|t=3|r=1] 3:[b=1|t=3|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
-[N1]  Blk 8156..1db1<-5464..7248  e'=425537,m'=05, len(γ_a')=12   	[N1] H_t=5106449 H_r=53a9..2b05   |E_T|=3  |E_A|=6 1:[b=1|t=3|a=1] 2:[b=1|t=3|r=1] 3:[b=1|t=3|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
+**  FIB=5  workPackage: b639..31b6 **
+[N2] (core 0) [broadcastWorkPackage in slot 5446515] broadcasted guarantee with validator : v1  v2  v5 
+[N5]  Blk b0b4..208b<-4a66..49c8  e'=453876,m'=04, len(γ_a')=12   	[N5] H_t=5446516 H_r=c7ac..f82d   |E_T|=3  |E_G|=1 2:[b=1|t=3|r=1] 3:[b=1|t=3|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
+[N1]  Blk 4a66..49c8<-e21f..837d  e'=453876,m'=05, len(γ_a')=12   	[N1] H_t=5446517 H_r=10ac..2dea   |E_T|=3  |E_A|=6 1:[b=1|t=3|a=1] 2:[b=1|t=3|r=1] 3:[b=1|t=3|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
 
-**  FIB=6  workPackage: b0cc..b4f1 **
-[N4] (core 0) [broadcastWorkPackage in slot 5106449] broadcasted guarantee with validator : v0  v3  v4 
-[N3]  Blk 5464..7248<-1c01..96be  e'=425537,m'=06, len(γ_a')=12   	[N3] H_t=5106450 H_r=e2b0..206f   |E_G|=1 1:[b=1|t=3|a=1] 2:[b=1|t=3|r=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
-[N2]  Blk 1c01..96be<-41b4..19a2  e'=425537,m'=07, len(γ_a')=12   	[N2] H_t=5106451 H_r=591c..9cd9   |E_A|=6 1:[b=1|t=3|a=1] 2:[b=2|t=3|r=1|a=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
+**  FIB=6  workPackage: 5cdc..c6fc **
+[N4] (core 0) [broadcastWorkPackage in slot 5446517] broadcasted guarantee with validator : v0  v3  v4 
+[N3]  Blk e21f..837d<-eaff..0eaf  e'=453876,m'=06, len(γ_a')=12   	[N3] H_t=5446518 H_r=7a07..13c3   |E_G|=1 1:[b=1|t=3|a=1] 2:[b=1|t=3|r=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
+[N2]  Blk eaff..0eaf<-ed28..f93b  e'=453876,m'=07, len(γ_a')=12   	[N2] H_t=5446519 H_r=6986..6c13   |E_A|=6 1:[b=1|t=3|a=1] 2:[b=2|t=3|r=1|a=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
 
-**  FIB=7  workPackage: 3e11..e779 **
-[N0] (core 0) [broadcastWorkPackage in slot 5106451] broadcasted guarantee with validator : v0  v3  v4 
-[N0]  Blk 41b4..19a2<-6d04..7ff9  e'=425537,m'=08, len(γ_a')=12   	[N0] H_t=5106452 H_r=bcc8..3afa   |E_G|=1 0:[b=1|r=1] 1:[b=1|t=3|a=1] 2:[b=2|t=3|r=1|a=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
-[N1]  Blk 6d04..7ff9<-d8ef..6e8d  e'=425537,m'=09, len(γ_a')=12   	[N1] H_t=5106453 H_r=ea00..e9c4   |E_A|=6 0:[b=1|r=1] 1:[b=2|t=3|a=2] 2:[b=2|t=3|r=1|a=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
+**  FIB=7  workPackage: d96a..155d **
+[N0] (core 0) [broadcastWorkPackage in slot 5446519] broadcasted guarantee with validator : v0  v3  v4 
+[N0]  Blk ed28..f93b<-f1ef..4346  e'=453876,m'=08, len(γ_a')=12   	[N0] H_t=5446520 H_r=9d70..6a85   |E_G|=1 0:[b=1|r=1] 1:[b=1|t=3|a=1] 2:[b=2|t=3|r=1|a=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
+[N1]  Blk f1ef..4346<-b51c..aa81  e'=453876,m'=09, len(γ_a')=12   	[N1] H_t=5446521 H_r=511c..52b7   |E_A|=6 0:[b=1|r=1] 1:[b=2|t=3|a=2] 2:[b=2|t=3|r=1|a=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=2|t=6|r=1|a=1] 
 
-**  FIB=8  workPackage: a8a8..083b **
-[N1] (core 0) [broadcastWorkPackage in slot 5106453] broadcasted guarantee with validator : v1  v2  v5 
-[N5]  Blk d8ef..6e8d<-8953..8d08  e'=425537,m'=10, len(γ_a')=12   	[N5] H_t=5106454 H_r=cc38..6ad9   WinningTickets(12)  |E_G|=1 0:[b=1|r=1] 1:[b=2|t=3|a=2] 2:[b=2|t=3|r=1|a=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=3|t=6|r=2|a=1] 
-[N3]  Blk 8953..8d08<-2551..2fc3  e'=425537,m'=11, len(γ_a')=12   	[N3] H_t=5106455 H_r=cef1..86e9   |E_A|=6 0:[b=1|r=1] 1:[b=2|t=3|a=2] 2:[b=2|t=3|r=1|a=1] 3:[b=3|t=3|r=1|a=2] 4:[b=1|t=3|r=1] 5:[b=3|t=6|r=2|a=1] 
+**  FIB=8  workPackage: 38ef..de57 **
+[N1] (core 0) [broadcastWorkPackage in slot 5446521] broadcasted guarantee with validator : v1  v2  v5 
+[N5]  Blk b51c..aa81<-9e79..5ca7  e'=453876,m'=10, len(γ_a')=12   	[N5] H_t=5446522 H_r=08f5..2634   WinningTickets(12)  |E_G|=1 0:[b=1|r=1] 1:[b=2|t=3|a=2] 2:[b=2|t=3|r=1|a=1] 3:[b=2|t=3|r=1|a=1] 4:[b=1|t=3|r=1] 5:[b=3|t=6|r=2|a=1] 
+[N3]  Blk 9e79..5ca7<-007b..a70d  e'=453876,m'=11, len(γ_a')=12   	[N3] H_t=5446523 H_r=b784..b092   |E_A|=6 0:[b=1|r=1] 1:[b=2|t=3|a=2] 2:[b=2|t=3|r=1|a=1] 3:[b=3|t=3|r=1|a=2] 4:[b=1|t=3|r=1] 5:[b=3|t=6|r=2|a=1] 
 
-**  FIB=9  workPackage: 12ea..bf14 **
-[N5] (core 0) [broadcastWorkPackage in slot 5106455] broadcasted guarantee with validator : v1  v2  v5 
-[N2]  Blk 2551..2fc3<-ee1e..af8c  e'=425538,m'=00, len(γ_a')=3   	[N2] H_t=5106456 H_r=03ce..15d3  EpochMarker(η1'=491d..b17e, η2'=0de5..01c2)  |E_T|=3  |E_G|=1 2:[b=1|t=3|r=1] 
-[N0]  Blk ee1e..af8c<-4cc7..10ec  e'=425538,m'=01, len(γ_a')=6   	[N0] H_t=5106457 H_r=a469..a70c   |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 2:[b=1|t=3|r=1] 
+**  FIB=9  workPackage: 9c55..a068 **
+[N5] (core 0) [broadcastWorkPackage in slot 5446523] broadcasted guarantee with validator : v1  v2  v5 
+[N2]  Blk 007b..a70d<-4a7c..29cf  e'=453877,m'=00, len(γ_a')=3   	[N2] H_t=5446524 H_r=cc64..40e1  EpochMarker(η1'=491d..b17e, η2'=0de5..01c2)  |E_T|=3  |E_G|=1 2:[b=1|t=3|r=1] 
+[N0]  Blk 4a7c..29cf<-bcfd..6ddb  e'=453877,m'=01, len(γ_a')=6   	[N0] H_t=5446525 H_r=e892..a0b9   |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 2:[b=1|t=3|r=1] 
 
-**  FIB=10  workPackage: 7477..5a9b **
-[N0] (core 0) [broadcastWorkPackage in slot 5106457] broadcasted guarantee with validator : v0  v3  v5 
-[N5]  Blk 4cc7..10ec<-7c8c..7117  e'=425538,m'=02, len(γ_a')=9   	[N5] H_t=5106458 H_r=011b..1a8e   |E_T|=3  |E_G|=1 0:[b=1|t=3|a=1] 2:[b=1|t=3|r=1] 5:[b=1|t=3|r=1] 
-[N2]  Blk 7c8c..7117<-8e0e..45b5  e'=425538,m'=03, len(γ_a')=12   	[N2] H_t=5106459 H_r=0951..d219   |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 2:[b=2|t=6|r=1|a=1] 5:[b=1|t=3|r=1] 
+**  FIB=10  workPackage: ca02..e1f9 **
+[N0] (core 0) [broadcastWorkPackage in slot 5446525] broadcasted guarantee with validator : v0  v3  v5 
+[N5]  Blk bcfd..6ddb<-bc27..fc3e  e'=453877,m'=02, len(γ_a')=9   	[N5] H_t=5446526 H_r=09b4..592c   |E_T|=3  |E_G|=1 0:[b=1|t=3|a=1] 2:[b=1|t=3|r=1] 5:[b=1|t=3|r=1] 
+[N2]  Blk bc27..fc3e<-2979..4882  e'=453877,m'=03, len(γ_a')=12   	[N2] H_t=5446527 H_r=5f1b..b4f0   |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 2:[b=2|t=6|r=1|a=1] 5:[b=1|t=3|r=1]
