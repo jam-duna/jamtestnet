@@ -29,7 +29,7 @@ Run with:
 
 ## Common seeds
 
-Common seeds of `0x00..00` through `0x00..05` are shown below and match [genesis.json](../genesis.json) authorities.
+Common seeds of `0x00..00` through `0x00..05` are shown below and match [genesis.json](https://github.com/jam-duna/jamtestnet/blob/01b8931df513b67a6b80484b9c67ba52ed54d7bb/chainspecs/state_snapshots/genesis-tiny.json) authorities.
 
 We use Alice/Bob/.../Fergie and convenient labels for these seeds.  
 
