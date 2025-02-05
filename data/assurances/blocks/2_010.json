@@ -1,0 +1,129 @@
+{
+    "header": {
+        "parent": "0x9fb69b30971ec7cdb9fee83af72aa16746da19ad1ff29166dddbd97d8ada8a32",
+        "parent_state_root": "0x5c41996ffc3985a9e14e2ce330284c3b6f3a088e3487c8a653ac0a17732099be",
+        "extrinsic_hash": "0x323938228be961777a71f2635a8e0d736cfc64a29b6fc33e93aa2dbab21760a4",
+        "slot": 34,
+        "epoch_mark": null,
+        "tickets_mark": [
+            {
+                "id": "0x0d00f9378fd991f86c3192cb8fc638b9a2cccc03841c998ee4b7c64e15ae00b0",
+                "attempt": 2
+            },
+            {
+                "id": "0x8e05a5bd0756550a156418a51bacb7a1b67d29f76d6ca5861fa3120ae9eecffc",
+                "attempt": 1
+            },
+            {
+                "id": "0x265d1a74eb5e49a4e31a2c5de87477e9d59767c9e006892e5e765a7a41b931c4",
+                "attempt": 0
+            },
+            {
+                "id": "0x7aaf3347df9ea60a9a9977680a4c1bc59a1635a5d4525aff04be5b24d55c26e0",
+                "attempt": 1
+            },
+            {
+                "id": "0x36f42d7213045fb9d1f18b9c89b634163535b49639f846fb1f8e66fe9eee3143",
+                "attempt": 2
+            },
+            {
+                "id": "0x73a59dbca7de644bbef7a7706d7592636a4ab1fc6af109dd21bc35d8d4c1b553",
+                "attempt": 2
+            },
+            {
+                "id": "0x45541d025d9f2c24cdf38feaa4803ddaa8dec929872c0b3692657185929a6652",
+                "attempt": 0
+            },
+            {
+                "id": "0x7088792a1f32d18248fc89c0fef2a1230c2e1e208bd9a26ab9c6eb212c604b61",
+                "attempt": 0
+            },
+            {
+                "id": "0x5184eee469d28bce9048ed8fb6280e2ee5efcf83ac2ae482e202b3c3511babc8",
+                "attempt": 2
+            },
+            {
+                "id": "0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df",
+                "attempt": 2
+            },
+            {
+                "id": "0x57c2aa7c379952fc84142da9febfe28fec6b2ceb9a0fcfc1aeb4fd2d676f54e0",
+                "attempt": 1
+            },
+            {
+                "id": "0x62538b1cd2bc95a06c2de3ba8465a213f7aaae24875572667de938f3fca7cc4f",
+                "attempt": 0
+            }
+        ],
+        "offenders_mark": [],
+        "author_index": 5,
+        "entropy_source": "0xf7c3ee3a45d209ba7968e94938928f705edf3ec9fb87e3d8d4925be4b459b23a79ea52a6047bd9cb2933fa9e084525fe075a8ee62e8ab614706aac3965ae450ebc0d0d348d96c4470245a180a038037459ccaefe8459bf56399cdfdae9c05a0a",
+        "seal": "0xb13de88af2272fa632eaeb1982be435cae70baf27f8a0567d048e685cf6fc2e886479db4b26ecdeadb5c408209463b7aa69c7789cf52870c17b1d6798e23dc054b09d3fdbf45782e8b2ddc4ff0ff9ec241cf19df8c8d68d3d05d0108000dc113"
+    },
+    "extrinsic": {
+        "tickets": [],
+        "preimages": [],
+        "guarantees": [
+            {
+                "report": {
+                    "package_spec": {
+                        "hash": "0x1e23289e0263eb8c17e1b2e5997e029bf27716be3140e778dba8ca4897100f92",
+                        "length": 344,
+                        "erasure_root": "0xcc6f51d54886ea921efe6153c3555913e86d4741f5a226ead5d7b3d271ba6e23",
+                        "exports_root": "0xe3935c186acd88bf09b034fecfd6da883516db97861258e492b0d7e87847d2d3",
+                        "exports_count": 0
+                    },
+                    "context": {
+                        "anchor": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "beefy_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "lookup_anchor": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "lookup_anchor_slot": 33,
+                        "prerequisites": []
+                    },
+                    "core_index": 0,
+                    "authorizer_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "auth_output": "0x",
+                    "segment_root_lookup": [
+                        {
+                            "work_package_hash": "0x9c26d3ecedb0cbf03a4baf98cfc2ee1fd42983a6f1f092e38eb7460cb432a13c",
+                            "segment_tree_root": "0xcb7ab4210750a958163fc3b0f7edbc2a8a21fcec4bc7ee0a99324b805ffac89d"
+                        }
+                    ],
+                    "results": [
+                        {
+                            "service_id": 3478300875,
+                            "code_hash": "0x1929560cf44b7bc7686adefd017edcb8e7960fa82b6b04a01cdf9b2a4ffcea6d",
+                            "payload_hash": "0x9dff876a4b942d0a9711d18221898f11ca39751589ebf4d49d749f6b3e493292",
+                            "accumulate_gas": 101,
+                            "result": {
+                                "ok": "0x08000000150000000d000000"
+                            }
+                        }
+                    ]
+                },
+                "slot": 33,
+                "signatures": [
+                    {
+                        "validator_index": 1,
+                        "signature": "0xd8290b3060674d78ba1982aeb5799fffe6ddbc4f6bfcf87f05c960788a39f93d3dd396c2db7ee6f27aa9bc84ce33b8263d07a87ed1c9f25531d86f2be3b74301"
+                    },
+                    {
+                        "validator_index": 2,
+                        "signature": "0xa2e38c2a21e902f94711230e1c8985887e67b578eba644f823f983e429d50314e324f37a4b3d3b4b37b72718cdeb27f77ea46dc0f41ef3c016681904ac838301"
+                    },
+                    {
+                        "validator_index": 5,
+                        "signature": "0xa6af380c27005aa20b68b66e4f0f06ef90796dbf25ef27234d3f96965377740e712e4f598ec5c4346b91e03027160016e58fba375a0c857ae262e14c2ab65c0e"
+                    }
+                ]
+            }
+        ],
+        "assurances": [],
+        "disputes": {
+            "verdicts": [],
+            "culprits": [],
+            "faults": []
+        }
+    }
+}
