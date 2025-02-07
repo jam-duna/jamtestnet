@@ -68,7 +68,7 @@ Alternatively, use the [**importblocks_runner script**](https://github.com/jam-d
 # Example usage
 ./importblocks_runner.sh \
     http="http://implementation.jamduna.org:8088" \
-    mode="fallback" \
+    mode="safrole" \
     numblocks="100" \
     invalidrate="0.20" \
     statistics="10"
@@ -396,6 +396,7 @@ Metrics can be categorized into the following:
 | CorrectRate            | (TruePositives + TrueNegatives) / TotalBlocks           | Blocks submission handled correctly (fuzzed recognized + original not flagged)               |
 | ResponseErrorRate      | OverallResponseErrors / TotalBlocks                     | Blocks submission returned an invalid response (fuzzed + original)                           |
 | MisclassificationRate  | OverallMisclassifications / TotalBlocks                 | Blocks submission recognized as invalid but returned with different JamErrors                |
+
 # JAM Network Settings
 
 Proper blocks fuzzing requires resealing and "guess work". Therefore it is strictly required that teams standardize on same dev keys for VRF's related fuzzing
