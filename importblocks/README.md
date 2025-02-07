@@ -170,7 +170,7 @@ If a block is valid, the team’s endpoint should return a `200 OK` status with 
 
 #### Example `PrestateAndBlock` Submission from `importblocks` to a Team Implementation
 
-~~~json
+```
 // PrestateAndBlock = PreState++Block
 {
   "pre_state": {
@@ -190,11 +190,11 @@ If a block is valid, the team’s endpoint should return a `200 OK` status with 
     "extrinsic": {...}
   }
 }
-~~~
+```
 
 #### Example HTTP Response for a Valid Transition (200 OK)
 
-~~~json
+```
 // PostState
 {
     "state_root": "0x1234abcd...2345",
@@ -208,28 +208,27 @@ If a block is valid, the team’s endpoint should return a `200 OK` status with 
       ...
     ]
 }
-~~~
+```
+
 
 #### Example HTTP Response for an Invalid Transition (406 Bad Request)
 
 *Note:This should standardize into w3f errCode. using {T,A, G, D} as place holder*
 
-~~~json
+```
 // JamError -> {"error":"ERR_NAME: ERR_DESC"}
 
 {
   "error": "TicketsBadOrder: Submit tickets in bad order."
 }
-~~~
+```
 
 ### Example QUIC Response
 
-*(Not exposed in this PoC.)* 
-Codec Only: StateTransitionResponse: State++Error++Mutated;  
+*(Not exposed in this PoC.)*  QUIC is expecting codec-encoded `StateTransitionResponse` as State++JamError++Mutated(bool) 
 
-JSON equivalent would look like this:
-~~~json
-// StateTransitionResponse: State++Error++Mutated
+a JSON equivalent:
+```
 // StateTransitionResponse: Original
 {
   "mutated": false,
@@ -254,7 +253,7 @@ JSON equivalent would look like this:
   "post_state": null
   "error": "TicketsBadOrder: Submit tickets in bad order."
 }
-~~~
+```
 
 ## State Transition Errors
 
