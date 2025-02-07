@@ -348,13 +348,18 @@ We defer to W3F for official error codes and descriptions.
 
 ## Metrics Breakdown
 
-The following metrics are automatically generated for informational purposes only and *do not* determine correctness of either the sender or receiver implementation.  Metrics can be categorized into the following:
-- **Basics**: Number of fuzzed and unfuzzed blocks vs. total blocks
-- **Fuzzed**: Detection and error rates specific to fuzzed blocks
-- **Original**: Validation and error rates for Original (unfuzzed) blocks
-- **Overall**: Aggregated metrics across all blocks
- 
-(*Warning: A faulty STF implementation might report a perfect match against its own fuzz logic, so do **not** treat these metrics as authoritative.*)
+The following metrics are for informational purposes only and *do not* determine correctness of either the sender or receiver implementation.  
+
+Metrics can be categorized into the following:
+
+| **Category** | **Description**                                                         |
+|:-----------:|:-------------------------------------------------------------------------|
+| **Basics**  | Number of fuzzed and unfuzzed blocks vs. total blocks                    |
+| **Fuzzed**  | Detection and error rates specific to fuzzed blocks                      |
+| **Original**| Validation and error rates for original (unfuzzed) blocks                |
+| **Overall** | Aggregated metrics across all blocks                                     |
+
+(*Warning: A faulty STF implementation would report a perfect match against its own fuzz logic, so do **not** treat these metrics as authoritative.*)
 
 ### Basic Metrics
 
