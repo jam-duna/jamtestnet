@@ -23,7 +23,7 @@ Testing implementation against importblocks:
     invalidrate="0" \
     statistics="100"
 ```
-**Sample Output 1:**
+**Output 1:**
 ```
 importblocks - JAM Duna Import Blocks generator
 {
@@ -101,7 +101,7 @@ InvalidRate=0.00 -> invalidBlocks=0 | validBlocks=100 | total=100
     statistics="50"
 ```
 
-**Sample Output 2:**
+**Output 2:**
 ```
 importblocks - JAM Duna Import Blocks generator
 {
@@ -183,7 +183,7 @@ InvalidRate=0.00 -> invalidBlocks=0 | validBlocks=100 | total=100
     statistics="50"
 ```
 
-**Sample Output 3:**
+**Output 3:**
 ```
 importblocks - JAM Duna Import Blocks generator
 {
