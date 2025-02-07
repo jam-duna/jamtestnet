@@ -1,8 +1,8 @@
-# JAM TestNet 
+# JAM Testnet 
 
 [JAM](https://jam.web3.foundation/) is the anticipated future protocol for Polkadot, being implemented by multiple teams across different programming languages. The [JAM Gray Paper](https://graypaper.com/) outlines the protocol, and the Web3 Foundation has shared initial test vectors with participating teams [here](https://github.com/w3f/jamtestvectors).
 
-This repository serves as a collaborative space for teams to develop and test JAM TestNets independently and eventually work towards cross-team compatibility.  See also [docs.jamcha.in](https://docs.jamcha.in/)
+This repository serves as a collaborative space for teams to develop and test JAM Testnets independently and work towards cross-team compatibility in the JAM Toaster.   See [docs.jamcha.in](https://docs.jamcha.in/). 
 
 ## Dev Accounts, Chain specs, Genesis States
 
@@ -17,7 +17,7 @@ Using these seeds, secret and public keys can be programmatically generated, ens
 
 An open-source `key` program is used to map seeds into  Bandersnatch/Ed25519/BLS secret and public keys.  See [here](./key) showing how to map any seed.
 
-See [Dev Accounts](https://docs.jamcha.in/basics/dev-accounts) 32-byte seeds (from 0x00...00 to 0x00...05 for tiny `V=6`).
+See [Dev Accounts](https://docs.jamcha.in/basics/dev-accounts) 32-byte seeds.
 
 ### Chain Specs
 
@@ -91,7 +91,7 @@ Here is a sample output:
 
 ## Import Blocks 
 
-Based on [JAM0 - JAM Implementers Meetup @ sub0/Devcon 7](https://forum.polkadot.network/t/jam0-jam-implementers-meetup-sub0-devcon-7-bangkok-nov-11-nov-16-2024/10866/1) we will build a [Import Blocks tool](https://docs.jamcha.in/testing/import-blocks), which we will post here in mid-December 2024 with support for 4 different modes:
+Based on [JAM0 - JAM Implementers Meetup @ sub0/Devcon 7](https://forum.polkadot.network/t/jam0-jam-implementers-meetup-sub0-devcon-7-bangkok-nov-11-nov-16-2024/10866/1) we built a [importblocks](importblocks) with support for 4 different modes:
 
 * [fallback](./fallback)
 * [safrole](./safrole)
@@ -109,16 +109,7 @@ Based on [JAM0 - JAM Implementers Meetup @ sub0/Devcon 7](https://forum.polkadot
 | Bootstrap Services        |           |             |     x       |     x      |
 | Ordered Accumulation      |           |             |             |     x      |
 
-The importblocks tool is documented [here](https://docs.jamcha.in/testing/import-blocks).  
-
-Additional modes:
-* `authorization`: same as assurances, but also adjusting C(1)+C(2)
-* `blessed`: same as assurances, but also adjusting C(5), C(12)
-* `basichostfunctions`: same as assurances, but using most common host functions
-* `finalization`: combines all of the above, adjusting everything in C(1)-C(15), except disputes
-* `disputes`: combines all of the above, including dispute extrinsics
-
-The presence of W3F test vectors will guide adjustments to the above.
+The importblocks tool is documented [here](./importblocks).  
 
 ### `fallback`
 
@@ -160,8 +151,9 @@ Dec 2024:
 * 64-bit PVM support with [new opcodes](https://docs.google.com/spreadsheets/d/1R7syeL7GYq4KH2B3Zh03v3CAFnK1iNNF0J4c2r-vKWw/edit?gid=1743195954#gid=1743195954) (with 96% coverage (see [community test vectors](https://github.com/FluffyLabs/jamtestvectors/pull/5)))
 * state_transitions output with service k,v metadata
 
-Jan 2025:
-* [importblocks CLI PoC](https://docs.jamcha.in/testing/import-blocks)
+Feb 2025:
+* [0.6.1 Traces](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.1.0)
+* [0.6.1 importblocks](importblocks)
 
 ## JAM Implementers
 
