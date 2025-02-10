@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "EC vector",
+    "description": "Test vector for erasure coding, with package size of 1,32, 684, 4096, 4104, 15000, 21888, 100000, 200000",
+    "type": "object",
+    "properties": {
+        "data": {
+            "type": "string",
+            "contentEncoding": "base16"
+        },
+        "work_package": {
+            "type": "object",
+            "properties": {
+                "chunks": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "contentEncoding": "base16"
+                    }
+                },
+                "chunks_root": {
+                    "type": "string",
+                    "contentEncoding": "base16"
+                }
+            },
+            "additionalProperties": false
+        },
+        "segment": {
+            "type": "object",
+            "properties": {
+                "segments": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "segment_ec": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "contentEncoding": "base16"
+                                }
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "segments_root": {
+                    "type": "string",
+                    "contentEncoding": "base16"
+                }
+            },
+            "additionalProperties": false
+        },
+        "page_proof": {
+            "type": "object",
+            "properties": {
+                "page_proofs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "contentEncoding": "base16"
+                    }
+                },
+                "segments_root": {
+                    "type": "string",
+                    "contentEncoding": "base16"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}
