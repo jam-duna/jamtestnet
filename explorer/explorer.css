@@ -1,0 +1,118 @@
+/* explorer.css */
+
+body {
+  font-family: Arial, sans-serif;
+  /* Add a background image with a fallback color */
+  background: #f2f2f2 url("https://graypaper.com/img/background.webp") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+}
+
+.panel {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.section {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.link {
+  color: #007acc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* --- Table Styles --- */
+
+/* General table styling for block and state tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+table th {
+  padding: 8px;
+  border: 1px solid #ddd;
+  width: 20%;
+}
+
+table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  width: 80%;
+}
+
+table th {
+  background: #f8f8f8;
+  color: #333;
+  vertical-align: top; /* Make sure header cells are aligned at the top */
+  text-align: left;
+}
+
+/* Optional: a slightly different style for state tables */
+.stateTable th {
+  background: #e0f7fa;
+}
+
+/* --- Textarea Styles --- */
+textarea {
+  width: 500px;
+}
+
+/* All textareas used for C1..C15 share the class "ta" and take full width */
+.ta {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: monospace;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  resize: vertical;
+}
+
+/* You may define section-specific classes if needed.
+   For now, they inherit from .ta. */
+.ta_c1, .ta_c2, .ta_c3, .ta_c4, .ta_c5,
+.ta_c6, .ta_c7, .ta_c8, .ta_c9, .ta_c10,
+.ta_c11, .ta_c12, .ta_c13, .ta_c14, .ta_c15 {
+  /* Inherit .ta styles */
+  width: 100%;
+}
+
+/* --- Core Panel Styles --- */
+
+#corePanel {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 2px solid #007acc;
+  border-radius: 4px;
+  background: #e7f3ff;
+}
+
+#corePanel div {
+  margin-bottom: 10px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #007acc;
+  border-radius: 3px;
+}
