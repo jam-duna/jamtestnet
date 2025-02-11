@@ -91,12 +91,13 @@ Here is a sample output:
 
 ## Import Blocks 
 
-Based on [JAM0 - JAM Implementers Meetup @ sub0/Devcon 7](https://forum.polkadot.network/t/jam0-jam-implementers-meetup-sub0-devcon-7-bangkok-nov-11-nov-16-2024/10866/1) we built a [importblocks](importblocks) with support for 4 different modes:
+Based on [JAM0 - JAM Implementers Meetup @ sub0/Devcon 7](https://forum.polkadot.network/t/jam0-jam-implementers-meetup-sub0-devcon-7-bangkok-nov-11-nov-16-2024/10866/1) we built the following datasets:
 
-* [fallback](./fallback)
-* [safrole](./safrole)
-* [assurances](./assurances)
-* [orderedaccumulation](./orderedaccumulation)
+* [fallback](./data/fallback)
+* [safrole](./data/safrole)
+* [assurances](./data/assurances)
+* [orderedaccumulation](./data/orderedaccumulation)
+
 
 
 | `mode`                    | `fallback`|   `safrole` | `assurance` | `orderedaccumulation` | 
@@ -109,7 +110,12 @@ Based on [JAM0 - JAM Implementers Meetup @ sub0/Devcon 7](https://forum.polkadot
 | Bootstrap Services        |           |             |     x       |     x      |
 | Ordered Accumulation      |           |             |             |     x      |
 
-The importblocks tool is documented [here](./importblocks).  
+In addition there are _fuzzed_ datasets which include _invalid_ blocks as well
+
+* [fuzzed/assurances](./fuzzed/assurances)
+* [fuzzed/safrole](./fuzzed/safrole)
+
+These can be found in a single [fuzzed.zip](fuzzed.zip).  
 
 ### `fallback`
 
@@ -152,8 +158,8 @@ Dec 2024:
 * state_transitions output with service k,v metadata
 
 Feb 2025:
-* [0.6.1 Traces](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.1.0)
-* [0.6.1 importblocks](importblocks)
+* [0.6.1 Traces](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.1.1)
+* [0.6.1 fuzzed](fuzzed)
 
 ## JAM Implementers
 
