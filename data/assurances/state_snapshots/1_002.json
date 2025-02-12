@@ -189,28 +189,28 @@
     ],
     "beta": [
         {
-            "header_hash": "0xa60178839895579d3014bb0e20b757d620a7a1953051ca9760a87a203e92373c",
+            "header_hash": "0x1cf59fa60570eca782fbffdc700c943496c740dd93d8ebe168bbc5b6f38e117b",
             "mmr": {
                 "peaks": [
                     "0xbc36789e7a1e281436464229828f817d6612f7b477d66591ff96a9e064bcc98a"
                 ]
             },
-            "state_root": "0xb19f74160b2806e1e3ce5050e1064e7eeb98b431b5a0ffbc9af3dbef5b07e874",
+            "state_root": "0x1c3ab5cb6cd40c42915b82f1f0125c65fabbbb99f6f834103ebc19849d84f81d",
             "reported": []
         },
         {
-            "header_hash": "0x62821290be6dc8d3a42939051e8094d6a2f9bb7d690a370ca43d8d9c14470e57",
+            "header_hash": "0x00e6b6f89c3988365ea0454c91e4c0d75de2d7c9d1c33c4a7875bbe259a77ec5",
             "mmr": {
                 "peaks": [
                     null,
                     "0x76468240f08def004986b105ee25af7802c80800390784ca195dedbd55507c8b"
                 ]
             },
-            "state_root": "0xe270cc0d07d825d20e557e476d41a0cf1e454e7e155be709abbd61b0b35e02cb",
+            "state_root": "0x09e05b1e4b6484d2808781bd990d0adc63c3dce222d58141c6b9a004b017b787",
             "reported": []
         },
         {
-            "header_hash": "0x8f2ca0638530c0ce9144fda8bb6030339dc7b9b49cc82f2d6acae63f0e7a1494",
+            "header_hash": "0xade5d877939d00f6968f57981e2edf4b18e5f469c9c86680709155238b25f4e5",
             "mmr": {
                 "peaks": [
                     "0xbc36789e7a1e281436464229828f817d6612f7b477d66591ff96a9e064bcc98a",
@@ -287,20 +287,20 @@
                 "attempt": 2
             },
             {
-                "id": "0x31e9b8070f42d7c9083eca5879e5528191259a395761b8fcc068dcdd36b06be4",
-                "attempt": 1
-            },
-            {
                 "id": "0x39120d5b82981c7f5aba8247925f358afb9539839b61602a0726f51efb35ef4c",
                 "attempt": 0
+            },
+            {
+                "id": "0x665df13fd353ffe92e9bd68ae952f4511681f04bd2ffb9a6da1b1f5f706c53ec",
+                "attempt": 2
             },
             {
                 "id": "0x6b5cc620ed50042cd517ec8267706c82482f07ebcb3c65bfb6288ef5984141a7",
                 "attempt": 1
             },
             {
-                "id": "0xcae8239860ed4bfe4e5643f652f12ff838f40c5af4a05437d113a2f3c3231086",
-                "attempt": 2
+                "id": "0xb0264952cc80e75945e148522d38fc5659bfc73935084cb78a990e3b089872d9",
+                "attempt": 1
             }
         ]
     },
@@ -311,7 +311,7 @@
         "offenders": []
     },
     "eta": [
-        "0xf69027b29d62983c67ee0a5ead0d6439401bb17bc319d5330151341ac872e83b",
+        "0xc591174c9547c23f2987b7d37119182323decaede18273a3fb0c7cbcdc1f5d8e",
         "0x6f6ad2224d7d58aec6573c623ab110700eaca20a48dc2965d535e466d524af2a",
         "0x835ac82bfa2ce8390bb50680d4b7a73dfa2a4cff6d8c30694b24a605f9574eaf",
         "0xd2d34655ebcad804c56d2fd5f932c575b6a5dbb3f5652c5202bcc75ab9c2cc95"
@@ -444,23 +444,7 @@
     "pi": {
         "current": [
             {
-                "blocks": 1,
-                "tickets": 3,
-                "pre_images": 0,
-                "pre_images_size": 0,
-                "guarantees": 0,
-                "assurances": 0
-            },
-            {
                 "blocks": 0,
-                "tickets": 0,
-                "pre_images": 0,
-                "pre_images_size": 0,
-                "guarantees": 0,
-                "assurances": 0
-            },
-            {
-                "blocks": 1,
                 "tickets": 0,
                 "pre_images": 0,
                 "pre_images_size": 0,
@@ -476,8 +460,24 @@
                 "assurances": 0
             },
             {
-                "blocks": 1,
-                "tickets": 3,
+                "blocks": 0,
+                "tickets": 0,
+                "pre_images": 0,
+                "pre_images_size": 0,
+                "guarantees": 0,
+                "assurances": 0
+            },
+            {
+                "blocks": 0,
+                "tickets": 0,
+                "pre_images": 0,
+                "pre_images_size": 0,
+                "guarantees": 0,
+                "assurances": 0
+            },
+            {
+                "blocks": 3,
+                "tickets": 6,
                 "pre_images": 0,
                 "pre_images_size": 0,
                 "guarantees": 0,
@@ -592,7 +592,7 @@
             "work_package_hash": []
         },
         {
-            "work_package_hash": []
+            "work_package_hash": null
         }
     ],
     "service_account": null
