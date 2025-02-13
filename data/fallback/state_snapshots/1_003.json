@@ -192,41 +192,41 @@
             "header_hash": "0x1cf59fa60570eca782fbffdc700c943496c740dd93d8ebe168bbc5b6f38e117b",
             "mmr": {
                 "peaks": [
-                    "0xbc36789e7a1e281436464229828f817d6612f7b477d66591ff96a9e064bcc98a"
+                    "0x0000000000000000000000000000000000000000000000000000000000000000"
                 ]
             },
-            "state_root": "0x1c3ab5cb6cd40c42915b82f1f0125c65fabbbb99f6f834103ebc19849d84f81d",
+            "state_root": "0x183db3e1c166c4a8f4253195586bd80f034a3967dcae1c79585a52111a1e74e8",
             "reported": []
         },
         {
-            "header_hash": "0xba63bbbb1f78fd6a220842d8d5d096f5c6f28bf6e10581a9ec7645863c556606",
+            "header_hash": "0x2a742f6d4b6ea5b193376488bbfe3e5b86bf2feead10790258a9d7cbb72280c6",
             "mmr": {
                 "peaks": [
                     null,
-                    "0x76468240f08def004986b105ee25af7802c80800390784ca195dedbd55507c8b"
+                    "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5"
                 ]
             },
-            "state_root": "0x2079a2567f3a6d5bc8b4bed3cd6ecf84a2dd051dce01063ded37a93b7788dc13",
+            "state_root": "0xc368d34b63eb20b4b8b6f29e29db4fc313060fefa3868384f1888e6d6dbc8cd1",
             "reported": []
         },
         {
-            "header_hash": "0xe19a736bbb2affaf31eb263eba3afacf89540aa88f6204759fe44653ac7d2603",
+            "header_hash": "0x7f315fd7223bfa1552d9f15bb9a157857630ce40ddc3d4a24e2a0b91913f05dd",
             "mmr": {
                 "peaks": [
-                    "0xbc36789e7a1e281436464229828f817d6612f7b477d66591ff96a9e064bcc98a",
-                    "0x76468240f08def004986b105ee25af7802c80800390784ca195dedbd55507c8b"
+                    "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5"
                 ]
             },
-            "state_root": "0x4809d9f81aa6924b69c461ab59e7c9b37b13cfe5b2113e49349c50d46b4b8d11",
+            "state_root": "0xc7a51df8e63eae747a7216e086bb07e17f7b7cfb09c67d31226a5d33acd0a3c1",
             "reported": []
         },
         {
-            "header_hash": "0x75a525f2c1c2361f9e0db910a618613437255859871eff9b036ffe9d9689859a",
+            "header_hash": "0x78e53329690a6865cc6714d9ff832cfda6fb1f88aca811af131da36fc26b1949",
             "mmr": {
                 "peaks": [
                     null,
                     null,
-                    "0xbb1bfb5bfc9ba6ba8e25341a7b70725d8f74121b9e31dd2314e68e27b8d24244"
+                    "0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30"
                 ]
             },
             "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -545,42 +545,50 @@
         []
     ],
     "xi": [
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        },
-        {
-            "work_package_hash": []
-        }
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
     ],
-    "service_account": null
+    "accounts": [
+        {
+            "id": 0,
+            "data": {
+                "service": {
+                    "code_hash": "0x0dc0cb2d76b3296edddf4256bb4b388c4dfa3a9e10c3a6412f00e0150b127601",
+                    "balance": 4294967295,
+                    "min_item_gas": 100,
+                    "min_memo_gas": 100,
+                    "bytes": 269,
+                    "items": 2
+                },
+                "preimages": [
+                    {
+                        "hash": "0x0dc0cb2d76b3296edddf4256bb4b388c4dfa3a9e10c3a6412f00e0150b127601",
+                        "blob": "0x0000000000000000002000ad0000000000809628120000002811000000281d00000028830033073200140a0400fffe00000000330b24330732009511e87b10107b15087b1614070000fffe00000000827820330964330a640a096475140600e0fdfe0000000049067b6704140904e0fdfe00000000330804330a04140700e0fdfe000000000a0333087f9698003309646457646a0a0b3307821010821508821695111832003307320021845400a9240590a4022801240114a42a2915"
+                    }
+                ],
+                "lookup_meta": [
+                    {
+                        "key": {
+                            "hash": "0x0dc0cb2d76b3296edddf4256bb4b388c4dfa3a9e10c3a6412f00e0150b127601",
+                            "length": 32
+                        },
+                        "value": [
+                            0
+                        ]
+                    }
+                ],
+                "storage": null
+            }
+        }
+    ]
 }

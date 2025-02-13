@@ -1,8 +1,8 @@
 {
     "header": {
-        "parent": "0x3a5732907f2f0d08bbecfe6b85d046e526d95e1a41a479918a9d80461dcbc5c1",
-        "parent_state_root": "0xe1eaa3367a56e2c1156e500ca76120b28b9ef826fda2e00260de0e7d8b1d52e5",
-        "extrinsic_hash": "0x9f379116bcd1867be43e4a5439a72c55e5de6aec39518414f12601dcced7643f",
+        "parent": "0xb5534793a6fc41950f8a824e2d92325f154b51f1ee62c7c8394eadab19e7433e",
+        "parent_state_root": "0x8801130ec9fa0b06f59e36d4bd258929b90ab0b254611e258feda6fcf8b8258b",
+        "extrinsic_hash": "0x189d15af832dfe4f67744008b62c334b569fcbb4c261e0f065655697306ca252",
         "slot": 22,
         "epoch_mark": null,
         "tickets_mark": [
@@ -58,55 +58,13 @@
         "offenders_mark": [],
         "author_index": 1,
         "entropy_source": "0x2f1fe0ca6b2b22211b877f7d6461873a4569cbd4a12d6ca1b1c85c1076eec8069d89baca103a4c42d52d21a19149815a0ef70c6c2517ddc4fbd927ff62da1011ce892c0edc10f1d3d5f1ce24ef678efc6d924bc446c9a4d334f1031a6f5ff908",
-        "seal": "0xc7d288c6504d16221e95e01944d05688cb2c69678cafa72e03b7f1df1656170186eafefd9432520b19f7e07551a5c2af475ed424b314b99640b8b5a543af990e3705d99c8df4e89033125d438fc71a2496352dbff7c4aa160c97d5b2abf2f408"
+        "seal": "0xc7d288c6504d16221e95e01944d05688cb2c69678cafa72e03b7f1df16561701c4b392f41fd9e2c0229660aa4de56b7ec64d74ef4394d595c01183c2e7b16308603b0f65165125e10cad3949e09b31f7cc346af5a8a7126ab500a0b66d35ab03"
     },
     "extrinsic": {
         "tickets": [],
-        "preimages": [
-            {
-                "requester": 1608995021,
-                "blob": "0x0000000000000000002000c3000000000080a9281200000028110000002873000000289600330732009511d87b10207b15187b16104811084901641733090c330a053308330b330c0a12015117ff148117048118088119be7808839901280b3307330901330801017a197a18047a1708641533060c641733080c0a13645a646b330782102082151882161095112832009511f07b100846110714090000fffe00000000951707330801330a0c0a03330782100895111032003307320021845492a492aa919454b2a494aa24294900492aa900"
-            }
-        ],
+        "preimages": [],
         "guarantees": [],
-        "assurances": [
-            {
-                "anchor": "0x3a5732907f2f0d08bbecfe6b85d046e526d95e1a41a479918a9d80461dcbc5c1",
-                "bitfield": "0x01",
-                "validator_index": 0,
-                "signature": "0x3efec7f6084f4f46a83ce81a4cba3e0c0e395322a9ba1a9368571a1e57fab1ac9e27237c6f67264f2c71fa5eb8f72285ef46de08ed320be32ecb625ea9537d02"
-            },
-            {
-                "anchor": "0x3a5732907f2f0d08bbecfe6b85d046e526d95e1a41a479918a9d80461dcbc5c1",
-                "bitfield": "0x01",
-                "validator_index": 1,
-                "signature": "0x34ad1daed273a1d9465a5af091a7902a757e0096d08950de083a7335f94bd1fb6fa5b1afc2e807762afef6e6226f924dd6cb01a28fd29e348607072420741608"
-            },
-            {
-                "anchor": "0x3a5732907f2f0d08bbecfe6b85d046e526d95e1a41a479918a9d80461dcbc5c1",
-                "bitfield": "0x01",
-                "validator_index": 2,
-                "signature": "0x61b77b11d0eb0decab116ba3c6229b46a242416e2c463acb6757225a1df065ba19f0ef8060143cdd70752e76815741a7d4743f739c12e575698b4ba45e35a303"
-            },
-            {
-                "anchor": "0x3a5732907f2f0d08bbecfe6b85d046e526d95e1a41a479918a9d80461dcbc5c1",
-                "bitfield": "0x01",
-                "validator_index": 3,
-                "signature": "0xaccc2716ac3f635b18e2bf99e16bfeae6cfa802651461c0b2aa672c6b146fdfb60f5503153dc921b7a0a961cec9e13040c5e5dac9c3aae88352c93c68dcf5f06"
-            },
-            {
-                "anchor": "0x3a5732907f2f0d08bbecfe6b85d046e526d95e1a41a479918a9d80461dcbc5c1",
-                "bitfield": "0x01",
-                "validator_index": 4,
-                "signature": "0xd9888fab2089d3d2d13d34c2a000781ea41bd2fd31ce6d38cbc687179844ef8406b545a33fa28de80263e3f2f653a204099662a4fd4bf41390eedaf622ee7104"
-            },
-            {
-                "anchor": "0x3a5732907f2f0d08bbecfe6b85d046e526d95e1a41a479918a9d80461dcbc5c1",
-                "bitfield": "0x01",
-                "validator_index": 5,
-                "signature": "0x21cbf9d2099bb715f3373b6e5bfe830bcd8153f49b9a6d7d401ba3fbeed18d1b34884cfcac87d2764fbd3a5d8e89a35c94f390de2c24c591da0389e96a261005"
-            }
-        ],
+        "assurances": [],
         "disputes": {
             "verdicts": [],
             "culprits": [],
