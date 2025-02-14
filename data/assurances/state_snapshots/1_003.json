@@ -189,39 +189,39 @@
     ],
     "beta": [
         {
-            "header_hash": "0x6379555e312eda8cce704cbb71753e1797c5485985c1d3fa3210e544e9bb109e",
+            "header_hash": "0x369494b34dcbe353048642d8445c29b98aed634620e98c5c6f0f3462b67df34a",
             "mmr": {
                 "peaks": [
                     "0x0000000000000000000000000000000000000000000000000000000000000000"
                 ]
             },
-            "state_root": "0xb29cbfeed51cacc6eacccc2a5093022e3bf6578f623415299509b95d52891a53",
+            "state_root": "0x202b2e05aad9b237b9c3cfccbadab40c9314adbc6def9b7c1d3b472b2549f5fc",
             "reported": []
         },
         {
-            "header_hash": "0x4f734efe87a5d589858f5d0835503db04939b30badc89b1d90e1561e68aef46b",
+            "header_hash": "0x34910bec3e37738aba653ca2779e45d524d0f5129a5bb0bf4ada171d165adaec",
             "mmr": {
                 "peaks": [
                     null,
                     "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5"
                 ]
             },
-            "state_root": "0xe8e38fa41b9e232f401375148591195218300ec6198a3e1e8d58099ef990a338",
+            "state_root": "0xb235fe500a80167ef5bedf9d49cbb375a1765322889e1670ce68ef70b5ffa3c8",
             "reported": []
         },
         {
-            "header_hash": "0x29cf1062ba16b836bff0e1cb44143616a4b10a8cb3c52b4a924ce4d5b3702c42",
+            "header_hash": "0x1d6850f6ea5974213eb44161ece51e6c67f733cd4946626d94d504c37bda7f7f",
             "mmr": {
                 "peaks": [
                     "0x0000000000000000000000000000000000000000000000000000000000000000",
                     "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5"
                 ]
             },
-            "state_root": "0x20cb3a6714238887b74e567fd5fa3d6853cd2dc4e2775f420767e6cb92805301",
+            "state_root": "0xea488eacc9213eced6122a93624b67a39692560526c35eb5f40bc88727eec088",
             "reported": []
         },
         {
-            "header_hash": "0xbe8b86073717dd6f86c921e458e159cf3605bc321196fc4e3c0dbf1975f82817",
+            "header_hash": "0xf9fa62e5ee126c28df62ab5e3e7d4ceea4eb83e4c3ce881e03cf33609dedf252",
             "mmr": {
                 "peaks": [
                     null,
@@ -232,7 +232,7 @@
             "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
             "reported": [
                 {
-                    "work_package_hash": "0xc508232eabb9abae940db4256c55979045e6e3696604866a3593330a42994c9e",
+                    "work_package_hash": "0xedd82bdb1845cde1e5511b67b76d3f93e54ee22407d3b5efa23982c183cc31e2",
                     "segment_tree_root": "0x0755153d7ce051838a3199f8960f221a867335ad3fa0fbe0a93f9ac0dd95f46f"
                 }
             ]
@@ -316,6 +316,10 @@
                 "attempt": 1
             },
             {
+                "id": "0x31e9b8070f42d7c9083eca5879e5528191259a395761b8fcc068dcdd36b06be4",
+                "attempt": 1
+            },
+            {
                 "id": "0x39120d5b82981c7f5aba8247925f358afb9539839b61602a0726f51efb35ef4c",
                 "attempt": 0
             },
@@ -326,10 +330,6 @@
             {
                 "id": "0x39f7d99b86f90cada4aa3b08adfe310024813fca0bdcdff944873a2cc2e47074",
                 "attempt": 1
-            },
-            {
-                "id": "0x665df13fd353ffe92e9bd68ae952f4511681f04bd2ffb9a6da1b1f5f706c53ec",
-                "attempt": 2
             }
         ]
     },
@@ -463,17 +463,17 @@
         {
             "report": {
                 "package_spec": {
-                    "hash": "0xc508232eabb9abae940db4256c55979045e6e3696604866a3593330a42994c9e",
+                    "hash": "0xedd82bdb1845cde1e5511b67b76d3f93e54ee22407d3b5efa23982c183cc31e2",
                     "length": 270,
-                    "erasure_root": "0x74e1f908a479747d2abdf0205e957a90b7e4853be31a4cb51d1f4141fdc445e1",
+                    "erasure_root": "0x4cf484ee2e9418a3d9fcbb0caed3eeab716421387d177e8bf343f65aa1d04f26",
                     "exports_root": "0x0755153d7ce051838a3199f8960f221a867335ad3fa0fbe0a93f9ac0dd95f46f",
                     "exports_count": 0
                 },
                 "context": {
-                    "anchor": "0x6379555e312eda8cce704cbb71753e1797c5485985c1d3fa3210e544e9bb109e",
-                    "state_root": "0xb29cbfeed51cacc6eacccc2a5093022e3bf6578f623415299509b95d52891a53",
+                    "anchor": "0x369494b34dcbe353048642d8445c29b98aed634620e98c5c6f0f3462b67df34a",
+                    "state_root": "0x202b2e05aad9b237b9c3cfccbadab40c9314adbc6def9b7c1d3b472b2549f5fc",
                     "beefy_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
-                    "lookup_anchor": "0x4f734efe87a5d589858f5d0835503db04939b30badc89b1d90e1561e68aef46b",
+                    "lookup_anchor": "0x34910bec3e37738aba653ca2779e45d524d0f5129a5bb0bf4ada171d165adaec",
                     "lookup_anchor_slot": 13,
                     "prerequisites": []
                 },
@@ -519,7 +519,7 @@
                 "tickets": 0,
                 "pre_images": 0,
                 "pre_images_size": 0,
-                "guarantees": 0,
+                "guarantees": 1,
                 "assurances": 0
             },
             {
@@ -527,7 +527,7 @@
                 "tickets": 0,
                 "pre_images": 0,
                 "pre_images_size": 0,
-                "guarantees": 0,
+                "guarantees": 1,
                 "assurances": 0
             },
             {
@@ -535,7 +535,7 @@
                 "tickets": 0,
                 "pre_images": 0,
                 "pre_images_size": 0,
-                "guarantees": 0,
+                "guarantees": 1,
                 "assurances": 0
             },
             {
@@ -551,7 +551,7 @@
                 "tickets": 3,
                 "pre_images": 0,
                 "pre_images_size": 0,
-                "guarantees": 1,
+                "guarantees": 0,
                 "assurances": 0
             }
         ],
@@ -640,10 +640,10 @@
             "data": {
                 "service": {
                     "code_hash": "0x0dc0cb2d76b3296edddf4256bb4b388c4dfa3a9e10c3a6412f00e0150b127601",
-                    "balance": 4294967295,
+                    "balance": 10000000000,
                     "min_item_gas": 100,
                     "min_memo_gas": 100,
-                    "bytes": 301,
+                    "bytes": 269,
                     "items": 2
                 },
                 "preimages": [
