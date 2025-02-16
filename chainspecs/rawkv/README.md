@@ -9,12 +9,12 @@
 
 ```asn1
 StateData ::= SEQUENCE {
-    key_val  SEQUENCE OF KeyValuePair,
+    keyval   SEQUENCE OF KeyValuePair,
     stateroot OCTET STRING (SIZE(32))
 }
 
 KeyValuePair ::= SEQUENCE {
-    key   OCTET STRING,
+    key   OCTET STRING (SIZE(32)),
     value OCTET STRING
 }
 ```
