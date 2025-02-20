@@ -1,26 +1,21 @@
 // db.ts
 import Dexie from "dexie";
 
-// Define interfaces for your stored records.
+// Define interfaces for stored records.
 export interface BlockRecord {
-  id?: number; // auto-increment primary key
-  headerHash: string;
+  id?: number;
+  blockHash: string; // Full block hash (e.g. fetchedBlock.hash)
+  headerHash: string; // Header hash (e.g. fetchedBlock.header.extrinsic_hash)
   slot: number;
-  parent: string;
-  authorIndex: number;
-  seal: string;
-  entropySource: string;
+  rawData: any; // The full fetchedBlock object
 }
 
 export interface StateRecord {
   id?: number;
-  bandersnatch: string;
-  ed25519: string;
-  bls: string;
-  metadata: string;
+  blockHash: string; // Common identifier linking this state to the block
+  rawData: any; // The full state data (could be an object or array)
 }
 
-// Create a Dexie database instance.
 export class JamDB extends Dexie {
   public blocks!: Dexie.Table<BlockRecord, number>;
   public states!: Dexie.Table<StateRecord, number>;
@@ -28,8 +23,8 @@ export class JamDB extends Dexie {
   constructor() {
     super("JamDB");
     this.version(1).stores({
-      blocks: "++id, headerHash, slot, parent",
-      states: "++id, bandersnatch",
+      blocks: "++id, blockHash, headerHash, slot",
+      states: "++id, blockHash",
     });
   }
 }

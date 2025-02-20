@@ -15,18 +15,10 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import EndpointDrawer from "../components/home/EndpointDrawer"; // Adjust path as needed
-import { db } from "../../db"; // Import Dexie database
+import { db, BlockRecord, StateRecord } from "../../db"; // Import Dexie database
 
 const defaultRpcUrl = "http://localhost:9999/rpc";
 const defaultWsUrl = "ws://localhost:9999/ws";
-
-// Define TypeScript interfaces for our sample data (for UI display)
-interface Block {
-  id: number;
-  hash: string;
-  timestamp: string;
-  transactions: number;
-}
 
 interface Transaction {
   id: number;
@@ -36,28 +28,6 @@ interface Transaction {
   amount: string;
   timestamp: string;
 }
-
-// Sample data for latest blocks and transactions (for UI display)
-const sampleBlocks: Block[] = [
-  {
-    id: 16724371,
-    hash: "0xabc123...",
-    timestamp: "2025-02-19 10:00",
-    transactions: 25,
-  },
-  {
-    id: 16724370,
-    hash: "0xdef456...",
-    timestamp: "2025-02-19 09:55",
-    transactions: 30,
-  },
-  {
-    id: 16724369,
-    hash: "0xghi789...",
-    timestamp: "2025-02-19 09:50",
-    transactions: 20,
-  },
-];
 
 const sampleTransactions: Transaction[] = [
   {
@@ -87,23 +57,17 @@ const sampleTransactions: Transaction[] = [
 ];
 
 export default function HomePage() {
-  // State to store fetched block and state data from RPC calls.
   const [block, setBlock] = useState<any>(null);
   const [state, setState] = useState<any>(null);
-
-  // State to manage WebSocket endpoint. Initially set to default.
   const [wsEndpoint, setWsEndpoint] = useState<string>(defaultWsUrl);
-
-  // State to store saved endpoints from successful custom connections.
   const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
+  const [latestBlocks, setLatestBlocks] = useState<BlockRecord[]>([]);
 
-  // Effect that creates a new WebSocket whenever wsEndpoint changes.
   useEffect(() => {
     const ws = new WebSocket(wsEndpoint);
 
     ws.onopen = () => {
       console.log("WebSocket connected to:", wsEndpoint);
-      // If this is a custom endpoint (different from default) and not already saved, add it.
       setSavedEndpoints((prev) => {
         if (wsEndpoint !== defaultWsUrl && !prev.includes(wsEndpoint)) {
           console.log("Saving new endpoint to list:", wsEndpoint);
@@ -119,7 +83,9 @@ export default function HomePage() {
         const msg = JSON.parse(event.data);
         console.log("Parsed WebSocket message:", msg);
         if (msg.method === "BlockAnnouncement" && msg.result) {
-          const headerHash = msg.result.headerHash;
+          const { headerHash, blockHash } = msg.result;
+          console.log(msg.result);
+
           const fetchedBlock = await fetchBlock(headerHash);
           const fetchedState = await fetchState(headerHash);
           console.log("Fetched Block:", fetchedBlock);
@@ -127,18 +93,17 @@ export default function HomePage() {
           setBlock(fetchedBlock);
           setState(fetchedState);
 
-          // Save block data using properties from the 'header' object.
+          // Save the whole fetchedBlock into IndexedDB.
           if (fetchedBlock && fetchedBlock.header) {
             const header = fetchedBlock.header;
+            const blockRecord: BlockRecord = {
+              blockHash: blockHash, // full block hash
+              headerHash: headerHash, // header hash
+              slot: header.slot,
+              rawData: fetchedBlock, // store the complete block data
+            };
             await db.blocks
-              .put({
-                headerHash: header.extrinsic_hash,
-                slot: header.slot,
-                parent: header.parent,
-                authorIndex: header.author_index,
-                seal: header.seal,
-                entropySource: header.entropy_source,
-              })
+              .put(blockRecord)
               .then((key) => {
                 console.log("Block successfully saved with key:", key);
               })
@@ -148,16 +113,16 @@ export default function HomePage() {
           } else {
             console.warn("No valid block header to save.");
           }
-          // Save state data: fetchedState is expected to be an array.
+
+          // Save state data if fetchedState is an array.
           if (Array.isArray(fetchedState)) {
             for (const stateRecord of fetchedState) {
+              const stateRec: StateRecord = {
+                blockHash: blockHash, // Link state to the block via blockHash
+                rawData: stateRecord,
+              };
               await db.states
-                .put({
-                  bandersnatch: stateRecord.bandersnatch,
-                  ed25519: stateRecord.ed25519,
-                  bls: stateRecord.bls,
-                  metadata: stateRecord.metadata,
-                })
+                .put(stateRec)
                 .then((key) => {
                   console.log("State record successfully saved with key:", key);
                 })
@@ -179,6 +144,20 @@ export default function HomePage() {
 
     return () => ws.close();
   }, [wsEndpoint]);
+
+  // Effect: Load latest blocks from IndexedDB whenever a new block is saved.
+  useEffect(() => {
+    db.blocks
+      .toArray()
+      .then((blocks) => {
+        const sorted = blocks.sort((a, b) => b.slot - a.slot);
+        setLatestBlocks(sorted);
+        console.log("Latest blocks loaded from DB:", sorted);
+      })
+      .catch((error) => {
+        console.error("Error loading blocks from DB:", error);
+      });
+  }, [block]);
 
   async function fetchBlock(blockHash: string) {
     const payload = {
@@ -217,6 +196,21 @@ export default function HomePage() {
     } catch (err) {
       console.error("Error fetching state:", err);
       return null;
+    }
+  }
+
+  // Example function to retrieve the state records for a given block based on blockHash.
+  async function getStateForBlock(blockRecord: BlockRecord) {
+    try {
+      const stateRecords = await db.states
+        .where("blockHash")
+        .equals(blockRecord.blockHash)
+        .toArray();
+      console.log("State records for block:", stateRecords);
+      return stateRecords;
+    } catch (error) {
+      console.error("Error retrieving state record:", error);
+      return [];
     }
   }
 
@@ -267,31 +261,28 @@ export default function HomePage() {
         </Paper>
 
         <Grid container spacing={4}>
-          {/* 3. Latest Blocks */}
+          {/* 3. Latest Blocks (from IndexedDB) */}
           <Grid item xs={12} md={6}>
             <Paper sx={{ p: 2 }}>
               <Typography variant="h5" gutterBottom>
-                Latest Blocks
+                Latest Blocks (IndexedDB)
               </Typography>
-              {sampleBlocks.map((blockItem) => (
+              {latestBlocks.map((blockItem) => (
                 <Link
                   key={blockItem.id}
-                  href={`/block/${blockItem.id}`}
+                  href={`/block/${blockItem.blockHash}`}
                   style={{ textDecoration: "none" }}
                 >
                   <Card sx={{ mb: 2, cursor: "pointer" }}>
                     <CardContent>
                       <Typography variant="subtitle1">
-                        Block #{blockItem.id}
+                        Slot: {blockItem.slot}
                       </Typography>
                       <Typography variant="body2" color="textSecondary">
-                        Hash: {blockItem.hash}
+                        Block Hash: {blockItem.blockHash}
                       </Typography>
                       <Typography variant="body2" color="textSecondary">
-                        Time: {blockItem.timestamp}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary">
-                        Transactions: {blockItem.transactions}
+                        Header Hash: {blockItem.headerHash}
                       </Typography>
                     </CardContent>
                   </Card>
@@ -300,7 +291,7 @@ export default function HomePage() {
             </Paper>
           </Grid>
 
-          {/* 4. Latest Transactions */}
+          {/* 4. Latest Transactions (sample data) */}
           <Grid item xs={12} md={6}>
             <Paper sx={{ p: 2 }}>
               <Typography variant="h5" gutterBottom>
