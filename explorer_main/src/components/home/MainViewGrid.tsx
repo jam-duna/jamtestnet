@@ -11,13 +11,14 @@ import {
   TableRow,
   Paper,
   Typography,
-  Button,
 } from "@mui/material";
 import { truncateHash } from "@/utils/helper";
 
+// Extend SquareContent to include headerHash.
 export interface SquareContent {
   serviceName: string;
   workPackageHash: string;
+  headerHash?: string;
   isBusy: boolean;
 }
 
@@ -26,7 +27,7 @@ export interface MainViewGridProps {
   timeslots: number[];
   /** Sorted list of cores (rows). */
   cores: number[];
-  /** data[coreIndex][timeslot] = { serviceName, workPackageHash, isBusy } */
+  /** data[coreIndex][timeslot] = { serviceName, workPackageHash, headerHash, isBusy } */
   data: Record<number, Record<number, SquareContent>>;
 }
 
@@ -131,13 +132,48 @@ export default function MainViewGrid({
                         wordBreak: "break-all",
                       }}
                     >
-                      <Typography variant="body2">
-                        {cell?.serviceName || ""}
-                      </Typography>
-                      <Typography variant="body2">
-                        {truncateHash(cell?.workPackageHash) ||
-                          "No Work Package"}
-                      </Typography>
+                      {/* Service ID clickable */}
+                      {cell?.serviceName ? (
+                        <Typography
+                          variant="body2"
+                          onClick={() =>
+                            router.push(`/service/${cell.serviceName}`)
+                          }
+                          sx={{
+                            textDecoration: "underline",
+                            cursor: "pointer",
+                          }}
+                        >
+                          {cell.serviceName}
+                        </Typography>
+                      ) : (
+                        <Typography variant="body2">
+                          {cell?.serviceName || ""}
+                        </Typography>
+                      )}
+                      {/* Work Package Hash clickable */}
+                      {cell?.workPackageHash.length > 1 && cell?.headerHash ? (
+                        <Typography
+                          variant="body2"
+                          onClick={() =>
+                            router.push(
+                              `/block/${cell.headerHash}/workReport/${cell.workPackageHash}`
+                            )
+                          }
+                          sx={{
+                            textDecoration: "underline",
+                            cursor: "pointer",
+                          }}
+                        >
+                          {truncateHash(cell.workPackageHash)}
+                        </Typography>
+                      ) : (
+                        <Typography variant="body2">
+                          {cell?.workPackageHash.length > 1
+                            ? truncateHash(cell.workPackageHash)
+                            : "No Work Package"}
+                        </Typography>
+                      )}
                     </TableCell>
                   );
                 })}

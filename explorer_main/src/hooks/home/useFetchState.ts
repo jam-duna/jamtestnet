@@ -1,8 +1,9 @@
 export async function fetchState(hash: string, rpcUrl: string): Promise<any> {
+  console.log("fetching state for hash: ", hash);
   const payload = {
     jsonrpc: "2.0",
     id: 2,
-    method: "jam_getState",
+    method: "jam.GetState",
     params: [hash],
   };
   try {

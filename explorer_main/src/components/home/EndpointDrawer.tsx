@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Drawer,
@@ -27,6 +27,7 @@ export default function EndpointDrawer({
   wsEndpoint,
   setWsEndpoint,
   savedEndpoints,
+  setSavedEndpoints,
 }: EndpointDrawerProps) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [showCustomInput, setShowCustomInput] = useState<boolean>(false);
@@ -34,15 +35,44 @@ export default function EndpointDrawer({
 
   const defaultWsUrl = "ws://localhost:9999/ws";
 
+  // On mount, retrieve stored values
+  useEffect(() => {
+    const storedEndpoint = localStorage.getItem("customWsEndpoint");
+    if (storedEndpoint) {
+      setWsEndpoint(storedEndpoint);
+    } else {
+      setWsEndpoint(defaultWsUrl);
+    }
+    const storedEndpoints = localStorage.getItem("savedWsEndpoints");
+    if (storedEndpoints) {
+      try {
+        const endpointsArray = JSON.parse(storedEndpoints) as string[];
+        setSavedEndpoints(endpointsArray);
+      } catch (e) {
+        console.error("Error parsing saved endpoints:", e);
+      }
+    }
+  }, [setWsEndpoint, setSavedEndpoints]);
+
   const handleToggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
-  // Handler for saving a custom endpoint.
   const handleSaveCustomEndpoint = () => {
     if (customEndpoint.trim() !== "") {
       const newEndpoint = customEndpoint.trim();
+      console.log("Switching to the new endpoint", newEndpoint);
       setWsEndpoint(newEndpoint);
+      // Only add if it is not already saved.
+      setSavedEndpoints((prev) => {
+        const updated = prev.includes(newEndpoint)
+          ? prev
+          : [...prev, newEndpoint];
+        localStorage.setItem("savedWsEndpoints", JSON.stringify(updated));
+        return updated;
+      });
+      // Also persist the currently used endpoint
+      localStorage.setItem("customWsEndpoint", newEndpoint);
       setMenuOpen(false);
       setShowCustomInput(false);
       setCustomEndpoint(""); // Clear input after saving.
@@ -51,7 +81,7 @@ export default function EndpointDrawer({
 
   return (
     <>
-      {/* Hamburger Menu Icon (toggles open/close) */}
+      {/* Hamburger Menu Icon */}
       <Box sx={{ position: "fixed", top: 16, left: 16, zIndex: 1300 }}>
         <IconButton onClick={handleToggleMenu}>
           {menuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -60,7 +90,6 @@ export default function EndpointDrawer({
 
       <Drawer anchor="left" open={menuOpen} onClose={() => setMenuOpen(false)}>
         <Paper variant="outlined" sx={{ width: 250, p: 2, mt: 10 }}>
-          {/* Place "Menu" title with margin so it doesn't overlap */}
           <Typography variant="h6" sx={{ ml: 1, mb: 2 }}>
             Menu
           </Typography>
@@ -97,7 +126,7 @@ export default function EndpointDrawer({
             <Box sx={{ mt: 2 }}>
               <TextField
                 fullWidth
-                label="Custom WS Endpoint"
+                label="Custom Endpoint"
                 value={customEndpoint}
                 onChange={(e) => setCustomEndpoint(e.target.value)}
               />
@@ -109,39 +138,37 @@ export default function EndpointDrawer({
               >
                 Save
               </Button>
-              {savedEndpoints.length > 0 && (
-                <Box sx={{ mt: 2 }}>
-                  <Typography variant="subtitle2" gutterBottom>
-                    Saved Endpoints
-                  </Typography>
-                  <List>
-                    {savedEndpoints.map((endpoint) => (
-                      <ListItemButton
-                        key={endpoint}
-                        onClick={() => {
-                          setWsEndpoint(endpoint);
-                          setMenuOpen(false);
-                          setShowCustomInput(false);
-                        }}
-                        sx={{
-                          backgroundColor:
-                            endpoint === wsEndpoint
-                              ? "primary.light"
-                              : "inherit",
-                          mb: 0.5,
-                        }}
-                      >
-                        <ListItemText primary={endpoint} />
-                      </ListItemButton>
-                    ))}
-                  </List>
-                </Box>
-              )}
+            </Box>
+          )}
+          {/* Always render saved endpoints list */}
+          {savedEndpoints.length > 0 && (
+            <Box sx={{ mt: 2 }}>
+              <Typography variant="subtitle2" gutterBottom>
+                Saved Endpoints
+              </Typography>
+              <List>
+                {savedEndpoints.map((endpoint) => (
+                  <ListItemButton
+                    key={endpoint}
+                    onClick={() => {
+                      setWsEndpoint(endpoint);
+                      setMenuOpen(false);
+                      setShowCustomInput(false);
+                    }}
+                    sx={{
+                      backgroundColor:
+                        endpoint === wsEndpoint ? "primary.light" : "inherit",
+                      mb: 0.5,
+                    }}
+                  >
+                    <ListItemText primary={endpoint} />
+                  </ListItemButton>
+                ))}
+              </List>
             </Box>
           )}
         </Paper>
         <Paper variant="outlined" sx={{ width: 250, p: 2 }}>
-          {/* Place "Menu" title with margin so it doesn't overlap */}
           <Typography variant="h6" sx={{ ml: 1, mb: 2 }}>
             Codec
           </Typography>
