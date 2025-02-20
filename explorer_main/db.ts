@@ -5,14 +5,19 @@ import Dexie from "dexie";
 export interface BlockRecord {
   id?: number; // auto-increment primary key
   headerHash: string;
-  timestamp: string;
-  transactions: number;
+  slot: number;
+  parent: string;
+  authorIndex: number;
+  seal: string;
+  entropySource: string;
 }
 
 export interface StateRecord {
   id?: number;
-  headerHash: string;
-  // Add other state properties as needed.
+  bandersnatch: string;
+  ed25519: string;
+  bls: string;
+  metadata: string;
 }
 
 // Create a Dexie database instance.
@@ -23,8 +28,8 @@ export class JamDB extends Dexie {
   constructor() {
     super("JamDB");
     this.version(1).stores({
-      blocks: "++id, headerHash, timestamp",
-      states: "++id, headerHash",
+      blocks: "++id, headerHash, slot, parent",
+      states: "++id, bandersnatch",
     });
   }
 }

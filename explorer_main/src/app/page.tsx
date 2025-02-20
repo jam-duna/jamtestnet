@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import EndpointDrawer from "../components/home/EndpointDrawer"; // Adjust path as needed
-import { db } from "../../db"; // Import our Dexie database
+import { db } from "../../db"; // Import Dexie database
 
 const defaultRpcUrl = "http://localhost:9999/rpc";
 const defaultWsUrl = "ws://localhost:9999/ws";
@@ -106,6 +106,7 @@ export default function HomePage() {
       // If this is a custom endpoint (different from default) and not already saved, add it.
       setSavedEndpoints((prev) => {
         if (wsEndpoint !== defaultWsUrl && !prev.includes(wsEndpoint)) {
+          console.log("Saving new endpoint to list:", wsEndpoint);
           return [...prev, wsEndpoint];
         }
         return prev;
@@ -119,7 +120,6 @@ export default function HomePage() {
         console.log("Parsed WebSocket message:", msg);
         if (msg.method === "BlockAnnouncement" && msg.result) {
           const headerHash = msg.result.headerHash;
-
           const fetchedBlock = await fetchBlock(headerHash);
           const fetchedState = await fetchState(headerHash);
           console.log("Fetched Block:", fetchedBlock);
@@ -127,26 +127,46 @@ export default function HomePage() {
           setBlock(fetchedBlock);
           setState(fetchedState);
 
-          console.log(Object.keys(fetchedBlock).length !== 0);
-          console.log(Object.keys(fetchedState).length !== 0);
-
-          // Save to IndexedDB via Dexie:
-          if (Object.keys(fetchedBlock).length !== 0) {
-            await db.blocks.put({
-              headerHash: fetchedBlock.result.headerHash,
-              timestamp: fetchedBlock.result.timestamp,
-              transactions: fetchedBlock.result.transactions,
-            });
-
-            console.log("fetchedBlock is saved to IndexedDB");
+          // Save block data using properties from the 'header' object.
+          if (fetchedBlock && fetchedBlock.header) {
+            const header = fetchedBlock.header;
+            await db.blocks
+              .put({
+                headerHash: header.extrinsic_hash,
+                slot: header.slot,
+                parent: header.parent,
+                authorIndex: header.author_index,
+                seal: header.seal,
+                entropySource: header.entropy_source,
+              })
+              .then((key) => {
+                console.log("Block successfully saved with key:", key);
+              })
+              .catch((error) => {
+                console.error("Error saving block:", error);
+              });
+          } else {
+            console.warn("No valid block header to save.");
           }
-          if (Object.keys(fetchedState).length !== 0) {
-            await db.states.put({
-              headerHash: fetchedState.result.headerHash,
-              // Add any additional state fields here.
-            });
-
-            console.log("fetchedState is saved to IndexedDB");
+          // Save state data: fetchedState is expected to be an array.
+          if (Array.isArray(fetchedState)) {
+            for (const stateRecord of fetchedState) {
+              await db.states
+                .put({
+                  bandersnatch: stateRecord.bandersnatch,
+                  ed25519: stateRecord.ed25519,
+                  bls: stateRecord.bls,
+                  metadata: stateRecord.metadata,
+                })
+                .then((key) => {
+                  console.log("State record successfully saved with key:", key);
+                })
+                .catch((error) => {
+                  console.error("Error saving state record:", error);
+                });
+            }
+          } else {
+            console.warn("Fetched state is not an array; nothing to save.");
           }
         }
       } catch (error) {
