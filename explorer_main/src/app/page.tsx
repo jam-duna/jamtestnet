@@ -57,12 +57,20 @@ const sampleTransactions: Transaction[] = [
 ];
 
 export default function HomePage() {
+  // State to store fetched block and state data from RPC calls.
   const [block, setBlock] = useState<any>(null);
   const [state, setState] = useState<any>(null);
+
+  // State to manage WebSocket endpoint. Initially set to default.
   const [wsEndpoint, setWsEndpoint] = useState<string>(defaultWsUrl);
+
+  // State to store saved endpoints from custom connections.
   const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
+
+  // State to hold latest blocks loaded from IndexedDB.
   const [latestBlocks, setLatestBlocks] = useState<BlockRecord[]>([]);
 
+  // Effect: Create a new WebSocket whenever wsEndpoint changes.
   useEffect(() => {
     const ws = new WebSocket(wsEndpoint);
 
@@ -83,9 +91,7 @@ export default function HomePage() {
         const msg = JSON.parse(event.data);
         console.log("Parsed WebSocket message:", msg);
         if (msg.method === "BlockAnnouncement" && msg.result) {
-          const { headerHash, blockHash } = msg.result;
-          console.log(msg.result);
-
+          const headerHash = msg.result.headerHash;
           const fetchedBlock = await fetchBlock(headerHash);
           const fetchedState = await fetchState(headerHash);
           console.log("Fetched Block:", fetchedBlock);
@@ -97,8 +103,8 @@ export default function HomePage() {
           if (fetchedBlock && fetchedBlock.header) {
             const header = fetchedBlock.header;
             const blockRecord: BlockRecord = {
-              blockHash: blockHash, // full block hash
-              headerHash: headerHash, // header hash
+              blockHash: fetchedBlock.hash, // full block hash
+              headerHash: header.extrinsic_hash, // header hash
               slot: header.slot,
               rawData: fetchedBlock, // store the complete block data
             };
@@ -118,7 +124,7 @@ export default function HomePage() {
           if (Array.isArray(fetchedState)) {
             for (const stateRecord of fetchedState) {
               const stateRec: StateRecord = {
-                blockHash: blockHash, // Link state to the block via blockHash
+                blockHash: fetchedBlock?.hash, // common identifier linking state to block
                 rawData: stateRecord,
               };
               await db.states
@@ -278,9 +284,7 @@ export default function HomePage() {
                       <Typography variant="subtitle1">
                         Slot: {blockItem.slot}
                       </Typography>
-                      <Typography variant="body2" color="textSecondary">
-                        Block Hash: {blockItem.blockHash}
-                      </Typography>
+
                       <Typography variant="body2" color="textSecondary">
                         Header Hash: {blockItem.headerHash}
                       </Typography>
@@ -291,41 +295,35 @@ export default function HomePage() {
             </Paper>
           </Grid>
 
-          {/* 4. Latest Transactions (sample data) */}
+          {/* 4. Latest Extrinsics (from IndexedDB) */}
           <Grid item xs={12} md={6}>
             <Paper sx={{ p: 2 }}>
               <Typography variant="h5" gutterBottom>
-                Latest Transactions
+                Latest Extrinsics (IndexedDB)
               </Typography>
-              {sampleTransactions.map((tx) => (
-                <Card key={tx.id} sx={{ mb: 2 }}>
-                  <CardContent>
-                    <Link
-                      href={`/transaction/${tx.hash}`}
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      <Typography
-                        variant="subtitle1"
-                        sx={{ cursor: "pointer" }}
-                      >
-                        Tx Hash: {tx.hash}
+              {latestBlocks.map((blockItem) => {
+                // Ensure rawData exists and contains an extrinsic object.
+                const raw = blockItem.rawData;
+                const guaranteesCount =
+                  raw &&
+                  raw.extrinsic &&
+                  Array.isArray(raw.extrinsic.guarantees)
+                    ? raw.extrinsic.guarantees.length
+                    : 0;
+                return (
+                  <Card key={blockItem.id} sx={{ mb: 2, cursor: "pointer" }}>
+                    <CardContent>
+                      <Typography variant="subtitle1">
+                        Guarantees Count: {guaranteesCount}
                       </Typography>
-                    </Link>
-                    <Typography variant="body2" color="textSecondary">
-                      From: {tx.from}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      To: {tx.to}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      Amount: {tx.amount}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      Time: {tx.timestamp}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              ))}
+                      <Typography variant="body2" color="textSecondary">
+                        Header Hash:{" "}
+                        {raw && raw.header ? raw.header.extrinsic_hash : "N/A"}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </Paper>
           </Grid>
         </Grid>
