@@ -199,29 +199,29 @@
             "reported": []
         },
         {
-            "header_hash": "0x328b6da00ec28a0f960f44341e13d9a72b0a61e23a307f8e6c96ce8c90fa832b",
+            "header_hash": "0xcf92a43a6d752fcf89b85995b5da01f321fccd299ee7ef1f864fac323f690c24",
             "mmr": {
                 "peaks": [
                     null,
                     "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5"
                 ]
             },
-            "state_root": "0xd8bde161fc2754b90d8dac8615bcaaab30d2be6a253efd9d2e9d9c423f64a21f",
+            "state_root": "0xd6ba408133afd62df9e840f76196b65bb0fec9f285eead0d2f464392f4d0724f",
             "reported": []
         },
         {
-            "header_hash": "0x3b529e31e62e13fbe9e9378e416924e67f8f44237a69d221910d1fefe6284795",
+            "header_hash": "0x01c8d15fc42ccfe4fcff92312709739cf7c49dceebcb942093a9264ff88686c3",
             "mmr": {
                 "peaks": [
                     "0x0000000000000000000000000000000000000000000000000000000000000000",
                     "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5"
                 ]
             },
-            "state_root": "0x5c0fe74fb31eb14347b375b1a5abc11138ebfa1fc60f1c7692de00937fd659b6",
+            "state_root": "0xde7ed321727eb7677266ab901469b25a2831ea9c1f9f47f0ac38901da80b5517",
             "reported": []
         },
         {
-            "header_hash": "0xacabf7b457593120931e375a9f053844307519e3f254bf417a8a1a3740df861e",
+            "header_hash": "0xb98762f53f5a1d3810e83c0384b830691223828112ab004a87491ffd3e9e6c60",
             "mmr": {
                 "peaks": [
                     null,
@@ -232,8 +232,8 @@
             "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
             "reported": [
                 {
-                    "work_package_hash": "0x03c35a1cd3155650eb77102ab65c52dc5cee098ca289ba01b32e58f080b0ca36",
-                    "segment_tree_root": "0xc1b82518e84514468ca20015d55f631477f56a0abb1a7ba5a33b7c4a87160990"
+                    "work_package_hash": "0xbe5121a06446e2ed0599d7685d2643c28612f8c92802b742cee9a5260a9ed65d",
+                    "segment_tree_root": "0x7ca224a2bb30d16fdaaa71dca715ab90e06264813495928b61e06f4657b4da08"
                 }
             ]
         }
@@ -463,17 +463,17 @@
         {
             "report": {
                 "package_spec": {
-                    "hash": "0x03c35a1cd3155650eb77102ab65c52dc5cee098ca289ba01b32e58f080b0ca36",
+                    "hash": "0xbe5121a06446e2ed0599d7685d2643c28612f8c92802b742cee9a5260a9ed65d",
                     "length": 270,
-                    "erasure_root": "0xe1bf48b46ed46a7720cdb7652f350d5606f4fc4eef61740d54b0be6a38aecd2f",
-                    "exports_root": "0xc1b82518e84514468ca20015d55f631477f56a0abb1a7ba5a33b7c4a87160990",
+                    "erasure_root": "0x3d486355f3dcba551560b44e8d2a554ffea7e1707156a1e37caaa0f276e064d8",
+                    "exports_root": "0x7ca224a2bb30d16fdaaa71dca715ab90e06264813495928b61e06f4657b4da08",
                     "exports_count": 0
                 },
                 "context": {
                     "anchor": "0x74b0eec319f23f9b82d832b383db9dd1b98dc3cad33c954bc9ee523a7b4d727d",
                     "state_root": "0x79379112c6dd2f917c77d0def7be01b49f0c5ba3dcc2efc894e6a8041f5a591c",
                     "beefy_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
-                    "lookup_anchor": "0x328b6da00ec28a0f960f44341e13d9a72b0a61e23a307f8e6c96ce8c90fa832b",
+                    "lookup_anchor": "0xcf92a43a6d752fcf89b85995b5da01f321fccd299ee7ef1f864fac323f690c24",
                     "lookup_anchor_slot": 13,
                     "prerequisites": []
                 },
@@ -485,10 +485,10 @@
                     {
                         "service_id": 0,
                         "code_hash": "0xc59ad4bb48495b05ac96c2cc643792bc491b5cf74b544f641bf0bc1941b71c0e",
-                        "payload_hash": "0xa4e5ca5e24a6023d590287f4877426e997c5b60084f41e9da771f0c62ce1e531",
+                        "payload_hash": "0x68f6c6f8a908728b566d5a5daafebcbc7448e4dfc8406f65479d9023ea929096",
                         "accumulate_gas": 101,
                         "result": {
-                            "ok": "0xa0e7e79c2467fd18c929e0fc6027be12a5658d74f4f02183689db5864a3c54f406040000"
+                            "ok": "0x4179b30a5fd2b08331055ccf168cadb76921aa0096441ad534ec14f2481b249b7d040000"
                         }
                     }
                 ]
@@ -658,7 +658,9 @@
                             "hash": "0xc59ad4bb48495b05ac96c2cc643792bc491b5cf74b544f641bf0bc1941b71c0e",
                             "length": 828
                         },
-                        "value": null
+                        "value": [
+                            0
+                        ]
                     }
                 ],
                 "storage": null
