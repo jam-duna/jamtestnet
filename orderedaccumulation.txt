@@ -1,0 +1,177 @@
+[N4]  Blk 4762..d622<-74b0..4d72  e'=1,m'=00, len(γ_a')=0   	[N4] H_t=12 H_r=9fc8..9dc0  EpochMarker(η1'=6f6a..24af, η2'=835a..574e) 4:[b=1] 
+1: fib Code Hash: 4179b30a5fd2b08331055ccf168cadb76921aa0096441ad534ec14f2481b249b (Code Length: 1149)
+2: tribonacci Code Hash: d02aaae7a7d3817d331b36fc03bd6a7a12bdd150d3724aee0dc5c309764950d8 (Code Length: 1161)
+3: megatron Code Hash: a0e7e79c2467fd18c929e0fc6027be12a5658d74f4f02183689db5864a3c54f4 (Code Length: 1030)
+Waiting for the first block to be ready...
+[N4]  Blk 74b0..4d72<-328b..fa83  e'=1,m'=01, len(γ_a')=3   	[N4] H_t=13 H_r=7937..5a59   |E_T|=3 4:[b=2|t=3] 
+Builder storing TestService megatron (a0e7..3c54)
+Waiting for megatron service to be ready...
+[N4]  Blk 328b..fa83<-3b52..2847  e'=1,m'=02, len(γ_a')=6   	[N4] H_t=14 H_r=d8bd..64a2   |E_T|=3 4:[b=3|t=6] 
+[N5]  Blk 3b52..2847<-acab..df86  e'=1,m'=03, len(γ_a')=9   	[N5] H_t=15 H_r=5c0f..d659   |E_T|=3  |E_G|=1 1:[|r=1] 2:[|r=1] 3:[|r=1] 4:[b=3|t=6] 5:[b=1|t=3] 
+SetServiceStorage(s=0, k=00000000, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=00ff00ff00ff00ff000000000000000000000000000000000000000000000000
+ a_i [s=0] changed from 2 to 3
+ a_o [s=0] changed from 909 to 945
+ a_i [s=272334947] changed from 0 to 2
+ a_o [s=272334947] changed from 0 to 1111
+[N0]  Blk acab..df86<-c1ba..e281  e'=1,m'=04, len(γ_a')=12   	[N0] H_t=16 H_r=4338..d90b   |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=3|t=6|a=1] 5:[b=1|t=3|a=1] 
+[N4]  Blk c1ba..e281<-9978..1eb8  e'=1,m'=05, len(γ_a')=12   	[N4] H_t=17 H_r=e4db..96c4  0:[b=1|t=3|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=4|t=6|a=1] 5:[b=1|t=3|a=1] 
+megatron Service Index: 272334947
+Builder storing TestService fib (4179..1b24)
+Waiting for fib service to be ready...
+[N0]  Blk 9978..1eb8<-2bb5..bdeb  e'=1,m'=06, len(γ_a')=12   	[N0] H_t=18 H_r=b127..4b56   |E_G|=1 0:[b=2|t=3|r=1|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=4|t=6|r=1|a=1] 5:[b=1|t=3|r=1|a=1] 
+SetServiceStorage(s=0, k=00000000, v=de32e820) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=00ff00ff00ff00ff000000000000000000000000000000000000000000000000
+ a_i [s=552088286] changed from 0 to 2
+ a_o [s=552088286] changed from 0 to 1230
+[N4]  Blk 2bb5..bdeb<-523b..56cc  e'=1,m'=07, len(γ_a')=12   	[N4] H_t=19 H_r=62b3..5c55   |E_A|=6 0:[b=2|t=3|r=1|a=2] 1:[|r=1|a=2] 2:[|r=1|a=2] 3:[|r=1|a=2] 4:[b=5|t=6|r=1|a=2] 5:[b=1|t=3|r=1|a=2] 
+[N1]  Blk 523b..56cc<-c489..918a  e'=1,m'=08, len(γ_a')=12   	[N1] H_t=20 H_r=9cf9..de2e   |E_P|=1 0:[b=2|t=3|r=1|a=2] 1:[b=1|p=1|o=1030|r=1|a=2] 2:[|r=1|a=2] 3:[|r=1|a=2] 4:[b=5|t=6|r=1|a=2] 5:[b=1|t=3|r=1|a=2] 
+fib Service Index: 552088286
+Builder storing TestService tribonacci (d02a..4950)
+Waiting for tribonacci service to be ready...
+[N0]  Blk c489..918a<-6e08..b95e  e'=1,m'=09, len(γ_a')=12   	[N0] H_t=21 H_r=af86..b6cf   |E_G|=1 0:[b=3|t=3|r=1|a=2] 1:[b=1|p=1|o=1030|r=2|a=2] 2:[|r=2|a=2] 3:[|r=2|a=2] 4:[b=5|t=6|r=1|a=2] 5:[b=1|t=3|r=1|a=2] 
+SetServiceStorage(s=0, k=00000000, v=1f5dd05b) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=00ff00ff00ff00ff000000000000000000000000000000000000000000000000
+ a_i [s=1540381983] changed from 0 to 2
+ a_o [s=1540381983] changed from 0 to 1242
+[N1]  Blk 6e08..b95e<-a4dc..1566  e'=1,m'=10, len(γ_a')=12   	[N1] H_t=22 H_r=1b94..3f83   WinningTickets(12)  |E_P|=1  |E_A|=6 0:[b=3|t=3|r=1|a=3] 1:[b=2|p=2|o=2179|r=2|a=3] 2:[|r=2|a=3] 3:[|r=2|a=3] 4:[b=5|t=6|r=1|a=3] 5:[b=1|t=3|r=1|a=3] 
+[N4]  Blk a4dc..1566<-fc79..b385  e'=1,m'=11, len(γ_a')=12   	[N4] H_t=23 H_r=57e8..2f6b  0:[b=3|t=3|r=1|a=3] 1:[b=2|p=2|o=2179|r=2|a=3] 2:[|r=2|a=3] 3:[|r=2|a=3] 4:[b=6|t=6|r=1|a=3] 5:[b=1|t=3|r=1|a=3] 
+tribonacci Service Index: 1540381983
+All services are ready, Send preimage announcement
+Wait until all the preimage blobs are ready
+[N2]  Blk fc79..b385<-ea3f..6285  e'=2,m'=00, len(γ_a')=3   	[N2] H_t=24 H_r=fc88..909c  EpochMarker(η1'=767a..9923, η2'=6f6a..24af)  |E_T|=3 2:[b=1|t=3] 
+[N5]  Blk ea3f..6285<-4407..5317  e'=2,m'=01, len(γ_a')=6   	[N5] H_t=25 H_r=3713..063a   |E_T|=3 2:[b=1|t=3] 5:[b=1|t=3] 
+[N4]  Blk 4407..5317<-5c1e..f60e  e'=2,m'=02, len(γ_a')=9   	[N4] H_t=26 H_r=9bc7..fe37   |E_T|=3  |E_P|=1 2:[b=1|t=3] 4:[b=1|t=3|p=1|o=1161] 5:[b=1|t=3] 
+Start Fib_Trib
+service0: 552088286, codehash: 0x4179b30a5fd2b08331055ccf168cadb76921aa0096441ad534ec14f2481b249b (len=1149) | fib
+service1: 1540381983, codehash: 0xd02aaae7a7d3817d331b36fc03bd6a7a12bdd150d3724aee0dc5c309764950d8 (len=1149) | tribonacci
+serviceM: 272334947, codehash: 0xa0e7e79c2467fd18c929e0fc6027be12a5658d74f4f02183689db5864a3c54f4 (len=1149) | megatron
+Guarantor Assignment
+v0->c1
+v1->c0
+v2->c0
+v3->c1
+v4->c1
+v5->c0
+**  44:10.551  Preparing Fib_Tri#0 f2eb..d8e3 Meg#0 70e1..8b33 **
+
+**  Fib_Tri 0  workPackage: f2eb..d8e3 **
+
+**  MEGATRON 0  workPackage: 70e1..8b33 **
+[N3]  Blk 5c1e..f60e<-aa85..c36d  e'=2,m'=03, len(γ_a')=12   	[N3] H_t=27 H_r=0aa7..9338   |E_T|=3  |E_G|=2 0:[|r=1] 1:[|r=1] 2:[b=1|t=3|r=1] 3:[b=1|t=3|r=1] 4:[b=1|t=3|p=1|o=1161|r=1] 5:[b=1|t=3|r=1] 
+Found pending work package 0xf2eb3ca3d8b93f4c2feecefa928561cd117abd0308d74f73013c30bd08d8e3a3 at core 1!
+Fib 1 = []
+Tri 1 = []
+Found pending work package 0x70e1104c97bd43ee55984a140d5bb5ae1dcbdf89adc9c974ec169fa1388b33b2 at core 0!
+Meg 1 = []
+[N5]  Blk aa85..c36d<-51fc..0b2e  e'=2,m'=04, len(γ_a')=12   	[N5] H_t=28 H_r=b673..46de   |E_A|=6 0:[|r=1|a=1] 1:[|r=1|a=1] 2:[b=1|t=3|r=1|a=1] 3:[b=1|t=3|r=1|a=1] 4:[b=1|t=3|p=1|o=1161|r=1|a=1] 5:[b=2|t=3|r=1|a=1] 
+**  44:18.751  Preparing Fib_Tri#1 32ca..f832 Meg#1 c817..5ce5 **
+
+**  Fib_Tri 1  workPackage: 32ca..f832 **
+
+**  MEGATRON 1  workPackage: c817..5ce5 **
+SetServiceStorage(s=552088286, k=00, v=010000000100000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
+ a_i [s=552088286] changed from 2 to 3
+ a_o [s=552088286] changed from 1230 to 1274
+SetServiceStorage(s=1540381983, k=00, v=01000000010000000000000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
+ a_i [s=1540381983] changed from 2 to 3
+ a_o [s=1540381983] changed from 1242 to 1290
+SetServiceStorage(s=272334947, k=00, v=010000000200000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
+ a_i [s=272334947] changed from 2 to 3
+ a_o [s=272334947] changed from 1111 to 1155
+[N1]  Blk 51fc..0b2e<-3e67..fd67  e'=2,m'=05, len(γ_a')=12   	[N1] H_t=29 H_r=5027..7119   |E_G|=2  |E_A|=6 0:[|r=2|a=2] 1:[b=1|r=2|a=2] 2:[b=1|t=3|r=2|a=2] 3:[b=1|t=3|r=2|a=2] 4:[b=1|t=3|p=1|o=1161|r=2|a=2] 5:[b=2|t=3|r=2|a=2] 
+**  44:24.651  Preparing Fib_Tri#2 4dfa..1384 Meg#2 8eef..269a **
+
+**  Fib_Tri 2  workPackage: 4dfa..1384 **
+
+**  MEGATRON 2  workPackage: 8eef..269a **
+Found pending work package 0xc8175633a281d9923fb31898416a84cd398ba8ffd122e41eee42b7a2885ce5c0 at core 0!
+Meg 3 = [1 0 0 0 2 0 0 0 0 0 0 0]
+Found pending work package 0x32cae9a5f53c6a7858161ea349afcf8586a1070ca5c1b8697959197ba0f8326e at core 1!
+Fib 3 = [1 0 0 0 1 0 0 0 0 0 0 0]
+Tri 3 = [1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]
+SetServiceStorage(s=552088286, k=00, v=020000000100000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=1540381983, k=00, v=02000000010000000100000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=272334947, k=00, v=020000000200000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
+[N3]  Blk 3e67..fd67<-2aca..d2cd  e'=2,m'=06, len(γ_a')=12   	[N3] H_t=30 H_r=aa3f..63f7   |E_G|=2  |E_A|=6 0:[|r=3|a=3] 1:[b=1|r=3|a=3] 2:[b=1|t=3|r=3|a=3] 3:[b=2|t=3|r=3|a=3] 4:[b=1|t=3|p=1|o=1161|r=3|a=3] 5:[b=2|t=3|r=3|a=3] 
+**  44:31.252  Preparing Fib_Tri#3 f215..358c Meg#3 b995..d9ea **
+
+**  Fib_Tri 3  workPackage: f215..358c **
+
+**  MEGATRON 3  workPackage: b995..d9ea **
+Found pending work package 0x8eef66fcf0826d7a20f86e8aef08048c42f4118ee96688cf13a7b26ea5269ac6 at core 0!
+Found pending work package 0x4dfaa2563910ace863de9296692b34969ad787aee89e85979094118873138495 at core 1!
+Meg 4 = [2 0 0 0 2 0 0 0 2 0 0 0]
+Fib 4 = [2 0 0 0 1 0 0 0 1 0 0 0]
+Tri 4 = [2 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0]
+SetServiceStorage(s=552088286, k=00, v=030000000200000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=1540381983, k=00, v=03000000020000000100000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=272334947, k=00, v=030000000400000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
+[N2]  Blk 2aca..d2cd<-7f03..def8  e'=2,m'=07, len(γ_a')=12   	[N2] H_t=31 H_r=06e5..f76e   |E_G|=2  |E_A|=6 0:[|r=4|a=4] 1:[b=1|r=4|a=4] 2:[b=2|t=3|r=4|a=4] 3:[b=2|t=3|r=4|a=4] 4:[b=1|t=3|p=1|o=1161|r=4|a=4] 5:[b=2|t=3|r=4|a=4] 
+**  44:36.651  Preparing Fib_Tri#4 c206..91f9 Meg#4 052a..9b14 **
+
+**  Fib_Tri 4  workPackage: c206..91f9 **
+
+**  MEGATRON 4  workPackage: 052a..9b14 **
+Found pending work package 0xb9956ea3d2d72c34d62abddc8f6bead6ebc532fb86d861a76f11246301d9eafc at core 0!
+Found pending work package 0xf215e006640f35ca88a7a8a7fff3bc981cf0e44e84803d1e74cd8a5808358ce9 at core 1!
+Meg 5 = [3 0 0 0 4 0 0 0 2 0 0 0]
+Fib 5 = [3 0 0 0 2 0 0 0 1 0 0 0]
+Tri 5 = [3 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0]
+SetServiceStorage(s=552088286, k=00, v=040000000300000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=1540381983, k=00, v=04000000040000000200000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=272334947, k=00, v=040000000700000004000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
+[N0]  Blk 7f03..def8<-7375..0d96  e'=2,m'=08, len(γ_a')=12   	[N0] H_t=32 H_r=15c6..def7   |E_G|=2  |E_A|=6 0:[b=1|r=5|a=5] 1:[b=1|r=5|a=5] 2:[b=2|t=3|r=5|a=5] 3:[b=2|t=3|r=5|a=5] 4:[b=1|t=3|p=1|o=1161|r=5|a=5] 5:[b=2|t=3|r=5|a=5] 
+**  44:43.251  Preparing Fib_Tri#5 0c1e..ffd2 Meg#5 4441..74df **
+
+**  Fib_Tri 5  workPackage: 0c1e..ffd2 **
+
+**  MEGATRON 5  workPackage: 4441..74df **
+Found pending work package 0xc206caaad3a3b379f10c46fc32c02fafc021f8d213a7118560be69667a91f9e5 at core 1!
+Fib 6 = [4 0 0 0 3 0 0 0 2 0 0 0]
+Found pending work package 0x052a36da4f9e239d9c072438c652df2f1dd4e1b65fa7509ade55e1e2a79b14d1 at core 0!
+Tri 6 = [4 0 0 0 4 0 0 0 2 0 0 0 1 0 0 0]
+Meg 6 = [4 0 0 0 7 0 0 0 4 0 0 0]
+SetServiceStorage(s=272334947, k=00, v=050000000c00000007000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=552088286, k=00, v=050000000500000003000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=1540381983, k=00, v=05000000070000000400000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
+[N1]  Blk 7375..0d96<-49aa..5d24  e'=2,m'=09, len(γ_a')=12   	[N1] H_t=33 H_r=39c8..3e83   |E_G|=2  |E_A|=6 0:[b=1|r=6|a=6] 1:[b=2|r=6|a=6] 2:[b=2|t=3|r=6|a=6] 3:[b=2|t=3|r=6|a=6] 4:[b=1|t=3|p=1|o=1161|r=6|a=6] 5:[b=2|t=3|r=6|a=6] 
+**  44:48.651  Preparing Fib_Tri#6 913e..57a5 Meg#6 cbe2..c5b3 **
+
+**  Fib_Tri 6  workPackage: 913e..57a5 **
+
+**  MEGATRON 6  workPackage: cbe2..c5b3 **
+Found pending work package 0x0c1e081edb63afdcdd9611bc6dc8f273da49e824fb6e89d5fc3146fa50ffd20b at core 1!
+Fib 7 = [5 0 0 0 5 0 0 0 3 0 0 0]
+Tri 7 = [5 0 0 0 7 0 0 0 4 0 0 0 2 0 0 0]
+Found pending work package 0x4441e0c0046e79d03fba523c82e502651028c8394b251188d6dbcb3afa74df1c at core 0!
+Meg 7 = [5 0 0 0 12 0 0 0 7 0 0 0]
+SetServiceStorage(s=552088286, k=00, v=060000000800000005000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=1540381983, k=00, v=060000000d0000000700000004000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=272334947, k=00, v=06000000150000000c000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
+[N5]  Blk 49aa..5d24<-b49d..b79d  e'=2,m'=10, len(γ_a')=12   	[N5] H_t=34 H_r=0bae..3a8b   WinningTickets(12)  |E_G|=2  |E_A|=6 0:[b=1|r=7|a=7] 1:[b=2|r=7|a=7] 2:[b=2|t=3|r=7|a=7] 3:[b=2|t=3|r=7|a=7] 4:[b=1|t=3|p=1|o=1161|r=7|a=7] 5:[b=3|t=3|r=7|a=7] 
+**  44:55.352  Preparing Fib_Tri#7 2539..14f4 Meg#7 9be9..c092 **
+
+**  Fib_Tri 7  workPackage: 2539..14f4 **
+
+**  MEGATRON 7  workPackage: 9be9..c092 **
+All workpackages are sent
+Found pending work package 0x913e3d99e518dfe0d5bc4b40b390418773d36e8ffaf44c629c703a19e057a550 at core 1!
+Found pending work package 0xcbe218389289348514dc011b9d5a27100d59bd8920ab02835b9ec9ab78c5b360 at core 0!
+Fib 8 = [6 0 0 0 8 0 0 0 5 0 0 0]
+Tri 8 = [6 0 0 0 13 0 0 0 7 0 0 0 4 0 0 0]
+Meg 8 = [6 0 0 0 21 0 0 0 12 0 0 0]
+SetServiceStorage(s=552088286, k=00, v=070000000d00000008000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=1540381983, k=00, v=07000000180000000d00000007000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=272334947, k=00, v=070000002500000015000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
+[N3]  Blk b49d..b79d<-2e99..46d9  e'=2,m'=11, len(γ_a')=12   	[N3] H_t=35 H_r=5ab9..ea0c   |E_G|=2  |E_A|=6 0:[b=1|r=8|a=8] 1:[b=2|r=8|a=8] 2:[b=2|t=3|r=8|a=8] 3:[b=3|t=3|r=8|a=8] 4:[b=1|t=3|p=1|o=1161|r=8|a=8] 5:[b=3|t=3|r=8|a=8] 
+Found pending work package 0x9be94bccfbf7f7cf00017fd735b10eb575245cbd81f90ef32044c01d8ac092be at core 0!
+Meg 8 = [7 0 0 0 37 0 0 0 21 0 0 0]
+Found pending work package 0x2539ade129e060a06575db563da5520aae38482522dcf3adb24707c65f14f482 at core 1!
+Fib 8 = [7 0 0 0 13 0 0 0 8 0 0 0]
+Tri 8 = [7 0 0 0 24 0 0 0 13 0 0 0 7 0 0 0]
+SetServiceStorage(s=552088286, k=00, v=08000000150000000d000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=1540381983, k=00, v=080000002c000000180000000d000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
+SetServiceStorage(s=272334947, k=00, v=080000004100000025000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
+[N0]  Blk 2e99..46d9<-9d40..96f3  e'=3,m'=00, len(γ_a')=3   	[N0] H_t=36 H_r=5a8f..ca44  EpochMarker(η1'=7e4f..728f, η2'=767a..9923)  |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 1:[|a=1] 2:[|a=1] 3:[|a=1] 4:[|a=1] 5:[|a=1] 
+Meg Finish
+--- PASS: TestMegatron (149.83s)
+
+
