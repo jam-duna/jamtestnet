@@ -20,42 +20,6 @@ import { db, BlockRecord, StateRecord } from "../../db"; // Import Dexie databas
 const defaultRpcUrl = "http://localhost:9999/rpc";
 const defaultWsUrl = "ws://localhost:9999/ws";
 
-interface Transaction {
-  id: number;
-  hash: string;
-  from: string;
-  to: string;
-  amount: string;
-  timestamp: string;
-}
-
-const sampleTransactions: Transaction[] = [
-  {
-    id: 1,
-    hash: "0xtx123...",
-    from: "0xabc...",
-    to: "0xdef...",
-    amount: "1.5 ETH",
-    timestamp: "2025-02-19 10:05",
-  },
-  {
-    id: 2,
-    hash: "0xtx456...",
-    from: "0xghi...",
-    to: "0xjkl...",
-    amount: "0.8 ETH",
-    timestamp: "2025-02-19 10:03",
-  },
-  {
-    id: 3,
-    hash: "0xtx789...",
-    from: "0xmno...",
-    to: "0xpqr...",
-    amount: "2.0 ETH",
-    timestamp: "2025-02-19 10:00",
-  },
-];
-
 export default function HomePage() {
   // State to store fetched block and state data from RPC calls.
   const [block, setBlock] = useState<any>(null);
@@ -69,6 +33,19 @@ export default function HomePage() {
 
   // State to hold latest blocks loaded from IndexedDB.
   const [latestBlocks, setLatestBlocks] = useState<BlockRecord[]>([]);
+
+  // Instead of ticking every second, we update `now` only when new blocks arrive.
+  const [now, setNow] = useState(Date.now());
+
+  // Helper function to compute relative time from a timestamp.
+  function getRelativeTime(timestamp: number) {
+    const secondsAgo = Math.floor((now - timestamp) / 1000);
+    if (secondsAgo < 0) return "0 seconds ago";
+    if (secondsAgo < 60) return `${secondsAgo} seconds ago`;
+    if (secondsAgo < 3600) return `${Math.floor(secondsAgo / 60)} minutes ago`;
+    if (secondsAgo < 86400) return `${Math.floor(secondsAgo / 3600)} hours ago`;
+    return `${Math.floor(secondsAgo / 86400)} days ago`;
+  }
 
   // Effect: Create a new WebSocket whenever wsEndpoint changes.
   useEffect(() => {
@@ -103,15 +80,20 @@ export default function HomePage() {
           if (fetchedBlock && fetchedBlock.header) {
             const header = fetchedBlock.header;
             const blockRecord: BlockRecord = {
-              blockHash: fetchedBlock.hash, // full block hash
-              headerHash: header.extrinsic_hash, // header hash
+              blockHash: msg.result.blockHash, // full block hash
+              headerHash: headerHash, // header hash
               slot: header.slot,
               rawData: fetchedBlock, // store the complete block data
+              createdAt: Date.now(), // record the creation time
             };
             await db.blocks
               .put(blockRecord)
               .then((key) => {
                 console.log("Block successfully saved with key:", key);
+                console.log("Block with headerHash:", headerHash);
+                console.log("Block with slot:", header.slot);
+                // Update "now" when a new block comes in.
+                setNow(Date.now());
               })
               .catch((error) => {
                 console.error("Error saving block:", error);
@@ -271,20 +253,23 @@ export default function HomePage() {
           <Grid item xs={12} md={6}>
             <Paper sx={{ p: 2 }}>
               <Typography variant="h5" gutterBottom>
-                Latest Blocks (IndexedDB)
+                Latest Blocks
               </Typography>
               {latestBlocks.map((blockItem) => (
                 <Link
                   key={blockItem.id}
-                  href={`/block/${blockItem.blockHash}`}
+                  href={`/block/${blockItem.headerHash}`}
                   style={{ textDecoration: "none" }}
                 >
                   <Card sx={{ mb: 2, cursor: "pointer" }}>
                     <CardContent>
                       <Typography variant="subtitle1">
-                        Slot: {blockItem.slot}
+                        Slot: {blockItem.slot} (
+                        {blockItem.createdAt
+                          ? getRelativeTime(blockItem.createdAt)
+                          : "N/A"}
+                        )
                       </Typography>
-
                       <Typography variant="body2" color="textSecondary">
                         Header Hash: {blockItem.headerHash}
                       </Typography>
@@ -295,35 +280,49 @@ export default function HomePage() {
             </Paper>
           </Grid>
 
-          {/* 4. Latest Extrinsics (from IndexedDB) */}
+          {/* 4. Latest Reports (from IndexedDB) */}
           <Grid item xs={12} md={6}>
             <Paper sx={{ p: 2 }}>
               <Typography variant="h5" gutterBottom>
-                Latest Extrinsics (IndexedDB)
+                Latest Reports
               </Typography>
-              {latestBlocks.map((blockItem) => {
-                // Ensure rawData exists and contains an extrinsic object.
-                const raw = blockItem.rawData;
-                const guaranteesCount =
-                  raw &&
-                  raw.extrinsic &&
-                  Array.isArray(raw.extrinsic.guarantees)
-                    ? raw.extrinsic.guarantees.length
-                    : 0;
-                return (
-                  <Card key={blockItem.id} sx={{ mb: 2, cursor: "pointer" }}>
-                    <CardContent>
-                      <Typography variant="subtitle1">
-                        Guarantees Count: {guaranteesCount}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary">
-                        Header Hash:{" "}
-                        {raw && raw.header ? raw.header.extrinsic_hash : "N/A"}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+              {latestBlocks
+                .filter((blockItem) => {
+                  const raw = blockItem.rawData;
+                  return (
+                    raw &&
+                    raw.extrinsic &&
+                    Array.isArray(raw.extrinsic.guarantees) &&
+                    raw.extrinsic.guarantees.length > 0
+                  );
+                })
+                .map((blockItem) => {
+                  const raw = blockItem.rawData;
+                  const guaranteesCount = raw.extrinsic.guarantees.length;
+                  const headerHash = blockItem.headerHash;
+                  return (
+                    <Link
+                      key={blockItem.id}
+                      href={`/block/${headerHash}/work-report`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <Card sx={{ mb: 2, cursor: "pointer" }}>
+                        <CardContent>
+                          <Typography variant="subtitle1">
+                            Work Report: {guaranteesCount} (
+                            {blockItem.createdAt
+                              ? getRelativeTime(blockItem.createdAt)
+                              : "N/A"}
+                            )
+                          </Typography>
+                          <Typography variant="body2" color="textSecondary">
+                            Header Hash: {headerHash || "N/A"}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  );
+                })}
             </Paper>
           </Grid>
         </Grid>

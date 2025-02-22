@@ -1,4 +1,3 @@
-// db.ts
 import Dexie from "dexie";
 
 // Define interfaces for stored records.
@@ -8,6 +7,7 @@ export interface BlockRecord {
   headerHash: string; // Header hash (e.g. fetchedBlock.header.extrinsic_hash)
   slot: number;
   rawData: any; // The full fetchedBlock object
+  createdAt?: number; // Timestamp when the block was received
 }
 
 export interface StateRecord {
@@ -22,8 +22,9 @@ export class JamDB extends Dexie {
 
   constructor() {
     super("JamDB");
-    this.version(1).stores({
-      blocks: "++id, blockHash, headerHash, slot",
+    // Upgrade the database version to include the new "createdAt" field for blocks.
+    this.version(2).stores({
+      blocks: "++id, blockHash, headerHash, slot, createdAt",
       states: "++id, blockHash",
     });
   }

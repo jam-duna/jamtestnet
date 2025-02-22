@@ -13,6 +13,7 @@ import {
   Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface EndpointDrawerProps {
   wsEndpoint: string;
@@ -27,12 +28,15 @@ export default function EndpointDrawer({
   savedEndpoints,
   setSavedEndpoints,
 }: EndpointDrawerProps) {
-  // Internal state to control drawer visibility and custom endpoint input.
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [showCustomInput, setShowCustomInput] = useState<boolean>(false);
   const [customEndpoint, setCustomEndpoint] = useState<string>("");
 
   const defaultWsUrl = "ws://localhost:9999/ws";
+
+  const handleToggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
 
   // Handler for saving a custom endpoint.
   const handleSaveCustomEndpoint = () => {
@@ -47,16 +51,17 @@ export default function EndpointDrawer({
 
   return (
     <>
-      {/* Hamburger Menu Icon */}
+      {/* Hamburger Menu Icon (toggles open/close) */}
       <Box sx={{ position: "fixed", top: 16, left: 16, zIndex: 1300 }}>
-        <IconButton onClick={() => setMenuOpen(true)}>
-          <MenuIcon />
+        <IconButton onClick={handleToggleMenu}>
+          {menuOpen ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </Box>
 
       <Drawer anchor="left" open={menuOpen} onClose={() => setMenuOpen(false)}>
-        <Box sx={{ width: 250, p: 2 }}>
-          <Typography variant="h6" gutterBottom>
+        <Box sx={{ width: 250, p: 2, pt: 10 }}>
+          {/* Place "Menu" title with margin so it doesn't overlap */}
+          <Typography variant="h6" sx={{ ml: 1, mb: 2 }}>
             Menu
           </Typography>
           <List>
