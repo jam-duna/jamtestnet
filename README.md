@@ -121,7 +121,7 @@ These can be found in a single [fuzzed.zip](fuzzed.zip).
 
 The `fallback` mode does not involve any PVM execution or extrinsics.  See [Sealing Test Vectors](https://github.com/jam-duna/jamtestnet/issues/21).
 
-See [fallback.txt](./fallback/fallback.txt) for execution.
+See [fallback.txt](./fallback.txt) for execution.
 
 ### `safrole`
 
@@ -129,19 +129,21 @@ The `safrole` mode adds extrinsic tickets.  Here is a draft of the shape of `mod
 
 * [JAM Safrole Model](https://docs.google.com/spreadsheets/d/1ueAisCMOx7B-m_fXMLT0FXBxfVzydJyr-udE8jKwDN8/edit?gid=615049643#gid=615049643)
 
-See [safrole.txt](./safrole/safrole.txt) for execution.
+See [safrole.txt](./safrole.txt) for execution.
+
+As of Feb 2025, Several teams have reported success at importing both fallback and safrole.
 
 ### `assurances`
 
-The `assurances` mode adds a few tiny services (bootstrap, fib) and requires E_G, E_A, E_P extrinsics as well as a basic PVM implementation with a few host functions implemented.
+The `assurances` mode adds a few tiny services (bootstrap, fib) and requires E_G, E_A, E_P extrinsics as well as a basic PVM implementation with a few host functions implemented (new, write, read).
 
 See [services](./services) for `bootstrap` and `fib` code.
 
-See [assurances.txt](./safrole/safrole.txt) for execution.
+See [assurances.txt](./assurances.txt) for execution.
 
 ### `orderedaccumulation`
 
-The `orderedaccumulation` mode uses both cores to run through simple cases of package dependencies and ordered accumulation with "trib" and "megatron" services.
+The `orderedaccumulation` mode uses both cores to run through simple cases of package dependencies and ordered accumulation with "fib", "trib" and "megatron" services.
 
 ### JAM DUNA 
 
@@ -158,8 +160,9 @@ Dec 2024:
 * state_transitions output with service k,v metadata
 
 Feb 2025:
-* [0.6.1 Traces](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.1.1)
-* [0.6.1 fuzzed](fuzzed)
+* [0.6.4 Traces](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.4)
+
+
 
 ## JAM Implementers
 
