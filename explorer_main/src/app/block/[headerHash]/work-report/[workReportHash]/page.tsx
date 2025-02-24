@@ -26,14 +26,13 @@ export default function WorkReportDetailPage() {
         .equals(headerHash)
         .first()
         .then((record: BlockRecord | undefined) => {
-          if (record && record.rawData && record.rawData.extrinsic) {
-            const reports = record.rawData.extrinsic.guarantees || [];
+          if (record && record.block && record.block.extrinsic) {
+            const reports = record.block.extrinsic.guarantees || [];
             const found = reports.find(
               (r: any) => r.report.package_spec.hash === workReportHash
             );
             setWorkReport(found);
-
-            console.log(record.rawData);
+            console.log(record);
           }
         })
         .catch((error) => {
