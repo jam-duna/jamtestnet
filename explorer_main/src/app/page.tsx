@@ -109,6 +109,9 @@ export default function HomePage() {
                 blockHash: fetchedBlock?.hash, // common identifier linking state to block
                 rawData: stateRecord,
               };
+
+              console.log(stateRec);
+
               await db.states
                 .put(stateRec)
                 .then((key) => {

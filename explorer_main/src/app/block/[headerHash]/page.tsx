@@ -61,7 +61,7 @@ export default function BlockOverviewPage() {
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Paper sx={{ p: 3 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
           Block Overview
         </Typography>
 
@@ -112,43 +112,40 @@ export default function BlockOverviewPage() {
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography variant="h6">More Details</Typography>
           </AccordionSummary>
-          <AccordionDetails>
-            <LabeledRow
-              label="Parent:"
-              tooltip="Hash of the previous block in the chain."
-              value={header.parent}
-              labelWidth={160}
-            />
-            <LabeledRow
-              label="Parent State Root:"
-              tooltip="Merkle root summarizing the entire state after the parent block."
-              value={header.parent_state_root}
-              labelWidth={160}
-            />
-            <LabeledRow
-              label="Seal:"
-              tooltip="A cryptographic seal containing the block producer's signature and possibly VRF data."
-              value={header.seal}
-              labelWidth={160}
-            />
-            <LabeledRow
-              label="Entropy Source:"
-              tooltip="Used to provide randomness for the protocol. Typically not crucial for end-users."
-              value={header.entropy_source}
-              labelWidth={160}
-            />
+          <AccordionDetails sx={{ p: 2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              <LabeledRow
+                label="Parent:"
+                tooltip="Hash of the previous block in the chain."
+                value={header.parent}
+              />
+              <LabeledRow
+                label="Parent State Root:"
+                tooltip="Merkle root summarizing the entire state after the parent block."
+                value={header.parent_state_root}
+              />
+              <LabeledRow
+                label="Seal:"
+                tooltip="A cryptographic seal containing the block producer's signature and possibly VRF data."
+                value={header.seal}
+              />
+              <LabeledRow
+                label="Entropy Source:"
+                tooltip="Used to provide randomness for the protocol. Typically not crucial for end-users."
+                value={header.entropy_source}
+              />
+            </Box>
           </AccordionDetails>
         </Accordion>
 
         {/* Extrinsic Details Title */}
-        <Typography variant="h5" sx={{ mt: 3, mb: 1 }}>
+        <Typography variant="h5" sx={{ mt: 8, mb: 3 }}>
           Extrinsic Details
         </Typography>
 
         {/* Tickets Accordion */}
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            {/* Label + Tooltip for "Tickets" */}
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Tooltip title="Tickets can represent rights or claims associated with scheduling, rewards, or other operations.">
                 <IconButton size="small" sx={{ ml: 1 }}>
@@ -160,16 +157,31 @@ export default function BlockOverviewPage() {
               </Typography>
             </Box>
           </AccordionSummary>
-          <AccordionDetails>
-            {extrinsic.tickets && extrinsic.tickets.length > 0 ? (
-              extrinsic.tickets.map((ticket: any, idx: number) => (
-                <Typography key={idx} variant="body2">
-                  Ticket {idx + 1}: {JSON.stringify(ticket)}
+          <AccordionDetails sx={{ p: 2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {extrinsic.tickets && extrinsic.tickets.length > 0 ? (
+                extrinsic.tickets.map((ticket: any, idx: number) => (
+                  <Typography
+                    key={idx}
+                    variant="body2"
+                    sx={{
+                      whiteSpace: "normal",
+                      wordBreak: "break-word",
+                      m: 0,
+                    }}
+                  >
+                    Ticket {idx + 1}: {JSON.stringify(ticket)}
+                  </Typography>
+                ))
+              ) : (
+                <Typography
+                  variant="body2"
+                  sx={{ whiteSpace: "normal", wordBreak: "break-word", m: 0 }}
+                >
+                  No tickets
                 </Typography>
-              ))
-            ) : (
-              <Typography variant="body2">No tickets</Typography>
-            )}
+              )}
+            </Box>
           </AccordionDetails>
         </Accordion>
 
@@ -193,22 +205,38 @@ export default function BlockOverviewPage() {
               </Typography>
             </Box>
           </AccordionSummary>
-          <AccordionDetails>
-            {extrinsic.disputes ? (
-              <>
-                <Typography variant="body2">
-                  Verdicts: {extrinsic.disputes.verdicts?.length || 0}
+          <AccordionDetails sx={{ p: 2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {extrinsic.disputes ? (
+                <>
+                  <Typography
+                    variant="body2"
+                    sx={{ whiteSpace: "normal", wordBreak: "break-word", m: 0 }}
+                  >
+                    Verdicts: {extrinsic.disputes.verdicts?.length || 0}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ whiteSpace: "normal", wordBreak: "break-word", m: 0 }}
+                  >
+                    Culprits: {extrinsic.disputes.culprits?.length || 0}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ whiteSpace: "normal", wordBreak: "break-word", m: 0 }}
+                  >
+                    Faults: {extrinsic.disputes.faults?.length || 0}
+                  </Typography>
+                </>
+              ) : (
+                <Typography
+                  variant="body2"
+                  sx={{ whiteSpace: "normal", wordBreak: "break-word", m: 0 }}
+                >
+                  No disputes
                 </Typography>
-                <Typography variant="body2">
-                  Culprits: {extrinsic.disputes.culprits?.length || 0}
-                </Typography>
-                <Typography variant="body2">
-                  Faults: {extrinsic.disputes.faults?.length || 0}
-                </Typography>
-              </>
-            ) : (
-              <Typography variant="body2">No disputes</Typography>
-            )}
+              )}
+            </Box>
           </AccordionDetails>
         </Accordion>
 
@@ -227,16 +255,35 @@ export default function BlockOverviewPage() {
               </Typography>
             </Box>
           </AccordionSummary>
-          <AccordionDetails>
-            {extrinsic.assurances && extrinsic.assurances.length > 0 ? (
-              extrinsic.assurances.map((assurance: any, idx: number) => (
-                <Typography key={idx} variant="body2">
-                  Assurance {idx + 1}: {JSON.stringify(assurance)}
+          <AccordionDetails sx={{ p: 2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {extrinsic.assurances && extrinsic.assurances.length > 0 ? (
+                extrinsic.assurances.map((assurance: any, idx: number) => (
+                  <Typography
+                    key={idx}
+                    variant="body2"
+                    sx={{
+                      whiteSpace: "normal",
+                      wordBreak: "break-word",
+                      m: 0,
+                    }}
+                  >
+                    Assurance {idx + 1}: {JSON.stringify(assurance)}
+                  </Typography>
+                ))
+              ) : (
+                <Typography
+                  variant="body2"
+                  sx={{
+                    whiteSpace: "normal",
+                    wordBreak: "break-word",
+                    m: 0,
+                  }}
+                >
+                  No assurances
                 </Typography>
-              ))
-            ) : (
-              <Typography variant="body2">No assurances</Typography>
-            )}
+              )}
+            </Box>
           </AccordionDetails>
         </Accordion>
 
@@ -244,7 +291,7 @@ export default function BlockOverviewPage() {
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Tooltip title="Guarantees provide additional security or bond for the operation, typically including a report and validator signatures.">
+              <Tooltip title="Guarantees provide additional security or bonds for the operation, typically including a report and validator signatures.">
                 <IconButton size="small" sx={{ ml: 1 }}>
                   <InfoOutlinedIcon fontSize="small" />
                 </IconButton>
@@ -252,17 +299,36 @@ export default function BlockOverviewPage() {
               <Typography>Guarantees ({guaranteesCount})</Typography>
             </Box>
           </AccordionSummary>
-          <AccordionDetails>
-            {guaranteesCount > 0 ? (
-              guarantees.map((guarantee: any, idx: number) => (
-                <Typography key={idx} variant="body2">
-                  Guarantee {idx + 1}:{" "}
-                  {JSON.stringify(guarantee.report.package_spec)}
+          <AccordionDetails sx={{ p: 2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {guaranteesCount > 0 ? (
+                guarantees.map((guarantee: any, idx: number) => (
+                  <Typography
+                    key={idx}
+                    variant="body2"
+                    sx={{
+                      whiteSpace: "normal",
+                      wordBreak: "break-word",
+                      m: 0,
+                    }}
+                  >
+                    Guarantee {idx + 1}:{" "}
+                    {JSON.stringify(guarantee.report.package_spec)}
+                  </Typography>
+                ))
+              ) : (
+                <Typography
+                  variant="body2"
+                  sx={{
+                    whiteSpace: "normal",
+                    wordBreak: "break-word",
+                    m: 0,
+                  }}
+                >
+                  No guarantees
                 </Typography>
-              ))
-            ) : (
-              <Typography variant="body2">No guarantees</Typography>
-            )}
+              )}
+            </Box>
           </AccordionDetails>
         </Accordion>
 
@@ -281,16 +347,35 @@ export default function BlockOverviewPage() {
               </Typography>
             </Box>
           </AccordionSummary>
-          <AccordionDetails>
-            {extrinsic.preimages && extrinsic.preimages.length > 0 ? (
-              extrinsic.preimages.map((preimage: any, idx: number) => (
-                <Typography key={idx} variant="body2">
-                  Preimage {idx + 1}: {JSON.stringify(preimage)}
+          <AccordionDetails sx={{ p: 2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {extrinsic.preimages && extrinsic.preimages.length > 0 ? (
+                extrinsic.preimages.map((preimage: any, idx: number) => (
+                  <Typography
+                    key={idx}
+                    variant="body2"
+                    sx={{
+                      whiteSpace: "normal",
+                      wordBreak: "break-word",
+                      m: 0,
+                    }}
+                  >
+                    Preimage {idx + 1}: {JSON.stringify(preimage)}
+                  </Typography>
+                ))
+              ) : (
+                <Typography
+                  variant="body2"
+                  sx={{
+                    whiteSpace: "normal",
+                    wordBreak: "break-word",
+                    m: 0,
+                  }}
+                >
+                  No preimages
                 </Typography>
-              ))
-            ) : (
-              <Typography variant="body2">No preimages</Typography>
-            )}
+              )}
+            </Box>
           </AccordionDetails>
         </Accordion>
       </Paper>

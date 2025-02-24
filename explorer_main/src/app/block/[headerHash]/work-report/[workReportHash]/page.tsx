@@ -32,6 +32,8 @@ export default function WorkReportDetailPage() {
               (r: any) => r.report.package_spec.hash === workReportHash
             );
             setWorkReport(found);
+
+            console.log(record.rawData);
           }
         })
         .catch((error) => {
