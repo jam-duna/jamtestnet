@@ -244,8 +244,8 @@
             "state_root": "0xd448ae8895768b5a9bbbfe1418a369c06a9f911b7acb6502f866914c2ed30a6c",
             "reported": [
                 {
-                    "work_package_hash": "0xf03fbd82481e239fc715beaa1601dd8347c8b0a6edcc57d3615e27d6075a6ccd",
-                    "segment_tree_root": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    "hash": "0xf03fbd82481e239fc715beaa1601dd8347c8b0a6edcc57d3615e27d6075a6ccd",
+                    "exports_root": "0x0000000000000000000000000000000000000000000000000000000000000000"
                 }
             ]
         },
@@ -286,8 +286,8 @@
             "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
             "reported": [
                 {
-                    "work_package_hash": "0x13fcd4978759e4b7c5261edce734cfe25a39e9d21a139964e3d8e0be05385910",
-                    "segment_tree_root": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    "hash": "0x13fcd4978759e4b7c5261edce734cfe25a39e9d21a139964e3d8e0be05385910",
+                    "exports_root": "0x0000000000000000000000000000000000000000000000000000000000000000"
                 }
             ]
         }
@@ -704,6 +704,30 @@
     ],
     "accounts": [
         {
+            "id": 2953942612,
+            "data": {
+                "service": {
+                    "code_hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
+                    "balance": 501376,
+                    "min_item_gas": 100,
+                    "min_memo_gas": 100,
+                    "bytes": 1256,
+                    "items": 2
+                },
+                "preimages": null,
+                "lookup_meta": [
+                    {
+                        "key": {
+                            "hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
+                            "length": 1175
+                        },
+                        "value": null
+                    }
+                ],
+                "storage": null
+            }
+        },
+        {
             "id": 0,
             "data": {
                 "service": {
@@ -747,30 +771,6 @@
                 "storage": {
                     "0x00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3": "0x549611b0"
                 }
-            }
-        },
-        {
-            "id": 2953942612,
-            "data": {
-                "service": {
-                    "code_hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
-                    "balance": 501376,
-                    "min_item_gas": 100,
-                    "min_memo_gas": 100,
-                    "bytes": 1256,
-                    "items": 2
-                },
-                "preimages": null,
-                "lookup_meta": [
-                    {
-                        "key": {
-                            "hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
-                            "length": 1175
-                        },
-                        "value": null
-                    }
-                ],
-                "storage": null
             }
         }
     ]
