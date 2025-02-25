@@ -1,0 +1,26 @@
+name: Test JAM DUNA state_transitions against JAM Brains check_stf_safrole API
+
+on:
+  push: {}
+  schedule:
+    - cron: '*/10 * * * *'  # Runs every 10 mins
+
+jobs:
+  test-all-statetransitions:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/actions'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Test against https://dev.jamcha.in/api/v1/functions/check_stf_safrole
+        run: |
+          find data/*/state_transitions -type f -name '*.json' | sort | while IFS= read -r file; do
+            echo "Processing $file"
+            echo " curl -s -q -X POST https://dev.jamcha.in/api/v1/functions/check_stf_safrole -H 'accept: application/json' -H 'Content-Type: application/json' -d @\"$file\" | jq -r"
+            curl -s -q -X POST https://dev.jamcha.in/api/v1/functions/check_stf_safrole \
+            -H 'accept: application/json' -H 'Content-Type: application/json' -d  @"$file" | jq -r
+          done
