@@ -2,23 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  Container,
-  Box,
-  TextField,
-  InputAdornment,
-  Typography,
-  Paper,
-  Grid,
-  Card,
-  CardContent,
-} from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { Container, Grid } from "@mui/material";
 import EndpointDrawer from "../components/home/EndpointDrawer"; // Adjust path as needed
 import SearchBar from "../components/home/SearchBar";
 import GeneralInfoBar from "../components/home/GeneralInfoBar";
 import LatestBlocks from "../components/home/LatestBlocks";
 import LatestReports from "../components/home/LatestReports";
+import LatestExtrinsics from "../components/home/LatestExtrinsics";
 
 import { db, BlockRecord, StateRecord } from "../../db"; // Updated DB scheme
 
@@ -58,7 +48,6 @@ export default function HomePage() {
       console.log("WebSocket connected to:", wsEndpoint);
       setSavedEndpoints((prev) => {
         if (wsEndpoint !== defaultWsUrl && !prev.includes(wsEndpoint)) {
-          console.log("Saving new endpoint to list:", wsEndpoint);
           return [...prev, wsEndpoint];
         }
         return prev;
@@ -66,19 +55,14 @@ export default function HomePage() {
     };
 
     ws.onmessage = async (event) => {
-      console.log("Raw WebSocket message:", event.data);
       try {
         const msg = JSON.parse(event.data);
-        console.log("Parsed WebSocket message:", msg);
         if (msg.method === "BlockAnnouncement" && msg.result) {
           const headerHash = msg.result.headerHash;
           const blockHash = msg.result.blockHash;
 
           const fetchedBlock = await fetchBlock(headerHash);
           const fetchedState = await fetchState(headerHash);
-
-          console.log("Fetched Block:", fetchedBlock);
-          console.log("Fetched State:", fetchedState);
 
           setBlock(fetchedBlock);
           setState(fetchedState);
@@ -96,14 +80,7 @@ export default function HomePage() {
               overview,
               block: fetchedBlock,
             };
-            try {
-              await db.blocks.put(blockRecord);
-              // console.log("BlockRecord saved with key:", headerHash);
-            } catch (error) {
-              console.error("Error saving BlockRecord:", error);
-            }
-          } else {
-            console.warn("No valid block header to save.");
+            await db.blocks.put(blockRecord);
           }
 
           // Save StateRecord into IndexedDB.
@@ -113,14 +90,8 @@ export default function HomePage() {
               overview,
               state: fetchedState,
             };
-            try {
-              await db.states.put(stateRecord);
-              // console.log("StateRecord saved with key:", headerHash);
-            } catch (error) {
-              console.error("Error saving StateRecord:", error);
-            }
+            await db.states.put(stateRecord);
           }
-          // Update "now" to refresh relative time display.
           setNow(nowTimestamp);
         }
       } catch (error) {
@@ -143,7 +114,6 @@ export default function HomePage() {
           (a, b) => b.overview.createdAt - a.overview.createdAt
         );
         setLatestBlocks(sorted);
-        // console.log("Latest blocks loaded from DB:", sorted);
       })
       .catch((error) => {
         console.error("Error loading blocks from DB:", error);
@@ -204,17 +174,30 @@ export default function HomePage() {
         <GeneralInfoBar />
 
         <Grid container spacing={4}>
+          {/* Left column: Latest Blocks (max 10) */}
           <Grid item xs={12} md={6}>
             <LatestBlocks
-              latestBlocks={latestBlocks}
+              latestBlocks={latestBlocks.slice(0, 10)}
               getRelativeTime={getRelativeTime}
             />
           </Grid>
+
+          {/* Right column: stacked Latest Extrinsics (max 5) and Latest Reports (max 5) */}
           <Grid item xs={12} md={6}>
-            <LatestReports
-              latestBlocks={latestBlocks}
-              getRelativeTime={getRelativeTime}
-            />
+            <Grid container spacing={4}>
+              <Grid item xs={12}>
+                <LatestExtrinsics
+                  latestBlocks={latestBlocks.slice(0, 5)}
+                  getRelativeTime={getRelativeTime}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <LatestReports
+                  latestBlocks={latestBlocks.slice(0, 5)}
+                  getRelativeTime={getRelativeTime}
+                />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
