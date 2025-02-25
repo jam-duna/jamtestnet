@@ -216,8 +216,8 @@
             "state_root": "0x4d6af81a6a2722d089f78c4f66f42e6ebaa27fb5f49140c483f4d1937734d585",
             "reported": [
                 {
-                    "work_package_hash": "0x6ebe89a394a3740846c7befebf87d2908659825828e8ccd74f0448c13949555e",
-                    "segment_tree_root": "0x25cab305f1e7c649a3a981f4a55c7d90af443cdaff7d50e0c31492d753aa1697"
+                    "hash": "0x6ebe89a394a3740846c7befebf87d2908659825828e8ccd74f0448c13949555e",
+                    "exports_root": "0x25cab305f1e7c649a3a981f4a55c7d90af443cdaff7d50e0c31492d753aa1697"
                 }
             ]
         },
@@ -249,8 +249,8 @@
             "state_root": "0x278b02fb92cf7f0597a29da09aae37c2963648fe2ddc2a27165fba71a3d2aa8f",
             "reported": [
                 {
-                    "work_package_hash": "0xb277d4b31c1ef8570969e1137544c55845754478e6cb97b87319cb9064a189bc",
-                    "segment_tree_root": "0xfe1015c8f538bc6e3dfbf0d1d717900158ce4d3d9107b8aa64b8faaa58645cac"
+                    "hash": "0xb277d4b31c1ef8570969e1137544c55845754478e6cb97b87319cb9064a189bc",
+                    "exports_root": "0xfe1015c8f538bc6e3dfbf0d1d717900158ce4d3d9107b8aa64b8faaa58645cac"
                 }
             ]
         },
@@ -282,8 +282,8 @@
             "state_root": "0x6048de8bddc405a02616663444e5e032cda4c15ece6974ef4534365bf41349a3",
             "reported": [
                 {
-                    "work_package_hash": "0x8af3c04ef3b9ab36b8e0edaee9026a15ec3675d908fd0405f0a4a19f112fdd85",
-                    "segment_tree_root": "0xcb7ab4210750a958163fc3b0f7edbc2a8a21fcec4bc7ee0a99324b805ffac89d"
+                    "hash": "0x8af3c04ef3b9ab36b8e0edaee9026a15ec3675d908fd0405f0a4a19f112fdd85",
+                    "exports_root": "0xcb7ab4210750a958163fc3b0f7edbc2a8a21fcec4bc7ee0a99324b805ffac89d"
                 }
             ]
         },
@@ -302,7 +302,7 @@
             "reported": []
         },
         {
-            "header_hash": "0x7ea29a6bdcfd55cc9b5954e1eda369d2f7280ac4f592c94b7b0223120624537b",
+            "header_hash": "0x7fe6528785f270125ca33f2b95664439d201f80d142103186c1a99d06f571775",
             "mmr": {
                 "peaks": [
                     null,
@@ -315,8 +315,8 @@
             "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
             "reported": [
                 {
-                    "work_package_hash": "0x494bfa3706501ddbb17e1d5cece6b946202df3fb28b222d03833fe1c09f8b6d1",
-                    "segment_tree_root": "0xe3935c186acd88bf09b034fecfd6da883516db97861258e492b0d7e87847d2d3"
+                    "hash": "0x0e03d06290bdae42f7230cbade42bfa466db8a97aa59fd9d65f5a78cd42976f7",
+                    "exports_root": "0xe3935c186acd88bf09b034fecfd6da883516db97861258e492b0d7e87847d2d3"
                 }
             ]
         }
@@ -570,18 +570,18 @@
         {
             "report": {
                 "package_spec": {
-                    "hash": "0x494bfa3706501ddbb17e1d5cece6b946202df3fb28b222d03833fe1c09f8b6d1",
+                    "hash": "0x0e03d06290bdae42f7230cbade42bfa466db8a97aa59fd9d65f5a78cd42976f7",
                     "length": 371,
-                    "erasure_root": "0x63be7f33a82df253e59bef7508be64a9d3d017fc31910bbe0d084cb27b2fa6df",
+                    "erasure_root": "0x1929e951b0125afaf31f92b785bd7ec22105cfe98042eb4b4fb4d949461886d5",
                     "exports_root": "0xe3935c186acd88bf09b034fecfd6da883516db97861258e492b0d7e87847d2d3",
                     "exports_count": 0
                 },
                 "context": {
-                    "anchor": "0x9f3991f0a25bc464c52817bafd91771ef95755f984585a999624e634cb357789",
-                    "state_root": "0x5dd570ce7aec6d0a933ae9c87abd3e6eaf10d201cad0cc0e9b4c524a98b0d072",
-                    "beefy_root": "0x05bbfc374a64ae8f28178f2aecf99a868637fc1dc5e6e09a7c785ff7669a49de",
-                    "lookup_anchor": "0x4944d10a63165e8ba1a99caef8d9654c2c829f7e6271677cf0f553d445bd6418",
-                    "lookup_anchor_slot": 35,
+                    "anchor": "0x4944d10a63165e8ba1a99caef8d9654c2c829f7e6271677cf0f553d445bd6418",
+                    "state_root": "0x6048de8bddc405a02616663444e5e032cda4c15ece6974ef4534365bf41349a3",
+                    "beefy_root": "0x46974667d34207190ccccaf5f1174b42ba974c80e2d082b2c0b75e8fabf36d8f",
+                    "lookup_anchor": "0xfb8875a1c24a2a4c85769938431eb8db6444c8104083dddc8ad370de30ba6827",
+                    "lookup_anchor_slot": 36,
                     "prerequisites": []
                 },
                 "core_index": 0,
@@ -589,8 +589,8 @@
                 "auth_output": "0x",
                 "segment_root_lookup": [
                     {
-                        "work_package_hash": "0x8af3c04ef3b9ab36b8e0edaee9026a15ec3675d908fd0405f0a4a19f112fdd85",
-                        "segment_tree_root": "0xcb7ab4210750a958163fc3b0f7edbc2a8a21fcec4bc7ee0a99324b805ffac89d"
+                        "hash": "0x8af3c04ef3b9ab36b8e0edaee9026a15ec3675d908fd0405f0a4a19f112fdd85",
+                        "exports_root": "0xcb7ab4210750a958163fc3b0f7edbc2a8a21fcec4bc7ee0a99324b805ffac89d"
                     }
                 ],
                 "results": [
@@ -656,23 +656,23 @@
                 "tickets": 0,
                 "pre_images": 0,
                 "pre_images_size": 0,
-                "guarantees": 0,
-                "assurances": 1
-            },
-            {
-                "blocks": 0,
-                "tickets": 0,
-                "pre_images": 0,
-                "pre_images_size": 0,
-                "guarantees": 0,
-                "assurances": 1
-            },
-            {
-                "blocks": 0,
-                "tickets": 0,
-                "pre_images": 0,
-                "pre_images_size": 0,
                 "guarantees": 1,
+                "assurances": 1
+            },
+            {
+                "blocks": 0,
+                "tickets": 0,
+                "pre_images": 0,
+                "pre_images_size": 0,
+                "guarantees": 0,
+                "assurances": 1
+            },
+            {
+                "blocks": 0,
+                "tickets": 0,
+                "pre_images": 0,
+                "pre_images_size": 0,
+                "guarantees": 0,
                 "assurances": 1
             }
         ],
