@@ -1,62 +1,60 @@
-
 === RUN   TestFallback
-INFO [02-25|08:25:55.584] [N0]                                     addr=0.0.0.0:43600 dataDir=/tmp/root/jam/1852897138_21c37bae4e0b92dd/node0
-INFO [02-25|08:25:55.676] [N1]                                     addr=0.0.0.0:43601 dataDir=/tmp/root/jam/1852897138_21c37bae4e0b92dd/node1
-INFO [02-25|08:25:55.677] JAM Web Server started                   addr=0.0.0.0:45599
-INFO [02-25|08:25:55.693] [N2]                                     addr=0.0.0.0:43602 dataDir=/tmp/root/jam/1852897138_21c37bae4e0b92dd/node2
-INFO [02-25|08:25:55.710] [N3]                                     addr=0.0.0.0:43603 dataDir=/tmp/root/jam/1852897138_21c37bae4e0b92dd/node3
-INFO [02-25|08:25:55.729] [N4]                                     addr=0.0.0.0:43604 dataDir=/tmp/root/jam/1852897138_21c37bae4e0b92dd/node4
-INFO [02-25|08:25:55.746] [N5]                                     addr=0.0.0.0:43605 dataDir=/tmp/root/jam/1852897138_21c37bae4e0b92dd/node5
-INFO [02-25|08:26:00.181] [N4] proposeBlock fallback               p=4762..d622 h=9703..9d72 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=d0f6..1cd7  EpochMarker(η1'=6f6a..24af, η2'=835a..574e)"
-INFO [02-25|08:26:06.181] [N4] proposeBlock fallback               p=9703..9d72 h=45e3..1fc0 e'=1 m'=1 "len(γ_a')"=0 blk="H_t=13 H_r=20b0..571d "
-INFO [02-25|08:26:12.181] [N4] proposeBlock fallback               p=45e3..1fc0 h=9e2e..5b64 e'=1 m'=2 "len(γ_a')"=0 blk="H_t=14 H_r=3f83..3fd9 "
-INFO [02-25|08:26:18.195] [N5] proposeBlock fallback               p=9e2e..5b64 h=99a5..7b8d e'=1 m'=3 "len(γ_a')"=0 blk="H_t=15 H_r=9a79..7c66 "
-INFO [02-25|08:26:24.115] [N0] proposeBlock fallback               p=99a5..7b8d h=7817..163c e'=1 m'=4 "len(γ_a')"=0 blk="H_t=16 H_r=32cf..0376 "
-INFO [02-25|08:26:30.178] [N4] proposeBlock fallback               p=7817..163c h=d2d7..c44f e'=1 m'=5 "len(γ_a')"=0 blk="H_t=17 H_r=2949..5bf6 "
-INFO [02-25|08:26:36.111] [N0] proposeBlock fallback               p=d2d7..c44f h=a63e..ac8e e'=1 m'=6 "len(γ_a')"=0 blk="H_t=18 H_r=8894..ed2b "
-INFO [02-25|08:26:42.182] [N4] proposeBlock fallback               p=a63e..ac8e h=6281..e4cb e'=1 m'=7 "len(γ_a')"=0 blk="H_t=19 H_r=8b4d..507b "
-INFO [02-25|08:26:48.131] [N1] proposeBlock fallback               p=6281..e4cb h=6273..9e82 e'=1 m'=8 "len(γ_a')"=0 blk="H_t=20 H_r=d661..8369 "
-INFO [02-25|08:26:54.112] [N0] proposeBlock fallback               p=6273..9e82 h=4656..4d74 e'=1 m'=9 "len(γ_a')"=0 blk="H_t=21 H_r=de87..74eb "
-INFO [02-25|08:27:00.130] [N1] proposeBlock fallback               p=4656..4d74 h=29de..e7fe e'=1 m'=10 "len(γ_a')"=0 blk="H_t=22 H_r=cb4e..80c4 "
-INFO [02-25|08:27:07.150] [N4] proposeBlock fallback               p=29de..e7fe h=90fd..762b e'=1 m'=11 "len(γ_a')"=0 blk="H_t=23 H_r=2bde..a421 "
-INFO [02-25|08:27:12.165] [N3] proposeBlock fallback               p=90fd..762b h=d146..1cbf e'=2 m'=0  "len(γ_a')"=0 blk="H_t=24 H_r=2fd0..cec2  EpochMarker(η1'=767a..9923, η2'=6f6a..24af)"
-INFO [02-25|08:27:18.111] [N0] proposeBlock fallback               p=d146..1cbf h=bec5..fa3f e'=2 m'=1  "len(γ_a')"=0 blk="H_t=25 H_r=b867..f639 "
-INFO [02-25|08:27:24.127] [N1] proposeBlock fallback               p=bec5..fa3f h=4290..88b4 e'=2 m'=2  "len(γ_a')"=0 blk="H_t=26 H_r=8ef5..8372 "
-INFO [02-25|08:27:30.182] [N4] proposeBlock fallback               p=4290..88b4 h=542a..12fd e'=2 m'=3  "len(γ_a')"=0 blk="H_t=27 H_r=2f9e..321c "
-INFO [02-25|08:27:36.147] [N2] proposeBlock fallback               p=542a..12fd h=4661..76c1 e'=2 m'=4  "len(γ_a')"=0 blk="H_t=28 H_r=4879..aa83 "
-INFO [02-25|08:27:42.146] [N2] proposeBlock fallback               p=4661..76c1 h=1300..460a e'=2 m'=5  "len(γ_a')"=0 blk="H_t=29 H_r=f997..c070 "
-INFO [02-25|08:27:48.182] [N4] proposeBlock fallback               p=1300..460a h=d753..7be4 e'=2 m'=6  "len(γ_a')"=0 blk="H_t=30 H_r=b12d..f036 "
-INFO [02-25|08:27:54.146] [N2] proposeBlock fallback               p=d753..7be4 h=41ff..d93b e'=2 m'=7  "len(γ_a')"=0 blk="H_t=31 H_r=8e09..204e "
-INFO [02-25|08:28:00.146] [N2] proposeBlock fallback               p=41ff..d93b h=8130..28c2 e'=2 m'=8  "len(γ_a')"=0 blk="H_t=32 H_r=620c..6265 "
-INFO [02-25|08:28:06.200] [N5] proposeBlock fallback               p=8130..28c2 h=deec..e423 e'=2 m'=9  "len(γ_a')"=0 blk="H_t=33 H_r=03d4..3da1 "
-INFO [02-25|08:28:12.146] [N2] proposeBlock fallback               p=deec..e423 h=d0ea..f42f e'=2 m'=10 "len(γ_a')"=0 blk="H_t=34 H_r=2a4d..85bd "
-INFO [02-25|08:28:19.328] [N3] proposeBlock fallback               p=d0ea..f42f h=1000..a204 e'=2 m'=11 "len(γ_a')"=0 blk="H_t=35 H_r=47ca..8cd0 "
-INFO [02-25|08:28:24.168] [N3] proposeBlock fallback               p=1000..a204 h=6b56..7980 e'=3 m'=0  "len(γ_a')"=0 blk="H_t=36 H_r=b331..4b80  EpochMarker(η1'=989a..4916, η2'=767a..9923)"
-INFO [02-25|08:28:30.165] [N3] proposeBlock fallback               p=6b56..7980 h=dac3..46db e'=3 m'=1  "len(γ_a')"=0 blk="H_t=37 H_r=f9c2..30ca "
-INFO [02-25|08:28:36.166] [N3] proposeBlock fallback               p=dac3..46db h=f007..34ee e'=3 m'=2  "len(γ_a')"=0 blk="H_t=38 H_r=803b..ee67 "
-INFO [02-25|08:28:42.200] [N5] proposeBlock fallback               p=f007..34ee h=810b..f32d e'=3 m'=3  "len(γ_a')"=0 blk="H_t=39 H_r=fd16..81c0 "
-INFO [02-25|08:28:48.182] [N4] proposeBlock fallback               p=810b..f32d h=9c54..5a10 e'=3 m'=4  "len(γ_a')"=0 blk="H_t=40 H_r=f44b..44a9 "
-INFO [02-25|08:28:54.148] [N2] proposeBlock fallback               p=9c54..5a10 h=9501..e310 e'=3 m'=5  "len(γ_a')"=0 blk="H_t=41 H_r=a763..bfdd "
-INFO [02-25|08:29:00.131] [N1] proposeBlock fallback               p=9501..e310 h=a776..2a09 e'=3 m'=6  "len(γ_a')"=0 blk="H_t=42 H_r=6b3f..1b60 "
-INFO [02-25|08:29:06.129] [N1] proposeBlock fallback               p=a776..2a09 h=f8a1..6f18 e'=3 m'=7  "len(γ_a')"=0 blk="H_t=43 H_r=11d4..a5b1 "
-INFO [02-25|08:29:12.186] [N4] proposeBlock fallback               p=f8a1..6f18 h=de71..c0ac e'=3 m'=8  "len(γ_a')"=0 blk="H_t=44 H_r=34cc..e61d "
-INFO [02-25|08:29:18.134] [N1] proposeBlock fallback               p=de71..c0ac h=0788..e993 e'=3 m'=9  "len(γ_a')"=0 blk="H_t=45 H_r=50c0..e2e9 "
-INFO [02-25|08:29:24.167] [N3] proposeBlock fallback               p=0788..e993 h=0f36..460a e'=3 m'=10 "len(γ_a')"=0 blk="H_t=46 H_r=075a..3e56 "
-INFO [02-25|08:29:31.498] [N1] proposeBlock fallback               p=0f36..460a h=5853..7bf0 e'=3 m'=11 "len(γ_a')"=0 blk="H_t=47 H_r=1758..532c "
-INFO [02-25|08:29:36.182] [N4] proposeBlock fallback               p=5853..7bf0 h=4375..936a e'=4 m'=0  "len(γ_a')"=0 blk="H_t=48 H_r=3b6f..b8eb  EpochMarker(η1'=fce8..3d2f, η2'=989a..4916)"
-INFO [02-25|08:29:42.199] [N5] proposeBlock fallback               p=4375..936a h=a220..5573 e'=4 m'=1  "len(γ_a')"=0 blk="H_t=49 H_r=bf6c..0348 "
-INFO [02-25|08:29:48.129] [N1] proposeBlock fallback               p=a220..5573 h=cc72..8a1d e'=4 m'=2  "len(γ_a')"=0 blk="H_t=50 H_r=15b3..5b39 "
-INFO [02-25|08:29:54.131] [N1] proposeBlock fallback               p=cc72..8a1d h=f4a1..d54f e'=4 m'=3  "len(γ_a')"=0 blk="H_t=51 H_r=06ac..9dde "
-INFO [02-25|08:30:00.129] [N1] proposeBlock fallback               p=f4a1..d54f h=18de..33bc e'=4 m'=4  "len(γ_a')"=0 blk="H_t=52 H_r=2de6..1e7f "
-INFO [02-25|08:30:06.190] [N4] proposeBlock fallback               p=18de..33bc h=7608..b72f e'=4 m'=5  "len(γ_a')"=0 blk="H_t=53 H_r=796e..3703 "
-INFO [02-25|08:30:12.113] [N0] proposeBlock fallback               p=7608..b72f h=9a86..96a5 e'=4 m'=6  "len(γ_a')"=0 blk="H_t=54 H_r=bacd..44ca "
-INFO [02-25|08:30:18.112] [N0] proposeBlock fallback               p=9a86..96a5 h=8cf2..7963 e'=4 m'=7  "len(γ_a')"=0 blk="H_t=55 H_r=9de5..1ddd "
-INFO [02-25|08:30:24.114] [N0] proposeBlock fallback               p=8cf2..7963 h=701d..58c5 e'=4 m'=8  "len(γ_a')"=0 blk="H_t=56 H_r=f7fd..085b "
-INFO [02-25|08:30:30.165] [N3] proposeBlock fallback               p=701d..58c5 h=aebc..1f31 e'=4 m'=9  "len(γ_a')"=0 blk="H_t=57 H_r=58ad..986b "
-INFO [02-25|08:30:36.168] [N3] proposeBlock fallback               p=aebc..1f31 h=4097..fb6c e'=4 m'=10 "len(γ_a')"=0 blk="H_t=58 H_r=bb23..039a "
-INFO [02-25|08:30:43.453] [N5] proposeBlock fallback               p=4097..fb6c h=b199..9ba7 e'=4 m'=11 "len(γ_a')"=0 blk="H_t=59 H_r=45c6..27cd "
-INFO [02-25|08:30:48.133] [N1] proposeBlock fallback               p=b199..9ba7 h=5bad..7405 e'=5 m'=0  "len(γ_a')"=0 blk="H_t=60 H_r=3e27..45fe  EpochMarker(η1'=33e4..7bb1, η2'=fce8..3d2f)"
-INFO [02-25|08:30:49.763] Completed
---- PASS: TestFallback (294.20s)
-
-
+INFO [02-25|14:13:58.791] [N0]                                     addr=0.0.0.0:25400 dataDir=/tmp/root/jam/1853022436_b38d29c14215e12a/node0
+INFO [02-25|14:13:58.879] [N1]                                     addr=0.0.0.0:25401 dataDir=/tmp/root/jam/1853022436_b38d29c14215e12a/node1
+INFO [02-25|14:13:58.879] JAM Web Server started                   addr=0.0.0.0:27399
+INFO [02-25|14:13:58.897] [N2]                                     addr=0.0.0.0:25402 dataDir=/tmp/root/jam/1853022436_b38d29c14215e12a/node2
+INFO [02-25|14:13:58.912] [N3]                                     addr=0.0.0.0:25403 dataDir=/tmp/root/jam/1853022436_b38d29c14215e12a/node3
+INFO [02-25|14:13:58.931] [N4]                                     addr=0.0.0.0:25404 dataDir=/tmp/root/jam/1853022436_b38d29c14215e12a/node4
+INFO [02-25|14:13:58.948] [N5]                                     addr=0.0.0.0:25405 dataDir=/tmp/root/jam/1853022436_b38d29c14215e12a/node5
+INFO [02-25|14:14:03.183] [N4] proposeBlock fallback               p=4762..d622 h=4adc..5658 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=99f2..ce57  EpochMarker(η1'=6f6a..24af, η2'=835a..574e)"
+INFO [02-25|14:14:09.183] [N4] proposeBlock fallback               p=4adc..5658 h=048b..c9bb e'=1 m'=1 "len(γ_a')"=0 blk="H_t=13 H_r=0e7f..a535 "
+INFO [02-25|14:14:15.184] [N4] proposeBlock fallback               p=048b..c9bb h=9fb8..b4ff e'=1 m'=2 "len(γ_a')"=0 blk="H_t=14 H_r=6b9b..d999 "
+INFO [02-25|14:14:21.201] [N5] proposeBlock fallback               p=9fb8..b4ff h=8c9a..47ed e'=1 m'=3 "len(γ_a')"=0 blk="H_t=15 H_r=224a..050f "
+INFO [02-25|14:14:27.114] [N0] proposeBlock fallback               p=8c9a..47ed h=0d19..bf80 e'=1 m'=4 "len(γ_a')"=0 blk="H_t=16 H_r=ee9d..b75e "
+INFO [02-25|14:14:33.184] [N4] proposeBlock fallback               p=0d19..bf80 h=f598..d3cb e'=1 m'=5 "len(γ_a')"=0 blk="H_t=17 H_r=9c1a..bf7e "
+INFO [02-25|14:14:39.112] [N0] proposeBlock fallback               p=f598..d3cb h=8241..8094 e'=1 m'=6 "len(γ_a')"=0 blk="H_t=18 H_r=b30c..8d01 "
+INFO [02-25|14:14:45.187] [N4] proposeBlock fallback               p=8241..8094 h=5301..388b e'=1 m'=7 "len(γ_a')"=0 blk="H_t=19 H_r=25f3..6bc8 "
+INFO [02-25|14:14:51.133] [N1] proposeBlock fallback               p=5301..388b h=aa97..8d88 e'=1 m'=8 "len(γ_a')"=0 blk="H_t=20 H_r=f3ef..153d "
+INFO [02-25|14:14:57.114] [N0] proposeBlock fallback               p=aa97..8d88 h=5350..a8f2 e'=1 m'=9 "len(γ_a')"=0 blk="H_t=21 H_r=9a59..687f "
+INFO [02-25|14:15:03.131] [N1] proposeBlock fallback               p=5350..a8f2 h=b812..ca8e e'=1 m'=10 "len(γ_a')"=0 blk="H_t=22 H_r=047b..dc0f "
+INFO [02-25|14:15:10.444] [N4] proposeBlock fallback               p=b812..ca8e h=8188..3778 e'=1 m'=11 "len(γ_a')"=0 blk="H_t=23 H_r=152f..fb39 "
+INFO [02-25|14:15:15.167] [N3] proposeBlock fallback               p=8188..3778 h=5e63..6680 e'=2 m'=0  "len(γ_a')"=0 blk="H_t=24 H_r=3743..87d5  EpochMarker(η1'=767a..9923, η2'=6f6a..24af)"
+INFO [02-25|14:15:21.114] [N0] proposeBlock fallback               p=5e63..6680 h=75ab..5fc2 e'=2 m'=1  "len(γ_a')"=0 blk="H_t=25 H_r=88d7..80ee "
+INFO [02-25|14:15:27.132] [N1] proposeBlock fallback               p=75ab..5fc2 h=4692..64aa e'=2 m'=2  "len(γ_a')"=0 blk="H_t=26 H_r=1993..e550 "
+INFO [02-25|14:15:33.185] [N4] proposeBlock fallback               p=4692..64aa h=b093..64b5 e'=2 m'=3  "len(γ_a')"=0 blk="H_t=27 H_r=f43f..bffd "
+INFO [02-25|14:15:39.149] [N2] proposeBlock fallback               p=b093..64b5 h=bb99..7e20 e'=2 m'=4  "len(γ_a')"=0 blk="H_t=28 H_r=157b..96d9 "
+INFO [02-25|14:15:45.149] [N2] proposeBlock fallback               p=bb99..7e20 h=2eb6..b864 e'=2 m'=5  "len(γ_a')"=0 blk="H_t=29 H_r=2468..b38b "
+INFO [02-25|14:15:51.185] [N4] proposeBlock fallback               p=2eb6..b864 h=0298..01db e'=2 m'=6  "len(γ_a')"=0 blk="H_t=30 H_r=221e..cd3b "
+INFO [02-25|14:15:57.151] [N2] proposeBlock fallback               p=0298..01db h=8460..3297 e'=2 m'=7  "len(γ_a')"=0 blk="H_t=31 H_r=9a58..671f "
+INFO [02-25|14:16:03.148] [N2] proposeBlock fallback               p=8460..3297 h=cd66..b5bd e'=2 m'=8  "len(γ_a')"=0 blk="H_t=32 H_r=cfcc..816a "
+INFO [02-25|14:16:09.204] [N5] proposeBlock fallback               p=cd66..b5bd h=0ef6..0e02 e'=2 m'=9  "len(γ_a')"=0 blk="H_t=33 H_r=adab..0808 "
+INFO [02-25|14:16:15.152] [N2] proposeBlock fallback               p=0ef6..0e02 h=8121..15a6 e'=2 m'=10 "len(γ_a')"=0 blk="H_t=34 H_r=2f07..58f9 "
+INFO [02-25|14:16:22.258] [N3] proposeBlock fallback               p=8121..15a6 h=5f0f..30b3 e'=2 m'=11 "len(γ_a')"=0 blk="H_t=35 H_r=f334..3ed7 "
+INFO [02-25|14:16:27.170] [N3] proposeBlock fallback               p=5f0f..30b3 h=ee18..e564 e'=3 m'=0  "len(γ_a')"=0 blk="H_t=36 H_r=3624..adbd  EpochMarker(η1'=989a..4916, η2'=767a..9923)"
+INFO [02-25|14:16:33.168] [N3] proposeBlock fallback               p=ee18..e564 h=ddd2..9ee5 e'=3 m'=1  "len(γ_a')"=0 blk="H_t=37 H_r=7c4c..6362 "
+INFO [02-25|14:16:39.168] [N3] proposeBlock fallback               p=ddd2..9ee5 h=1d0e..53f0 e'=3 m'=2  "len(γ_a')"=0 blk="H_t=38 H_r=01e7..cc7a "
+INFO [02-25|14:16:45.203] [N5] proposeBlock fallback               p=1d0e..53f0 h=455c..73b0 e'=3 m'=3  "len(γ_a')"=0 blk="H_t=39 H_r=a035..e17a "
+INFO [02-25|14:16:51.185] [N4] proposeBlock fallback               p=455c..73b0 h=bef8..caad e'=3 m'=4  "len(γ_a')"=0 blk="H_t=40 H_r=d51b..b4b5 "
+INFO [02-25|14:16:57.148] [N2] proposeBlock fallback               p=bef8..caad h=3afb..b9ad e'=3 m'=5  "len(γ_a')"=0 blk="H_t=41 H_r=b48c..1ac5 "
+INFO [02-25|14:17:03.131] [N1] proposeBlock fallback               p=3afb..b9ad h=95c8..53cb e'=3 m'=6  "len(γ_a')"=0 blk="H_t=42 H_r=a899..f0b9 "
+INFO [02-25|14:17:09.134] [N1] proposeBlock fallback               p=95c8..53cb h=5df0..cd12 e'=3 m'=7  "len(γ_a')"=0 blk="H_t=43 H_r=c247..88e2 "
+INFO [02-25|14:17:15.187] [N4] proposeBlock fallback               p=5df0..cd12 h=af81..1deb e'=3 m'=8  "len(γ_a')"=0 blk="H_t=44 H_r=15db..4cb1 "
+INFO [02-25|14:17:21.132] [N1] proposeBlock fallback               p=af81..1deb h=cef2..ee30 e'=3 m'=9  "len(γ_a')"=0 blk="H_t=45 H_r=76e5..9f42 "
+INFO [02-25|14:17:27.169] [N3] proposeBlock fallback               p=cef2..ee30 h=d402..ec4d e'=3 m'=10 "len(γ_a')"=0 blk="H_t=46 H_r=4173..2c50 "
+INFO [02-25|14:17:34.439] [N1] proposeBlock fallback               p=d402..ec4d h=43b5..81c6 e'=3 m'=11 "len(γ_a')"=0 blk="H_t=47 H_r=cd22..a9e9 "
+INFO [02-25|14:17:39.182] [N4] proposeBlock fallback               p=43b5..81c6 h=8866..8855 e'=4 m'=0  "len(γ_a')"=0 blk="H_t=48 H_r=78b5..c9c0  EpochMarker(η1'=fce8..3d2f, η2'=989a..4916)"
+INFO [02-25|14:17:45.203] [N5] proposeBlock fallback               p=8866..8855 h=d2a3..a4ce e'=4 m'=1  "len(γ_a')"=0 blk="H_t=49 H_r=e402..270a "
+INFO [02-25|14:17:51.134] [N1] proposeBlock fallback               p=d2a3..a4ce h=9469..3fcd e'=4 m'=2  "len(γ_a')"=0 blk="H_t=50 H_r=7daf..e41e "
+INFO [02-25|14:17:57.132] [N1] proposeBlock fallback               p=9469..3fcd h=d2cf..4534 e'=4 m'=3  "len(γ_a')"=0 blk="H_t=51 H_r=e5fe..933d "
+INFO [02-25|14:18:03.133] [N1] proposeBlock fallback               p=d2cf..4534 h=1934..7124 e'=4 m'=4  "len(γ_a')"=0 blk="H_t=52 H_r=12b8..91ba "
+INFO [02-25|14:18:09.187] [N4] proposeBlock fallback               p=1934..7124 h=ce37..661a e'=4 m'=5  "len(γ_a')"=0 blk="H_t=53 H_r=1faa..83a5 "
+INFO [02-25|14:18:15.117] [N0] proposeBlock fallback               p=ce37..661a h=a923..8099 e'=4 m'=6  "len(γ_a')"=0 blk="H_t=54 H_r=52dd..d1ad "
+INFO [02-25|14:18:21.115] [N0] proposeBlock fallback               p=a923..8099 h=abbc..76cf e'=4 m'=7  "len(γ_a')"=0 blk="H_t=55 H_r=732e..b13a "
+INFO [02-25|14:18:27.116] [N0] proposeBlock fallback               p=abbc..76cf h=fbbb..ee26 e'=4 m'=8  "len(γ_a')"=0 blk="H_t=56 H_r=3fec..06e1 "
+INFO [02-25|14:18:33.167] [N3] proposeBlock fallback               p=fbbb..ee26 h=f435..23c9 e'=4 m'=9  "len(γ_a')"=0 blk="H_t=57 H_r=2cc2..cc6f "
+INFO [02-25|14:18:39.168] [N3] proposeBlock fallback               p=f435..23c9 h=d001..0725 e'=4 m'=10 "len(γ_a')"=0 blk="H_t=58 H_r=403d..766a "
+INFO [02-25|14:18:46.462] [N5] proposeBlock fallback               p=d001..0725 h=faa8..b8ac e'=4 m'=11 "len(γ_a')"=0 blk="H_t=59 H_r=3613..0fb5 "
+INFO [02-25|14:18:51.132] [N1] proposeBlock fallback               p=faa8..b8ac h=fa3d..1f17 e'=5 m'=0  "len(γ_a')"=0 blk="H_t=60 H_r=ced6..89fb  EpochMarker(η1'=33e4..7bb1, η2'=fce8..3d2f)"
+INFO [02-25|14:18:52.967] Completed
+--- PASS: TestFallback (294.19s)
+PASS
