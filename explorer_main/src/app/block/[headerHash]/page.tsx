@@ -53,9 +53,13 @@ export default function BlockOverviewPage() {
   const extrinsic = block.extrinsic;
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
+    <Container maxWidth="lg" sx={{ my: 4 }}>
       <Paper sx={{ p: 3 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography
+          variant="h5"
+          sx={{ mb: 3, fontWeight: "bold" }}
+          gutterBottom
+        >
           Block Overview
         </Typography>
 
@@ -94,11 +98,14 @@ export default function BlockOverviewPage() {
                 href={`/block/${blockRecord.headerHash}/work-report`}
                 sx={{ color: "#1976d2", textDecoration: "underline" }}
               >
-                {blockRecord.block.extrinsic.guarantees.length} reports in this
-                block
+                {blockRecord.block.extrinsic.guarantees.length} report
+                {blockRecord.block.extrinsic.guarantees.length !== 1
+                  ? "s"
+                  : ""}{" "}
+                in this block
               </MuiLink>
             ) : (
-              "0 reports in this block"
+              "0 report in this block"
             )
           }
         />
@@ -111,9 +118,8 @@ export default function BlockOverviewPage() {
           guarantees={extrinsic.guarantees || []}
           preimages={extrinsic.preimages || []}
         />
-
-        <MoreDetailsAccordion header={header} />
       </Paper>
+      <MoreDetailsAccordion header={header} />
     </Container>
   );
 }

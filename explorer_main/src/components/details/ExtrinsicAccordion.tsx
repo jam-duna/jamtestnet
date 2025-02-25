@@ -9,6 +9,7 @@ import {
   Typography,
   Tooltip,
   IconButton,
+  Link as MuiLink,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
@@ -47,20 +48,77 @@ export default function ExtrinsicAccordion({
     assurancesCount +
     guaranteesCount +
     preimagesCount;
+  const tooltip = `This block contains ${totalExtrinsics} extrinsic events.`;
+  const labelWidth = "170px";
 
   return (
-    <Accordion sx={{ mt: 5 }}>
-      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography variant="h6">
-          Extrinsic Count: {totalExtrinsics} extrinsic event
-          {totalExtrinsics !== 1 ? "s" : ""} in this block
-        </Typography>
+    <Accordion
+      disableGutters
+      sx={{
+        border: "none",
+        boxShadow: "none",
+        "&:before": { display: "none" },
+      }}
+    >
+      <AccordionSummary
+        sx={{
+          px: 0,
+          minHeight: "auto",
+          "& .MuiAccordionSummary-content": {
+            m: 0,
+            p: 0,
+          },
+          cursor: "default",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            flexShrink: 0,
+          }}
+        >
+          <Tooltip title={tooltip}>
+            <IconButton size="small" sx={{ mr: 1 }}>
+              <InfoOutlinedIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+          <Typography
+            variant="body1"
+            sx={{
+              // fontWeight: "bold",
+              whiteSpace: "nowrap", // keep the label on one line
+              minWidth: labelWidth,
+              maxWidth: labelWidth,
+            }}
+          >
+            Extrinsic Count:
+          </Typography>
+          <MuiLink
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            sx={{
+              color: "#1976d2",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
+            <Typography variant="body1">
+              {totalExtrinsics} extrinsic event
+              {totalExtrinsics !== 1 ? "s" : ""} in this block
+            </Typography>
+          </MuiLink>
+        </Box>
       </AccordionSummary>
-      <AccordionDetails>
+      <AccordionDetails sx={{ mt: 1, p: 0, pl: 26 }}>
         <AccordionSubSection title="Tickets" count={ticketsCount}>
           {ticketsCount > 0 ? (
             tickets.map((ticket, idx) => (
-              <Typography key={idx} variant="body2">
+              <Typography
+                key={idx}
+                variant="body2"
+                sx={{ whiteSpace: "normal", wordBreak: "break-word" }}
+              >
                 Ticket {idx + 1}: {JSON.stringify(ticket)}
               </Typography>
             ))
@@ -72,13 +130,22 @@ export default function ExtrinsicAccordion({
         <AccordionSubSection title="Disputes" count={disputesCount}>
           {disputes ? (
             <>
-              <Typography variant="body2">
+              <Typography
+                variant="body2"
+                sx={{ whiteSpace: "normal", wordBreak: "break-word" }}
+              >
                 Verdicts: {disputes.verdicts?.length || 0}
               </Typography>
-              <Typography variant="body2">
+              <Typography
+                variant="body2"
+                sx={{ whiteSpace: "normal", wordBreak: "break-word" }}
+              >
                 Culprits: {disputes.culprits?.length || 0}
               </Typography>
-              <Typography variant="body2">
+              <Typography
+                variant="body2"
+                sx={{ whiteSpace: "normal", wordBreak: "break-word" }}
+              >
                 Faults: {disputes.faults?.length || 0}
               </Typography>
             </>
@@ -90,7 +157,11 @@ export default function ExtrinsicAccordion({
         <AccordionSubSection title="Assurances" count={assurancesCount}>
           {assurancesCount > 0 ? (
             assurances.map((assurance, idx) => (
-              <Typography key={idx} variant="body2">
+              <Typography
+                key={idx}
+                variant="body2"
+                sx={{ whiteSpace: "normal", wordBreak: "break-word" }}
+              >
                 Assurance {idx + 1}: {JSON.stringify(assurance)}
               </Typography>
             ))
@@ -102,7 +173,11 @@ export default function ExtrinsicAccordion({
         <AccordionSubSection title="Guarantees" count={guaranteesCount}>
           {guaranteesCount > 0 ? (
             guarantees.map((guarantee, idx) => (
-              <Typography key={idx} variant="body2">
+              <Typography
+                key={idx}
+                variant="body2"
+                sx={{ whiteSpace: "normal", wordBreak: "break-word" }}
+              >
                 Guarantee {idx + 1}:{" "}
                 {JSON.stringify(guarantee.report.package_spec)}
               </Typography>
@@ -115,7 +190,11 @@ export default function ExtrinsicAccordion({
         <AccordionSubSection title="Preimages" count={preimagesCount}>
           {preimagesCount > 0 ? (
             preimages.map((preimage, idx) => (
-              <Typography key={idx} variant="body2">
+              <Typography
+                key={idx}
+                variant="body2"
+                sx={{ whiteSpace: "normal", wordBreak: "break-word" }}
+              >
                 Preimage {idx + 1}: {JSON.stringify(preimage)}
               </Typography>
             ))
@@ -140,20 +219,40 @@ function AccordionSubSection({
   children,
 }: AccordionSubSectionProps) {
   return (
-    <Accordion sx={{ mt: 2 }}>
-      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+    <Accordion
+      sx={{
+        // px: 2,
+        py: 1,
+        border: "none",
+        boxShadow: "none",
+        "&:before": { display: "none" },
+      }}
+      disableGutters
+    >
+      <AccordionSummary
+        sx={{
+          px: 0,
+          py: 0,
+          minHeight: "auto",
+          "& .MuiAccordionSummary-content": {
+            m: 0,
+            p: 0,
+          },
+        }}
+        expandIcon={<ExpandMoreIcon />}
+      >
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Tooltip title={`${title} details`}>
-            <IconButton size="small" sx={{ ml: 1 }} component="span">
+            <IconButton size="small" sx={{ mr: 1 }} component="span">
               <InfoOutlinedIcon fontSize="small" />
             </IconButton>
           </Tooltip>
-          <Typography>
+          <Typography variant="subtitle1">
             {title} ({count})
           </Typography>
         </Box>
       </AccordionSummary>
-      <AccordionDetails>{children}</AccordionDetails>
+      <AccordionDetails sx={{ px: 5, m: 0 }}>{children}</AccordionDetails>
     </Accordion>
   );
 }

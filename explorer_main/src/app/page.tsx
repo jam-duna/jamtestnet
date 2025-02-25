@@ -33,11 +33,16 @@ export default function HomePage() {
   // Helper to compute relative time.
   function getRelativeTime(timestamp: number) {
     const secondsAgo = Math.floor((now - timestamp) / 1000);
-    if (secondsAgo < 0) return "0 s";
-    if (secondsAgo < 60) return `${secondsAgo} s`;
-    if (secondsAgo < 3600) return `${Math.floor(secondsAgo / 60)} m`;
-    if (secondsAgo < 86400) return `${Math.floor(secondsAgo / 3600)} h`;
-    return `${Math.floor(secondsAgo / 86400)} d`;
+    if (secondsAgo < 0) return "0 sec";
+    if (secondsAgo < 60)
+      return `${secondsAgo} sec${secondsAgo > 1 ? "s" : " "}`;
+    if (secondsAgo < 3600)
+      return `${Math.floor(secondsAgo / 60)} min${secondsAgo > 1 ? "s" : " "}`;
+    if (secondsAgo < 86400)
+      return `${Math.floor(secondsAgo / 3600)} hour${
+        secondsAgo > 1 ? "s" : " "
+      }`;
+    return `${Math.floor(secondsAgo / 86400)} day${secondsAgo > 1 ? "s" : " "}`;
   }
 
   // Create a new WebSocket when wsEndpoint changes.

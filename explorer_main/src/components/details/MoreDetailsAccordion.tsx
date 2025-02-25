@@ -23,34 +23,38 @@ export default function MoreDetailsAccordion({
   header,
 }: MoreDetailsAccordionProps) {
   return (
-    <Accordion sx={{ mt: 5 }}>
+    <Accordion sx={{ mt: 2 }}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography variant="h6">More Details</Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            // fontWeight: "bold",
+            px: 2,
+          }}
+        >
+          More Details
+        </Typography>
       </AccordionSummary>
-      <AccordionDetails>
+      <AccordionDetails sx={{ px: 3 }}>
         <LabeledRow
           label="Parent:"
           tooltip="Hash of the previous block in the chain."
           value={header.parent}
-          labelWidth={160}
         />
         <LabeledRow
           label="Parent State Root:"
           tooltip="Merkle root summarizing the entire state after the parent block."
           value={header.parent_state_root}
-          labelWidth={160}
         />
         <LabeledRow
           label="Seal:"
           tooltip="A cryptographic seal containing the block producer's signature and possibly VRF data."
           value={header.seal}
-          labelWidth={160}
         />
         <LabeledRow
           label="Entropy Source:"
           tooltip="Used to provide randomness for the protocol. Typically not crucial for end-users."
           value={header.entropy_source}
-          labelWidth={160}
         />
       </AccordionDetails>
     </Accordion>

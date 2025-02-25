@@ -6,7 +6,8 @@ interface LabeledRowProps {
   label: string;
   tooltip: string;
   value: React.ReactNode;
-  labelWidth?: number; // optional custom width
+  labelWidth?: number;
+  mb?: number;
 }
 
 export function LabeledRow({
@@ -28,14 +29,14 @@ export function LabeledRow({
         }}
       >
         <Tooltip title={tooltip}>
-          <IconButton size="small" sx={{ mr: 0.5 }}>
+          <IconButton size="small" sx={{ mr: 1 }}>
             <InfoOutlinedIcon fontSize="small" />
           </IconButton>
         </Tooltip>
         <Typography
           variant="body1"
           sx={{
-            fontWeight: "bold",
+            // fontWeight: "bold",
             whiteSpace: "nowrap", // keep the label on one line
           }}
         >
@@ -51,6 +52,7 @@ export function LabeledRow({
           whiteSpace: "normal",
           wordBreak: "break-word",
           overflowWrap: "anywhere",
+          alignSelf: "center",
         }}
       >
         <Typography variant="body1">{value}</Typography>
