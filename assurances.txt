@@ -1,139 +1,115 @@
-make fib
-Running TestFib and timeout 40m...
-go test -timeout 40m -v -run TestFib -tags "network_test,tiny" 
-=== RUN   TestFib
-fib targetNum: 10
-Using BasePort: 22100
-Raw now: 36159334
-Raw waitTime: 2
-Raw epoch0P: 502212
-Raw epoch0Timestamp: 36159336
-===Time Saving Mode===
-AdjustTime: 10044h14m24s
-JCE Start Time: 2025-02-23 00:14:24 +0000 UTC
-Epoch0P Drift: 70
-TimeSavingMode Wait: 2
-!!!NewGenesisConfig epoch0Timestamp: 72. Wait:2 Sec 
-[N0] newNode addr=0.0.0.0:22100 dataDir=/tmp/root/jam/1851683812_ac5e5170d0f24820/node0
-[N1] newNode addr=0.0.0.0:22101 dataDir=/tmp/root/jam/1851683812_ac5e5170d0f24820/node1
-2025/02/23 00:15:35 JAM Web Server started. Listening on 0.0.0.0:24099
-[N2] newNode addr=0.0.0.0:22102 dataDir=/tmp/root/jam/1851683812_ac5e5170d0f24820/node2
-[N3] newNode addr=0.0.0.0:22103 dataDir=/tmp/root/jam/1851683812_ac5e5170d0f24820/node3
-[N4] newNode addr=0.0.0.0:22104 dataDir=/tmp/root/jam/1851683812_ac5e5170d0f24820/node4
-[N5] newNode addr=0.0.0.0:22105 dataDir=/tmp/root/jam/1851683812_ac5e5170d0f24820/node5
-2025/02/23 00:15:35 Starting Graph server at :25130
-[N4]  Blk 4762..d622<-74b0..4d72  e'=1,m'=00, len(γ_a')=0   	[N4] H_t=12 H_r=9fc8..9dc0  EpochMarker(η1'=6f6a..24af, η2'=835a..574e) 4:[b=1] 
-1: fib Code Hash: 4179b30a5fd2b08331055ccf168cadb76921aa0096441ad534ec14f2481b249b (Code Length: 1149)
-Waiting for the first block to be ready...
-[N4]  Blk 74b0..4d72<-72a0..421f  e'=1,m'=01, len(γ_a')=3   	[N4] H_t=13 H_r=7937..5a59   |E_T|=3 4:[b=2|t=3] 
-Builder storing TestService fib (4179..1b24)
-Waiting for fib service to be ready...
-[N4]  Blk 72a0..421f<-90cb..91b3  e'=1,m'=02, len(γ_a')=6   	[N4] H_t=14 H_r=fbeb..fc72   |E_T|=3 4:[b=3|t=6] 
-[N5]  Blk 90cb..91b3<-e8ea..10dc  e'=1,m'=03, len(γ_a')=9   	[N5] H_t=15 H_r=1cf6..11bc   |E_T|=3  |E_G|=1 1:[|r=1] 2:[|r=1] 3:[|r=1] 4:[b=3|t=6] 5:[b=1|t=3] 
- NEW charge gas 10  (Gas 9111=>9101)
- WRITE charge gas 10  (Gas 9101=>9091)
-hostWrite (0, 00000000 => 0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c) 63803b10 (4 bytes)
-SetServiceStorage(s=0, k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a320175250)=00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3
-[N0]  Blk e8ea..10dc<-0356..6f0f  e'=1,m'=04, len(γ_a')=12   	[N0] H_t=16 H_r=c84f..485c   |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=3|t=6|a=1] 5:[b=1|t=3|a=1] 
- NEW charge gas 10  (Gas 9111=>9101)
- WRITE charge gas 10  (Gas 9101=>9091)
-hostWrite (0, 00000000 => 0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c) 63803b10 (4 bytes)
-SetServiceStorage(s=0, k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a320175250)=00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3
- NEW charge gas 10  (Gas 9111=>9101)
- WRITE charge gas 10  (Gas 9101=>9091)
-hostWrite (0, 00000000 => 0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c) 63803b10 (4 bytes)
-SetServiceStorage(s=0, k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a320175250)=00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3
- NEW charge gas 10  (Gas 9111=>9101)
- WRITE charge gas 10  (Gas 9101=>9091)
-hostWrite (0, 00000000 => 0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c) 63803b10 (4 bytes)
-SetServiceStorage(s=0, k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a320175250)=00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3
- NEW charge gas 10  (Gas 9111=>9101)
- WRITE charge gas 10  (Gas 9101=>9091)
-hostWrite (0, 00000000 => 0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c) 63803b10 (4 bytes)
-SetServiceStorage(s=0, k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a320175250)=00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3
- NEW charge gas 10  (Gas 9111=>9101)
- WRITE charge gas 10  (Gas 9101=>9091)
-hostWrite (0, 00000000 => 0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c) 63803b10 (4 bytes)
-SetServiceStorage(s=0, k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a320175250)=00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3
- NEW charge gas 10  (Gas 9111=>9101)
- WRITE charge gas 10  (Gas 9101=>9091)
-hostWrite (0, 00000000 => 0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c) 63803b10 (4 bytes)
-SetServiceStorage(s=0, k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a320175250)=00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3
-[N4]  Blk 0356..6f0f<-670b..9881  e'=1,m'=05, len(γ_a')=12   	[N4] H_t=17 H_r=e1be..a67b  0:[b=1|t=3|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=4|t=6|a=1] 5:[b=1|t=3|a=1] 
-fib Service Index: 272334947
-All services are ready, Send preimage announcement
-Wait until all the preimage blobs are ready
-[N0]  Blk 670b..9881<-b32e..e27e  e'=1,m'=06, len(γ_a')=12   	[N0] H_t=18 H_r=439a..79b1  0:[b=2|t=3|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=4|t=6|a=1] 5:[b=1|t=3|a=1] 
-[N4]  Blk b32e..e27e<-b5eb..49d8  e'=1,m'=07, len(γ_a')=12   	[N4] H_t=19 H_r=74e6..a113  0:[b=2|t=3|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=5|t=6|a=1] 5:[b=1|t=3|a=1] 
-[N1]  Blk b5eb..49d8<-b336..4f08  e'=1,m'=08, len(γ_a')=12   	[N1] H_t=20 H_r=4feb..af0f   |E_P|=1 0:[b=2|t=3|a=1] 1:[b=1|p=1|o=1149|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=5|t=6|a=1] 5:[b=1|t=3|a=1] 
-Start FIB
-
-**  FIB=1  workPackage: ede0..c2d7 **
-[N0]  Blk b336..4f08<-af42..9f3c  e'=1,m'=09, len(γ_a')=12   	[N0] H_t=21 H_r=39a3..b6cc   |E_G|=1 0:[b=3|t=3|a=1] 1:[b=1|p=1|o=1149|r=2|a=1] 2:[|r=2|a=1] 3:[|r=2|a=1] 4:[b=5|t=6|a=1] 5:[b=1|t=3|a=1] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 010000000100000000000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=010000000100000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N1]  Blk af42..9f3c<-cde6..8472  e'=1,m'=10, len(γ_a')=12   	[N1] H_t=22 H_r=a3cf..deb2   WinningTickets(12)  |E_A|=6 0:[b=3|t=3|a=2] 1:[b=2|p=1|o=1149|r=2|a=2] 2:[|r=2|a=2] 3:[|r=2|a=2] 4:[b=5|t=6|a=2] 5:[b=1|t=3|a=2] 
-Fib(1) = [1 0 0 0 1 0 0 0 0 0 0 0]
-
-**  FIB=2  workPackage: 7f0b..91e7 **
-[N4]  Blk cde6..8472<-7902..1012  e'=1,m'=11, len(γ_a')=12   	[N4] H_t=23 H_r=c0ff..459b   |E_G|=1 0:[b=3|t=3|a=2] 1:[b=2|p=1|o=1149|r=3|a=2] 2:[|r=3|a=2] 3:[|r=3|a=2] 4:[b=6|t=6|a=2] 5:[b=1|t=3|a=2] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 020000000100000001000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=020000000100000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N2]  Blk 7902..1012<-cf3a..bdba  e'=2,m'=00, len(γ_a')=3   	[N2] H_t=24 H_r=e1e3..6a68  EpochMarker(η1'=767a..9923, η2'=6f6a..24af)  |E_T|=3  |E_A|=6 0:[|a=1] 1:[|a=1] 2:[b=1|t=3|a=1] 3:[|a=1] 4:[|a=1] 5:[|a=1] 
-Fib(2) = [2 0 0 0 1 0 0 0 1 0 0 0]
-
-**  FIB=3  workPackage: 4277..30e7 **
-[N5]  Blk cf3a..bdba<-e8e9..09e7  e'=2,m'=01, len(γ_a')=6   	[N5] H_t=25 H_r=5de5..e77c   |E_T|=3  |E_G|=1 0:[|a=1] 1:[|r=1|a=1] 2:[b=1|t=3|r=1|a=1] 3:[|a=1] 4:[|a=1] 5:[b=1|t=3|r=1|a=1] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 030000000200000001000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=030000000200000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N4]  Blk e8e9..09e7<-f877..d37b  e'=2,m'=02, len(γ_a')=9   	[N4] H_t=26 H_r=5f26..6a25   |E_T|=3  |E_A|=6 0:[|a=2] 1:[|r=1|a=2] 2:[b=1|t=3|r=1|a=2] 3:[|a=2] 4:[b=1|t=3|a=2] 5:[b=1|t=3|r=1|a=2] 
-Fib(3) = [2 0 0 0 1 0 0 0 1 0 0 0]
-
-**  FIB=4  workPackage: b34b..30a9 **
-[N3]  Blk f877..d37b<-ff84..3b12  e'=2,m'=03, len(γ_a')=12   	[N3] H_t=27 H_r=4611..66de   |E_T|=3  |E_G|=1 0:[|a=2] 1:[|r=2|a=2] 2:[b=1|t=3|r=2|a=2] 3:[b=1|t=3|a=2] 4:[b=1|t=3|a=2] 5:[b=1|t=3|r=2|a=2] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 040000000300000002000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=040000000300000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N5]  Blk ff84..3b12<-52c9..32e6  e'=2,m'=04, len(γ_a')=12   	[N5] H_t=28 H_r=af2b..9987   |E_A|=6 0:[|a=3] 1:[|r=2|a=3] 2:[b=1|t=3|r=2|a=3] 3:[b=1|t=3|a=3] 4:[b=1|t=3|a=3] 5:[b=2|t=3|r=2|a=3] 
-Fib(4) = [4 0 0 0 3 0 0 0 2 0 0 0]
-
-**  FIB=5  workPackage: cb2f..70f5 **
-[N1]  Blk 52c9..32e6<-ddc1..2691  e'=2,m'=05, len(γ_a')=12   	[N1] H_t=29 H_r=df0e..ef62   |E_G|=1 0:[|r=1|a=3] 1:[b=1|r=2|a=3] 2:[b=1|t=3|r=2|a=3] 3:[b=1|t=3|r=1|a=3] 4:[b=1|t=3|r=1|a=3] 5:[b=2|t=3|r=2|a=3] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 050000000500000003000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=050000000500000003000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N3]  Blk ddc1..2691<-0340..7db5  e'=2,m'=06, len(γ_a')=12   	[N3] H_t=30 H_r=ab1f..f62e   |E_A|=6 0:[|r=1|a=4] 1:[b=1|r=2|a=4] 2:[b=1|t=3|r=2|a=4] 3:[b=2|t=3|r=1|a=4] 4:[b=1|t=3|r=1|a=4] 5:[b=2|t=3|r=2|a=4] 
-Fib(5) = [5 0 0 0 5 0 0 0 3 0 0 0]
-
-**  FIB=6  workPackage: 12f5..4490 **
-[N2]  Blk 0340..7db5<-58c8..669e  e'=2,m'=07, len(γ_a')=12   	[N2] H_t=31 H_r=441e..b00f   |E_G|=1 0:[|r=2|a=4] 1:[b=1|r=2|a=4] 2:[b=2|t=3|r=2|a=4] 3:[b=2|t=3|r=2|a=4] 4:[b=1|t=3|r=2|a=4] 5:[b=2|t=3|r=2|a=4] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 060000000800000005000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=060000000800000005000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N0]  Blk 58c8..669e<-5fe3..e8a2  e'=2,m'=08, len(γ_a')=12   	[N0] H_t=32 H_r=5ea4..e13b   |E_A|=6 0:[b=1|r=2|a=5] 1:[b=1|r=2|a=5] 2:[b=2|t=3|r=2|a=5] 3:[b=2|t=3|r=2|a=5] 4:[b=1|t=3|r=2|a=5] 5:[b=2|t=3|r=2|a=5] 
-Fib(6) = [6 0 0 0 8 0 0 0 5 0 0 0]
-
-**  FIB=7  workPackage: 4882..a423 **
-[N1]  Blk 5fe3..e8a2<-b3e2..c4ec  e'=2,m'=09, len(γ_a')=12   	[N1] H_t=33 H_r=1990..8368   |E_G|=1 0:[b=1|r=2|a=5] 1:[b=2|r=3|a=5] 2:[b=2|t=3|r=3|a=5] 3:[b=2|t=3|r=2|a=5] 4:[b=1|t=3|r=2|a=5] 5:[b=2|t=3|r=3|a=5] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 070000000d00000008000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=070000000d00000008000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N5]  Blk b3e2..c4ec<-d805..ee2e  e'=2,m'=10, len(γ_a')=12   	[N5] H_t=34 H_r=2f4f..4b12   WinningTickets(12)  |E_A|=6 0:[b=1|r=2|a=6] 1:[b=2|r=3|a=6] 2:[b=2|t=3|r=3|a=6] 3:[b=2|t=3|r=2|a=6] 4:[b=1|t=3|r=2|a=6] 5:[b=3|t=3|r=3|a=6] 
-Fib(7) = [7 0 0 0 13 0 0 0 8 0 0 0]
-
-**  FIB=8  workPackage: 72d4..5d51 **
-[N3]  Blk d805..ee2e<-4ad1..5dde  e'=2,m'=11, len(γ_a')=12   	[N3] H_t=35 H_r=ae3a..6f44   |E_G|=1 0:[b=1|r=2|a=6] 1:[b=2|r=4|a=6] 2:[b=2|t=3|r=4|a=6] 3:[b=3|t=3|r=2|a=6] 4:[b=1|t=3|r=2|a=6] 5:[b=3|t=3|r=4|a=6] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 08000000150000000d000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=08000000150000000d000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N0]  Blk 4ad1..5dde<-4a8e..ed08  e'=3,m'=00, len(γ_a')=3   	[N0] H_t=36 H_r=29f7..289b  EpochMarker(η1'=7e4f..728f, η2'=767a..9923)  |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 1:[|a=1] 2:[|a=1] 3:[|a=1] 4:[|a=1] 5:[|a=1] 
-Fib(8) = [8 0 0 0 21 0 0 0 13 0 0 0]
-
-**  FIB=9  workPackage: d7b5..9b82 **
-[N0]  Blk 4a8e..ed08<-25fb..0305  e'=3,m'=01, len(γ_a')=6   	[N0] H_t=37 H_r=f5a7..951d   |E_T|=3  |E_G|=1 0:[b=2|t=6|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[|a=1] 5:[|a=1] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 090000002200000015000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=090000002200000015000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N5]  Blk 25fb..0305<-2bf6..651e  e'=3,m'=02, len(γ_a')=9   	[N5] H_t=38 H_r=076a..bd26   |E_T|=3  |E_A|=6 0:[b=2|t=6|a=2] 1:[|r=1|a=2] 2:[|r=1|a=2] 3:[|r=1|a=2] 4:[|a=2] 5:[b=1|t=3|a=2] 
-Fib(9) = [9 0 0 0 34 0 0 0 21 0 0 0]
-
-**  FIB=10  workPackage: 7fe1..ba34 **
-[N2]  Blk 2bf6..651e<-376f..bf9a  e'=3,m'=03, len(γ_a')=12   	[N2] H_t=39 H_r=b87c..10f7   |E_T|=3  |E_G|=1 0:[b=2|t=6|a=2] 1:[|r=2|a=2] 2:[b=1|t=3|r=2|a=2] 3:[|r=2|a=2] 4:[|a=2] 5:[b=1|t=3|a=2] 
-hostWrite (272334947, 00 => 0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986) 0a0000003700000022000000 (12 bytes)
-SetServiceStorage(s=272334947, k=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986, v=0a0000003700000022000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe3)=63ff80ff3bff10ff8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f
-[N5]  Blk 376f..bf9a<-53c0..e75a  e'=3,m'=04, len(γ_a')=12   	[N5] H_t=40 H_r=d410..838c   |E_A|=6 0:[b=2|t=6|a=3] 1:[|r=2|a=3] 2:[b=1|t=3|r=2|a=3] 3:[|r=2|a=3] 4:[|a=3] 5:[b=2|t=3|a=3] 
-Fib(10) = [10 0 0 0 55 0 0 0 34 0 0 0]
+INFO [02-25|04:05:02.793] [N0]                                     addr=0.0.0.0:29000 dataDir=/tmp/root/jam/1852803220_78215326d0bb18cc/node0
+INFO [02-25|04:05:02.875] [N1]                                     addr=0.0.0.0:29001 dataDir=/tmp/root/jam/1852803220_78215326d0bb18cc/node1
+INFO [02-25|04:05:02.875] JAM Web Server started                   addr=0.0.0.0:30999
+INFO [02-25|04:05:02.894] [N2]                                     addr=0.0.0.0:29002 dataDir=/tmp/root/jam/1852803220_78215326d0bb18cc/node2
+INFO [02-25|04:05:02.913] [N3]                                     addr=0.0.0.0:29003 dataDir=/tmp/root/jam/1852803220_78215326d0bb18cc/node3
+INFO [02-25|04:05:02.932] [N4]                                     addr=0.0.0.0:29004 dataDir=/tmp/root/jam/1852803220_78215326d0bb18cc/node4
+INFO [02-25|04:05:02.951] [N5]                                     addr=0.0.0.0:29005 dataDir=/tmp/root/jam/1852803220_78215326d0bb18cc/node5
+INFO [02-25|04:05:02.970] JAMTEST                                  jam=fib targetN=10
+INFO [02-25|04:05:07.188] [N4] proposeBlock fallback               p=4762..d622 h=9703..9d72 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=d0f6..1cd7  EpochMarker(η1'=6f6a..24af, η2'=835a..574e)"
+INFO [02-25|04:05:13.974] auth_copy                                codeHash=0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3 len=1175
+INFO [02-25|04:05:13.974] fib                                      codeHash=0xb0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769 len=1168
+INFO [02-25|04:05:15.454] [N4] proposeBlock fallback               p=9703..9d72 h=02fb..4c82 e'=1 m'=1 "len(γ_a')"=3 blk="H_t=13 H_r=20b0..571d  |E_T|=3"
+INFO [02-25|04:05:19.768] [N4] proposeBlock fallback               p=02fb..4c82 h=66a5..2027 e'=1 m'=2 "len(γ_a')"=6 blk="H_t=14 H_r=8649..7ed1  |E_T|=3"
+INFO [02-25|04:05:25.798] [N5] proposeBlock fallback               p=66a5..2027 h=5ea2..b8ee e'=1 m'=3 "len(γ_a')"=9 blk="H_t=15 H_r=8c88..e229  |E_T|=3"
+INFO [02-25|04:05:25.974] Builder storing TestService              serviceName=auth_copy codeHash=0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3
+INFO [02-25|04:05:31.671] [N0] proposeBlock fallback               p=5ea2..b8ee h=98f6..402c e'=1 m'=4 "len(γ_a')"=12 blk="H_t=16 H_r=a30d..b8e4  |E_T|=3 |E_G|=1"
+DEBUG[02-25|04:05:37.180] NEW chargeGas                            gasCharged=10 beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:05:37.180] NEW                                      code_hash_ptr=feff000b code_hash_ptr=da81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3 code_len=1175 min_item_gas=100 min_memo_gas=100
+DEBUG[02-25|04:05:37.180] WRITE chargeGas                          gasCharged=10 beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:05:37.181] WRITE                                    s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=549611b0 vlen=4
+DEBUG[02-25|04:05:37.181] WRITE storage                            s=0 a_o=1112 a_i=5
+DEBUG[02-25|04:05:37.181] TRANSFER chargeGas                       gasCharged=100 beforeGas=9091 afterGas=8991
+DEBUG[02-25|04:05:37.181] TRANSFER                                 sender=0 receiver=2953942612 amount=500000 gaslimit=100
+INFO [02-25|04:05:37.208] [N4] proposeBlock fallback               p=98f6..402c h=48e5..c032 e'=1 m'=5 "len(γ_a')"=12 blk="H_t=17 H_r=d448..d30a  |E_A|=6"
+INFO [02-25|04:05:43.129] [N0] proposeBlock fallback               p=48e5..c032 h=0006..e0db e'=1 m'=6 "len(γ_a')"=12 blk="H_t=18 H_r=0a56..65e9 "
+INFO [02-25|04:05:45.000] Builder storing TestService              serviceName=fib       codeHash=0xb0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769
+INFO [02-25|04:05:49.191] [N4] proposeBlock fallback               p=0006..e0db h=1f98..5ff0 e'=1 m'=7 "len(γ_a')"=12 blk="H_t=19 H_r=520a..4b58  |E_G|=1"
+DEBUG[02-25|04:05:55.128] NEW chargeGas                            gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:05:55.128] NEW                                      code_hash_ptr=feff000b code_hash_ptr=b0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769 code_len=1168 min_item_gas=100 min_memo_gas=100
+DEBUG[02-25|04:05:55.128] WRITE chargeGas                          gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:05:55.128] WRITE                                    s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=03f9883f vlen=4
+DEBUG[02-25|04:05:55.128] WRITE storage                            s=0 a_o=1112 a_i=5
+DEBUG[02-25|04:05:55.128] TRANSFER chargeGas                       gasCharged=100 beforeGas=9091 afterGas=8991
+DEBUG[02-25|04:05:55.128] TRANSFER                                 sender=0 receiver=1065941251 amount=500000 gaslimit=100
+INFO [02-25|04:05:55.156] [N1] proposeBlock fallback               p=1f98..5ff0 h=0be3..94ac e'=1 m'=8 "len(γ_a')"=12 blk="H_t=20 H_r=3ea6..2f77  |E_P|=1 |E_A|=6"
+INFO [02-25|04:06:01.113] [N0] proposeBlock fallback               p=0be3..94ac h=dea1..676a e'=1 m'=9 "len(γ_a')"=12 blk="H_t=21 H_r=1c08..2995 "
+INFO [02-25|04:06:07.130] [N1] proposeBlock fallback               p=dea1..676a h=1545..9243 e'=1 m'=10 "len(γ_a')"=12 blk="H_t=22 H_r=9b90..4838   WinningTickets(12) |E_P|=1"
+INFO [02-25|04:06:08.027] FIB START                                targetN=10
+INFO [02-25|04:06:08.027] FIB(1) work package submitted            workPackage=0x57971da3be7d53f3ec0392c68304d18e7bb2ae153ec00e8f6b1a19cdb75e09a5
+INFO [02-25|04:06:14.639] [N4] proposeBlock fallback               p=1545..9243 h=dd0f..dd56 e'=1 m'=11 "len(γ_a')"=12 blk="H_t=23 H_r=081e..89bb  |E_G|=1"
+DEBUG[02-25|04:06:19.788] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:06:19.788] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=010000000100000000000000 vlen=12
+DEBUG[02-25|04:06:19.788] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:06:19.813] [N2] proposeBlock safrole                p=dd0f..dd56 h=c14a..d7b5 e'=2 m'=0  "len(γ_a')"=3  blk="H_t=24 H_r=26b0..0090  EpochMarker(η1'=767a..9923, η2'=6f6a..24af) |E_T|=3 |E_A|=6"
+INFO [02-25|04:06:23.037] Fib(1) result                            result=010000000100000000000000
+INFO [02-25|04:06:23.037] FIB(2) work package submitted            workPackage=0xb383b3884648800340b355baf1761d65439518868b5b04d53932784b2368a8d9
+INFO [02-25|04:06:25.859] [N5] proposeBlock safrole                p=c14a..d7b5 h=7392..dda0 e'=2 m'=1  "len(γ_a')"=6  blk="H_t=25 H_r=7a1d..21cd  |E_T|=3 |E_G|=1"
+DEBUG[02-25|04:06:31.722] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:06:31.722] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=020000000100000001000000 vlen=12
+DEBUG[02-25|04:06:31.722] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:06:31.748] [N4] proposeBlock safrole                p=7392..dda0 h=0eb5..dc01 e'=2 m'=2  "len(γ_a')"=9  blk="H_t=26 H_r=dffd..8908  |E_T|=3 |E_A|=6"
+INFO [02-25|04:06:32.042] Fib(2) result                            result=020000000100000001000000
+INFO [02-25|04:06:32.042] FIB(3) work package submitted            workPackage=0x85e3189b7c42eae04eea6249af9f58c3e192df35502e0a2c0e43cdadf65c5a48
+INFO [02-25|04:06:37.733] [N3] proposeBlock safrole                p=0eb5..dc01 h=3161..187e e'=2 m'=3  "len(γ_a')"=12 blk="H_t=27 H_r=c1c0..243b  |E_T|=3 |E_G|=1"
+DEBUG[02-25|04:06:43.224] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:06:43.224] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=030000000200000001000000 vlen=12
+DEBUG[02-25|04:06:43.224] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:06:43.252] [N5] proposeBlock safrole                p=3161..187e h=68f8..8d31 e'=2 m'=4  "len(γ_a')"=12 blk="H_t=28 H_r=45ca..7f3e  |E_A|=6"
+INFO [02-25|04:06:44.052] Fib(3) result                            result=030000000200000001000000
+INFO [02-25|04:06:44.052] FIB(4) work package submitted            workPackage=0x5c9c5c846d7986fa403d76ef5b5c3b0531322ba8eebb74d7566f0411d7bcfca1
+INFO [02-25|04:06:49.153] [N1] proposeBlock safrole                p=68f8..8d31 h=bbc5..8d16 e'=2 m'=5  "len(γ_a')"=12 blk="H_t=29 H_r=8b3b..26f6  |E_G|=1"
+DEBUG[02-25|04:06:55.162] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:06:55.162] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=040000000300000002000000 vlen=12
+DEBUG[02-25|04:06:55.162] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:06:55.192] [N3] proposeBlock safrole                p=bbc5..8d16 h=2e35..34f0 e'=2 m'=6  "len(γ_a')"=12 blk="H_t=30 H_r=7886..0c81  |E_A|=6"
+INFO [02-25|04:06:56.060] Fib(4) result                            result=040000000300000002000000
+INFO [02-25|04:06:56.060] FIB(5) work package submitted            workPackage=0x6ebe89a394a3740846c7befebf87d2908659825828e8ccd74f0448c13949555e
+INFO [02-25|04:07:01.184] [N2] proposeBlock safrole                p=2e35..34f0 h=7b28..07b4 e'=2 m'=7  "len(γ_a')"=12 blk="H_t=31 H_r=5b6d..40df  |E_G|=1"
+DEBUG[02-25|04:07:07.105] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:07:07.105] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=050000000500000003000000 vlen=12
+DEBUG[02-25|04:07:07.105] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:07:07.132] [N0] proposeBlock safrole                p=7b28..07b4 h=dd53..894b e'=2 m'=8  "len(γ_a')"=12 blk="H_t=32 H_r=4d6a..34d5  |E_A|=6"
+DEBUG[02-25|04:07:07.217] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:07:07.217] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=050000000500000003000000 vlen=12
+DEBUG[02-25|04:07:07.217] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:07:08.066] Fib(5) result                            result=050000000500000003000000
+INFO [02-25|04:07:08.067] FIB(6) work package submitted            workPackage=0xb277d4b31c1ef8570969e1137544c55845754478e6cb97b87319cb9064a189bc
+INFO [02-25|04:07:13.133] [N1] proposeBlock safrole                p=dd53..894b h=82c9..aefd e'=2 m'=9  "len(γ_a')"=12 blk="H_t=33 H_r=0bb8..e63f  |E_G|=1"
+DEBUG[02-25|04:07:19.180] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:07:19.180] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=060000000800000005000000 vlen=12
+DEBUG[02-25|04:07:19.180] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:07:19.208] [N5] proposeBlock safrole                p=82c9..aefd h=9f39..3577 e'=2 m'=10 "len(γ_a')"=12 blk="H_t=34 H_r=278b..d2aa   WinningTickets(12) |E_A|=6"
+INFO [02-25|04:07:20.074] Fib(6) result                            result=060000000800000005000000
+INFO [02-25|04:07:20.074] FIB(7) work package submitted            workPackage=0x8af3c04ef3b9ab36b8e0edaee9026a15ec3675d908fd0405f0a4a19f112fdd85
+INFO [02-25|04:07:26.685] [N3] proposeBlock safrole                p=9f39..3577 h=4944..bd64 e'=2 m'=11 "len(γ_a')"=12 blk="H_t=35 H_r=5dd5..b0d0  |E_G|=1"
+DEBUG[02-25|04:07:31.724] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:07:31.724] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=070000000d00000008000000 vlen=12
+DEBUG[02-25|04:07:31.725] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:07:31.750] [N0] proposeBlock safrole                p=4944..bd64 h=fb88..ba68 e'=3 m'=0  "len(γ_a')"=3  blk="H_t=36 H_r=6048..1349  EpochMarker(η1'=7e4f..728f, η2'=767a..9923) |E_T|=3 |E_A|=6"
+DEBUG[02-25|04:07:33.861] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:07:33.861] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=070000000d00000008000000 vlen=12
+DEBUG[02-25|04:07:33.861] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:07:34.083] Fib(7) result                            result=070000000d00000008000000
+INFO [02-25|04:07:34.084] FIB(8) work package submitted            workPackage=0x494bfa3706501ddbb17e1d5cece6b946202df3fb28b222d03833fe1c09f8b6d1
+INFO [02-25|04:07:37.696] [N0] proposeBlock safrole                p=fb88..ba68 h=7ea2..2453 e'=3 m'=1  "len(γ_a')"=6  blk="H_t=37 H_r=390f..fb34  |E_T|=3 |E_G|=1"
+DEBUG[02-25|04:07:43.735] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:07:43.735] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=08000000150000000d000000 vlen=12
+DEBUG[02-25|04:07:43.735] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:07:43.761] [N5] proposeBlock safrole                p=7ea2..2453 h=0523..ad7a e'=3 m'=2  "len(γ_a')"=9  blk="H_t=38 H_r=1264..78a4  |E_T|=3 |E_A|=6"
+INFO [02-25|04:07:47.094] Fib(8) result                            result=08000000150000000d000000
+INFO [02-25|04:07:47.094] FIB(9) work package submitted            workPackage=0x310a588d01310320e3f55f4ccaf31cd7002799a15eeac0fedfc473444f7a7de8
+INFO [02-25|04:07:49.705] [N2] proposeBlock safrole                p=0523..ad7a h=3d9a..9602 e'=3 m'=3  "len(γ_a')"=12 blk="H_t=39 H_r=2137..1298  |E_T|=3 |E_G|=1"
+DEBUG[02-25|04:07:55.195] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:07:55.195] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=090000002200000015000000 vlen=12
+DEBUG[02-25|04:07:55.195] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:07:55.223] [N5] proposeBlock safrole                p=3d9a..9602 h=20ef..c1eb e'=3 m'=4  "len(γ_a')"=12 blk="H_t=40 H_r=b7b5..82da  |E_A|=6"
+INFO [02-25|04:07:56.100] Fib(9) result                            result=090000002200000015000000
+INFO [02-25|04:07:56.100] FIB(10) work package submitted           workPackage=0x5eb611eb62f2b12130c4ab96067ca42541b40774c683c1d26a5ea6e575874696
+INFO [02-25|04:08:01.189] [N2] proposeBlock safrole                p=20ef..c1eb h=9851..000b e'=3 m'=5  "len(γ_a')"=12 blk="H_t=41 H_r=1c20..e604  |E_G|=1"
+DEBUG[02-25|04:08:07.176] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:08:07.176] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=0a0000003700000022000000 vlen=12
+DEBUG[02-25|04:08:07.176] WRITE storage                            s=1065941251 a_o=1293 a_i=3
+INFO [02-25|04:08:07.205] [N3] proposeBlock safrole                p=9851..000b h=27b6..5577 e'=3 m'=6  "len(γ_a')"=12 blk="H_t=42 H_r=187d..3105  |E_A|=6"
+INFO [02-25|04:08:08.106] Fib(10) result                           result=0a0000003700000022000000
+--- PASS: TestFib (185.33s)

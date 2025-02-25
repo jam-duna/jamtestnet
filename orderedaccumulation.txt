@@ -1,177 +1,213 @@
-[N4]  Blk 4762..d622<-74b0..4d72  e'=1,m'=00, len(γ_a')=0   	[N4] H_t=12 H_r=9fc8..9dc0  EpochMarker(η1'=6f6a..24af, η2'=835a..574e) 4:[b=1] 
-1: fib Code Hash: 4179b30a5fd2b08331055ccf168cadb76921aa0096441ad534ec14f2481b249b (Code Length: 1149)
-2: tribonacci Code Hash: d02aaae7a7d3817d331b36fc03bd6a7a12bdd150d3724aee0dc5c309764950d8 (Code Length: 1161)
-3: megatron Code Hash: a0e7e79c2467fd18c929e0fc6027be12a5658d74f4f02183689db5864a3c54f4 (Code Length: 1030)
-Waiting for the first block to be ready...
-[N4]  Blk 74b0..4d72<-328b..fa83  e'=1,m'=01, len(γ_a')=3   	[N4] H_t=13 H_r=7937..5a59   |E_T|=3 4:[b=2|t=3] 
-Builder storing TestService megatron (a0e7..3c54)
-Waiting for megatron service to be ready...
-[N4]  Blk 328b..fa83<-3b52..2847  e'=1,m'=02, len(γ_a')=6   	[N4] H_t=14 H_r=d8bd..64a2   |E_T|=3 4:[b=3|t=6] 
-[N5]  Blk 3b52..2847<-acab..df86  e'=1,m'=03, len(γ_a')=9   	[N5] H_t=15 H_r=5c0f..d659   |E_T|=3  |E_G|=1 1:[|r=1] 2:[|r=1] 3:[|r=1] 4:[b=3|t=6] 5:[b=1|t=3] 
-SetServiceStorage(s=0, k=00000000, v=63803b10) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=00ff00ff00ff00ff000000000000000000000000000000000000000000000000
- a_i [s=0] changed from 2 to 3
- a_o [s=0] changed from 909 to 945
- a_i [s=272334947] changed from 0 to 2
- a_o [s=272334947] changed from 0 to 1111
-[N0]  Blk acab..df86<-c1ba..e281  e'=1,m'=04, len(γ_a')=12   	[N0] H_t=16 H_r=4338..d90b   |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=3|t=6|a=1] 5:[b=1|t=3|a=1] 
-[N4]  Blk c1ba..e281<-9978..1eb8  e'=1,m'=05, len(γ_a')=12   	[N4] H_t=17 H_r=e4db..96c4  0:[b=1|t=3|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=4|t=6|a=1] 5:[b=1|t=3|a=1] 
-megatron Service Index: 272334947
-Builder storing TestService fib (4179..1b24)
-Waiting for fib service to be ready...
-[N0]  Blk 9978..1eb8<-2bb5..bdeb  e'=1,m'=06, len(γ_a')=12   	[N0] H_t=18 H_r=b127..4b56   |E_G|=1 0:[b=2|t=3|r=1|a=1] 1:[|r=1|a=1] 2:[|r=1|a=1] 3:[|r=1|a=1] 4:[b=4|t=6|r=1|a=1] 5:[b=1|t=3|r=1|a=1] 
-SetServiceStorage(s=0, k=00000000, v=de32e820) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=00ff00ff00ff00ff000000000000000000000000000000000000000000000000
- a_i [s=552088286] changed from 0 to 2
- a_o [s=552088286] changed from 0 to 1230
-[N4]  Blk 2bb5..bdeb<-523b..56cc  e'=1,m'=07, len(γ_a')=12   	[N4] H_t=19 H_r=62b3..5c55   |E_A|=6 0:[b=2|t=3|r=1|a=2] 1:[|r=1|a=2] 2:[|r=1|a=2] 3:[|r=1|a=2] 4:[b=5|t=6|r=1|a=2] 5:[b=1|t=3|r=1|a=2] 
-[N1]  Blk 523b..56cc<-c489..918a  e'=1,m'=08, len(γ_a')=12   	[N1] H_t=20 H_r=9cf9..de2e   |E_P|=1 0:[b=2|t=3|r=1|a=2] 1:[b=1|p=1|o=1030|r=1|a=2] 2:[|r=1|a=2] 3:[|r=1|a=2] 4:[b=5|t=6|r=1|a=2] 5:[b=1|t=3|r=1|a=2] 
-fib Service Index: 552088286
-Builder storing TestService tribonacci (d02a..4950)
-Waiting for tribonacci service to be ready...
-[N0]  Blk c489..918a<-6e08..b95e  e'=1,m'=09, len(γ_a')=12   	[N0] H_t=21 H_r=af86..b6cf   |E_G|=1 0:[b=3|t=3|r=1|a=2] 1:[b=1|p=1|o=1030|r=2|a=2] 2:[|r=2|a=2] 3:[|r=2|a=2] 4:[b=5|t=6|r=1|a=2] 5:[b=1|t=3|r=1|a=2] 
-SetServiceStorage(s=0, k=00000000, v=1f5dd05b) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=00ff00ff00ff00ff000000000000000000000000000000000000000000000000
- a_i [s=1540381983] changed from 0 to 2
- a_o [s=1540381983] changed from 0 to 1242
-[N1]  Blk 6e08..b95e<-a4dc..1566  e'=1,m'=10, len(γ_a')=12   	[N1] H_t=22 H_r=1b94..3f83   WinningTickets(12)  |E_P|=1  |E_A|=6 0:[b=3|t=3|r=1|a=3] 1:[b=2|p=2|o=2179|r=2|a=3] 2:[|r=2|a=3] 3:[|r=2|a=3] 4:[b=5|t=6|r=1|a=3] 5:[b=1|t=3|r=1|a=3] 
-[N4]  Blk a4dc..1566<-fc79..b385  e'=1,m'=11, len(γ_a')=12   	[N4] H_t=23 H_r=57e8..2f6b  0:[b=3|t=3|r=1|a=3] 1:[b=2|p=2|o=2179|r=2|a=3] 2:[|r=2|a=3] 3:[|r=2|a=3] 4:[b=6|t=6|r=1|a=3] 5:[b=1|t=3|r=1|a=3] 
-tribonacci Service Index: 1540381983
-All services are ready, Send preimage announcement
-Wait until all the preimage blobs are ready
-[N2]  Blk fc79..b385<-ea3f..6285  e'=2,m'=00, len(γ_a')=3   	[N2] H_t=24 H_r=fc88..909c  EpochMarker(η1'=767a..9923, η2'=6f6a..24af)  |E_T|=3 2:[b=1|t=3] 
-[N5]  Blk ea3f..6285<-4407..5317  e'=2,m'=01, len(γ_a')=6   	[N5] H_t=25 H_r=3713..063a   |E_T|=3 2:[b=1|t=3] 5:[b=1|t=3] 
-[N4]  Blk 4407..5317<-5c1e..f60e  e'=2,m'=02, len(γ_a')=9   	[N4] H_t=26 H_r=9bc7..fe37   |E_T|=3  |E_P|=1 2:[b=1|t=3] 4:[b=1|t=3|p=1|o=1161] 5:[b=1|t=3] 
+=== RUN   TestMegatron
+INFO [02-25|04:10:51.201] [N0]                                     addr=0.0.0.0:19100 dataDir=/tmp/root/jam/1852805314_80907f43065c6cdf/node0
+INFO [02-25|04:10:51.267] [N1]                                     addr=0.0.0.0:19101 dataDir=/tmp/root/jam/1852805314_80907f43065c6cdf/node1
+INFO [02-25|04:10:51.267] JAM Web Server started                   addr=0.0.0.0:21099
+INFO [02-25|04:10:51.285] [N2]                                     addr=0.0.0.0:19102 dataDir=/tmp/root/jam/1852805314_80907f43065c6cdf/node2
+INFO [02-25|04:10:51.304] [N3]                                     addr=0.0.0.0:19103 dataDir=/tmp/root/jam/1852805314_80907f43065c6cdf/node3
+INFO [02-25|04:10:51.323] [N4]                                     addr=0.0.0.0:19104 dataDir=/tmp/root/jam/1852805314_80907f43065c6cdf/node4
+INFO [02-25|04:10:51.342] [N5]                                     addr=0.0.0.0:19105 dataDir=/tmp/root/jam/1852805314_80907f43065c6cdf/node5
+INFO [02-25|04:10:51.360] JAMTEST                                  jam=megatron targetN=8
+INFO [02-25|04:10:56.179] [N4] proposeBlock fallback               p=4762..d622 h=9703..9d72 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=d0f6..1cd7  EpochMarker(η1'=6f6a..24af, η2'=835a..574e)"
+INFO [02-25|04:11:02.362] fib                                      codeHash=0xb0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769 len=1168
+INFO [02-25|04:11:02.363] tribonacci                               codeHash=0x7b7b2163f6a2caf49f482eda61064540580a587840d4812a965aa04e42b4c2a8 len=1181
+INFO [02-25|04:11:02.363] megatron                                 codeHash=0xaf84ca301a0337a51b0b0b6eb0012013eaeed4d6da8968c075d14c77681a3bbc len=1058
+INFO [02-25|04:11:02.363] auth_copy                                codeHash=0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3 len=1175
+INFO [02-25|04:11:04.338] [N4] proposeBlock fallback               p=9703..9d72 h=1ea8..1902 e'=1 m'=1 "len(γ_a')"=3 blk="H_t=13 H_r=20b0..571d  |E_T|=3"
+INFO [02-25|04:11:08.761] [N4] proposeBlock fallback               p=1ea8..1902 h=ebe7..5dbb e'=1 m'=2 "len(γ_a')"=6 blk="H_t=14 H_r=06f2..a09d  |E_T|=3"
+INFO [02-25|04:11:14.363] Builder storing TestService              serviceName=fib codeHash=0xb0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769
+INFO [02-25|04:11:14.797] [N5] proposeBlock fallback               p=ebe7..5dbb h=66a4..ea84 e'=1 m'=3 "len(γ_a')"=9 blk="H_t=15 H_r=4a4d..4bea  |E_T|=3"
+INFO [02-25|04:11:20.674] [N0] proposeBlock fallback               p=66a4..ea84 h=f637..a9d1 e'=1 m'=4 "len(γ_a')"=12 blk="H_t=16 H_r=01ca..1d10  |E_T|=3 |E_G|=1"
+DEBUG[02-25|04:11:26.175] NEW chargeGas                            gasCharged=10 beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:11:26.175] NEW                                      code_hash_ptr=feff000b code_hash_ptr=b0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769 code_len=1168 min_item_gas=100 min_memo_gas=100
+DEBUG[02-25|04:11:26.175] WRITE chargeGas                          gasCharged=10 beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:11:26.175] WRITE                                    s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=549611b0 vlen=4
+DEBUG[02-25|04:11:26.175] WRITE storage                            s=0 a_o=1112 a_i=5
+DEBUG[02-25|04:11:26.175] TRANSFER chargeGas                       gasCharged=100 beforeGas=9091 afterGas=8991
+DEBUG[02-25|04:11:26.175] TRANSFER                                 sender=0 receiver=2953942612 amount=500000 gaslimit=100
+INFO [02-25|04:11:26.203] [N4] proposeBlock fallback               p=f637..a9d1 h=2672..7df1 e'=1 m'=5 "len(γ_a')"=12 blk="H_t=17 H_r=9bf5..93d1  |E_A|=6"
+INFO [02-25|04:11:32.120] [N0] proposeBlock fallback               p=2672..7df1 h=330c..6c04 e'=1 m'=6 "len(γ_a')"=12 blk="H_t=18 H_r=f1ce..1977 "
+INFO [02-25|04:11:34.388] Builder storing TestService              serviceName=tribonacci codeHash=0x7b7b2163f6a2caf49f482eda61064540580a587840d4812a965aa04e42b4c2a8
+INFO [02-25|04:11:38.181] [N4] proposeBlock fallback               p=330c..6c04 h=836b..2c9f e'=1 m'=7 "len(γ_a')"=12 blk="H_t=19 H_r=dfde..faed  |E_G|=1"
+DEBUG[02-25|04:11:44.124] NEW chargeGas                            gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:11:44.124] NEW                                      code_hash_ptr=feff000b code_hash_ptr=7b7b2163f6a2caf49f482eda61064540580a587840d4812a965aa04e42b4c2a8 code_len=1181 min_item_gas=100 min_memo_gas=100
+DEBUG[02-25|04:11:44.124] WRITE chargeGas                          gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:11:44.124] WRITE                                    s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=03f9883f vlen=4
+DEBUG[02-25|04:11:44.124] WRITE storage                            s=0 a_o=1112 a_i=5
+DEBUG[02-25|04:11:44.124] TRANSFER chargeGas                       gasCharged=100 beforeGas=9091 afterGas=8991
+DEBUG[02-25|04:11:44.124] TRANSFER                                 sender=0 receiver=1065941251 amount=500000 gaslimit=100
+INFO [02-25|04:11:44.152] [N1] proposeBlock fallback               p=836b..2c9f h=2af8..544e e'=1 m'=8 "len(γ_a')"=12 blk="H_t=20 H_r=de4e..3570  |E_P|=1 |E_A|=6"
+INFO [02-25|04:11:50.103] [N0] proposeBlock fallback               p=2af8..544e h=0d94..05e7 e'=1 m'=9 "len(γ_a')"=12 blk="H_t=21 H_r=00b7..eb9e "
+INFO [02-25|04:11:51.437] Builder storing TestService              serviceName=megatron   codeHash=0xaf84ca301a0337a51b0b0b6eb0012013eaeed4d6da8968c075d14c77681a3bbc
+INFO [02-25|04:11:56.122] [N1] proposeBlock fallback               p=0d94..05e7 h=e61f..82b7 e'=1 m'=10 "len(γ_a')"=12 blk="H_t=22 H_r=52a2..45c9   WinningTickets(12) |E_G|=1 |E_P|=1"
+DEBUG[02-25|04:12:03.774] NEW chargeGas                            gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:12:03.774] NEW                                      code_hash_ptr=feff000b code_hash_ptr=af84ca301a0337a51b0b0b6eb0012013eaeed4d6da8968c075d14c77681a3bbc code_len=1058 min_item_gas=100 min_memo_gas=100
+DEBUG[02-25|04:12:03.774] WRITE chargeGas                          gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:12:03.774] WRITE                                    s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=e9ac0c50 vlen=4
+DEBUG[02-25|04:12:03.774] WRITE storage                            s=0 a_o=1112 a_i=5
+DEBUG[02-25|04:12:03.774] TRANSFER chargeGas                       gasCharged=100 beforeGas=9091 afterGas=8991
+DEBUG[02-25|04:12:03.774] TRANSFER                                 sender=0 receiver=1343007977 amount=500000 gaslimit=100
+INFO [02-25|04:12:03.917] [N4] proposeBlock fallback               p=e61f..82b7 h=f866..daed e'=1 m'=11 "len(γ_a')"=12 blk="H_t=23 H_r=e36a..d95c  |E_A|=6"
+INFO [02-25|04:12:08.775] [N2] proposeBlock safrole                p=f866..daed h=24f0..6a47 e'=2 m'=0  "len(γ_a')"=3  blk="H_t=24 H_r=efb3..f103  EpochMarker(η1'=767a..9923, η2'=6f6a..24af) |E_T|=3"
+INFO [02-25|04:12:12.474] Builder storing TestService              serviceName=auth_copy  codeHash=0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3
+INFO [02-25|04:12:14.763] [N5] proposeBlock safrole                p=24f0..6a47 h=80c6..88d2 e'=2 m'=1  "len(γ_a')"=6  blk="H_t=25 H_r=0fbb..a1e6  |E_T|=3 |E_G|=1"
+DEBUG[02-25|04:12:20.732] NEW chargeGas                            gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:12:20.732] NEW                                      code_hash_ptr=feff000b code_hash_ptr=da81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3 code_len=1175 min_item_gas=100 min_memo_gas=100
+DEBUG[02-25|04:12:20.732] WRITE chargeGas                          gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:12:20.732] WRITE                                    s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=d15f17c3 vlen=4
+DEBUG[02-25|04:12:20.732] WRITE storage                            s=0 a_o=1112 a_i=5
+DEBUG[02-25|04:12:20.732] TRANSFER chargeGas                       gasCharged=100 beforeGas=9091 afterGas=8991
+DEBUG[02-25|04:12:20.732] TRANSFER                                 sender=0 receiver=3273088977 amount=500000 gaslimit=100
+INFO [02-25|04:12:20.758] [N4] proposeBlock safrole                p=80c6..88d2 h=63d1..8688 e'=2 m'=2  "len(γ_a')"=9  blk="H_t=26 H_r=ed7c..980c  |E_T|=3 |E_A|=6"
+INFO [02-25|04:12:26.717] [N3] proposeBlock safrole                p=63d1..8688 h=b001..5dc8 e'=2 m'=3  "len(γ_a')"=12 blk="H_t=27 H_r=eb1d..20c0  |E_T|=3 |E_P|=1"
+INFO [02-25|04:12:32.238] [N5] proposeBlock safrole                p=b001..5dc8 h=62ca..89c0 e'=2 m'=4  "len(γ_a')"=12 blk="H_t=28 H_r=3fa1..4184 "
+INFO [02-25|04:12:38.138] [N1] proposeBlock safrole                p=62ca..89c0 h=50c0..59b5 e'=2 m'=5  "len(γ_a')"=12 blk="H_t=29 H_r=266e..273e  |E_P|=1"
 Start Fib_Trib
-service0: 552088286, codehash: 0x4179b30a5fd2b08331055ccf168cadb76921aa0096441ad534ec14f2481b249b (len=1149) | fib
-service1: 1540381983, codehash: 0xd02aaae7a7d3817d331b36fc03bd6a7a12bdd150d3724aee0dc5c309764950d8 (len=1149) | tribonacci
-serviceM: 272334947, codehash: 0xa0e7e79c2467fd18c929e0fc6027be12a5658d74f4f02183689db5864a3c54f4 (len=1149) | megatron
+service0: 2953942612, codehash: 0xb0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769 (len=1168) | fib
+service1: 1065941251, codehash: 0x7b7b2163f6a2caf49f482eda61064540580a587840d4812a965aa04e42b4c2a8 (len=1181) | tribonacci
+serviceM: 1343007977, codehash: 0xaf84ca301a0337a51b0b0b6eb0012013eaeed4d6da8968c075d14c77681a3bbc (len=1058) | megatron
 Guarantor Assignment
-v0->c1
-v1->c0
-v2->c0
-v3->c1
-v4->c1
-v5->c0
-**  44:10.551  Preparing Fib_Tri#0 f2eb..d8e3 Meg#0 70e1..8b33 **
-
-**  Fib_Tri 0  workPackage: f2eb..d8e3 **
-
-**  MEGATRON 0  workPackage: 70e1..8b33 **
-[N3]  Blk 5c1e..f60e<-aa85..c36d  e'=2,m'=03, len(γ_a')=12   	[N3] H_t=27 H_r=0aa7..9338   |E_T|=3  |E_G|=2 0:[|r=1] 1:[|r=1] 2:[b=1|t=3|r=1] 3:[b=1|t=3|r=1] 4:[b=1|t=3|p=1|o=1161|r=1] 5:[b=1|t=3|r=1] 
-Found pending work package 0xf2eb3ca3d8b93f4c2feecefa928561cd117abd0308d74f73013c30bd08d8e3a3 at core 1!
+v0->c0
+v1->c1
+v2->c1
+v3->c0
+v4->c0
+v5->c1
+**  12:39.610  Preparing Fib_Tri#1 ce92..2630 Meg#1 e610..6f26 **
+INFO [02-25|04:12:44.185] [N3] proposeBlock safrole                p=50c0..59b5 h=2b31..64ad e'=2 m'=6  "len(γ_a')"=12 blk="H_t=30 H_r=c84f..227d  |E_G|=2"
+Found pending work package 0x2620ad5fc94edc28b1ed1a2f11c490fa641fcbaea10ec7d69a2d631227726de7 at core 1!
 Fib 1 = []
 Tri 1 = []
-Found pending work package 0x70e1104c97bd43ee55984a140d5bb5ae1dcbdf89adc9c974ec169fa1388b33b2 at core 0!
+Found pending work package 0x8c45c8aa5db44166a08bd1919a5eb87a51f12b653caa1d11b7283ab3175c1c41 at core 0!
 Meg 1 = []
-[N5]  Blk aa85..c36d<-51fc..0b2e  e'=2,m'=04, len(γ_a')=12   	[N5] H_t=28 H_r=b673..46de   |E_A|=6 0:[|r=1|a=1] 1:[|r=1|a=1] 2:[b=1|t=3|r=1|a=1] 3:[b=1|t=3|r=1|a=1] 4:[b=1|t=3|p=1|o=1161|r=1|a=1] 5:[b=2|t=3|r=1|a=1] 
-**  44:18.751  Preparing Fib_Tri#1 32ca..f832 Meg#1 c817..5ce5 **
-
-**  Fib_Tri 1  workPackage: 32ca..f832 **
-
-**  MEGATRON 1  workPackage: c817..5ce5 **
-SetServiceStorage(s=552088286, k=00, v=010000000100000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
- a_i [s=552088286] changed from 2 to 3
- a_o [s=552088286] changed from 1230 to 1274
-SetServiceStorage(s=1540381983, k=00, v=01000000010000000000000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
- a_i [s=1540381983] changed from 2 to 3
- a_o [s=1540381983] changed from 1242 to 1290
-SetServiceStorage(s=272334947, k=00, v=010000000200000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
- a_i [s=272334947] changed from 2 to 3
- a_o [s=272334947] changed from 1111 to 1155
-[N1]  Blk 51fc..0b2e<-3e67..fd67  e'=2,m'=05, len(γ_a')=12   	[N1] H_t=29 H_r=5027..7119   |E_G|=2  |E_A|=6 0:[|r=2|a=2] 1:[b=1|r=2|a=2] 2:[b=1|t=3|r=2|a=2] 3:[b=1|t=3|r=2|a=2] 4:[b=1|t=3|p=1|o=1161|r=2|a=2] 5:[b=2|t=3|r=2|a=2] 
-**  44:24.651  Preparing Fib_Tri#2 4dfa..1384 Meg#2 8eef..269a **
-
-**  Fib_Tri 2  workPackage: 4dfa..1384 **
-
-**  MEGATRON 2  workPackage: 8eef..269a **
-Found pending work package 0xc8175633a281d9923fb31898416a84cd398ba8ffd122e41eee42b7a2885ce5c0 at core 0!
-Meg 3 = [1 0 0 0 2 0 0 0 0 0 0 0]
-Found pending work package 0x32cae9a5f53c6a7858161ea349afcf8586a1070ca5c1b8697959197ba0f8326e at core 1!
-Fib 3 = [1 0 0 0 1 0 0 0 0 0 0 0]
-Tri 3 = [1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]
-SetServiceStorage(s=552088286, k=00, v=020000000100000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=1540381983, k=00, v=02000000010000000100000000000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=272334947, k=00, v=020000000200000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
-[N3]  Blk 3e67..fd67<-2aca..d2cd  e'=2,m'=06, len(γ_a')=12   	[N3] H_t=30 H_r=aa3f..63f7   |E_G|=2  |E_A|=6 0:[|r=3|a=3] 1:[b=1|r=3|a=3] 2:[b=1|t=3|r=3|a=3] 3:[b=2|t=3|r=3|a=3] 4:[b=1|t=3|p=1|o=1161|r=3|a=3] 5:[b=2|t=3|r=3|a=3] 
-**  44:31.252  Preparing Fib_Tri#3 f215..358c Meg#3 b995..d9ea **
-
-**  Fib_Tri 3  workPackage: f215..358c **
-
-**  MEGATRON 3  workPackage: b995..d9ea **
-Found pending work package 0x8eef66fcf0826d7a20f86e8aef08048c42f4118ee96688cf13a7b26ea5269ac6 at core 0!
-Found pending work package 0x4dfaa2563910ace863de9296692b34969ad787aee89e85979094118873138495 at core 1!
-Meg 4 = [2 0 0 0 2 0 0 0 2 0 0 0]
-Fib 4 = [2 0 0 0 1 0 0 0 1 0 0 0]
-Tri 4 = [2 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0]
-SetServiceStorage(s=552088286, k=00, v=030000000200000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=1540381983, k=00, v=03000000020000000100000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=272334947, k=00, v=030000000400000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
-[N2]  Blk 2aca..d2cd<-7f03..def8  e'=2,m'=07, len(γ_a')=12   	[N2] H_t=31 H_r=06e5..f76e   |E_G|=2  |E_A|=6 0:[|r=4|a=4] 1:[b=1|r=4|a=4] 2:[b=2|t=3|r=4|a=4] 3:[b=2|t=3|r=4|a=4] 4:[b=1|t=3|p=1|o=1161|r=4|a=4] 5:[b=2|t=3|r=4|a=4] 
-**  44:36.651  Preparing Fib_Tri#4 c206..91f9 Meg#4 052a..9b14 **
-
-**  Fib_Tri 4  workPackage: c206..91f9 **
-
-**  MEGATRON 4  workPackage: 052a..9b14 **
-Found pending work package 0xb9956ea3d2d72c34d62abddc8f6bead6ebc532fb86d861a76f11246301d9eafc at core 0!
-Found pending work package 0xf215e006640f35ca88a7a8a7fff3bc981cf0e44e84803d1e74cd8a5808358ce9 at core 1!
-Meg 5 = [3 0 0 0 4 0 0 0 2 0 0 0]
-Fib 5 = [3 0 0 0 2 0 0 0 1 0 0 0]
-Tri 5 = [3 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0]
-SetServiceStorage(s=552088286, k=00, v=040000000300000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=1540381983, k=00, v=04000000040000000200000001000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=272334947, k=00, v=040000000700000004000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
-[N0]  Blk 7f03..def8<-7375..0d96  e'=2,m'=08, len(γ_a')=12   	[N0] H_t=32 H_r=15c6..def7   |E_G|=2  |E_A|=6 0:[b=1|r=5|a=5] 1:[b=1|r=5|a=5] 2:[b=2|t=3|r=5|a=5] 3:[b=2|t=3|r=5|a=5] 4:[b=1|t=3|p=1|o=1161|r=5|a=5] 5:[b=2|t=3|r=5|a=5] 
-**  44:43.251  Preparing Fib_Tri#5 0c1e..ffd2 Meg#5 4441..74df **
-
-**  Fib_Tri 5  workPackage: 0c1e..ffd2 **
-
-**  MEGATRON 5  workPackage: 4441..74df **
-Found pending work package 0xc206caaad3a3b379f10c46fc32c02fafc021f8d213a7118560be69667a91f9e5 at core 1!
-Fib 6 = [4 0 0 0 3 0 0 0 2 0 0 0]
-Found pending work package 0x052a36da4f9e239d9c072438c652df2f1dd4e1b65fa7509ade55e1e2a79b14d1 at core 0!
-Tri 6 = [4 0 0 0 4 0 0 0 2 0 0 0 1 0 0 0]
-Meg 6 = [4 0 0 0 7 0 0 0 4 0 0 0]
-SetServiceStorage(s=272334947, k=00, v=050000000c00000007000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=552088286, k=00, v=050000000500000003000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=1540381983, k=00, v=05000000070000000400000002000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
-[N1]  Blk 7375..0d96<-49aa..5d24  e'=2,m'=09, len(γ_a')=12   	[N1] H_t=33 H_r=39c8..3e83   |E_G|=2  |E_A|=6 0:[b=1|r=6|a=6] 1:[b=2|r=6|a=6] 2:[b=2|t=3|r=6|a=6] 3:[b=2|t=3|r=6|a=6] 4:[b=1|t=3|p=1|o=1161|r=6|a=6] 5:[b=2|t=3|r=6|a=6] 
-**  44:48.651  Preparing Fib_Tri#6 913e..57a5 Meg#6 cbe2..c5b3 **
-
-**  Fib_Tri 6  workPackage: 913e..57a5 **
-
-**  MEGATRON 6  workPackage: cbe2..c5b3 **
-Found pending work package 0x0c1e081edb63afdcdd9611bc6dc8f273da49e824fb6e89d5fc3146fa50ffd20b at core 1!
-Fib 7 = [5 0 0 0 5 0 0 0 3 0 0 0]
-Tri 7 = [5 0 0 0 7 0 0 0 4 0 0 0 2 0 0 0]
-Found pending work package 0x4441e0c0046e79d03fba523c82e502651028c8394b251188d6dbcb3afa74df1c at core 0!
-Meg 7 = [5 0 0 0 12 0 0 0 7 0 0 0]
-SetServiceStorage(s=552088286, k=00, v=060000000800000005000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=1540381983, k=00, v=060000000d0000000700000004000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=272334947, k=00, v=06000000150000000c000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
-[N5]  Blk 49aa..5d24<-b49d..b79d  e'=2,m'=10, len(γ_a')=12   	[N5] H_t=34 H_r=0bae..3a8b   WinningTickets(12)  |E_G|=2  |E_A|=6 0:[b=1|r=7|a=7] 1:[b=2|r=7|a=7] 2:[b=2|t=3|r=7|a=7] 3:[b=2|t=3|r=7|a=7] 4:[b=1|t=3|p=1|o=1161|r=7|a=7] 5:[b=3|t=3|r=7|a=7] 
-**  44:55.352  Preparing Fib_Tri#7 2539..14f4 Meg#7 9be9..c092 **
-
-**  Fib_Tri 7  workPackage: 2539..14f4 **
-
-**  MEGATRON 7  workPackage: 9be9..c092 **
-All workpackages are sent
-Found pending work package 0x913e3d99e518dfe0d5bc4b40b390418773d36e8ffaf44c629c703a19e057a550 at core 1!
-Found pending work package 0xcbe218389289348514dc011b9d5a27100d59bd8920ab02835b9ec9ab78c5b360 at core 0!
-Fib 8 = [6 0 0 0 8 0 0 0 5 0 0 0]
-Tri 8 = [6 0 0 0 13 0 0 0 7 0 0 0 4 0 0 0]
-Meg 8 = [6 0 0 0 21 0 0 0 12 0 0 0]
-SetServiceStorage(s=552088286, k=00, v=070000000d00000008000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=1540381983, k=00, v=07000000180000000d00000007000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=272334947, k=00, v=070000002500000015000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
-[N3]  Blk b49d..b79d<-2e99..46d9  e'=2,m'=11, len(γ_a')=12   	[N3] H_t=35 H_r=5ab9..ea0c   |E_G|=2  |E_A|=6 0:[b=1|r=8|a=8] 1:[b=2|r=8|a=8] 2:[b=2|t=3|r=8|a=8] 3:[b=3|t=3|r=8|a=8] 4:[b=1|t=3|p=1|o=1161|r=8|a=8] 5:[b=3|t=3|r=8|a=8] 
-Found pending work package 0x9be94bccfbf7f7cf00017fd735b10eb575245cbd81f90ef32044c01d8ac092be at core 0!
-Meg 8 = [7 0 0 0 37 0 0 0 21 0 0 0]
-Found pending work package 0x2539ade129e060a06575db563da5520aae38482522dcf3adb24707c65f14f482 at core 1!
-Fib 8 = [7 0 0 0 13 0 0 0 8 0 0 0]
-Tri 8 = [7 0 0 0 24 0 0 0 13 0 0 0 7 0 0 0]
-SetServiceStorage(s=552088286, k=00, v=08000000150000000d000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=deff32ffe8ff20ff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=1540381983, k=00, v=080000002c000000180000000d000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=1fff5dffd0ff5bff000000000000000000000000000000000000000000000000
-SetServiceStorage(s=272334947, k=00, v=080000004100000025000000) C(s, concat(0xFFFFFFFF,k[0:28])=0xffffffff00000000000000000000000000000000000000000000000000000000)=63ff80ff3bff10ff000000000000000000000000000000000000000000000000
-[N0]  Blk 2e99..46d9<-9d40..96f3  e'=3,m'=00, len(γ_a')=3   	[N0] H_t=36 H_r=5a8f..ca44  EpochMarker(η1'=7e4f..728f, η2'=767a..9923)  |E_T|=3  |E_A|=6 0:[b=1|t=3|a=1] 1:[|a=1] 2:[|a=1] 3:[|a=1] 4:[|a=1] 5:[|a=1] 
-Meg Finish
---- PASS: TestMegatron (149.83s)
-
+INFO [02-25|04:12:50.188] [N2] proposeBlock safrole                p=2b31..64ad h=6dc2..5b20 e'=2 m'=7  "len(γ_a')"=12 blk="H_t=31 H_r=737c..41bb  |E_A|=6"
+DEBUG[02-25|04:12:56.101] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:12:56.101] WRITE                                    s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=010000000100000000000000 vlen=12
+DEBUG[02-25|04:12:56.101] WRITE storage                            s=2953942612 a_o=1293 a_i=3
+DEBUG[02-25|04:12:56.102] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:12:56.102] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=01000000010000000000000000000000 vlen=16
+DEBUG[02-25|04:12:56.102] WRITE storage                            s=1065941251 a_o=1310 a_i=3
+INFO [02-25|04:12:56.129] [N0] proposeBlock safrole                p=6dc2..5b20 h=de6a..9159 e'=2 m'=8  "len(γ_a')"=12 blk="H_t=32 H_r=6fd6..25fa  |E_A|=6"
+DEBUG[02-25|04:12:56.258] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:12:56.258] WRITE                                    s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=010000000100000000000000         vlen=12
+DEBUG[02-25|04:12:56.258] WRITE storage                            s=2953942612 a_o=1293 a_i=3
+DEBUG[02-25|04:12:56.259] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:12:56.259] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=01000000010000000000000000000000 vlen=16
+DEBUG[02-25|04:12:56.259] WRITE storage                            s=1065941251 a_o=1310 a_i=3
+**  12:56.319  Preparing Fib_Tri#2 e328..4a60 Meg#2 c79f..3dd8 **
+DEBUG[02-25|04:13:02.098] READ chargeGas                           gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:02.098] READ                                     ok=true s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val="[1 0 0 0 1 0 0 0 0 0 0 0]" len(val)=12
+DEBUG[02-25|04:13:02.098] READ chargeGas                           gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:13:02.098] READ                                     ok=true s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val="[1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]" len(val)=16
+DEBUG[02-25|04:13:02.098] WRITE chargeGas                          gasCharged=10  beforeGas=9091 afterGas=9081
+DEBUG[02-25|04:13:02.098] WRITE                                    s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=010000000200000000000000         vlen=12
+DEBUG[02-25|04:13:02.098] WRITE storage                            s=1343007977 a_o=1183 a_i=3
+INFO [02-25|04:13:02.126] [N1] proposeBlock safrole                p=de6a..9159 h=47e0..34ce e'=2 m'=9  "len(γ_a')"=12 blk="H_t=33 H_r=465a..26ae  |E_G|=2"
+Found pending work package 0xe610d1eb7bbdfbc60f6c60f18a3c5900997aa520e7fc860aa8253534456f26a9 at core 0!
+Meg 2 = [1 0 0 0 2 0 0 0 0 0 0 0]
+Found pending work package 0xce925598b8e1ff6452b19f96794a87ac189bd2bef64c26cbf18c4c038b2630b6 at core 1!
+Fib 2 = [1 0 0 0 1 0 0 0 0 0 0 0]
+Tri 2 = [1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]
+INFO [02-25|04:13:08.198] [N5] proposeBlock safrole                p=47e0..34ce h=24c4..da24 e'=2 m'=10 "len(γ_a')"=12 blk="H_t=34 H_r=0ee7..92c0   WinningTickets(12) |E_A|=6"
+DEBUG[02-25|04:13:15.821] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:15.821] WRITE                                    s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=020000000100000001000000         vlen=12
+DEBUG[02-25|04:13:15.821] WRITE storage                            s=2953942612 a_o=1293 a_i=3
+DEBUG[02-25|04:13:15.826] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:15.826] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=02000000010000000100000000000000 vlen=16
+DEBUG[02-25|04:13:15.826] WRITE storage                            s=1065941251 a_o=1310 a_i=3
+INFO [02-25|04:13:15.948] [N3] proposeBlock safrole                p=24c4..da24 h=2a2d..6ad5 e'=2 m'=11 "len(γ_a')"=12 blk="H_t=35 H_r=5b52..8a2d  |E_A|=6"
+**  13:16.811  Preparing Fib_Tri#3 58fa..3b3c Meg#3 b900..cf2b **
+DEBUG[02-25|04:13:20.745] READ chargeGas                           gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:20.745] READ                                     ok=true s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val="[2 0 0 0 1 0 0 0 1 0 0 0]"         len(val)=12
+DEBUG[02-25|04:13:20.745] READ chargeGas                           gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:13:20.745] READ                                     ok=true s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val="[2 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0]" len(val)=16
+DEBUG[02-25|04:13:20.745] WRITE chargeGas                          gasCharged=10  beforeGas=9091 afterGas=9081
+DEBUG[02-25|04:13:20.745] WRITE                                    s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=020000000200000002000000         vlen=12
+DEBUG[02-25|04:13:20.745] WRITE storage                            s=1343007977 a_o=1183 a_i=3
+INFO [02-25|04:13:20.771] [N0] proposeBlock safrole                p=2a2d..6ad5 h=2bfa..5682 e'=3 m'=0  "len(γ_a')"=3  blk="H_t=36 H_r=6af6..e1c3  EpochMarker(η1'=7e4f..728f, η2'=767a..9923) |E_T|=3 |E_G|=2"
+DEBUG[02-25|04:13:23.110] READ chargeGas                           gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:23.110] READ                                     ok=true s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val="[2 0 0 0 1 0 0 0 1 0 0 0]"         len(val)=12
+DEBUG[02-25|04:13:23.110] READ chargeGas                           gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:13:23.110] READ                                     ok=true s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val="[2 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0]" len(val)=16
+DEBUG[02-25|04:13:23.110] WRITE chargeGas                          gasCharged=10  beforeGas=9091 afterGas=9081
+DEBUG[02-25|04:13:23.110] WRITE                                    s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=020000000200000002000000         vlen=12
+DEBUG[02-25|04:13:23.110] WRITE storage                            s=1343007977 a_o=1183 a_i=3
+Found pending work package 0xc79fd0c6b2ae985c4923e672be8c86dfbfc39e9fbdadcbfe731ab94be13dd877 at core 0!
+Found pending work package 0xe328605390357b47c561b723ad51ef11313f6ad5094f68cb99e60190fa4a60a7 at core 1!
+Meg 3 = [2 0 0 0 2 0 0 0 2 0 0 0]
+Fib 3 = [2 0 0 0 1 0 0 0 1 0 0 0]
+Tri 3 = [2 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0]
+INFO [02-25|04:13:26.678] [N0] proposeBlock safrole                p=2bfa..5682 h=d3e0..c8c7 e'=3 m'=1  "len(γ_a')"=6  blk="H_t=37 H_r=8dff..84ec  |E_T|=3 |E_A|=6"
+DEBUG[02-25|04:13:32.690] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:32.690] WRITE                                    s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=030000000200000001000000         vlen=12
+DEBUG[02-25|04:13:32.690] WRITE storage                            s=2953942612 a_o=1293 a_i=3
+DEBUG[02-25|04:13:32.690] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:32.690] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=03000000020000000100000001000000 vlen=16
+DEBUG[02-25|04:13:32.690] WRITE storage                            s=1065941251 a_o=1310 a_i=3
+INFO [02-25|04:13:32.716] [N5] proposeBlock safrole                p=d3e0..c8c7 h=02c0..720c e'=3 m'=2  "len(γ_a')"=9  blk="H_t=38 H_r=ba02..eb1f  |E_T|=3 |E_A|=6"
+**  13:35.311  Preparing Fib_Tri#4 80b0..f561 Meg#4 dc3f..46fb **
+DEBUG[02-25|04:13:38.690] READ chargeGas                           gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:38.690] READ                                     ok=true s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val="[3 0 0 0 2 0 0 0 1 0 0 0]"         len(val)=12
+DEBUG[02-25|04:13:38.690] READ chargeGas                           gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:13:38.691] READ                                     ok=true s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val="[3 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0]" len(val)=16
+DEBUG[02-25|04:13:38.691] WRITE chargeGas                          gasCharged=10  beforeGas=9091 afterGas=9081
+DEBUG[02-25|04:13:38.691] WRITE                                    s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=030000000400000002000000         vlen=12
+DEBUG[02-25|04:13:38.691] WRITE storage                            s=1343007977 a_o=1183 a_i=3
+INFO [02-25|04:13:38.717] [N2] proposeBlock safrole                p=02c0..720c h=6702..d9b2 e'=3 m'=3  "len(γ_a')"=12 blk="H_t=39 H_r=ff19..3b6c  |E_T|=3 |E_G|=2"
+Found pending work package 0x58fa1cb733ab50f73340155bb9c166df74ff7eb3a96d7a62eaba78ee8d3b3cc7 at core 1!
+Found pending work package 0xb9006eba133ac45c5ee1af11bcd4021fa9807d3f4501c63efc72bddbb2cf2b21 at core 0!
+Fib 4 = [3 0 0 0 2 0 0 0 1 0 0 0]
+Tri 4 = [3 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0]
+Meg 4 = [3 0 0 0 4 0 0 0 2 0 0 0]
+INFO [02-25|04:13:44.211] [N5] proposeBlock safrole                p=6702..d9b2 h=d7b2..c05e e'=3 m'=4  "len(γ_a')"=12 blk="H_t=40 H_r=3374..bf16  |E_A|=6"
+DEBUG[02-25|04:13:50.142] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:50.142] WRITE                                    s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=040000000300000002000000         vlen=12
+DEBUG[02-25|04:13:50.142] WRITE storage                            s=2953942612 a_o=1293 a_i=3
+DEBUG[02-25|04:13:50.142] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:50.142] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=04000000040000000200000001000000 vlen=16
+DEBUG[02-25|04:13:50.142] WRITE storage                            s=1065941251 a_o=1310 a_i=3
+INFO [02-25|04:13:50.171] [N2] proposeBlock safrole                p=d7b2..c05e h=32d8..18a5 e'=3 m'=5  "len(γ_a')"=12 blk="H_t=41 H_r=1fd6..e041  |E_A|=6"
+**  13:50.611  Preparing Fib_Tri#5 b320..497b Meg#5 a214..8b4c **
+DEBUG[02-25|04:13:56.164] READ chargeGas                           gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:13:56.164] READ                                     ok=true s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val="[4 0 0 0 3 0 0 0 2 0 0 0]"         len(val)=12
+DEBUG[02-25|04:13:56.164] READ chargeGas                           gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:13:56.164] READ                                     ok=true s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val="[4 0 0 0 4 0 0 0 2 0 0 0 1 0 0 0]" len(val)=16
+DEBUG[02-25|04:13:56.164] WRITE chargeGas                          gasCharged=10  beforeGas=9091 afterGas=9081
+DEBUG[02-25|04:13:56.164] WRITE                                    s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=040000000700000004000000         vlen=12
+DEBUG[02-25|04:13:56.164] WRITE storage                            s=1343007977 a_o=1183 a_i=3
+INFO [02-25|04:13:56.193] [N3] proposeBlock safrole                p=32d8..18a5 h=f2ed..e63c e'=3 m'=6  "len(γ_a')"=12 blk="H_t=42 H_r=b48d..0e7a  |E_G|=2"
+Found pending work package 0x80b0f60f4c40ea897be577c1f6e06e244bcbe07fdf0ca6526e9a11d4b0f5616c at core 1!
+Found pending work package 0xdc3fcb6e390a2d685d966d9fd1cb5f5608c025545238db2a2dd296143846fbec at core 0!
+Fib 5 = [4 0 0 0 3 0 0 0 2 0 0 0]
+Tri 5 = [4 0 0 0 4 0 0 0 2 0 0 0 1 0 0 0]
+Meg 5 = [4 0 0 0 7 0 0 0 4 0 0 0]
+INFO [02-25|04:14:02.164] [N1] proposeBlock safrole                p=f2ed..e63c h=5696..ef12 e'=3 m'=7  "len(γ_a')"=12 blk="H_t=43 H_r=9f16..a306  |E_A|=6"
+DEBUG[02-25|04:14:08.141] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:14:08.141] WRITE                                    s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=050000000500000003000000         vlen=12
+DEBUG[02-25|04:14:08.141] WRITE storage                            s=2953942612 a_o=1293 a_i=3
+DEBUG[02-25|04:14:08.141] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:14:08.141] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=05000000070000000400000002000000 vlen=16
+DEBUG[02-25|04:14:08.141] WRITE storage                            s=1065941251 a_o=1310 a_i=3
+INFO [02-25|04:14:08.171] [N3] proposeBlock safrole                p=5696..ef12 h=fb66..c5e0 e'=3 m'=8  "len(γ_a')"=12 blk="H_t=44 H_r=d82c..ca6b  |E_A|=6"
+**  14:08.710  Preparing Fib_Tri#6 e016..6cff Meg#6 7c16..0676 **
+DEBUG[02-25|04:14:14.189] READ chargeGas                           gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:14:14.189] READ                                     ok=true s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val="[5 0 0 0 5 0 0 0 3 0 0 0]"         len(val)=12
+DEBUG[02-25|04:14:14.189] READ chargeGas                           gasCharged=10  beforeGas=9101 afterGas=9091
+DEBUG[02-25|04:14:14.189] READ                                     ok=true s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val="[5 0 0 0 7 0 0 0 4 0 0 0 2 0 0 0]" len(val)=16
+DEBUG[02-25|04:14:14.189] WRITE chargeGas                          gasCharged=10  beforeGas=9091 afterGas=9081
+DEBUG[02-25|04:14:14.189] WRITE                                    s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=050000000c00000007000000         vlen=12
+DEBUG[02-25|04:14:14.189] WRITE storage                            s=1343007977 a_o=1183 a_i=3
+INFO [02-25|04:14:14.220] [N4] proposeBlock safrole                p=fb66..c5e0 h=eebb..aafe e'=3 m'=9  "len(γ_a')"=12 blk="H_t=45 H_r=cb7f..e1e7  |E_G|=2"
+Found pending work package 0xa21444235e888fb42f3472e8b1c77e9e7aa994b7318d7028147f1718178b4c2c at core 0!
+Found pending work package 0xb320b410c291549df43a09df8cc5604ad757a682a2a025fb8f5959875e497b9c at core 1!
+Meg 6 = [5 0 0 0 12 0 0 0 7 0 0 0]
+Fib 6 = [5 0 0 0 5 0 0 0 3 0 0 0]
+Tri 6 = [5 0 0 0 7 0 0 0 4 0 0 0 2 0 0 0]
+INFO [02-25|04:14:20.197] [N5] proposeBlock safrole                p=eebb..aafe h=2092..5dfe e'=3 m'=10 "len(γ_a')"=12 blk="H_t=46 H_r=2b07..07b1   WinningTickets(12) |E_A|=6"
+DEBUG[02-25|04:14:27.201] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:14:27.201] WRITE                                    s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=060000000800000005000000         vlen=12
+DEBUG[02-25|04:14:27.201] WRITE storage                            s=2953942612 a_o=1293 a_i=3
+DEBUG[02-25|04:14:27.202] WRITE chargeGas                          gasCharged=10  beforeGas=9111 afterGas=9101
+DEBUG[02-25|04:14:27.202] WRITE                                    s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=060000000d0000000700000004000000 vlen=16
+DEBUG[02-25|04:14:27.202] WRITE storage                            s=1065941251 a_o=1310 a_i=3
+INFO [02-25|04:14:27.316] [N2] proposeBlock safrole                p=2092..5dfe h=29a5..478a e'=3 m'=11 "len(γ_a')"=12 blk="H_t=47 H_r=1ecb..f833  |E_A|=6"
 
