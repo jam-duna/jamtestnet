@@ -61,7 +61,7 @@ export default function TicketItem({ ticket, idx, expanded }: TicketItemProps) {
     if (expanded && !decoded && !loading) {
       decodeTicketSignature();
     }
-  }, [expanded]);
+  }, [expanded, decoded, loading]);
 
   return (
     <Box sx={{ mb: 1 }}>

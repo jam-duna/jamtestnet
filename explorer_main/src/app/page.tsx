@@ -18,6 +18,7 @@ export default function HomePage() {
   // State for fetched block and state data from RPC calls.
   const [block, setBlock] = useState<unknown>(null);
   const [state, setState] = useState<unknown>(null);
+  console.log(state);
 
   // WebSocket endpoint management.
   const [wsEndpoint, setWsEndpoint] = useState<string>(defaultWsUrl);

@@ -26,7 +26,6 @@ export default function EndpointDrawer({
   wsEndpoint,
   setWsEndpoint,
   savedEndpoints,
-  setSavedEndpoints,
 }: EndpointDrawerProps) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [showCustomInput, setShowCustomInput] = useState<boolean>(false);

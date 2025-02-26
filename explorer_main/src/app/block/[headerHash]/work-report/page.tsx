@@ -147,7 +147,7 @@ export default function WorkReportListPage() {
                   const accumulateGas =
                     reportData.report.results?.[0]?.accumulate_gas;
                   const signatures = reportData.signatures;
-                  const resultOk = reportData.report.results?.[0]?.result?.ok;
+                  // const resultOk = reportData.report.results?.[0]?.result?.ok;
 
                   // Create a short version of the package_spec hash for display:
                   const shortReportHash = pkgSpecHash
