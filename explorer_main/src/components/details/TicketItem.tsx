@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Box, Typography, Link as MuiLink } from "@mui/material";
 
 interface DecodedTicket {
@@ -19,8 +17,8 @@ interface TicketItemProps {
 export default function TicketItem({ ticket, idx, expanded }: TicketItemProps) {
   const [decoded, setDecoded] = React.useState<DecodedTicket | null>(null);
   const [loading, setLoading] = React.useState<boolean>(false);
-  console.log(ticket);
-  const decodeTicketSignature = async () => {
+
+  const decodeTicketSignature = useCallback(async () => {
     setLoading(true);
     try {
       const response = await fetch(
@@ -54,18 +52,18 @@ export default function TicketItem({ ticket, idx, expanded }: TicketItemProps) {
       setDecoded({ vrf_output: "Error decoding ticket" });
     }
     setLoading(false);
-  };
+  }, [ticket]);
 
   // Decode automatically when expanded if not already decoded
   useEffect(() => {
     if (expanded && !decoded && !loading) {
       decodeTicketSignature();
     }
-  }, [expanded, decoded, loading]);
+  }, [expanded, decoded, loading, decodeTicketSignature]);
 
   return (
     <Box sx={{ mb: 1 }}>
-      <Typography variant="body2">Ticket {idx} </Typography>
+      <Typography variant="body2">Ticket {idx}</Typography>
       <Typography variant="body2" color="textSecondary">
         Attempt: {ticket.attempt}
       </Typography>

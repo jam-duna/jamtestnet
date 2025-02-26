@@ -50,7 +50,7 @@ export interface Report {
     accumulate_gas: number;
     result: { ok?: unknown };
   }>;
-  segment_root_lookup: any[];
+  // segment_root_lookup: any[];
 }
 
 // Guarantee signature

@@ -147,8 +147,8 @@ export default function WorkReportDetailPage() {
     core_index,
     authorizer_hash,
     auth_output,
-    segment_root_lookup,
-    results,
+    // segment_root_lookup,
+    // results,
   } = report;
 
   return (
@@ -296,7 +296,8 @@ export default function WorkReportDetailPage() {
 
         <Divider sx={{ my: 2 }} />
 
-        {/* SECTION 5: Results */}
+        {/*
+       
         <Typography variant="h6" gutterBottom>
           Results
         </Typography>
@@ -331,19 +332,20 @@ export default function WorkReportDetailPage() {
                   tooltip="Total gas accumulated during execution."
                   value={accumulate_gas}
                 />
-                {/*
+               
                 <LabeledRow
                   label="Result OK:"
                   tooltip="Successful execution result value."
                   value={result?.ok || "N/A"}
                 />
-                */}
+                
               </Paper>
             );
           })
         ) : (
           <Typography>No results found.</Typography>
         )}
+        */}
 
         <Divider sx={{ my: 2 }} />
 
