@@ -1,0 +1,35 @@
+name: Test JAM DUNA state_transitions against JAM DUNA + JAM Brains
+
+on:
+  push: {}
+  schedule:
+    - cron: '*/10 * * * *'  # Runs every 5 minutes
+
+jobs:
+  test-endpoints:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        endpoint:
+          - name: jamduna
+            url: "http://jamduna.org:8999/api/stf"
+          - name: jambrains
+            url: "https://dev.jamcha.in/api/v1/functions/check_stf_safrole"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Test JAM DUNA state_transitions ${{ matrix.endpoint.name }}
+        run: |
+          find data/*/state_transitions -type f -name '*.json' | sort | while IFS= read -r file; do
+            echo "Processing $file"
+            echo "Running: curl -s -q -X POST ${{ matrix.endpoint.url }} -H 'accept: application/json' -H 'Content-Type: application/json' -d @\"$file\" | jq -r"
+            curl -s -q -X POST ${{ matrix.endpoint.url }} \
+              -H 'accept: application/json' \
+              -H 'Content-Type: application/json' \
+              -d @"$file" | jq -r
+          done
+
