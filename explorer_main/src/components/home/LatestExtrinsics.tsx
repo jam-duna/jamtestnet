@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Box, Paper, Typography, Button } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import { BlockRecord } from "../../../db";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong"; // Example icon
 
@@ -20,6 +20,7 @@ export default function ExtrinsicLists({
     .filter((blockItem) => {
       const extrinsic = blockItem.block.extrinsic;
       if (!extrinsic) return false;
+
       const ticketsCount = Array.isArray(extrinsic.tickets)
         ? extrinsic.tickets.length
         : 0;
@@ -47,8 +48,6 @@ export default function ExtrinsicLists({
     })
     .slice(0, 5);
 
-  const handleClick = () => {};
-
   return (
     <Paper sx={{ px: 0 }} variant="outlined">
       <Typography
@@ -61,24 +60,24 @@ export default function ExtrinsicLists({
       {filteredBlocks.map((blockItem) => {
         // Calculate extrinsic counts
         const extrinsic = blockItem.block.extrinsic;
-        let ticketsCount = Array.isArray(extrinsic.tickets)
+        const ticketsCount = Array.isArray(extrinsic.tickets)
           ? extrinsic.tickets.length
           : 0;
-        let disputesCount = extrinsic.disputes
+        const disputesCount = extrinsic.disputes
           ? (extrinsic.disputes.verdicts?.length || 0) +
             (extrinsic.disputes.culprits?.length || 0) +
             (extrinsic.disputes.faults?.length || 0)
           : 0;
-        let guaranteesCount = Array.isArray(extrinsic.guarantees)
+        const guaranteesCount = Array.isArray(extrinsic.guarantees)
           ? extrinsic.guarantees.length
           : 0;
-        let preimagesCount = Array.isArray(extrinsic.preimages)
+        const preimagesCount = Array.isArray(extrinsic.preimages)
           ? extrinsic.preimages.length
           : 0;
-        let assurancesCount = Array.isArray(extrinsic.assurances)
+        const assurancesCount = Array.isArray(extrinsic.assurances)
           ? extrinsic.assurances.length
           : 0;
-        let totalEvents =
+        const totalEvents =
           ticketsCount +
           disputesCount +
           assurancesCount +

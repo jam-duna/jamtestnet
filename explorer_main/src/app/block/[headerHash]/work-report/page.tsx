@@ -17,11 +17,61 @@ import {
 } from "@mui/material";
 import { db, BlockRecord } from "../../../../../db";
 
+// Define the structure of the package specification.
+export interface PackageSpec {
+  hash: string;
+  length: number;
+  erasure_root: string;
+  exports_root: string;
+  exports_count: number;
+}
+
+// Define the structure of the context.
+export interface Context {
+  anchor: string;
+  state_root: string;
+  beefy_root: string;
+  lookup_anchor: string;
+  lookup_anchor_slot: number;
+  prerequisites?: string[];
+}
+
+// Define the structure of the report.
+export interface Report {
+  auth_output: string;
+  authorizer_hash: string;
+  context: Context;
+  core_index: number;
+  package_spec: PackageSpec;
+  results: Array<{
+    service_id: number;
+    code_hash: string;
+    payload_hash: string;
+    accumulate_gas: number;
+    result: { ok?: unknown };
+  }>;
+  segment_root_lookup: unknown[];
+}
+
+// Define the structure of a guarantee signature.
+export interface GuaranteeSignature {
+  signature: string;
+  validator_index: number;
+}
+
+// GuaranteeObject represents a guarantee work report.
+export interface GuaranteeObject {
+  report: Report;
+  signatures: GuaranteeSignature[];
+  slot: number; // block slot number
+}
+
 export default function WorkReportListPage() {
   const params = useParams();
   const headerHash = params.headerHash as string;
 
-  const [workReports, setWorkReports] = useState<any[]>([]);
+  // Instead of Report | null, we expect an array of GuaranteeObject
+  const [workReports, setWorkReports] = useState<GuaranteeObject[]>([]);
 
   useEffect(() => {
     if (headerHash) {
@@ -31,9 +81,9 @@ export default function WorkReportListPage() {
         .first()
         .then((record: BlockRecord | undefined) => {
           if (record && record.block && record.block.extrinsic) {
-            // Adjusted to use record.block instead of record.rawData
+            // Use record.block.extrinsic.guarantees and assume it matches GuaranteeObject[]
             const reports = record.block.extrinsic.guarantees || [];
-            setWorkReports(reports);
+            setWorkReports(reports as GuaranteeObject[]);
           }
         })
         .catch((error) => {
@@ -42,7 +92,6 @@ export default function WorkReportListPage() {
     }
   }, [headerHash]);
 
-  // Example download handler
   const handleDownloadData = () => {
     alert("Implement your download logic here!");
   };
@@ -91,16 +140,14 @@ export default function WorkReportListPage() {
             <TableBody>
               {workReports.length > 0 ? (
                 workReports.map((reportData, index) => {
-                  // Safely extract the fields you want to display:
-                  const pkgSpecHash = reportData?.report?.package_spec?.hash;
-                  const coreIndex = reportData?.report?.core_index;
-                  const slot = reportData?.slot;
-                  const serviceId =
-                    reportData?.report?.results?.[0]?.service_id;
+                  const pkgSpecHash = reportData.report.package_spec.hash;
+                  const coreIndex = reportData.report.core_index;
+                  const slot = reportData.slot;
+                  const serviceId = reportData.report.results?.[0]?.service_id;
                   const accumulateGas =
-                    reportData?.report?.results?.[0]?.accumulate_gas;
-                  const signatures = reportData?.signatures || [];
-                  const resultOk = reportData?.report?.results?.[0]?.result?.ok;
+                    reportData.report.results?.[0]?.accumulate_gas;
+                  const signatures = reportData.signatures;
+                  const resultOk = reportData.report.results?.[0]?.result?.ok;
 
                   // Create a short version of the package_spec hash for display:
                   const shortReportHash = pkgSpecHash
@@ -111,7 +158,6 @@ export default function WorkReportListPage() {
                     <TableRow
                       key={index}
                       hover
-                      // Navigate to detail page on click:
                       onClick={() =>
                         window.open(
                           `/block/${headerHash}/work-report/${pkgSpecHash}`,
@@ -129,7 +175,7 @@ export default function WorkReportListPage() {
                       <TableCell>{serviceId ?? "N/A"}</TableCell>
                       <TableCell>{accumulateGas ?? "N/A"}</TableCell>
                       <TableCell>{signatures.length}</TableCell>
-                      <TableCell>{resultOk ?? "N/A"}</TableCell>
+                      {/* <TableCell>{resultOk ?? "N/A"}</TableCell> */}
                     </TableRow>
                   );
                 })

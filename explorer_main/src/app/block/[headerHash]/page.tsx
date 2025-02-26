@@ -2,13 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import {
-  Container,
-  Paper,
-  Typography,
-  Link as MuiLink,
-  Box,
-} from "@mui/material";
+import { Container, Paper, Typography, Link as MuiLink } from "@mui/material";
 import { db, BlockRecord } from "../../../../db";
 import { LabeledRow } from "../../../components/details/LabeledRow"; // For non-extrinsic rows
 import ExtrinsicAccordion from "../../../components/details/ExtrinsicAccordion";

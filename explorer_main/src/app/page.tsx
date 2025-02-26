@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { Container, Grid } from "@mui/material";
 import EndpointDrawer from "../components/home/EndpointDrawer"; // Adjust path as needed
 import SearchBar from "../components/home/SearchBar";
@@ -17,8 +16,8 @@ const defaultWsUrl = "ws://localhost:9999/ws";
 
 export default function HomePage() {
   // State for fetched block and state data from RPC calls.
-  const [block, setBlock] = useState<any>(null);
-  const [state, setState] = useState<any>(null);
+  const [block, setBlock] = useState<unknown>(null);
+  const [state, setState] = useState<unknown>(null);
 
   // WebSocket endpoint management.
   const [wsEndpoint, setWsEndpoint] = useState<string>(defaultWsUrl);

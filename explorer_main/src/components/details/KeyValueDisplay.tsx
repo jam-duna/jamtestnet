@@ -1,3 +1,4 @@
+/*
 "use client";
 
 import React from "react";
@@ -27,3 +28,5 @@ export function KeyValueDisplay({ data }: KeyValueDisplayProps) {
     </Box>
   );
 }
+
+*/

@@ -8,7 +8,10 @@ interface DecodedTicket {
 }
 
 interface TicketItemProps {
-  ticket: any;
+  ticket: {
+    attempt: number;
+    signature: string;
+  };
   idx: number;
   expanded: boolean;
 }

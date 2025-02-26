@@ -13,20 +13,105 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import TicketItem from "./TicketItem"; // adjust the path accordingly
+import TicketItem from "./TicketItem"; // adjust path accordingly
 
-interface ExtrinsicAccordionProps {
-  tickets: any[];
-  disputes: {
-    verdicts: any[];
-    culprits: any[];
-    faults: any[];
-  } | null;
-  assurances: any[];
-  guarantees: any[];
-  preimages: any[];
+// --- Interfaces ---
+
+// Package specification
+export interface PackageSpec {
+  hash: string;
+  length: number;
+  erasure_root: string;
+  exports_root: string;
+  exports_count: number;
 }
+
+// Context information
+export interface Context {
+  anchor: string;
+  state_root: string;
+  beefy_root: string;
+  lookup_anchor: string;
+  lookup_anchor_slot: number;
+  prerequisites?: string[];
+}
+
+// Report structure
+export interface Report {
+  auth_output: string;
+  authorizer_hash: string;
+  context: Context;
+  core_index: number;
+  package_spec: PackageSpec;
+  results: Array<{
+    service_id: number;
+    code_hash: string;
+    payload_hash: string;
+    accumulate_gas: number;
+    result: { ok?: unknown };
+  }>;
+  segment_root_lookup: any[];
+}
+
+// Guarantee signature
+export interface GuaranteeSignature {
+  signature: string;
+  validator_index: number;
+}
+
+// Guarantee work report object
+export interface GuaranteeObject {
+  report: Report;
+  signatures: GuaranteeSignature[];
+  slot: number;
+}
+
+// Ticket interface
+export interface Ticket {
+  attempt: number;
+  signature: string;
+}
+
+// Assurance interface
+export interface Assurance {
+  anchor: string;
+  bitfield: string;
+  signature: string;
+  validator_index: number;
+}
+
+// Preimage interface
+export interface Preimage {
+  blob: string;
+  requester: number;
+}
+
+// Disputes interface
+export interface Disputes {
+  verdicts: unknown[];
+  culprits: unknown[];
+  faults: unknown[];
+}
+
+// Extrinsic interface combining all arrays
+export interface Extrinsic {
+  tickets: Ticket[];
+  disputes?: Disputes | null;
+  assurances: Assurance[];
+  guarantees: GuaranteeObject[];
+  preimages: Preimage[];
+}
+
+// ExtrinsicAccordionProps defines the props expected by the component.
+export interface ExtrinsicAccordionProps {
+  tickets: Ticket[];
+  disputes?: Disputes | null;
+  assurances: Assurance[];
+  guarantees: GuaranteeObject[];
+  preimages: Preimage[];
+}
+
+// --- Component ---
 
 export default function ExtrinsicAccordion({
   tickets,
@@ -50,10 +135,12 @@ export default function ExtrinsicAccordion({
     assurancesCount +
     guaranteesCount +
     preimagesCount;
-  const tooltip = `This block contains ${totalExtrinsics} extrinsic events.`;
+  const tooltip = `This block contains ${totalExtrinsics} extrinsic event${
+    totalExtrinsics !== 1 ? "s" : ""
+  }.`;
   const labelWidth = "170px";
 
-  // Local state to control the expansion of the Tickets sub-accordion.
+  // Local state to control expansion of the Tickets sub-accordion.
   const [ticketsExpanded, setTicketsExpanded] = React.useState<boolean>(false);
 
   return (
@@ -69,10 +156,7 @@ export default function ExtrinsicAccordion({
         sx={{
           px: 0,
           minHeight: "auto",
-          "& .MuiAccordionSummary-content": {
-            m: 0,
-            p: 0,
-          },
+          "& .MuiAccordionSummary-content": { m: 0, p: 0 },
           cursor: "default",
         }}
       >
@@ -115,7 +199,7 @@ export default function ExtrinsicAccordion({
         </Box>
       </AccordionSummary>
       <AccordionDetails sx={{ mt: 1, p: 0, pl: 26 }}>
-        {/* Tickets sub-accordion controlled for expansion */}
+        {/* Tickets sub-accordion */}
         <Accordion
           disableGutters
           expanded={ticketsExpanded}
@@ -163,7 +247,7 @@ export default function ExtrinsicAccordion({
           </AccordionDetails>
         </Accordion>
 
-        {/* Other sub-sections remain unchanged */}
+        {/* Disputes sub-section */}
         <AccordionSubSection title="Disputes" count={disputesCount}>
           {disputes ? (
             <>
@@ -182,6 +266,7 @@ export default function ExtrinsicAccordion({
           )}
         </AccordionSubSection>
 
+        {/* Assurances sub-section */}
         <AccordionSubSection title="Assurances" count={assurancesCount}>
           {assurancesCount > 0 ? (
             assurances.map((assurance, idx) => (
@@ -194,6 +279,7 @@ export default function ExtrinsicAccordion({
           )}
         </AccordionSubSection>
 
+        {/* Guarantees sub-section */}
         <AccordionSubSection title="Guarantees" count={guaranteesCount}>
           {guaranteesCount > 0 ? (
             guarantees.map((guarantee, idx) => (
@@ -207,6 +293,7 @@ export default function ExtrinsicAccordion({
           )}
         </AccordionSubSection>
 
+        {/* Preimages sub-section */}
         <AccordionSubSection title="Preimages" count={preimagesCount}>
           {preimagesCount > 0 ? (
             preimages.map((preimage, idx) => (
