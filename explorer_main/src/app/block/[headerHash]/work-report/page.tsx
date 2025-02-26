@@ -30,10 +30,9 @@ export default function WorkReportListPage() {
         .equals(headerHash)
         .first()
         .then((record: BlockRecord | undefined) => {
-          if (record && record.rawData && record.rawData.extrinsic) {
-            // If your rawData.extrinsic.guarantees array contains
-            // objects in the format you provided, store them in workReports
-            const reports = record.rawData.extrinsic.guarantees || [];
+          if (record && record.block && record.block.extrinsic) {
+            // Adjusted to use record.block instead of record.rawData
+            const reports = record.block.extrinsic.guarantees || [];
             setWorkReports(reports);
           }
         })
@@ -77,10 +76,6 @@ export default function WorkReportListPage() {
           <Table>
             <TableHead>
               <TableRow>
-                {/*
-                  Decide which fields are important for your table columns.
-                  Here’s an example set of columns resembling Etherscan:
-                */}
                 <TableCell sx={{ fontWeight: "bold" }}>Report Hash</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>Core Index</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>Block</TableCell>
@@ -107,7 +102,7 @@ export default function WorkReportListPage() {
                   const signatures = reportData?.signatures || [];
                   const resultOk = reportData?.report?.results?.[0]?.result?.ok;
 
-                  // You might create a short version of the hash for display:
+                  // Create a short version of the package_spec hash for display:
                   const shortReportHash = pkgSpecHash
                     ? pkgSpecHash.slice(0, 10) + "..." + pkgSpecHash.slice(-6)
                     : "N/A";
@@ -116,7 +111,7 @@ export default function WorkReportListPage() {
                     <TableRow
                       key={index}
                       hover
-                      // Example: navigate to a detail page when the row is clicked
+                      // Navigate to detail page on click:
                       onClick={() =>
                         window.open(
                           `/block/${headerHash}/work-report/${pkgSpecHash}`,

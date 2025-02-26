@@ -50,10 +50,9 @@ export default function ExtrinsicLists({
   const handleClick = () => {};
 
   return (
-    <Paper sx={{ px: 0 }}>
+    <Paper sx={{ px: 0 }} variant="outlined">
       <Typography
         variant="h6"
-        gutterBottom
         sx={{ px: 1.5, py: 2, borderBottom: "1px solid #ccc" }}
       >
         Extrinsic Lists
@@ -138,7 +137,7 @@ export default function ExtrinsicLists({
 
               {/* Middle: extrinsic count and relative time */}
               <Box sx={{ flex: 1 }}>
-                <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                <Typography variant="subtitle1">
                   {totalEvents} Event{totalEvents !== 1 ? "s" : ""}
                 </Typography>
                 <Typography variant="body2" color="textSecondary">

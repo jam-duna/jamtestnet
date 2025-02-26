@@ -31,7 +31,7 @@ export default function LatestBlocks({
   getRelativeTime,
 }: LatestBlocksProps) {
   return (
-    <Paper>
+    <Paper variant="outlined">
       <Typography
         variant="h6"
         gutterBottom

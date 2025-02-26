@@ -166,7 +166,7 @@ export default function HomePage() {
   }
 
   return (
-    <>
+    <Container sx={{ py: 5 }}>
       <EndpointDrawer
         wsEndpoint={wsEndpoint}
         setWsEndpoint={setWsEndpoint}
@@ -174,7 +174,7 @@ export default function HomePage() {
         setSavedEndpoints={setSavedEndpoints}
       />
 
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Container maxWidth="lg">
         <SearchBar />
         <GeneralInfoBar />
 
@@ -182,7 +182,7 @@ export default function HomePage() {
           {/* Left column: Latest Blocks (max 10) */}
           <Grid item xs={12} md={6}>
             <LatestBlocks
-              latestBlocks={latestBlocks.slice(0, 10)}
+              latestBlocks={latestBlocks.slice(0, 12)}
               getRelativeTime={getRelativeTime}
             />
           </Grid>
@@ -206,6 +206,6 @@ export default function HomePage() {
           </Grid>
         </Grid>
       </Container>
-    </>
+    </Container>
   );
 }
