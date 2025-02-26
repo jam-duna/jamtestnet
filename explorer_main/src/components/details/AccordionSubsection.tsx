@@ -1,10 +1,12 @@
+"use client";
+
 import React from "react";
 import {
-  Box,
-  Typography,
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Box,
+  Typography,
   Tooltip,
   IconButton,
 } from "@mui/material";
@@ -17,7 +19,7 @@ interface AccordionSubSectionProps {
   children: React.ReactNode;
 }
 
-function AccordionSubSection({
+export default function AccordionSubSection({
   title,
   count,
   children,
@@ -26,8 +28,8 @@ function AccordionSubSection({
     <Accordion
       disableGutters
       sx={{
-        py: 1,
         border: "none",
+        borderBottom: "1px solid #ccc",
         boxShadow: "none",
         "&:before": { display: "none" },
       }}
@@ -35,7 +37,7 @@ function AccordionSubSection({
       <AccordionSummary
         sx={{
           px: 0,
-          py: 0,
+          py: 1,
           minHeight: "auto",
           "& .MuiAccordionSummary-content": { m: 0, p: 0 },
         }}
@@ -52,9 +54,9 @@ function AccordionSubSection({
           </Typography>
         </Box>
       </AccordionSummary>
-      <AccordionDetails sx={{ p: 0, m: 0 }}>{children}</AccordionDetails>
+      <AccordionDetails sx={{ px: 5, py: 0, m: 0 }}>
+        {children}
+      </AccordionDetails>
     </Accordion>
   );
 }
-
-export default AccordionSubSection;

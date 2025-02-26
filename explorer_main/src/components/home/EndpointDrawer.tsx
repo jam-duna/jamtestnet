@@ -11,6 +11,7 @@ import {
   TextField,
   Typography,
   Button,
+  Paper,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -58,7 +59,7 @@ export default function EndpointDrawer({
       </Box>
 
       <Drawer anchor="left" open={menuOpen} onClose={() => setMenuOpen(false)}>
-        <Box sx={{ width: 250, p: 2, pt: 10 }}>
+        <Paper variant="outlined" sx={{ width: 250, p: 2, mt: 10 }}>
           {/* Place "Menu" title with margin so it doesn't overlap */}
           <Typography variant="h6" sx={{ ml: 1, mb: 2 }}>
             Menu
@@ -138,7 +139,25 @@ export default function EndpointDrawer({
               )}
             </Box>
           )}
-        </Box>
+        </Paper>
+        <Paper variant="outlined" sx={{ width: 250, p: 2 }}>
+          {/* Place "Menu" title with margin so it doesn't overlap */}
+          <Typography variant="h6" sx={{ ml: 1, mb: 2 }}>
+            Codec
+          </Typography>
+          <List>
+            <ListItemButton
+              onClick={() => {}}
+              sx={{
+                backgroundColor:
+                  wsEndpoint === defaultWsUrl ? "primary.light" : "inherit",
+                mb: 1,
+              }}
+            >
+              <ListItemText primary="Default" />
+            </ListItemButton>
+          </List>
+        </Paper>
       </Drawer>
     </>
   );

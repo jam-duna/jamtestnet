@@ -11,95 +11,14 @@ import {
 } from "@mui/material";
 import { LabeledRow } from "../../../../../components/details/LabeledRow"; // adjust the import path as needed
 import { db, BlockRecord } from "../../../../../../db";
-
-// Define the structure of the package specification.
-export interface PackageSpec {
-  hash: string;
-  length: number;
-  erasure_root: string;
-  exports_root: string;
-  exports_count: number;
-}
-
-// Define the structure of the context.
-export interface Context {
-  anchor: string;
-  state_root: string;
-  beefy_root: string;
-  lookup_anchor: string;
-  lookup_anchor_slot: number;
-  prerequisites?: string[]; // optional list of prerequisite hashes
-}
-
-interface Report {
-  auth_output: string;
-  authorizer_hash: string;
-  context: {
-    anchor: string;
-    state_root: string;
-    beefy_root: string;
-    lookup_anchor: string;
-    lookup_anchor_slot: number;
-    prerequisites?: string[];
-    // add other fields as needed
-  };
-  core_index: number;
-  package_spec: {
-    hash: string;
-    length: number;
-    erasure_root: string;
-    exports_root: string;
-    exports_count: number;
-  };
-  results: Array<{
-    service_id: number;
-    code_hash: string;
-    payload_hash: string;
-    accumulate_gas: number;
-    result: { ok?: unknown };
-  }>;
-  segment_root_lookup: unknown[];
-  // add additional fields if needed
-}
-
-// Define the structure of the package specification.
-export interface PackageSpec {
-  hash: string;
-  length: number;
-  erasure_root: string;
-  exports_root: string;
-  exports_count: number;
-}
-
-// Define the structure of the context.
-export interface Context {
-  anchor: string;
-  state_root: string;
-  beefy_root: string;
-  lookup_anchor: string;
-  lookup_anchor_slot: number;
-  prerequisites?: string[];
-}
-
-// Define the structure of a guarantee signature.
-export interface GuaranteeSignature {
-  signature: string;
-  validator_index: number;
-}
-
-// GuaranteeObject represents a guarantee work report.
-export interface GuaranteeObject {
-  report: Report;
-  signatures: GuaranteeSignature[];
-  slot: number; // block slot number
-}
+import { Guarantee } from "@/types";
 
 export default function WorkReportDetailPage() {
   const params = useParams();
   const headerHash = params.headerHash as string;
   const workReportHash = params.workReportHash as string;
 
-  const [workReport, setWorkReport] = useState<GuaranteeObject | null>(null);
+  const [workReport, setWorkReport] = useState<Guarantee | null>(null);
 
   useEffect(() => {
     if (headerHash && workReportHash) {
@@ -111,8 +30,7 @@ export default function WorkReportDetailPage() {
           if (record && record.block && record.block.extrinsic) {
             const reports = record.block.extrinsic.guarantees || [];
             const found = reports.find(
-              (r: GuaranteeObject) =>
-                r.report.package_spec.hash === workReportHash
+              (r: Guarantee) => r.report.package_spec.hash === workReportHash
             );
             setWorkReport(found);
             console.log(record);

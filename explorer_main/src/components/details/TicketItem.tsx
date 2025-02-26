@@ -62,7 +62,7 @@ export default function TicketItem({ ticket, idx, expanded }: TicketItemProps) {
   }, [expanded, decoded, loading, decodeTicketSignature]);
 
   return (
-    <Box sx={{ mb: 1 }}>
+    <Box sx={{ py: 1, borderTop: "1px solid #ccc" }}>
       <Typography variant="body2">Ticket {idx}</Typography>
       <Typography variant="body2" color="textSecondary">
         Attempt: {ticket.attempt}

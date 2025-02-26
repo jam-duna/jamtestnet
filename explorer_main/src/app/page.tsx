@@ -11,8 +11,18 @@ import LatestExtrinsics from "../components/home/LatestExtrinsics";
 
 import { db, BlockRecord, StateRecord } from "../../db"; // Updated DB scheme
 
-const defaultRpcUrl = "http://localhost:9999/rpc";
+// Keep your default WS URL
 const defaultWsUrl = "ws://localhost:9999/ws";
+
+// Helper function to convert a WS endpoint to its corresponding RPC endpoint.
+function getRpcUrlFromWs(wsEndpoint: string): string {
+  if (wsEndpoint.startsWith("ws://")) {
+    return "http://" + wsEndpoint.slice(5).replace(/\/ws$/, "/rpc");
+  } else if (wsEndpoint.startsWith("wss://")) {
+    return "https://" + wsEndpoint.slice(6).replace(/\/ws$/, "/rpc");
+  }
+  return wsEndpoint;
+}
 
 export default function HomePage() {
   // State for fetched block and state data from RPC calls.
@@ -66,8 +76,13 @@ export default function HomePage() {
           const headerHash = msg.result.headerHash;
           const blockHash = msg.result.blockHash;
 
-          const fetchedBlock = await fetchBlock(headerHash);
-          const fetchedState = await fetchState(headerHash);
+          // Compute the RPC URL based on the current WS endpoint.
+          console.log("wsEndpoint: " + wsEndpoint);
+          const rpcUrl = getRpcUrlFromWs(wsEndpoint);
+          console.log("rpcUrl: " + rpcUrl);
+
+          const fetchedBlock = await fetchBlock(headerHash, rpcUrl);
+          const fetchedState = await fetchState(headerHash, rpcUrl);
 
           setBlock(fetchedBlock);
           setState(fetchedState);
@@ -125,7 +140,8 @@ export default function HomePage() {
       });
   }, [block]);
 
-  async function fetchBlock(blockHash: string) {
+  // Adjusted fetch functions to use the dynamic RPC URL.
+  async function fetchBlock(blockHash: string, rpcUrl: string) {
     const payload = {
       jsonrpc: "2.0",
       id: 1,
@@ -133,7 +149,7 @@ export default function HomePage() {
       params: [blockHash],
     };
     try {
-      const response = await fetch(defaultRpcUrl, {
+      const response = await fetch(rpcUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -145,7 +161,7 @@ export default function HomePage() {
     }
   }
 
-  async function fetchState(headerHash: string) {
+  async function fetchState(headerHash: string, rpcUrl: string) {
     const payload = {
       jsonrpc: "2.0",
       id: 2,
@@ -153,7 +169,7 @@ export default function HomePage() {
       params: [headerHash],
     };
     try {
-      const response = await fetch(defaultRpcUrl, {
+      const response = await fetch(rpcUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

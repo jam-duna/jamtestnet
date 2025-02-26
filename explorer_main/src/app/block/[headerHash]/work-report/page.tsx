@@ -16,62 +16,14 @@ import {
   Box,
 } from "@mui/material";
 import { db, BlockRecord } from "../../../../../db";
-
-// Define the structure of the package specification.
-export interface PackageSpec {
-  hash: string;
-  length: number;
-  erasure_root: string;
-  exports_root: string;
-  exports_count: number;
-}
-
-// Define the structure of the context.
-export interface Context {
-  anchor: string;
-  state_root: string;
-  beefy_root: string;
-  lookup_anchor: string;
-  lookup_anchor_slot: number;
-  prerequisites?: string[];
-}
-
-// Define the structure of the report.
-export interface Report {
-  auth_output: string;
-  authorizer_hash: string;
-  context: Context;
-  core_index: number;
-  package_spec: PackageSpec;
-  results: Array<{
-    service_id: number;
-    code_hash: string;
-    payload_hash: string;
-    accumulate_gas: number;
-    result: { ok?: unknown };
-  }>;
-  segment_root_lookup: unknown[];
-}
-
-// Define the structure of a guarantee signature.
-export interface GuaranteeSignature {
-  signature: string;
-  validator_index: number;
-}
-
-// GuaranteeObject represents a guarantee work report.
-export interface GuaranteeObject {
-  report: Report;
-  signatures: GuaranteeSignature[];
-  slot: number; // block slot number
-}
+import { Guarantee } from "@/types";
 
 export default function WorkReportListPage() {
   const params = useParams();
   const headerHash = params.headerHash as string;
 
   // Instead of Report | null, we expect an array of GuaranteeObject
-  const [workReports, setWorkReports] = useState<GuaranteeObject[]>([]);
+  const [workReports, setWorkReports] = useState<Guarantee[]>([]);
 
   useEffect(() => {
     if (headerHash) {
@@ -83,7 +35,7 @@ export default function WorkReportListPage() {
           if (record && record.block && record.block.extrinsic) {
             // Use record.block.extrinsic.guarantees and assume it matches GuaranteeObject[]
             const reports = record.block.extrinsic.guarantees || [];
-            setWorkReports(reports as GuaranteeObject[]);
+            setWorkReports(reports as Guarantee[]);
           }
         })
         .catch((error) => {
