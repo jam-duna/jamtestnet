@@ -192,13 +192,13 @@ export default function HomePage() {
             <Grid container spacing={4}>
               <Grid item xs={12}>
                 <LatestExtrinsics
-                  latestBlocks={latestBlocks.slice(0, 5)}
+                  latestBlocks={latestBlocks}
                   getRelativeTime={getRelativeTime}
                 />
               </Grid>
               <Grid item xs={12}>
                 <LatestReports
-                  latestBlocks={latestBlocks.slice(0, 5)}
+                  latestBlocks={latestBlocks}
                   getRelativeTime={getRelativeTime}
                 />
               </Grid>

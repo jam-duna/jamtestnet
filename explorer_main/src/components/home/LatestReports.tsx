@@ -29,6 +29,7 @@ export default function LatestReports({
             raw.extrinsic.guarantees.length > 0
           );
         })
+        .slice(0, 5)
         .map((blockItem) => {
           const raw = blockItem.block;
           const guaranteesCount = raw.extrinsic.guarantees.length;

@@ -31,11 +31,11 @@ export default function LatestBlocks({
   getRelativeTime,
 }: LatestBlocksProps) {
   return (
-    <Paper sx={{ p: 2 }}>
+    <Paper>
       <Typography
         variant="h6"
         gutterBottom
-        sx={{ pb: 2, borderBottom: "1px solid #ccc", m: 0 }}
+        sx={{ px: 1.5, py: 2, borderBottom: "1px solid #ccc", m: 0 }}
       >
         Latest Blocks
       </Typography>
@@ -109,6 +109,21 @@ export default function LatestBlocks({
           </Link>
         );
       })}
+      <Link
+        href={`/block-list`}
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          variant="subtitle2"
+          sx={{ p: 2, "&:hover": { backgroundColor: "#f9f9f9" } }}
+        >
+          View All Blocks
+        </Typography>
+      </Link>
     </Paper>
   );
 }

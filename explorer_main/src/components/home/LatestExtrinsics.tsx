@@ -2,8 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { Typography, Paper, Card, CardContent } from "@mui/material";
+import { Box, Paper, Typography, Button } from "@mui/material";
 import { BlockRecord } from "../../../db";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong"; // Example icon
 
 type ExtrinsicListsProps = {
   latestBlocks: BlockRecord[];
@@ -14,84 +15,165 @@ export default function ExtrinsicLists({
   latestBlocks,
   getRelativeTime,
 }: ExtrinsicListsProps) {
+  // Filter blocks that have at least one extrinsic event
+  const filteredBlocks = latestBlocks
+    .filter((blockItem) => {
+      const extrinsic = blockItem.block.extrinsic;
+      if (!extrinsic) return false;
+      const ticketsCount = Array.isArray(extrinsic.tickets)
+        ? extrinsic.tickets.length
+        : 0;
+      const disputesCount = extrinsic.disputes
+        ? (extrinsic.disputes.verdicts?.length || 0) +
+          (extrinsic.disputes.culprits?.length || 0) +
+          (extrinsic.disputes.faults?.length || 0)
+        : 0;
+      const assurancesCount = Array.isArray(extrinsic.assurances)
+        ? extrinsic.assurances.length
+        : 0;
+      const guaranteesCount = Array.isArray(extrinsic.guarantees)
+        ? extrinsic.guarantees.length
+        : 0;
+      const preimagesCount = Array.isArray(extrinsic.preimages)
+        ? extrinsic.preimages.length
+        : 0;
+      const totalEvents =
+        ticketsCount +
+        disputesCount +
+        assurancesCount +
+        guaranteesCount +
+        preimagesCount;
+      return totalEvents > 0;
+    })
+    .slice(0, 5);
+
+  const handleClick = () => {};
+
   return (
-    <Paper sx={{ p: 2 }}>
-      <Typography variant="h5" gutterBottom>
+    <Paper sx={{ px: 0 }}>
+      <Typography
+        variant="h6"
+        gutterBottom
+        sx={{ px: 1.5, py: 2, borderBottom: "1px solid #ccc" }}
+      >
         Extrinsic Lists
       </Typography>
-      {latestBlocks.map((blockItem) => {
+
+      {filteredBlocks.map((blockItem) => {
+        // Calculate extrinsic counts
         const extrinsic = blockItem.block.extrinsic;
-        let ticketsCount = 0;
-        let disputesCount = 0;
-        let guaranteesCount = 0;
-        let preimagesCount = 0;
-        let assurancesCount = 0;
-        let totalEvents = 0;
+        let ticketsCount = Array.isArray(extrinsic.tickets)
+          ? extrinsic.tickets.length
+          : 0;
+        let disputesCount = extrinsic.disputes
+          ? (extrinsic.disputes.verdicts?.length || 0) +
+            (extrinsic.disputes.culprits?.length || 0) +
+            (extrinsic.disputes.faults?.length || 0)
+          : 0;
+        let guaranteesCount = Array.isArray(extrinsic.guarantees)
+          ? extrinsic.guarantees.length
+          : 0;
+        let preimagesCount = Array.isArray(extrinsic.preimages)
+          ? extrinsic.preimages.length
+          : 0;
+        let assurancesCount = Array.isArray(extrinsic.assurances)
+          ? extrinsic.assurances.length
+          : 0;
+        let totalEvents =
+          ticketsCount +
+          disputesCount +
+          assurancesCount +
+          guaranteesCount +
+          preimagesCount;
 
-        if (extrinsic) {
-          ticketsCount = Array.isArray(extrinsic.tickets)
-            ? extrinsic.tickets.length
-            : 0;
+        // Compute relative time
+        const createdAt = blockItem.overview.createdAt;
+        const relativeTime = createdAt ? getRelativeTime(createdAt) : "N/A";
 
-          if (extrinsic.disputes) {
-            const verdictsCount = Array.isArray(extrinsic.disputes.verdicts)
-              ? extrinsic.disputes.verdicts.length
-              : 0;
-            const culpritsCount = Array.isArray(extrinsic.disputes.culprits)
-              ? extrinsic.disputes.culprits.length
-              : 0;
-            const faultsCount = Array.isArray(extrinsic.disputes.faults)
-              ? extrinsic.disputes.faults.length
-              : 0;
-            disputesCount = verdictsCount + culpritsCount + faultsCount;
-          }
-
-          guaranteesCount = Array.isArray(extrinsic.guarantees)
-            ? extrinsic.guarantees.length
-            : 0;
-          preimagesCount = Array.isArray(extrinsic.preimages)
-            ? extrinsic.preimages.length
-            : 0;
-          assurancesCount = Array.isArray(extrinsic.assurances)
-            ? extrinsic.assurances.length
-            : 0;
-
-          totalEvents =
-            ticketsCount +
-            disputesCount +
-            guaranteesCount +
-            preimagesCount +
-            assurancesCount;
-        }
+        // Build details string: only show non-zero counts
+        const detailItems: string[] = [];
+        if (ticketsCount > 0) detailItems.push(`Tickets: ${ticketsCount}`);
+        if (disputesCount > 0) detailItems.push(`Disputes: ${disputesCount}`);
+        if (guaranteesCount > 0)
+          detailItems.push(`Guarantees: ${guaranteesCount}`);
+        if (preimagesCount > 0)
+          detailItems.push(`Preimages: ${preimagesCount}`);
+        if (assurancesCount > 0)
+          detailItems.push(`Assurances: ${assurancesCount}`);
 
         return (
           <Link
             key={blockItem.headerHash}
             href={`/block/${blockItem.headerHash}/extrinsic`}
-            style={{ textDecoration: "none" }}
+            style={{ textDecoration: "none", color: "inherit" }}
           >
-            <Card sx={{ mb: 2, cursor: "pointer" }}>
-              <CardContent>
-                <Typography variant="subtitle1">
-                  Extrinsic Events: {totalEvents} (
-                  {blockItem.overview.createdAt
-                    ? getRelativeTime(blockItem.overview.createdAt)
-                    : "N/A"}
-                  )
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                p: 1.5,
+                borderRadius: 1,
+                transition: "background-color 0.2s",
+                "&:hover": { backgroundColor: "#f9f9f9" },
+
+                borderBottom: "1px solid #ccc",
+              }}
+            >
+              {/* Left Icon */}
+              <Box
+                sx={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "#fff",
+                  border: "1px solid #ddd",
+                  mr: 2,
+                }}
+              >
+                <ReceiptLongIcon fontSize="small" />
+              </Box>
+
+              {/* Middle: extrinsic count and relative time */}
+              <Box sx={{ flex: 1 }}>
+                <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                  {totalEvents} Event{totalEvents !== 1 ? "s" : ""}
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                  Header Hash: {blockItem.headerHash}
+                  {relativeTime} ago
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Details: Tickets: {ticketsCount}, Disputes: {disputesCount},
-                  Guarantees: {guaranteesCount}, Preimages: {preimagesCount},
-                  Assurances: {assurancesCount}
-                </Typography>
-              </CardContent>
-            </Card>
+              </Box>
+
+              {/* Right: details string (only non-zero categories) */}
+              <Box sx={{ textAlign: "right" }}>
+                {detailItems.length > 0 && (
+                  <Typography variant="body2" color="textSecondary">
+                    {detailItems.join(", ")}
+                  </Typography>
+                )}
+              </Box>
+            </Box>
           </Link>
         );
       })}
+
+      <Link
+        href={`/extrinsic-list`}
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          variant="subtitle2"
+          sx={{ p: 2, "&:hover": { backgroundColor: "#f9f9f9" } }}
+        >
+          View All Extrinsics
+        </Typography>
+      </Link>
     </Paper>
   );
 }
