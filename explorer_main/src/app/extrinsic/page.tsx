@@ -1,8 +1,7 @@
-/*
 "use client";
 
 import React from "react";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 import Link from "next/link";
 import {
   Container,
@@ -41,8 +40,8 @@ const sampleTransactionDetail: TransactionDetail = {
 };
 
 export default function TransactionDetailPage() {
-  const params = useParams();
-  const txHash = params.hash; // Extract the tx hash from the URL.
+  // const params = useParams();
+  // const txHash = params.hash; // Extract the tx hash from the URL.
 
   // For now, we'll use sample data. In a real application, fetch data based on txHash.
   const tx = sampleTransactionDetail;
@@ -109,5 +108,3 @@ export default function TransactionDetailPage() {
     </Container>
   );
 }
-
-*/
