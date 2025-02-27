@@ -254,7 +254,7 @@
             "mmr": {
                 "peaks": [
                     null,
-                    "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5",
+                    "0x755624dca12d3dead2d2e064a4e060ba5cf6d5d9280acdc4c552cccdbde3c9cf",
                     "0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30"
                 ]
             },
@@ -640,6 +640,30 @@
     ],
     "accounts": [
         {
+            "id": 2953942612,
+            "data": {
+                "service": {
+                    "code_hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
+                    "balance": 501376,
+                    "min_item_gas": 100,
+                    "min_memo_gas": 100,
+                    "bytes": 1256,
+                    "items": 2
+                },
+                "preimages": null,
+                "lookup_meta": [
+                    {
+                        "key": {
+                            "hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
+                            "length": 1175
+                        },
+                        "value": null
+                    }
+                ],
+                "storage": null
+            }
+        },
+        {
             "id": 0,
             "data": {
                 "service": {
@@ -683,30 +707,6 @@
                 "storage": {
                     "0x00ff00ff00ff00ff81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3": "0x549611b0"
                 }
-            }
-        },
-        {
-            "id": 2953942612,
-            "data": {
-                "service": {
-                    "code_hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
-                    "balance": 501376,
-                    "min_item_gas": 100,
-                    "min_memo_gas": 100,
-                    "bytes": 1256,
-                    "items": 2
-                },
-                "preimages": null,
-                "lookup_meta": [
-                    {
-                        "key": {
-                            "hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
-                            "length": 1175
-                        },
-                        "value": null
-                    }
-                ],
-                "storage": null
             }
         }
     ]

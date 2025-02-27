@@ -12,7 +12,7 @@ jobs:
       matrix:
         endpoint:
           - name: jamduna
-            url: "http://jamduna.org:8999/api/stf"
+            url: "https://jamduna.org/api/stf"
           - name: jambrains
             url: "https://dev.jamcha.in/api/v1/functions/check_stf_safrole"
     steps:
