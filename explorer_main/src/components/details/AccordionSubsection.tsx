@@ -13,23 +13,25 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
-interface AccordionSubSectionProps {
+interface AccordionSubsectionProps {
   title: string;
   count: number;
+  emptyMessage: string;
   children: React.ReactNode;
 }
 
-export default function AccordionSubSection({
+export default function AccordionSubsection({
   title,
   count,
+  emptyMessage,
   children,
-}: AccordionSubSectionProps) {
+}: AccordionSubsectionProps) {
   return (
     <Accordion
       disableGutters
       sx={{
+        py: 1,
         border: "none",
-        borderBottom: "1px solid #ccc",
         boxShadow: "none",
         "&:before": { display: "none" },
       }}
@@ -37,7 +39,7 @@ export default function AccordionSubSection({
       <AccordionSummary
         sx={{
           px: 0,
-          py: 1,
+          py: 0,
           minHeight: "auto",
           "& .MuiAccordionSummary-content": { m: 0, p: 0 },
         }}
@@ -54,8 +56,12 @@ export default function AccordionSubSection({
           </Typography>
         </Box>
       </AccordionSummary>
-      <AccordionDetails sx={{ px: 5, py: 0, m: 0 }}>
-        {children}
+      <AccordionDetails sx={{ px: 5, m: 0 }}>
+        {count > 0 ? (
+          children
+        ) : (
+          <Typography variant="body2">{emptyMessage}</Typography>
+        )}
       </AccordionDetails>
     </Accordion>
   );

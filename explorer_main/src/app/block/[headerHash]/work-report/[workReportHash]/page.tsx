@@ -71,7 +71,7 @@ export default function WorkReportDetailPage() {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Paper sx={{ p: 3 }}>
+      <Paper variant="outlined" sx={{ p: 3 }}>
         <Typography variant="h5" gutterBottom>
           Work Report Details
         </Typography>

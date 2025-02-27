@@ -58,6 +58,7 @@ export interface State {
   varphi: any[];
   pi: any;
   accounts: any;
+  [key: string]: any;
 }
 
 // BlockRecord: the complete record stored in Dexie, uniquely identified by headerHash.
@@ -76,14 +77,14 @@ export interface StateRecord {
 
 // Dexie database class
 export class JamDB extends Dexie {
-  public blocks!: Dexie.Table<BlockRecord, string>; // headerHash as the key
+  public blocks!: Dexie.Table<BlockRecord, string>;
   public states!: Dexie.Table<StateRecord, string>;
 
   constructor() {
     super("JamDB");
-    // Define schema version 1 with headerHash as primary key
+    // Include "block.header.slot" so we can query by slot.
     this.version(1).stores({
-      blocks: "headerHash",
+      blocks: "headerHash,block.header.slot",
       states: "headerHash",
     });
   }

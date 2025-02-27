@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import {
   Container,
   Paper,
@@ -18,8 +18,26 @@ import {
 import { db, BlockRecord } from "../../../../../db";
 import { Guarantee } from "@/types";
 
+// Helper to split a hash into four parts.
+function formatHash(hash: string): string {
+  const length = hash.length;
+  const segmentLength = Math.floor(length / 4);
+  let remainder = length % 4;
+  let parts: string[] = [];
+  let start = 0;
+  for (let i = 0; i < 4; i++) {
+    const extra = remainder > 0 ? 1 : 0;
+    remainder = Math.max(remainder - 1, 0);
+    const part = hash.substring(start, start + segmentLength + extra);
+    parts.push(part);
+    start += segmentLength + extra;
+  }
+  return parts.join(" ");
+}
+
 export default function WorkReportListPage() {
   const params = useParams();
+  const router = useRouter();
   const headerHash = params.headerHash as string;
 
   // Instead of Report | null, we expect an array of GuaranteeObject
@@ -54,7 +72,7 @@ export default function WorkReportListPage() {
         Work Report
       </Typography>
       <Typography variant="h6" gutterBottom>
-        For Block {headerHash}
+        For Block {formatHash(headerHash)}
       </Typography>
 
       {/* Etherscan-like header: total count + download button */}
@@ -72,7 +90,7 @@ export default function WorkReportListPage() {
         </Button>
       </Box>
 
-      <Paper>
+      <Paper variant="outlined">
         <TableContainer>
           <Table>
             <TableHead>
@@ -99,8 +117,6 @@ export default function WorkReportListPage() {
                   const accumulateGas =
                     reportData.report.results?.[0]?.accumulate_gas;
                   const signatures = reportData.signatures;
-                  // const resultOk = reportData.report.results?.[0]?.result?.ok;
-
                   // Create a short version of the package_spec hash for display:
                   const shortReportHash = pkgSpecHash
                     ? pkgSpecHash.slice(0, 10) + "..." + pkgSpecHash.slice(-6)
@@ -122,8 +138,26 @@ export default function WorkReportListPage() {
                         {shortReportHash}
                       </TableCell>
                       <TableCell>{coreIndex ?? "N/A"}</TableCell>
-                      <TableCell>{headerHash.slice(0, 8) + "..."}</TableCell>
-                      <TableCell>{slot ?? "N/A"}</TableCell>
+                      {/* Block header hash cell */}
+                      <TableCell
+                        sx={{ color: "blue" }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          router.push(`/block/${headerHash}`);
+                        }}
+                      >
+                        {formatHash(headerHash)}
+                      </TableCell>
+                      {/* Slot cell */}
+                      <TableCell
+                        sx={{ color: "blue" }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          router.push(`/block/${headerHash}`);
+                        }}
+                      >
+                        {slot ?? "N/A"}
+                      </TableCell>
                       <TableCell>{serviceId ?? "N/A"}</TableCell>
                       <TableCell>{accumulateGas ?? "N/A"}</TableCell>
                       <TableCell>{signatures.length}</TableCell>

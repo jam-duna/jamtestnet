@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import TicketItem from "./TicketItem"; // adjust path accordingly
-import AccordionSubSection from "@/components/details/AccordionSubsection";
+import AccordionSubsection from "./AccordionSubsection";
 import { Extrinsic } from "@/types";
 
 export interface ExtrinsicAccordionProps extends Extrinsic {
@@ -104,76 +104,76 @@ export default function ExtrinsicAccordion({
         </Box>
       </AccordionSummary>
 
-      <AccordionDetails sx={{ mt: 1, p: 0, ml: 26 }}>
-        <AccordionSubSection title="Tickets" count={ticketsCount}>
-          {ticketsCount > 0 ? (
-            tickets.map((ticket, idx) => (
-              <TicketItem
-                key={idx}
-                ticket={ticket}
-                idx={idx}
-                expanded={extrinsicExpanded}
-              />
-            ))
-          ) : (
-            <Typography variant="body2">No tickets</Typography>
-          )}
-        </AccordionSubSection>
+      <AccordionDetails sx={{ mt: 1, p: 0, pl: 26 }}>
+        <AccordionSubsection
+          title="Tickets"
+          count={ticketsCount}
+          emptyMessage="No tickets"
+        >
+          {tickets.map((ticket, idx) => (
+            <TicketItem
+              key={idx}
+              ticket={ticket}
+              idx={idx}
+              expanded={extrinsicExpanded}
+            />
+          ))}
+        </AccordionSubsection>
 
-        <AccordionSubSection title="Disputes" count={disputesCount}>
-          {disputesCount > 0 ? (
-            <>
-              <Typography variant="body2">
-                Verdicts: {disputes?.verdicts?.length || 0}
-              </Typography>
-              <Typography variant="body2">
-                Culprits: {disputes?.culprits?.length || 0}
-              </Typography>
-              <Typography variant="body2">
-                Faults: {disputes?.faults?.length || 0}
-              </Typography>
-            </>
-          ) : (
-            <Typography variant="body2">No disputes</Typography>
-          )}
-        </AccordionSubSection>
+        <AccordionSubsection
+          title="Disputes"
+          count={disputesCount}
+          emptyMessage="No disputes"
+        >
+          <>
+            <Typography variant="body2">
+              Verdicts: {disputes?.verdicts?.length || 0}
+            </Typography>
+            <Typography variant="body2">
+              Culprits: {disputes?.culprits?.length || 0}
+            </Typography>
+            <Typography variant="body2">
+              Faults: {disputes?.faults?.length || 0}
+            </Typography>
+          </>
+        </AccordionSubsection>
 
-        <AccordionSubSection title="Assurances" count={assurancesCount}>
-          {assurancesCount > 0 ? (
-            assurances.map((assurance, idx) => (
-              <Typography key={idx} variant="body2">
-                {JSON.stringify(assurance)}
-              </Typography>
-            ))
-          ) : (
-            <Typography variant="body2">No assurances</Typography>
-          )}
-        </AccordionSubSection>
+        <AccordionSubsection
+          title="Assurances"
+          count={assurancesCount}
+          emptyMessage="No assurances"
+        >
+          {assurances.map((assurance, idx) => (
+            <Typography key={idx} variant="body2">
+              {JSON.stringify(assurance)}
+            </Typography>
+          ))}
+        </AccordionSubsection>
 
-        <AccordionSubSection title="Guarantees" count={guaranteesCount}>
-          {guaranteesCount > 0 ? (
-            guarantees.map((guarantee, idx) => (
-              <Typography key={idx} variant="body2">
-                Guarantee {idx + 1}:{" "}
-                {JSON.stringify(guarantee.report.package_spec)}
-              </Typography>
-            ))
-          ) : (
-            <Typography variant="body2">No guarantees</Typography>
-          )}
-        </AccordionSubSection>
+        <AccordionSubsection
+          title="Guarantees"
+          count={guaranteesCount}
+          emptyMessage="No guarantees"
+        >
+          {guarantees.map((guarantee, idx) => (
+            <Typography key={idx} variant="body2">
+              Guarantee {idx + 1}:{" "}
+              {JSON.stringify(guarantee.report.package_spec)}
+            </Typography>
+          ))}
+        </AccordionSubsection>
 
-        <AccordionSubSection title="Preimages" count={preimagesCount}>
-          {preimagesCount > 0 ? (
-            preimages.map((preimage, idx) => (
-              <Typography key={idx} variant="body2">
-                Preimage {idx + 1}: {JSON.stringify(preimage)}
-              </Typography>
-            ))
-          ) : (
-            <Typography variant="body2">No preimages</Typography>
-          )}
-        </AccordionSubSection>
+        <AccordionSubsection
+          title="Preimages"
+          count={preimagesCount}
+          emptyMessage="No preimages"
+        >
+          {preimages.map((preimage, idx) => (
+            <Typography key={idx} variant="body2">
+              Preimage {idx + 1}: {JSON.stringify(preimage)}
+            </Typography>
+          ))}
+        </AccordionSubsection>
       </AccordionDetails>
     </Accordion>
   );
