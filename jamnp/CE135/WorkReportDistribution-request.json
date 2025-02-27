@@ -1,0 +1,64 @@
+{
+  "slot": 40,
+  "len": 3,
+  "guarantee": [
+    {
+      "validator_index": 0,
+      "signature": "0xf6069d42eb24854be3fef1ac58baef7bbf4cca9f47887215d800cb46b4101e2087dbbb072ef5e3022f43d8884e5d6520311e9665c304ff477a9fd87561b17805"
+    },
+    {
+      "validator_index": 4,
+      "signature": "0x5a73c8b090c9852369f4a58b9421fc376bcf40bdeacff13ae875047aa5340f23e14a7c7ffd469702eebaf011748377330ca1f03dde91631bbf1398dcb90c0f02"
+    },
+    {
+      "validator_index": 5,
+      "signature": "0xc3b6ee451ac97e349ef64b5f85742ec4cf237340bdf6eea98477aef7f54b0a24d45d09d329c0d0ecad9cf0d71f7362f8533d5d62a7b6b6f55bac51687b6b0f0b"
+    }
+  ],
+  "work_report": {
+    "package_spec": {
+      "hash": "0xffdd5fb3c1f823fc06e8c399e877c539abb69e83c6ef180441bf4ce7acfe0a8a",
+      "length": 371,
+      "erasure_root": "0xf5343dbedb5537d86185dd9c9c32b4b744963b76e4826df4939e3feafb0f59d0",
+      "exports_root": "0x2aa2057ea3fc27eb50f03a01f1f1c82357f4e3d2179c518239d0502c3f9b8baf",
+      "exports_count": 0
+    },
+    "context": {
+      "anchor": "0x1bd588f1af63c954aa8848ebcb552fab3317a6ed17631905c2df67ce8a1b7b99",
+      "state_root": "0xf05df350423f4e408b31cd1c1fe9e7b0d9a335a44974cded2b4d77cef1033c68",
+      "beefy_root": "0xff6868b4bced1d30f9e1ccf8c6a4a39c2b359a2ce0d60711100e2bc3dbba059d",
+      "lookup_anchor": "0x1da177f73406fa483a8cd86f897e7fbbf9bec166969b92e04233f2d3c1b5de1f",
+      "lookup_anchor_slot": 40,
+      "prerequisites": []
+    },
+    "core_index": 0,
+    "authorizer_hash": "0x8c30f2c101674af1da31769e96ce72e81a4a44c89526d7d3ff0a1a511d5f3c9f",
+    "auth_output": "0x",
+    "segment_root_lookup": [
+      {
+        "hash": "0x44f195dc091e51e3ab22f2e196ed6ee7c6a91f07f8cbf12731253ada8e3e16e6",
+        "exports_root": "0x20ceda59fa7089d00895cadcf52722a6b92320d22024305fb5b9b6661dec8ab4"
+      }
+    ],
+    "results": [
+      {
+        "service_id": 1065941251,
+        "code_hash": "0xb0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769",
+        "payload_hash": "0x2c088bf3b4e7853c99e49636d9e7c9a351918d70bd6cdf6148b81e68f5706f68",
+        "accumulate_gas": 9111,
+        "result": {
+          "ok": "0x0a0000003700000022000000"
+        }
+      },
+      {
+        "service_id": 2953942612,
+        "code_hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
+        "payload_hash": "0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8",
+        "accumulate_gas": 9111,
+        "result": {
+          "ok": "0x8c30f2c101674af1da31769e96ce72e81a4a44c89526d7d3ff0a1a511d5f3c9f"
+        }
+      }
+    ]
+  }
+}
