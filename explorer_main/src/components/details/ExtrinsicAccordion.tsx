@@ -15,13 +15,13 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import TicketItem from "./TicketItem"; // adjust path accordingly
 import AccordionSubsection from "./AccordionSubsection";
 import { Extrinsic } from "@/types";
+import PreimageItem from "./PreimageItem";
+import AssurancesItem from "./AssuranceItem";
+import GuaranteeItem from "./GuaranteeItem";
 
 export interface ExtrinsicAccordionProps extends Extrinsic {
-  /**
-   * If true, the main accordion is expanded on initial load.
-   * Defaults to false (closed).
-   */
   initialExtrinsicExpanded?: boolean;
+  headerHash: string; // required and using primitive type
 }
 
 export default function ExtrinsicAccordion({
@@ -30,6 +30,7 @@ export default function ExtrinsicAccordion({
   assurances,
   guarantees,
   preimages,
+  headerHash,
   initialExtrinsicExpanded = false,
 }: ExtrinsicAccordionProps) {
   const ticketsCount = tickets?.length || 0;
@@ -144,9 +145,12 @@ export default function ExtrinsicAccordion({
           emptyMessage="No assurances"
         >
           {assurances.map((assurance, idx) => (
-            <Typography key={idx} variant="body2">
-              {JSON.stringify(assurance)}
-            </Typography>
+            <AssurancesItem
+              key={idx}
+              assurances={assurance}
+              idx={idx}
+              expanded={extrinsicExpanded}
+            />
           ))}
         </AccordionSubsection>
 
@@ -156,10 +160,13 @@ export default function ExtrinsicAccordion({
           emptyMessage="No guarantees"
         >
           {guarantees.map((guarantee, idx) => (
-            <Typography key={idx} variant="body2">
-              Guarantee {idx + 1}:{" "}
-              {JSON.stringify(guarantee.report.package_spec)}
-            </Typography>
+            <GuaranteeItem
+              key={idx}
+              guarantee={guarantee}
+              headerHash={headerHash}
+              idx={idx}
+              expanded={extrinsicExpanded}
+            />
           ))}
         </AccordionSubsection>
 
@@ -169,9 +176,12 @@ export default function ExtrinsicAccordion({
           emptyMessage="No preimages"
         >
           {preimages.map((preimage, idx) => (
-            <Typography key={idx} variant="body2">
-              Preimage {idx + 1}: {JSON.stringify(preimage)}
-            </Typography>
+            <PreimageItem
+              key={idx}
+              preimage={preimage}
+              idx={idx}
+              expanded={extrinsicExpanded}
+            />
           ))}
         </AccordionSubsection>
       </AccordionDetails>

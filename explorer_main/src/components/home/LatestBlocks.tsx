@@ -5,26 +5,12 @@ import Link from "next/link";
 import { Box, Paper, Typography } from "@mui/material";
 import CropSquareIcon from "@mui/icons-material/CropSquare"; // Example icon
 import { BlockRecord } from "../../../db";
+import { truncateHash } from "@/utils/utils";
 
 type LatestBlocksProps = {
   latestBlocks: BlockRecord[];
   getRelativeTime: (timestamp: number) => string;
 };
-
-// Helper to truncate the hash to 4 bytes at the start and 4 bytes at the end.
-// For example: 0x1234ABCD...7890EF12
-function truncateHash(hash: string): string {
-  // Ensure we have a leading "0x"
-  const clean = hash.startsWith("0x") ? hash.slice(2) : hash;
-  // We'll take 8 hex chars (4 bytes) at the start and 8 at the end
-  if (clean.length <= 16) {
-    // If it's too short, just return it
-    return "0x" + clean;
-  }
-  const prefix = clean.slice(0, 8);
-  const suffix = clean.slice(-8);
-  return `0x${prefix}...${suffix}`;
-}
 
 export default function LatestBlocks({
   latestBlocks,

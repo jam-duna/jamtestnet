@@ -17,23 +17,8 @@ import {
 } from "@mui/material";
 import { db, BlockRecord } from "../../../../../db";
 import { Guarantee } from "@/types";
-
-// Helper to split a hash into four parts.
-function formatHash(hash: string): string {
-  const length = hash.length;
-  const segmentLength = Math.floor(length / 4);
-  let remainder = length % 4;
-  let parts: string[] = [];
-  let start = 0;
-  for (let i = 0; i < 4; i++) {
-    const extra = remainder > 0 ? 1 : 0;
-    remainder = Math.max(remainder - 1, 0);
-    const part = hash.substring(start, start + segmentLength + extra);
-    parts.push(part);
-    start += segmentLength + extra;
-  }
-  return parts.join(" ");
-}
+import { truncateHash } from "@/utils/utils";
+import Link from "next/link";
 
 export default function WorkReportListPage() {
   const params = useParams();
@@ -68,12 +53,14 @@ export default function WorkReportListPage() {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Work Report
+      <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+        Work Report List
       </Typography>
-      <Typography variant="h6" gutterBottom>
-        For Block {formatHash(headerHash)}
+      {/*
+      <Typography variant="body1" gutterBottom>
+        Block {formatHash(headerHash)}
       </Typography>
+      */}
 
       {/* Etherscan-like header: total count + download button */}
       <Box
@@ -82,12 +69,16 @@ export default function WorkReportListPage() {
         alignItems="center"
         sx={{ my: 3 }}
       >
-        <Typography variant="subtitle1">
-          A total of {workReports.length} work report(s) found
+        <Typography variant="body1" gutterBottom>
+          A total of {workReports.length} work report
+          {workReports.length > 1 ? "s" : ""} found on block{" "}
+          <Link href={`/block/${headerHash}`}>{headerHash}</Link>
         </Typography>
-        <Button variant="outlined" onClick={handleDownloadData}>
+        {/*
+       <Button variant="outlined" onClick={handleDownloadData}>
           Download Page Data
         </Button>
+       */}
       </Box>
 
       <Paper variant="outlined">
@@ -98,7 +89,7 @@ export default function WorkReportListPage() {
                 <TableCell sx={{ fontWeight: "bold" }}>Report Hash</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>Core Index</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>Block</TableCell>
-                <TableCell sx={{ fontWeight: "bold" }}>Slot</TableCell>
+                <TableCell sx={{ fontWeight: "bold" }}>Report Slot</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>Service ID</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>
                   Accumulate Gas
@@ -118,9 +109,7 @@ export default function WorkReportListPage() {
                     reportData.report.results?.[0]?.accumulate_gas;
                   const signatures = reportData.signatures;
                   // Create a short version of the package_spec hash for display:
-                  const shortReportHash = pkgSpecHash
-                    ? pkgSpecHash.slice(0, 10) + "..." + pkgSpecHash.slice(-6)
-                    : "N/A";
+                  const shortReportHash = truncateHash(pkgSpecHash);
 
                   return (
                     <TableRow
@@ -146,14 +135,16 @@ export default function WorkReportListPage() {
                           router.push(`/block/${headerHash}`);
                         }}
                       >
-                        {formatHash(headerHash)}
+                        {truncateHash(headerHash)}
                       </TableCell>
                       {/* Slot cell */}
                       <TableCell
                         sx={{ color: "blue" }}
                         onClick={(e) => {
                           e.stopPropagation();
-                          router.push(`/block/${headerHash}`);
+                          router.push(
+                            `/block/${headerHash}/work-report/${pkgSpecHash}`
+                          );
                         }}
                       >
                         {slot ?? "N/A"}

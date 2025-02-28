@@ -31,6 +31,10 @@ const detailsMapping = {
     label: "Header Hash:",
     tooltip: "The unique hash of the block header.",
   },
+  createdDate: {
+    label: "Created Date:",
+    tooltip: "The timestamp (in local time) when this block was recorded.",
+  },
   authorIndex: {
     label: "Author Index:",
     tooltip:
@@ -249,6 +253,16 @@ export default function BlockOverviewPage() {
             />
 
             <LabeledRow
+              label={detailsMapping.createdDate.label}
+              tooltip={detailsMapping.createdDate.tooltip}
+              value={
+                blockRecord.overview.createdAt
+                  ? new Date(blockRecord.overview.createdAt).toLocaleString()
+                  : "N/A"
+              }
+            />
+
+            <LabeledRow
               label={detailsMapping.authorIndex.label}
               tooltip={detailsMapping.authorIndex.tooltip}
               value={header.author_index}
@@ -278,6 +292,7 @@ export default function BlockOverviewPage() {
               assurances={extrinsic.assurances || []}
               guarantees={extrinsic.guarantees || []}
               preimages={extrinsic.preimages || []}
+              headerHash={headerHash || ""}
             />
           </Paper>
           <MoreDetailsAccordion header={header} />

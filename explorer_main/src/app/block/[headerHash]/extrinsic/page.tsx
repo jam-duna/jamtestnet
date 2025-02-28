@@ -44,6 +44,19 @@ export default function ExtrinsicDetails() {
   const block = blockRecord.block;
   const extrinsic = block.extrinsic;
 
+  // Mapping for non-extrinsic details
+  const detailsMapping = [
+    {
+      label: "Header Hash:",
+      tooltip: "The unique hash of the block header.",
+      value: (
+        <Link href={`/block/${blockRecord.headerHash}`}>
+          {blockRecord.headerHash}
+        </Link>
+      ),
+    },
+  ];
+
   return (
     <Container maxWidth="lg" sx={{ my: 4 }}>
       <Paper variant="outlined" sx={{ p: 3 }}>
@@ -55,15 +68,14 @@ export default function ExtrinsicDetails() {
           Extrinsics Details
         </Typography>
 
-        <LabeledRow
-          label="Header Hash:"
-          tooltip="The unique hash of the block header."
-          value={
-            <Link href={`/block/${blockRecord.headerHash}`}>
-              {blockRecord.headerHash}
-            </Link>
-          }
-        />
+        {detailsMapping.map((item, idx) => (
+          <LabeledRow
+            key={idx}
+            label={item.label}
+            tooltip={item.tooltip}
+            value={item.value}
+          />
+        ))}
 
         {/* Extrinsic Accordion Component */}
         <ExtrinsicAccordion
