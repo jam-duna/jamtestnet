@@ -1,145 +1,58 @@
 {
     "header": {
-        "parent": "0x2fa9ee3f5cba00b2e6fa59de61faf5ccc76e2f4aac1ebbd6dbf613854c3bafe6",
-        "parent_state_root": "0xa0da47003f52dfc8b9dd5d1ca50a336fdfd72a7906782e5c3865e3826df70e00",
-        "extrinsic_hash": "0x60b82aad3ffab99100ba193ab5d85e040aa400c1df455f6aef83a13cf4fd3e59",
+        "parent": "0x8981818a8341fb0319d0023f5632c4e35fb24d77a43adb0b1e7233f19d88d439",
+        "parent_state_root": "0x6f0906453ea49b6e9331ca5f38f4f6404af61d98adc2c4b2484c44d0dbf02340",
+        "extrinsic_hash": "0x67fdb7af2904f2247cee3ca7e417ab4d7411cdecb30fd3268ff2da6aada0ebf4",
         "slot": 40,
         "epoch_mark": null,
         "tickets_mark": null,
         "offenders_mark": [],
         "author_index": 5,
         "entropy_source": "0x57f47d571dc6e7967928e7ec42bed2bdfd9370c6e845f0e41bbafe7fe52704ae04a8109255403b743f253c663c9fec123097908607a04f2c4928f1b09a0bc40e89a463b4d79d3377ed0ed1f4d7708c8cd4bfa1a452d8acb027f07e74d6106119",
-        "seal": "0xb143ca31427e24fb9064616ac7ae4ed7e61c74a81ba5fd772d4d3cf67a25e02c14187713dd8d1348ba4c6dca041afb699e2d7c7d7ac7db58b318069b8415d701a6dfaaa45296539fb52eb3e3b83589f68c23fe1590513e7bd03f2eda17a0bc11"
+        "seal": "0xb143ca31427e24fb9064616ac7ae4ed7e61c74a81ba5fd772d4d3cf67a25e02ceba6a6f591a9f285cf2930101fb06e95db9eaa1c392fc50b4fee7738d221bf12b80e0d6fa8b1a9ff79863cf0b6023f01048a313c3f13ffc368c7310df8dcf50e"
     },
     "extrinsic": {
         "tickets": [],
         "preimages": [],
-        "guarantees": [
+        "guarantees": [],
+        "assurances": [
             {
-                "report": {
-                    "package_spec": {
-                        "hash": "0x3635b4e57fa4c14ca63ad26adb92147a9ffc387ea3b8d329266b8bcc04e241a6",
-                        "length": 335,
-                        "erasure_root": "0xbd39c51a68248fe899b7151fbcc95a6254f0b15f51908886c127cd7a50c3cee5",
-                        "exports_root": "0xb31a91a3020c71ea67757947fcbcd3bc7c6f6f9b86a0b9f522c8be2893975fc1",
-                        "exports_count": 0
-                    },
-                    "context": {
-                        "anchor": "0xeb533a7c14d0af605f8928edbf50bea3f4c73ed26b22610b8851944a16537459",
-                        "state_root": "0xb8db05c0936d5655ba7ae0f7f5e658b4144e9d7cd68b6f2f7a114f94667bf65a",
-                        "beefy_root": "0x00fb678bd3408d3b1b09d46030865416053eb3c8f8a067576922c272e1f2e83f",
-                        "lookup_anchor": "0x4013cbefeab8cf38b684fa112d7ac22f0bf51bafd965d7c34cb82fb1f38c91cc",
-                        "lookup_anchor_slot": 35,
-                        "prerequisites": [
-                            "0xa805329cadf7635e9b3ed82ac6412ef564a7183b14a2402a84bca95bcaf0d296"
-                        ]
-                    },
-                    "core_index": 0,
-                    "authorizer_hash": "0x8c30f2c101674af1da31769e96ce72e81a4a44c89526d7d3ff0a1a511d5f3c9f",
-                    "auth_output": "0x",
-                    "segment_root_lookup": [],
-                    "results": [
-                        {
-                            "service_id": 1343007977,
-                            "code_hash": "0xaf84ca301a0337a51b0b0b6eb0012013eaeed4d6da8968c075d14c77681a3bbc",
-                            "payload_hash": "0x3d32dd4d2316b8458bde7a3100c2e9e9836277f4e3374cd8b99c1de97cd187b7",
-                            "accumulate_gas": 9111,
-                            "result": {
-                                "ok": "0x549611b003f9883f"
-                            }
-                        },
-                        {
-                            "service_id": 3273088977,
-                            "code_hash": "0xda81fb234123c13b77808557789a8716de33f226e25b9a26d669eabf8d56fec3",
-                            "payload_hash": "0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8",
-                            "accumulate_gas": 9111,
-                            "result": {
-                                "ok": "0x8c30f2c101674af1da31769e96ce72e81a4a44c89526d7d3ff0a1a511d5f3c9f"
-                            }
-                        }
-                    ]
-                },
-                "slot": 39,
-                "signatures": [
-                    {
-                        "validator_index": 1,
-                        "signature": "0x51249e7fb96d6f070ddd7de583c8fcf0fa4b2a4aa4c959ce710fbe7a564d7eb98736842bff5431c3d5adec2689638d708bed16eb32410984af290cda1d6c350e"
-                    },
-                    {
-                        "validator_index": 2,
-                        "signature": "0x6d0b8b7dbe8073e54af04118c0f567e8fac972119304d2ef731cbbdf5e2d82f65821eea679207c77463eb2160a2a98a90bf3c56e8c55033778bcf7d53de2130f"
-                    },
-                    {
-                        "validator_index": 3,
-                        "signature": "0xb0b31326c171ccdb6e5e404595ef0a24c0186e9b7c56017f6a1790c70187d1d1feb7f0e9b010df124394b1fef3f0088bb35a6ee8da6c2c03c46bff5a11bb9700"
-                    }
-                ]
+                "anchor": "0x8981818a8341fb0319d0023f5632c4e35fb24d77a43adb0b1e7233f19d88d439",
+                "bitfield": "0x01",
+                "validator_index": 0,
+                "signature": "0xb73ede544f1dabac8827195bff0d1f888702936c9cb060f43c807f2427abff17e4c998053984bae63a246c7f4d8f8f1645f2cd16dbf523b3581a0a888e93540a"
             },
             {
-                "report": {
-                    "package_spec": {
-                        "hash": "0xa805329cadf7635e9b3ed82ac6412ef564a7183b14a2402a84bca95bcaf0d296",
-                        "length": 8649,
-                        "erasure_root": "0x83127457ef3ae5fa42b07d49fc6da1bd257083a26a09485dc1407d32804c084d",
-                        "exports_root": "0x030c2e7e86c8d83824ffd466b01bca529ab464efe9f6da47bc514454bff7f5ab",
-                        "exports_count": 0
-                    },
-                    "context": {
-                        "anchor": "0xeb533a7c14d0af605f8928edbf50bea3f4c73ed26b22610b8851944a16537459",
-                        "state_root": "0xb8db05c0936d5655ba7ae0f7f5e658b4144e9d7cd68b6f2f7a114f94667bf65a",
-                        "beefy_root": "0x00fb678bd3408d3b1b09d46030865416053eb3c8f8a067576922c272e1f2e83f",
-                        "lookup_anchor": "0x4013cbefeab8cf38b684fa112d7ac22f0bf51bafd965d7c34cb82fb1f38c91cc",
-                        "lookup_anchor_slot": 35,
-                        "prerequisites": []
-                    },
-                    "core_index": 1,
-                    "authorizer_hash": "0x8c30f2c101674af1da31769e96ce72e81a4a44c89526d7d3ff0a1a511d5f3c9f",
-                    "auth_output": "0x",
-                    "segment_root_lookup": [
-                        {
-                            "hash": "0x0d4e092528d958283fd9ecf8aa52773ea0c4f7de68047e328ad56ffab75c23f4",
-                            "exports_root": "0x95f6aa9782b6e20fe952856dad8b37ae930936a0c8f571b53198512f712c4409"
-                        }
-                    ],
-                    "results": [
-                        {
-                            "service_id": 2953942612,
-                            "code_hash": "0xb0e37404a37f4b36acc6fe33f91a9c658e5b43978f2131827ef9d180edae3769",
-                            "payload_hash": "0x26a08e4d0c5190f01871e0569b6290b86760085d99f17eb4e7e6b58feb8d6249",
-                            "accumulate_gas": 9111,
-                            "result": {
-                                "ok": "0x040000000300000002000000"
-                            }
-                        },
-                        {
-                            "service_id": 1065941251,
-                            "code_hash": "0x7b7b2163f6a2caf49f482eda61064540580a587840d4812a965aa04e42b4c2a8",
-                            "payload_hash": "0x26a08e4d0c5190f01871e0569b6290b86760085d99f17eb4e7e6b58feb8d6249",
-                            "accumulate_gas": 9111,
-                            "result": {
-                                "ok": "0x04000000040000000200000001000000"
-                            }
-                        }
-                    ]
-                },
-                "slot": 39,
-                "signatures": [
-                    {
-                        "validator_index": 0,
-                        "signature": "0x58f0bae6447e365af87dcda3c7818f2ffc0ceb4431278efaba1d27712acd420a9e048a70ed8e952897a9ce3b60503de7b54c4e23b73443ef4bc50061ac1d7b0e"
-                    },
-                    {
-                        "validator_index": 4,
-                        "signature": "0x99abdb5b42e0200e4041d92b7589b660fa67e0da01446c34206952121df5f564ecee31cc8a85dd6f47c09fe07fe7c67eb6367d18ff3ae41d66225b06d4ee8b09"
-                    },
-                    {
-                        "validator_index": 5,
-                        "signature": "0x6ce106093ece371564bdbf89c9f9175a4be2b5cd48e172d1d6df595feb5f56df985d5635d0ba64335531f003c9f5c5afa32bf127c23c28f95611eb00d6277706"
-                    }
-                ]
+                "anchor": "0x8981818a8341fb0319d0023f5632c4e35fb24d77a43adb0b1e7233f19d88d439",
+                "bitfield": "0x01",
+                "validator_index": 1,
+                "signature": "0x800aa71b0a1d6bdec8af7d3a1e3fe6e8109d8cca3eb0ee1a1e407e15925169c5dcfeb09ff4e8f75fa26a96e4f2b02f3d6b029549c9ad0cb264b9d4f2f2d4860a"
+            },
+            {
+                "anchor": "0x8981818a8341fb0319d0023f5632c4e35fb24d77a43adb0b1e7233f19d88d439",
+                "bitfield": "0x01",
+                "validator_index": 2,
+                "signature": "0x9689965232bf4ce1e820da969e4273a68314ed8c976f8502d5f7afd772c6ea9dc84cff6a053c2e1915d2732b6a81990949e4a94e5ef5b2174bf5e2f2d9da2605"
+            },
+            {
+                "anchor": "0x8981818a8341fb0319d0023f5632c4e35fb24d77a43adb0b1e7233f19d88d439",
+                "bitfield": "0x01",
+                "validator_index": 3,
+                "signature": "0x7e92096395e954e50065f6a6be64fe5093da2e4d89cd9335f0fb7011465aee295be108fdbbd816509e128ddae36eb7b656db5e1bfc2a60eb69cf431dd137230b"
+            },
+            {
+                "anchor": "0x8981818a8341fb0319d0023f5632c4e35fb24d77a43adb0b1e7233f19d88d439",
+                "bitfield": "0x01",
+                "validator_index": 4,
+                "signature": "0x719926cbecceb2879010d54d24217ff7024c608aedfa16c898c69748b8494535af64b5419be8ed2cbe24f2ab771f65e78cc8119b8bcf1d21a5e382560a48c90f"
+            },
+            {
+                "anchor": "0x8981818a8341fb0319d0023f5632c4e35fb24d77a43adb0b1e7233f19d88d439",
+                "bitfield": "0x01",
+                "validator_index": 5,
+                "signature": "0x42f211cc64e4e38782cd94444bad1756ab140a8565780d8ed365981a96314d14db4e15f5f5005939c1c037fc8b0f5b68cf01d13e6598761cf0da718b94a15402"
             }
         ],
-        "assurances": [],
         "disputes": {
             "verdicts": [],
             "culprits": [],
