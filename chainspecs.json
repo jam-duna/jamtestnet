@@ -9,11 +9,15 @@
         "max_tickets_per_extrinsic": 3,
         "rotation_period": 4,
         "max_authorization_pool_items": 8,
-        "max_authorization_queue_items": 80
+        "max_authorization_queue_items": 80,
+        "segment_size": 4104,
+        "ec_piece_size": 4,
+        "num_ec_pieces_per_segment": 1026,
+        "preimage_expiry_period": 6
     },
     "small": {
-        "num_validators": 24,
-        "num_cores": 8,
+        "num_validators": 12,
+        "num_cores": 4,
         "slot_duration": 6,
         "epoch_duration": 36,
         "contest_duration": 30,
@@ -21,11 +25,15 @@
         "max_tickets_per_extrinsic": 3,
         "rotation_period": 4,
         "max_authorization_pool_items": 8,
-        "max_authorization_queue_items": 80
+        "max_authorization_queue_items": 80,
+        "segment_size": 4104,
+        "ec_piece_size": 8,
+        "num_ec_pieces_per_segment": 513,
+        "preimage_expiry_period": 30
     },
     "medium": {
-        "num_validators": 48,
-        "num_cores": 16,
+        "num_validators": 18,
+        "num_cores": 6,
         "slot_duration": 6,
         "epoch_duration": 60,
         "contest_duration": 50,
@@ -33,11 +41,15 @@
         "max_tickets_per_extrinsic": 3,
         "rotation_period": 4,
         "max_authorization_pool_items": 8,
-        "max_authorization_queue_items": 80
+        "max_authorization_queue_items": 80,
+        "segment_size": 4104,
+        "ec_piece_size": 12,
+        "num_ec_pieces_per_segment": 342,
+        "preimage_expiry_period": 30
     },
     "large": {
-        "num_validators": 96,
-        "num_cores": 32,
+        "num_validators": 36,
+        "num_cores": 12,
         "slot_duration": 6,
         "epoch_duration": 120,
         "contest_duration": 100,
@@ -45,22 +57,30 @@
         "max_tickets_per_extrinsic": 3,
         "rotation_period": 4,
         "max_authorization_pool_items": 8,
-        "max_authorization_queue_items": 80
+        "max_authorization_queue_items": 80,
+        "segment_size": 4104,
+        "ec_piece_size": 24,
+        "num_ec_pieces_per_segment": 171,
+        "preimage_expiry_period": 28800
     },
     "xlarge": {
-        "num_validators": 192,
-        "num_cores": 64,
+        "num_validators": 108,
+        "num_cores": 36,
         "slot_duration": 6,
         "epoch_duration": 240,
         "contest_duration": 200,
         "tickets_per_validator": 2,
         "rotation_period": 10,
         "max_authorization_pool_items": 8,
-        "max_authorization_queue_items": 80
+        "max_authorization_queue_items": 80,
+        "segment_size": 4104,
+        "ec_piece_size": 72,
+        "num_ec_pieces_per_segment": 57,
+        "preimage_expiry_period": 28800
     },
     "2xlarge": {
-        "num_validators": 384,
-        "num_cores": 128,
+        "num_validators": 342,
+        "num_cores": 114,
         "slot_duration": 6,
         "epoch_duration": 300,
         "contest_duration": 250,
@@ -68,11 +88,15 @@
         "max_tickets_per_extrinsic": 16,
         "rotation_period": 10,
         "max_authorization_pool_items": 8,
-        "max_authorization_queue_items": 80
+        "max_authorization_queue_items": 80,
+        "segment_size": 4104,
+        "ec_piece_size": 228,
+        "num_ec_pieces_per_segment": 18,
+        "preimage_expiry_period": 28800
     },
     "3xlarge": {
-        "num_validators": 576,
-        "num_cores": 192,
+        "num_validators": 684,
+        "num_cores": 228,
         "slot_duration": 6,
         "epoch_duration": 600,
         "contest_duration": 500,
@@ -80,7 +104,11 @@
         "max_tickets_per_extrinsic": 16,
         "rotation_period": 10,
         "max_authorization_pool_items": 8,
-        "max_authorization_queue_items": 80
+        "max_authorization_queue_items": 80,
+        "segment_size": 4104,
+        "ec_piece_size": 456,
+        "num_ec_pieces_per_segment": 9,
+        "preimage_expiry_period": 28800
     },
     "full": {
         "num_validators": 1023,
@@ -91,7 +119,11 @@
         "tickets_per_validator": 2,
         "rotation_period": 10,
         "max_authorization_pool_items": 8,
-        "max_authorization_queue_items": 80
+        "max_authorization_queue_items": 80,
+        "segment_size": 4104,
+        "ec_piece_size": 684,
+        "num_ec_pieces_per_segment": 6,
+        "preimage_expiry_period": 28800
     }
 }
 
