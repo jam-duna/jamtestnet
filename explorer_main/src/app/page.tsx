@@ -2,33 +2,21 @@
 
 import React, { useEffect, useState } from "react";
 import { Container, Grid } from "@mui/material";
-import EndpointDrawer from "../components/home/EndpointDrawer"; // Adjust path as needed
+import EndpointDrawer from "../components/home/EndpointDrawer";
 import SearchBar from "../components/home/SearchBar";
-import GeneralInfoBar from "../components/home/GeneralInfoBar";
 import LatestBlocks from "../components/home/LatestBlocks";
 import LatestReports from "../components/home/LatestReports";
 import LatestExtrinsics from "../components/home/LatestExtrinsics";
+import { db, BlockRecord } from "../../db";
+import { getRelativeTime } from "@/utils/utils";
+import { useWsRpc } from "@/hooks/home/useWsRpc";
 
-import { db, BlockRecord, StateRecord } from "../../db"; // Updated DB scheme
-
-// Keep your default WS URL
 const defaultWsUrl = "ws://localhost:9999/ws";
 
-// Helper function to convert a WS endpoint to its corresponding RPC endpoint.
-function getRpcUrlFromWs(wsEndpoint: string): string {
-  if (wsEndpoint.startsWith("ws://")) {
-    return "http://" + wsEndpoint.slice(5).replace(/\/ws$/, "/rpc");
-  } else if (wsEndpoint.startsWith("wss://")) {
-    return "https://" + wsEndpoint.slice(6).replace(/\/ws$/, "/rpc");
-  }
-  return wsEndpoint;
-}
-
 export default function HomePage() {
-  // State for fetched block and state data from RPC calls.
+  // Local state (if needed for RPC results)
   const [block, setBlock] = useState<unknown>(null);
   const [state, setState] = useState<unknown>(null);
-  console.log(state);
 
   // WebSocket endpoint management.
   const [wsEndpoint, setWsEndpoint] = useState<string>(defaultWsUrl);
@@ -40,90 +28,19 @@ export default function HomePage() {
   // Current time for relative time calculation.
   const [now, setNow] = useState(Date.now());
 
-  // Helper to compute relative time.
-  function getRelativeTime(timestamp: number) {
-    const secondsAgo = Math.floor((now - timestamp) / 1000);
-    if (secondsAgo < 0) return "0 sec";
-    if (secondsAgo < 60)
-      return `${secondsAgo} sec${secondsAgo > 1 ? "s" : " "}`;
-    if (secondsAgo < 3600)
-      return `${Math.floor(secondsAgo / 60)} min${secondsAgo > 1 ? "s" : " "}`;
-    if (secondsAgo < 86400)
-      return `${Math.floor(secondsAgo / 3600)} hour${
-        secondsAgo > 1 ? "s" : " "
-      }`;
-    return `${Math.floor(secondsAgo / 86400)} day${secondsAgo > 1 ? "s" : " "}`;
-  }
-
-  // Create a new WebSocket when wsEndpoint changes.
-  useEffect(() => {
-    const ws = new WebSocket(wsEndpoint);
-
-    ws.onopen = () => {
-      console.log("WebSocket connected to:", wsEndpoint);
-      setSavedEndpoints((prev) => {
-        if (wsEndpoint !== defaultWsUrl && !prev.includes(wsEndpoint)) {
-          return [...prev, wsEndpoint];
-        }
-        return prev;
-      });
-    };
-
-    ws.onmessage = async (event) => {
-      try {
-        const msg = JSON.parse(event.data);
-        if (msg.method === "BlockAnnouncement" && msg.result) {
-          const headerHash = msg.result.headerHash;
-          const blockHash = msg.result.blockHash;
-
-          // Compute the RPC URL based on the current WS endpoint.
-          console.log("wsEndpoint: " + wsEndpoint);
-          const rpcUrl = getRpcUrlFromWs(wsEndpoint);
-          console.log("rpcUrl: " + rpcUrl);
-
-          const fetchedBlock = await fetchBlock(headerHash, rpcUrl);
-          const fetchedState = await fetchState(headerHash, rpcUrl);
-
-          setBlock(fetchedBlock);
-          setState(fetchedState);
-
-          const nowTimestamp = Date.now();
-          const overview = {
-            blockHash: blockHash,
-            createdAt: nowTimestamp,
-          };
-
-          // Save BlockRecord into IndexedDB.
-          if (fetchedBlock && fetchedBlock.header) {
-            const blockRecord: BlockRecord = {
-              headerHash,
-              overview,
-              block: fetchedBlock,
-            };
-            await db.blocks.put(blockRecord);
-          }
-
-          // Save StateRecord into IndexedDB.
-          if (fetchedState) {
-            const stateRecord: StateRecord = {
-              headerHash,
-              overview,
-              state: fetchedState,
-            };
-            await db.states.put(stateRecord);
-          }
-          setNow(nowTimestamp);
-        }
-      } catch (error) {
-        console.error("Error processing WebSocket message:", error);
-      }
-    };
-
-    ws.onerror = (err) => console.error("WebSocket error:", err);
-    ws.onclose = () => console.log("WebSocket closed");
-
-    return () => ws.close();
-  }, [wsEndpoint]);
+  // Use our custom hook to handle all WebSocket/RPC interactions.
+  useWsRpc({
+    wsEndpoint,
+    defaultWsUrl,
+    onNewBlock: (blockRecord, stateRecord) => {
+      setBlock(blockRecord.block);
+      setState(stateRecord.state);
+    },
+    onUpdateNow: (timestamp) => {
+      setNow(timestamp);
+    },
+    setSavedEndpoints,
+  });
 
   // Load latest blocks from IndexedDB whenever a new block is saved.
   useEffect(() => {
@@ -140,47 +57,6 @@ export default function HomePage() {
       });
   }, [block]);
 
-  // Adjusted fetch functions to use the dynamic RPC URL.
-  async function fetchBlock(blockHash: string, rpcUrl: string) {
-    const payload = {
-      jsonrpc: "2.0",
-      id: 1,
-      method: "jam_getBlockByHash",
-      params: [blockHash],
-    };
-    try {
-      const response = await fetch(rpcUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      return await response.json();
-    } catch (err) {
-      console.error("Error fetching block:", err);
-      return null;
-    }
-  }
-
-  async function fetchState(headerHash: string, rpcUrl: string) {
-    const payload = {
-      jsonrpc: "2.0",
-      id: 2,
-      method: "jam_getState",
-      params: [headerHash],
-    };
-    try {
-      const response = await fetch(rpcUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      return await response.json();
-    } catch (err) {
-      console.error("Error fetching state:", err);
-      return null;
-    }
-  }
-
   return (
     <Container sx={{ py: 5 }}>
       <EndpointDrawer
@@ -192,30 +68,35 @@ export default function HomePage() {
 
       <Container maxWidth="lg">
         <SearchBar />
-        <GeneralInfoBar />
 
         <Grid container spacing={4}>
           {/* Left column: Latest Blocks (max 10) */}
           <Grid item xs={12} md={6}>
             <LatestBlocks
               latestBlocks={latestBlocks.slice(0, 12)}
-              getRelativeTime={getRelativeTime}
+              getRelativeTime={(timestamp: number) =>
+                getRelativeTime(timestamp, now)
+              }
             />
           </Grid>
 
-          {/* Right column: stacked Latest Extrinsics (max 5) and Latest Reports (max 5) */}
+          {/* Right column: Latest Extrinsics and Latest Reports */}
           <Grid item xs={12} md={6}>
             <Grid container spacing={4}>
               <Grid item xs={12}>
                 <LatestExtrinsics
                   latestBlocks={latestBlocks}
-                  getRelativeTime={getRelativeTime}
+                  getRelativeTime={(timestamp: number) =>
+                    getRelativeTime(timestamp, now)
+                  }
                 />
               </Grid>
               <Grid item xs={12}>
                 <LatestReports
                   latestBlocks={latestBlocks}
-                  getRelativeTime={getRelativeTime}
+                  getRelativeTime={(timestamp: number) =>
+                    getRelativeTime(timestamp, now)
+                  }
                 />
               </Grid>
             </Grid>
