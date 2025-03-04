@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { Container, Paper, Typography, Link } from "@mui/material";
 import { db, BlockRecord } from "../../../../../db";
-import { LabeledRow } from "@/components/details/LabeledRow"; // For non-extrinsic rows
-import ExtrinsicAccordion from "@/components/details/ExtrinsicAccordion";
+import { LabeledRow } from "@/components/display/LabeledRow"; // For non-extrinsic rows
+import ExtrinsicAccordion from "@/components/extrinsic/ExtrinsicAccordion";
 
 export default function ExtrinsicDetails() {
   const params = useParams();
@@ -79,11 +79,8 @@ export default function ExtrinsicDetails() {
 
         {/* Extrinsic Accordion Component */}
         <ExtrinsicAccordion
-          tickets={extrinsic.tickets || []}
-          disputes={extrinsic.disputes || null}
-          assurances={extrinsic.assurances || []}
-          guarantees={extrinsic.guarantees || []}
-          preimages={extrinsic.preimages || []}
+          extrinsic={extrinsic || null}
+          headerHash={headerHash}
           initialExtrinsicExpanded={true}
         />
       </Paper>

@@ -17,7 +17,7 @@ import {
 } from "@mui/material";
 import { db, BlockRecord } from "../../../../../db";
 import { Guarantee } from "@/types";
-import { truncateHash } from "@/utils/utils";
+import { pluralize, truncateHash } from "@/utils/helper";
 import Link from "next/link";
 
 export default function WorkReportListPage() {
@@ -70,8 +70,8 @@ export default function WorkReportListPage() {
         sx={{ my: 3 }}
       >
         <Typography variant="body1" gutterBottom>
-          A total of {workReports.length} work report
-          {workReports.length > 1 ? "s" : ""} found on block{" "}
+          A total of {workReports.length} work{" "}
+          {pluralize(" report", workReports.length)} found on block{" "}
           <Link href={`/block/${headerHash}`}>{headerHash}</Link>
         </Typography>
         {/*

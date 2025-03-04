@@ -6,14 +6,10 @@ import {
   AccordionDetails,
   AccordionSummary,
 } from "@mui/material";
+import { Assurance } from "@/types";
 
 interface AssurancesItemProps {
-  assurances: {
-    anchor: string;
-    bitfield: string;
-    signature: string;
-    validator_index: number;
-  };
+  assurances: Assurance;
   idx: number;
   expanded: boolean;
 }

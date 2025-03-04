@@ -6,8 +6,8 @@ import React from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import CropSquareIcon from "@mui/icons-material/CropSquare";
-import { BlockRecord } from "../../../../db";
-import { truncateHash, getRelativeTime } from "@/utils/utils";
+import { BlockRecord } from "../../../../../db";
+import { truncateHash, getRelativeTime } from "@/utils/helper";
 
 export interface BlockListItemProps {
   blockItem: BlockRecord;

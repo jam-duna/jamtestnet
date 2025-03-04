@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import { Container, Grid } from "@mui/material";
 import EndpointDrawer from "../components/home/EndpointDrawer";
 import SearchBar from "../components/home/SearchBar";
-import LatestBlocks from "../components/home/LatestBlocks";
-import LatestReports from "../components/home/LatestReports";
-import LatestExtrinsics from "../components/home/LatestExtrinsics";
+import LatestBlocks from "../components/home/lists/latest-list/LatestBlocks";
+import LatestReports from "../components/home/lists/latest-list/LatestReports";
+import LatestExtrinsics from "../components/home/lists/latest-list/LatestExtrinsics";
 import { db, BlockRecord } from "../../db";
-import { getRelativeTime } from "@/utils/utils";
+import { getRelativeTime } from "@/utils/helper";
 import { useWsRpc } from "@/hooks/home/useWsRpc";
 
 const defaultWsUrl = "ws://localhost:9999/ws";
@@ -72,32 +72,17 @@ export default function HomePage() {
         <Grid container spacing={4}>
           {/* Left column: Latest Blocks (max 10) */}
           <Grid item xs={12} md={6}>
-            <LatestBlocks
-              latestBlocks={latestBlocks.slice(0, 12)}
-              getRelativeTime={(timestamp: number) =>
-                getRelativeTime(timestamp, now)
-              }
-            />
+            <LatestBlocks latestBlocks={latestBlocks.slice(0, 12)} />
           </Grid>
 
           {/* Right column: Latest Extrinsics and Latest Reports */}
           <Grid item xs={12} md={6}>
             <Grid container spacing={4}>
               <Grid item xs={12}>
-                <LatestExtrinsics
-                  latestBlocks={latestBlocks}
-                  getRelativeTime={(timestamp: number) =>
-                    getRelativeTime(timestamp, now)
-                  }
-                />
+                <LatestExtrinsics latestBlocks={latestBlocks} />
               </Grid>
               <Grid item xs={12}>
-                <LatestReports
-                  latestBlocks={latestBlocks}
-                  getRelativeTime={(timestamp: number) =>
-                    getRelativeTime(timestamp, now)
-                  }
-                />
+                <LatestReports latestBlocks={latestBlocks} />
               </Grid>
             </Grid>
           </Grid>

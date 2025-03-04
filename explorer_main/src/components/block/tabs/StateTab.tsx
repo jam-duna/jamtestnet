@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Paper, Typography, Divider } from "@mui/material";
-import { LabeledRow } from "@/components/details/LabeledRow";
+import { LabeledRow } from "@/components/display/LabeledRow";
 import { jamStateMapping } from "@/utils/tooltipDetails";
 
 interface StateTabProps {

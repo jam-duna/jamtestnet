@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Paper, Typography } from "@mui/material";
-import { BlockRecord } from "../../../db";
-import ExtrinsicListItem from "@/components/home/list-item/ExtrinsicListItem";
+import { BlockRecord } from "../../../../../db";
+import ExtrinsicListItem from "@/components/home/lists/list-item/ExtrinsicListItem";
 import { filterExtrinsicBlocks } from "@/utils/extrinsics"; // Example icon
 
 type ExtrinsicListsProps = {
@@ -31,7 +31,7 @@ export default function ExtrinsicLists({ latestBlocks }: ExtrinsicListsProps) {
       ))}
 
       <Link
-        href={`/extrinsic-list`}
+        href={`/list/extrinsic`}
         style={{
           textDecoration: "none",
           color: "inherit",

@@ -1,11 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-
-interface Disputes {
-  verdicts: unknown[];
-  culprits: unknown[];
-  faults: unknown[];
-}
+import { Disputes } from "@/types";
 
 interface DisputeItemProps {
   disputes: Disputes;

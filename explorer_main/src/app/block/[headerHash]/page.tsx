@@ -3,14 +3,13 @@
 import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Container, Paper, Typography, Box } from "@mui/material";
-import DetailToggleButtons from "@/components/details/DetailToggleButtons";
-import { BlockTab } from "@/components/blockDetails/tabs/BlockTab";
-import { StateTab } from "@/components/blockDetails/tabs/StateTab";
+import DetailToggleButtons from "@/components/block/DetailToggleButtons";
+import { BlockTab } from "@/components/block/tabs/BlockTab";
+import { StateTab } from "@/components/block/tabs/StateTab";
 import { useBlockOverview } from "@/hooks/useBlockOverview";
 
 export default function BlockOverviewPage() {
   const params = useParams();
-  const router = useRouter();
   const headerHash = params.headerHash as string;
 
   const { blockRecord, stateRecord, prevHash, nextHash } =
@@ -19,9 +18,13 @@ export default function BlockOverviewPage() {
 
   if (!blockRecord) {
     return (
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
-        <Paper sx={{ p: 3 }}>
-          <Typography variant="h4">Block Details</Typography>
+      <Container maxWidth="lg" sx={{ my: 4 }}>
+        <Box sx={{ display: "inline-flex", alignItems: "center", mb: 5 }}>
+          <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+            Block Details
+          </Typography>
+        </Box>
+        <Paper variant="outlined" sx={{ p: 3 }}>
           <Typography variant="body1">Loading block details...</Typography>
         </Paper>
       </Container>

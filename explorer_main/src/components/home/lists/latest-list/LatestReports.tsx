@@ -3,21 +3,15 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Paper, Typography } from "@mui/material"; // Report icon
-import { BlockRecord } from "../../../db";
-import { truncateHash } from "@/utils/utils";
+import { BlockRecord } from "../../../../../db";
 import { filterWorkReportBlocks } from "@/utils/extrinsics";
-import WorkReportListItem from "./list-item/WorkReportListItem";
+import WorkReportListItem from "@/components/home/lists/list-item/WorkReportListItem";
 
 type LatestReportsProps = {
   latestBlocks: BlockRecord[];
-  getRelativeTime: (timestamp: number) => string;
 };
 
-export default function LatestReports({
-  latestBlocks,
-  getRelativeTime,
-}: LatestReportsProps) {
-  // Filter blocks with at least one report (guarantee)
+export default function LatestReports({ latestBlocks }: LatestReportsProps) {
   const filteredBlocks = filterWorkReportBlocks(latestBlocks).slice(0, 5);
 
   return (
@@ -40,7 +34,7 @@ export default function LatestReports({
       })}
 
       <Link
-        href={`/work-report-list`}
+        href={`/list/workReport`}
         style={{
           textDecoration: "none",
           color: "inherit",

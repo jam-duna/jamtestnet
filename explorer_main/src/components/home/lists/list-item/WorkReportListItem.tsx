@@ -6,8 +6,8 @@ import React from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import { BlockRecord } from "../../../../db";
-import { truncateHash, getRelativeTime } from "@/utils/utils";
+import { BlockRecord } from "../../../../../db";
+import { truncateHash, getRelativeTime, pluralize } from "@/utils/helper";
 
 export interface WorkReportListItemProps {
   blockItem: BlockRecord;
@@ -59,8 +59,8 @@ export default function WorkReportListItem({
         {/* Middle: Report count and relative time */}
         <Box sx={{ flex: 1 }}>
           <Typography variant="subtitle1">
-            Slot {slot} - {guaranteesCount} Report
-            {guaranteesCount > 1 ? "s" : ""}
+            Slot {slot} - {guaranteesCount}
+            {pluralize(" Report", guaranteesCount)}
           </Typography>
           <Typography variant="body2" color="textSecondary">
             {relativeTime} ago

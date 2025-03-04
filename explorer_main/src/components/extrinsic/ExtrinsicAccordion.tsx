@@ -12,45 +12,41 @@ import {
   Link as MuiLink,
 } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import TicketItem from "./TicketItem"; // adjust path accordingly
+import TicketItem from "./items/TicketItem"; // adjust path accordingly
 import AccordionSubsection from "./AccordionSubsection";
 import { Extrinsic } from "@/types";
-import PreimageItem from "./PreimageItem";
-import AssurancesItem from "./AssuranceItem";
-import GuaranteeItem from "./GuaranteeItem";
+import PreimageItem from "./items/PreimageItem";
+import AssurancesItem from "./items/AssuranceItem";
+import GuaranteeItem from "./items/GuaranteeItem";
+import { calculateExtrinsicCounts } from "@/utils/extrinsics";
+import { pluralize } from "@/utils/helper";
 
-export interface ExtrinsicAccordionProps extends Extrinsic {
+export interface ExtrinsicAccordionProps {
   initialExtrinsicExpanded?: boolean;
-  headerHash: string; // required and using primitive type
+  headerHash: string;
+  extrinsic: Extrinsic;
 }
 
 export default function ExtrinsicAccordion({
-  tickets,
-  disputes,
-  assurances,
-  guarantees,
-  preimages,
+  extrinsic,
   headerHash,
   initialExtrinsicExpanded = false,
 }: ExtrinsicAccordionProps) {
-  const ticketsCount = tickets?.length || 0;
-  const disputesCount = disputes
-    ? (disputes.verdicts?.length || 0) +
-      (disputes.culprits?.length || 0) +
-      (disputes.faults?.length || 0)
-    : 0;
-  const assurancesCount = assurances?.length || 0;
-  const guaranteesCount = guarantees?.length || 0;
-  const preimagesCount = preimages?.length || 0;
-  const totalExtrinsics =
-    ticketsCount +
-    disputesCount +
-    assurancesCount +
-    guaranteesCount +
-    preimagesCount;
-  const tooltip = `This block contains ${totalExtrinsics} extrinsic event${
-    totalExtrinsics !== 1 ? "s" : ""
-  }.`;
+  const { tickets, disputes, assurances, preimages, guarantees } = extrinsic;
+
+  const {
+    ticketsCount,
+    disputesCount,
+    assurancesCount,
+    guaranteesCount,
+    preimagesCount,
+    totalExtrinsics,
+  } = calculateExtrinsicCounts(extrinsic);
+
+  const tooltip = `This block contains ${totalExtrinsics} ${pluralize(
+    "extrinsic",
+    totalExtrinsics
+  )}`;
 
   // Main accordion expansion state.
   const [extrinsicExpanded, setExtrinsicExpanded] = React.useState<boolean>(
@@ -98,8 +94,7 @@ export default function ExtrinsicAccordion({
             }}
           >
             <Typography variant="body1">
-              {totalExtrinsics} extrinsic event
-              {totalExtrinsics !== 1 ? "s" : ""}
+              {totalExtrinsics} {pluralize("extrinsic", totalExtrinsics)}
             </Typography>
           </MuiLink>
         </Box>

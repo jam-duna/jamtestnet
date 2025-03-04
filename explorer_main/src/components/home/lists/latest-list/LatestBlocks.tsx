@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
-import BlockListItem from "@/components/home/list-item/BlockListItem";
-import { BlockRecord } from "../../../db";
+import BlockListItem from "@/components/home/lists/list-item/BlockListItem";
+import { BlockRecord } from "../../../../../db";
 import Link from "next/link";
 
 type LatestBlocksProps = {
@@ -24,7 +24,7 @@ export default function LatestBlocks({ latestBlocks }: LatestBlocksProps) {
       ))}
 
       <Link
-        href={`/block-list`}
+        href={`/list/block`}
         style={{
           textDecoration: "none",
           color: "inherit",

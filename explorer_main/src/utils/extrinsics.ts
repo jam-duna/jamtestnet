@@ -8,7 +8,7 @@ export interface ExtrinsicCounts {
   assurancesCount: number;
   guaranteesCount: number;
   preimagesCount: number;
-  totalEvents: number;
+  totalExtrinsics: number;
 }
 
 /**
@@ -34,7 +34,7 @@ export function calculateExtrinsicCounts(extrinsic: any): ExtrinsicCounts {
   const preimagesCount = Array.isArray(extrinsic.preimages)
     ? extrinsic.preimages.length
     : 0;
-  const totalEvents =
+  const totalExtrinsics =
     ticketsCount +
     disputesCount +
     assurancesCount +
@@ -46,7 +46,7 @@ export function calculateExtrinsicCounts(extrinsic: any): ExtrinsicCounts {
     assurancesCount,
     guaranteesCount,
     preimagesCount,
-    totalEvents,
+    totalExtrinsics,
   };
 }
 
@@ -60,8 +60,8 @@ export function filterExtrinsicBlocks(blocks: BlockRecord[]): BlockRecord[] {
   return blocks.filter((blockItem) => {
     const extrinsic = blockItem.block.extrinsic;
     if (!extrinsic) return false;
-    const { totalEvents } = calculateExtrinsicCounts(extrinsic);
-    return totalEvents > 0;
+    const { totalExtrinsics } = calculateExtrinsicCounts(extrinsic);
+    return totalExtrinsics > 0;
   });
 }
 

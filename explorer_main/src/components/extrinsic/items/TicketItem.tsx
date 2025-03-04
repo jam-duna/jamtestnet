@@ -1,15 +1,22 @@
+"use client";
+
 import React, { useEffect, useCallback } from "react";
-import { Box, Typography, Link as MuiLink } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Link as MuiLink,
+} from "@mui/material";
+import { Ticket } from "@/types";
 
 interface DecodedTicket {
   vrf_output: string;
 }
 
 interface TicketItemProps {
-  ticket: {
-    attempt: number;
-    signature: string;
-  };
+  ticket: Ticket;
   idx: number;
   expanded: boolean;
 }
@@ -37,7 +44,6 @@ export default function TicketItem({ ticket, idx, expanded }: TicketItemProps) {
       }
       const data = await response.json();
       let result = data.result;
-      // If the result is a string, try to parse it
       if (typeof result === "string") {
         try {
           result = JSON.parse(result);
@@ -54,7 +60,6 @@ export default function TicketItem({ ticket, idx, expanded }: TicketItemProps) {
     setLoading(false);
   }, [ticket]);
 
-  // Decode automatically when expanded if not already decoded
   useEffect(() => {
     if (expanded && !decoded && !loading) {
       decodeTicketSignature();
@@ -62,26 +67,45 @@ export default function TicketItem({ ticket, idx, expanded }: TicketItemProps) {
   }, [expanded, decoded, loading, decodeTicketSignature]);
 
   return (
-    <Box sx={{ py: 1, borderTop: "1px solid #ccc" }}>
-      <Typography variant="body2">Ticket {idx}</Typography>
-      <Typography variant="body2" color="textSecondary">
-        Attempt: {ticket.attempt}
-      </Typography>
-      <Typography variant="body2" color="textSecondary">
-        {loading ? (
-          "Decoding VRF..."
-        ) : decoded ? (
-          `VRF: ${decoded.vrf_output}`
-        ) : (
-          <MuiLink
-            component="button"
-            onClick={decodeTicketSignature}
-            sx={{ textDecoration: "underline" }}
-          >
-            {`Signature: ${ticket.signature}`}
-          </MuiLink>
-        )}
-      </Typography>
+    <Box
+      sx={{
+        borderTop: "1px solid #ccc",
+        whiteSpace: "normal",
+        wordBreak: "break-word",
+        overflowWrap: "anywhere",
+      }}
+    >
+      <Accordion
+        disableGutters
+        sx={{
+          boxShadow: "none",
+          "&:before": { display: "none" },
+        }}
+      >
+        <AccordionSummary sx={{ p: 0 }}>
+          <Typography variant="body2">Ticket {idx}</Typography>
+        </AccordionSummary>
+        <AccordionDetails sx={{ p: 0, pb: 2 }}>
+          <Typography variant="body2" color="textSecondary">
+            Attempt: {ticket.attempt}
+          </Typography>
+          <Typography variant="body2" color="textSecondary">
+            {loading ? (
+              "Decoding VRF..."
+            ) : decoded ? (
+              `VRF: ${decoded.vrf_output}`
+            ) : (
+              <MuiLink
+                component="button"
+                onClick={decodeTicketSignature}
+                sx={{ textDecoration: "underline" }}
+              >
+                {`Signature: ${ticket.signature}`}
+              </MuiLink>
+            )}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </Box>
   );
 }

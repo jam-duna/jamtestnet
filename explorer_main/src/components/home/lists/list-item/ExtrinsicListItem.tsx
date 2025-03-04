@@ -6,9 +6,9 @@ import React from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import { BlockRecord } from "../../../../db";
+import { BlockRecord } from "../../../../../db";
 import { calculateExtrinsicCounts } from "@/utils/extrinsics";
-import { getRelativeTime } from "@/utils/utils";
+import { getRelativeTime, pluralize } from "@/utils/helper";
 
 export interface ExtrinsicListItemProps {
   blockItem: BlockRecord;
@@ -27,7 +27,7 @@ export default function ExtrinsicListItem({
     assurancesCount,
     guaranteesCount,
     preimagesCount,
-    totalEvents,
+    totalExtrinsics,
   } = calculateExtrinsicCounts(extrinsic);
 
   const createdAt = blockItem.overview.createdAt;
@@ -78,7 +78,8 @@ export default function ExtrinsicListItem({
         {/* Middle: extrinsic count and relative time */}
         <Box sx={{ flex: 1 }}>
           <Typography variant="subtitle1">
-            Slot {slot} - {totalEvents} Extrinsic{totalEvents !== 1 ? "s" : ""}
+            Slot {slot} - {totalExtrinsics}{" "}
+            {pluralize("Extrinsic", totalExtrinsics)}
           </Typography>
           <Typography variant="body2" color="textSecondary">
             {relativeTime} ago

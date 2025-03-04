@@ -1,12 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { Preimage } from "@/types";
 
 interface PreimageItemProps {
-  preimage: {
-    blob: string;
-    requester: number;
-    // Add more keys if needed
-  };
+  preimage: Preimage;
   idx: number;
   expanded: boolean;
 }

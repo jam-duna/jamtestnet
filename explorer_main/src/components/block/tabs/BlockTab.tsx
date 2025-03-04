@@ -8,12 +8,13 @@ import {
   Divider,
   Link as MuiLink,
 } from "@mui/material";
-import { LabeledRow } from "@/components/details/LabeledRow";
-import ExtrinsicAccordion from "@/components/details/ExtrinsicAccordion";
-import MoreDetailsAccordion from "@/components/details/MoreDetailsAccordion";
-import BlockNavigationButtons from "@/components/details/BlockNavigationButtons";
+import { LabeledRow } from "@/components/display/LabeledRow";
+import ExtrinsicAccordion from "@/components/extrinsic/ExtrinsicAccordion";
+import MoreDetailsAccordion from "@/components/block/MoreDetailsAccordion";
+import BlockNavigationButtons from "@/components/block/BlockNavigationButtons";
 import { basicInfoMapping } from "@/utils/tooltipDetails";
 import { useRouter } from "next/navigation";
+import { pluralize } from "@/utils/helper";
 
 interface BlockTabProps {
   blockRecord: any; // Use your actual BlockRecord type here.
@@ -91,8 +92,9 @@ export function BlockTab({
                 href={`/block/${blockRecord.headerHash}/work-report`}
                 sx={{ color: "#1976d2", textDecoration: "underline" }}
               >
-                {extrinsic.guarantees.length} report
-                {extrinsic.guarantees.length !== 1 ? "s" : ""} in this block
+                {extrinsic.guarantees.length}
+                {pluralize(" report", extrinsic.guarantees.length)} in this
+                block
               </MuiLink>
             ) : (
               "0 report in this block"
@@ -101,11 +103,7 @@ export function BlockTab({
         />
 
         <ExtrinsicAccordion
-          tickets={extrinsic.tickets || []}
-          disputes={extrinsic.disputes || null}
-          assurances={extrinsic.assurances || []}
-          guarantees={extrinsic.guarantees || []}
-          preimages={extrinsic.preimages || []}
+          extrinsic={extrinsic || null}
           headerHash={headerHash}
         />
       </Paper>
