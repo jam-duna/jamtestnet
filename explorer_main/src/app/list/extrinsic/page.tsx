@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Typography, Paper, Box } from "@mui/material";
 import ExtrinsicListItem from "@/components/home/lists/list-item/ExtrinsicListItem";
-import { db, BlockRecord } from "../../../../db";
+import { db, BlockRecord } from "@/db/db";
 import { filterExtrinsicBlocks } from "@/utils/extrinsics";
 import { pluralize } from "@/utils/helper";
 

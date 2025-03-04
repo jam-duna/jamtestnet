@@ -4,6 +4,11 @@ import React from "react";
 import { Paper, Typography, Divider } from "@mui/material";
 import { LabeledRow } from "@/components/display/LabeledRow";
 import { jamStateMapping } from "@/utils/tooltipDetails";
+import {
+  JsonEditor,
+  githubLightTheme,
+  LinkCustomNodeDefinition,
+} from "json-edit-react";
 
 interface StateTabProps {
   stateRecord: any; // Use your actual StateRecord type here.
@@ -11,6 +16,7 @@ interface StateTabProps {
 
 export function StateTab({ stateRecord }: StateTabProps) {
   const jamState = stateRecord?.state;
+  console.log(jamState);
 
   return (
     <Paper variant="outlined" sx={{ p: 3 }}>
@@ -19,9 +25,17 @@ export function StateTab({ stateRecord }: StateTabProps) {
           {Object.entries(jamStateMapping).map(([key, { label, tooltip }]) => {
             const rawValue = jamState[key];
             const displayValue =
-              typeof rawValue === "object"
-                ? JSON.stringify(rawValue)
-                : rawValue ?? "N/A";
+              typeof rawValue === "object" ? (
+                <JsonEditor
+                  data={rawValue}
+                  viewOnly={true}
+                  collapse={true}
+                  theme={githubLightTheme}
+                  customNodeDefinitions={[LinkCustomNodeDefinition]}
+                />
+              ) : (
+                rawValue ?? "N/A"
+              );
 
             return (
               <React.Fragment key={key}>

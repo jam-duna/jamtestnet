@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { db, BlockRecord, StateRecord } from "../../../db";
+import { db, BlockRecord, StateRecord } from "@/db/db";
 import { fetchBlock } from "./useFetchBlock";
 import { fetchState } from "./useFetchState";
 import { getRpcUrlFromWs } from "@/utils/ws";

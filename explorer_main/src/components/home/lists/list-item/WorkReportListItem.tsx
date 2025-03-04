@@ -6,7 +6,7 @@ import React from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import { BlockRecord } from "../../../../../db";
+import { BlockRecord } from "@/db/db";
 import { truncateHash, getRelativeTime, pluralize } from "@/utils/helper";
 
 export interface WorkReportListItemProps {

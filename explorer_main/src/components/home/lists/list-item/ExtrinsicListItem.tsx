@@ -6,7 +6,7 @@ import React from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import { BlockRecord } from "../../../../../db";
+import { BlockRecord } from "@/db/db";
 import { calculateExtrinsicCounts } from "@/utils/extrinsics";
 import { getRelativeTime, pluralize } from "@/utils/helper";
 

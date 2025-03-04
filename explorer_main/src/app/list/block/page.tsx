@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Typography, Paper, Box } from "@mui/material";
 import BlockListItem from "@/components/home/lists/list-item/BlockListItem";
-import { db, BlockRecord } from "../../../../db"; // Updated DB scheme
+import { db, BlockRecord } from "@/db/db"; // Updated DB scheme
 import { pluralize } from "@/utils/helper";
 
 export default function AllBlockListPage() {

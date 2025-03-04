@@ -9,8 +9,8 @@ import {
   Divider,
   Link as MuiLink,
 } from "@mui/material";
-import { LabeledRow } from "../../../../../components/display/LabeledRow"; // adjust the import path as needed
-import { db, BlockRecord } from "../../../../../../db";
+import { LabeledRow } from "@/components/display/LabeledRow"; // adjust the import path as needed
+import { db, BlockRecord } from "@/db/db";
 import { Guarantee } from "@/types";
 import { workReportMapping } from "@/utils/tooltipDetails"; // Import the new mapping bundle
 

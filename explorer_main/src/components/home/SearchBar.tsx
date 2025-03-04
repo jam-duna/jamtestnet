@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useRouter } from "next/navigation";
-import { db } from "../../../db"; // Adjust the import path as needed
+import { db } from "@/db/db"; // Adjust the import path as needed
 
 export default function SearchBar() {
   const router = useRouter();

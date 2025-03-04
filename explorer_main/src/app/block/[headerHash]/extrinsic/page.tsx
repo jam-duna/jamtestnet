@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { Container, Paper, Typography, Link } from "@mui/material";
-import { db, BlockRecord } from "../../../../../db";
+import { db, BlockRecord } from "@/db/db";
 import { LabeledRow } from "@/components/display/LabeledRow"; // For non-extrinsic rows
 import ExtrinsicAccordion from "@/components/extrinsic/ExtrinsicAccordion";
 

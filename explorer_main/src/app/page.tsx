@@ -2,13 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import { Container, Grid } from "@mui/material";
-import EndpointDrawer from "../components/home/EndpointDrawer";
-import SearchBar from "../components/home/SearchBar";
-import LatestBlocks from "../components/home/lists/latest-list/LatestBlocks";
-import LatestReports from "../components/home/lists/latest-list/LatestReports";
-import LatestExtrinsics from "../components/home/lists/latest-list/LatestExtrinsics";
-import { db, BlockRecord } from "../../db";
-import { getRelativeTime } from "@/utils/helper";
+import EndpointDrawer from "@/components/home/EndpointDrawer";
+import SearchBar from "@/components/home/SearchBar";
+import LatestBlocks from "@/components/home/lists/latest-list/LatestBlocks";
+import LatestReports from "@/components/home/lists/latest-list/LatestReports";
+import LatestExtrinsics from "@/components/home/lists/latest-list/LatestExtrinsics";
+import { db, BlockRecord } from "@/db/db";
 import { useWsRpc } from "@/hooks/home/useWsRpc";
 
 const defaultWsUrl = "ws://localhost:9999/ws";

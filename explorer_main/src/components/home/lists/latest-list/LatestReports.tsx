@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Paper, Typography } from "@mui/material"; // Report icon
-import { BlockRecord } from "../../../../../db";
+import { BlockRecord } from "@/db/db";
 import { filterWorkReportBlocks } from "@/utils/extrinsics";
 import WorkReportListItem from "@/components/home/lists/list-item/WorkReportListItem";
 

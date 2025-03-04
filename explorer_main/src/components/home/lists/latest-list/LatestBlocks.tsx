@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
 import BlockListItem from "@/components/home/lists/list-item/BlockListItem";
-import { BlockRecord } from "../../../../../db";
+import { BlockRecord } from "@/db/db";
 import Link from "next/link";
 
 type LatestBlocksProps = {

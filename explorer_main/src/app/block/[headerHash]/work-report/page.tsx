@@ -15,7 +15,7 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import { db, BlockRecord } from "../../../../../db";
+import { db, BlockRecord } from "@/db/db";
 import { Guarantee } from "@/types";
 import { pluralize, truncateHash } from "@/utils/helper";
 import Link from "next/link";

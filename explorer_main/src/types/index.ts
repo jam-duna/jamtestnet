@@ -100,3 +100,57 @@ export interface AccordionSubSection {
   count: number;
   children: React.ReactNode;
 }
+
+//
+export interface JamState {
+  alpha: string[][];
+  varphi: string[][];
+  beta: BetaItem[];
+  gamma: Gamma;
+  psi: Psi;
+  eta: string[];
+  iota: KeyedItem[];
+  kappa: KeyedItem[];
+  lambda: KeyedItem[];
+}
+
+export interface BetaItem {
+  header_hash: string;
+  mmr: {
+    peaks: (string | null)[];
+  };
+  state_root: string;
+  reported: {
+    work_package_hash: string;
+    segment_tree_root: string;
+  }[];
+}
+
+export interface Gamma {
+  gamma_k: KeyedItem[];
+  gamma_z: string;
+  gamma_s: {
+    tickets: {
+      id: string;
+      attempt: number;
+    }[];
+  };
+  gamma_a: {
+    id: string;
+    attempt: number;
+  }[];
+}
+
+export interface Psi {
+  good: any[];
+  bad: any[];
+  wonky: any[];
+  offenders: any[];
+}
+
+export interface KeyedItem {
+  bandersnatch: string;
+  ed25519: string;
+  bls: string;
+  metadata: string;
+}

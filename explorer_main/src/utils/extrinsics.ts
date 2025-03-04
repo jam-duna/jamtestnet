@@ -1,6 +1,6 @@
 // src/utils/extrinsics.ts
 
-import { BlockRecord } from "../../db";
+import { BlockRecord } from "@/db/db";
 
 export interface ExtrinsicCounts {
   ticketsCount: number;

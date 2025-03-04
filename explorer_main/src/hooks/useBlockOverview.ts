@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { db, BlockRecord, StateRecord } from "../../db";
+import { db, BlockRecord, StateRecord } from "@/db/db";
 
 export function useBlockOverview(headerHash: string) {
   const [blockRecord, setBlockRecord] = useState<BlockRecord | null>(null);
