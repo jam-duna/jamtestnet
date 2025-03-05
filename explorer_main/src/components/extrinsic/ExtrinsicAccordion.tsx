@@ -73,10 +73,8 @@ export default function ExtrinsicAccordion({
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
-          <Tooltip title={tooltip}>
-            <IconButton size="small" sx={{ mr: 1 }}>
-              <InfoOutlinedIcon fontSize="small" />
-            </IconButton>
+          <Tooltip title={tooltip} sx={{ ml: 0.5, mr: 1.5 }}>
+            <InfoOutlinedIcon fontSize="small" />
           </Tooltip>
           <Typography
             variant="body1"

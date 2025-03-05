@@ -33,7 +33,7 @@ export default function AllBlockListPage() {
         </Typography>
         <Typography variant="body1" sx={{ mt: 2 }}>
           There are {latestBlocks.length}{" "}
-          {pluralize(" report", latestBlocks.length)} found in the page
+          {pluralize(" block", latestBlocks.length)} found in the page
         </Typography>
       </Box>
       <Paper variant="outlined">

@@ -60,7 +60,9 @@ export default function AccordionSubsection({
         {count > 0 ? (
           children
         ) : (
-          <Typography variant="body2">{emptyMessage}</Typography>
+          <Box sx={{ py: 1 }}>
+            <Typography variant="body2">{emptyMessage}</Typography>
+          </Box>
         )}
       </AccordionDetails>
     </Accordion>

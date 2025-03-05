@@ -6,7 +6,6 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export interface BlockNavigationButtonsProps {
-  slot: number;
   prevHash: string | null;
   nextHash: string | null;
   onPrev: () => void;
@@ -14,7 +13,6 @@ export interface BlockNavigationButtonsProps {
 }
 
 export default function BlockNavigationButtons({
-  slot,
   prevHash,
   nextHash,
   onPrev,
@@ -22,7 +20,6 @@ export default function BlockNavigationButtons({
 }: BlockNavigationButtonsProps) {
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
-      <Typography variant="body2">{slot}</Typography>
       <IconButton
         size="small"
         disabled={!prevHash}
@@ -30,7 +27,7 @@ export default function BlockNavigationButtons({
           e.stopPropagation();
           onPrev();
         }}
-        sx={{ ml: 1 }}
+        sx={{ ml: 2 }}
       >
         <ArrowBackIosNewIcon fontSize="small" />
       </IconButton>

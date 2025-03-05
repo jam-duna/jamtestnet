@@ -66,7 +66,7 @@ export default function HomePage() {
       />
 
       <Container maxWidth="lg">
-        <SearchBar />
+        <SearchBar wsEndpoint={wsEndpoint} />
 
         <Grid container spacing={4}>
           {/* Left column: Latest Blocks (max 10) */}

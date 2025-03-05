@@ -37,23 +37,23 @@ export function BlockTab({
   return (
     <>
       <Paper variant="outlined" sx={{ p: 3 }}>
-        <LabeledRow
-          label={basicInfoMapping.blockHeight.label}
-          tooltip={basicInfoMapping.blockHeight.tooltip}
-          value={
-            <BlockNavigationButtons
-              slot={header.slot}
-              prevHash={prevHash}
-              nextHash={nextHash}
-              onPrev={() => {
-                if (prevHash) router.push(`/block/${prevHash}`);
-              }}
-              onNext={() => {
-                if (nextHash) router.push(`/block/${nextHash}`);
-              }}
-            />
-          }
-        />
+        <Box sx={{ display: "flex", alignItems: "flex-start" }}>
+          <LabeledRow
+            label={basicInfoMapping.blockHeight.label}
+            tooltip={basicInfoMapping.blockHeight.tooltip}
+            value={blockRecord.block.header.slot}
+          />
+          <BlockNavigationButtons
+            prevHash={prevHash}
+            nextHash={nextHash}
+            onPrev={() => {
+              if (prevHash) router.push(`/block/${prevHash}`);
+            }}
+            onNext={() => {
+              if (nextHash) router.push(`/block/${nextHash}`);
+            }}
+          />
+        </Box>
 
         <LabeledRow
           label={basicInfoMapping.blockHash.label}
