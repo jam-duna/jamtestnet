@@ -9,6 +9,7 @@ import {
   githubLightTheme,
   LinkCustomNodeDefinition,
 } from "json-edit-react";
+import { CustomRouteButtonDefinition } from "../CustomRouteButton";
 
 interface StateTabProps {
   stateRecord: any; // Use your actual StateRecord type here.
@@ -31,7 +32,7 @@ export function StateTab({ stateRecord }: StateTabProps) {
                   viewOnly={true}
                   collapse={true}
                   theme={githubLightTheme}
-                  customNodeDefinitions={[LinkCustomNodeDefinition]}
+                  customButtons={[CustomRouteButtonDefinition]}
                 />
               ) : (
                 rawValue ?? "N/A"
