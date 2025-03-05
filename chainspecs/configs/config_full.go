@@ -15,4 +15,9 @@ const (
 	MaxAuthorizationPoolItems   = 8    // O: The maximum number of items in the authorizations pool.
 	MaxAuthorizationQueueItems  = 80   // Q: The maximum number of items in the authorizations queue.
 	ValidatorCoreRotationPeriod = 10   // R: The rotation period of validator-core assignments, in timeslots.
+
+	SegmentSize           = 4104  // W_G
+	ECPieceSize           = 684   // W_E
+	NumECPiecesPerSegment = 6     // W_P
+	PreimageExpiryPeriod  = 28800 // D
 )
