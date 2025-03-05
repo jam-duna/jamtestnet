@@ -114,10 +114,151 @@ See [services](./services) for `bootstrap` and `fib` service code, which has bee
 
 As of Feb 2025, Several teams have reported success at importing both fallback and safrole.
 
+#### Assurances
+
+The assurances dataset, after setting up a "Bootstrap" and "Fib" service (using the Bootstrap service), tests out the majority of host functions, and writes out the result of the host function result in many of the calls.
+
+* ASSIGN
+* BLESS
+* CHECKPOINT
+* EJECT
+* FORGET
+* GAS
+* INFO
+* LOOKUP
+* NEW
+* QUERY
+* READ
+* SOLICIT
+* TRANSFER
+* UPGRADE
+* WRITE
+* YIELD
+
+```
+INFO [03-05|19:44:12.138] Fib2-(1) result with key 0               result=010000000100000000000000
+INFO [03-05|19:44:12.138] Fib2-(1) result with key 1               result=
+INFO [03-05|19:44:12.138] Fib2-(1) result with key 2               result=
+INFO [03-05|19:44:12.138] Fib2-(1) result with key 5               result=
+INFO [03-05|19:44:12.138] Fib2-(1) result with key 6               result=
+INFO [03-05|19:44:12.138] Fib2-(1) result with key 8               result=0000000000000000
+INFO [03-05|19:44:12.138] Fib2-(1) result with key 9               result=6f23000000000000
+INFO [03-05|19:44:22.145] Fib2-(2) result with key 0               result=020000000100000001000000
+INFO [03-05|19:44:22.145] Fib2-(2) result with key 1               result=ffffffffffffffff
+INFO [03-05|19:44:22.145] Fib2-(2) result with key 2               result=0300000000000000
+INFO [03-05|19:44:22.145] Fib2-(2) result with key 5               result=0300000000000000
+INFO [03-05|19:44:22.145] Fib2-(2) result with key 6               result=f7ffffffffffffff
+INFO [03-05|19:44:22.145] Fib2-(2) result with key 8               result=0000000000000000
+INFO [03-05|19:44:22.145] Fib2-(2) result with key 9               result=1f23000000000000
+INFO [03-05|19:44:34.154] Fib2-(3) result with key 0               result=030000000200000001000000
+INFO [03-05|19:44:34.155] Fib2-(3) result with key 1               result=0000000000000000
+INFO [03-05|19:44:34.155] Fib2-(3) result with key 2               result=0000000000000000
+INFO [03-05|19:44:34.155] Fib2-(3) result with key 5               result=ffffffffffffffff
+INFO [03-05|19:44:34.155] Fib2-(3) result with key 6               result=f7ffffffffffffff
+INFO [03-05|19:44:34.155] Fib2-(3) result with key 8               result=0000000000000000
+INFO [03-05|19:44:34.155] Fib2-(3) result with key 9               result=3323000000000000
+INFO [03-05|19:44:52.163] Fib2-(4) result with key 0               result=040000000300000002000000
+INFO [03-05|19:44:52.163] Fib2-(4) result with key 1               result=0000000000000000
+INFO [03-05|19:44:52.163] Fib2-(4) result with key 2               result=020000001d000000
+INFO [03-05|19:44:52.163] Fib2-(4) result with key 5               result=ffffffffffffffff
+INFO [03-05|19:44:52.163] Fib2-(4) result with key 6               result=faffffffffffffff
+INFO [03-05|19:44:52.163] Fib2-(4) result with key 8               result=0000000000000000
+INFO [03-05|19:44:52.163] Fib2-(4) result with key 9               result=1f23000000000000
+INFO [03-05|19:45:04.171] Fib2-(5) result with key 0               result=050000000500000003000000
+INFO [03-05|19:45:04.171] Fib2-(5) result with key 1               result=0300000000000000
+INFO [03-05|19:45:04.171] Fib2-(5) result with key 2               result=020000001d000000
+INFO [03-05|19:45:04.171] Fib2-(5) result with key 5               result=fcffffffffffffff
+INFO [03-05|19:45:04.171] Fib2-(5) result with key 6               result=fcffffffffffffff
+INFO [03-05|19:45:04.171] Fib2-(5) result with key 8               result=0000000000000000
+INFO [03-05|19:45:04.171] Fib2-(5) result with key 9               result=1f23000000000000
+INFO [03-05|19:45:19.182] Fib2-(6) result with key 0               result=060000000800000005000000
+INFO [03-05|19:45:19.182] Fib2-(6) result with key 1               result=0000000000000000
+INFO [03-05|19:45:19.182] Fib2-(6) result with key 2               result=030000001d000000
+INFO [03-05|19:45:19.182] Fib2-(6) result with key 5               result=0000000000000000
+INFO [03-05|19:45:19.182] Fib2-(6) result with key 6               result=fcffffffffffffff
+INFO [03-05|19:45:19.182] Fib2-(6) result with key 8               result=0000000000000000
+INFO [03-05|19:45:19.182] Fib2-(6) result with key 9               result=3323000000000000
+INFO [03-05|19:45:35.202] Fib2-(7) result with key 0               result=070000000d00000008000000
+INFO [03-05|19:45:35.202] Fib2-(7) result with key 1               result=0000000000000000
+INFO [03-05|19:45:35.202] Fib2-(7) result with key 2               result=0200000023000000
+INFO [03-05|19:45:35.203] Fib2-(7) result with key 5               result=0000000000000000
+INFO [03-05|19:45:35.203] Fib2-(7) result with key 6               result=fcffffffffffffff
+INFO [03-05|19:45:35.203] Fib2-(7) result with key 8               result=0000000000000000
+INFO [03-05|19:45:35.203] Fib2-(7) result with key 9               result=4723000000000000
+INFO [03-05|19:45:46.210] Fib2-(8) result with key 0               result=08000000150000000d000000
+INFO [03-05|19:45:46.210] Fib2-(8) result with key 1               result=0300000000000000
+INFO [03-05|19:45:46.210] Fib2-(8) result with key 2               result=0200000023000000
+INFO [03-05|19:45:46.210] Fib2-(8) result with key 5               result=0000000000000000
+INFO [03-05|19:45:46.210] Fib2-(8) result with key 6               result=fcffffffffffffff
+INFO [03-05|19:45:46.210] Fib2-(8) result with key 8               result=0000000000000000
+INFO [03-05|19:45:46.210] Fib2-(8) result with key 9               result=4723000000000000
+INFO [03-05|19:45:58.219] Fib2-(9) result with key 0               result=08000000150000000d000000
+INFO [03-05|19:45:58.219] Fib2-(9) result with key 1               result=0300000000000000
+INFO [03-05|19:45:58.219] Fib2-(9) result with key 2               result=0200000023000000
+INFO [03-05|19:45:58.219] Fib2-(9) result with key 5               result=0000000000000000
+INFO [03-05|19:45:58.220] Fib2-(9) result with key 6               result=fcffffffffffffff
+INFO [03-05|19:45:58.220] Fib2-(9) result with key 8               result=0000000000000000
+INFO [03-05|19:45:58.220] Fib2-(9) result with key 9               result=4723000000000000
+```
+
+In key 0 is a 12 byte representation of (n, Fib(n), Fib(n-1)).  This is actually exported in the refine operation as well.
+
+This dataset enables broad testing of accumulate invocation.
+
+We are currently developing a broader set of refine test vectors in a similar way to test:
+
+* EXPORT
+* EXPUNGE
+* FETCH
+* GAS
+* HISTORICAL_LOOKUP
+* INVOKE
+* MACHINE
+* PEEK
+* POKE 
+
+We will defer basic testing DESIGNATE, UPGRADE, EJECT, VOID+ZERO to after a live tiny testnet has been set up.
+
+#### Ordered Accumulation
+
+The ordered accumulation data, after setting up a Fib+Trib+Megatron service, has the megatron work package depend on the Fib+Trib work package.  
+
+`Meg(N) = Fib(N) + Trib(N)` computed in the same state transition, which forces _ordered accumulation_ (See Sec 12).
+
+* Fib is basically like the above but does not have any host function testing -- it just does Fib(N) = Fib(N-1) + Fib(N-2)
+* Trib is like Fib but Trib(N) = Trib(N-1) + Trib(N-2) + Trib(N-3)
+* The Fib+Trib workpackage has TWO work items.   Meg(N) is computed in a separate work package but with the Fib+Trib work package as prereqs.
+
+You can see the results of these in: 
+
+```
+INFO [03-05|19:37:38.366] JAMTEST Fib SUCC                         n=1 result="[1 0 0 0 1 0 0 0 0 0 0 0]"
+INFO [03-05|19:37:38.366] JAMTEST Trib SUCC                        n=1 result="[1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]"
+INFO [03-05|19:37:52.652] JAMTEST Megatron SUCC                    n=1 result="[1 0 0 0 2 0 0 0 0 0 0 0]"
+INFO [03-05|19:38:04.159] JAMTEST Fib SUCC                         n=2 result="[2 0 0 0 1 0 0 0 1 0 0 0]"
+INFO [03-05|19:38:04.159] JAMTEST Trib SUCC                        n=2 result="[2 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0]"
+INFO [03-05|19:38:04.159] JAMTEST Megatron SUCC                    n=2 result="[2 0 0 0 2 0 0 0 2 0 0 0]"
+INFO [03-05|19:38:22.257] JAMTEST Megatron SUCC                    n=3 result="[3 0 0 0 4 0 0 0 2 0 0 0]"
+INFO [03-05|19:38:22.258] JAMTEST Fib SUCC                         n=3 result="[3 0 0 0 2 0 0 0 1 0 0 0]"
+INFO [03-05|19:38:22.258] JAMTEST Trib SUCC                        n=3 result="[3 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0]"
+INFO [03-05|19:38:38.555] JAMTEST Fib SUCC                         n=4 result="[4 0 0 0 3 0 0 0 2 0 0 0]"
+INFO [03-05|19:38:38.555] JAMTEST Trib SUCC                        n=4 result="[4 0 0 0 4 0 0 0 2 0 0 0 1 0 0 0]"
+INFO [03-05|19:38:38.569] JAMTEST Megatron SUCC                    n=4 result="[4 0 0 0 7 0 0 0 4 0 0 0]"
+INFO [03-05|19:38:56.555] JAMTEST Fib SUCC                         n=5 result="[5 0 0 0 5 0 0 0 3 0 0 0]"
+INFO [03-05|19:38:56.555] JAMTEST Trib SUCC                        n=5 result="[5 0 0 0 7 0 0 0 4 0 0 0 2 0 0 0]"
+INFO [03-05|19:38:56.555] JAMTEST Megatron SUCC                    n=5 result="[5 0 0 0 12 0 0 0 7 0 0 0]"
+INFO [03-05|19:39:16.452] JAMTEST Megatron SUCC                    n=6 result="[6 0 0 0 21 0 0 0 12 0 0 0]"
+INFO [03-05|19:39:16.452] JAMTEST Fib SUCC                         n=6 result="[6 0 0 0 8 0 0 0 5 0 0 0]"
+INFO [03-05|19:39:16.452] JAMTEST Trib SUCC                        n=6 result="[6 0 0 0 13 0 0 0 7 0 0 0 4 0 0 0]"
+INFO [03-05|19:39:34.160] JAMTEST Megatron SUCC                    n=7 result="[7 0 0 0 37 0 0 0 21 0 0 0]"
+INFO [03-05|19:39:34.160] JAMTEST Fib SUCC                         n=7 result="[7 0 0 0 13 0 0 0 8 0 0 0]"
+INFO [03-05|19:39:34.160] JAMTEST Trib SUCC                        n=7 result="[7 0 0 0 24 0 0 0 13 0 0 0 7 0 0 0]"
+...
+```
 
 ## Fuzzed State Transitions
 
-In additiion, inside `data` are additional "fuzzed" datasets consisting of **INVALID** state transitions:
+In addition, inside `data` are additional "fuzzed" datasets consisting of **INVALID** state transitions:
 
   * [safrole/state_transitions_fuzzed](./data/safrole/state_transitions_fuzzed)
   * [assurances/state_transitions_fuzzed](./data/assurances/state_transitions_fuzzed)
