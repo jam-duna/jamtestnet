@@ -19,7 +19,7 @@ const JsonRedirectButton: React.FC<{ nodeData: NodeData }> = ({ nodeData }) => {
       variant="text"
       onClick={(e) => {
         e.stopPropagation();
-        router.push(`/block/${headerHash}`);
+        router.push(`/block/${headerHash}?type=headerHash`);
       }}
       sx={{ p: 0, minWidth: "unset" }}
     >

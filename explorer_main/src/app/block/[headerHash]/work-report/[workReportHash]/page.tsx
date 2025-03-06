@@ -81,7 +81,7 @@ export default function WorkReportDetailPage() {
             value={
               item.label === "Header Hash:" ? (
                 <MuiLink
-                  href={`/block/${headerHash}`}
+                  href={`/block/${headerHash}?type=headerHash`}
                   sx={{ textDecoration: "underline" }}
                 >
                   {headerHash}

@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { db, BlockRecord, StateRecord } from "@/db/db";
 
-export function useBlockOverview(headerHash: string) {
+export function useBlockOverview(hash: string, type: string) {
   const [blockRecord, setBlockRecord] = useState<BlockRecord | null>(null);
   const [stateRecord, setStateRecord] = useState<StateRecord | null>(null);
   const [prevHash, setPrevHash] = useState<string | null>(null);
   const [nextHash, setNextHash] = useState<string | null>(null);
 
   useEffect(() => {
-    if (headerHash) {
+    if (hash && type === "headerHash") {
       db.blocks
         .where("headerHash")
-        .equals(headerHash)
+        .equals(hash)
         .first()
         .then((record) => {
           setBlockRecord(record || null);
@@ -22,7 +22,7 @@ export function useBlockOverview(headerHash: string) {
 
       db.states
         .where("headerHash")
-        .equals(headerHash)
+        .equals(hash)
         .first()
         .then((record) => {
           setStateRecord(record || null);
@@ -31,10 +31,28 @@ export function useBlockOverview(headerHash: string) {
           console.error("Error loading state record:", error);
         });
     }
-  }, [headerHash]);
+
+    {
+      /*
+      else if (hash && type === "blockHash") {
+      db.blocksFetchBlockHash;
+      db.blocksFetchBlockHash
+        .where("blockHash")
+        .equals(hash)
+        .first()
+        .then((record) => {
+          setBlockRecord(record ? record.data : null);
+        })
+        .catch((error) => {
+          console.error("Error loading block record:", error);
+        });
+    }
+      */
+    }
+  }, [hash]);
 
   useEffect(() => {
-    if (blockRecord) {
+    if (blockRecord && type === "headerHash") {
       const currentSlot = blockRecord.block.header.slot;
       db.blocks
         .where("block.header.slot")

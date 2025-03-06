@@ -18,14 +18,16 @@ import { pluralize } from "@/utils/helper";
 
 interface BlockTabProps {
   blockRecord: any; // Use your actual BlockRecord type here.
-  headerHash: string;
+  hash: string;
+  type: string;
   prevHash: string | null;
   nextHash: string | null;
 }
 
 export function BlockTab({
   blockRecord,
-  headerHash,
+  hash,
+  type,
   prevHash,
   nextHash,
 }: BlockTabProps) {
@@ -33,6 +35,7 @@ export function BlockTab({
   const block = blockRecord.block;
   const header = block.header;
   const extrinsic = block.extrinsic;
+  console.log(blockRecord);
 
   return (
     <>
@@ -43,16 +46,18 @@ export function BlockTab({
             tooltip={basicInfoMapping.blockHeight.tooltip}
             value={blockRecord.block.header.slot}
           />
-          <BlockNavigationButtons
-            prevHash={prevHash}
-            nextHash={nextHash}
-            onPrev={() => {
-              if (prevHash) router.push(`/block/${prevHash}`);
-            }}
-            onNext={() => {
-              if (nextHash) router.push(`/block/${nextHash}`);
-            }}
-          />
+          {type === "headerHash" && (
+            <BlockNavigationButtons
+              prevHash={prevHash}
+              nextHash={nextHash}
+              onPrev={() => {
+                if (prevHash) router.push(`/block/${prevHash}`);
+              }}
+              onNext={() => {
+                if (nextHash) router.push(`/block/${nextHash}`);
+              }}
+            />
+          )}
         </Box>
 
         <LabeledRow
@@ -104,7 +109,8 @@ export function BlockTab({
 
         <ExtrinsicAccordion
           extrinsic={extrinsic || null}
-          headerHash={headerHash}
+          headerHash={hash}
+          // type={type}
         />
       </Paper>
       <MoreDetailsAccordion header={header} />

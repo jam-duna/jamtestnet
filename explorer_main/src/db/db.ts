@@ -75,10 +75,17 @@ export interface StateRecord {
   state: State;
 }
 
+//
+export interface BlockHashFetch {
+  blockHash: string; // primary key
+  data: Block;
+}
+
 // Dexie database class
 export class JamDB extends Dexie {
   public blocks!: Dexie.Table<BlockRecord, string>;
   public states!: Dexie.Table<StateRecord, string>;
+  public blocksFetchBlockHash!: Dexie.Table<BlockHashFetch, string>;
 
   constructor() {
     super("JamDB");
@@ -86,6 +93,7 @@ export class JamDB extends Dexie {
     this.version(1).stores({
       blocks: "headerHash,block.header.slot",
       states: "headerHash",
+      blocksFetchBlockHash: "blockHash",
     });
   }
 }

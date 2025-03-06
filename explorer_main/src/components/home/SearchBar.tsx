@@ -29,8 +29,6 @@ function getRpcUrlFromWs(wsEndpoint: string): string {
 
 // Helper function to call a JSON-RPC method.
 async function callRpc(method: string, params: any[], rpcUrl: string) {
-  // Prepend your chosen CORS proxy URL:
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const payload = {
     jsonrpc: "2.0",
     id: 1,
@@ -38,7 +36,7 @@ async function callRpc(method: string, params: any[], rpcUrl: string) {
     params,
   };
   try {
-    const response = await fetch(proxyUrl + rpcUrl, {
+    const response = await fetch(rpcUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -64,34 +62,49 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
     if (!searchValue) return;
 
     try {
-      // 1. Check if input is a headerHash (existing in IndexedDB)
+      // 1. Try fetching from IndexedDB using headerHash.
       const foundBlock = await db.blocks.get({ headerHash: searchValue });
+      console.log("Found in db.blocks:", foundBlock);
       if (foundBlock) {
-        router.push(`/block/${searchValue}`);
+        // headerHash case.
+        router.push(`/block/${searchValue}?type=headerHash`);
         return;
       }
 
-      // Derive the RPC URL from the wsEndpoint prop.
+      // 2. Derive the RPC URL.
       const rpcUrl = getRpcUrlFromWs(wsEndpoint);
 
-      // 2. Otherwise, determine what type of hash it is.
-      // For example, assume a block hash is 66 characters long ("0x" + 64 hex characters)
-      if (searchValue.length === 66) {
-        const blockData = await callRpc(
-          "jam_getBlockByHash",
-          [searchValue],
-          rpcUrl
-        );
-        console.log("Block data:", blockData);
-      } else {
-        // 3. Otherwise assume it's a workReportHash.
-        const workReportData = await callRpc(
-          "jam_getWorkReportByHash",
-          [searchValue],
-          rpcUrl
-        );
-        console.log("Work report data:", workReportData);
+      // 3. Try fetching as a block (blockHash case).
+      const blockData = await callRpc(
+        "jam_getBlockByHash",
+        [searchValue],
+        rpcUrl
+      );
+      console.log("Block data:", blockData);
+      if (blockData) {
+        // Save fetched block data into a dedicated store, e.g. db.blockHashFetch.
+        await db.blocksFetchBlockHash.put({
+          blockHash: searchValue,
+          data: blockData,
+        });
+        router.push(`/block/${searchValue}?type=blockHash`);
+        return;
       }
+
+      // 4. If no block data, try fetching as a work report.
+      const workReportData = await callRpc(
+        "jam_getWorkReportByHash",
+        [searchValue],
+        rpcUrl
+      );
+      console.log("Work report data:", workReportData);
+      if (workReportData && workReportData.result) {
+        router.push(`/block/${searchValue}?type=workReport`);
+        return;
+      }
+
+      // 5. If neither returns valid data, show error dialog.
+      setOpenDialog(true);
     } catch (error) {
       console.error("Error searching:", error);
       setOpenDialog(true);
@@ -105,7 +118,7 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
         variant="outlined"
         placeholder="Enter headerHash, blockHash or workReportHash..."
         value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
+        onChange={(e) => setSearchValue(e.target.value.replace(/\s+/g, ""))}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             handleSearch();

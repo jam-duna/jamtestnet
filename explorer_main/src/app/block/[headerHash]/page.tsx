@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Container, Paper, Typography, Box } from "@mui/material";
 import DetailToggleButtons from "@/components/block/DetailToggleButtons";
 import { BlockTab } from "@/components/block/tabs/BlockTab";
@@ -11,9 +11,16 @@ import { useBlockOverview } from "@/hooks/useBlockOverview";
 export default function BlockOverviewPage() {
   const params = useParams();
   const headerHash = params.headerHash as string;
+  const searchParams = useSearchParams();
+  const hashType = searchParams.get("type") as string;
 
-  const { blockRecord, stateRecord, prevHash, nextHash } =
-    useBlockOverview(headerHash);
+  const { blockRecord, stateRecord, prevHash, nextHash } = useBlockOverview(
+    headerHash,
+    hashType
+  );
+
+  console.log(hashType);
+
   const [selectedTab, setSelectedTab] = useState<"block" | "state">("block");
 
   if (!blockRecord) {
@@ -50,7 +57,8 @@ export default function BlockOverviewPage() {
       {selectedTab === "block" ? (
         <BlockTab
           blockRecord={blockRecord}
-          headerHash={headerHash}
+          hash={headerHash}
+          type={hashType}
           prevHash={prevHash}
           nextHash={nextHash}
         />
