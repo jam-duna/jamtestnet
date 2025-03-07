@@ -1,12 +1,9 @@
-export async function fetchBlock(
-  blockHash: string,
-  rpcUrl: string
-): Promise<any> {
+export async function fetchBlock(hash: string, rpcUrl: string): Promise<any> {
   const payload = {
     jsonrpc: "2.0",
     id: 1,
     method: "jam_getBlockByHash",
-    params: [blockHash],
+    params: [hash],
   };
   try {
     const response = await fetch(rpcUrl, {

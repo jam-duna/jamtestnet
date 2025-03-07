@@ -1,6 +1,6 @@
 // src/utils/extrinsics.ts
 
-import { BlockRecord } from "@/db/db";
+import { Block } from "@/db/db";
 
 export interface ExtrinsicCounts {
   ticketsCount: number;
@@ -55,10 +55,10 @@ export function calculateExtrinsicCounts(extrinsic: any): ExtrinsicCounts {
  * @param blocks Array of BlockRecord.
  * @returns Array of BlockRecord with non-zero extrinsic events.
  */
-export function filterExtrinsicBlocks(blocks: BlockRecord[]): BlockRecord[] {
+export function filterExtrinsicBlocks(blocks: Block[]): Block[] {
   if (!blocks) return [];
   return blocks.filter((blockItem) => {
-    const extrinsic = blockItem.block.extrinsic;
+    const extrinsic = blockItem.extrinsic;
     if (!extrinsic) return false;
     const { totalExtrinsics } = calculateExtrinsicCounts(extrinsic);
     return totalExtrinsics > 0;
@@ -70,10 +70,10 @@ export function filterExtrinsicBlocks(blocks: BlockRecord[]): BlockRecord[] {
  * @param blocks Array of BlockRecord.
  * @returns Array of BlockRecord where extrinsic.guarantees exist.
  */
-export function filterWorkReportBlocks(blocks?: BlockRecord[]): BlockRecord[] {
+export function filterWorkReportBlocks(blocks?: Block[]): Block[] {
   if (!blocks) return [];
   return blocks.filter((blockItem) => {
-    const extrinsic = blockItem.block?.extrinsic;
+    const extrinsic = blockItem.extrinsic;
     return (
       extrinsic &&
       Array.isArray(extrinsic.guarantees) &&

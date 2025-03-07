@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { db, BlockRecord, StateRecord } from "@/db/db";
+import { db, Block, State } from "@/db/db";
 import { fetchBlock } from "./useFetchBlock";
 import { fetchState } from "./useFetchState";
 import { getRpcUrlFromWs } from "@/utils/ws";
@@ -7,7 +7,7 @@ import { getRpcUrlFromWs } from "@/utils/ws";
 interface UseWsRpcProps {
   wsEndpoint: string;
   defaultWsUrl: string;
-  onNewBlock: (blockRecord: BlockRecord, stateRecord: StateRecord) => void;
+  onNewBlock: (blockRecord: Block, stateRecord: State) => void;
   onUpdateNow: (timestamp: number) => void;
   setSavedEndpoints: React.Dispatch<React.SetStateAction<string[]>>;
 }
@@ -42,22 +42,17 @@ export function useWsRpc({
           const fetchedBlock = await fetchBlock(headerHash, rpcUrl);
           const fetchedState = await fetchState(headerHash, rpcUrl);
           const nowTimestamp = Date.now();
-          const overview = { blockHash, createdAt: nowTimestamp };
+          const overview = { headerHash, blockHash, createdAt: nowTimestamp };
+          console.log(fetchedBlock);
 
-          if (fetchedBlock && fetchedBlock.header) {
-            const blockRecord: BlockRecord = {
-              headerHash,
-              overview,
-              block: fetchedBlock,
-            };
+          if (fetchedBlock.header && fetchedBlock.extrinsic) {
+            const blockRecord: Block = { overview, ...fetchedBlock };
+            console.log(blockRecord);
+            console.log("================================================");
             await db.blocks.put(blockRecord);
 
             if (fetchedState) {
-              const stateRecord: StateRecord = {
-                headerHash,
-                overview,
-                state: fetchedState,
-              };
+              const stateRecord: State = { overview, ...fetchedState };
               await db.states.put(stateRecord);
               onNewBlock(blockRecord, stateRecord);
             }

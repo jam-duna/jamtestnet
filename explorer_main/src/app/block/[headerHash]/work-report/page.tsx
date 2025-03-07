@@ -13,7 +13,7 @@ import {
   TableRow,
   Box,
 } from "@mui/material";
-import { db, BlockRecord, StateRecord } from "@/db/db";
+import { db, Block, State } from "@/db/db";
 import { Guarantee } from "@/types";
 import { pluralize, truncateHash } from "@/utils/helper";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export default function WorkReportListPage() {
   const headerHash = params.headerHash as string;
 
   const [workReports, setWorkReports] = useState<Guarantee[]>([]);
-  const [stateRecord, setStateRecord] = useState<StateRecord | null>(null);
+  const [stateRecord, setStateRecord] = useState<State | null>(null);
   const [statuses, setStatuses] = useState<Record<string, string>>({});
 
   // Fetch work reports from the block record.
@@ -36,9 +36,9 @@ export default function WorkReportListPage() {
         .where("headerHash")
         .equals(headerHash)
         .first()
-        .then((record: BlockRecord | undefined) => {
-          if (record && record.block && record.block.extrinsic) {
-            const reports = record.block.extrinsic.guarantees || [];
+        .then((record: Block | undefined) => {
+          if (record?.header && record?.extrinsic) {
+            const reports = record.extrinsic.guarantees || [];
             setWorkReports(reports as Guarantee[]);
             console.log("Work reports:", reports);
           }
@@ -56,7 +56,7 @@ export default function WorkReportListPage() {
         .where("headerHash")
         .equals(headerHash)
         .first()
-        .then((record: StateRecord | undefined) => {
+        .then((record: State | undefined) => {
           setStateRecord(record || null);
         })
         .catch((error) => {

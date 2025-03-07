@@ -6,26 +6,27 @@ import React from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import { BlockRecord } from "@/db/db";
+import { Block } from "@/db/db";
 import { truncateHash, getRelativeTime, pluralize } from "@/utils/helper";
 
 export interface WorkReportListItemProps {
-  blockItem: BlockRecord;
+  blockItem: Block;
 }
 
 export default function WorkReportListItem({
   blockItem,
 }: WorkReportListItemProps) {
-  const guaranteesCount = blockItem.block.extrinsic.guarantees.length;
-  const createdAt = blockItem.overview.createdAt;
+  const guaranteesCount = blockItem.extrinsic.guarantees.length;
+  const createdAt = blockItem?.overview?.createdAt;
   const relativeTime = createdAt ? getRelativeTime(createdAt) : "N/A";
-  const shortHash = truncateHash(blockItem.headerHash);
-  const slot = blockItem.block.header.slot;
+  const headerHash = blockItem?.overview?.headerHash || "";
+  const shortHash = truncateHash(headerHash);
+  const slot = blockItem.header.slot;
 
   return (
     <Link
-      key={blockItem.headerHash}
-      href={`/block/${blockItem.headerHash}/work-report`}
+      key={headerHash}
+      href={`/block/${headerHash}/work-report`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <Box

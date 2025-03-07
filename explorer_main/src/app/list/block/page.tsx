@@ -3,20 +3,36 @@
 import React, { useEffect, useState } from "react";
 import { Container, Typography, Paper, Box } from "@mui/material";
 import BlockListItem from "@/components/home/lists/list-item/BlockListItem";
-import { db, BlockRecord } from "@/db/db"; // Updated DB scheme
+import { db, Block } from "@/db/db"; // Updated DB scheme
 import { pluralize } from "@/utils/helper";
 
 export default function AllBlockListPage() {
-  const [latestBlocks, setLatestBlocks] = useState<BlockRecord[]>([]);
+  const [latestBlocks, setLatestBlocks] = useState<Block[]>([]);
   const [now, setNow] = useState(Date.now());
 
   useEffect(() => {
     db.blocks
       .toArray()
       .then((blocks) => {
-        const sorted = blocks.sort(
-          (a, b) => b.overview.createdAt - a.overview.createdAt
-        );
+        const sorted = blocks.sort((a, b) => {
+          const aCreatedAt = a?.overview?.createdAt;
+          const bCreatedAt = b?.overview?.createdAt;
+
+          // If both items have no createdAt, consider them equal.
+          if (aCreatedAt == null && bCreatedAt == null) {
+            return 0;
+          }
+          // If a is missing createdAt, put it after b.
+          if (aCreatedAt == null) {
+            return 1;
+          }
+          // If b is missing createdAt, put it after a.
+          if (bCreatedAt == null) {
+            return -1;
+          }
+          // Otherwise, sort in descending order (newest first)
+          return bCreatedAt - aCreatedAt;
+        });
         setLatestBlocks(sorted);
         setNow(Date.now());
       })
@@ -38,7 +54,10 @@ export default function AllBlockListPage() {
       </Box>
       <Paper variant="outlined">
         {latestBlocks.map((blockItem) => (
-          <BlockListItem key={blockItem.headerHash} blockItem={blockItem} />
+          <BlockListItem
+            key={blockItem?.overview?.headerHash}
+            blockItem={blockItem}
+          />
         ))}
       </Paper>
     </Container>

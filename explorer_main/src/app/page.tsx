@@ -7,7 +7,7 @@ import SearchBar from "@/components/home/SearchBar";
 import LatestBlocks from "@/components/home/lists/latest-list/LatestBlocks";
 import LatestReports from "@/components/home/lists/latest-list/LatestReports";
 import LatestExtrinsics from "@/components/home/lists/latest-list/LatestExtrinsics";
-import { db, BlockRecord } from "@/db/db";
+import { db, Block } from "@/db/db";
 import { useWsRpc } from "@/hooks/home/useWsRpc";
 
 const defaultWsUrl = "ws://localhost:9999/ws";
@@ -15,14 +15,13 @@ const defaultWsUrl = "ws://localhost:9999/ws";
 export default function HomePage() {
   // Local state (if needed for RPC results)
   const [block, setBlock] = useState<unknown>(null);
-  const [state, setState] = useState<unknown>(null);
 
   // WebSocket endpoint management.
   const [wsEndpoint, setWsEndpoint] = useState<string>(defaultWsUrl);
   const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
 
   // Latest blocks loaded from IndexedDB.
-  const [latestBlocks, setLatestBlocks] = useState<BlockRecord[]>([]);
+  const [latestBlocks, setLatestBlocks] = useState<Block[]>([]);
 
   // Current time for relative time calculation.
   const [now, setNow] = useState(Date.now());
@@ -32,8 +31,8 @@ export default function HomePage() {
     wsEndpoint,
     defaultWsUrl,
     onNewBlock: (blockRecord, stateRecord) => {
-      setBlock(blockRecord.block);
-      setState(stateRecord.state);
+      setBlock(blockRecord);
+      // setState(stateRecord);
     },
     onUpdateNow: (timestamp) => {
       setNow(timestamp);
@@ -42,13 +41,31 @@ export default function HomePage() {
   });
 
   // Load latest blocks from IndexedDB whenever a new block is saved.
+
   useEffect(() => {
     db.blocks
       .toArray()
       .then((blocks) => {
-        const sorted = blocks.sort(
-          (a, b) => b.overview.createdAt - a.overview.createdAt
-        );
+        const sorted = blocks.sort((a, b) => {
+          const aCreatedAt = a?.overview?.createdAt;
+          const bCreatedAt = b?.overview?.createdAt;
+
+          // If both items have no createdAt, consider them equal.
+          if (aCreatedAt == null && bCreatedAt == null) {
+            return 0;
+          }
+          // If a is missing createdAt, put it after b.
+          if (aCreatedAt == null) {
+            return 1;
+          }
+          // If b is missing createdAt, put it after a.
+          if (bCreatedAt == null) {
+            return -1;
+          }
+          // Otherwise, sort in descending order (newest first)
+          return bCreatedAt - aCreatedAt;
+        });
+
         setLatestBlocks(sorted);
       })
       .catch((error) => {

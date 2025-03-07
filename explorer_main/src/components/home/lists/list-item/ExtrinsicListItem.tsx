@@ -6,19 +6,19 @@ import React from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import { BlockRecord } from "@/db/db";
+import { Block } from "@/db/db";
 import { calculateExtrinsicCounts } from "@/utils/extrinsics";
 import { getRelativeTime, pluralize } from "@/utils/helper";
 
 export interface ExtrinsicListItemProps {
-  blockItem: BlockRecord;
+  blockItem: Block;
 }
 
 export default function ExtrinsicListItem({
   blockItem,
 }: ExtrinsicListItemProps) {
-  const extrinsic = blockItem.block.extrinsic;
-  const slot = blockItem.block.header.slot;
+  const extrinsic = blockItem.extrinsic;
+  const slot = blockItem.header.slot;
 
   // Calculate extrinsic counts
   const {
@@ -30,7 +30,8 @@ export default function ExtrinsicListItem({
     totalExtrinsics,
   } = calculateExtrinsicCounts(extrinsic);
 
-  const createdAt = blockItem.overview.createdAt;
+  const createdAt = blockItem?.overview?.createdAt;
+  const headerHash = blockItem?.overview?.headerHash;
   const relativeTime = createdAt ? getRelativeTime(createdAt) : "N/A";
 
   // Build details string (only non-zero counts)
@@ -43,8 +44,8 @@ export default function ExtrinsicListItem({
 
   return (
     <Link
-      key={blockItem.headerHash}
-      href={`/block/${blockItem.headerHash}/extrinsic`}
+      key={headerHash}
+      href={`/block/${headerHash}/extrinsic`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <Box

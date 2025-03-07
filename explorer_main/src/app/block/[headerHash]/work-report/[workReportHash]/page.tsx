@@ -10,7 +10,7 @@ import {
   Link as MuiLink,
 } from "@mui/material";
 import { LabeledRow } from "@/components/display/LabeledRow"; // adjust the import path as needed
-import { db, BlockRecord } from "@/db/db";
+import { db, Block } from "@/db/db";
 import { Guarantee } from "@/types";
 import { workReportMapping } from "@/utils/tooltipDetails"; // Import the new mapping bundle
 
@@ -27,9 +27,9 @@ export default function WorkReportDetailPage() {
         .where("headerHash")
         .equals(headerHash)
         .first()
-        .then((record: BlockRecord | undefined) => {
-          if (record && record.block && record.block.extrinsic) {
-            const reports = record.block.extrinsic.guarantees || [];
+        .then((record: Block | undefined) => {
+          if (record?.header && record?.extrinsic) {
+            const reports = record.extrinsic.guarantees || [];
             const found = reports.find(
               (r: Guarantee) => r.report.package_spec.hash === workReportHash
             );

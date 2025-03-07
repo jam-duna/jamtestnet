@@ -16,6 +16,8 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import { useRouter } from "next/navigation";
 import { db } from "@/db/db"; // Adjust the import path as needed
+import { fetchBlock } from "@/hooks/home/useFetchBlock";
+import { fetchState } from "@/hooks/home/useFetchState";
 
 // Helper to derive RPC URL from wsEndpoint
 function getRpcUrlFromWs(wsEndpoint: string): string {
@@ -25,28 +27,6 @@ function getRpcUrlFromWs(wsEndpoint: string): string {
     return "https://" + wsEndpoint.slice(6).replace(/\/ws$/, "/rpc");
   }
   return wsEndpoint;
-}
-
-// Helper function to call a JSON-RPC method.
-async function callRpc(method: string, params: any[], rpcUrl: string) {
-  const payload = {
-    jsonrpc: "2.0",
-    id: 1,
-    method,
-    params,
-  };
-  try {
-    const response = await fetch(rpcUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error(`Error calling ${method}:`, err);
-    return null;
-  }
 }
 
 interface SearchBarProps {
@@ -61,8 +41,8 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
   async function handleSearch() {
     if (!searchValue) return;
 
+    // 1. Try fetching from IndexedDB first.
     try {
-      // 1. Try fetching from IndexedDB using headerHash.
       const foundBlock = await db.blocks.get({ headerHash: searchValue });
       console.log("Found in db.blocks:", foundBlock);
       if (foundBlock) {
@@ -70,44 +50,68 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
         router.push(`/block/${searchValue}?type=headerHash`);
         return;
       }
-
-      // 2. Derive the RPC URL.
+    } catch (dbError) {
+      // Derive the RPC URL.
       const rpcUrl = getRpcUrlFromWs(wsEndpoint);
 
-      // 3. Try fetching as a block (blockHash case).
-      const blockData = await callRpc(
-        "jam_getBlockByHash",
-        [searchValue],
-        rpcUrl
-      );
-      console.log("Block data:", blockData);
-      if (blockData) {
-        // Save fetched block data into a dedicated store, e.g. db.blockHashFetch.
-        await db.blocksFetchBlockHash.put({
-          blockHash: searchValue,
-          data: blockData,
-        });
-        router.push(`/block/${searchValue}?type=blockHash`);
-        return;
-      }
+      // 2. Try fetching as a block (blockHash case).
+      try {
+        try {
+          const blockData = await fetchBlock(searchValue, rpcUrl);
+          console.log("Block data:", blockData);
+          if (blockData) {
+            // Save fetched block data into a dedicated store.
+            await db.blocksFetchBlockHash.put({
+              blockHash: searchValue,
+              ...blockData,
+              overview: { blockHash: searchValue },
+            });
+          }
+        } catch (blockError) {
+          console.error("Error fetching block data:", blockError);
+        }
 
-      // 4. If no block data, try fetching as a work report.
-      const workReportData = await callRpc(
-        "jam_getWorkReportByHash",
-        [searchValue],
-        rpcUrl
-      );
-      console.log("Work report data:", workReportData);
-      if (workReportData && workReportData.result) {
-        router.push(`/block/${searchValue}?type=workReport`);
-        return;
-      }
+        try {
+          const stateData = await fetchState(searchValue, rpcUrl);
+          console.log("State data:", stateData);
+          if (stateData) {
+            // Save fetched block data into a dedicated store.
+            await db.statesFetchBlockHash.put({
+              blockHash: searchValue,
+              ...stateData,
+              overview: { blockHash: searchValue },
+            });
+          }
 
-      // 5. If neither returns valid data, show error dialog.
-      setOpenDialog(true);
-    } catch (error) {
-      console.error("Error searching:", error);
-      setOpenDialog(true);
+          router.push(`/block/${searchValue}?type=blockHash`);
+        } catch (blockError) {
+          console.error("Error fetching block data:", blockError);
+        }
+      } catch (rpcBlockError) {
+        console.error("Error calling jam_getBlockByHash:", rpcBlockError);
+
+        {
+          /*
+          // 3. If no block data, try fetching as a work report.
+        try {
+          const workReportData = await callRpc(
+            "jam_getWorkReportByHash",
+            [searchValue],
+            rpcUrl
+          );
+          console.log("Work report data:", workReportData);
+          if (workReportData) {
+            router.push(`/block/${searchValue}?type=workReport`);
+            return;
+          }
+        } catch (rpcWorkError) {
+          console.error("Error calling jam_getWorkReportByHash:", rpcWorkError);
+          // 4. If neither returns valid data, show error dialog.
+          setOpenDialog(true);
+        }
+          */
+        }
+      }
     }
   }
 

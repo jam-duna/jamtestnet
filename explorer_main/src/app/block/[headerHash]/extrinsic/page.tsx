@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { Container, Paper, Typography, Link } from "@mui/material";
-import { db, BlockRecord } from "@/db/db";
+import { db, Block } from "@/db/db";
 import { LabeledRow } from "@/components/display/LabeledRow"; // For non-extrinsic rows
 import ExtrinsicAccordion from "@/components/extrinsic/ExtrinsicAccordion";
 
@@ -11,7 +11,7 @@ export default function ExtrinsicDetails() {
   const params = useParams();
   const headerHash = params.headerHash as string;
 
-  const [blockRecord, setBlockRecord] = useState<BlockRecord | null>(null);
+  const [blockRecord, setBlockRecord] = useState<Block | null>(null);
 
   useEffect(() => {
     if (headerHash) {
@@ -41,8 +41,7 @@ export default function ExtrinsicDetails() {
   }
 
   // Use blockRecord.block based on the new DB scheme.
-  const block = blockRecord.block;
-  const extrinsic = block.extrinsic;
+  const extrinsic = blockRecord.extrinsic;
 
   // Mapping for non-extrinsic details
   const detailsMapping = [
@@ -50,8 +49,8 @@ export default function ExtrinsicDetails() {
       label: "Header Hash:",
       tooltip: "The unique hash of the block header.",
       value: (
-        <Link href={`/block/${blockRecord.headerHash}`}>
-          {blockRecord.headerHash}
+        <Link href={`/block/${blockRecord?.overview?.headerHash}`}>
+          {blockRecord?.overview?.headerHash}
         </Link>
       ),
     },

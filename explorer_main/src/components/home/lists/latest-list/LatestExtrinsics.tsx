@@ -3,12 +3,12 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Paper, Typography } from "@mui/material";
-import { BlockRecord } from "@/db/db";
+import { Block } from "@/db/db";
 import ExtrinsicListItem from "@/components/home/lists/list-item/ExtrinsicListItem";
 import { filterExtrinsicBlocks } from "@/utils/extrinsics"; // Example icon
 
 type ExtrinsicListsProps = {
-  latestBlocks: BlockRecord[];
+  latestBlocks: Block[];
 };
 
 export default function ExtrinsicLists({ latestBlocks }: ExtrinsicListsProps) {
@@ -27,7 +27,10 @@ export default function ExtrinsicLists({ latestBlocks }: ExtrinsicListsProps) {
       </Typography>
 
       {filteredBlocks.map((blockItem) => (
-        <ExtrinsicListItem key={blockItem.headerHash} blockItem={blockItem} />
+        <ExtrinsicListItem
+          key={blockItem?.overview?.headerHash}
+          blockItem={blockItem}
+        />
       ))}
 
       <Link

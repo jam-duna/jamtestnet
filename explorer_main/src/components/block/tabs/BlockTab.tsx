@@ -32,10 +32,11 @@ export function BlockTab({
   nextHash,
 }: BlockTabProps) {
   const router = useRouter();
-  const block = blockRecord.block;
-  const header = block.header;
-  const extrinsic = block.extrinsic;
-  console.log(blockRecord);
+  const header = blockRecord.header;
+  const extrinsic = blockRecord.extrinsic;
+  const headerHash = blockRecord?.overview?.headerHash;
+  const blockHash = blockRecord?.overview?.blockHash;
+  const createdAt = blockRecord?.overview?.createdAt;
 
   return (
     <>
@@ -44,43 +45,49 @@ export function BlockTab({
           <LabeledRow
             label={basicInfoMapping.blockHeight.label}
             tooltip={basicInfoMapping.blockHeight.tooltip}
-            value={blockRecord.block.header.slot}
+            value={blockRecord.header.slot}
           />
           {type === "headerHash" && (
             <BlockNavigationButtons
               prevHash={prevHash}
               nextHash={nextHash}
               onPrev={() => {
-                if (prevHash) router.push(`/block/${prevHash}`);
+                if (prevHash) router.push(`/block/${prevHash}?type=headerHash`);
               }}
               onNext={() => {
-                if (nextHash) router.push(`/block/${nextHash}`);
+                if (nextHash) router.push(`/block/${nextHash}?type=headerHash`);
               }}
             />
           )}
         </Box>
 
-        <LabeledRow
-          label={basicInfoMapping.blockHash.label}
-          tooltip={basicInfoMapping.blockHash.tooltip}
-          value={blockRecord.overview.blockHash}
-        />
+        {blockHash && (
+          <LabeledRow
+            label={basicInfoMapping.blockHash.label}
+            tooltip={basicInfoMapping.blockHash.tooltip}
+            value={blockHash}
+          />
+        )}
 
-        <LabeledRow
-          label={basicInfoMapping.headerHash.label}
-          tooltip={basicInfoMapping.headerHash.tooltip}
-          value={blockRecord.headerHash}
-        />
+        {headerHash && (
+          <LabeledRow
+            label={basicInfoMapping.headerHash.label}
+            tooltip={basicInfoMapping.headerHash.tooltip}
+            value={headerHash}
+          />
+        )}
 
-        <LabeledRow
-          label={basicInfoMapping.createdDate.label}
-          tooltip={basicInfoMapping.createdDate.tooltip}
-          value={
-            blockRecord.overview.createdAt
-              ? new Date(blockRecord.overview.createdAt).toLocaleString()
-              : "N/A"
-          }
-        />
+        {createdAt && (
+          <LabeledRow
+            label={basicInfoMapping.createdDate.label}
+            tooltip={basicInfoMapping.createdDate.tooltip}
+            value={
+              blockRecord.overview.createdAt
+                ? new Date(createdAt).toLocaleString()
+                : "N/A"
+            }
+          />
+        )}
 
         <LabeledRow
           label={basicInfoMapping.authorIndex.label}

@@ -3,12 +3,12 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Paper, Typography } from "@mui/material"; // Report icon
-import { BlockRecord } from "@/db/db";
+import { Block } from "@/db/db";
 import { filterWorkReportBlocks } from "@/utils/extrinsics";
 import WorkReportListItem from "@/components/home/lists/list-item/WorkReportListItem";
 
 type LatestReportsProps = {
-  latestBlocks: BlockRecord[];
+  latestBlocks: Block[];
 };
 
 export default function LatestReports({ latestBlocks }: LatestReportsProps) {
@@ -27,7 +27,7 @@ export default function LatestReports({ latestBlocks }: LatestReportsProps) {
       {filteredBlocks.map((blockItem) => {
         return (
           <WorkReportListItem
-            key={blockItem.headerHash}
+            key={blockItem?.overview?.headerHash}
             blockItem={blockItem}
           />
         );

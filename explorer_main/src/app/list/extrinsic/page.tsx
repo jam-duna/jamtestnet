@@ -3,12 +3,12 @@
 import React, { useEffect, useState } from "react";
 import { Container, Typography, Paper, Box } from "@mui/material";
 import ExtrinsicListItem from "@/components/home/lists/list-item/ExtrinsicListItem";
-import { db, BlockRecord } from "@/db/db";
+import { db, Block } from "@/db/db";
 import { filterExtrinsicBlocks } from "@/utils/extrinsics";
 import { pluralize } from "@/utils/helper";
 
 export default function AllExtrinsicListPage() {
-  const [latestBlocks, setLatestBlocks] = useState<BlockRecord[]>([]);
+  const [latestBlocks, setLatestBlocks] = useState<Block[]>([]);
   const [now, setNow] = useState(Date.now());
   const filteredBlocks = filterExtrinsicBlocks(latestBlocks);
 
@@ -16,9 +16,25 @@ export default function AllExtrinsicListPage() {
     db.blocks
       .toArray()
       .then((blocks) => {
-        const sorted = blocks.sort(
-          (a, b) => b.overview.createdAt - a.overview.createdAt
-        );
+        const sorted = blocks.sort((a, b) => {
+          const aCreatedAt = a?.overview?.createdAt;
+          const bCreatedAt = b?.overview?.createdAt;
+
+          // If both items have no createdAt, consider them equal.
+          if (aCreatedAt == null && bCreatedAt == null) {
+            return 0;
+          }
+          // If a is missing createdAt, put it after b.
+          if (aCreatedAt == null) {
+            return 1;
+          }
+          // If b is missing createdAt, put it after a.
+          if (bCreatedAt == null) {
+            return -1;
+          }
+          // Otherwise, sort in descending order (newest first)
+          return bCreatedAt - aCreatedAt;
+        });
         setLatestBlocks(sorted);
         setNow(Date.now());
       })
@@ -40,7 +56,10 @@ export default function AllExtrinsicListPage() {
       </Box>
       <Paper variant="outlined">
         {filteredBlocks.map((blockItem) => (
-          <ExtrinsicListItem key={blockItem.headerHash} blockItem={blockItem} />
+          <ExtrinsicListItem
+            key={blockItem?.overview?.headerHash}
+            blockItem={blockItem}
+          />
         ))}
       </Paper>
     </Container>

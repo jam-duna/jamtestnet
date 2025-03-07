@@ -2,8 +2,9 @@ import Dexie from "dexie";
 
 // Overview data
 export interface Overview {
+  headerHash?: string;
   blockHash: string;
-  createdAt: number;
+  createdAt?: number;
 }
 
 // Block header details
@@ -37,6 +38,7 @@ export interface Extrinsic {
 export interface Block {
   header: BlockHeader;
   extrinsic: Extrinsic;
+  overview?: Overview;
 }
 
 // State details
@@ -59,41 +61,24 @@ export interface State {
   pi: any;
   accounts: any;
   [key: string]: any;
-}
-
-// BlockRecord: the complete record stored in Dexie, uniquely identified by headerHash.
-export interface BlockRecord {
-  headerHash: string; // primary key
-  overview: Overview;
-  block: Block;
-}
-
-// StateRecord.
-export interface StateRecord {
-  headerHash: string; // primary key
-  overview: Overview;
-  state: State;
-}
-
-//
-export interface BlockHashFetch {
-  blockHash: string; // primary key
-  data: Block;
+  overview?: Overview;
 }
 
 // Dexie database class
 export class JamDB extends Dexie {
-  public blocks!: Dexie.Table<BlockRecord, string>;
-  public states!: Dexie.Table<StateRecord, string>;
-  public blocksFetchBlockHash!: Dexie.Table<BlockHashFetch, string>;
+  public blocks!: Dexie.Table<Block, string>;
+  public states!: Dexie.Table<State, string>;
+  public blocksFetchBlockHash!: Dexie.Table<Block, string>;
+  public statesFetchBlockHash!: Dexie.Table<State, string>;
 
   constructor() {
     super("JamDB");
     // Include "block.header.slot" so we can query by slot.
     this.version(1).stores({
-      blocks: "headerHash,block.header.slot",
-      states: "headerHash",
-      blocksFetchBlockHash: "blockHash",
+      blocks: "overview.headerHash,header.slot",
+      states: "overview.headerHash",
+      blocksFetchBlockHash: "overview.blockHash",
+      statesFetchBlockHash: "overview.blockHash",
     });
   }
 }

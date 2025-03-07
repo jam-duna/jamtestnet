@@ -1,11 +1,11 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
 import BlockListItem from "@/components/home/lists/list-item/BlockListItem";
-import { BlockRecord } from "@/db/db";
+import { Block } from "@/db/db";
 import Link from "next/link";
 
 type LatestBlocksProps = {
-  latestBlocks: BlockRecord[];
+  latestBlocks: Block[];
 };
 
 export default function LatestBlocks({ latestBlocks }: LatestBlocksProps) {
@@ -20,7 +20,10 @@ export default function LatestBlocks({ latestBlocks }: LatestBlocksProps) {
       </Typography>
 
       {latestBlocks.map((blockItem) => (
-        <BlockListItem key={blockItem.headerHash} blockItem={blockItem} />
+        <BlockListItem
+          key={blockItem?.overview?.headerHash || blockItem.header.slot}
+          blockItem={blockItem}
+        />
       ))}
 
       <Link

@@ -14,6 +14,7 @@ export default function BlockOverviewPage() {
   const searchParams = useSearchParams();
   const hashType = searchParams.get("type") as string;
 
+  console.log(headerHash, hashType);
   const { blockRecord, stateRecord, prevHash, nextHash } = useBlockOverview(
     headerHash,
     hashType
@@ -45,7 +46,7 @@ export default function BlockOverviewPage() {
           Block
         </Typography>
         <Typography variant="body1" sx={{ ml: 1.5 }}>
-          # {blockRecord.block.header.slot}
+          # {blockRecord.header.slot}
         </Typography>
       </Box>
 

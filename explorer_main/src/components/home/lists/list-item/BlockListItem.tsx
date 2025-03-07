@@ -6,23 +6,24 @@ import React from "react";
 import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 import CropSquareIcon from "@mui/icons-material/CropSquare";
-import { BlockRecord } from "@/db/db";
+import { Block } from "@/db/db";
 import { truncateHash, getRelativeTime } from "@/utils/helper";
 
 export interface BlockListItemProps {
-  blockItem: BlockRecord;
+  blockItem: Block;
 }
 
 export default function BlockListItem({ blockItem }: BlockListItemProps) {
-  const slot = blockItem.block.header.slot;
-  const createdAt = blockItem.overview.createdAt;
+  const slot = blockItem.header.slot;
+  const createdAt = blockItem?.overview?.createdAt;
   const relativeTime = createdAt ? getRelativeTime(createdAt) : "N/A";
-  const shortHash = truncateHash(blockItem.headerHash);
+  const headerHash = blockItem?.overview?.headerHash || "";
+  const shortHash = truncateHash(headerHash);
 
   return (
     <Link
-      key={blockItem.headerHash}
-      href={`/block/${blockItem.headerHash}/?type=headerHash`}
+      key={headerHash}
+      href={`/block/${headerHash}/?type=headerHash`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <Box
