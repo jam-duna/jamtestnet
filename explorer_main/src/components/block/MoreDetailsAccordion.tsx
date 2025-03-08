@@ -38,7 +38,11 @@ export default function MoreDetailsAccordion({
             key={key}
             label={label}
             tooltip={tooltip}
-            value={header[key as keyof HeaderProps]}
+            value={
+              <Typography variant="body1">
+                {header[key as keyof HeaderProps]}
+              </Typography>
+            }
           />
         ))}
       </AccordionDetails>

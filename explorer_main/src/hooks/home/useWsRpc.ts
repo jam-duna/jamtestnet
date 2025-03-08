@@ -42,7 +42,12 @@ export function useWsRpc({
           const fetchedBlock = await fetchBlock(headerHash, rpcUrl);
           const fetchedState = await fetchState(headerHash, rpcUrl);
           const nowTimestamp = Date.now();
-          const overview = { headerHash, blockHash, createdAt: nowTimestamp };
+          const overview = {
+            headerHash,
+            blockHash,
+            createdAt: nowTimestamp,
+            slot: fetchedBlock.header.slot,
+          };
           console.log(fetchedBlock);
 
           if (fetchedBlock.header && fetchedBlock.extrinsic) {

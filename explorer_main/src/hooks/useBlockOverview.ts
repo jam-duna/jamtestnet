@@ -66,7 +66,7 @@ export function useBlockOverview(hash: string, type: string) {
     if (blockRecord && type === "headerHash") {
       const currentSlot = blockRecord.header.slot;
       db.blocks
-        .where("header.slot")
+        .where("overview.slot")
         .equals(currentSlot - 1)
         .first()
         .then((prevBlock) => {
@@ -74,7 +74,7 @@ export function useBlockOverview(hash: string, type: string) {
           setPrevHash(prevBlock?.overview?.headerHash || null);
         });
       db.blocks
-        .where("header.slot")
+        .where("overview.slot")
         .equals(currentSlot + 1)
         .first()
         .then((nextBlock) => {

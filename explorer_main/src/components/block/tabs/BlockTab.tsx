@@ -45,7 +45,9 @@ export function BlockTab({
           <LabeledRow
             label={basicInfoMapping.blockHeight.label}
             tooltip={basicInfoMapping.blockHeight.tooltip}
-            value={blockRecord.header.slot}
+            value={
+              <Typography variant="body1">{blockRecord.header.slot}</Typography>
+            }
           />
           {type === "headerHash" && (
             <BlockNavigationButtons
@@ -65,7 +67,7 @@ export function BlockTab({
           <LabeledRow
             label={basicInfoMapping.blockHash.label}
             tooltip={basicInfoMapping.blockHash.tooltip}
-            value={blockHash}
+            value={<Typography variant="body1">{blockHash}</Typography>}
           />
         )}
 
@@ -73,7 +75,7 @@ export function BlockTab({
           <LabeledRow
             label={basicInfoMapping.headerHash.label}
             tooltip={basicInfoMapping.headerHash.tooltip}
-            value={headerHash}
+            value={<Typography variant="body1">{headerHash}</Typography>}
           />
         )}
 
@@ -82,9 +84,11 @@ export function BlockTab({
             label={basicInfoMapping.createdDate.label}
             tooltip={basicInfoMapping.createdDate.tooltip}
             value={
-              blockRecord.overview.createdAt
-                ? new Date(createdAt).toLocaleString()
-                : "N/A"
+              <Typography variant="body1">
+                {blockRecord.overview.createdAt
+                  ? new Date(createdAt).toLocaleString()
+                  : "N/A"}
+              </Typography>
             }
           />
         )}
@@ -92,25 +96,27 @@ export function BlockTab({
         <LabeledRow
           label={basicInfoMapping.authorIndex.label}
           tooltip={basicInfoMapping.authorIndex.tooltip}
-          value={header.author_index}
+          value={<Typography variant="body1">{header.author_index}</Typography>}
         />
 
         <LabeledRow
           label={basicInfoMapping.workReport.label}
           tooltip={basicInfoMapping.workReport.tooltip}
           value={
-            extrinsic.guarantees?.length ? (
-              <MuiLink
-                href={`/block/${blockRecord.headerHash}/work-report`}
-                sx={{ color: "#1976d2", textDecoration: "underline" }}
-              >
-                {extrinsic.guarantees.length}
-                {pluralize(" report", extrinsic.guarantees.length)} in this
-                block
-              </MuiLink>
-            ) : (
-              "0 report in this block"
-            )
+            <Typography variant="body1">
+              {extrinsic.guarantees?.length ? (
+                <MuiLink
+                  href={`/block/${blockRecord.headerHash}/workReport`}
+                  sx={{ color: "#1976d2", textDecoration: "underline" }}
+                >
+                  {extrinsic.guarantees.length}
+                  {pluralize(" report", extrinsic.guarantees.length)} in this
+                  block
+                </MuiLink>
+              ) : (
+                "0 report in this block"
+              )}
+            </Typography>
           }
         />
 

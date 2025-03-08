@@ -55,7 +55,7 @@ export function LabeledRow({
           alignSelf: "center",
         }}
       >
-        <Typography variant="body1">{value}</Typography>
+        {value}
       </Box>
     </Box>
   );

@@ -150,6 +150,10 @@ export const workReportMapping = {
       label: "Core Index:",
       tooltip: "Index of the core that processed the work report.",
     },
+    {
+      label: "Report Status:",
+      tooltip: "Status of the work report.",
+    },
   ],
   packageSpec: [
     {

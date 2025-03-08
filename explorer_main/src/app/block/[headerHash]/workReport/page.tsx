@@ -12,13 +12,14 @@ import {
   TableHead,
   TableRow,
   Box,
+  Divider,
 } from "@mui/material";
+import Link from "next/link";
+import { useRouter, useParams } from "next/navigation";
 import { db, Block, State } from "@/db/db";
 import { Guarantee } from "@/types";
 import { pluralize, truncateHash } from "@/utils/helper";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
+import { useWorkReportStatuses } from "@/hooks/workReport/useWorkReportStatuses";
 
 export default function WorkReportListPage() {
   const router = useRouter();
@@ -27,17 +28,18 @@ export default function WorkReportListPage() {
 
   const [workReports, setWorkReports] = useState<Guarantee[]>([]);
   const [stateRecord, setStateRecord] = useState<State | null>(null);
-  const [statuses, setStatuses] = useState<Record<string, string>>({});
+  const [blockRecord, setBlockRecord] = useState<Block | null>(null);
 
   // Fetch work reports from the block record.
   useEffect(() => {
     if (headerHash) {
       db.blocks
-        .where("headerHash")
+        .where("overview.headerHash")
         .equals(headerHash)
         .first()
         .then((record: Block | undefined) => {
-          if (record?.header && record?.extrinsic) {
+          if (record && record.header && record.extrinsic) {
+            setBlockRecord(record);
             const reports = record.extrinsic.guarantees || [];
             setWorkReports(reports as Guarantee[]);
             console.log("Work reports:", reports);
@@ -53,7 +55,7 @@ export default function WorkReportListPage() {
   useEffect(() => {
     if (headerHash) {
       db.states
-        .where("headerHash")
+        .where("overview.headerHash")
         .equals(headerHash)
         .first()
         .then((record: State | undefined) => {
@@ -65,40 +67,17 @@ export default function WorkReportListPage() {
     }
   }, [headerHash]);
 
-  // Helper: derive work report status from the xi field.
-  function getWorkReportStatus(pkgSpecHash: string, xi: any): string {
-    if (!xi || !Array.isArray(xi)) return "Unknown";
+  // Prepare list of report package_spec hashes.
+  const reportHashes = workReports.map(
+    (reportData) => reportData.report.package_spec.hash
+  );
 
-    console.log(pkgSpecHash);
-    xi.forEach((item, idx) => {
-      console.log(idx, item[0], item[1]);
-    });
-
-    // Assume each entry in xi has a property workReportHash.
-    const found = xi.find(
-      (entry: [string, string]) =>
-        entry[0] === pkgSpecHash || entry[1] === pkgSpecHash
-    );
-
-    return found ? "Completed" : "Pending";
-  }
-
-  // Optionally, pre-fetch statuses for all work reports.
-  useEffect(() => {
-    if (stateRecord && workReports.length > 0) {
-      workReports.forEach((reportData) => {
-        const pkgSpecHash = reportData.report.package_spec.hash;
-        // Only update if not already set.
-        if (!statuses[pkgSpecHash]) {
-          const status = getWorkReportStatus(pkgSpecHash, stateRecord.state.xi);
-          setStatuses((prev) => ({ ...prev, [pkgSpecHash]: status }));
-        }
-      });
-    }
-  }, [stateRecord, workReports]);
+  // Use custom hook to get statuses based on the current block slot.
+  const currentSlot = blockRecord?.overview?.slot || 0;
+  const statuses = useWorkReportStatuses(reportHashes, currentSlot);
 
   const handleRowClick = (pkgSpecHash: string) => {
-    window.open(`/block/${headerHash}/work-report/${pkgSpecHash}`, "_self");
+    window.open(`/block/${headerHash}/workReport/${pkgSpecHash}`, "_self");
   };
 
   return (
@@ -127,7 +106,7 @@ export default function WorkReportListPage() {
               <TableRow>
                 <TableCell sx={{ fontWeight: "bold" }}>Report Hash</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>Core Index</TableCell>
-                <TableCell sx={{ fontWeight: "bold" }}>Block</TableCell>
+                <TableCell sx={{ fontWeight: "bold" }}>Header Hash</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>Report Slot</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>Service ID</TableCell>
                 <TableCell sx={{ fontWeight: "bold" }}>
@@ -169,27 +148,12 @@ export default function WorkReportListPage() {
                       >
                         {truncateHash(headerHash)}
                       </TableCell>
-                      <TableCell
-                        sx={{ color: "blue" }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          router.push(
-                            `/block/${headerHash}/work-report/${pkgSpecHash}`
-                          );
-                        }}
-                      >
-                        {slot ?? "N/A"}
-                      </TableCell>
+                      <TableCell>{slot ?? "N/A"}</TableCell>
                       <TableCell>{serviceId ?? "N/A"}</TableCell>
                       <TableCell>{accumulateGas ?? "N/A"}</TableCell>
                       <TableCell>{signatures.length}</TableCell>
                       <TableCell>
-                        {stateRecord
-                          ? getWorkReportStatus(
-                              pkgSpecHash,
-                              stateRecord.state.xi
-                            )
-                          : "N/A"}
+                        {statuses[pkgSpecHash] ? statuses[pkgSpecHash] : "N/A"}
                       </TableCell>
                     </TableRow>
                   );

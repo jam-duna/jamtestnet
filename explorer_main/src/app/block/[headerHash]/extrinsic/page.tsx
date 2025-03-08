@@ -16,7 +16,7 @@ export default function ExtrinsicDetails() {
   useEffect(() => {
     if (headerHash) {
       db.blocks
-        .where("headerHash")
+        .where("overview.headerHash")
         .equals(headerHash)
         .first()
         .then((record) => {
@@ -72,7 +72,7 @@ export default function ExtrinsicDetails() {
             key={idx}
             label={item.label}
             tooltip={item.tooltip}
-            value={item.value}
+            value={<Typography variant="body1">{item.value}</Typography>}
           />
         ))}
 

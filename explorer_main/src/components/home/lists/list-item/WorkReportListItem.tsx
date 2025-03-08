@@ -26,7 +26,7 @@ export default function WorkReportListItem({
   return (
     <Link
       key={headerHash}
-      href={`/block/${headerHash}/work-report`}
+      href={`/block/${headerHash}/workReport`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <Box

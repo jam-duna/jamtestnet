@@ -56,15 +56,17 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
 
       // 2. Try fetching as a block (blockHash case).
       try {
+        let slot = 0;
+
         try {
           const blockData = await fetchBlock(searchValue, rpcUrl);
           console.log("Block data:", blockData);
           if (blockData) {
             // Save fetched block data into a dedicated store.
+            slot = blockData.header.slot;
             await db.blocksFetchBlockHash.put({
-              blockHash: searchValue,
               ...blockData,
-              overview: { blockHash: searchValue },
+              overview: { blockHash: searchValue, slot: blockData.header.slot },
             });
           }
         } catch (blockError) {
@@ -77,16 +79,14 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
           if (stateData) {
             // Save fetched block data into a dedicated store.
             await db.statesFetchBlockHash.put({
-              blockHash: searchValue,
               ...stateData,
-              overview: { blockHash: searchValue },
+              overview: { blockHash: searchValue, slot },
             });
           }
-
-          router.push(`/block/${searchValue}?type=blockHash`);
         } catch (blockError) {
           console.error("Error fetching block data:", blockError);
         }
+        router.push(`/block/${searchValue}?type=blockHash`);
       } catch (rpcBlockError) {
         console.error("Error calling jam_getBlockByHash:", rpcBlockError);
 

@@ -78,11 +78,35 @@ export interface Preimage {
   requester: number;
 }
 
-// Disputes interface
+export interface Vote {
+  vote: boolean;
+  index: number;
+  signature: string;
+}
+
+export interface Verdict {
+  target: string;
+  age: number;
+  votes: Vote[];
+}
+
+export interface Culprit {
+  target: string;
+  key: string;
+  signature: string;
+}
+
+export interface Fault {
+  target: string;
+  vote: boolean;
+  key: string;
+  signature: string;
+}
+
 export interface Disputes {
-  verdicts: unknown[];
-  culprits: unknown[];
-  faults: unknown[];
+  verdicts: Verdict[];
+  culprits: Culprit[];
+  faults: Fault[];
 }
 
 // Extrinsic interface combining all arrays
@@ -95,23 +119,48 @@ export interface Extrinsic {
 }
 
 //
+// Epoch mark (used for block proofs)
+export interface EpochMark {
+  entropy: string;
+  ticket_entropy: string;
+  validators: string[];
+}
+
+// Block header details
+export interface Header {
+  author_index: number;
+  entropy_source: string;
+  epoch_mark: EpochMark; // typically null
+  extrinsic_hash: string;
+  offenders_mark: string[]; // array (contents depend on your data)
+  parent: string;
+  parent_state_root: string;
+  seal: string;
+  slot: number;
+  tickets_mark: null; // typically null
+}
+
+//
 export interface AccordionSubSection {
   title: string;
   count: number;
   children: React.ReactNode;
 }
 
+// Overview data
+export interface Overview {
+  headerHash?: string;
+  blockHash: string;
+  createdAt?: number;
+  slot?: number;
+}
+
 //
-export interface JamState {
-  alpha: string[][];
-  varphi: string[][];
-  beta: BetaItem[];
-  gamma: Gamma;
-  psi: Psi;
-  eta: string[];
-  iota: KeyedItem[];
-  kappa: KeyedItem[];
-  lambda: KeyedItem[];
+export interface KeyedItem {
+  bandersnatch: string;
+  ed25519: string;
+  bls: string;
+  metadata: string;
 }
 
 export interface BetaItem {
@@ -121,12 +170,19 @@ export interface BetaItem {
   };
   state_root: string;
   reported: {
-    work_package_hash: string;
-    segment_tree_root: string;
+    exports_root: string;
+    hash: string;
   }[];
 }
 
-export interface Gamma {
+export interface ChiItem {
+  chi_m: number;
+  chi_a: number;
+  chi_v: number;
+  chi_g: {};
+}
+
+export interface GammaItem {
   gamma_k: KeyedItem[];
   gamma_z: string;
   gamma_s: {
@@ -141,16 +197,71 @@ export interface Gamma {
   }[];
 }
 
-export interface Psi {
-  good: any[];
-  bad: any[];
-  wonky: any[];
-  offenders: any[];
+export interface PiEntry {
+  blocks: number;
+  tickets: number;
+  pre_images: number;
+  pre_images_size: number;
+  guarantees: number;
+  assurances: number;
 }
 
-export interface KeyedItem {
-  bandersnatch: string;
-  ed25519: string;
-  bls: string;
-  metadata: string;
+export interface PiItem {
+  current: PiEntry[];
+  last: PiEntry[];
+}
+
+export interface PsiItem {
+  good: string[];
+  bad: string[];
+  wonky: string[];
+  offenders: string[];
+}
+
+export type RhoItem = Array<{
+  report: Report;
+  timeout: number;
+} | null>;
+
+export type ThetaItem = Array<{
+  report: Report;
+  dependencies: string[];
+} | null>;
+
+//
+
+export interface AccountLookupMetaKey {
+  hash: string;
+  length: number;
+}
+
+export interface AccountLookupMeta {
+  key: AccountLookupMetaKey;
+  value: number[]; // assuming these are numbers, adjust if needed
+}
+
+export interface AccountPreimage {
+  hash: string;
+  blob: string;
+}
+
+export interface AccountService {
+  code_hash: string;
+  balance: number;
+  min_item_gas: number;
+  min_memo_gas: number;
+  bytes: number;
+  items: number;
+}
+
+export interface AccountData {
+  service: AccountService;
+  preimages: AccountPreimage[];
+  lookup_meta: AccountLookupMeta[];
+  storage: any | null; // could be null or some object
+}
+
+export interface Account {
+  id: number;
+  data: AccountData;
 }

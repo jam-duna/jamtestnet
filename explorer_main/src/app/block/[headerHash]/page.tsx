@@ -14,15 +14,18 @@ export default function BlockOverviewPage() {
   const searchParams = useSearchParams();
   const hashType = searchParams.get("type") as string;
 
-  console.log(headerHash, hashType);
   const { blockRecord, stateRecord, prevHash, nextHash } = useBlockOverview(
     headerHash,
     hashType
   );
 
-  console.log(hashType);
+  console.log("state");
+  console.log(stateRecord);
 
   const [selectedTab, setSelectedTab] = useState<"block" | "state">("block");
+
+  console.log("selected");
+  console.log(selectedTab);
 
   if (!blockRecord) {
     return (

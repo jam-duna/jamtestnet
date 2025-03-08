@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import {
   Container,
   Paper,
@@ -10,31 +10,69 @@ import {
   Link as MuiLink,
 } from "@mui/material";
 import { LabeledRow } from "@/components/display/LabeledRow"; // adjust the import path as needed
-import { db, Block } from "@/db/db";
+import { db, Block, State } from "@/db/db";
 import { Guarantee } from "@/types";
 import { workReportMapping } from "@/utils/tooltipDetails"; // Import the new mapping bundle
+import { useWorkReportStatuses } from "@/hooks/workReport/useWorkReportStatuses";
 
 export default function WorkReportDetailPage() {
   const params = useParams();
   const headerHash = params.headerHash as string;
   const workReportHash = params.workReportHash as string;
+  const router = useRouter();
 
   const [workReport, setWorkReport] = useState<Guarantee | null>(null);
+  const [blockRecord, setBlockRecord] = useState<Block | null>(null);
+  const [stateRecord, setStateRecord] = useState<State | null>(null);
 
+  // Fetch block record (to extract current slot) based on headerHash.
   useEffect(() => {
-    if (headerHash && workReportHash) {
+    if (headerHash) {
       db.blocks
-        .where("headerHash")
+        .where("overview.headerHash")
         .equals(headerHash)
         .first()
         .then((record: Block | undefined) => {
-          if (record?.header && record?.extrinsic) {
+          if (record) {
+            setBlockRecord(record);
+          }
+        })
+        .catch((error) => {
+          console.error("Error loading block record:", error);
+        });
+    }
+  }, [headerHash]);
+
+  // Fetch state record from DB (if needed elsewhere).
+  useEffect(() => {
+    if (headerHash) {
+      db.states
+        .where("overview.headerHash")
+        .equals(headerHash)
+        .first()
+        .then((record: State | undefined) => {
+          setStateRecord(record || null);
+        })
+        .catch((error) => {
+          console.error("Error loading state record:", error);
+        });
+    }
+  }, [headerHash]);
+
+  // Fetch the work report from the current block's guarantees.
+  useEffect(() => {
+    if (headerHash && workReportHash) {
+      db.blocks
+        .where("overview.headerHash")
+        .equals(headerHash)
+        .first()
+        .then((record: Block | undefined) => {
+          if (record && record.header && record.extrinsic) {
             const reports = record.extrinsic.guarantees || [];
             const found = reports.find(
               (r: Guarantee) => r.report.package_spec.hash === workReportHash
             );
             setWorkReport(found);
-            console.log(record);
           }
         })
         .catch((error) => {
@@ -42,6 +80,14 @@ export default function WorkReportDetailPage() {
         });
     }
   }, [headerHash, workReportHash]);
+
+  // Use the custom hook to get the status for the single work report.
+  const reportHashArray =
+    workReport && workReport.report?.package_spec?.hash
+      ? [workReport.report.package_spec.hash]
+      : [];
+  const currentSlot = blockRecord?.overview?.slot || 0;
+  const statuses = useWorkReportStatuses(reportHashArray, currentSlot);
 
   if (!workReport) {
     return (
@@ -90,13 +136,14 @@ export default function WorkReportDetailPage() {
                 slot ?? "N/A"
               ) : item.label === "Core Index:" ? (
                 core_index ?? "N/A"
+              ) : item.label === "Report Status:" ? (
+                statuses[package_spec.hash] || "N/A"
               ) : (
                 package_spec.hash
-              ) // For "Work Report Hash:" or default fallback
+              )
             }
           />
         ))}
-
         <Divider sx={{ my: 2 }} />
 
         {/* SECTION 2: Package Spec */}
@@ -121,7 +168,6 @@ export default function WorkReportDetailPage() {
             }
           />
         ))}
-
         <Divider sx={{ my: 2 }} />
 
         {/* SECTION 3: Context */}
@@ -156,7 +202,6 @@ export default function WorkReportDetailPage() {
             }
           />
         ))}
-
         <Divider sx={{ my: 2 }} />
 
         {/* SECTION 4: Authorization */}
@@ -177,10 +222,9 @@ export default function WorkReportDetailPage() {
             }
           />
         ))}
-
         <Divider sx={{ my: 2 }} />
 
-        {/* SECTION 6: Signatures */}
+        {/* SECTION 5: Signatures */}
         <Typography variant="h6" sx={{ mb: 2 }}>
           Signatures
         </Typography>

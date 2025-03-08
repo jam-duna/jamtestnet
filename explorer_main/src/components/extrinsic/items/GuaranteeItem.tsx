@@ -54,7 +54,7 @@ export default function GuaranteeItem({
             Work Report:{" "}
             <MuiLink
               component={Link}
-              href={`/block/${headerHash}/work-report/${guarantee.report.package_spec.hash}`}
+              href={`/block/${headerHash}/workReport/${guarantee.report.package_spec.hash}`}
               sx={{ textDecoration: "underline" }}
             >
               {guarantee.report.package_spec.hash}
