@@ -17,6 +17,7 @@ import {
   KeyedItem,
   PiItem,
   PsiItem,
+  RhoItem,
 } from "@/types";
 import { State } from "@/db/db";
 import BetaTable from "../tables/BetaTable";
@@ -25,6 +26,7 @@ import EtaTable from "../tables/EtaTable";
 import GammaTable from "../tables/GammaTable";
 import PiTable from "../tables/PiTable";
 import PsiTable from "../tables/PsiTable";
+import RhoTable from "../tables/RhoTable";
 
 interface StateTabProps {
   stateRecord: any; // Replace with your actual StateRecord type if available.
@@ -77,6 +79,12 @@ export const renderTable = (stateData: State, key: keyof State) => {
     const item = stateData[key] as PsiItem | undefined;
     if (item) {
       return <PsiTable data={item} />;
+    }
+  } else if (key === "rho") {
+    // chi is a single object. Wrap it in an array.
+    const item = stateData[key] as RhoItem | undefined;
+    if (item) {
+      return <RhoTable data={item} />;
     }
   } else if (key === "xi") {
     const items = stateData[key] as string[][] | undefined;

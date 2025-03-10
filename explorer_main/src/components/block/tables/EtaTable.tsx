@@ -27,9 +27,6 @@ export default function EtaTable({ data }: EtaTableProps) {
 
   return (
     <Box sx={{ my: 4 }}>
-      <Typography variant="h5" sx={{ mb: 2 }}>
-        Eta Data
-      </Typography>
       <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
         <Table stickyHeader size="small">
           <TableHead>
