@@ -17,9 +17,7 @@ export default function RhoTable({ data }: RhoTableProps) {
         const { report, timeout } = item;
         return (
           <Box key={idx} sx={{ mb: 4 }}>
-            <Typography variant="h5">Timeout: {timeout}</Typography>
-            <Typography variant="h6">Report</Typography>
-            <ReportTable data={report} />
+            <ReportTable data={report} idx={idx} timeout={timeout} />
           </Box>
         );
       })}

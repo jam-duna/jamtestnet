@@ -18,11 +18,8 @@ import {
 } from "@/types"; // adjust the import path as needed
 import { LabeledRow } from "@/components/display/LabeledRow";
 
-// Component to display Context information.
-interface ContextDisplayProps {
-  context: Context;
-}
-function ContextDisplay({ context }: ContextDisplayProps) {
+// Display Context information.
+function ContextDisplay({ context }: { context: Context }) {
   return (
     <Box>
       <LabeledRow label="Anchor" tooltip="Anchor" value={context.anchor} />
@@ -57,11 +54,8 @@ function ContextDisplay({ context }: ContextDisplayProps) {
   );
 }
 
-// Component to display PackageSpec information.
-interface PackageSpecDisplayProps {
-  packageSpec: PackageSpec;
-}
-function PackageSpecDisplay({ packageSpec }: PackageSpecDisplayProps) {
+// Display PackageSpec information.
+function PackageSpecDisplay({ packageSpec }: { packageSpec: PackageSpec }) {
   return (
     <Box>
       <LabeledRow
@@ -93,11 +87,8 @@ function PackageSpecDisplay({ packageSpec }: PackageSpecDisplayProps) {
   );
 }
 
-// Component to display a single Result.
-interface ResultDisplayProps {
-  result: Result;
-}
-function ResultDisplay({ result }: ResultDisplayProps) {
+// Display a single Result.
+function ResultDisplay({ result }: { result: Result }) {
   return (
     <Box sx={{ border: "1px solid #eee", borderRadius: 1, p: 1, mb: 1 }}>
       <LabeledRow
@@ -129,11 +120,8 @@ function ResultDisplay({ result }: ResultDisplayProps) {
   );
 }
 
-// Component to display a list of Results.
-interface ResultsDisplayProps {
-  results: Result[];
-}
-function ResultsDisplay({ results }: ResultsDisplayProps) {
+// Display a list of Results.
+function ResultsDisplay({ results }: { results: Result[] }) {
   return (
     <Box>
       {results.map((result, idx) => (
@@ -143,11 +131,12 @@ function ResultsDisplay({ results }: ResultsDisplayProps) {
   );
 }
 
-// Component to display a list of SegmentRootLookup.
-interface SegmentRootLookupDisplayProps {
+// Display a list of SegmentRootLookup.
+function SegmentRootLookupDisplay({
+  lookups,
+}: {
   lookups: SegmentRootLookup[];
-}
-function SegmentRootLookupDisplay({ lookups }: SegmentRootLookupDisplayProps) {
+}) {
   return (
     <Box>
       {lookups.map((lookup, idx) => (
@@ -173,12 +162,19 @@ function SegmentRootLookupDisplay({ lookups }: SegmentRootLookupDisplayProps) {
 
 interface ReportTableProps {
   data: Report;
+  idx?: number;
+  timeout?: number;
 }
 
-export default function ReportTable({ data }: ReportTableProps) {
+export default function ReportTable({ data, idx, timeout }: ReportTableProps) {
   return (
-    <Box>
-      <Box sx={{ p: 2, mb: 2 }}>
+    <Accordion>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Typography variant="body1">
+          Report {idx} - Timeout {timeout}
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails>
         {/* Simple fields */}
         <LabeledRow
           label="Auth Output"
@@ -196,8 +192,8 @@ export default function ReportTable({ data }: ReportTableProps) {
           value={data.core_index.toString()}
         />
 
-        {/* Accordions for complex fields */}
-        <Accordion sx={{ my: 1 }}>
+        {/* Sub-accordion for Context */}
+        <Accordion sx={{ mt: 2, mb: 1 }}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Context</Typography>
           </AccordionSummary>
@@ -206,7 +202,8 @@ export default function ReportTable({ data }: ReportTableProps) {
           </AccordionDetails>
         </Accordion>
 
-        <Accordion sx={{ my: 1 }}>
+        {/* Sub-accordion for Package Spec */}
+        <Accordion sx={{ mb: 1 }}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Package Spec</Typography>
           </AccordionSummary>
@@ -215,7 +212,8 @@ export default function ReportTable({ data }: ReportTableProps) {
           </AccordionDetails>
         </Accordion>
 
-        <Accordion sx={{ my: 1 }}>
+        {/* Sub-accordion for Results */}
+        <Accordion sx={{ mb: 1 }}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Results</Typography>
           </AccordionSummary>
@@ -224,7 +222,8 @@ export default function ReportTable({ data }: ReportTableProps) {
           </AccordionDetails>
         </Accordion>
 
-        <Accordion sx={{ my: 1 }}>
+        {/* Sub-accordion for Segment Root Lookup */}
+        <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Segment Root Lookup</Typography>
           </AccordionSummary>
@@ -232,7 +231,7 @@ export default function ReportTable({ data }: ReportTableProps) {
             <SegmentRootLookupDisplay lookups={data.segment_root_lookup} />
           </AccordionDetails>
         </Accordion>
-      </Box>
-    </Box>
+      </AccordionDetails>
+    </Accordion>
   );
 }
