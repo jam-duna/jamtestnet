@@ -29,7 +29,7 @@ export default function TableFormat1({ data }: TableFormat1Props) {
   const keys = Object.keys(data[0]);
 
   return (
-    <Box sx={{ my: 4 }}>
+    <Box sx={{ my: 1 }}>
       <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
         <Table stickyHeader size="small">
           <TableHead>

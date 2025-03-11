@@ -89,7 +89,6 @@ export const renderTable = (stateData: State, key: keyof State) => {
       return <RhoTable data={item} />;
     }
   } else if (key === "theta") {
-    // chi is a single object. Wrap it in an array.
     const item = stateData[key] as ThetaItem | undefined;
     if (item) {
       return <ThetaTable data={item} />;

@@ -32,6 +32,7 @@ export default function BetaTable({ data }: BetaTableProps) {
         <Table stickyHeader size="small">
           <TableHead>
             <TableRow>
+              <TableCell sx={{ fontWeight: "bold" }}>#</TableCell>
               <TableCell sx={{ fontWeight: "bold" }}>Header Hash</TableCell>
               <TableCell sx={{ fontWeight: "bold" }}>MMR Peaks</TableCell>
               <TableCell sx={{ fontWeight: "bold" }}>State Root</TableCell>
@@ -46,6 +47,7 @@ export default function BetaTable({ data }: BetaTableProps) {
                 sx={{ cursor: "pointer" }}
                 onClick={() => setExpandedRow(expandedRow === idx ? null : idx)}
               >
+                <TableCell>{idx}</TableCell>
                 <TableCell>
                   {expandedRow === idx
                     ? item.header_hash

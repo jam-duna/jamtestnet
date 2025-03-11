@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Typography, Tooltip, IconButton } from "@mui/material";
+import { Box, Tooltip, IconButton } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import Typography, { TypographyProps } from "@mui/material/Typography";
 
 interface LabeledRowProps {
   label: string;
@@ -8,6 +9,7 @@ interface LabeledRowProps {
   value: React.ReactNode;
   labelWidth?: number;
   mb?: number;
+  labelVariant?: TypographyProps["variant"];
 }
 
 export function LabeledRow({
@@ -15,9 +17,11 @@ export function LabeledRow({
   tooltip,
   value,
   labelWidth = 200,
+  labelVariant = "body1",
+  mb = 1,
 }: LabeledRowProps) {
   return (
-    <Box sx={{ display: "flex", mb: 1 }}>
+    <Box sx={{ display: "flex", mb: mb }}>
       {/* Fixed-width label + tooltip */}
       <Box
         sx={{
@@ -34,9 +38,8 @@ export function LabeledRow({
           </IconButton>
         </Tooltip>
         <Typography
-          variant="body1"
+          variant={labelVariant}
           sx={{
-            // fontWeight: "bold",
             whiteSpace: "nowrap", // keep the label on one line
           }}
         >

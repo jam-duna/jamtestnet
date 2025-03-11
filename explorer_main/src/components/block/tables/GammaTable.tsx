@@ -12,87 +12,154 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import { LabeledRow } from "@/components/display/LabeledRow";
 import TableFormat1 from "../tables/TableFormat1"; // Adjust the path as needed
 import { truncateHash } from "@/utils/helper";
-import { GammaItem } from "@/types"; // Ensure GammaItem and KeyedItem are defined in "@/types"
+import { GammaItem } from "@/types"; // Ensure GammaItem and related types are defined
 
 interface GammaTableProps {
   data: GammaItem[];
 }
 
+// ToggleHash component: shows a truncated hash by default and toggles on click.
+interface ToggleHashProps {
+  hash: string;
+}
+const ToggleHash: React.FC<ToggleHashProps> = ({ hash }) => {
+  const [expanded, setExpanded] = useState(false);
+  const handleToggle = () => setExpanded(!expanded);
+  return (
+    <Typography
+      variant="body2"
+      onClick={handleToggle}
+      sx={{ cursor: "pointer", display: "inline" }}
+      title="Click to toggle full hash"
+    >
+      {expanded ? hash : truncateHash(hash)}
+    </Typography>
+  );
+};
+
 export default function GammaTable({ data }: GammaTableProps) {
-  const [expandedRow, setExpandedRow] = useState<number | null>(null);
+  // Use an array of booleans to track expansion state for each gamma item.
+  const [expandedStates, setExpandedStates] = useState<boolean[]>(
+    data.map(() => false)
+  );
+
+  const toggleExpanded = (idx: number) => {
+    setExpandedStates((prev) => {
+      const newStates = [...prev];
+      newStates[idx] = !newStates[idx];
+      return newStates;
+    });
+  };
 
   if (!data || data.length === 0) {
     return <Typography>No gamma items available.</Typography>;
   }
 
   return (
-    <Box sx={{ my: 4 }}>
-      <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
-        <Table stickyHeader size="small">
-          <TableHead>
-            <TableRow>
-              <TableCell sx={{ fontWeight: "bold" }}>#</TableCell>
-              <TableCell sx={{ fontWeight: "bold" }}>Gamma Z</TableCell>
-              <TableCell sx={{ fontWeight: "bold" }}>Gamma K</TableCell>
-              <TableCell sx={{ fontWeight: "bold" }}>Gamma S Tickets</TableCell>
-              <TableCell sx={{ fontWeight: "bold" }}>Gamma A</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data.map((item, idx) => {
-              const expanded = expandedRow === idx;
-              return (
-                <TableRow
-                  key={idx}
-                  hover
+    <Box sx={{ my: 2 }}>
+      {data.map((item, idx) => (
+        <Box key={idx} sx={{ mb: 4, p: 2 }}>
+          {/* 1. Separate Gamma Z out of table */}
+          <Box sx={{ mb: 2, pb: 3, borderBottom: "1px solid #aaa" }}>
+            <LabeledRow
+              label={"Gamma Z"}
+              tooltip={"Gamma Z Description"}
+              labelVariant="h6"
+              value={
+                <Typography
+                  variant="body1"
                   sx={{ cursor: "pointer" }}
-                  onClick={() => setExpandedRow(expanded ? null : idx)}
+                  onClick={() => toggleExpanded(idx)}
                 >
-                  <TableCell>{idx}</TableCell>
-                  <TableCell sx={{ minWidth: "50px", whiteSpace: "nowrap" }}>
-                    {expanded ? item.gamma_z : truncateHash(item.gamma_z)}
-                  </TableCell>
-                  {/*
-                  <TableCell>
-                    <Box>
-                      <TableFormat1 data={item.gamma_k} />
-                    </Box>
-                  </TableCell>
-                  */}
-                  <TableCell>
-                    {item.gamma_s && item.gamma_s.tickets.length > 0
-                      ? item.gamma_s.tickets
-                          .map((ticket) =>
-                            expanded
-                              ? `${ticket.id} (attempt: ${ticket.attempt})`
-                              : `${truncateHash(ticket.id)} (attempt: ${
-                                  ticket.attempt
-                                })`
-                          )
-                          .join("\n")
-                      : "N/A"}
-                  </TableCell>
-                  <TableCell>
-                    {item.gamma_a && item.gamma_a.length > 0
-                      ? item.gamma_a
-                          .map((ga) =>
-                            expanded
-                              ? `${ga.id} (attempt: ${ga.attempt})`
-                              : `${truncateHash(ga.id)} (attempt: ${
-                                  ga.attempt
-                                })`
-                          )
-                          .join("\n")
-                      : "N/A"}
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
+                  {expandedStates[idx]
+                    ? item.gamma_z
+                    : truncateHash(item.gamma_z)}
+                </Typography>
+              }
+            />
+          </Box>
+
+          {/* 2. Table only containing Gamma S Tickets and Gamma A */}
+
+          <Box sx={{ my: 2, pt: 3, pb: 7, borderBottom: "1px solid #aaa" }}>
+            <LabeledRow
+              label={"Gamma S Tickets & Gamma A"}
+              tooltip={"Gamma S Tickets & Gamma A Description"}
+              value={<></>}
+              labelVariant="h6"
+            />
+            <TableContainer sx={{ mt: 3 }} component={Paper}>
+              <Table stickyHeader size="small">
+                <TableHead>
+                  <TableRow>
+                    <TableCell sx={{ fontWeight: "bold" }}>#</TableCell>
+                    <TableCell sx={{ fontWeight: "bold" }}>
+                      Gamma S Tickets
+                    </TableCell>
+                    <TableCell sx={{ fontWeight: "bold" }}>Gamma A</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {Array.from({
+                    length:
+                      item.gamma_s && item.gamma_s.tickets
+                        ? item.gamma_s.tickets.length
+                        : 0,
+                  }).map((_, i) => (
+                    <TableRow key={i}>
+                      <TableCell>{i}</TableCell>
+                      <TableCell>
+                        {item.gamma_s &&
+                        item.gamma_s.tickets &&
+                        item.gamma_s.tickets[i]
+                          ? expandedStates[idx]
+                            ? `${item.gamma_s.tickets[i].id} (attempt: ${item.gamma_s.tickets[i].attempt})`
+                            : `${truncateHash(
+                                item.gamma_s.tickets[i].id
+                              )} (attempt: ${item.gamma_s.tickets[i].attempt})`
+                          : "N/A"}
+                      </TableCell>
+                      <TableCell>
+                        {item.gamma_a && item.gamma_a[i]
+                          ? expandedStates[idx]
+                            ? `${item.gamma_a[i].id} (attempt: ${item.gamma_a[i].attempt})`
+                            : `${truncateHash(item.gamma_a[i].id)} (attempt: ${
+                                item.gamma_a[i].attempt
+                              })`
+                          : "N/A"}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Box>
+
+          {/* 3. Display gamma_k using TableFormat1 */}
+          <Box sx={{ mt: 5 }}>
+            <LabeledRow
+              label={"Gamma K Table"}
+              tooltip={"Gamma K Tickets Description"}
+              value={<></>}
+              labelVariant="h6"
+              mb={3}
+            />
+            <Box>
+              {" "}
+              {item.gamma_k && item.gamma_k.length > 0 ? (
+                <TableFormat1 data={item.gamma_k} />
+              ) : (
+                <Typography variant="body2">
+                  No Gamma K data available.
+                </Typography>
+              )}
+            </Box>
+          </Box>
+        </Box>
+      ))}
     </Box>
   );
 }

@@ -33,77 +33,79 @@ export const jamStateMapping: Record<
   { label: string; tooltip: string }
 > = {
   alpha: {
-    label: "Authorizations Pool",
+    label: "Authorizations Pool (C1)",
     tooltip:
-      "A list of authorization hashes for each core (c0 to c15) that determines which operations are allowed.",
+      "Alpha (C1): A list of authorization hashes for each core (c0 to c15) that determines which operations are allowed.",
   },
   beta: {
-    label: "Recent Blocks",
+    label: "Recent Blocks (C3)",
     tooltip:
-      "A record of the most recent blocks processed by the network, used to verify chain continuity.",
+      "Beta (C3): A record of the most recent blocks processed by the network, used to verify chain continuity.",
   },
   chi: {
-    label: "Privileged Service Indices",
+    label: "Privileged Service Indices (C12)",
     tooltip:
-      "Indices identifying services with special permissions in the network.",
+      "Chi (C12): Indices identifying services with special permissions in the network.",
   },
   eta: {
-    label: "ETA Data",
+    label: "Entropy (C6)",
     tooltip:
-      "Estimated time or additional timing details (subject to further clarification).",
+      "Eta (C6): Estimated time or additional timing details (subject to further clarification).",
   },
   gamma: {
-    label: "Safrole State Gamma",
-    tooltip: "Core state data related to the Safrole consensus component.",
+    label: "Safrole State Gamma (C4)",
+    tooltip:
+      "Gamma (C4): Core state data related to the Safrole consensus component.",
   },
   iota: {
-    label: "Iota Data",
+    label: "Iota Data (C7)",
     tooltip:
-      "Additional state information labeled as Iota; details may be refined in future documentation.",
+      "Iota (C7): Additional state information labeled as Iota; details may be refined in future documentation.",
   },
   kappa: {
-    label: "Kappa Data",
+    label: "Kappa Data (C8)",
     tooltip:
-      "Additional state information labeled as Kappa; details are subject to further clarification.",
+      "Kappa (C8): Additional state information labeled as Kappa; details are subject to further clarification.",
   },
   lambda: {
-    label: "Lambda Data",
+    label: "Lambda Data (C9)",
     tooltip:
-      "Additional state information labeled as Lambda; further documentation is forthcoming.",
+      "Lambda (C1): Additional state information labeled as Lambda; further documentation is forthcoming.",
   },
   pi: {
-    label: "Validator Statistics",
-    tooltip: "Performance and operational data for network validators.",
+    label: "Validator Statistics (C13)",
+    tooltip:
+      "Pi (C13): Performance and operational data for network validators.",
   },
   psi: {
-    label: "Disputes State",
+    label: "Disputes State (C5)",
     tooltip:
-      "Information regarding network disputes and potential misbehavior incidents.",
+      "Psi (C5): Information regarding network disputes and potential misbehavior incidents.",
   },
   rho: {
-    label: "Availability Assignments",
+    label: "Availability Assignments (C10)",
     tooltip:
-      "Data describing how tasks or data assignments are distributed across nodes.",
+      "Rho (C10): Data describing how tasks or data assignments are distributed across nodes.",
   },
   tau: {
-    label: "Current Epoch",
+    label: "Current Epoch (C11)",
     tooltip:
-      "The current epoch or time period used for state transitions and reward calculations.",
+      "Tau (C11): The current epoch or time period used for state transitions and reward calculations.",
   },
   theta: {
-    label: "Accumulation Queue",
+    label: "Accumulation Queue (C14)",
     tooltip:
-      "A queue of pending accumulation operations that are waiting to be processed.",
+      "Theta (C14): A queue of pending accumulation operations that are waiting to be processed.",
   },
   varphi: {
-    label: "Varphi Data",
+    label: "Authorization Queue (C2)",
     tooltip:
-      "Additional state details labeled as Varphi; more details will be provided in future updates.",
+      "Varphi (C2): Additional state details labeled as Varphi; more details will be provided in future updates.",
   },
   xi: {
-    label: "Accumulation History",
+    label: "Accumulation History (C15)",
     tooltip:
-      "Historical data of past accumulation operations, useful for auditing and reward distribution.",
+      "Xi (C15): Historical data of past accumulation operations, useful for auditing and reward distribution.",
   },
 };
 
