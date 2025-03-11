@@ -120,7 +120,7 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
       <TextField
         fullWidth
         variant="outlined"
-        placeholder="Enter headerHash, blockHash or workReportHash..."
+        placeholder="Enter headerHash or blockHash..."
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value.replace(/\s+/g, ""))}
         onKeyDown={(e) => {

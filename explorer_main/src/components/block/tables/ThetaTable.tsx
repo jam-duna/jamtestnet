@@ -12,25 +12,7 @@ import { ThetaItem } from "@/types";
 import ReportTable from "./ReportTable";
 import { truncateHash } from "@/utils/helper";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
-// ToggleHash component: shows a truncated hash by default, toggles on click.
-interface ToggleHashProps {
-  hash: string;
-}
-const ToggleHash: React.FC<ToggleHashProps> = ({ hash }) => {
-  const [expanded, setExpanded] = React.useState(false);
-  const handleToggle = () => setExpanded(!expanded);
-  return (
-    <Typography
-      variant="body2"
-      onClick={handleToggle}
-      sx={{ cursor: "pointer", display: "inline" }}
-      title="Click to toggle full hash"
-    >
-      {expanded ? hash : truncateHash(hash)}
-    </Typography>
-  );
-};
+import ToggleHash from "../ToggleHashText";
 
 interface DependenciesProps {
   list: string[];

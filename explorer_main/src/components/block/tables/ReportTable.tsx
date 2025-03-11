@@ -19,60 +19,42 @@ import {
   SegmentRootLookup,
 } from "@/types"; // adjust the import path as needed
 import { LabeledRow } from "@/components/display/LabeledRow";
-import { truncateHash } from "@/utils/helper";
-
-// ToggleHash component: displays a truncated hash by default and toggles to full version on click.
-interface ToggleHashProps {
-  hash: string;
-}
-const ToggleHash: React.FC<ToggleHashProps> = ({ hash }) => {
-  const [expanded, setExpanded] = React.useState(false);
-  const handleToggle = () => setExpanded(!expanded);
-  return (
-    <Typography
-      variant="body2"
-      onClick={handleToggle}
-      sx={{ cursor: "pointer", display: "inline" }}
-      title="Click to toggle full hash"
-    >
-      {expanded ? hash : truncateHash(hash)}
-    </Typography>
-  );
-};
+import { workReportMapping } from "@/utils/tooltipDetails"; // adjust the import path
+import ToggleHash from "../ToggleHashText";
 
 // Display Context information.
 export function ContextDisplay({ context }: { context: Context }) {
   return (
     <Box>
       <LabeledRow
-        label="Anchor"
-        tooltip="Anchor"
+        label={workReportMapping.context[0].label}
+        tooltip={workReportMapping.context[0].tooltip}
         value={<ToggleHash hash={context.anchor} />}
       />
       <LabeledRow
-        label="State Root"
-        tooltip="State Root"
+        label={workReportMapping.context[1].label}
+        tooltip={workReportMapping.context[1].tooltip}
         value={<ToggleHash hash={context.state_root} />}
       />
       <LabeledRow
-        label="Beefy Root"
-        tooltip="Beefy Root"
+        label={workReportMapping.context[2].label}
+        tooltip={workReportMapping.context[2].tooltip}
         value={<ToggleHash hash={context.beefy_root} />}
       />
       <LabeledRow
-        label="Lookup Anchor"
-        tooltip="Lookup Anchor"
+        label={workReportMapping.context[3].label}
+        tooltip={workReportMapping.context[3].tooltip}
         value={<ToggleHash hash={context.lookup_anchor} />}
       />
       <LabeledRow
-        label="Lookup Anchor Slot"
-        tooltip="Lookup Anchor Slot"
+        label={workReportMapping.context[4].label}
+        tooltip={workReportMapping.context[4].tooltip}
         value={context.lookup_anchor_slot.toString()}
       />
       {context.prerequisites && context.prerequisites.length > 0 && (
         <LabeledRow
-          label="Prerequisites"
-          tooltip="Prerequisites"
+          label={workReportMapping.context[5].label}
+          tooltip={workReportMapping.context[5].tooltip}
           value={context.prerequisites.join(", ")}
         />
       )}
@@ -90,23 +72,23 @@ function PackageSpecDisplay({ packageSpec }: { packageSpec: PackageSpec }) {
         value={<ToggleHash hash={packageSpec.hash} />}
       />
       <LabeledRow
-        label="Length"
-        tooltip="Package length"
+        label={workReportMapping.packageSpec[0].label}
+        tooltip={workReportMapping.packageSpec[0].tooltip}
         value={packageSpec.length.toString()}
       />
       <LabeledRow
-        label="Erasure Root"
-        tooltip="Erasure root"
+        label={workReportMapping.packageSpec[1].label}
+        tooltip={workReportMapping.packageSpec[1].tooltip}
         value={<ToggleHash hash={packageSpec.erasure_root} />}
       />
       <LabeledRow
-        label="Exports Root"
-        tooltip="Exports root"
+        label={workReportMapping.packageSpec[2].label}
+        tooltip={workReportMapping.packageSpec[2].tooltip}
         value={<ToggleHash hash={packageSpec.exports_root} />}
       />
       <LabeledRow
-        label="Exports Count"
-        tooltip="Exports count"
+        label={workReportMapping.packageSpec[3].label}
+        tooltip={workReportMapping.packageSpec[3].tooltip}
         value={packageSpec.exports_count.toString()}
       />
     </Box>
@@ -234,20 +216,20 @@ export default function ReportTable({ data, idx, timeout }: ReportTableProps) {
         )}
       </AccordionSummary>
       <AccordionDetails>
-        {/* Simple fields */}
+        {/* Simple fields using workReportMapping for authorization and basicInfo */}
         <LabeledRow
-          label="Auth Output"
-          tooltip="Authentication output"
+          label={workReportMapping.authorization[1].label}
+          tooltip={workReportMapping.authorization[1].tooltip}
           value={data.auth_output}
         />
         <LabeledRow
-          label="Authorizer Hash"
-          tooltip="Authorizer hash"
+          label={workReportMapping.authorization[0].label}
+          tooltip={workReportMapping.authorization[0].tooltip}
           value={<ToggleHash hash={data.authorizer_hash} />}
         />
         <LabeledRow
-          label="Core Index"
-          tooltip="Core index value"
+          label={workReportMapping.basicInfo[3].label}
+          tooltip={workReportMapping.basicInfo[3].tooltip}
           value={data.core_index.toString()}
         />
 

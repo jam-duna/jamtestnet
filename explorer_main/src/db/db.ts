@@ -11,7 +11,7 @@ import {
   PsiItem,
   RhoItem,
   ThetaItem,
-  Account,
+  AccountItem,
 } from "@/types";
 
 // Full Block details combining header and extrinsic
@@ -38,7 +38,7 @@ export interface State {
   theta: ThetaItem;
   varphi: string[][];
   xi: string[][];
-  accounts: Account | null;
+  accounts: AccountItem | null;
   overview?: Overview;
 }
 

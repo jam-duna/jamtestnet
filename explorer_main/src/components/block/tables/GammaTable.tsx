@@ -21,25 +21,6 @@ interface GammaTableProps {
   data: GammaItem[];
 }
 
-// ToggleHash component: shows a truncated hash by default and toggles on click.
-interface ToggleHashProps {
-  hash: string;
-}
-const ToggleHash: React.FC<ToggleHashProps> = ({ hash }) => {
-  const [expanded, setExpanded] = useState(false);
-  const handleToggle = () => setExpanded(!expanded);
-  return (
-    <Typography
-      variant="body2"
-      onClick={handleToggle}
-      sx={{ cursor: "pointer", display: "inline" }}
-      title="Click to toggle full hash"
-    >
-      {expanded ? hash : truncateHash(hash)}
-    </Typography>
-  );
-};
-
 export default function GammaTable({ data }: GammaTableProps) {
   // Use an array of booleans to track expansion state for each gamma item.
   const [expandedStates, setExpandedStates] = useState<boolean[]>(

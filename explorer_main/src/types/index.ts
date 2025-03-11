@@ -261,7 +261,7 @@ export interface AccountData {
   storage: any | null; // could be null or some object
 }
 
-export interface Account {
+export interface AccountItem {
   id: number;
   data: AccountData;
 }

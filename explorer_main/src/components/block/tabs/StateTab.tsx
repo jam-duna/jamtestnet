@@ -11,6 +11,7 @@ import TableFormat1 from "../tables/TableFormat1";
 import TableFormat2 from "../tables/TableFormat2";
 import XiTable from "../tables/XiTable";
 import {
+  AccountItem,
   BetaItem,
   ChiItem,
   GammaItem,
@@ -29,6 +30,7 @@ import PiTable from "../tables/PiTable";
 import PsiTable from "../tables/PsiTable";
 import RhoTable from "../tables/RhoTable";
 import ThetaTable from "../tables/ThetaTable";
+import AccountTable from "../tables/AccountsTable";
 
 interface StateTabProps {
   stateRecord: any; // Replace with your actual StateRecord type if available.
@@ -98,12 +100,21 @@ export const renderTable = (stateData: State, key: keyof State) => {
     if (items && items.length > 0) {
       return <XiTable data={items} />;
     }
+  } else if (key === "accounts") {
+    const items = stateData[key] as AccountItem | undefined;
+    if (items) {
+      return <AccountTable accounts={[items]} />;
+    }
   }
+
+  console.log(key);
+
   return null;
 };
 
 export function StateTab({ stateRecord }: StateTabProps) {
   const jamState = stateRecord;
+  console.log(jamState);
   const [viewMode, setViewMode] = useState<"json" | "table">("json");
 
   const toggleView = () => {
