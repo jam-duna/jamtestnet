@@ -8,9 +8,11 @@ import {
   Box,
   Typography,
   Tooltip,
+  Link as MuiLink,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { useRouter } from "next/navigation";
 import {
   Report,
   Context,
@@ -62,33 +64,55 @@ export function ContextDisplay({ context }: { context: Context }) {
   );
 }
 
-// Display PackageSpec information.
-function PackageSpecDisplay({ packageSpec }: { packageSpec: PackageSpec }) {
+// Display PackageSpec information. We now accept headerHash as a prop.
+interface PackageSpecDisplayProps {
+  packageSpec: PackageSpec;
+  headerHash: string;
+}
+
+function PackageSpecDisplay({
+  packageSpec,
+  headerHash,
+}: PackageSpecDisplayProps) {
+  const router = useRouter();
+
+  const handleWorkReportRedirect = () => {
+    // packageSpec.hash is our workPackageHash.
+    router.push(`/block/${headerHash}/workReport/${packageSpec.hash}`);
+  };
+
   return (
     <Box>
       <LabeledRow
         label="Hash"
         tooltip="Package hash"
-        value={<ToggleHash hash={packageSpec.hash} />}
-      />
-      <LabeledRow
-        label={workReportMapping.packageSpec[0].label}
-        tooltip={workReportMapping.packageSpec[0].tooltip}
-        value={packageSpec.length.toString()}
+        value={
+          <MuiLink
+            onClick={handleWorkReportRedirect}
+            sx={{ cursor: "pointer", textDecoration: "underline" }}
+          >
+            <ToggleHash hash={packageSpec.hash} />
+          </MuiLink>
+        }
       />
       <LabeledRow
         label={workReportMapping.packageSpec[1].label}
         tooltip={workReportMapping.packageSpec[1].tooltip}
-        value={<ToggleHash hash={packageSpec.erasure_root} />}
+        value={packageSpec.length.toString()}
       />
       <LabeledRow
         label={workReportMapping.packageSpec[2].label}
         tooltip={workReportMapping.packageSpec[2].tooltip}
-        value={<ToggleHash hash={packageSpec.exports_root} />}
+        value={<ToggleHash hash={packageSpec.erasure_root} />}
       />
       <LabeledRow
         label={workReportMapping.packageSpec[3].label}
         tooltip={workReportMapping.packageSpec[3].tooltip}
+        value={<ToggleHash hash={packageSpec.exports_root} />}
+      />
+      <LabeledRow
+        label={workReportMapping.packageSpec[4].label}
+        tooltip={workReportMapping.packageSpec[4].tooltip}
         value={packageSpec.exports_count.toString()}
       />
     </Box>
@@ -97,6 +121,12 @@ function PackageSpecDisplay({ packageSpec }: { packageSpec: PackageSpec }) {
 
 // Display a single Result.
 function ResultDisplay({ result, index }: { result: Result; index: number }) {
+  const router = useRouter();
+
+  const handleServiceRedirect = () => {
+    router.push(`/service/${result.service_id}`);
+  };
+
   return (
     <Box sx={{ borderBottom: "3px solid #eee", borderRadius: 1, p: 1, mb: 1 }}>
       <Typography variant="body1" sx={{ mb: 2 }}>
@@ -105,7 +135,14 @@ function ResultDisplay({ result, index }: { result: Result; index: number }) {
       <LabeledRow
         label="Service ID"
         tooltip="Service ID"
-        value={result.service_id.toString()}
+        value={
+          <MuiLink
+            onClick={handleServiceRedirect}
+            sx={{ cursor: "pointer", textDecoration: "underline" }}
+          >
+            {result.service_id.toString()}
+          </MuiLink>
+        }
       />
       <LabeledRow
         label="Code Hash"
@@ -175,9 +212,15 @@ interface ReportTableProps {
   data: Report;
   idx?: number;
   timeout?: number;
+  headerHash: string; // Pass headerHash so we can use it for redirection.
 }
 
-export default function ReportTable({ data, idx, timeout }: ReportTableProps) {
+export default function ReportTable({
+  data,
+  idx,
+  timeout,
+  headerHash,
+}: ReportTableProps) {
   // Reusable custom AccordionSummary style
   const customAccordionSummary = (title: string, tooltipText: string) => (
     <AccordionSummary
@@ -265,7 +308,10 @@ export default function ReportTable({ data, idx, timeout }: ReportTableProps) {
             "Package specification details"
           )}
           <AccordionDetails sx={{ px: 0 }}>
-            <PackageSpecDisplay packageSpec={data.package_spec} />
+            <PackageSpecDisplay
+              packageSpec={data.package_spec}
+              headerHash={headerHash}
+            />
           </AccordionDetails>
         </Accordion>
 

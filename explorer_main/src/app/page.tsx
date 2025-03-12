@@ -7,32 +7,25 @@ import SearchBar from "@/components/home/SearchBar";
 import LatestBlocks from "@/components/home/lists/latest-list/LatestBlocks";
 import LatestReports from "@/components/home/lists/latest-list/LatestReports";
 import LatestExtrinsics from "@/components/home/lists/latest-list/LatestExtrinsics";
+import LatestServices from "@/components/home/lists/latest-list/LatestServices";
 import { db, Block } from "@/db/db";
 import { useWsRpc } from "@/hooks/home/useWsRpc";
 
 const defaultWsUrl = "ws://localhost:9999/ws";
 
 export default function HomePage() {
-  // Local state (if needed for RPC results)
   const [block, setBlock] = useState<unknown>(null);
-
-  // WebSocket endpoint management.
   const [wsEndpoint, setWsEndpoint] = useState<string>(defaultWsUrl);
   const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
-
-  // Latest blocks loaded from IndexedDB.
   const [latestBlocks, setLatestBlocks] = useState<Block[]>([]);
-
-  // Current time for relative time calculation.
   const [now, setNow] = useState(Date.now());
 
-  // Use our custom hook to handle all WebSocket/RPC interactions.
+  // WebSocket/RPC hook.
   useWsRpc({
     wsEndpoint,
     defaultWsUrl,
     onNewBlock: (blockRecord, stateRecord) => {
       setBlock(blockRecord);
-      // setState(stateRecord);
     },
     onUpdateNow: (timestamp) => {
       setNow(timestamp);
@@ -40,8 +33,7 @@ export default function HomePage() {
     setSavedEndpoints,
   });
 
-  // Load latest blocks from IndexedDB whenever a new block is saved.
-
+  // Load latest blocks from IndexedDB whenever a new block arrives.
   useEffect(() => {
     db.blocks
       .toArray()
@@ -49,29 +41,38 @@ export default function HomePage() {
         const sorted = blocks.sort((a, b) => {
           const aCreatedAt = a?.overview?.createdAt;
           const bCreatedAt = b?.overview?.createdAt;
-
-          // If both items have no createdAt, consider them equal.
-          if (aCreatedAt == null && bCreatedAt == null) {
-            return 0;
-          }
-          // If a is missing createdAt, put it after b.
-          if (aCreatedAt == null) {
-            return 1;
-          }
-          // If b is missing createdAt, put it after a.
-          if (bCreatedAt == null) {
-            return -1;
-          }
-          // Otherwise, sort in descending order (newest first)
+          if (aCreatedAt == null && bCreatedAt == null) return 0;
+          if (aCreatedAt == null) return 1;
+          if (bCreatedAt == null) return -1;
           return bCreatedAt - aCreatedAt;
         });
-
         setLatestBlocks(sorted);
       })
       .catch((error) => {
         console.error("Error loading blocks from DB:", error);
       });
   }, [block]);
+
+  // Create mock data for latest services.
+  const mockLatestServices = [
+    {
+      code_hash:
+        "0xbd87fb6de829abf2bb25a15b82618432c94e82848d9dd204f5d775d4b880ae0d",
+      balance: 10000000000,
+      min_item_gas: 100,
+      min_memo_gas: 100,
+      bytes: 1157,
+      items: 4,
+    },
+    {
+      code_hash: "0xabcdef",
+      balance: 5000000000,
+      min_item_gas: 150,
+      min_memo_gas: 150,
+      bytes: 500,
+      items: 3,
+    },
+  ];
 
   return (
     <Container sx={{ py: 5 }}>
@@ -81,14 +82,17 @@ export default function HomePage() {
         savedEndpoints={savedEndpoints}
         setSavedEndpoints={setSavedEndpoints}
       />
-
       <Container maxWidth="lg">
         <SearchBar wsEndpoint={wsEndpoint} />
-
         <Grid container spacing={4}>
-          {/* Left column: Latest Blocks (max 10) */}
+          {/* Left column: Latest Blocks and Latest Services */}
           <Grid item xs={12} md={6}>
-            <LatestBlocks latestBlocks={latestBlocks.slice(0, 12)} />
+            <Grid item xs={12}>
+              <LatestBlocks latestBlocks={latestBlocks.slice(0, 12)} />
+            </Grid>
+            <Grid item xs={12}>
+              <LatestServices latestServices={mockLatestServices} />
+            </Grid>
           </Grid>
 
           {/* Right column: Latest Extrinsics and Latest Reports */}

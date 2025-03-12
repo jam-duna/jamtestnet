@@ -45,7 +45,7 @@ export default function PsiTable({ data }: PsiTableProps) {
   });
 
   if (rows.length === 0) {
-    return <Typography>No psi data available.</Typography>;
+    return <Typography>No Psi data available.</Typography>;
   }
 
   return (

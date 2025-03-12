@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useParams, useRouter } from "next/navigation";
 import {
   Container,
@@ -82,10 +82,11 @@ export default function WorkReportDetailPage() {
   }, [headerHash, workReportHash]);
 
   // Use the custom hook to get the status for the single work report.
-  const reportHashArray =
-    workReport && workReport.report?.package_spec?.hash
-      ? [workReport.report.package_spec.hash]
-      : [];
+  // const reportHash = workReport?.report?.package_spec?.hash;
+  const reportHashArray = useMemo(
+    () => (workReportHash ? [workReportHash] : []),
+    [workReportHash]
+  );
   const currentSlot = blockRecord?.overview?.slot || 0;
   const statuses = useWorkReportStatuses(reportHashArray, currentSlot);
 

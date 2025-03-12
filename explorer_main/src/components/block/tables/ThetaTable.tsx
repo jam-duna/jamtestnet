@@ -8,11 +8,10 @@ import {
   Box,
   Typography,
 } from "@mui/material";
-import { ThetaItem } from "@/types";
-import ReportTable from "./ReportTable";
-import { truncateHash } from "@/utils/helper";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ToggleHash from "../ToggleHashText";
+import ReportTable from "./ReportTable";
+import { ThetaItem } from "@/types";
 
 interface DependenciesProps {
   list: string[];
@@ -39,13 +38,14 @@ const Dependencies: React.FC<DependenciesProps> = ({ list }) => {
 
 interface ThetaTableProps {
   data: ThetaItem;
+  headerHash: string;
 }
 
-export default function ThetaTable({ data }: ThetaTableProps) {
+export default function ThetaTable({ data, headerHash }: ThetaTableProps) {
   return (
     <Box sx={{ my: 4 }}>
       {data.map((group, idx) => {
-        // Since your theta data is an array of arrays, check if group is an array and non-empty.
+        // Check if group is a non-empty array.
         if (!Array.isArray(group) || group.length === 0) return null;
         return (
           <Box key={idx} sx={{ mb: 4 }}>
@@ -57,7 +57,7 @@ export default function ThetaTable({ data }: ThetaTableProps) {
                   {dependencies && dependencies.length > 0 && (
                     <Dependencies list={dependencies} />
                   )}
-                  <ReportTable data={report} idx={i} />
+                  <ReportTable data={report} idx={i} headerHash={headerHash} />
                 </Box>
               );
             })}
