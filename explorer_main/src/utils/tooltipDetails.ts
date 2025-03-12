@@ -32,6 +32,10 @@ export const jamStateMapping: Record<
   string,
   { label: string; tooltip: string }
 > = {
+  accounts: {
+    label: "Accounts",
+    tooltip: "Accounts: Description is here.",
+  },
   alpha: {
     label: "Authorizations Pool (C1)",
     tooltip:
@@ -136,11 +140,6 @@ export const moreDetailsMapping: Record<
 export const workReportMapping = {
   basicInfo: [
     {
-      label: "Work Report Hash:",
-      tooltip:
-        "Unique identifier of the work report derived from the package specification.",
-    },
-    {
       label: "Header Hash:",
       tooltip: "Block header hash. Click to view block details.",
     },
@@ -158,6 +157,11 @@ export const workReportMapping = {
     },
   ],
   packageSpec: [
+    {
+      label: "Work Package Hash:",
+      tooltip:
+        "Unique identifier of the work report derived from the package specification.",
+    },
     {
       label: "Length:",
       tooltip: "Length of the package spec in bytes.",

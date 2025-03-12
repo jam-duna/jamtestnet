@@ -18,7 +18,7 @@ import { useWorkReportStatuses } from "@/hooks/workReport/useWorkReportStatuses"
 export default function WorkReportDetailPage() {
   const params = useParams();
   const headerHash = params.headerHash as string;
-  const workReportHash = params.workReportHash as string;
+  const workReportHash = params.workPackageHash as string;
   const router = useRouter();
 
   const [workReport, setWorkReport] = useState<Guarantee | null>(null);
@@ -72,7 +72,7 @@ export default function WorkReportDetailPage() {
             const found = reports.find(
               (r: Guarantee) => r.report.package_spec.hash === workReportHash
             );
-            setWorkReport(found);
+            setWorkReport(found ?? null);
           }
         })
         .catch((error) => {
@@ -164,7 +164,7 @@ export default function WorkReportDetailPage() {
                 ? package_spec.exports_root
                 : item.label === "Exports Count:"
                 ? package_spec.exports_count
-                : "N/A"
+                : package_spec.hash
             }
           />
         ))}

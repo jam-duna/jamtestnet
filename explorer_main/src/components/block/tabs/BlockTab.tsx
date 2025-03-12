@@ -106,7 +106,7 @@ export function BlockTab({
             <Typography variant="body1">
               {extrinsic.guarantees?.length ? (
                 <MuiLink
-                  href={`/block/${blockRecord.headerHash}/workReport`}
+                  href={`/block/${headerHash}/workReport`}
                   sx={{ color: "#1976d2", textDecoration: "underline" }}
                 >
                   {extrinsic.guarantees.length}
