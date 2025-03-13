@@ -9,20 +9,15 @@ import {
   Divider,
   Link as MuiLink,
 } from "@mui/material";
-import { LabeledRow } from "@/components/display/LabeledRow"; // adjust the import path as needed
-import { db, Block, State } from "@/db/db";
-import { Guarantee } from "@/types";
-import { workReportMapping } from "@/utils/tooltipDetails"; // Import the new mapping bundle
-import { useWorkReportStatuses } from "@/hooks/workReport/useWorkReportStatuses";
-
-export default function WorkReportDetailPage() {
+export default function ServiceDetail() {
   const params = useParams();
   const serviceId = params.serviceId as string;
+  console.log(serviceId);
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Typography>Service</Typography>
-      <></>
+      <Typography>Detail</Typography>
     </Container>
   );
 }

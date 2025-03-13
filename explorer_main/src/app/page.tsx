@@ -53,7 +53,20 @@ export default function HomePage() {
       });
   }, [block]);
 
-  // Create mock data for latest services.
+  useEffect(() => {
+    db.states
+      .toArray()
+      .then((states) => {
+        console.log("All states from DB:", states);
+      })
+      .catch((error) => {
+        console.error("Error loading states from DB:", error);
+      });
+  }, []);
+
+  {
+    /*
+    // Create mock data for latest services.
   const mockLatestServices = [
     {
       code_hash:
@@ -73,6 +86,8 @@ export default function HomePage() {
       items: 3,
     },
   ];
+    */
+  }
 
   return (
     <Container sx={{ py: 5 }}>
@@ -90,9 +105,9 @@ export default function HomePage() {
             <Grid item xs={12}>
               <LatestBlocks latestBlocks={latestBlocks.slice(0, 12)} />
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <LatestServices latestServices={mockLatestServices} />
-            </Grid>
+            </Grid> */}
           </Grid>
 
           {/* Right column: Latest Extrinsics and Latest Reports */}

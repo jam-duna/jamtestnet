@@ -18,7 +18,6 @@ export type Service = {
 type LatestServicesProps = {
   latestServices: Service[];
 };
-
 export default function LatestServices({
   latestServices,
 }: LatestServicesProps) {
