@@ -3,8 +3,6 @@ import { db, Block, State } from "@/db/db";
 import { fetchBlock } from "./useFetchBlock";
 import { fetchState } from "./useFetchState";
 import { getRpcUrlFromWs } from "@/utils/ws";
-import { mockBlocks } from "@/components/mock/block";
-import { mockStates } from "@/components/mock/state";
 
 interface UseWsRpcProps {
   wsEndpoint: string;
@@ -21,36 +19,6 @@ export function useWsRpc({
   onUpdateNow,
   setSavedEndpoints,
 }: UseWsRpcProps) {
-  // Initialize the database if no data exists
-  useEffect(() => {
-    async function initializeDb() {
-      try {
-        const blocks = await db.blocks.toArray();
-        const states = await db.states.toArray();
-        if (blocks.length === 0 || states.length === 0) {
-          console.log(
-            "No blocks or states found in DB. Inserting mock data..."
-          );
-          await db.blocks.bulkAdd(mockBlocks as unknown as Block[]);
-          await db.states.bulkAdd(mockStates as unknown as State[]);
-
-          const insertedBlocks = await db.blocks.toArray();
-          const insertedStates = await db.states.toArray();
-          console.log("Inserted blocks:", insertedBlocks);
-          console.log("Inserted states:", insertedStates);
-        } else {
-          console.log("Existing DB data found.");
-          console.log("Blocks:", blocks);
-          console.log("States:", states);
-        }
-      } catch (error) {
-        console.error("Error during DB initialization:", error);
-      }
-    }
-    initializeDb();
-  }, []); // Run only once on mount
-
-  // Set up WebSocket for incoming block announcements
   useEffect(() => {
     const ws = new WebSocket(wsEndpoint);
 
@@ -80,9 +48,12 @@ export function useWsRpc({
             createdAt: nowTimestamp,
             slot: fetchedBlock.header.slot,
           };
+          console.log(fetchedBlock);
 
           if (fetchedBlock.header && fetchedBlock.extrinsic) {
             const blockRecord: Block = { overview, ...fetchedBlock };
+            console.log(blockRecord);
+            console.log("================================================");
             await db.blocks.put(blockRecord);
 
             if (fetchedState) {
