@@ -1,12 +1,13 @@
+extern crate alloc;
+// use alloc::string::String;
+use alloc::format;
+
+use simplealloc::SimpleAlloc;
+#[global_allocator]
+static ALLOCATOR: SimpleAlloc<4096> = SimpleAlloc::new();
+
 use crate::constants::*;
 use crate::host_functions::*;
-
-#[panic_handler]
-fn panic(_info: &core::panic::PanicInfo) -> ! {
-    unsafe {
-        core::arch::asm!("unimp", options(noreturn));
-    }
-}
 
 // Helpful functions and structs for refine
 #[repr(C)]
@@ -33,16 +34,14 @@ pub fn parse_refine_args(mut start_address: u64, mut remaining_length: u64) -> O
     if remaining_length < 4 {
         return None;
     }
-    let wi_service_index = unsafe { ( *(start_address as *const u32)).into() }; 
+    let wi_service_index = unsafe { (*(start_address as *const u32)).into() };
     start_address += 4;
     remaining_length = remaining_length.saturating_sub(4);
 
     if remaining_length == 0 {
         return None;
     }
-    let payload_slice = unsafe {
-        core::slice::from_raw_parts(start_address as *const u8, remaining_length as usize)
-    };
+    let payload_slice = unsafe { core::slice::from_raw_parts(start_address as *const u8, remaining_length as usize) };
     let discriminator_len = extract_discriminator(payload_slice);
     let payload_len = if discriminator_len > 0 {
         decode_e(&payload_slice[..discriminator_len as usize])
@@ -65,9 +64,7 @@ pub fn parse_refine_args(mut start_address: u64, mut remaining_length: u64) -> O
         return None;
     }
     let mut wphash = [0u8; 32];
-    let hash_slice = unsafe {
-        core::slice::from_raw_parts(start_address as *const u8, 32)
-    };
+    let hash_slice = unsafe { core::slice::from_raw_parts(start_address as *const u8, 32) };
     wphash.copy_from_slice(hash_slice);
 
     Some(RefineArgs {
@@ -80,7 +77,7 @@ pub fn parse_refine_args(mut start_address: u64, mut remaining_length: u64) -> O
 
 pub fn setup_page(segment: &[u8]) {
     if segment.len() < 8 {
-        return call_info("setup_page: buffer too small");
+        return call_log(0, None, "setup_page: buffer too small");
     }
 
     let (m, page_id) = (
@@ -92,17 +89,17 @@ pub fn setup_page(segment: &[u8]) {
     let data = &segment[8..];
 
     if unsafe { zero(m, page_id, 1) } != OK {
-        return call_info("setup_page: zero failed");
+        return call_log(0, None, "setup_page: zero failed");
     }
 
     if unsafe { poke(m, data.as_ptr() as u64, page_address, PAGE_SIZE) } != OK {
-        call_info("setup_page: poke failed");
+        call_log(0, None, "setup_page: poke failed");
     }
 }
 
 pub fn get_page(vm_id: u32, page_id: u32) -> [u8; SEGMENT_SIZE as usize] {
     let mut result = [0u8; SEGMENT_SIZE as usize];
-    
+
     result[0..4].copy_from_slice(&vm_id.to_le_bytes());
     result[4..8].copy_from_slice(&page_id.to_le_bytes());
 
@@ -110,9 +107,9 @@ pub fn get_page(vm_id: u32, page_id: u32) -> [u8; SEGMENT_SIZE as usize] {
     let result_address = unsafe { result.as_mut_ptr().add(8) };
     let result_length = (SEGMENT_SIZE - 8) as u64;
 
-    let peek_result = unsafe{ peek(vm_id as u64, result_address as u64, page_address as u64, result_length) };
+    let peek_result = unsafe { peek(vm_id as u64, result_address as u64, page_address as u64, result_length) };
     if peek_result != OK {
-        call_info("get_page: peek failed");
+        call_log(0, None, "get_page: peek failed");
     }
     result
 }
@@ -147,7 +144,7 @@ pub fn initialize_pvm_registers() -> [u64; 13] {
     registers[1] = (1u64 << 32) - 2 * Z_Z - Z_I;
     registers[7] = (1u64 << 32) - Z_Z - Z_I;
     registers[8] = 0;
-    return registers
+    return registers;
 }
 
 // Helpful functions and structs for accumulate
@@ -195,12 +192,8 @@ pub fn parse_accumulate_args(start_address: u64, length: u64, m: u64) -> Option<
     if remaining_length < 8 {
         return None;
     }
-    let t_slice = unsafe {
-        core::slice::from_raw_parts(current_address as *const u8, 4)
-    };
-    let s_slice = unsafe {
-        core::slice::from_raw_parts((current_address + 4) as *const u8, 4)
-    };
+    let t_slice = unsafe { core::slice::from_raw_parts(current_address as *const u8, 4) };
+    let s_slice = unsafe { core::slice::from_raw_parts((current_address + 4) as *const u8, 4) };
     let global_t = u32::from_le_bytes(t_slice[0..4].try_into().unwrap());
     let global_s = u32::from_le_bytes(s_slice[0..4].try_into().unwrap());
 
@@ -210,9 +203,7 @@ pub fn parse_accumulate_args(start_address: u64, length: u64, m: u64) -> Option<
     current_address += 8;
     remaining_length = remaining_length.saturating_sub(8);
 
-    let full_slice = unsafe {
-        core::slice::from_raw_parts(current_address as *const u8, remaining_length as usize)
-    };
+    let full_slice = unsafe { core::slice::from_raw_parts(current_address as *const u8, remaining_length as usize) };
     let discriminator_len = extract_discriminator(full_slice);
     if discriminator_len as usize > full_slice.len() {
         return None;
@@ -230,9 +221,7 @@ pub fn parse_accumulate_args(start_address: u64, length: u64, m: u64) -> Option<
         if remaining_length < 96 {
             return None;
         }
-        let hash_slice = unsafe {
-            core::slice::from_raw_parts(current_address as *const u8, 96)
-        };
+        let hash_slice = unsafe { core::slice::from_raw_parts(current_address as *const u8, 96) };
         args.h.copy_from_slice(&hash_slice[0..32]);
         args.e.copy_from_slice(&hash_slice[32..64]);
         args.a.copy_from_slice(&hash_slice[64..96]);
@@ -240,9 +229,7 @@ pub fn parse_accumulate_args(start_address: u64, length: u64, m: u64) -> Option<
         remaining_length = remaining_length.saturating_sub(96);
 
         {
-            let accumulation_slice = unsafe {
-                core::slice::from_raw_parts(current_address as *const u8, remaining_length as usize)
-            };
+            let accumulation_slice = unsafe { core::slice::from_raw_parts(current_address as *const u8, remaining_length as usize) };
             let auth_output_discriminator_len = extract_discriminator(accumulation_slice);
             let auth_output_len = if auth_output_discriminator_len > 0 {
                 decode_e(&accumulation_slice[..auth_output_discriminator_len as usize])
@@ -263,16 +250,12 @@ pub fn parse_accumulate_args(start_address: u64, length: u64, m: u64) -> Option<
         if remaining_length < 32 {
             return None;
         }
-        let y_slice = unsafe {
-            core::slice::from_raw_parts(current_address as *const u8, 32)
-        };
+        let y_slice = unsafe { core::slice::from_raw_parts(current_address as *const u8, 32) };
         args.y.copy_from_slice(y_slice);
         current_address += 32;
         remaining_length = remaining_length.saturating_sub(32);
 
-        let accumulation_slice = unsafe {
-            core::slice::from_raw_parts(current_address as *const u8, remaining_length as usize)
-        };
+        let accumulation_slice = unsafe { core::slice::from_raw_parts(current_address as *const u8, remaining_length as usize) };
         if accumulation_slice.is_empty() {
             return None;
         }
@@ -281,9 +264,7 @@ pub fn parse_accumulate_args(start_address: u64, length: u64, m: u64) -> Option<
         remaining_length = remaining_length.saturating_sub(1);
 
         if work_result_prefix == 0 {
-            let accumulation_slice = unsafe {
-                core::slice::from_raw_parts(current_address as *const u8, remaining_length as usize)
-            };
+            let accumulation_slice = unsafe { core::slice::from_raw_parts(current_address as *const u8, remaining_length as usize) };
             let wr_discriminator_len = extract_discriminator(accumulation_slice);
             let wr_len = if wr_discriminator_len > 0 {
                 decode_e(&accumulation_slice[..wr_discriminator_len as usize])
@@ -312,15 +293,27 @@ pub fn write_result(result: u64, key: u8) {
     let key_bytes = key.to_le_bytes();
     let result_bytes = result.to_le_bytes();
     unsafe {
-        write(key_bytes.as_ptr() as u64, key_bytes.len() as u64, result_bytes.as_ptr() as u64, result_bytes.len() as u64);
+        write(
+            key_bytes.as_ptr() as u64,
+            key_bytes.len() as u64,
+            result_bytes.as_ptr() as u64,
+            result_bytes.len() as u64,
+        );
     }
+    call_log(2, None, &format!("write_result key={:x?}, result={:x?}", key_bytes, result));
 }
 
-pub fn call_info(msg: &str) {
-    let ascii_bytes = msg.as_bytes();
-    let ascii_address = ascii_bytes.as_ptr() as u64;
-    let ascii_length = ascii_bytes.len() as u64;
-    unsafe { log(2, 0, 0, ascii_address, ascii_length) };
+pub fn call_log(level: u64, target: Option<&str>, msg: &str) {
+    let (target_address, target_length) = if let Some(target_str) = target {
+        let target_bytes = target_str.as_bytes();
+        (target_bytes.as_ptr() as u64, target_bytes.len() as u64)
+    } else {
+        (0, 0)
+    };
+    let msg_bytes = msg.as_bytes();
+    let msg_address = msg_bytes.as_ptr() as u64;
+    let msg_length = msg_bytes.len() as u64;
+    unsafe { log(level, target_address, target_length, msg_address, msg_length) };
 }
 
 // Helpful functions for both refine and accumulate
@@ -363,7 +356,7 @@ pub fn decode_e(encoded: &[u8]) -> u64 {
         return decode_e_l(&encoded[1..9]);
     }
     for l in 0..8 {
-        let left_bound  = 256 - power_of_two(8 - l);
+        let left_bound = 256 - power_of_two(8 - l);
         let right_bound = 256 - power_of_two(8 - (l + 1));
 
         if (first_byte as u64) >= left_bound && (first_byte as u64) < right_bound {
