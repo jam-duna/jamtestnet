@@ -19,14 +19,29 @@ import { db } from "@/db/db"; // Adjust the import path as needed
 import { fetchBlock } from "@/hooks/home/useFetchBlock";
 import { fetchState } from "@/hooks/home/useFetchState";
 
-// Helper to derive RPC URL from wsEndpoint
+// Helper to derive RPC URL from wsEndpoint without hardcoding string splits.
 function getRpcUrlFromWs(wsEndpoint: string): string {
-  if (wsEndpoint.startsWith("ws://")) {
-    return "http://" + wsEndpoint.slice(5).replace(/\/ws$/, "/rpc");
-  } else if (wsEndpoint.startsWith("wss://")) {
-    return "https://" + wsEndpoint.slice(6).replace(/\/ws$/, "/rpc");
+  console.log("endpoint: " + wsEndpoint);
+
+  let url: URL;
+  try {
+    // Try to parse as is.
+    url = new URL(wsEndpoint);
+  } catch {
+    // If no valid protocol, assume it's missing and prepend "http://"
+    url = new URL("http://" + wsEndpoint);
   }
-  return wsEndpoint;
+  // Convert websocket protocols to their HTTP counterparts.
+  if (url.protocol === "ws:") {
+    url.protocol = "http:";
+  } else if (url.protocol === "wss:") {
+    url.protocol = "https:";
+  }
+  // Replace a trailing "/ws" with "/rpc" if present.
+  if (url.pathname.endsWith("/ws")) {
+    url.pathname = url.pathname.replace(/\/ws$/, "/rpc");
+  }
+  return url.toString();
 }
 
 interface SearchBarProps {
@@ -52,6 +67,7 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
       }
     } catch (dbError) {
       // Derive the RPC URL.
+      console.log("derive time");
       const rpcUrl = getRpcUrlFromWs(wsEndpoint);
 
       // 2. Try fetching as a block (blockHash case).
@@ -90,27 +106,8 @@ export default function SearchBar({ wsEndpoint }: SearchBarProps) {
       } catch (rpcBlockError) {
         console.error("Error calling jam_getBlockByHash:", rpcBlockError);
 
-        {
-          /*
-          // 3. If no block data, try fetching as a work report.
-        try {
-          const workReportData = await callRpc(
-            "jam_getWorkReportByHash",
-            [searchValue],
-            rpcUrl
-          );
-          console.log("Work report data:", workReportData);
-          if (workReportData) {
-            router.push(`/block/${searchValue}?type=workReport`);
-            return;
-          }
-        } catch (rpcWorkError) {
-          console.error("Error calling jam_getWorkReportByHash:", rpcWorkError);
-          // 4. If neither returns valid data, show error dialog.
-          setOpenDialog(true);
-        }
-          */
-        }
+        // Optionally handle work report fetching or show an error dialog.
+        setOpenDialog(true);
       }
     }
   }

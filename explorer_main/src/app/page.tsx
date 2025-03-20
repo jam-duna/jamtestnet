@@ -7,11 +7,13 @@ import SearchBar from "@/components/home/SearchBar";
 import LatestBlocks from "@/components/home/lists/latest-list/LatestBlocks";
 import LatestReports from "@/components/home/lists/latest-list/LatestReports";
 import LatestExtrinsics from "@/components/home/lists/latest-list/LatestExtrinsics";
-import { db, Block } from "@/db/db";
+import { db, Block, State } from "@/db/db";
 import { useWsRpc } from "@/hooks/home/useWsRpc";
 import MainViewGrid, { SquareContent } from "@/components/home/MainViewGrid";
+import StatisticsAnalysis from "@/components/home/StasticsAnalysis";
+import PiTable from "@/components/block/tables/PiTable";
 
-const defaultWsUrl = "ws://localhost:9999/ws";
+const DEFAULT_WS_URL = "ws://localhost:9999/ws";
 
 interface GridData {
   data: Record<number, Record<number, SquareContent>>;
@@ -20,87 +22,82 @@ interface GridData {
 }
 
 function parseBlocksToGridData(blocks: Block[]): GridData {
-  const data: Record<number, Record<number, SquareContent>> = {};
+  const grid: Record<number, Record<number, SquareContent>> = {};
   const timeslots = new Set<number>();
-  const cores = new Set<number>();
+  const cores = new Set<number>([0, 1]);
 
-  // Ensure default cores 0 and 1 are always included
-  cores.add(0);
-  cores.add(1);
-
-  for (const block of blocks) {
+  blocks.forEach((block) => {
     const slot = block.overview?.slot;
-    if (typeof slot !== "number") continue;
+    if (typeof slot !== "number") return;
     timeslots.add(slot);
-
+    const headerHash = block.overview?.headerHash ?? "";
     const guarantees = block.extrinsic?.guarantees ?? [];
-    let processedAny = false;
+    const validGuarantees = guarantees.filter(
+      (g) => typeof g.report.core_index === "number"
+    );
 
-    // Process guarantees that have a valid coreIndex.
-    for (const g of guarantees) {
-      const coreIndex = g.report.core_index;
-      if (typeof coreIndex === "number") {
+    if (validGuarantees.length > 0) {
+      validGuarantees.forEach((g) => {
+        const coreIndex = g.report.core_index;
         cores.add(coreIndex);
-
-        const firstResult = g.report.results?.[0];
-        let serviceName = "";
-        if (firstResult) {
-          serviceName = `svc-${firstResult.service_id}`;
-        }
-        const wpHash = g.report.package_spec?.hash;
-        const finalHash =
-          wpHash && wpHash.trim() !== "" ? wpHash : "No Work Package";
-
-        if (!data[coreIndex]) data[coreIndex] = {};
-        data[coreIndex][slot] = {
-          serviceName,
-          workPackageHash: finalHash,
-          isBusy: Boolean(wpHash && wpHash.trim() !== ""),
+        const serviceName: string = String(
+          g.report.results?.[0]?.service_id || ""
+        );
+        const wpHash = g.report.package_spec?.hash ?? "";
+        const finalHash = wpHash.trim() !== "" ? wpHash : "";
+        grid[coreIndex] = {
+          ...grid[coreIndex],
+          [slot]: {
+            serviceName,
+            workPackageHash: finalHash,
+            headerHash,
+            isBusy: finalHash !== "",
+          },
         };
-        processedAny = true;
-      }
-    }
-
-    // If no guarantee with a valid coreIndex was processed for this block,
-    // add default entries for default cores 0 and 1.
-    if (!processedAny) {
-      [0, 1].forEach((coreIndex) => {
-        if (!data[coreIndex]) data[coreIndex] = {};
-        data[coreIndex][slot] = {
-          serviceName: "",
-          workPackageHash: "No Work Package",
-          isBusy: false,
+      });
+    } else {
+      [0, 1].forEach((defaultCore) => {
+        grid[defaultCore] = {
+          ...grid[defaultCore],
+          [slot]: {
+            serviceName: "",
+            workPackageHash: "",
+            headerHash: "",
+            isBusy: false,
+          },
         };
       });
     }
-  }
+  });
 
-  // Fill missing cells with default values.
-  for (const c of cores) {
-    for (const t of timeslots) {
-      if (!data[c]) data[c] = {};
-      if (!data[c][t]) {
-        data[c][t] = {
+  timeslots.forEach((slot) => {
+    cores.forEach((coreIndex) => {
+      grid[coreIndex] = grid[coreIndex] || {};
+      if (!grid[coreIndex][slot]) {
+        grid[coreIndex][slot] = {
           serviceName: "",
-          workPackageHash: "No Work Package",
+          workPackageHash: "",
+          headerHash: "",
           isBusy: false,
         };
       }
-    }
-  }
+    });
+  });
 
   return {
-    data,
+    data: grid,
     timeslots: Array.from(timeslots).sort((a, b) => b - a),
     cores: Array.from(cores).sort((a, b) => a - b),
   };
 }
 
 export default function HomePage() {
-  const [block, setBlock] = useState<unknown>(null);
-  const [wsEndpoint, setWsEndpoint] = useState<string>(defaultWsUrl);
+  const [currentBlock, setCurrentBlock] = useState<unknown>(null);
+  const [currentState, setCurrentState] = useState<unknown>(null);
+  const [wsEndpoint, setWsEndpoint] = useState<string>(DEFAULT_WS_URL);
   const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
   const [latestBlocks, setLatestBlocks] = useState<Block[]>([]);
+  const [latestStates, setLatestStates] = useState<State[]>([]);
   const [now, setNow] = useState(Date.now());
   const [gridData, setGridData] = useState<GridData>({
     data: {},
@@ -109,25 +106,26 @@ export default function HomePage() {
   });
   const [showOnlyWorkPackages, setShowOnlyWorkPackages] = useState(false);
 
-  // WebSocket/RPC hook.
   useWsRpc({
     wsEndpoint,
-    defaultWsUrl,
+    setWsEndpoint,
+    defaultWsUrl: DEFAULT_WS_URL,
     onNewBlock: (blockRecord, stateRecord) => {
-      setBlock(blockRecord);
+      console.log(blockRecord);
+      setCurrentBlock(blockRecord);
+      console.log(stateRecord);
+      setCurrentState(stateRecord);
     },
-    onUpdateNow: (timestamp) => {
-      setNow(timestamp);
-    },
+    onUpdateNow: setNow,
     setSavedEndpoints,
   });
 
-  // Load latest blocks from IndexedDB whenever a new block arrives.
   useEffect(() => {
+    // Load blocks from DB.
     db.blocks
       .toArray()
       .then((blocks) => {
-        const sorted = blocks.sort((a, b) => {
+        const sortedBlocks = blocks.sort((a, b) => {
           const aCreatedAt = a?.overview?.createdAt;
           const bCreatedAt = b?.overview?.createdAt;
           if (aCreatedAt == null && bCreatedAt == null) return 0;
@@ -135,36 +133,51 @@ export default function HomePage() {
           if (bCreatedAt == null) return -1;
           return bCreatedAt - aCreatedAt;
         });
-        setLatestBlocks(sorted);
+        setLatestBlocks(sortedBlocks);
       })
       .catch((error) => {
         console.error("Error loading blocks from DB:", error);
       });
-  }, [block]);
 
-  // Compute the blocks to use based on the toggle.
-  const blocksToUse = useMemo(() => {
-    if (showOnlyWorkPackages) {
-      // Filter blocks that have at least one guarantee with a non-empty package_spec.hash.
-      return latestBlocks
-        .filter((block) => {
-          const guarantees = block.extrinsic?.guarantees ?? [];
-          return guarantees.some((g) => {
-            const wpHash = g.report.package_spec?.hash;
-            return wpHash && wpHash.trim() !== "";
-          });
-        })
-        .slice(0, 8);
-    } else {
-      return latestBlocks.slice(0, 8);
-    }
+    // Load states from DB.
+    db.states
+      .toArray()
+      .then((states) => {
+        const sortedStates = states.sort((a, b) => {
+          const aCreatedAt = a?.overview?.createdAt;
+          const bCreatedAt = b?.overview?.createdAt;
+          if (aCreatedAt == null && bCreatedAt == null) return 0;
+          if (aCreatedAt == null) return 1;
+          if (bCreatedAt == null) return -1;
+          return bCreatedAt - aCreatedAt;
+        });
+        setLatestStates(sortedStates);
+      })
+      .catch((error) => {
+        console.error("Error loading states from DB:", error);
+      });
+  }, [currentBlock]);
+
+  const filteredBlocks = useMemo(() => {
+    return showOnlyWorkPackages
+      ? latestBlocks
+          .filter((block) => {
+            const guarantees = block.extrinsic?.guarantees ?? [];
+            return guarantees.some((g) => {
+              const wpHash = g.report.package_spec?.hash;
+              return wpHash && wpHash.trim() !== "";
+            });
+          })
+          .slice(0, 8)
+      : latestBlocks.slice(0, 8);
   }, [latestBlocks, showOnlyWorkPackages]);
 
-  // Parse the blocks into grid data.
   useEffect(() => {
-    const parsed = parseBlocksToGridData(blocksToUse);
-    setGridData(parsed);
-  }, [blocksToUse]);
+    setGridData(parseBlocksToGridData(filteredBlocks));
+  }, [filteredBlocks]);
+
+  // Assume the PI data is stored on the "pi" property of the first state object.
+  const piData = latestStates.length > 0 ? latestStates[0].pi : undefined;
 
   return (
     <Container sx={{ py: 5 }}>
@@ -177,7 +190,6 @@ export default function HomePage() {
 
       <Container maxWidth="lg">
         <SearchBar wsEndpoint={wsEndpoint} />
-        {/* Toggle Button */}
         <Button
           variant="outlined"
           onClick={() => setShowOnlyWorkPackages((prev) => !prev)}
@@ -185,7 +197,6 @@ export default function HomePage() {
         >
           {showOnlyWorkPackages ? "Show All Blocks" : "Show Active Blocks"}
         </Button>
-        {/* Grid view at the top */}
         <MainViewGrid
           timeslots={gridData.timeslots}
           cores={gridData.cores}
@@ -193,12 +204,11 @@ export default function HomePage() {
         />
 
         <Grid container spacing={4}>
-          {/* Left column: Latest Blocks */}
           <Grid item xs={12} md={6}>
             <LatestBlocks latestBlocks={latestBlocks.slice(0, 12)} />
+            {/* Only render PiTable if piData exists */}
+            {piData && <PiTable data={piData} />}
           </Grid>
-
-          {/* Right column: Latest Extrinsics and Latest Reports */}
           <Grid item xs={12} md={6}>
             <Grid container spacing={4}>
               <Grid item xs={12}>

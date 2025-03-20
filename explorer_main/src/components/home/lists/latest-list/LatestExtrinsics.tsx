@@ -13,8 +13,6 @@ type ExtrinsicListsProps = {
 
 export default function ExtrinsicLists({ latestBlocks }: ExtrinsicListsProps) {
   // Filter blocks that have at least one extrinsic event
-  console.log("test");
-  console.log(latestBlocks);
 
   const filteredBlocks = filterExtrinsicBlocks(latestBlocks).slice(0, 5);
 

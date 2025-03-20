@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket Test</title>
+  </head>
+  <body>
+    <h1>WebSocket Test</h1>
+    <div id="log"></div>
+
+    <script>
+      const log = (msg) => {
+        document.getElementById("log").innerHTML += `<p>${msg}</p>`;
+      };
+
+      // const url = "ws://51.75.54.113:13372/ws";
+      const url = "ws://coreplay.jamduna.org:13372/ws";
+      const ws = new WebSocket(url);
+      // const ws = new WebSocket("wss://echo.websocket.events");
+
+      ws.onopen = () => log(`✅ Connected to: ${url}`);
+      ws.onmessage = (event) => log("📩 Message: " + event.data);
+      ws.onclose = () => log("❌ Disconnected");
+      ws.onerror = (err) => log("⚠️ Error: " + err);
+    </script>
+  </body>
+</html>
