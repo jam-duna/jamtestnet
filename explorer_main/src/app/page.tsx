@@ -203,11 +203,11 @@ export default function HomePage() {
           data={gridData.data}
         />
 
+        {piData && <PiTable data={piData} />}
+
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <LatestBlocks latestBlocks={latestBlocks.slice(0, 12)} />
-            {/* Only render PiTable if piData exists */}
-            {piData && <PiTable data={piData} />}
           </Grid>
           <Grid item xs={12} md={6}>
             <Grid container spacing={4}>

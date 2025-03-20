@@ -12,10 +12,8 @@
         document.getElementById("log").innerHTML += `<p>${msg}</p>`;
       };
 
-      // const url = "ws://51.75.54.113:13372/ws";
-      const url = "ws://coreplay.jamduna.org:13372/ws";
+      const url = "ws://localhost:9999/ws";
       const ws = new WebSocket(url);
-      // const ws = new WebSocket("wss://echo.websocket.events");
 
       ws.onopen = () => log(`✅ Connected to: ${url}`);
       ws.onmessage = (event) => log("📩 Message: " + event.data);
