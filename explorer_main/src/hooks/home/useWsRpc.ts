@@ -37,14 +37,24 @@ export function useWsRpc({
         try {
           const msg = JSON.parse(event.data);
           console.log("Received:", msg);
+
           if (msg.method === "BlockAnnouncement" && msg.result) {
+            localStorage.setItem("customWsEndpoint", wsEndpoint);
+            // Only add if it is not already saved.
+            setSavedEndpoints((prev) => {
+              const updated = prev.includes(wsEndpoint)
+                ? prev
+                : [...prev, wsEndpoint];
+              localStorage.setItem("savedWsEndpoints", JSON.stringify(updated));
+              return updated;
+            });
+
             const headerHash = msg.result.headerHash;
             const blockHash = msg.result.blockHash;
-            // Use a hardcoded RPC URL (or change as needed)
-            // const rpcUrl = "http://51.75.54.113:13372/rpc";
+
             const rpcUrl = getRpcUrlFromWs(wsEndpoint);
             console.log("RPC URL:", rpcUrl);
-            //
+
             const fetchedBlock = await fetchBlock(headerHash, rpcUrl);
             const fetchedState = await fetchState(headerHash, rpcUrl);
 

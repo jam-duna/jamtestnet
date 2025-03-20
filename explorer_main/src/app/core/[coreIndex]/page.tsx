@@ -2,18 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import {
-  Container,
-  Paper,
-  Typography,
-  Divider,
-  Link as MuiLink,
-} from "@mui/material";
-import { LabeledRow } from "@/components/display/LabeledRow"; // adjust the import path as needed
-import { db, Block, State } from "@/db/db";
-import { Guarantee } from "@/types";
-import { workReportMapping } from "@/utils/tooltipDetails"; // Import the new mapping bundle
-import { useWorkReportStatuses } from "@/hooks/workReport/useWorkReportStatuses";
+import { Container, Typography, Link as MuiLink } from "@mui/material";
 
 export default function CoreDetailPage() {
   const params = useParams();
@@ -22,7 +11,6 @@ export default function CoreDetailPage() {
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Typography>Core {coreIndex}</Typography>
-      <></>
     </Container>
   );
 }

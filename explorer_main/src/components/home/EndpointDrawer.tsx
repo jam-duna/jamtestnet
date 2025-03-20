@@ -23,6 +23,30 @@ interface EndpointDrawerProps {
   setSavedEndpoints: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
+// Helper function to normalize endpoints.
+function normalizeEndpoint(input: string): string {
+  let url = input.trim();
+  // If protocol is missing, add ws://
+  if (!url.startsWith("ws://") && !url.startsWith("wss://")) {
+    url = "ws://" + url;
+  }
+  try {
+    const parsed = new URL(url);
+    // Set pathname to '/ws' if it isn't already
+    if (parsed.pathname !== "/ws") {
+      parsed.pathname = "/ws";
+    }
+    return parsed.toString();
+  } catch (error) {
+    // Fallback: remove trailing slashes and add "/ws" if necessary.
+    url = url.replace(/\/+$/, "");
+    if (!url.endsWith("/ws")) {
+      url = url + "/ws";
+    }
+    return url;
+  }
+}
+
 export default function EndpointDrawer({
   wsEndpoint,
   setWsEndpoint,
@@ -60,22 +84,34 @@ export default function EndpointDrawer({
 
   const handleSaveCustomEndpoint = () => {
     if (customEndpoint.trim() !== "") {
-      const newEndpoint = customEndpoint.trim();
+      const trimmed = customEndpoint.trim();
+      let newEndpoint = trimmed;
+      // Prepend "ws://" if not present
+      if (!/^(ws|wss):\/\//i.test(newEndpoint)) {
+        newEndpoint = "ws://" + newEndpoint;
+      }
+      // Ensure the URL ends with "/ws"
+      try {
+        const url = new URL(newEndpoint);
+        if (url.pathname !== "/ws") {
+          url.pathname = "/ws";
+        }
+        newEndpoint = url.toString();
+      } catch (error) {
+        // Fallback: remove trailing slashes and append "/ws" if necessary.
+        newEndpoint = newEndpoint.replace(/\/+$/, "");
+        if (!newEndpoint.endsWith("/ws")) {
+          newEndpoint = newEndpoint + "/ws";
+        }
+      }
       console.log("Switching to the new endpoint", newEndpoint);
       setWsEndpoint(newEndpoint);
-      // Only add if it is not already saved.
-      setSavedEndpoints((prev) => {
-        const updated = prev.includes(newEndpoint)
-          ? prev
-          : [...prev, newEndpoint];
-        localStorage.setItem("savedWsEndpoints", JSON.stringify(updated));
-        return updated;
-      });
-      // Also persist the currently used endpoint
-      localStorage.setItem("customWsEndpoint", newEndpoint);
+      setSavedEndpoints((prev) =>
+        prev.includes(newEndpoint) ? prev : [...prev, newEndpoint]
+      );
       setMenuOpen(false);
       setShowCustomInput(false);
-      setCustomEndpoint(""); // Clear input after saving.
+      setCustomEndpoint("");
     }
   };
 

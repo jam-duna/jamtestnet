@@ -16,8 +16,7 @@ export default function ServiceDetail() {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography>Service</Typography>
-      <Typography>Detail</Typography>
+      <Typography>Service {serviceId}</Typography>
     </Container>
   );
 }
