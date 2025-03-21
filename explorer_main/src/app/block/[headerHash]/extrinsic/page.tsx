@@ -76,7 +76,6 @@ export default function ExtrinsicDetails() {
           />
         ))}
 
-        {/* Extrinsic Accordion Component */}
         <ExtrinsicAccordion
           extrinsic={extrinsic || null}
           headerHash={headerHash}

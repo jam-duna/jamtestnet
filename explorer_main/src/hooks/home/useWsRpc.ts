@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import { db, Block, State } from "@/db/db";
 import { fetchBlock } from "./useFetchBlock";
 import { fetchState } from "./useFetchState";
-import { getRpcUrlFromWs } from "@/utils/ws";
+import { getRpcUrlFromWs, normalizeEndpoint } from "@/utils/ws";
+import { useInsertMockDataIfEmpty } from "@/utils/debug";
 
 interface UseWsRpcParams {
   wsEndpoint: string;
@@ -23,12 +24,20 @@ export function useWsRpc({
   setSavedEndpoints,
   setWsEndpoint,
 }: UseWsRpcParams) {
+  // useInsertMockDataIfEmpty();
+
   useEffect(() => {
-    console.log("Connecting via native WebSocket to", wsEndpoint);
-    const ws = new WebSocket(wsEndpoint);
+    console.log(
+      "[START] | Connecting via native WebSocket to",
+      wsEndpoint,
+      "..."
+    );
+    const normalEndpoint = normalizeEndpoint(wsEndpoint);
+
+    const ws = new WebSocket(normalEndpoint);
 
     ws.onopen = () => {
-      console.log("WebSocket connected");
+      console.log(`[OPEN] | ${normalEndpoint}`);
     };
 
     ws.onmessage = (event) => {
@@ -36,7 +45,7 @@ export function useWsRpc({
       setTimeout(async () => {
         try {
           const msg = JSON.parse(event.data);
-          console.log("Received:", msg);
+          console.log(`[MESSAGE] | Received msg ->`, msg);
 
           if (msg.method === "BlockAnnouncement" && msg.result) {
             localStorage.setItem("customWsEndpoint", wsEndpoint);
@@ -90,18 +99,19 @@ export function useWsRpc({
             onUpdateNow(Date.now());
           }
         } catch (err) {
-          console.error("Error parsing WebSocket message:", err);
+          console.log("Error parsing WebSocket message ->", err);
         }
       }, 1000);
     };
 
     ws.onerror = (error) => {
-      console.error("WebSocket error:", error);
-      ws.close();
+      console.log(`[ERROR] | ${normalEndpoint} ->`, error);
+      // console.error("WebSocket error:", error);
+      // ws.close();
     };
 
     ws.onclose = () => {
-      console.log("WebSocket closed");
+      console.log(`[CLOSED] | ${normalEndpoint}`);
     };
 
     return () => {

@@ -18,31 +18,7 @@ import { useRouter } from "next/navigation";
 import { db } from "@/db/db"; // Adjust the import path as needed
 import { fetchBlock } from "@/hooks/home/useFetchBlock";
 import { fetchState } from "@/hooks/home/useFetchState";
-
-// Helper to derive RPC URL from wsEndpoint without hardcoding string splits.
-function getRpcUrlFromWs(wsEndpoint: string): string {
-  console.log("endpoint: " + wsEndpoint);
-
-  let url: URL;
-  try {
-    // Try to parse as is.
-    url = new URL(wsEndpoint);
-  } catch {
-    // If no valid protocol, assume it's missing and prepend "http://"
-    url = new URL("http://" + wsEndpoint);
-  }
-  // Convert websocket protocols to their HTTP counterparts.
-  if (url.protocol === "ws:") {
-    url.protocol = "http:";
-  } else if (url.protocol === "wss:") {
-    url.protocol = "https:";
-  }
-  // Replace a trailing "/ws" with "/rpc" if present.
-  if (url.pathname.endsWith("/ws")) {
-    url.pathname = url.pathname.replace(/\/ws$/, "/rpc");
-  }
-  return url.toString();
-}
+import { getRpcUrlFromWs } from "@/utils/ws";
 
 interface SearchBarProps {
   wsEndpoint: string;
