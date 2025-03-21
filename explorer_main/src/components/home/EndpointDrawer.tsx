@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
 import {
   Box,
@@ -12,9 +10,13 @@ import {
   Typography,
   Button,
   Paper,
+  Divider,
+  Tooltip, // Import Tooltip here
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { normalizeEndpoint } from "@/utils/ws";
+import { DEFAULT_WS_URL } from "@/utils/helper";
 
 interface EndpointDrawerProps {
   wsEndpoint: string;
@@ -23,51 +25,32 @@ interface EndpointDrawerProps {
   setSavedEndpoints: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-// Helper function to normalize endpoints.
-function normalizeEndpoint(input: string): string {
-  let url = input.trim();
-  // If protocol is missing, add ws://
-  if (!url.startsWith("ws://") && !url.startsWith("wss://")) {
-    url = "ws://" + url;
-  }
-  try {
-    const parsed = new URL(url);
-    // Set pathname to '/ws' if it isn't already
-    if (parsed.pathname !== "/ws") {
-      parsed.pathname = "/ws";
-    }
-    return parsed.toString();
-  } catch (error) {
-    // Fallback: remove trailing slashes and add "/ws" if necessary.
-    url = url.replace(/\/+$/, "");
-    if (!url.endsWith("/ws")) {
-      url = url + "/ws";
-    }
-    return url;
-  }
-}
-
 export default function EndpointDrawer({
   wsEndpoint,
   setWsEndpoint,
   savedEndpoints,
   setSavedEndpoints,
 }: EndpointDrawerProps) {
+  // Helper to remove "ws://" and trailing "/ws" from endpoint for display
+  const cleanEndpointText = (endpoint: string) => {
+    return endpoint.replace(/^ws:\/\//, "").replace(/\/ws$/, "");
+  };
+
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [showCustomInput, setShowCustomInput] = useState<boolean>(false);
   const [customEndpoint, setCustomEndpoint] = useState<string>("");
 
-  const defaultWsUrl = "ws://localhost:9999/ws";
-
   // On mount, retrieve stored values
   useEffect(() => {
     const storedEndpoint = localStorage.getItem("customWsEndpoint");
+
     if (storedEndpoint) {
       setWsEndpoint(storedEndpoint);
     } else {
-      setWsEndpoint(defaultWsUrl);
+      setWsEndpoint(DEFAULT_WS_URL);
     }
     const storedEndpoints = localStorage.getItem("savedWsEndpoints");
+
     if (storedEndpoints) {
       try {
         const endpointsArray = JSON.parse(storedEndpoints) as string[];
@@ -83,28 +66,13 @@ export default function EndpointDrawer({
   };
 
   const handleSaveCustomEndpoint = () => {
+    console.log("User input: ", customEndpoint);
+
     if (customEndpoint.trim() !== "") {
       const trimmed = customEndpoint.trim();
-      let newEndpoint = trimmed;
-      // Prepend "ws://" if not present
-      if (!/^(ws|wss):\/\//i.test(newEndpoint)) {
-        newEndpoint = "ws://" + newEndpoint;
-      }
-      // Ensure the URL ends with "/ws"
-      try {
-        const url = new URL(newEndpoint);
-        if (url.pathname !== "/ws") {
-          url.pathname = "/ws";
-        }
-        newEndpoint = url.toString();
-      } catch (error) {
-        // Fallback: remove trailing slashes and append "/ws" if necessary.
-        newEndpoint = newEndpoint.replace(/\/+$/, "");
-        if (!newEndpoint.endsWith("/ws")) {
-          newEndpoint = newEndpoint + "/ws";
-        }
-      }
+      const newEndpoint = normalizeEndpoint(trimmed);
       console.log("Switching to the new endpoint", newEndpoint);
+
       setWsEndpoint(newEndpoint);
       setSavedEndpoints((prev) =>
         prev.includes(newEndpoint) ? prev : [...prev, newEndpoint]
@@ -126,40 +94,58 @@ export default function EndpointDrawer({
 
       <Drawer anchor="left" open={menuOpen} onClose={() => setMenuOpen(false)}>
         <Paper variant="outlined" sx={{ width: 250, p: 2, mt: 10 }}>
-          <Typography variant="h6" sx={{ ml: 1, mb: 2 }}>
+          <Typography variant="h6" sx={{ ml: 1, mb: 1 }}>
             Menu
           </Typography>
           <List>
-            {/* Default option */}
-            <ListItemButton
-              onClick={() => {
-                setWsEndpoint(defaultWsUrl);
-                setShowCustomInput(false);
-                setMenuOpen(false);
-              }}
-              sx={{
-                backgroundColor:
-                  wsEndpoint === defaultWsUrl ? "primary.light" : "inherit",
-                mb: 1,
-              }}
-            >
-              <ListItemText primary="Default" />
-            </ListItemButton>
+            {/* Default option with Tooltip */}
+            <Tooltip title={DEFAULT_WS_URL} arrow>
+              <ListItemButton
+                onClick={() => {
+                  setWsEndpoint(DEFAULT_WS_URL);
+                  setShowCustomInput(false);
+                  setMenuOpen(false);
+                }}
+                sx={{
+                  backgroundColor:
+                    wsEndpoint === DEFAULT_WS_URL ? "primary.light" : "inherit",
+                  fontSize: "0.8rem",
+                  borderTop: "1px solid #eee",
+                }}
+              >
+                <ListItemText
+                  primary="Default"
+                  primaryTypographyProps={{
+                    sx: {
+                      fontSize: "0.9rem",
+                    },
+                  }}
+                />
+              </ListItemButton>
+            </Tooltip>
 
-            {/* Custom option */}
+            {/* Custom option - toggles the input */}
             <ListItemButton
-              onClick={() => setShowCustomInput(true)}
+              onClick={() => setShowCustomInput((prev) => !prev)}
               sx={{
                 backgroundColor:
-                  wsEndpoint !== defaultWsUrl ? "primary.light" : "inherit",
+                  wsEndpoint !== DEFAULT_WS_URL ? "primary.light" : "inherit",
                 mb: 1,
+                borderBottom: "1px solid #eee",
               }}
             >
-              <ListItemText primary="Custom" />
+              <ListItemText
+                primary="Custom"
+                primaryTypographyProps={{
+                  sx: {
+                    fontSize: "0.9rem",
+                  },
+                }}
+              />
             </ListItemButton>
           </List>
           {showCustomInput && (
-            <Box sx={{ mt: 2 }}>
+            <Box sx={{ my: 2 }}>
               <TextField
                 fullWidth
                 label="Custom Endpoint"
@@ -176,10 +162,12 @@ export default function EndpointDrawer({
               </Button>
             </Box>
           )}
+
+          <Divider sx={{ my: 3 }} />
           {/* Always render saved endpoints list */}
           {savedEndpoints.length > 0 && (
             <Box sx={{ mt: 2 }}>
-              <Typography variant="subtitle2" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 Saved Endpoints
               </Typography>
               <List>
@@ -193,33 +181,30 @@ export default function EndpointDrawer({
                     }}
                     sx={{
                       backgroundColor:
-                        endpoint === wsEndpoint ? "primary.light" : "inherit",
+                        endpoint === wsEndpoint ? "primary.light" : "#fbfbfb",
                       mb: 0.5,
+                      borderRadius: "3px",
+                      pb: 0.5,
+                      borderBottom: "1px solid #eee",
                     }}
                   >
-                    <ListItemText primary={endpoint} />
+                    <ListItemText
+                      primary={cleanEndpointText(endpoint)}
+                      primaryTypographyProps={{
+                        noWrap: true,
+                        sx: {
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap",
+                          fontSize: "0.8rem",
+                        },
+                      }}
+                    />
                   </ListItemButton>
                 ))}
               </List>
             </Box>
           )}
-        </Paper>
-        <Paper variant="outlined" sx={{ width: 250, p: 2 }}>
-          <Typography variant="h6" sx={{ ml: 1, mb: 2 }}>
-            Codec
-          </Typography>
-          <List>
-            <ListItemButton
-              onClick={() => {}}
-              sx={{
-                backgroundColor:
-                  wsEndpoint === defaultWsUrl ? "primary.light" : "inherit",
-                mb: 1,
-              }}
-            >
-              <ListItemText primary="Default" />
-            </ListItemButton>
-          </List>
         </Paper>
       </Drawer>
     </>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import { Container, Grid, Button } from "@mui/material";
+import { Container, Grid, Button, Typography } from "@mui/material";
 import EndpointDrawer from "@/components/home/EndpointDrawer";
 import SearchBar from "@/components/home/SearchBar";
 import LatestBlocks from "@/components/home/lists/latest-list/LatestBlocks";
@@ -10,10 +10,8 @@ import LatestExtrinsics from "@/components/home/lists/latest-list/LatestExtrinsi
 import { db, Block, State } from "@/db/db";
 import { useWsRpc } from "@/hooks/home/useWsRpc";
 import MainViewGrid, { SquareContent } from "@/components/home/MainViewGrid";
-import StatisticsAnalysis from "@/components/home/StasticsAnalysis";
 import PiTable from "@/components/block/tables/PiTable";
-
-const DEFAULT_WS_URL = "ws://localhost:9999/ws";
+import { DEFAULT_WS_URL } from "@/utils/helper";
 
 interface GridData {
   data: Record<number, Record<number, SquareContent>>;
@@ -190,6 +188,11 @@ export default function HomePage() {
 
       <Container maxWidth="lg">
         <SearchBar wsEndpoint={wsEndpoint} />
+
+        <Typography variant="h4" sx={{ mb: 3 }}>
+          Home Page
+        </Typography>
+
         <Button
           variant="outlined"
           onClick={() => setShowOnlyWorkPackages((prev) => !prev)}
@@ -203,9 +206,9 @@ export default function HomePage() {
           data={gridData.data}
         />
 
-        {piData && <PiTable data={piData} />}
+        {piData && <PiTable data={piData} isHomePage={true} />}
 
-        <Grid container spacing={4}>
+        <Grid sx={{ my: 5 }} container spacing={4}>
           <Grid item xs={12} md={6}>
             <LatestBlocks latestBlocks={latestBlocks.slice(0, 12)} />
           </Grid>

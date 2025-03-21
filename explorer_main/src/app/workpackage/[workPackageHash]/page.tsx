@@ -9,15 +9,14 @@ import {
   Divider,
   Link as MuiLink,
 } from "@mui/material";
-export default function ServiceDetail() {
+export default function WorkPackageDetail() {
   const params = useParams();
-  const serviceId = params.serviceId as string;
-  console.log(serviceId);
+  const workPackageHash = params.workPackageHash as string;
+  console.log(workPackageHash);
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography>Service</Typography>
-      <Typography>Detail</Typography>
+      <Typography>Work Package Detail</Typography>
     </Container>
   );
 }

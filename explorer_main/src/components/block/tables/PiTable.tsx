@@ -11,12 +11,17 @@ import {
   TableRow,
   Paper,
   Typography,
-  Divider,
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  IconButton,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import TableViewIcon from "@mui/icons-material/TableView";
 import { PiItem, PiEntry } from "@/types";
 
 // Helper to sum an array of PiEntry values.
@@ -155,15 +160,57 @@ function renderComparisonTable(currentTotals: PiEntry, lastTotals: PiEntry) {
   );
 }
 
-export default function PiTable({ data }: { data: PiItem }) {
+// A simple helper to truncate a very long hash string.
+export const truncateHash = (hash: string, maxLength: number = 10): string => {
+  if (!hash) return "";
+  if (hash.length <= maxLength * 2) return hash;
+  return `${hash.slice(0, maxLength)}...${hash.slice(-maxLength)}`;
+};
+
+interface PiTableProps {
+  data: PiItem;
+  isHomePage?: boolean;
+}
+
+export default function PiTable({ data, isHomePage = false }: PiTableProps) {
   // Aggregate totals for current and last arrays.
   const currentTotals = sumEntries(data.current);
   const lastTotals = sumEntries(data.last);
+  const [openComparison, setOpenComparison] = useState(false);
+
+  const handleOpenComparison = () => setOpenComparison(true);
+  const handleCloseComparison = () => setOpenComparison(false);
 
   return (
     <Box sx={{ my: 4 }}>
+      {isHomePage && (
+        <Box display="flex" alignItems="center" sx={{ mb: 3 }}>
+          <Typography variant="h5">Validator statistics</Typography>
+          <IconButton
+            onClick={handleOpenComparison}
+            sx={{ ml: 3, border: "1px solid #ddd" }}
+          >
+            <TableViewIcon />
+          </IconButton>
+          <Dialog
+            open={openComparison}
+            onClose={handleCloseComparison}
+            fullWidth
+            maxWidth="md"
+          >
+            <DialogTitle>Comparison</DialogTitle>
+            <DialogContent>
+              {renderComparisonTable(currentTotals, lastTotals)}
+              <Box sx={{ textAlign: "right", mt: 2 }}>
+                <Button onClick={handleCloseComparison}>Close</Button>
+              </Box>
+            </DialogContent>
+          </Dialog>
+        </Box>
+      )}
+
       {/* Accordion for Current Data */}
-      <Accordion>
+      <Accordion sx={{ mb: 3 }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Box sx={{ width: "100%" }}>
             <Typography variant="h6" sx={{ mb: 2 }}>
@@ -177,10 +224,8 @@ export default function PiTable({ data }: { data: PiItem }) {
         </AccordionDetails>
       </Accordion>
 
-      <Divider sx={{ my: 5 }} />
-
       {/* Accordion for Last Data */}
-      <Accordion>
+      <Accordion sx={{ mb: 3 }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Box sx={{ width: "100%" }}>
             <Typography variant="h6" sx={{ mb: 2 }}>
@@ -194,10 +239,7 @@ export default function PiTable({ data }: { data: PiItem }) {
         </AccordionDetails>
       </Accordion>
 
-      <Divider sx={{ my: 5 }} />
-
-      {/* Accordion for Comparison */}
-      {renderComparisonTable(currentTotals, lastTotals)}
+      {!isHomePage && renderComparisonTable(currentTotals, lastTotals)}
     </Box>
   );
 }

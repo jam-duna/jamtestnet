@@ -122,7 +122,7 @@ export interface Extrinsic {
 // Epoch mark (used for block proofs)
 export interface EpochMark {
   entropy: string;
-  ticket_entropy: string;
+  ticket_entropy?: string;
   validators: string[];
 }
 
@@ -224,8 +224,8 @@ export type RhoItem = Array<{
 } | null>;
 
 export type ThetaItem = Array<{
-  report: Report;
-  dependencies: string[];
+  report?: Report;
+  dependencies?: string[];
 } | null>;
 
 //

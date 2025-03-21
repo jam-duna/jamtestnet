@@ -11,11 +11,6 @@ export interface ExtrinsicCounts {
   totalExtrinsics: number;
 }
 
-/**
- * Calculates counts for the various extrinsic events.
- * @param extrinsic The extrinsic object from a block.
- * @returns An object containing individual counts and the total.
- */
 export function calculateExtrinsicCounts(extrinsic: any): ExtrinsicCounts {
   const ticketsCount = Array.isArray(extrinsic.tickets)
     ? extrinsic.tickets.length
@@ -50,11 +45,6 @@ export function calculateExtrinsicCounts(extrinsic: any): ExtrinsicCounts {
   };
 }
 
-/**
- * Filters blocks that have at least one extrinsic event.
- * @param blocks Array of BlockRecord.
- * @returns Array of BlockRecord with non-zero extrinsic events.
- */
 export function filterExtrinsicBlocks(blocks: Block[]): Block[] {
   if (!blocks) return [];
   return blocks.filter((blockItem) => {
@@ -65,11 +55,6 @@ export function filterExtrinsicBlocks(blocks: Block[]): Block[] {
   });
 }
 
-/**
- * Filters blocks that have work reports (guarantees).
- * @param blocks Array of BlockRecord.
- * @returns Array of BlockRecord where extrinsic.guarantees exist.
- */
 export function filterWorkReportBlocks(blocks?: Block[]): Block[] {
   if (!blocks) return [];
   return blocks.filter((blockItem) => {

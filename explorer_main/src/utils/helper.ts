@@ -1,3 +1,5 @@
+export const DEFAULT_WS_URL = "jamops.jamduna.org:13372";
+
 export function truncateHash(hash: string): string {
   const clean = hash.startsWith("0x") ? hash.slice(2) : hash;
 
