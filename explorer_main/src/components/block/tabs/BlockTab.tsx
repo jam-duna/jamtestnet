@@ -1,13 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  Paper,
-  Typography,
-  Box,
-  Divider,
-  Link as MuiLink,
-} from "@mui/material";
+import { Paper, Typography, Box, Link as MuiLink } from "@mui/material";
 import { LabeledRow } from "@/components/display/LabeledRow";
 import ExtrinsicAccordion from "@/components/extrinsic/ExtrinsicAccordion";
 import MoreDetailsAccordion from "@/components/block/MoreDetailsAccordion";
@@ -15,9 +9,10 @@ import BlockNavigationButtons from "@/components/block/BlockNavigationButtons";
 import { basicInfoMapping } from "@/utils/tooltipDetails";
 import { useRouter } from "next/navigation";
 import { pluralize } from "@/utils/helper";
+import { Block } from "@/db/db";
 
 interface BlockTabProps {
-  blockRecord: any; // Use your actual BlockRecord type here.
+  blockRecord: Block; // Use your actual BlockRecord type here.
   hash: string;
   type: string;
   prevHash: string | null;
@@ -85,7 +80,7 @@ export function BlockTab({
             tooltip={basicInfoMapping.createdDate.tooltip}
             value={
               <Typography variant="body1">
-                {blockRecord.overview.createdAt
+                {blockRecord?.overview?.createdAt
                   ? new Date(createdAt).toLocaleString()
                   : "N/A"}
               </Typography>

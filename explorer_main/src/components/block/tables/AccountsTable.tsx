@@ -20,6 +20,8 @@ interface AccountAccordionProps {
 }
 
 export default function AccountAccordion({ accounts }: AccountAccordionProps) {
+  console.log("Accounts: ");
+  console.log(accounts);
   // Reusable custom AccordionSummary style (similar to your ReportTable example)
   const customAccordionSummary = (title: string, tooltipText: string) => (
     <AccordionSummary

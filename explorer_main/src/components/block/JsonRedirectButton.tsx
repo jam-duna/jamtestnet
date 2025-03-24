@@ -49,9 +49,9 @@ const JsonRedirectButton: React.FC<JsonRedirectButtonProps> = ({
 };
 
 export const JsonRedirectButtonDefinition = {
-  condition: (key: string, value: any) =>
+  condition: (key: string, value: unknown) =>
     key === "header_hash" || key === "hash",
-  matches: (key: string, value: any): key is "header_hash" | "hash" =>
+  matches: (key: string, value: unknown): key is "header_hash" | "hash" =>
     key === "header_hash" || key === "hash",
   Element: JsonRedirectButton,
   onClick: (nodeData: NodeData, e: React.MouseEvent) => {

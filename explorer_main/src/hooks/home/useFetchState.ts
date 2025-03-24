@@ -1,4 +1,9 @@
-export async function fetchState(hash: string, rpcUrl: string): Promise<any> {
+import { State } from "@/db/db";
+
+export async function fetchState(
+  hash: string,
+  rpcUrl: string
+): Promise<State | null> {
   console.log("fetching state for hash: ", hash);
   const payload = {
     jsonrpc: "2.0",

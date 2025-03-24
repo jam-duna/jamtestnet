@@ -14,8 +14,21 @@ import {
 } from "@mui/material";
 import { truncateHash } from "@/utils/helper";
 
+// Helper function to safely convert an unknown value to a ReactNode
+function renderCellValue(value: unknown): React.ReactNode {
+  if (typeof value === "string" || typeof value === "number") {
+    return value;
+  } else if (typeof value === "boolean") {
+    return value.toString();
+  } else if (React.isValidElement(value)) {
+    return value;
+  }
+  // Fallback: convert object to JSON string
+  return JSON.stringify(value);
+}
+
 interface TableFormat1Props {
-  data: Array<Record<string, any>>;
+  data: Array<Record<string, unknown>>;
 }
 
 export default function TableFormat1({ data }: TableFormat1Props) {
@@ -62,11 +75,13 @@ export default function TableFormat1({ data }: TableFormat1Props) {
                 <TableCell>{idx}</TableCell>
                 {keys.map((key) => (
                   <TableCell key={key}>
-                    {typeof row[key] === "string" && row[key].startsWith("0x")
-                      ? expandedRow === idx
-                        ? row[key]
-                        : truncateHash(row[key])
-                      : row[key]}
+                    {typeof row[key] === "string"
+                      ? row[key].startsWith("0x")
+                        ? expandedRow === idx
+                          ? row[key]
+                          : truncateHash(row[key])
+                        : row[key]
+                      : renderCellValue(row[key])}
                   </TableCell>
                 ))}
               </TableRow>

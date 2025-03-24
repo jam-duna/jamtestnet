@@ -1,4 +1,9 @@
-export async function fetchBlock(hash: string, rpcUrl: string): Promise<any> {
+import { Block } from "@/db/db";
+
+export async function fetchBlock(
+  hash: string,
+  rpcUrl: string
+): Promise<Block | null> {
   console.log("fetching block for hash: ", hash);
   const payload = {
     jsonrpc: "2.0",

@@ -10,7 +10,10 @@ export interface GridData {
   coreStatistics: Record<number, Record<number, CoreStatistics>>;
 }
 
-export function parseBlocksToGridData(blocks: Block[], states: State[]): GridData {
+export function parseBlocksToGridData(
+  blocks: Block[],
+  states: State[]
+): GridData {
   const grid: Record<number, Record<number, SquareContent>> = {};
   const timeslots = new Set<number>();
   const timestamps = new Set<number>();
@@ -80,13 +83,14 @@ export function parseBlocksToGridData(blocks: Block[], states: State[]): GridDat
 
   let coreIndex = -1;
   cores.forEach((coreValue) => {
-    coreIndex ++;
+    coreIndex++;
     let timeslotIndex = 0;
     coreStatistics[coreValue] = {};
     timeslots.forEach((timeslotValue) => {
       try {
-        coreStatistics[coreValue][timeslotValue] = states[timeslotIndex ++].pi.cores[coreIndex];
-      } catch(err) {
+        coreStatistics[coreValue][timeslotValue] =
+          states[timeslotIndex++].pi.cores[coreIndex];
+      } catch (err) {
         coreStatistics[coreValue][timeslotValue] = {
           gas_used: -1,
           imports: -1,
@@ -98,8 +102,8 @@ export function parseBlocksToGridData(blocks: Block[], states: State[]): GridDat
           popularity: -1,
         };
       }
-    })
-  })
+    });
+  });
 
   return {
     data: grid,

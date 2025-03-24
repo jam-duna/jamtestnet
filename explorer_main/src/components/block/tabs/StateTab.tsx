@@ -10,8 +10,10 @@ import { State } from "@/db/db";
 import { useParams } from "next/navigation";
 import { renderTable } from "../tables/RenderStateTable"; // Adjust the import path as needed
 
+type AllowedStateKey = keyof State;
+
 interface StateTabProps {
-  stateRecord: any; // Replace with your actual type if available.
+  stateRecord: State; // Replace with your actual type if available.
 }
 
 export function StateTab({ stateRecord }: StateTabProps) {
@@ -62,6 +64,7 @@ export function StateTab({ stateRecord }: StateTabProps) {
     },
   ];
 
+  console.log(stateRecord);
   const jamState = { ...stateRecord, accounts: testData };
   const [viewMode, setViewMode] = useState<"json" | "table">("json");
 
@@ -76,7 +79,8 @@ export function StateTab({ stateRecord }: StateTabProps) {
       {jamState ? (
         <>
           {Object.entries(jamStateMapping).map(([key, { label, tooltip }]) => {
-            const rawValue = jamState[key];
+            const stateKey = key as AllowedStateKey;
+            const rawValue = jamState[stateKey];
             let displayValue: React.ReactNode;
 
             if (typeof rawValue === "object") {
@@ -94,7 +98,7 @@ export function StateTab({ stateRecord }: StateTabProps) {
                 ) : (
                   renderTable(jamState, key as keyof State, headerHash) ?? (
                     <Typography variant="body2">
-                      Table view not available for key "{key}"
+                      {`Table view not available for key '${key}'`}
                     </Typography>
                   )
                 );

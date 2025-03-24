@@ -161,6 +161,7 @@ export interface KeyedItem {
   ed25519: string;
   bls: string;
   metadata: string;
+  [key: string]: unknown;
 }
 
 export interface BetaItem {
@@ -179,7 +180,7 @@ export interface ChiItem {
   chi_m: number;
   chi_a: number;
   chi_v: number;
-  chi_g: {};
+  chi_g: object;
 }
 
 export interface GammaItem {
@@ -286,7 +287,7 @@ export interface AccountData {
   service: AccountService;
   preimages: AccountPreimage[];
   lookup_meta: AccountLookupMeta[];
-  storage: any | null; // could be null or some object
+  storage: unknown | null; // could be null or some object
 }
 
 export interface AccountItem {

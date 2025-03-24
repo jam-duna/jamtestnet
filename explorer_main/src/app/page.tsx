@@ -92,9 +92,14 @@ function parseBlocksToGridData(blocks: Block[]): GridData {
 }
 
 export default function HomePage() {
-  const [currentBlock, setCurrentBlock] = useState<unknown>(null);
-  const [currentState, setCurrentState] = useState<unknown>(null);
-  const [wsEndpoint, setWsEndpoint] = useState<string>(DEFAULT_WS_URL);
+  const [currentBlock, setCurrentBlock] = useState<Block | null>(null);
+  const [currentState, setCurrentState] = useState<State | null>(null);
+  const [wsEndpoint, setWsEndpoint] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("customWsEndpoint") || DEFAULT_WS_URL;
+    }
+    return DEFAULT_WS_URL;
+  });
   const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
   const [latestBlocks, setLatestBlocks] = useState<Block[]>([]);
   const [latestStates, setLatestStates] = useState<State[]>([]);
@@ -124,10 +129,13 @@ export default function HomePage() {
 
   // nicolas patch start
   // this patch is for fetching blocks using rpc
-  useFetchRpc({rpcUrl: wsEndpoint, onNewBlock: (blockRecord, stateRecord) => {
-    setCurrentBlock(blockRecord);
-    setCurrentState(stateRecord);
-  }});
+  useFetchRpc({
+    rpcUrl: wsEndpoint,
+    onNewBlock: (blockRecord, stateRecord) => {
+      setCurrentBlock(blockRecord);
+      setCurrentState(stateRecord);
+    },
+  });
   // nicolas patch end
 
   useEffect(() => {

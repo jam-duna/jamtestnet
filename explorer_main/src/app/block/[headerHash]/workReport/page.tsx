@@ -12,7 +12,6 @@ import {
   TableHead,
   TableRow,
   Box,
-  Divider,
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";

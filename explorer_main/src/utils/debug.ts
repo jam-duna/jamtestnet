@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect } from "react";
 import { db, Block, State } from "@/db/db";
 import { mockBlocks } from "@/components/mock/block";

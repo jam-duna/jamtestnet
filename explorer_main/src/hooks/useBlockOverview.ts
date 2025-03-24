@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { db, Block, State } from "@/db/db";
 
 export function useBlockOverview(hash: string, type: string) {
-  const [blockRecord, setBlockRecord] = useState<Block | null>(null);
-  const [stateRecord, setStateRecord] = useState<State | null>(null);
+  const [blockRecord, setBlockRecord] = useState<Block>();
+  const [stateRecord, setStateRecord] = useState<State>();
   const [prevHash, setPrevHash] = useState<string | null>(null);
   const [nextHash, setNextHash] = useState<string | null>(null);
 
@@ -15,7 +15,7 @@ export function useBlockOverview(hash: string, type: string) {
         .first()
         .then((record) => {
           console.log(record);
-          setBlockRecord(record || null);
+          setBlockRecord(record);
         })
         .catch((error) => {
           console.error("Error loading block record:", error);
@@ -27,7 +27,7 @@ export function useBlockOverview(hash: string, type: string) {
         .first()
         .then((record) => {
           console.log(record);
-          setStateRecord(record || null);
+          setStateRecord(record);
         })
         .catch((error) => {
           console.error("Error loading state record:", error);
@@ -39,7 +39,7 @@ export function useBlockOverview(hash: string, type: string) {
         .first()
         .then((record) => {
           console.log(record);
-          setBlockRecord(record || null);
+          setBlockRecord(record);
         })
         .catch((error) => {
           console.error("Error loading block record:", error);
@@ -51,7 +51,7 @@ export function useBlockOverview(hash: string, type: string) {
         .first()
         .then((record) => {
           console.log(record);
-          setStateRecord(record || null);
+          setStateRecord(record);
         })
         .catch((error) => {
           console.error("Error loading state record:", error);

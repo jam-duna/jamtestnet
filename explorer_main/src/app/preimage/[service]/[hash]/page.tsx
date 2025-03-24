@@ -1,14 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
-import {
-  Container,
-  Paper,
-  Typography,
-  Divider,
-  Link as MuiLink,
-} from "@mui/material";
+import React from "react";
+import { useParams } from "next/navigation";
+import { Container, Typography } from "@mui/material";
 export default function ServiceDetail() {
   const params = useParams();
   const serviceId = params.serviceId as string;

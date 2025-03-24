@@ -38,8 +38,8 @@ export interface State {
   theta: ThetaItem;
   varphi: string[][];
   xi: string[][];
-  accounts: AccountItem | null;
-  overview: Overview;
+  accounts: AccountItem[] | null;
+  overview?: Overview;
 }
 
 // Dexie database class
