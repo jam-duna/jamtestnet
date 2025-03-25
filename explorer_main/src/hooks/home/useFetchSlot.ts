@@ -2,12 +2,12 @@ export async function fetchBlockBySlot(
   slot: number,
   rpcUrl: string
 ): Promise<any> {
-  console.log("fetching block for slot: ", slot);
+  //console.log("fetching block for slot: ", slot);
   const payload = {
     jsonrpc: "2.0",
     id: 1,
     method: "jam.GetBlockBySlot",
-    params: [slot],
+    params: [slot.toString()],
   };
   try {
     const response = await fetch(rpcUrl, {
@@ -17,7 +17,7 @@ export async function fetchBlockBySlot(
     });
     return await response.json();
   } catch (err) {
-    console.error("Error fetching block:", err);
+    //console.error("Error fetching block:", err);
     return null;
   }
 }

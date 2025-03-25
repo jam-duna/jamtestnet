@@ -12,6 +12,7 @@ import { useWsRpc } from "@/hooks/home/useWsRpc";
 import MainViewGrid, { SquareContent } from "@/components/home/MainViewGrid";
 import PiTable from "@/components/block/tables/PiTable";
 import { DEFAULT_WS_URL } from "@/utils/helper";
+import { useFetchRpc } from "@/hooks/home/useFetchRpc";
 
 interface GridData {
   data: Record<number, Record<number, SquareContent>>;
@@ -104,19 +105,27 @@ export default function HomePage() {
   });
   const [showOnlyWorkPackages, setShowOnlyWorkPackages] = useState(false);
 
-  useWsRpc({
-    wsEndpoint,
-    setWsEndpoint,
-    defaultWsUrl: DEFAULT_WS_URL,
-    onNewBlock: (blockRecord, stateRecord) => {
-      console.log(blockRecord);
-      setCurrentBlock(blockRecord);
-      console.log(stateRecord);
-      setCurrentState(stateRecord);
-    },
-    onUpdateNow: setNow,
-    setSavedEndpoints,
-  });
+  // useWsRpc({
+  //   wsEndpoint,
+  //   setWsEndpoint,
+  //   defaultWsUrl: DEFAULT_WS_URL,
+  //   onNewBlock: (blockRecord, stateRecord) => {
+  //     console.log(blockRecord);
+  //     setCurrentBlock(blockRecord);
+  //     console.log(stateRecord);
+  //     setCurrentState(stateRecord);
+  //   },
+  //   onUpdateNow: setNow,
+  //   setSavedEndpoints,
+  // });
+
+  // nicolas patch start
+  // this patch is for fetching blocks using rpc
+  useFetchRpc({rpcUrl: wsEndpoint, onNewBlock: (blockRecord, stateRecord) => {
+    setCurrentBlock(blockRecord);
+    setCurrentState(stateRecord);
+  }});
+  // nicolas patch end
 
   useEffect(() => {
     // Load blocks from DB.
