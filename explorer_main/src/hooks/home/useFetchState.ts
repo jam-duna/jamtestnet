@@ -14,7 +14,7 @@ export async function fetchState(hash: string, rpcUrl: string): Promise<any> {
     });
     return await response.json();
   } catch (err) {
-    console.error("Error fetching state:", err);
+    //console.error("Error fetching state:", err);
     return null;
   }
 }

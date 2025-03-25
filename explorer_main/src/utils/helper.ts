@@ -1,3 +1,6 @@
+import { time } from "console";
+import { format } from "date-fns";
+
 export const DEFAULT_WS_URL = "http://jam-0.jamduna.org:10900/rpc";
 
 export function truncateHash(hash: string): string {
@@ -29,4 +32,8 @@ export function getRelativeTime(timestamp: number, now = Date.now()): string {
 
 export function pluralize(word: string, count: number): string {
   return count !== 1 ? word + "s" : word;
+}
+
+export function formatDate(timestamp: number) {
+  return format(new Date(timestamp), "yyyy-MM-dd HH:mm:ss");
 }

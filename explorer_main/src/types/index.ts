@@ -206,9 +206,21 @@ export interface PiEntry {
   assurances: number;
 }
 
+export interface CoreStatistics{
+  gas_used: number;
+  num_imported_segments: number;
+  num_extrinsics: number;
+  num_bytes_extrinsics: number;
+  num_exported_segments: number;
+  total_bundle_length: number;
+  throughput: number;
+  num_assurances: number;
+}
+
 export interface PiItem {
   current: PiEntry[];
   last: PiEntry[];
+  core_statistics: CoreStatistics[];
 }
 
 export interface PsiItem {

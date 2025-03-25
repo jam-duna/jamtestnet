@@ -14,7 +14,7 @@ export async function fetchBlock(hash: string, rpcUrl: string): Promise<any> {
     });
     return await response.json();
   } catch (err) {
-    console.error("Error fetching block:", err);
+    //console.error("Error fetching block:", err);
     return null;
   }
 }

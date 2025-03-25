@@ -13,6 +13,7 @@ import MainViewGrid, { SquareContent } from "@/components/home/MainViewGrid";
 import PiTable from "@/components/block/tables/PiTable";
 import { DEFAULT_WS_URL } from "@/utils/helper";
 import { useFetchRpc } from "@/hooks/home/useFetchRpc";
+import { useInsertMockDataIfEmpty } from "@/utils/debug";
 
 interface GridData {
   data: Record<number, Record<number, SquareContent>>;
