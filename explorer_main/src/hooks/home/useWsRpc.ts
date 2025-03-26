@@ -7,6 +7,7 @@ import { db, Block, State } from "@/db/db";
 import { fetchBlock } from "./useFetchBlock";
 import { fetchState } from "./useFetchState";
 import { getRpcUrlFromWs, normalizeEndpoint } from "@/utils/ws";
+import { DEFAULT_WS_URL } from "@/utils/helper";
 
 interface UseWsRpcParams {
   wsEndpoint: string;
@@ -47,10 +48,27 @@ export function useWsRpc({
         normalEndpoint,
         "..."
       );
+
+      // debug purposes
+      // localStorage.setItem("customWsEndpoint", normalEndpoint);
+
       wsRef.current = new WebSocket(normalEndpoint);
 
       wsRef.current.onopen = () => {
         console.log(`[OPEN] | ${normalEndpoint}`);
+        localStorage.setItem("customWsEndpoint", normalEndpoint);
+
+        if (normalEndpoint === normalizeEndpoint(DEFAULT_WS_URL)) return;
+
+        setSavedEndpoints((prev) => {
+          if (!prev.includes(wsEndpoint)) {
+            const updated = [...prev, wsEndpoint];
+            localStorage.setItem("savedWsEndpoints", JSON.stringify(updated));
+            return updated;
+          }
+          return prev;
+        });
+        // localStorage.setItem("customWsEndpoint", wsEndpoint);
       };
 
       wsRef.current.onmessage = (event) => {
@@ -61,7 +79,6 @@ export function useWsRpc({
             console.log(`[MESSAGE] | Received msg ->`, msg);
 
             if (msg.method === "BlockAnnouncement" && msg.result) {
-              // Persist the current endpoint if needed.
               localStorage.setItem("customWsEndpoint", wsEndpoint);
               setSavedEndpoints((prev) => {
                 if (!prev.includes(wsEndpoint)) {
