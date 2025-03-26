@@ -5,6 +5,7 @@ import { CoreStatistics } from "@/types";
 export interface GridData {
   data: Record<number, Record<number, SquareContent>>;
   timeslots: number[];
+  timestamps: number[];
   cores: number[];
   coreStatistics: Record<number, Record<number, CoreStatistics>>;
 }
@@ -12,6 +13,7 @@ export interface GridData {
 export function parseBlocksToGridData(blocks: Block[], states: State[]): GridData {
   const grid: Record<number, Record<number, SquareContent>> = {};
   const timeslots = new Set<number>();
+  const timestamps = new Set<number>();
   const cores = new Set<number>([0, 1]);
   const coreStatistics: Record<number, Record<number, CoreStatistics>> = {};
 
@@ -20,8 +22,8 @@ export function parseBlocksToGridData(blocks: Block[], states: State[]): GridDat
     const timestamp = block.overview?.createdAt;
     if (typeof slot !== "number") return;
     if (typeof timestamp !== "number") return;
-    //timeslots.add(slot);
-    timeslots.add(timestamp);
+    timeslots.add(slot);
+    timestamps.add(timestamp);
     const headerHash = block.overview?.headerHash ?? "";
     const guarantees = block.extrinsic?.guarantees ?? [];
     const validGuarantees = guarantees.filter(
@@ -88,9 +90,12 @@ export function parseBlocksToGridData(blocks: Block[], states: State[]): GridDat
     })
   })
 
+  console.log("CoreStats: ", coreStatistics);
+
   return {
     data: grid,
     timeslots: Array.from(timeslots).sort((a, b) => b - a),
+    timestamps: Array.from(timeslots).sort((a, b) => b - a),
     cores: Array.from(cores).sort((a, b) => a - b),
     coreStatistics,
   };

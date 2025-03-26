@@ -35,5 +35,13 @@ export function pluralize(word: string, count: number): string {
 }
 
 export function formatDate(timestamp: number) {
-  return format(new Date(timestamp), "yyyy-MM-dd HH:mm:ss");
+  return new Date(timestamp).toLocaleString("en-US", {
+    timeZone: "UTC",
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
 }

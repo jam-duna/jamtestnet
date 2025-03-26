@@ -24,6 +24,7 @@ export default function CoreDetailPage() {
   const [gridData, setGridData] = useState<GridData>({
     data: {},
     timeslots: [],
+    timestamps: [],
     cores: [],
     coreStatistics: {},
   });
@@ -67,6 +68,7 @@ export default function CoreDetailPage() {
       </Box>
       <BlockListGrid
           timeslots={gridData.timeslots}
+          timestamps={gridData.timestamps}
           coreIndex={Number.parseInt(coreIndex)}
           data={gridData.data}
         />

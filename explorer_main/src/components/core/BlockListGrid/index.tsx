@@ -11,6 +11,7 @@ import {
   TableRow,
   Paper,
   Typography,
+  Box,
 } from "@mui/material";
 import { formatDate, truncateHash } from "@/utils/helper";
 
@@ -25,6 +26,7 @@ export interface SquareContent {
 export interface BlockListGridProps {
   /** Sorted list of timeslots (columns). */
   timeslots: number[];
+  timestamps: number[];
   /** Sorted list of cores (rows). */
   coreIndex: number;
   /** data[coreIndex][timeslot] = { serviceName, workPackageHash, headerHash, isBusy } */
@@ -33,26 +35,42 @@ export interface BlockListGridProps {
 
 export function BlockListGrid({
   timeslots,
+  timestamps,
   coreIndex,
   data,
 }: BlockListGridProps) {
   const router = useRouter();
 
   return (
-    <>
+    <Box width={"100%"}
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+        justifyContent={"center"}
+        >
+    <Typography variant="h6" sx={{mb: 3}}>Block Details</Typography>
       <TableContainer component={Paper} sx={{ width: "100%", mb: 7 }}>
         <Table sx={{ width: "100%", tableLayout: "fixed" }} size="small">
           <TableHead>
             <TableRow>
               {/* Timeslot headers */}
-              {timeslots.map((timestamp) => (
+              {timestamps.map((timestampValue, timestampIndex) => (
                 <TableCell
-                  key={timestamp}
+                  key={timestampValue}
                   align="center"
-                  sx={{ border: "1px solid #ddd", backgroundColor: "#eee" }}
+                  sx={{
+                    border: "1px solid #ddd",
+                    backgroundColor: "#eee",
+                    cursor: "pointer",
+                    transition: "all .5s ease-in-out",
+                    ":hover": {
+                        backgroundColor: "#ddd",
+                    }
+                  }}
+                  onClick={() => {router.push(`/block/${timeslots[timestampIndex]}`)}}
                 >
                   <Typography variant="subtitle2">
-                    {formatDate(timestamp)}
+                    {formatDate(timestampValue)}
                   </Typography>
                 </TableCell>
               ))}
@@ -74,6 +92,7 @@ export function BlockListGrid({
                         border: "1px solid #ddd",
                         padding: "8px",
                         wordBreak: "break-all",
+                        cursor: "pointer",
                       }}
                     >
                       {/* Service ID clickable */}
@@ -125,6 +144,6 @@ export function BlockListGrid({
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </Box>
   );
 }
