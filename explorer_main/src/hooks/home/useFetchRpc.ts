@@ -71,7 +71,7 @@ export function useFetchRpc({rpcUrl, onNewBlock}: UseFetctRpcParams) {
                             await db.blocks.put(blockRecord);
 
                             if (fetchedState) {
-                                const stateRecord: State = { overview, ...fetchedState };
+                                const stateRecord: State = {overview, ...fetchedState};
                                 await db.states.put(stateRecord);
 
                                 onNewBlock(blockRecord, stateRecord);

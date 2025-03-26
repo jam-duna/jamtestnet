@@ -52,3 +52,14 @@ export const filterStates = async(count: number) : Promise<State[]> => {
     const sortedStates = await sortStates();
     return sortedStates.slice(0, count);
 }
+
+export const filterWorkPackages = async(coreIndex: number) : Promise<State[]> => {
+    const sortedStates = await sortStates();
+    const filteredStates = sortedStates.filter((state) => {
+        const filteredRhos = state.rho.filter((rhoItem) => {
+            return rhoItem?.report.core_index === coreIndex;
+        });
+        return filteredRhos !== null && filteredRhos.length > 0;
+    });
+    return filteredStates;
+}

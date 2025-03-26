@@ -84,18 +84,30 @@ export function parseBlocksToGridData(blocks: Block[], states: State[]): GridDat
     let timeslotIndex = 0;
     coreStatistics[coreValue] = {};
     timeslots.forEach((timeslotValue) => {
-      if (states.length > 0) {
-        coreStatistics[coreValue][timeslotValue] = states[timeslotIndex ++].pi.core_statistics[coreIndex];
+      try {
+        coreStatistics[coreValue][timeslotValue] = states[timeslotIndex ++].pi.cores[coreIndex];
+      } catch(err) {
+        coreStatistics[coreValue][timeslotValue] = {
+          gas_used: -1,
+          imports: -1,
+          extrinsic_count: -1,
+          extrinsic_size: -1,
+          exports: -1,
+          bundle_size: -1,
+          da_load: -1,
+          popularity: -1,
+        };
       }
     })
   })
 
+  console.log("States: ", states);
   console.log("CoreStats: ", coreStatistics);
 
   return {
     data: grid,
     timeslots: Array.from(timeslots).sort((a, b) => b - a),
-    timestamps: Array.from(timeslots).sort((a, b) => b - a),
+    timestamps: Array.from(timestamps).sort((a, b) => b - a),
     cores: Array.from(cores).sort((a, b) => a - b),
     coreStatistics,
   };

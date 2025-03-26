@@ -6,13 +6,13 @@ import { BorderAllRounded } from "@mui/icons-material";
 export const CoreStatsGrid: React.FC<{ stats: CoreStatistics }> = ({ stats }) => {
     const data = [
       { label: "Gas Used", value: stats.gas_used },
-      { label: "NumImportedSegments", value: stats.num_imported_segments },
-      { label: "NumExtrinsics", value: stats.num_extrinsics },
-      { label: "NumBytesExtrinsics", value: stats.num_bytes_extrinsics },
-      { label: "NumExportedSegments", value: stats.num_exported_segments },
-      { label: "TotalBundleLength", value: stats.total_bundle_length },
-      { label: "DA Load", value: stats.throughput },
-      { label: "NumAssurances", value: stats.num_assurances },
+      { label: "NumImportedSegments", value: stats.imports },
+      { label: "NumExtrinsics", value: stats.extrinsic_count },
+      { label: "NumBytesExtrinsics", value: stats.extrinsic_size },
+      { label: "NumExportedSegments", value: stats.exports },
+      { label: "TotalBundleLength", value: stats.bundle_size },
+      { label: "DA Load", value: stats.da_load },
+      { label: "NumAssurances", value: stats.popularity },
     ];
   
     return (

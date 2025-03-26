@@ -2,14 +2,14 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { Container, Typography, Link as MuiLink, Box } from "@mui/material";
+import { Container, Typography, Link as MuiLink, Box, Grid } from "@mui/material";
 import { Block, State } from "@/db/db";
 import { useFetchRpc } from "@/hooks/home/useFetchRpc";
 import { DEFAULT_WS_URL } from "@/utils/helper";
-import { filterBlocks, filterStates, sortBlocks, sortStates } from "@/utils/blockAnalyzer";
+import { filterBlocks, filterStates, filterWorkPackages, sortBlocks, sortStates } from "@/utils/blockAnalyzer";
 import MainViewGrid, { SquareContent } from "@/components/home/MainViewGrid";
 import { GridData, parseBlocksToGridData } from "@/utils/parseBlocksToGridData";
-import { BlockListGrid, CoreStatsGrid } from "@/components/core";
+import { BlockListGrid, CoreStatsGrid, RecentServices, RecentWorkPackages } from "@/components/core";
 import { useInsertMockDataIfEmpty } from "@/utils/debug";
 
 
@@ -21,6 +21,7 @@ export default function CoreDetailPage() {
   const [currentState, setCurrentState] = useState<unknown>(null);
   const [filteredBlocks, setFilteredBlocks] = useState<Block[]>([]);
   const [filteredStates, setFilteredStates] = useState<State[]>([]);
+  const [activeStates, setActiveStates] = useState<State[]>([]);
   const [gridData, setGridData] = useState<GridData>({
     data: {},
     timeslots: [],
@@ -29,12 +30,12 @@ export default function CoreDetailPage() {
     coreStatistics: {},
   });
 
-  //useInsertMockDataIfEmpty();
+  useInsertMockDataIfEmpty();
 
-  useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
-    setCurrentBlock(blockRecord);
-    setCurrentState(stateRecord);
-  }});
+  // useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
+  //   setCurrentBlock(blockRecord);
+  //   setCurrentState(stateRecord);
+  // }});
 
   useEffect(() => {
     const fetchBlocks = async() => {
@@ -45,9 +46,14 @@ export default function CoreDetailPage() {
       const states = await filterStates(8);
       setFilteredStates(states);
     }
-
+    const fetchActiveStates = async() => {
+      const states = await filterWorkPackages(Number.parseInt(coreIndex));
+      setActiveStates(states);
+    }
+  
     fetchBlocks();
     fetchStates();
+    fetchActiveStates();
   }, [currentBlock]);
 
   useEffect(() => {
@@ -79,6 +85,15 @@ export default function CoreDetailPage() {
           stats={gridData.coreStatistics[Number.parseInt(coreIndex)][gridData.timeslots[0]]}
         />
       }
+
+      <Grid sx={{ my: 5 }} container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <RecentWorkPackages states={activeStates} coreIndex={Number.parseInt(coreIndex)} />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <RecentServices states={activeStates} coreIndex={Number.parseInt(coreIndex)} />
+          </Grid>
+      </Grid>
       
     </Container>
   );
