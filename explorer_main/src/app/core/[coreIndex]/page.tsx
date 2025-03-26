@@ -69,15 +69,17 @@ export default function CoreDetailPage() {
           Core
         </Typography>
         <Typography variant="h6" sx={{ ml: 1.5, mt:0.5 }}>
-          id {coreIndex}
+          #{coreIndex}
         </Typography>
       </Box>
+
       <BlockListGrid
           timeslots={gridData.timeslots}
           timestamps={gridData.timestamps}
           coreIndex={Number.parseInt(coreIndex)}
           data={gridData.data}
         />
+        
       { gridData.timeslots.length > 0 && 
         gridData.coreStatistics[Number.parseInt(coreIndex)] && 
         gridData.coreStatistics[Number.parseInt(coreIndex)][gridData.timeslots[0]] &&

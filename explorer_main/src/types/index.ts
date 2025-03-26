@@ -277,3 +277,15 @@ export interface AccountItem {
   id: number;
   data: AccountData;
 }
+
+
+export interface ServiceInfo {
+  metadata: string;
+  service_index: number;
+  balance: number;
+  min_item_gas: number;
+  min_memo_gas: number;
+  code_size: number;
+  items: number;
+  code_hash: string;
+}

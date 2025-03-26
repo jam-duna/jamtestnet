@@ -101,9 +101,6 @@ export function parseBlocksToGridData(blocks: Block[], states: State[]): GridDat
     })
   })
 
-  console.log("States: ", states);
-  console.log("CoreStats: ", coreStatistics);
-
   return {
     data: grid,
     timeslots: Array.from(timeslots).sort((a, b) => b - a),

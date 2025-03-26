@@ -8,16 +8,103 @@ import {
   Typography,
   Divider,
   Link as MuiLink,
+  Box,
 } from "@mui/material";
+import { fetchService } from "@/hooks/service";
+import { DEFAULT_WS_URL } from "@/utils/helper";
+import { ServiceInfo } from "@/types";
+import { BlockListGrid, ServiceInfoTable } from "@/components/service";
+import { Block, State } from "@/db/db";
+import { GridData, parseBlocksToGridData } from "@/utils/parseBlocksToGridData";
+import { useInsertMockDataIfEmpty } from "@/utils/debug";
+import { filterBlocks, filterStates } from "@/utils/blockAnalyzer";
 export default function ServiceDetail() {
   const params = useParams();
   const serviceId = params.serviceId as string;
-  console.log(serviceId);
+
+  const [serviceInfo, setServiceInfo] = useState<ServiceInfo | null>(null);
+  const [currentBlock, setCurrentBlock] = useState<unknown>(null);
+  const [currentState, setCurrentState] = useState<unknown>(null);
+  const [filteredBlocks, setFilteredBlocks] = useState<Block[]>([]);
+  const [filteredStates, setFilteredStates] = useState<State[]>([]);
+  // const [activeStates, setActiveStates] = useState<State[]>([]);
+  const [gridData, setGridData] = useState<GridData>({
+    data: {},
+    timeslots: [],
+    timestamps: [],
+    cores: [],
+    coreStatistics: {},
+  });
+
+  useInsertMockDataIfEmpty();
+
+  // useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
+  //   setCurrentBlock(blockRecord);
+  //   setCurrentState(stateRecord);
+  // }});
+
+  useEffect(() => {
+    const fetchBlocks = async() => {
+      const blocks = await filterBlocks(8);
+      setFilteredBlocks(blocks);
+    }
+    const fetchStates = async() => {
+      const states = await filterStates(8);
+      setFilteredStates(states);
+    }
+    // const fetchActiveStates = async() => {
+    //   const states = await filterWorkPackages(Number.parseInt(coreIndex));
+    //   setActiveStates(states);
+    // }
+  
+    fetchBlocks();
+    fetchStates();
+    // fetchActiveStates();
+  }, [currentBlock]);
+
+  useEffect(() => {
+    const data = parseBlocksToGridData(filteredBlocks, filteredStates);
+    setGridData(data);
+  }, [filteredBlocks]);
+
+  useEffect(() => {
+    if (serviceId) {
+      (async() => {
+        const info = await fetchService(serviceId, DEFAULT_WS_URL);
+        setServiceInfo(info);
+      })();
+    }
+  }, [serviceId]);
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography>Service ID {serviceId}</Typography>
-      <Typography>Detail</Typography>
+      <Box sx={{ display: "inline-flex", alignItems: "center", mb: 2 }}>
+        <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+          Service
+        </Typography>
+        <Typography variant="h6" sx={{ ml: 1.5, mt:0.5 }}>
+          #{serviceId}
+        </Typography>
+      </Box>
+
+      {!serviceInfo ? (
+        <Paper variant="outlined" sx={{ p: 3, marginBlock: 3 }}>
+          <Typography variant="h6">
+              Loading service info...
+          </Typography>
+        </Paper>) : (
+          <ServiceInfoTable serviceInfo={serviceInfo}></ServiceInfoTable>
+      )}
+
+      <Box sx={{ display: "inline-flex", alignItems: "center", marginBlock: 3 }}>
+        <BlockListGrid
+          timeslots={gridData.timeslots}
+          timestamps={gridData.timestamps}
+          cores={gridData.cores}
+          data={gridData.data}
+          serviceId={serviceId}
+        />
+      </Box>
     </Container>
   );
 }
