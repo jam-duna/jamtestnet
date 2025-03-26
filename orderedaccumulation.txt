@@ -1,0 +1,481 @@
+make megatron_short_with_prereq
+make[1]: Entering directory '/root/go/src/github.com/colorfulnotion/jam/node'
+Running TestMegatron (short) with targetN=8 and timeout 40m...
+go test -timeout 40m -v -run TestMegatron -tags "network_test,tiny" -targetN=8 -prereq_test=true -pvm_authoring_log=false
+=== RUN   TestMegatron
+megatron targetNum: 8
+[N0] addr=0.0.0.0:10400, dataDir=/tmp/root/jam/1743000608_caf5ee03cb02765e/node0
+[N1] addr=0.0.0.0:10401, dataDir=/tmp/root/jam/1743000608_caf5ee03cb02765e/node1
+INFO [03-26|14:50:09.008] JAM Web Server started                   addr=0.0.0.0:11400
+RPC server started, using IPC: /tmp/jam-0.sock
+[N2] addr=0.0.0.0:10402, dataDir=/tmp/root/jam/1743000608_caf5ee03cb02765e/node2
+RPC server started, using IPC: /tmp/jam-1.sock
+[N3] addr=0.0.0.0:10403, dataDir=/tmp/root/jam/1743000608_caf5ee03cb02765e/node3
+RPC server started, using IPC: /tmp/jam-2.sock
+[N4] addr=0.0.0.0:10404, dataDir=/tmp/root/jam/1743000608_caf5ee03cb02765e/node4
+RPC server started, using IPC: /tmp/jam-3.sock
+[N5] addr=0.0.0.0:10405, dataDir=/tmp/root/jam/1743000608_caf5ee03cb02765e/node5
+RPC server started, using IPC: /tmp/jam-4.sock
+INFO [03-26|14:50:09.080] JAMTEST                                  jam=megatron targetN=8
+Test PreReq: true
+Graph server listening on port 13430
+RPC server started, using IPC: /tmp/jam-5.sock
+DEBUG[03-26|14:50:13.273] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000]
+INFO [03-26|14:50:13.313] [N4] proposeBlock fallback               p=03c6..db92 h=3fcf..c766 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=c07c..290a  EpochMarker(η1'=6f6a..af2a, η2'=835a..4eaf)"
+INFO [03-26|14:50:19.083] fib                                      codeHash=0x030c457bea43b000e821a6f8c32d5f48944813bbe27fa0aee286b2d27adb79ce len=1060
+INFO [03-26|14:50:19.084] tribonacci                               codeHash=0xcaa4cf4337f7e0219714b74426b99f71f35fda2f796770e4e53b0dfab42cabef len=1087
+INFO [03-26|14:50:19.084] megatron                                 codeHash=0xd8f579d072de6c1d00de9a289bd4b258071d78e47c7df57f89aae188afa5c96a len=7215
+INFO [03-26|14:50:19.084] auth_copy                                codeHash=0xaa125123e0373599cacc94075a0d7d365a6bd81a1e260c4dcabd837fe48ddafd len=1527
+DEBUG[03-26|14:50:20.675] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5]
+INFO [03-26|14:50:20.839] [N4] proposeBlock fallback               p=3fcf..c766 h=976f..1759 e'=1 m'=1 "len(γ_a')"=3 blk="H_t=13 H_r=70b9..c1c6  |E_T|=3"
+DEBUG[03-26|14:50:26.893] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5]
+INFO [03-26|14:50:27.012] [N4] proposeBlock fallback               p=976f..1759 h=36e4..c13b e'=1 m'=2 "len(γ_a')"=6 blk="H_t=14 H_r=4d56..c0be  |E_T|=3"
+INFO [03-26|14:50:31.084] Builder storing TestService              serviceName=fib codeHash=0x030c457bea43b000e821a6f8c32d5f48944813bbe27fa0aee286b2d27adb79ce
+DEBUG[03-26|14:50:31.807] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-26|14:50:31.840] [N5] proposeBlock fallback               p=36e4..c13b h=1fb1..3819 e'=1 m'=3 "len(γ_a')"=9 blk="H_t=15 H_r=6bc4..cbe7  |E_T|=3 |E_G|=1"
+DEBUG[03-26|14:50:37.673] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0xcbb5941f4433cbb6b27b42f6406982ae5dd070c319c1e27179ffce3341604637","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x4869d3a3bc81b8d3f70683a1672af73e0552e3838bbc467d19b6f1ebc080010c","D":"0x0024030c457bea43b000e821a6f8c32d5f48944813bbe27fa0aee286b2d27adb79ce24040000"}'
+DEBUG[03-26|14:50:37.675] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0x63803b1000000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:50:37.675] writeAccount SET                         service_idx=0 rawkey=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c value="[99 128 59 16]"
+INFO [03-26|14:50:37.676] BEEFY-C                                  s=0 h=0x63803b1000000000000000000000000000000000000000000000000000000000 encoded=0000000063803b1000000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:50:37.676] BEEFY accumulation root                  r=0xf7c44f4d612222ddf216dc6d3f79f7dcf0a3c694de7298ebdcdee5eb33d7cac9
+DEBUG[03-26|14:50:37.676] BETA computation                         n=0 accumulationRoot=0xf7c44f4d612222ddf216dc6d3f79f7dcf0a3c694de7298ebdcdee5eb33d7cac9 mmr=[0xf7c44f4d612222ddf216dc6d3f79f7dcf0a3c694de7298ebdcdee5eb33d7cac9,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-26|14:50:37.712] [N0] proposeBlock fallback               p=1fb1..3819 h=a60e..5ace e'=1 m'=4 "len(γ_a')"=12 blk="H_t=16 H_r=dc47..05da  |E_T|=3 |E_A|=6"
+DEBUG[03-26|14:50:43.102] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xe419aac2968b091dac23316c5422c78c0a2e6d361612469d7e4db4d77745b14a,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-26|14:50:43.139] [N4] proposeBlock fallback               p=a60e..5ace h=d658..d344 e'=1 m'=5 "len(γ_a')"=12 blk="H_t=17 H_r=d2dd..7389 "
+INFO [03-26|14:50:45.106] Builder storing TestService              serviceName=tribonacci codeHash=0xcaa4cf4337f7e0219714b74426b99f71f35fda2f796770e4e53b0dfab42cabef
+DEBUG[03-26|14:50:49.251] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xe419aac2968b091dac23316c5422c78c0a2e6d361612469d7e4db4d77745b14a,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-26|14:50:49.290] [N0] proposeBlock fallback               p=d658..d344 h=7934..d103 e'=1 m'=6 "len(γ_a')"=12 blk="H_t=18 H_r=f787..b2cb  |E_G|=1 |E_P|=1"
+DEBUG[03-26|14:50:55.078] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0xd918e3674292a6a67c24b176d42954a24ad64b8d3f9df13d579d75a0aa8b915d","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0xd4bce3a38067c5436ac4752236c3b3f46392c07ff5e1f18d69af71b36a175b2b","D":"0x0024caa4cf4337f7e0219714b74426b99f71f35fda2f796770e4e53b0dfab42cabef3f040000"}'
+DEBUG[03-26|14:50:55.080] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0xde32e82000000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:50:55.081] writeAccount SET                         service_idx=0 rawkey=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c value="[222 50 232 32]"
+INFO [03-26|14:50:55.081] BEEFY-C                                  s=0 h=0xde32e82000000000000000000000000000000000000000000000000000000000 encoded=00000000de32e82000000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:50:55.081] BEEFY accumulation root                  r=0x573bee6674fade366fff5bc386861ed0a1ba10e9b3f0ed0d3de087db288b2104
+DEBUG[03-26|14:50:55.081] BETA computation                         n=4 accumulationRoot=0x573bee6674fade366fff5bc386861ed0a1ba10e9b3f0ed0d3de087db288b2104 mmr=[nil,nil,nil,0x086358dd3d0be5383371ecc58c66399938efdf49388f6dce8cb5b938eee0341a]
+INFO [03-26|14:50:55.120] [N4] proposeBlock fallback               p=7934..d103 h=a882..d4bb e'=1 m'=7 "len(γ_a')"=12 blk="H_t=19 H_r=0da1..d9fc  |E_A|=6"
+DEBUG[03-26|14:51:01.071] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,0x086358dd3d0be5383371ecc58c66399938efdf49388f6dce8cb5b938eee0341a]
+INFO [03-26|14:51:01.111] [N1] proposeBlock fallback               p=a882..d4bb h=908d..72ca e'=1 m'=8 "len(γ_a')"=12 blk="H_t=20 H_r=902a..f23e "
+INFO [03-26|14:51:02.134] Builder storing TestService              serviceName=megatron   codeHash=0xd8f579d072de6c1d00de9a289bd4b258071d78e47c7df57f89aae188afa5c96a
+DEBUG[03-26|14:51:07.021] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x086358dd3d0be5383371ecc58c66399938efdf49388f6dce8cb5b938eee0341a]
+INFO [03-26|14:51:07.065] [N0] proposeBlock fallback               p=908d..72ca h=b358..957c e'=1 m'=9 "len(γ_a')"=12 blk="H_t=21 H_r=062e..777f  |E_G|=1 |E_P|=1"
+DEBUG[03-26|14:51:13.231] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0xa701a371b53891c2a5d1de16cfa891bba29aee8cfc73ea26755c92459d19ceb1","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x161a7c27934521197143cdffa1c1365586e68d0b95861a3ec68e48f9b21b677a","D":"0x0024d8f579d072de6c1d00de9a289bd4b258071d78e47c7df57f89aae188afa5c96a2f1c0000"}'
+DEBUG[03-26|14:51:13.233] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0x1f5dd05b00000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:51:13.234] writeAccount SET                         service_idx=0 rawkey=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c value="[31 93 208 91]"
+INFO [03-26|14:51:13.234] BEEFY-C                                  s=0 h=0x1f5dd05b00000000000000000000000000000000000000000000000000000000 encoded=000000001f5dd05b00000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:51:13.234] BEEFY accumulation root                  r=0xad01ec5a3d831066c41b572ad1b199f4e2a593dc8c9f6c3af9b6c4129ddafe31
+DEBUG[03-26|14:51:13.234] BETA computation                         n=1 accumulationRoot=0xad01ec5a3d831066c41b572ad1b199f4e2a593dc8c9f6c3af9b6c4129ddafe31 mmr=[0xad01ec5a3d831066c41b572ad1b199f4e2a593dc8c9f6c3af9b6c4129ddafe31,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x086358dd3d0be5383371ecc58c66399938efdf49388f6dce8cb5b938eee0341a]
+INFO [03-26|14:51:13.274] [N1] proposeBlock fallback               p=b358..957c h=ddf4..d76b e'=1 m'=10 "len(γ_a')"=12 blk="H_t=22 H_r=81df..07db   WinningTickets(12) |E_A|=6"
+DEBUG[03-26|14:51:20.974] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xd8e8b32b811094c44bb2103e49ae728e6ba34b738d49652fee54c4fd6abdbfb0,0x086358dd3d0be5383371ecc58c66399938efdf49388f6dce8cb5b938eee0341a]
+INFO [03-26|14:51:21.087] [N4] proposeBlock fallback               p=ddf4..d76b h=48ab..3d3a e'=1 m'=11 "len(γ_a')"=12 blk="H_t=23 H_r=9a35..3dff "
+INFO [03-26|14:51:23.173] Builder storing TestService              serviceName=auth_copy  codeHash=0xaa125123e0373599cacc94075a0d7d365a6bd81a1e260c4dcabd837fe48ddafd
+DEBUG[03-26|14:51:26.823] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xd8e8b32b811094c44bb2103e49ae728e6ba34b738d49652fee54c4fd6abdbfb0,0x086358dd3d0be5383371ecc58c66399938efdf49388f6dce8cb5b938eee0341a]
+INFO [03-26|14:51:26.859] [N2] proposeBlock safrole                p=48ab..3d3a h=d5a7..eb2e e'=2 m'=0  "len(γ_a')"=3  blk="H_t=24 H_r=3f3b..7718  EpochMarker(η1'=767a..23ae, η2'=6f6a..af2a) |E_T|=3 |E_G|=1 |E_P|=1"
+DEBUG[03-26|14:51:31.699] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0xd034849f2d0db04dbd3e974b8ae763523f7387a84035c02d1fcd9d258decb718","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x58895203656b4df71654f43d328d1cb3e10b2f5977f19cb65b84e308b43e8755","D":"0x0024aa125123e0373599cacc94075a0d7d365a6bd81a1e260c4dcabd837fe48ddafdf7050000"}'
+DEBUG[03-26|14:51:31.701] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0x6533dbea00000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:51:31.701] writeAccount SET                         service_idx=0 rawkey=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c value="[101 51 219 234]"
+INFO [03-26|14:51:31.702] BEEFY-C                                  s=0 h=0x6533dbea00000000000000000000000000000000000000000000000000000000 encoded=000000006533dbea00000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:51:31.702] BEEFY accumulation root                  r=0x6fd81802ec79dbf5e649fedba85afb4790748adb51ff3435a124e4e7137e5f38
+DEBUG[03-26|14:51:31.702] BETA computation                         n=5 accumulationRoot=0x6fd81802ec79dbf5e649fedba85afb4790748adb51ff3435a124e4e7137e5f38 mmr=[nil,0xb0088c432406f64cd85a0d04e2f6b8fa4e273329205a847fea90038e51dca666,0xd8e8b32b811094c44bb2103e49ae728e6ba34b738d49652fee54c4fd6abdbfb0,0x086358dd3d0be5383371ecc58c66399938efdf49388f6dce8cb5b938eee0341a]
+INFO [03-26|14:51:31.741] [N5] proposeBlock safrole                p=d5a7..eb2e h=6803..bf19 e'=2 m'=1  "len(γ_a')"=6  blk="H_t=25 H_r=dd07..ab48  |E_T|=3 |E_A|=6"
+DEBUG[03-26|14:51:37.584] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xb0088c432406f64cd85a0d04e2f6b8fa4e273329205a847fea90038e51dca666,0xd8e8b32b811094c44bb2103e49ae728e6ba34b738d49652fee54c4fd6abdbfb0,0x086358dd3d0be5383371ecc58c66399938efdf49388f6dce8cb5b938eee0341a]
+INFO [03-26|14:51:37.618] [N4] proposeBlock safrole                p=6803..bf19 h=c1fc..3152 e'=2 m'=2  "len(γ_a')"=9  blk="H_t=26 H_r=33d2..cea9  |E_T|=3"
+DEBUG[03-26|14:51:43.580] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,nil,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:51:43.614] [N3] proposeBlock safrole                p=c1fc..3152 h=3182..bafd e'=2 m'=3  "len(γ_a')"=12 blk="H_t=27 H_r=bc7b..3cb6  |E_T|=3 |E_P|=1"
+Start Fib_Trib
+service0: 272334947, codehash: 0x030c457bea43b000e821a6f8c32d5f48944813bbe27fa0aee286b2d27adb79ce (len=1060) | fib
+service1: 552088286, codehash: 0xcaa4cf4337f7e0219714b74426b99f71f35fda2f796770e4e53b0dfab42cabef (len=1087) | tribonacci
+serviceM: 1540381983, codehash: 0xd8f579d072de6c1d00de9a289bd4b258071d78e47c7df57f89aae188afa5c96a (len=7215) | megatron
+Guarantor Assignment
+v0->c1
+v1->c0
+v2->c0
+v3->c1
+v4->c1
+v5->c0
+**  51:47.316  Preparing Fib_Tri#0 b14d..cb29 Meg#0 f40b..daaa **
+
+**  Fib_Tri 0  workPackage: b14d..2906 **
+
+**  MEGATRON 0  workPackage: f40b..aa10 **
+DEBUG[03-26|14:51:49.139] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,nil,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:51:49.181] [N5] proposeBlock safrole                p=3182..bafd h=5925..20da e'=2 m'=4  "len(γ_a')"=12 blk="H_t=28 H_r=0c98..075a  |E_G|=2"
+Found pending work package 0xf40b9b7af1ed57966e5fb22c11506f5c6db366061559c5dead6fe8dbfedaaa10 at core 0!
+Meg 0 = []
+Found pending work package 0xb14debc5573e7e3c7b882d9116bc119e238116a4a93b867d520dae22f5cb2906 at core 1!
+Fib 0 = []
+DEBUG[03-26|14:51:55.276] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,nil,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:51:55.317] [N1] proposeBlock safrole                p=5925..20da h=e817..5c87 e'=2 m'=5  "len(γ_a')"=12 blk="H_t=29 H_r=368e..4750  |E_A|=6"
+INFO [03-26|14:52:01.097] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[0xb14debc5573e7e3c7b882d9116bc119e238116a4a93b867d520dae22f5cb2906] q=[[]] "Q(q)-priority queue result"=[0xf40b9b7af1ed57966e5fb22c11506f5c6db366061559c5dead6fe8dbfedaaa10] "W^*-wphs of accumulatable work reports)"="[0xb14debc5573e7e3c7b882d9116bc119e238116a4a93b867d520dae22f5cb2906 0xf40b9b7af1ed57966e5fb22c11506f5c6db366061559c5dead6fe8dbfedaaa10]"
+DEBUG[03-26|14:52:01.097] SINGLE ACCUMULATE                        s=272334947 wrangledResults='{"H":"0xb14debc5573e7e3c7b882d9116bc119e238116a4a93b867d520dae22f5cb2906","E":"0x1df9f0675dae767abeddafdf7b82f00b6d3cecbe09ee2a09bc41839c5abf6c60","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35","D":"0x000c010000000100000000000000"}'
+DEBUG[03-26|14:52:01.100] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947 B=0x0100000001000000000000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:01.100] SINGLE ACCUMULATE                        s=552088286 wrangledResults='{"H":"0xb14debc5573e7e3c7b882d9116bc119e238116a4a93b867d520dae22f5cb2906","E":"0x1df9f0675dae767abeddafdf7b82f00b6d3cecbe09ee2a09bc41839c5abf6c60","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35","D":"0x001001000000010000000000000000000000"}'
+DEBUG[03-26|14:52:01.102] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286 B=0x0100000001000000000000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:01.102] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0xf40b9b7af1ed57966e5fb22c11506f5c6db366061559c5dead6fe8dbfedaaa10","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:52:01.115] INFO#megatron                            msg="meg 1 read from service 272334947 fib(n=1)=1"
+INFO [03-26|14:52:01.127] INFO#megatron                            msg="meg 1 read from service 552088286 trib(n=1)=1"
+INFO [03-26|14:52:01.146] INFO#megatron                            msg="0 transfer(dest:552088286, amount=3, gas_avail=100) Result: 0"
+INFO [03-26|14:52:01.152] INFO#megatron                            msg="meg(1)=2"
+INFO [03-26|14:52:01.161] INFO#megatron                            msg="meg 1 write(n=2) num_transfers=1"
+DEBUG[03-26|14:52:01.162] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x0100000002000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:52:01.162] writeAccount SET                         service_idx=272334947 rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[1 0 0 0 1 0 0 0 0 0 0 0]"
+INFO [03-26|14:52:01.163] writeAccount SET                         service_idx=552088286 rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]"
+INFO [03-26|14:52:01.163] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[1 0 0 0 2 0 0 0 0 0 0 0]"
+INFO [03-26|14:52:01.164] BEEFY-C                                  s=272334947  h=0x0100000001000000000000000000000000000000000000000000000000000000 encoded=63803b100100000001000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:52:01.164] BEEFY-C                                  s=552088286  h=0x0100000001000000000000000000000000000000000000000000000000000000 encoded=de32e8200100000001000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:52:01.164] BEEFY-C                                  s=1540381983 h=0x0100000002000000000000000000000000000000000000000000000000000000 encoded=1f5dd05b0100000002000000000000000000000000000000000000000000000000000000
+INFO [03-26|14:52:01.164] BEEFY accumulation root                  r=0xd6b5d80d7de25b255157dce2db4bbee508425e953410bbe52eaacf16cf21ca7d
+DEBUG[03-26|14:52:01.164] BETA computation                         n=3 accumulationRoot=0xd6b5d80d7de25b255157dce2db4bbee508425e953410bbe52eaacf16cf21ca7d mmr=[0xd6b5d80d7de25b255157dce2db4bbee508425e953410bbe52eaacf16cf21ca7d,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,nil,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:01.206] [N3] proposeBlock safrole                p=e817..5c87 h=4fc2..5922 e'=2 m'=6  "len(γ_a')"=12 blk="H_t=30 H_r=1272..2c1d  |E_A|=6"
+**  52:01.616  Preparing Fib_Tri#1 e13a..aedd Meg#1 767f..9056 **
+
+**  Fib_Tri 1  workPackage: e13a..dd6a **
+
+**  MEGATRON 1  workPackage: 0178..9808 **
+reconstructSegments: 2 segments, 2 justifications
+DEBUG[03-26|14:52:07.311] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0x26d88fad94a75c41042bfddc86ce1b8c6f4590ca88a5e5cd7156cb6c7746e690,nil,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:07.351] [N2] proposeBlock safrole                p=4fc2..5922 h=d3df..9cd3 e'=2 m'=7  "len(γ_a')"=12 blk="H_t=31 H_r=353a..9d24  |E_G|=2"
+Found pending work package 0x017809e733fdc95b2d0805846c308e1c4b17b4f18da763ed002daa22cb859808 at core 0!
+Meg 1 = [1 0 0 0 2 0 0 0 0 0 0 0]
+Found pending work package 0xd8641b77173c0b354d00576b9be9becafe44136f4c91aed588003ce067b53f7d at core 1!
+Fib 1 = [1 0 0 0 1 0 0 0 0 0 0 0]
+Tri 1 = [1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]
+INFO [03-26|14:52:13.048] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[0xd8641b77173c0b354d00576b9be9becafe44136f4c91aed588003ce067b53f7d] []]" "Q(q)-priority queue result"="[0xd8641b77173c0b354d00576b9be9becafe44136f4c91aed588003ce067b53f7d 0x017809e733fdc95b2d0805846c308e1c4b17b4f18da763ed002daa22cb859808]" "W^*-wphs of accumulatable work reports)"="[0xd8641b77173c0b354d00576b9be9becafe44136f4c91aed588003ce067b53f7d 0x017809e733fdc95b2d0805846c308e1c4b17b4f18da763ed002daa22cb859808]"
+DEBUG[03-26|14:52:13.048] SINGLE ACCUMULATE                        s=272334947  wrangledResults='{"H":"0xd8641b77173c0b354d00576b9be9becafe44136f4c91aed588003ce067b53f7d","E":"0x5762cd9e2114823afa1dc15291febbc0b564d5f8ee962427a6bd9df57844aa22","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x7b0aa1735e5ba58d3236316c671fe4f00ed366ee72417c9ed02a53a8019e85b8","D":"0x000c020000000100000001000000"}'
+DEBUG[03-26|14:52:13.051] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947  B=0x0200000001000000010000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:13.051] SINGLE ACCUMULATE                        s=552088286  wrangledResults='{"H":"0xd8641b77173c0b354d00576b9be9becafe44136f4c91aed588003ce067b53f7d","E":"0x5762cd9e2114823afa1dc15291febbc0b564d5f8ee962427a6bd9df57844aa22","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x7b0aa1735e5ba58d3236316c671fe4f00ed366ee72417c9ed02a53a8019e85b8","D":"0x001002000000010000000100000000000000"}'
+DEBUG[03-26|14:52:13.052] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286  B=0x0200000001000000010000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:13.053] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0x017809e733fdc95b2d0805846c308e1c4b17b4f18da763ed002daa22cb859808","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:52:13.066] INFO#megatron                            msg="meg 2 read from service 272334947 fib(n=2)=1"
+INFO [03-26|14:52:13.077] INFO#megatron                            msg="meg 2 read from service 552088286 trib(n=2)=1"
+INFO [03-26|14:52:13.093] INFO#megatron                            msg="0 transfer(dest:272334947, amount=2, gas_avail=100) Result: 0"
+INFO [03-26|14:52:13.107] INFO#megatron                            msg="0 transfer(dest:552088286, amount=5, gas_avail=100) Result: 0"
+INFO [03-26|14:52:13.125] INFO#megatron                            msg="1 transfer(dest:272334947, amount=2, gas_avail=100) Result: 0"
+INFO [03-26|14:52:13.139] INFO#megatron                            msg="1 transfer(dest:552088286, amount=5, gas_avail=100) Result: 0"
+INFO [03-26|14:52:13.145] INFO#megatron                            msg="meg(2)=2"
+INFO [03-26|14:52:13.153] INFO#megatron                            msg="meg 2 write(n=2) num_transfers=4"
+DEBUG[03-26|14:52:13.154] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x0200000002000000020000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:13.155] SINGLE ACCUMULATE                        s=3940234085 wrangledResults='{"H":"0x017809e733fdc95b2d0805846c308e1c4b17b4f18da763ed002daa22cb859808","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","D":"0x00200b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0"}'
+DEBUG[03-26|14:52:13.157] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3940234085 B=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:52:13.158] writeAccount SET                         service_idx=272334947  rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[2 0 0 0 1 0 0 0 1 0 0 0]"
+INFO [03-26|14:52:13.158] writeAccount SET                         service_idx=552088286  rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[2 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0]"
+INFO [03-26|14:52:13.159] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[2 0 0 0 2 0 0 0 2 0 0 0]"
+INFO [03-26|14:52:13.159] BEEFY-C                                  s=272334947  h=0x0200000001000000010000000000000000000000000000000000000000000000 encoded=63803b100200000001000000010000000000000000000000000000000000000000000000
+INFO [03-26|14:52:13.159] BEEFY-C                                  s=552088286  h=0x0200000001000000010000000000000000000000000000000000000000000000 encoded=de32e8200200000001000000010000000000000000000000000000000000000000000000
+INFO [03-26|14:52:13.159] BEEFY-C                                  s=1540381983 h=0x0200000002000000020000000000000000000000000000000000000000000000 encoded=1f5dd05b0200000002000000020000000000000000000000000000000000000000000000
+INFO [03-26|14:52:13.159] BEEFY-C                                  s=3940234085 h=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0 encoded=6533dbea0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:52:13.159] BEEFY accumulation root                  r=0x76ffb1bd7fd992281a3ce804d96a73859cd17b5f1aa5781f686fa187f06cd9de
+DEBUG[03-26|14:52:13.159] BETA computation                         n=0 accumulationRoot=0x76ffb1bd7fd992281a3ce804d96a73859cd17b5f1aa5781f686fa187f06cd9de mmr=[0x76ffb1bd7fd992281a3ce804d96a73859cd17b5f1aa5781f686fa187f06cd9de,nil,0x26d88fad94a75c41042bfddc86ce1b8c6f4590ca88a5e5cd7156cb6c7746e690,nil,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:13.199] [N0] proposeBlock safrole                p=d3df..9cd3 h=4354..9dcb e'=2 m'=8  "len(γ_a')"=12 blk="H_t=32 H_r=6150..56d6  |E_A|=6"
+**  52:13.319  Preparing Fib_Tri#2 dced..8aab Meg#2 bbdd..4916 **
+
+**  Fib_Tri 2  workPackage: dced..ab42 **
+
+**  MEGATRON 2  workPackage: 125e..c38a **
+reconstructSegments: 2 segments, 2 justifications
+DEBUG[03-26|14:52:19.035] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xbfb6004f0a850140ca283d3bb3e504bf68b21990db8b485abf8fc9cf2b683ec6,0x26d88fad94a75c41042bfddc86ce1b8c6f4590ca88a5e5cd7156cb6c7746e690,nil,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:19.072] [N1] proposeBlock safrole                p=4354..9dcb h=fa5a..49ed e'=2 m'=9  "len(γ_a')"=12 blk="H_t=33 H_r=72c7..42da  |E_G|=1"
+Found pending work package 0xfa780ab69b3f98ac8cbc4045b52b24d39a1f84626896b61025a6d9848d0d7fc9 at core 1!
+Fib 2 = [2 0 0 0 1 0 0 0 1 0 0 0]
+Tri 2 = [2 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0]
+INFO [03-26|14:52:25.089] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0xfa780ab69b3f98ac8cbc4045b52b24d39a1f84626896b61025a6d9848d0d7fc9] "W^*-wphs of accumulatable work reports)"=[0xfa780ab69b3f98ac8cbc4045b52b24d39a1f84626896b61025a6d9848d0d7fc9]
+DEBUG[03-26|14:52:25.089] SINGLE ACCUMULATE                        s=272334947  wrangledResults='{"H":"0xfa780ab69b3f98ac8cbc4045b52b24d39a1f84626896b61025a6d9848d0d7fc9","E":"0x95f6aa9782b6e20fe952856dad8b37ae930936a0c8f571b53198512f712c4409","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x8c039ff7caa17ccebfcadc44bd9fce6a4b6699c4d03de2e3349aa1dc11193cd7","D":"0x000c030000000200000001000000"}'
+DEBUG[03-26|14:52:25.091] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947  B=0x0300000002000000010000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:25.092] SINGLE ACCUMULATE                        s=552088286  wrangledResults='{"H":"0xfa780ab69b3f98ac8cbc4045b52b24d39a1f84626896b61025a6d9848d0d7fc9","E":"0x95f6aa9782b6e20fe952856dad8b37ae930936a0c8f571b53198512f712c4409","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x8c039ff7caa17ccebfcadc44bd9fce6a4b6699c4d03de2e3349aa1dc11193cd7","D":"0x001003000000020000000100000001000000"}'
+DEBUG[03-26|14:52:25.093] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286  B=0x0300000002000000010000000100000000000000000000000000000000000000
+INFO [03-26|14:52:25.093] writeAccount SET                         service_idx=272334947  rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[3 0 0 0 2 0 0 0 1 0 0 0]"
+INFO [03-26|14:52:25.094] writeAccount SET                         service_idx=552088286  rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[3 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0]"
+INFO [03-26|14:52:25.094] BEEFY-C                                  s=272334947  h=0x0300000002000000010000000000000000000000000000000000000000000000 encoded=63803b100300000002000000010000000000000000000000000000000000000000000000
+INFO [03-26|14:52:25.094] BEEFY-C                                  s=552088286  h=0x0300000002000000010000000100000000000000000000000000000000000000 encoded=de32e8200300000002000000010000000100000000000000000000000000000000000000
+INFO [03-26|14:52:25.094] BEEFY accumulation root                  r=0xa3418a18f70a38fdd3705c035da9c492b04c9564768bf1682bb4ac816a7119b4
+DEBUG[03-26|14:52:25.094] BETA computation                         n=5 accumulationRoot=0xa3418a18f70a38fdd3705c035da9c492b04c9564768bf1682bb4ac816a7119b4 mmr=[0xa3418a18f70a38fdd3705c035da9c492b04c9564768bf1682bb4ac816a7119b4,0xbfb6004f0a850140ca283d3bb3e504bf68b21990db8b485abf8fc9cf2b683ec6,0x26d88fad94a75c41042bfddc86ce1b8c6f4590ca88a5e5cd7156cb6c7746e690,nil,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:25.133] [N5] proposeBlock safrole                p=fa5a..49ed h=40e9..eb9f e'=2 m'=10 "len(γ_a')"=12 blk="H_t=34 H_r=c6f5..6cd2   WinningTickets(12) |E_A|=6"
+DEBUG[03-26|14:52:32.674] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,0xf85e7fefad7d12f8d7ffd8a3d1d5935e319315b30450e3869ba21173f96bf209,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:32.777] [N3] proposeBlock safrole                p=40e9..eb9f h=7df7..3038 e'=2 m'=11 "len(γ_a')"=12 blk="H_t=35 H_r=4999..1cb4  |E_G|=1"
+Found pending work package 0x9cfb38f7366fff7ff62d0961f0b48df2cbc2598d3c863620c18bf4fe362271d2 at core 0!
+Meg 2 = [2 0 0 0 2 0 0 0 2 0 0 0]
+INFO [03-26|14:52:38.819] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0x9cfb38f7366fff7ff62d0961f0b48df2cbc2598d3c863620c18bf4fe362271d2] "W^*-wphs of accumulatable work reports)"=[0x9cfb38f7366fff7ff62d0961f0b48df2cbc2598d3c863620c18bf4fe362271d2]
+DEBUG[03-26|14:52:38.819] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0x9cfb38f7366fff7ff62d0961f0b48df2cbc2598d3c863620c18bf4fe362271d2","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:52:38.863] INFO#megatron                            msg="meg 3 read from service 272334947 fib(n=3)=2"
+INFO [03-26|14:52:38.886] INFO#megatron                            msg="meg 3 read from service 552088286 trib(n=3)=2"
+INFO [03-26|14:52:38.908] INFO#megatron                            msg="0 transfer(dest:272334947, amount=3, gas_avail=100) Result: 0"
+INFO [03-26|14:52:38.927] INFO#megatron                            msg="1 transfer(dest:272334947, amount=3, gas_avail=100) Result: 0"
+INFO [03-26|14:52:38.948] INFO#megatron                            msg="2 transfer(dest:272334947, amount=3, gas_avail=100) Result: 0"
+INFO [03-26|14:52:38.957] INFO#megatron                            msg="meg(3)=4"
+INFO [03-26|14:52:38.969] INFO#megatron                            msg="meg 3 write(n=4) num_transfers=3"
+DEBUG[03-26|14:52:38.970] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x0300000004000000020000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:38.971] SINGLE ACCUMULATE                        s=3940234085 wrangledResults='{"H":"0x9cfb38f7366fff7ff62d0961f0b48df2cbc2598d3c863620c18bf4fe362271d2","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","D":"0x00200b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0"}'
+DEBUG[03-26|14:52:38.975] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3940234085 B=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:52:38.975] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[3 0 0 0 4 0 0 0 2 0 0 0]"
+INFO [03-26|14:52:38.976] BEEFY-C                                  s=1540381983 h=0x0300000004000000020000000000000000000000000000000000000000000000 encoded=1f5dd05b0300000004000000020000000000000000000000000000000000000000000000
+INFO [03-26|14:52:38.976] BEEFY-C                                  s=3940234085 h=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0 encoded=6533dbea0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:52:38.977] BEEFY accumulation root                  r=0xa7b51c83ab607ef0fce843405a65312db0bc1a0846f5ce42f2e43293e04b8861
+DEBUG[03-26|14:52:38.977] BETA computation                         n=0 accumulationRoot=0xa7b51c83ab607ef0fce843405a65312db0bc1a0846f5ce42f2e43293e04b8861 mmr=[0xa7b51c83ab607ef0fce843405a65312db0bc1a0846f5ce42f2e43293e04b8861,nil,nil,0xf85e7fefad7d12f8d7ffd8a3d1d5935e319315b30450e3869ba21173f96bf209,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:39.034] [N0] proposeBlock safrole                p=7df7..3038 h=a4f8..f444 e'=3 m'=0  "len(γ_a')"=3  blk="H_t=36 H_r=12fb..0781  EpochMarker(η1'=7e4f..8ff9, η2'=767a..23ae) |E_T|=3 |E_A|=6"
+**  52:39.216  Preparing Fib_Tri#3 837e..3c9c Meg#3 1146..fa4a **
+
+**  Fib_Tri 3  workPackage: 837e..9c6c **
+
+**  MEGATRON 3  workPackage: f0d3..eaaf **
+reconstructSegments: 2 segments, 2 justifications
+DEBUG[03-26|14:52:43.780] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0x5be2a84bfbb93a3caf8ae1925eebc14f34b3973ae0866503e52cb2e55dd6959e,nil,0xf85e7fefad7d12f8d7ffd8a3d1d5935e319315b30450e3869ba21173f96bf209,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:43.815] [N0] proposeBlock safrole                p=a4f8..f444 h=0232..8094 e'=3 m'=1  "len(γ_a')"=6  blk="H_t=37 H_r=5fb2..69f6  |E_T|=3 |E_G|=2"
+Found pending work package 0x182bc00c66d893766be6c20003ea7f0417d19aaddcfcadaf08a8cb4adaa514c6 at core 1!
+Found pending work package 0xf0d3092393d1be151ec76215301b69cf3f8bfc13ddf7390266ed38a7ab00eaaf at core 0!
+Fib 3 = [3 0 0 0 2 0 0 0 1 0 0 0]
+Tri 3 = [3 0 0 0 2 0 0 0 1 0 0 0 1 0 0 0]
+Meg 3 = [3 0 0 0 4 0 0 0 2 0 0 0]
+INFO [03-26|14:52:49.616] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[0x182bc00c66d893766be6c20003ea7f0417d19aaddcfcadaf08a8cb4adaa514c6] []]" "Q(q)-priority queue result"="[0x182bc00c66d893766be6c20003ea7f0417d19aaddcfcadaf08a8cb4adaa514c6 0xf0d3092393d1be151ec76215301b69cf3f8bfc13ddf7390266ed38a7ab00eaaf]" "W^*-wphs of accumulatable work reports)"="[0x182bc00c66d893766be6c20003ea7f0417d19aaddcfcadaf08a8cb4adaa514c6 0xf0d3092393d1be151ec76215301b69cf3f8bfc13ddf7390266ed38a7ab00eaaf]"
+DEBUG[03-26|14:52:49.617] SINGLE ACCUMULATE                        s=272334947  wrangledResults='{"H":"0x182bc00c66d893766be6c20003ea7f0417d19aaddcfcadaf08a8cb4adaa514c6","E":"0x030c2e7e86c8d83824ffd466b01bca529ab464efe9f6da47bc514454bff7f5ab","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x26a08e4d0c5190f01871e0569b6290b86760085d99f17eb4e7e6b58feb8d6249","D":"0x000c040000000300000002000000"}'
+DEBUG[03-26|14:52:49.619] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947  B=0x0400000003000000020000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:49.619] SINGLE ACCUMULATE                        s=552088286  wrangledResults='{"H":"0x182bc00c66d893766be6c20003ea7f0417d19aaddcfcadaf08a8cb4adaa514c6","E":"0x030c2e7e86c8d83824ffd466b01bca529ab464efe9f6da47bc514454bff7f5ab","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x26a08e4d0c5190f01871e0569b6290b86760085d99f17eb4e7e6b58feb8d6249","D":"0x001004000000040000000200000001000000"}'
+DEBUG[03-26|14:52:49.620] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286  B=0x0400000004000000020000000100000000000000000000000000000000000000
+DEBUG[03-26|14:52:49.621] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0xf0d3092393d1be151ec76215301b69cf3f8bfc13ddf7390266ed38a7ab00eaaf","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:52:49.634] INFO#megatron                            msg="meg 4 read from service 272334947 fib(n=4)=3"
+INFO [03-26|14:52:49.649] INFO#megatron                            msg="meg 4 read from service 552088286 trib(n=4)=4"
+INFO [03-26|14:52:49.667] INFO#megatron                            msg="0 transfer(dest:552088286, amount=9, gas_avail=100) Result: 0"
+INFO [03-26|14:52:49.686] INFO#megatron                            msg="1 transfer(dest:552088286, amount=9, gas_avail=100) Result: 0"
+INFO [03-26|14:52:49.704] INFO#megatron                            msg="2 transfer(dest:552088286, amount=9, gas_avail=100) Result: 0"
+INFO [03-26|14:52:49.720] INFO#megatron                            msg="3 transfer(dest:552088286, amount=9, gas_avail=100) Result: 0"
+INFO [03-26|14:52:49.727] INFO#megatron                            msg="meg(4)=7"
+INFO [03-26|14:52:49.742] INFO#megatron                            msg="meg 4 write(n=7) num_transfers=4"
+DEBUG[03-26|14:52:49.744] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x0400000007000000040000000000000000000000000000000000000000000000
+DEBUG[03-26|14:52:49.744] SINGLE ACCUMULATE                        s=3940234085 wrangledResults='{"H":"0xf0d3092393d1be151ec76215301b69cf3f8bfc13ddf7390266ed38a7ab00eaaf","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","D":"0x00200b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0"}'
+DEBUG[03-26|14:52:49.746] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3940234085 B=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:52:49.747] writeAccount SET                         service_idx=272334947  rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[4 0 0 0 3 0 0 0 2 0 0 0]"
+INFO [03-26|14:52:49.747] writeAccount SET                         service_idx=552088286  rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[4 0 0 0 4 0 0 0 2 0 0 0 1 0 0 0]"
+INFO [03-26|14:52:49.748] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[4 0 0 0 7 0 0 0 4 0 0 0]"
+INFO [03-26|14:52:49.748] BEEFY-C                                  s=272334947  h=0x0400000003000000020000000000000000000000000000000000000000000000 encoded=63803b100400000003000000020000000000000000000000000000000000000000000000
+INFO [03-26|14:52:49.748] BEEFY-C                                  s=552088286  h=0x0400000004000000020000000100000000000000000000000000000000000000 encoded=de32e8200400000004000000020000000100000000000000000000000000000000000000
+INFO [03-26|14:52:49.748] BEEFY-C                                  s=1540381983 h=0x0400000007000000040000000000000000000000000000000000000000000000 encoded=1f5dd05b0400000007000000040000000000000000000000000000000000000000000000
+INFO [03-26|14:52:49.748] BEEFY-C                                  s=3940234085 h=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0 encoded=6533dbea0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:52:49.748] BEEFY accumulation root                  r=0xa36219d8c6ded14588d5481e47daf85b104dffb1bc715a2f97d69f378142473e
+DEBUG[03-26|14:52:49.748] BETA computation                         n=5 accumulationRoot=0xa36219d8c6ded14588d5481e47daf85b104dffb1bc715a2f97d69f378142473e mmr=[0xa36219d8c6ded14588d5481e47daf85b104dffb1bc715a2f97d69f378142473e,0x5be2a84bfbb93a3caf8ae1925eebc14f34b3973ae0866503e52cb2e55dd6959e,nil,0xf85e7fefad7d12f8d7ffd8a3d1d5935e319315b30450e3869ba21173f96bf209,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:49.787] [N5] proposeBlock safrole                p=0232..8094 h=114e..29e0 e'=3 m'=2  "len(γ_a')"=9  blk="H_t=38 H_r=0104..e54d  |E_T|=3 |E_A|=6"
+**  52:52.116  Preparing Fib_Tri#4 0f36..bdf7 Meg#4 ef7a..8077 **
+
+**  Fib_Tri 4  workPackage: 0f36..f7de **
+
+**  MEGATRON 4  workPackage: ecbe..d1a0 **
+reconstructSegments: 2 segments, 2 justifications
+DEBUG[03-26|14:52:55.534] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0x92edbdb7b58eaca186793a000ae0db7b45c210839edc3aa0106d56f001f5b0f1,0xf85e7fefad7d12f8d7ffd8a3d1d5935e319315b30450e3869ba21173f96bf209,0xe9cf13326132f3cc0f850ca56a5c7ffd02d66587fd17dc0e12b157053c04fcc3]
+INFO [03-26|14:52:55.569] [N2] proposeBlock safrole                p=114e..29e0 h=3cfe..1a03 e'=3 m'=3  "len(γ_a')"=12 blk="H_t=39 H_r=74af..eb19  |E_T|=3 |E_G|=2"
+Found pending work package 0xecbe474a17152ef77b18e3c7fb79beb90acb429353264d11b54bb4112cf7d1a0 at core 0!
+Meg 4 = [4 0 0 0 7 0 0 0 4 0 0 0]
+Found pending work package 0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56 at core 1!
+Fib 4 = [4 0 0 0 3 0 0 0 2 0 0 0]
+Tri 4 = [4 0 0 0 4 0 0 0 2 0 0 0 1 0 0 0]
+**  52:57.523  Preparing Fib_Tri#5 4e86..6699 Meg#5 6ae6..1e0b **
+
+**  Fib_Tri 5  workPackage: 4e86..9955 **
+
+**  MEGATRON 5  workPackage: 14aa..5caf **
+WARN [03-26|14:52:57.566] buildBundle                              err="WorkReportSearch(0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56) not found"
+WARN [03-26|14:52:57.566] processWPQueueItem                       n=[N4] err="WorkReportSearch(0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56) not found"
+INFO [03-26|14:53:01.115] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56] []]" "Q(q)-priority queue result"="[0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56 0xecbe474a17152ef77b18e3c7fb79beb90acb429353264d11b54bb4112cf7d1a0]" "W^*-wphs of accumulatable work reports)"="[0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56 0xecbe474a17152ef77b18e3c7fb79beb90acb429353264d11b54bb4112cf7d1a0]"
+DEBUG[03-26|14:53:01.115] SINGLE ACCUMULATE                        s=272334947  wrangledResults='{"H":"0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56","E":"0xfc0551466f6d2d5434b430a993a0bfb12f1bd98722cb2e58584afe289dc35a75","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x8c35d22f459d77ca4c0b0b5035869766d60d182b9716ab3e8879e066478899a8","D":"0x000c050000000500000003000000"}'
+DEBUG[03-26|14:53:01.117] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947  B=0x0500000005000000030000000000000000000000000000000000000000000000
+DEBUG[03-26|14:53:01.118] SINGLE ACCUMULATE                        s=552088286  wrangledResults='{"H":"0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56","E":"0xfc0551466f6d2d5434b430a993a0bfb12f1bd98722cb2e58584afe289dc35a75","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x8c35d22f459d77ca4c0b0b5035869766d60d182b9716ab3e8879e066478899a8","D":"0x001005000000070000000400000002000000"}'
+DEBUG[03-26|14:53:01.119] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286  B=0x0500000007000000040000000200000000000000000000000000000000000000
+DEBUG[03-26|14:53:01.119] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0xecbe474a17152ef77b18e3c7fb79beb90acb429353264d11b54bb4112cf7d1a0","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:53:01.133] INFO#megatron                            msg="meg 5 read from service 272334947 fib(n=5)=5"
+INFO [03-26|14:53:01.145] INFO#megatron                            msg="meg 5 read from service 552088286 trib(n=5)=7"
+INFO [03-26|14:53:01.160] INFO#megatron                            msg="0 transfer(dest:272334947, amount=5, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.174] INFO#megatron                            msg="0 transfer(dest:552088286, amount=11, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.191] INFO#megatron                            msg="1 transfer(dest:272334947, amount=5, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.207] INFO#megatron                            msg="1 transfer(dest:552088286, amount=11, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.221] INFO#megatron                            msg="2 transfer(dest:272334947, amount=5, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.236] INFO#megatron                            msg="2 transfer(dest:552088286, amount=11, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.251] INFO#megatron                            msg="3 transfer(dest:272334947, amount=5, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.267] INFO#megatron                            msg="3 transfer(dest:552088286, amount=11, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.285] INFO#megatron                            msg="4 transfer(dest:272334947, amount=5, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.300] INFO#megatron                            msg="4 transfer(dest:552088286, amount=11, gas_avail=100) Result: 0"
+INFO [03-26|14:53:01.306] INFO#megatron                            msg="meg(5)=12"
+INFO [03-26|14:53:01.314] INFO#megatron                            msg="meg 5 write(n=12) num_transfers=10"
+DEBUG[03-26|14:53:01.315] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x050000000c000000070000000000000000000000000000000000000000000000
+DEBUG[03-26|14:53:01.315] SINGLE ACCUMULATE                        s=3940234085 wrangledResults='{"H":"0xecbe474a17152ef77b18e3c7fb79beb90acb429353264d11b54bb4112cf7d1a0","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","D":"0x00200b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0"}'
+DEBUG[03-26|14:53:01.318] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3940234085 B=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:53:01.319] writeAccount SET                         service_idx=272334947  rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[5 0 0 0 5 0 0 0 3 0 0 0]"
+INFO [03-26|14:53:01.319] writeAccount SET                         service_idx=552088286  rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[5 0 0 0 7 0 0 0 4 0 0 0 2 0 0 0]"
+INFO [03-26|14:53:01.319] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[5 0 0 0 12 0 0 0 7 0 0 0]"
+INFO [03-26|14:53:01.320] BEEFY-C                                  s=272334947  h=0x0500000005000000030000000000000000000000000000000000000000000000 encoded=63803b100500000005000000030000000000000000000000000000000000000000000000
+INFO [03-26|14:53:01.320] BEEFY-C                                  s=552088286  h=0x0500000007000000040000000200000000000000000000000000000000000000 encoded=de32e8200500000007000000040000000200000000000000000000000000000000000000
+INFO [03-26|14:53:01.320] BEEFY-C                                  s=1540381983 h=0x050000000c000000070000000000000000000000000000000000000000000000 encoded=1f5dd05b050000000c000000070000000000000000000000000000000000000000000000
+INFO [03-26|14:53:01.320] BEEFY-C                                  s=3940234085 h=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0 encoded=6533dbea0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:53:01.320] BEEFY accumulation root                  r=0xb4f4e36c820ba131df2296168007e6d02ef3d50bf6355ba595cd1c7c2f30ada9
+INFO [03-26|14:53:01.366] [N5] proposeBlock safrole                p=3cfe..1a03 h=8d7c..956b e'=3 m'=4  "len(γ_a')"=12 blk="H_t=40 H_r=c3a8..e14e  |E_A|=6"
+WARN [03-26|14:53:07.018] checkRecentBlock:anchor not in recent blocks refine.Anchor=0x4fc2d01ae3e0e75070540abd017a11bc7b1a14d572364bf7279acafb60285922
+WARN [03-26|14:53:07.019] checkRecentBlock:anchor not in recent blocks refine.Anchor=0x4fc2d01ae3e0e75070540abd017a11bc7b1a14d572364bf7279acafb60285922
+WARN [03-26|14:53:07.019] checkRecentBlock:anchor not in recent blocks refine.Anchor=0x4fc2d01ae3e0e75070540abd017a11bc7b1a14d572364bf7279acafb60285922
+INFO [03-26|14:53:07.320] [N2] proposeBlock safrole                p=8d7c..956b h=98f4..10a2 e'=3 m'=5  "len(γ_a')"=12 blk="H_t=41 H_r=d25b..7ade "
+INFO [03-26|14:53:13.347] [N3] proposeBlock safrole                p=98f4..10a2 h=ae55..2917 e'=3 m'=6  "len(γ_a')"=12 blk="H_t=42 H_r=b292..6354 "
+DEBUG[03-26|14:53:19.080] BETA computation                         n=1    accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,nil,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:53:19.119] [N1] proposeBlock safrole                p=ae55..2917 h=7140..09d7 e'=3 m'=7  "len(γ_a')"=12 blk="H_t=43 H_r=ee23..0297  |E_G|=1"
+Found pending work package 0xa19dd963af988d2b3b1f52fa67b8165ffe84395900cc6fcf58ce06d961058829 at core 1!
+Fib 5 = [5 0 0 0 5 0 0 0 3 0 0 0]
+Tri 5 = [5 0 0 0 7 0 0 0 4 0 0 0 2 0 0 0]
+reconstructSegments: 2 segments, 2 justifications
+INFO [03-26|14:53:25.279] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0xa19dd963af988d2b3b1f52fa67b8165ffe84395900cc6fcf58ce06d961058829] "W^*-wphs of accumulatable work reports)"=[0xa19dd963af988d2b3b1f52fa67b8165ffe84395900cc6fcf58ce06d961058829]
+DEBUG[03-26|14:53:25.279] SINGLE ACCUMULATE                        s=272334947  wrangledResults='{"H":"0xa19dd963af988d2b3b1f52fa67b8165ffe84395900cc6fcf58ce06d961058829","E":"0x047620635f55d26fcb431cff6ba99847cae1e17c8febcd034c00ec07c1b2b10c","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0xf4aac2fbe33f03554bfeb559ea2690ed8521caa4be961e61c91ac9a1530dce7a","D":"0x000c060000000800000005000000"}'
+DEBUG[03-26|14:53:25.281] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947  B=0x0600000008000000050000000000000000000000000000000000000000000000
+DEBUG[03-26|14:53:25.281] SINGLE ACCUMULATE                        s=552088286  wrangledResults='{"H":"0xa19dd963af988d2b3b1f52fa67b8165ffe84395900cc6fcf58ce06d961058829","E":"0x047620635f55d26fcb431cff6ba99847cae1e17c8febcd034c00ec07c1b2b10c","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0xf4aac2fbe33f03554bfeb559ea2690ed8521caa4be961e61c91ac9a1530dce7a","D":"0x0010060000000d0000000700000004000000"}'
+DEBUG[03-26|14:53:25.283] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286  B=0x060000000d000000070000000400000000000000000000000000000000000000
+INFO [03-26|14:53:25.283] writeAccount SET                         service_idx=272334947  rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[6 0 0 0 8 0 0 0 5 0 0 0]"
+INFO [03-26|14:53:25.283] writeAccount SET                         service_idx=552088286  rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[6 0 0 0 13 0 0 0 7 0 0 0 4 0 0 0]"
+INFO [03-26|14:53:25.284] BEEFY-C                                  s=272334947  h=0x0600000008000000050000000000000000000000000000000000000000000000 encoded=63803b100600000008000000050000000000000000000000000000000000000000000000
+INFO [03-26|14:53:25.284] BEEFY-C                                  s=552088286  h=0x060000000d000000070000000400000000000000000000000000000000000000 encoded=de32e820060000000d000000070000000400000000000000000000000000000000000000
+INFO [03-26|14:53:25.284] BEEFY accumulation root                  r=0xc6d41334d064132321a69bed599a29ae9d08c243433d6d696d37825a8e6e49ca
+DEBUG[03-26|14:53:25.284] BETA computation                         n=3    accumulationRoot=0xc6d41334d064132321a69bed599a29ae9d08c243433d6d696d37825a8e6e49ca mmr=[0xc6d41334d064132321a69bed599a29ae9d08c243433d6d696d37825a8e6e49ca,nil,nil,nil,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:53:25.343] [N3] proposeBlock safrole                p=7140..09d7 h=f877..3213 e'=3 m'=8  "len(γ_a')"=12 blk="H_t=44 H_r=69f2..0f0a  |E_A|=6"
+reconstructSegments: 2 segments, 2 justifications
+DEBUG[03-26|14:53:31.320] BETA computation                         n=4    accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0x97edce8d55df939900ac14b53426846478082ec57b2f8f5cf98d96f29683715d,nil,nil,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:53:31.359] [N4] proposeBlock safrole                p=f877..3213 h=f40e..fe5d e'=3 m'=9  "len(γ_a')"=12 blk="H_t=45 H_r=d2a9..249e  |E_G|=2"
+Found pending work package 0xf018a861685109c6d617bef8551daa3e3495006c7aa419f109e136034c601448 at core 0!
+Meg 5 = [5 0 0 0 12 0 0 0 7 0 0 0]
+INFO [03-26|14:53:37.091] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[0xbcd079cc0f0058b3527ef12e1aff0ab1c23fd61ca02211a6003529bd65dc6ad8] []]" "Q(q)-priority queue result"="[0xbcd079cc0f0058b3527ef12e1aff0ab1c23fd61ca02211a6003529bd65dc6ad8 0xf018a861685109c6d617bef8551daa3e3495006c7aa419f109e136034c601448]" "W^*-wphs of accumulatable work reports)"="[0xbcd079cc0f0058b3527ef12e1aff0ab1c23fd61ca02211a6003529bd65dc6ad8 0xf018a861685109c6d617bef8551daa3e3495006c7aa419f109e136034c601448]"
+DEBUG[03-26|14:53:37.091] SINGLE ACCUMULATE                        s=272334947  wrangledResults='{"H":"0xbcd079cc0f0058b3527ef12e1aff0ab1c23fd61ca02211a6003529bd65dc6ad8","E":"0x047620635f55d26fcb431cff6ba99847cae1e17c8febcd034c00ec07c1b2b10c","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0xf4aac2fbe33f03554bfeb559ea2690ed8521caa4be961e61c91ac9a1530dce7a","D":"0x000c060000000800000005000000"}'
+DEBUG[03-26|14:53:37.093] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947  B=0x0600000008000000050000000000000000000000000000000000000000000000
+DEBUG[03-26|14:53:37.093] SINGLE ACCUMULATE                        s=552088286  wrangledResults='{"H":"0xbcd079cc0f0058b3527ef12e1aff0ab1c23fd61ca02211a6003529bd65dc6ad8","E":"0x047620635f55d26fcb431cff6ba99847cae1e17c8febcd034c00ec07c1b2b10c","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0xf4aac2fbe33f03554bfeb559ea2690ed8521caa4be961e61c91ac9a1530dce7a","D":"0x0010060000000d0000000700000004000000"}'
+DEBUG[03-26|14:53:37.095] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286  B=0x060000000d000000070000000400000000000000000000000000000000000000
+DEBUG[03-26|14:53:37.095] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0xf018a861685109c6d617bef8551daa3e3495006c7aa419f109e136034c601448","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:53:37.109] INFO#megatron                            msg="meg 6 read from service 272334947 fib(n=6)=8"
+INFO [03-26|14:53:37.121] INFO#megatron                            msg="meg 6 read from service 552088286 trib(n=6)=13"
+INFO [03-26|14:53:37.136] INFO#megatron                            msg="0 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:37.151] INFO#megatron                            msg="1 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:37.165] INFO#megatron                            msg="2 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:37.180] INFO#megatron                            msg="3 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:37.199] INFO#megatron                            msg="4 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:37.215] INFO#megatron                            msg="5 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:37.221] INFO#megatron                            msg="meg(6)=21"
+INFO [03-26|14:53:37.230] INFO#megatron                            msg="meg 6 write(n=21) num_transfers=6"
+DEBUG[03-26|14:53:37.231] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x06000000150000000c0000000000000000000000000000000000000000000000
+DEBUG[03-26|14:53:37.231] SINGLE ACCUMULATE                        s=3940234085 wrangledResults='{"H":"0xf018a861685109c6d617bef8551daa3e3495006c7aa419f109e136034c601448","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","D":"0x00200b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0"}'
+DEBUG[03-26|14:53:37.234] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3940234085 B=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:53:37.234] writeAccount SET                         service_idx=272334947  rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[6 0 0 0 8 0 0 0 5 0 0 0]"
+INFO [03-26|14:53:37.235] writeAccount SET                         service_idx=552088286  rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[6 0 0 0 13 0 0 0 7 0 0 0 4 0 0 0]"
+INFO [03-26|14:53:37.235] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[6 0 0 0 21 0 0 0 12 0 0 0]"
+INFO [03-26|14:53:37.236] BEEFY-C                                  s=272334947  h=0x0600000008000000050000000000000000000000000000000000000000000000 encoded=63803b100600000008000000050000000000000000000000000000000000000000000000
+INFO [03-26|14:53:37.236] BEEFY-C                                  s=552088286  h=0x060000000d000000070000000400000000000000000000000000000000000000 encoded=de32e820060000000d000000070000000400000000000000000000000000000000000000
+INFO [03-26|14:53:37.236] BEEFY-C                                  s=1540381983 h=0x06000000150000000c0000000000000000000000000000000000000000000000 encoded=1f5dd05b06000000150000000c0000000000000000000000000000000000000000000000
+INFO [03-26|14:53:37.236] BEEFY-C                                  s=3940234085 h=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0 encoded=6533dbea0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:53:37.236] BEEFY accumulation root                  r=0x641e67cc2422a5c815a0af361aff1a6f9aae76a2662921799ecc1a8f87aae9f1
+DEBUG[03-26|14:53:37.236] BETA computation                         n=5    accumulationRoot=0x641e67cc2422a5c815a0af361aff1a6f9aae76a2662921799ecc1a8f87aae9f1 mmr=[0x641e67cc2422a5c815a0af361aff1a6f9aae76a2662921799ecc1a8f87aae9f1,0x97edce8d55df939900ac14b53426846478082ec57b2f8f5cf98d96f29683715d,nil,nil,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:53:37.275] [N5] proposeBlock safrole                p=f40e..fe5d h=3a20..0472 e'=3 m'=10 "len(γ_a')"=12 blk="H_t=46 H_r=af4d..cfba   WinningTickets(12) |E_G|=1 |E_A|=6"
+INFO [03-26|14:53:45.433] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0xd4cc8d0d38788ad6a0e83dc80a12786057df6fc9686566bc7f8e127e96978db7] "W^*-wphs of accumulatable work reports)"=[0xd4cc8d0d38788ad6a0e83dc80a12786057df6fc9686566bc7f8e127e96978db7]
+DEBUG[03-26|14:53:45.433] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0xd4cc8d0d38788ad6a0e83dc80a12786057df6fc9686566bc7f8e127e96978db7","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:53:45.455] INFO#megatron                            msg="meg 6 read from service 272334947 fib(n=6)=8"
+INFO [03-26|14:53:45.472] INFO#megatron                            msg="meg 6 read from service 552088286 trib(n=6)=13"
+INFO [03-26|14:53:45.496] INFO#megatron                            msg="0 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:45.530] INFO#megatron                            msg="1 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:45.553] INFO#megatron                            msg="2 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:45.575] INFO#megatron                            msg="3 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:45.610] INFO#megatron                            msg="4 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:45.641] INFO#megatron                            msg="5 transfer(dest:272334947, amount=6, gas_avail=100) Result: 0"
+INFO [03-26|14:53:45.649] INFO#megatron                            msg="meg(6)=21"
+INFO [03-26|14:53:45.663] INFO#megatron                            msg="meg 6 write(n=21) num_transfers=6"
+DEBUG[03-26|14:53:45.664] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x06000000150000000c0000000000000000000000000000000000000000000000
+DEBUG[03-26|14:53:45.665] SINGLE ACCUMULATE                        s=3940234085 wrangledResults='{"H":"0xd4cc8d0d38788ad6a0e83dc80a12786057df6fc9686566bc7f8e127e96978db7","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","D":"0x00200b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0"}'
+DEBUG[03-26|14:53:45.674] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3940234085 B=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:53:45.675] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[6 0 0 0 21 0 0 0 12 0 0 0]"
+INFO [03-26|14:53:45.676] BEEFY-C                                  s=1540381983 h=0x06000000150000000c0000000000000000000000000000000000000000000000 encoded=1f5dd05b06000000150000000c0000000000000000000000000000000000000000000000
+INFO [03-26|14:53:45.677] BEEFY-C                                  s=3940234085 h=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0 encoded=6533dbea0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:53:45.677] BEEFY accumulation root                  r=0x25c126976e00f05f50b542206b0772ca9a1015045c49af10621d7f261ab43e49
+DEBUG[03-26|14:53:45.677] BETA computation                         n=2    accumulationRoot=0x25c126976e00f05f50b542206b0772ca9a1015045c49af10621d7f261ab43e49 mmr=[nil,nil,0x77ed6c401bb667881fae73a7effe3a2aecf01e95caae24078b6038c11d7d6499,nil,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:53:45.845] [N2] proposeBlock safrole                p=3a20..0472 h=acc6..dbd4 e'=3 m'=11 "len(γ_a')"=12 blk="H_t=47 H_r=d60a..63b1  |E_A|=6"
+**  53:46.818  Preparing Fib_Tri#6 ac9d..1f43 Meg#6 a8d8..e05c **
+
+**  Fib_Tri 6  workPackage: ac9d..43df **
+
+**  MEGATRON 6  workPackage: 9709..760c **
+WARN [03-26|14:53:46.846] checkRecentBlock:state root not in recent blocks refine.StateRoot=0xd60ac28237e11a3c8c14cdabcce6855bae6d95864d4b2ce83e120921a4b763b1
+WARN [03-26|14:53:46.849] checkRecentBlock:state root not in recent blocks refine.StateRoot=0xd60ac28237e11a3c8c14cdabcce6855bae6d95864d4b2ce83e120921a4b763b1
+WARN [03-26|14:53:46.850] checkRecentBlock:state root not in recent blocks refine.StateRoot=0xd60ac28237e11a3c8c14cdabcce6855bae6d95864d4b2ce83e120921a4b763b1
+DEBUG[03-26|14:53:51.185] BETA computation                         n=2    accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0x77ed6c401bb667881fae73a7effe3a2aecf01e95caae24078b6038c11d7d6499,nil,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:53:51.262] [N2] proposeBlock safrole                p=acc6..dbd4 h=0dc8..0f0e e'=4 m'=0  "len(γ_a')"=3  blk="H_t=48 H_r=cc3d..0acd  EpochMarker(η1'=30a1..cbf9, η2'=7e4f..8ff9) |E_T|=3 |E_G|=2"
+Found pending work package 0x86c392bde511fc0371e6642c6f63a3c63114f8bfc9890b1f62f56a8fb4ef5ff7 at core 1!
+Found pending work package 0x970956a9317de2505a4e130d8abab71d090e2092f82db63c23a73c656fcc760c at core 0!
+Fib 6 = [6 0 0 0 8 0 0 0 5 0 0 0]
+Tri 6 = [6 0 0 0 13 0 0 0 7 0 0 0 4 0 0 0]
+Meg 6 = [6 0 0 0 21 0 0 0 12 0 0 0]
+INFO [03-26|14:53:55.788] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[0x86c392bde511fc0371e6642c6f63a3c63114f8bfc9890b1f62f56a8fb4ef5ff7] []]" "Q(q)-priority queue result"="[0x86c392bde511fc0371e6642c6f63a3c63114f8bfc9890b1f62f56a8fb4ef5ff7 0x970956a9317de2505a4e130d8abab71d090e2092f82db63c23a73c656fcc760c]" "W^*-wphs of accumulatable work reports)"="[0x86c392bde511fc0371e6642c6f63a3c63114f8bfc9890b1f62f56a8fb4ef5ff7 0x970956a9317de2505a4e130d8abab71d090e2092f82db63c23a73c656fcc760c]"
+DEBUG[03-26|14:53:55.788] SINGLE ACCUMULATE                        s=272334947  wrangledResults='{"H":"0x86c392bde511fc0371e6642c6f63a3c63114f8bfc9890b1f62f56a8fb4ef5ff7","E":"0x3e5f05def653b21b283e2d27e498f3aa3f0fe070943202d264a939755bd06847","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x5b8f29db76cf4e676e4fc9b17040312debedafcd5637fb3c7badd2cddce6a445","D":"0x000c070000000d00000008000000"}'
+DEBUG[03-26|14:53:55.790] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947  B=0x070000000d000000080000000000000000000000000000000000000000000000
+DEBUG[03-26|14:53:55.790] SINGLE ACCUMULATE                        s=552088286  wrangledResults='{"H":"0x86c392bde511fc0371e6642c6f63a3c63114f8bfc9890b1f62f56a8fb4ef5ff7","E":"0x3e5f05def653b21b283e2d27e498f3aa3f0fe070943202d264a939755bd06847","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x5b8f29db76cf4e676e4fc9b17040312debedafcd5637fb3c7badd2cddce6a445","D":"0x001007000000180000000d00000007000000"}'
+DEBUG[03-26|14:53:55.792] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286  B=0x07000000180000000d0000000700000000000000000000000000000000000000
+DEBUG[03-26|14:53:55.792] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0x970956a9317de2505a4e130d8abab71d090e2092f82db63c23a73c656fcc760c","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:53:55.806] INFO#megatron                            msg="meg 7 read from service 272334947 fib(n=7)=13"
+INFO [03-26|14:53:55.824] INFO#megatron                            msg="meg 7 read from service 552088286 trib(n=7)=24"
+INFO [03-26|14:53:55.840] INFO#megatron                            msg="0 transfer(dest:552088286, amount=15, gas_avail=100) Result: 0"
+INFO [03-26|14:53:55.855] INFO#megatron                            msg="1 transfer(dest:552088286, amount=15, gas_avail=100) Result: 0"
+INFO [03-26|14:53:55.870] INFO#megatron                            msg="2 transfer(dest:552088286, amount=15, gas_avail=100) Result: 0"
+INFO [03-26|14:53:55.884] INFO#megatron                            msg="3 transfer(dest:552088286, amount=15, gas_avail=100) Result: 0"
+INFO [03-26|14:53:55.899] INFO#megatron                            msg="4 transfer(dest:552088286, amount=15, gas_avail=100) Result: 0"
+INFO [03-26|14:53:55.918] INFO#megatron                            msg="5 transfer(dest:552088286, amount=15, gas_avail=100) Result: 0"
+INFO [03-26|14:53:55.934] INFO#megatron                            msg="6 transfer(dest:552088286, amount=15, gas_avail=100) Result: 0"
+INFO [03-26|14:53:55.940] INFO#megatron                            msg="meg(7)=37"
+INFO [03-26|14:53:55.949] INFO#megatron                            msg="meg 7 write(n=37) num_transfers=7"
+DEBUG[03-26|14:53:55.950] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x0700000025000000150000000000000000000000000000000000000000000000
+DEBUG[03-26|14:53:55.950] SINGLE ACCUMULATE                        s=3940234085 wrangledResults='{"H":"0x970956a9317de2505a4e130d8abab71d090e2092f82db63c23a73c656fcc760c","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","D":"0x00200b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0"}'
+DEBUG[03-26|14:53:55.953] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3940234085 B=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:53:55.953] writeAccount SET                         service_idx=272334947  rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[7 0 0 0 13 0 0 0 8 0 0 0]"
+INFO [03-26|14:53:55.954] writeAccount SET                         service_idx=552088286  rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[7 0 0 0 24 0 0 0 13 0 0 0 7 0 0 0]"
+INFO [03-26|14:53:55.954] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[7 0 0 0 37 0 0 0 21 0 0 0]"
+INFO [03-26|14:53:55.955] BEEFY-C                                  s=272334947  h=0x070000000d000000080000000000000000000000000000000000000000000000 encoded=63803b10070000000d000000080000000000000000000000000000000000000000000000
+INFO [03-26|14:53:55.955] BEEFY-C                                  s=552088286  h=0x07000000180000000d0000000700000000000000000000000000000000000000 encoded=de32e82007000000180000000d0000000700000000000000000000000000000000000000
+INFO [03-26|14:53:55.955] BEEFY-C                                  s=1540381983 h=0x0700000025000000150000000000000000000000000000000000000000000000 encoded=1f5dd05b0700000025000000150000000000000000000000000000000000000000000000
+INFO [03-26|14:53:55.955] BEEFY-C                                  s=3940234085 h=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0 encoded=6533dbea0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:53:55.955] BEEFY accumulation root                  r=0xf7eb971e3bb822831308f85e80d76acdf5418f4023defe267d2670aec16153d5
+DEBUG[03-26|14:53:55.955] BETA computation                         n=0    accumulationRoot=0xf7eb971e3bb822831308f85e80d76acdf5418f4023defe267d2670aec16153d5 mmr=[nil,0xef7914193916709d77dc4e716f88d02facdcc54ee1859761876c55cb97f14542,0x77ed6c401bb667881fae73a7effe3a2aecf01e95caae24078b6038c11d7d6499,nil,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:53:55.996] [N0] proposeBlock safrole                p=0dc8..0f0e h=32d3..5330 e'=4 m'=1  "len(γ_a')"=6  blk="H_t=49 H_r=4be4..8540  |E_T|=3 |E_A|=6"
+**  53:56.116  Preparing Fib_Tri#7 47bd..3243 Meg#7 747d..d137 **
+
+**  Fib_Tri 7  workPackage: 47bd..439a **
+
+**  MEGATRON 7  workPackage: cf6f..d31c **
+reconstructSegments: 2 segments, 2 justifications
+All workpackages are sent
+DEBUG[03-26|14:54:01.564] BETA computation                         n=0    accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xef7914193916709d77dc4e716f88d02facdcc54ee1859761876c55cb97f14542,0x77ed6c401bb667881fae73a7effe3a2aecf01e95caae24078b6038c11d7d6499,nil,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:54:01.598] [N0] proposeBlock safrole                p=32d3..5330 h=c790..d694 e'=4 m'=2  "len(γ_a')"=9  blk="H_t=50 H_r=ccf6..4777  |E_T|=3 |E_G|=2"
+Found pending work package 0xcf6f3041e03a75829e4f1550ee6113bbfef44a30de285528136337f479bfd31c at core 0!
+Meg 7 = [7 0 0 0 37 0 0 0 21 0 0 0]
+Found pending work package 0x09cf25b4b22e936f6108cc7e74a6b31e10ea50de0e2041543d03cfdebd484dbf at core 1!
+Fib 7 = [7 0 0 0 13 0 0 0 8 0 0 0]
+Tri 7 = [7 0 0 0 24 0 0 0 13 0 0 0 7 0 0 0]
+INFO [03-26|14:54:07.759] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[0x09cf25b4b22e936f6108cc7e74a6b31e10ea50de0e2041543d03cfdebd484dbf] []]" "Q(q)-priority queue result"="[0x09cf25b4b22e936f6108cc7e74a6b31e10ea50de0e2041543d03cfdebd484dbf 0xcf6f3041e03a75829e4f1550ee6113bbfef44a30de285528136337f479bfd31c]" "W^*-wphs of accumulatable work reports)"="[0x09cf25b4b22e936f6108cc7e74a6b31e10ea50de0e2041543d03cfdebd484dbf 0xcf6f3041e03a75829e4f1550ee6113bbfef44a30de285528136337f479bfd31c]"
+DEBUG[03-26|14:54:07.759] SINGLE ACCUMULATE                        s=272334947  wrangledResults='{"H":"0x09cf25b4b22e936f6108cc7e74a6b31e10ea50de0e2041543d03cfdebd484dbf","E":"0x95bfe49b6ae011e368a824b8627c5507f4d935174341e5909fa41e8bfb1db2cf","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x9dff876a4b942d0a9711d18221898f11ca39751589ebf4d49d749f6b3e493292","D":"0x000c08000000150000000d000000"}'
+DEBUG[03-26|14:54:07.762] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=272334947  B=0x08000000150000000d0000000000000000000000000000000000000000000000
+DEBUG[03-26|14:54:07.762] SINGLE ACCUMULATE                        s=552088286  wrangledResults='{"H":"0x09cf25b4b22e936f6108cc7e74a6b31e10ea50de0e2041543d03cfdebd484dbf","E":"0x95bfe49b6ae011e368a824b8627c5507f4d935174341e5909fa41e8bfb1db2cf","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x9dff876a4b942d0a9711d18221898f11ca39751589ebf4d49d749f6b3e493292","D":"0x0010080000002c000000180000000d000000"}'
+DEBUG[03-26|14:54:07.764] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=552088286  B=0x080000002c000000180000000d00000000000000000000000000000000000000
+DEBUG[03-26|14:54:07.764] SINGLE ACCUMULATE                        s=1540381983 wrangledResults='{"H":"0xcf6f3041e03a75829e4f1550ee6113bbfef44a30de285528136337f479bfd31c","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x06c03840b70eb1d7f1ac0d55e5e7863c53d0d3b7aef6d734c70c47b1172c7f84","D":"0x000863803b10de32e820"}'
+INFO [03-26|14:54:07.778] INFO#megatron                            msg="meg 8 read from service 272334947 fib(n=8)=21"
+INFO [03-26|14:54:07.789] INFO#megatron                            msg="meg 8 read from service 552088286 trib(n=8)=44"
+INFO [03-26|14:54:07.805] INFO#megatron                            msg="0 transfer(dest:272334947, amount=8, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.820] INFO#megatron                            msg="0 transfer(dest:552088286, amount=17, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.834] INFO#megatron                            msg="1 transfer(dest:272334947, amount=8, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.849] INFO#megatron                            msg="1 transfer(dest:552088286, amount=17, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.863] INFO#megatron                            msg="2 transfer(dest:272334947, amount=8, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.885] INFO#megatron                            msg="2 transfer(dest:552088286, amount=17, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.900] INFO#megatron                            msg="3 transfer(dest:272334947, amount=8, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.915] INFO#megatron                            msg="3 transfer(dest:552088286, amount=17, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.930] INFO#megatron                            msg="4 transfer(dest:272334947, amount=8, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.945] INFO#megatron                            msg="4 transfer(dest:552088286, amount=17, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.960] INFO#megatron                            msg="5 transfer(dest:272334947, amount=8, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.979] INFO#megatron                            msg="5 transfer(dest:552088286, amount=17, gas_avail=100) Result: 0"
+INFO [03-26|14:54:07.994] INFO#megatron                            msg="6 transfer(dest:272334947, amount=8, gas_avail=100) Result: 0"
+INFO [03-26|14:54:08.009] INFO#megatron                            msg="6 transfer(dest:552088286, amount=17, gas_avail=100) Result: 0"
+INFO [03-26|14:54:08.024] INFO#megatron                            msg="7 transfer(dest:272334947, amount=8, gas_avail=100) Result: 0"
+INFO [03-26|14:54:08.039] INFO#megatron                            msg="7 transfer(dest:552088286, amount=17, gas_avail=100) Result: 0"
+INFO [03-26|14:54:08.044] INFO#megatron                            msg="meg(8)=65"
+INFO [03-26|14:54:08.053] INFO#megatron                            msg="meg 8 write(n=65) num_transfers=16"
+DEBUG[03-26|14:54:08.054] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1540381983 B=0x0800000041000000250000000000000000000000000000000000000000000000
+DEBUG[03-26|14:54:08.054] SINGLE ACCUMULATE                        s=3940234085 wrangledResults='{"H":"0xcf6f3041e03a75829e4f1550ee6113bbfef44a30de285528136337f479bfd31c","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","D":"0x00200b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0"}'
+DEBUG[03-26|14:54:08.058] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3940234085 B=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:54:08.058] writeAccount SET                         service_idx=272334947  rawkey=0x8b5f85f3ffa0255a4e482f886e79bc6b4ee05eef726f691f9fa3efe335178986 value="[8 0 0 0 21 0 0 0 13 0 0 0]"
+INFO [03-26|14:54:08.058] writeAccount SET                         service_idx=552088286  rawkey=0x68a7b0c9a2ba185de10161430459fc82ab3dbca28c7ac47c6e213338c2c5d593 value="[8 0 0 0 44 0 0 0 24 0 0 0 13 0 0 0]"
+INFO [03-26|14:54:08.059] writeAccount SET                         service_idx=1540381983 rawkey=0xf1596fdb53abe8cbd4932fa0477c20de2c654de101781b03ccf69dfc367d1dab value="[8 0 0 0 65 0 0 0 37 0 0 0]"
+INFO [03-26|14:54:08.059] BEEFY-C                                  s=272334947  h=0x08000000150000000d0000000000000000000000000000000000000000000000 encoded=63803b1008000000150000000d0000000000000000000000000000000000000000000000
+INFO [03-26|14:54:08.060] BEEFY-C                                  s=552088286  h=0x080000002c000000180000000d00000000000000000000000000000000000000 encoded=de32e820080000002c000000180000000d00000000000000000000000000000000000000
+INFO [03-26|14:54:08.060] BEEFY-C                                  s=1540381983 h=0x0800000041000000250000000000000000000000000000000000000000000000 encoded=1f5dd05b0800000041000000250000000000000000000000000000000000000000000000
+INFO [03-26|14:54:08.060] BEEFY-C                                  s=3940234085 h=0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0 encoded=6533dbea0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0
+INFO [03-26|14:54:08.060] BEEFY accumulation root                  r=0x3cad99248016a172f414e43d232f3aab60b884c19991742016668773b3c58bd1
+DEBUG[03-26|14:54:08.060] BETA computation                         n=4    accumulationRoot=0x3cad99248016a172f414e43d232f3aab60b884c19991742016668773b3c58bd1 mmr=[nil,nil,nil,0x5d918dc9fab764f5f7bb10763ce6b070920164f891537220ad06908b36697544,nil,0xcc3ce1f206dea49c56c2f253a4c2ad5a1a92a386e97e1d520c47fd4c1133be54]
+INFO [03-26|14:54:08.099] [N4] proposeBlock safrole                p=c790..d694 h=4731..8aac e'=4 m'=3  "len(γ_a')"=12 blk="H_t=51 H_r=1c32..6809  |E_T|=3 |E_A|=6"
+INFO [03-26|14:54:10.817] megatron success
