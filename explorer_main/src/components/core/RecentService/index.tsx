@@ -107,10 +107,10 @@ export function RecentServices({states, coreIndex}: RecentServiceProps) {
       </Typography>
 
         {(displayStates && displayStates.length > 0) ? 
-            (workResults().map((result) => {
+            (workResults().map((result, resultIndex) => {
                 return (
                   <ServiceListItem
-                    key={result.item.service_id}
+                    key={resultIndex}
                     result={result.item}
                     createdAt={result.createdAt || 0}
                   ></ServiceListItem>

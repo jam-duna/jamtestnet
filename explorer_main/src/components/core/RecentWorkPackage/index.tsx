@@ -6,6 +6,7 @@ import { Box, Paper, Typography } from "@mui/material"; // Report icon
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import { Block, State } from "@/db/db";
 import { Result } from "@/types";
+import { truncateHash } from "@/utils/helper";
 
 interface RecentWorkPackageProps {
     states: State[];
@@ -108,7 +109,7 @@ function WorkPackageListItem({state, coreIndex}: WorkPackageListItemProps) {
               variant="body2"
               sx={{ color: "#1976d2", textDecoration: "underline" }}
             >
-              {packageHash()}
+              {truncateHash(packageHash())}
             </Typography>
             <Typography variant="body2" color="textSecondary">
               results {results()}

@@ -56,7 +56,7 @@ export function BlockListGrid({
               {/* Timeslot headers */}
               {timestamps.map((timestampValue, timestampIndex) => (
                 <TableCell
-                  key={timestampValue}
+                  key={timestampIndex}
                   align="center"
                   sx={{
                     border: "1px solid #ddd",
@@ -79,11 +79,11 @@ export function BlockListGrid({
           <TableBody>
               <TableRow key={coreIndex}>
                 {/* Data cells for each timeslot */}
-                {timeslots.map((slot) => {
-                  const cell = data[coreIndex]?.[slot];
+                {timestamps.map((timestampValue, timestampIndex) => {
+                  const cell = data[coreIndex]?.[timestampValue];
                   return (
                     <TableCell
-                      key={slot}
+                      key={timestampIndex}
                       align="center"
                       sx={{
                         backgroundColor: cell?.isBusy

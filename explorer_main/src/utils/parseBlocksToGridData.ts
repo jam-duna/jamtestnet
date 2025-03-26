@@ -64,7 +64,7 @@ export function parseBlocksToGridData(blocks: Block[], states: State[]): GridDat
     }
   });
 
-  timeslots.forEach((timestamp) => {
+  timestamps.forEach((timestamp) => {
     cores.forEach((coreIndex) => {
       grid[coreIndex] = grid[coreIndex] || {};
       if (!grid[coreIndex][timestamp]) {
