@@ -205,7 +205,7 @@ In key 0 is a 12 byte representation of (n, Fib(n), Fib(n-1)).  This is actually
 
 This dataset enables broad testing of accumulate invocation.
 
-We are currently developing a broader set of refine test vectors in a similar way to test:
+As of 0.6.4, we have refine using all of the following:
 
 * EXPORT
 * EXPUNGE
@@ -220,6 +220,9 @@ We are currently developing a broader set of refine test vectors in a similar wa
 We will defer basic testing DESIGNATE, UPGRADE, EJECT, VOID+ZERO to after a live tiny testnet has been set up.
 
 #### Ordered Accumulation
+
+*Note:* We are revising this to include transfers to as to support 0.6.4 transfer statistics.
+
 
 The ordered accumulation data, after setting up a Fib+Trib+Megatron service, has the megatron work package depend on the Fib+Trib work package.  
 
@@ -255,6 +258,7 @@ INFO [03-05|19:39:34.160] JAMTEST Fib SUCC                         n=7 result="[
 INFO [03-05|19:39:34.160] JAMTEST Trib SUCC                        n=7 result="[7 0 0 0 24 0 0 0 13 0 0 0 7 0 0 0]"
 ...
 ```
+
 #### Dispute
 - made by any mode with guarantee and assurance
 - only the availible workreports can be disputed (the dispute always happen after audit)
@@ -378,8 +382,11 @@ Dec 2024:
 * 64-bit PVM support with [new opcodes](https://docs.google.com/spreadsheets/d/1R7syeL7GYq4KH2B3Zh03v3CAFnK1iNNF0J4c2r-vKWw/edit?gid=1743195954#gid=1743195954) (with 96% coverage (see [community test vectors](https://github.com/FluffyLabs/jamtestvectors/pull/5)))
 * state_transitions output with service k,v metadata
 
-Feb/March 2025:
-* [0.6.2.x Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.9)
+Feb - early March 2025:
+* [0.6.2.x Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.12)
+
+Late March 2025:
+* [0.6.4.x Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.0)
 
 
 ## JAM Implementers
