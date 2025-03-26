@@ -1,0 +1,156 @@
+{
+  "bundle": {
+    "work_package": {
+      "authorization": "0x",
+      "auth_code_host": 0,
+      "authorizer": {
+        "code_hash": "0xc16326432b5b3213dfd1609495e13c6b276cb474d679645337e5c2c09f19b53c",
+        "params": "0x"
+      },
+      "context": {
+        "anchor": "0xaceb3026972379735f5fd3a5fb2b05ac206d40ea974e1dfefcfda9d904600418",
+        "state_root": "0x263c15dc9b61112d2de018b2469916f1708c02758c649bbb0c1fbb559f65ffab",
+        "beefy_root": "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5",
+        "lookup_anchor": "0xe0c63cc63fd906c486d0d5b50d95d29a948ec1b4ddc7bef9793adc232bcf7c51",
+        "lookup_anchor_slot": 14,
+        "prerequisites": []
+      },
+      "items": [
+        {
+          "service": 0,
+          "code_hash": "0x15f8485e3a88e86182e63280720d5ec9892578f0e577fb1bcdda5cf497950815",
+          "payload": "0xc8e94f7f710435aa09c118abc6c5de5f11a734429f844af90df9116a4e874f7601600000",
+          "refine_gas_limit": 5678,
+          "accumulate_gas_limit": 9876,
+          "import_segments": [],
+          "extrinsic": [],
+          "export_count": 0
+        }
+      ]
+    },
+    "extrinsics": [],
+    "import_segments": [
+      []
+    ],
+    "justifications": [
+      []
+    ]
+  },
+  "core_index": 0,
+  "segment_root_lookup": null,
+  "guarantee": {
+    "report": {
+      "package_spec": {
+        "hash": "0xbcfb71690c58931f4d2e5d996fc5ead8c8cb4ba8706e78a9079eb15b52667454",
+        "length": 270,
+        "erasure_root": "0xe13544c9ddb4abe2253d5af021547ea082ebafb87df32960453cef917fb8fbc2",
+        "exports_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "exports_count": 0
+      },
+      "context": {
+        "anchor": "0xaceb3026972379735f5fd3a5fb2b05ac206d40ea974e1dfefcfda9d904600418",
+        "state_root": "0x263c15dc9b61112d2de018b2469916f1708c02758c649bbb0c1fbb559f65ffab",
+        "beefy_root": "0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5",
+        "lookup_anchor": "0xe0c63cc63fd906c486d0d5b50d95d29a948ec1b4ddc7bef9793adc232bcf7c51",
+        "lookup_anchor_slot": 14,
+        "prerequisites": []
+      },
+      "core_index": 0,
+      "authorizer_hash": "0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0",
+      "auth_output": "0x",
+      "segment_root_lookup": null,
+      "results": [
+        {
+          "service_id": 0,
+          "code_hash": "0x15f8485e3a88e86182e63280720d5ec9892578f0e577fb1bcdda5cf497950815",
+          "payload_hash": "0xd13ac335e9c7b9c7619237e0dfce7f561fb70a1457191bb08dcf382f6f3d0124",
+          "accumulate_gas": 9876,
+          "result": {
+            "ok": "0xc8e94f7f710435aa09c118abc6c5de5f11a734429f844af90df9116a4e874f7601600000"
+          },
+          "refine_load": {
+            "gas_used": 0,
+            "imports": 0,
+            "extrinsic_count": 0,
+            "extrinsic_size": 0,
+            "exports": 0
+          }
+        }
+      ],
+      "auth_gas_used": 0
+    },
+    "slot": 14,
+    "signatures": [
+      {
+        "validator_index": 1,
+        "signature": "0x8bcfc9a02adebb3cc9e66b04528369cf16ce3ef8bf0ebf2521a9880abf42cd042bbffd5bbea88bd07f9d37ce47ef36ce767abf4a48b2678569f35ab84415490b"
+      },
+      {
+        "validator_index": 2,
+        "signature": "0x4e699b9beca5a556db64bf986495bf78005349e700b93a650766f1bfc51b2a113346fdc5bb9fabb4ea8e950b41727613d8731448e8c17ddab61d215b31e4240f"
+      },
+      {
+        "validator_index": 3,
+        "signature": "0xdfe58daced2b8909ddba69b38178c97364f32b02049c2d5547d91a362a7989aed15192dd783e6167b3021369d5ed7ee6ba75e042c8bb809c108eecb39e579c08"
+      }
+    ]
+  },
+  "spec_derivation": {
+    "bClubs": [
+      "0x258a593963fb9c2ffd5ff9aa7b319e558f3c92f33d6604eeb43b6df644c63ee7",
+      "0x3648705d568fa7b57abe2ad9ae02d69ba00568055b8b8a6fb7ffd5894c131fc9",
+      "0xe0ae411b9e4e3476d742e12f455a2526ce720f8cb92733aaf81207a04311e0d8",
+      "0xe2185aee1a6bd12676f35cafe546eb81d0259c40536fc79e7eea3908ced59f24",
+      "0xd16fb54ebc715be16d20824cc2d04e1dd4ef624bf82db6a4416807a7762a21d1",
+      "0xe995468e867f38cca7011f25de45d46140b358a0659934e90264210c678f1561"
+    ],
+    "sClubs": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "bundle_chunks": [
+      {
+        "data": "AAAAAADBYyZDK1syE9/RYJSV4TxrJ2y0dNZ5ZFM35cLAnxm1PACs6zAmlyN5c19f06X7KwWsIG1A6pdOHf78/anZBGAEGCY8FdybYREtLeAYskaZFvFwjAJ1jGSbuwwfu1WfZf+rrTIotnb3081ChKVEPxfxlis25JGzCkCyQFhJ5Ze6X7Xgxg=="
+      },
+      {
+        "data": "PMY/2QbEhtDVtQ2V0pqUjsG03ce++Xk63CMrz3xRDgAAAAABAAAAABX4SF46iOhhguYygHINXsmJJXjw5Xf7G83aXPSXlQgVJMjpT39xBDWqCcEYq8bF3l8RpzRCn4RK+Q35EWpOh092AWAAAC4WAAAAAAAAlCYAAAAAAAAAAAAAAAEAAQAAAA=="
+      },
+      {
+        "data": "DVldpU7IVaaK2D2b4VHq0sQKXU+GhWR5CJIThQrt6NKUUDlMLAB3iQBY64LLPadMThej+qlwgLgYuv66UhX2mEOvO2wq7wJ01XpjKy0ALkcKhL3uNnEFt0IvBBob+BH+C8QdyD3PmZOxTlK8qqHWaHL8LjGylSwrglhAB/ND88khn7P4xk6Nmg=="
+      },
+      {
+        "data": "MZ9ifEjNsFAcRms8IBSvPJErYbRTW3H3oGdBLiWLAxBUzyD4EADbYiWGNP+IxhByH1RqUd7R/hzRdREEqpzxfiesY/i5Yixd5G4RBUNcB5K4Pzpvi0aw5R9LL0rC3JmrSZx7vKgqs+7v+URLeUKC7Ne4ESZDlyEdZsnzDbPxs5FoeiVCmPttXA=="
+      },
+      {
+        "data": "6HE3ybvDOSkDNP8Gvu9yg0eQfdTjWofs2QccEeZlt+TXplA7yABvS41xxLkcmd6g98Dv4ZNqtalU8zHM+ID1WG9T59p/BsR/OFvu/TYzZe8fftiq6/ogOepLXmwnzJS42nJH/MoBHqgCNzEcgWpk/2UoxFQXnS7OSqI0BioxKn/8c857dT9I3A=="
+      },
+      {
+        "data": "1LcIEL3G3N+Vqqmhf6o3bRKxQS82hJJicfJOuskDXCYXOUmP9ADDoKivG8RfYmmepoMmSuTLyw2dPN5yAAnyvgtQv07si+pWCU+c01hvTDqtxV8rVs2Va7cvdTz+6BztmCohiF/kNNVcgCfrUokwe8Bs+0PmnyP4rjOHDGqDaie1lljBK4qoGg=="
+      }
+    ],
+    "segment_chunks": [
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      }
+    ]
+  }
+}

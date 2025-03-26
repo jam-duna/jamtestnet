@@ -1,0 +1,156 @@
+{
+  "bundle": {
+    "work_package": {
+      "authorization": "0x",
+      "auth_code_host": 0,
+      "authorizer": {
+        "code_hash": "0xc16326432b5b3213dfd1609495e13c6b276cb474d679645337e5c2c09f19b53c",
+        "params": "0x"
+      },
+      "context": {
+        "anchor": "0x733d07c6abf72dfb80f862ac6104b1e7db9955e8ff6c9bbe9b6f180a5e3cd211",
+        "state_root": "0x753b008d790b645a6fee6f8f70c602bfa83ab239b0f6d936b7d2acdf90d338f0",
+        "beefy_root": "0x1c22d4025edacc7c4bc4b9889daddb012d8831927a89a984ad811d8882831a94",
+        "lookup_anchor": "0x962c6cbb055993acd1b3ae2ad4ed8f8c1747da5f70f521eaf75e656038203c7f",
+        "lookup_anchor_slot": 1211255,
+        "prerequisites": []
+      },
+      "items": [
+        {
+          "service": 0,
+          "code_hash": "0x15f8485e3a88e86182e63280720d5ec9892578f0e577fb1bcdda5cf497950815",
+          "payload": "0xaa125123e0373599cacc94075a0d7d365a6bd81a1e260c4dcabd837fe48ddafdf7050000",
+          "refine_gas_limit": 5678,
+          "accumulate_gas_limit": 9876,
+          "import_segments": [],
+          "extrinsic": [],
+          "export_count": 0
+        }
+      ]
+    },
+    "extrinsics": [],
+    "import_segments": [
+      []
+    ],
+    "justifications": [
+      []
+    ]
+  },
+  "core_index": 0,
+  "segment_root_lookup": null,
+  "guarantee": {
+    "report": {
+      "package_spec": {
+        "hash": "0x02f8c33af6f70594138a48f4537a19c810c63c39dbc86f844e2a5bd9976db5cb",
+        "length": 270,
+        "erasure_root": "0xd7a02bfe79cb5d7b656e0abf9539bd17ca70a43bb78bb165b0265f613826d687",
+        "exports_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "exports_count": 0
+      },
+      "context": {
+        "anchor": "0x733d07c6abf72dfb80f862ac6104b1e7db9955e8ff6c9bbe9b6f180a5e3cd211",
+        "state_root": "0x753b008d790b645a6fee6f8f70c602bfa83ab239b0f6d936b7d2acdf90d338f0",
+        "beefy_root": "0x1c22d4025edacc7c4bc4b9889daddb012d8831927a89a984ad811d8882831a94",
+        "lookup_anchor": "0x962c6cbb055993acd1b3ae2ad4ed8f8c1747da5f70f521eaf75e656038203c7f",
+        "lookup_anchor_slot": 1211255,
+        "prerequisites": []
+      },
+      "core_index": 0,
+      "authorizer_hash": "0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0",
+      "auth_output": "0x",
+      "segment_root_lookup": null,
+      "results": [
+        {
+          "service_id": 0,
+          "code_hash": "0x15f8485e3a88e86182e63280720d5ec9892578f0e577fb1bcdda5cf497950815",
+          "payload_hash": "0x58895203656b4df71654f43d328d1cb3e10b2f5977f19cb65b84e308b43e8755",
+          "accumulate_gas": 9876,
+          "result": {
+            "ok": "0xaa125123e0373599cacc94075a0d7d365a6bd81a1e260c4dcabd837fe48ddafdf7050000"
+          },
+          "refine_load": {
+            "gas_used": 0,
+            "imports": 0,
+            "extrinsic_count": 0,
+            "extrinsic_size": 0,
+            "exports": 0
+          }
+        }
+      ],
+      "auth_gas_used": 0
+    },
+    "slot": 1211255,
+    "signatures": [
+      {
+        "validator_index": 1,
+        "signature": "0xd1a6157142e107d09edde9a3d8803d6c7b5027032a47b89ded5973cf914925040af6851cb40bf847040c6c998f34b90d89180bb877ba541afe096bd6ccbd6f00"
+      },
+      {
+        "validator_index": 2,
+        "signature": "0x23f656f53cc20d1e77abf8dce2e0e1feea7c586eae308e306a566f695aa5f51a89cf609bb2c404156eb36d85c7ddfe987a671f82ea210d9fe0fa081a0255b706"
+      },
+      {
+        "validator_index": 5,
+        "signature": "0x520df821aa2083ba3328d598220623f2ce1c27d3b684947649945323b762de4958fc66e71efc974e39beb4821d5c059b1b93d9f5dacb96f2e9eaf8602fb9bb04"
+      }
+    ]
+  },
+  "spec_derivation": {
+    "bClubs": [
+      "0xcf352cd35310c6f93fa611e712a2254bea5943f4ef2440021549b29e3b6ff72b",
+      "0x7c7c4210fc5283b744aaed19d3f733646d0d373dbe7d9da1cd953c3bc9cb0a81",
+      "0xbab3548a84f237c7c7f7d66bcdcf05f052f4b21c138b81e33d8c1d5df8db3183",
+      "0x7e39c9bdf2251443743e7228b805f8cc0b521a97904983c99d486796cb94fdac",
+      "0x9e430e9cd81b3e5fe45ff07286a4844ae26a7055ecf46e34d0a43258f32bc0a7",
+      "0xba2f09aef3b1cbc61d0dba56c49210dafd4f28d60e789fbd0a4de1a613eb12a4"
+    ],
+    "sClubs": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "bundle_chunks": [
+      {
+        "data": "AAAAAADBYyZDK1syE9/RYJSV4TxrJ2y0dNZ5ZFM35cLAnxm1PABzPQfGq/ct+4D4YqxhBLHn25lV6P9sm76bbxgKXjzSEXU7AI15C2Rab+5vj3DGAr+oOrI5sPbZNrfSrN+Q0zjwHCLUAl7azHxLxLmIna3bAS2IMZJ6iamErYEdiIKDGpSWLA=="
+      },
+      {
+        "data": "bLsFWZOs0bOuKtTtj4wXR9pfcPUh6vdeZWA4IDx/d3sSAAABAAAAABX4SF46iOhhguYygHINXsmJJXjw5Xf7G83aXPSXlQgVJKoSUSPgNzWZysyUB1oNfTZaa9gaHiYMTcq9g3/kjdr99wUAAC4WAAAAAAAAlCYAAAAAAAAAAAAAAAEAAQAAAA=="
+      },
+      {
+        "data": "8PhFQoxMMW1L8A/sT+L99sbZcbKYcrHd+79OifAmI/C7UDlMLADULyjVxyULXAQ/DxL/6OSHNQYouxKiO+YRwkF/KW/zPw9geVTbmIEzebt5oh3HxT9RFJY51ZEu1+OKw/quTIHX1W3hSs6vneDTm0dhUXSswyJhJlrRYntodGTlStDeOVRVEA=="
+      },
+      {
+        "data": "nENAGx8hg/im8YAz07E70YgT4HvSvyo36gkPzZ9usUlpzyD4EACnEjrrJIwcL2ym71isbCdtsFb0dpU+RS9xtpSvK6e2u3JOXXOwwsaJIWCP56GVwNr0UxJaDr/t/3JUIu+DHMbDRJXIv5V1UbKOX/7pzNl3VinpF8ir69Ls2eX4wlNdIsDDPA=="
+      },
+      {
+        "data": "h+vOtI4RmQ6hbheUb4mJ5JdE1HhNfqhK75UbPysyRMKWplA7yADjzUY5DDZua1LMyspOf6lDpLkJ+otaDqpO9o/q8HaqfAKKsuV9q2pzyAnNxmW2J1breKVS6Mk03t/QAJcq81u8L8do4naL2ldu1TLyr2qONCXywK7p92j/avhpGu//WKWskg=="
+      },
+      {
+        "data": "61DL7R18K5tMb5hL89pPw9mORbEHszOg/iNae0R61ntEOUmP9ACQ8FQH7595GDpVKoAd+2qpIenVNwzGcGMuglo68r7v+H+klsIW8S3JkNI7g9nkIrNOPyExM+f39k4O4YIHoxyovj9BFy1RFgUzEYt6MsdVoS568TyTfsF7x3l0kmx8QzE6vg=="
+      }
+    ],
+    "segment_chunks": [
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      }
+    ]
+  }
+}

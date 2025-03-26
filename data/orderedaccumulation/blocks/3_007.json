@@ -1,0 +1,104 @@
+{
+    "header": {
+        "parent": "0xae553c72b260fa68b5e6b2d0a6b02d9d1023a99c44f67526b842e1e2a4a82917",
+        "parent_state_root": "0xee231749cd2a600ae02edcd89b572cd1255785e5ed07fa6fbbf46f38a4260297",
+        "extrinsic_hash": "0xbc695b92be157228d031ff8a3e21dc8a0f98d59e732751020ef4e2e42547b5b0",
+        "slot": 43,
+        "epoch_mark": null,
+        "tickets_mark": null,
+        "offenders_mark": [],
+        "author_index": 1,
+        "entropy_source": "0x5edb5dd0a8bd58e3dd9302f293b3247b3fb35369139732e1501cc16671f2feaae5f96dc657634729887eb7b42509396b10efae64ec0a47631dd2cfacfc81ff0c02343c8865ce6c0c7cc5c4d41405610d0cc628a4e7444953964633ab684b1e02",
+        "seal": "0x5f93b02e86dc7ffc4715b784b7a642254092293c04b4b1b247e2636c9ffb4b61bd8dc1256f429bce3a602f58c3b70a232ae2164027424cf5775447f90e9a740eecff4cde13328236feea95cc945c4f4802c91d1649f5e474f2e6c63fd11ce60e"
+    },
+    "extrinsic": {
+        "tickets": [],
+        "preimages": [],
+        "guarantees": [
+            {
+                "report": {
+                    "package_spec": {
+                        "hash": "0xa19dd963af988d2b3b1f52fa67b8165ffe84395900cc6fcf58ce06d961058829",
+                        "length": 8649,
+                        "erasure_root": "0x190642723143a3b9e6036c99041eb8719e05170ff4bcd57acea9fa1920b1fdc0",
+                        "exports_root": "0x047620635f55d26fcb431cff6ba99847cae1e17c8febcd034c00ec07c1b2b10c",
+                        "exports_count": 2
+                    },
+                    "context": {
+                        "anchor": "0x8d7cc2952f3e7b0d8c4a27ef9677f0bfc0a30105a71f3d054ecc78be3d87956b",
+                        "state_root": "0xd25bef884347c890ef9191496781206d29ccbd2d1b064e72238c12b470677ade",
+                        "beefy_root": "0x9a7af0f3bd98f63145e574733126d40695b467331789c7bf056c359ca874909f",
+                        "lookup_anchor": "0x98f419ccad934dca40bb56ff218dfdfa19085f4c1fdb2cfc3734c61efca010a2",
+                        "lookup_anchor_slot": 41,
+                        "prerequisites": []
+                    },
+                    "core_index": 1,
+                    "authorizer_hash": "0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0",
+                    "auth_output": "0x",
+                    "segment_root_lookup": [
+                        {
+                            "work_package_hash": "0xe567c0df2b6e132b2d3c0dd01da531d7859eaa7066176b73c215771e1c7c7e56",
+                            "segment_tree_root": "0xfc0551466f6d2d5434b430a993a0bfb12f1bd98722cb2e58584afe289dc35a75"
+                        }
+                    ],
+                    "results": [
+                        {
+                            "service_id": 272334947,
+                            "code_hash": "0x030c457bea43b000e821a6f8c32d5f48944813bbe27fa0aee286b2d27adb79ce",
+                            "payload_hash": "0xf4aac2fbe33f03554bfeb559ea2690ed8521caa4be961e61c91ac9a1530dce7a",
+                            "accumulate_gas": 1000,
+                            "result": {
+                                "ok": "0x060000000800000005000000"
+                            },
+                            "refine_load": {
+                                "gas_used": 20,
+                                "imports": 1,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 1
+                            }
+                        },
+                        {
+                            "service_id": 552088286,
+                            "code_hash": "0xcaa4cf4337f7e0219714b74426b99f71f35fda2f796770e4e53b0dfab42cabef",
+                            "payload_hash": "0xf4aac2fbe33f03554bfeb559ea2690ed8521caa4be961e61c91ac9a1530dce7a",
+                            "accumulate_gas": 1000,
+                            "result": {
+                                "ok": "0x060000000d0000000700000004000000"
+                            },
+                            "refine_load": {
+                                "gas_used": 20,
+                                "imports": 1,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 1
+                            }
+                        }
+                    ],
+                    "auth_gas_used": 0
+                },
+                "slot": 42,
+                "signatures": [
+                    {
+                        "validator_index": 1,
+                        "signature": "0xcd5b0872cbbe89d2435ba8167ac57cddcb38a89fc1c6d60e83ace1980773b78482c60938d7eb12a4a75f308ea369ab606b516b60abd3d5494d2e376c3f4ec80a"
+                    },
+                    {
+                        "validator_index": 2,
+                        "signature": "0x83da32131f1e28b61b219fabf8d3ee29601c156e41c417512ceefa8113c6c8950cc5bb929e3489fd5be1cae32f330a6102672e8863f2b58436fab67a6358d60a"
+                    },
+                    {
+                        "validator_index": 3,
+                        "signature": "0x9fc20b0160e50f16f986a7d991e84a5fa3ec25afd8228080ca42795effd45cdc8a365d818456c5a77de5dff12e5a252ec7897ee7700fab34b1fa093de5ef940c"
+                    }
+                ]
+            }
+        ],
+        "assurances": [],
+        "disputes": {
+            "verdicts": [],
+            "culprits": [],
+            "faults": []
+        }
+    }
+}

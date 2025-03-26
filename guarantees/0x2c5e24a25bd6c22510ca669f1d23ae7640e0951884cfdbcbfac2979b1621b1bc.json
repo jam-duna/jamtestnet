@@ -1,0 +1,160 @@
+{
+  "bundle": {
+    "work_package": {
+      "authorization": "0x3078",
+      "auth_code_host": 0,
+      "authorizer": {
+        "code_hash": "0xc16326432b5b3213dfd1609495e13c6b276cb474d679645337e5c2c09f19b53c",
+        "params": "0x"
+      },
+      "context": {
+        "anchor": "0x24d49fabc16fcb8abcf1a63db5c7027db1461386519d0b5b6b4d24e05542907d",
+        "state_root": "0x22d790441533c0659c54b95081e8843b289ab49365db9d616cf9c9eafcbf91a2",
+        "beefy_root": "0x6407b21662abc9aaf6594bb0b6e773ab4c7bcb6f63aa8b3db2709493c1b414fd",
+        "lookup_anchor": "0x15212e32a8da4d22ab12d5153a1c407ac9ea2337dd4b3fffd9c4324eac4fed50",
+        "lookup_anchor_slot": 1211259,
+        "prerequisites": [
+          "0x91c3d305bed5ee7bb794f734c4ff2c988ce7440a18c3ba192ce60cd442319abb"
+        ]
+      },
+      "items": [
+        {
+          "service": 648258701,
+          "code_hash": "0xd8f579d072de6c1d00de9a289bd4b258071d78e47c7df57f89aae188afa5c96a",
+          "payload": "0xe376b80c5c7af894",
+          "refine_gas_limit": 1000,
+          "accumulate_gas_limit": 100000,
+          "import_segments": [],
+          "extrinsic": [],
+          "export_count": 0
+        }
+      ]
+    },
+    "extrinsics": [],
+    "import_segments": [
+      []
+    ],
+    "justifications": [
+      []
+    ]
+  },
+  "core_index": 0,
+  "segment_root_lookup": null,
+  "guarantee": {
+    "report": {
+      "package_spec": {
+        "hash": "0x2c5e24a25bd6c22510ca669f1d23ae7640e0951884cfdbcbfac2979b1621b1bc",
+        "length": 276,
+        "erasure_root": "0xcf5784bcc53e70e565b22c36e311a5d506a743c6098002a21562cf160f473327",
+        "exports_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "exports_count": 0
+      },
+      "context": {
+        "anchor": "0x24d49fabc16fcb8abcf1a63db5c7027db1461386519d0b5b6b4d24e05542907d",
+        "state_root": "0x22d790441533c0659c54b95081e8843b289ab49365db9d616cf9c9eafcbf91a2",
+        "beefy_root": "0x6407b21662abc9aaf6594bb0b6e773ab4c7bcb6f63aa8b3db2709493c1b414fd",
+        "lookup_anchor": "0x15212e32a8da4d22ab12d5153a1c407ac9ea2337dd4b3fffd9c4324eac4fed50",
+        "lookup_anchor_slot": 1211259,
+        "prerequisites": [
+          "0x91c3d305bed5ee7bb794f734c4ff2c988ce7440a18c3ba192ce60cd442319abb"
+        ]
+      },
+      "core_index": 0,
+      "authorizer_hash": "0x0b27478648cd19b4f812f897a26976ecf312eac28508b4368d0c63ea949c7cb0",
+      "auth_output": "0x",
+      "segment_root_lookup": null,
+      "results": [
+        {
+          "service_id": 648258701,
+          "code_hash": "0xd8f579d072de6c1d00de9a289bd4b258071d78e47c7df57f89aae188afa5c96a",
+          "payload_hash": "0x5e54b1d5b2d90c64156636f344bc77547774a990875963543790ca5c774fa4b8",
+          "accumulate_gas": 100000,
+          "result": {
+            "ok": "0xe376b80c5c7af894"
+          },
+          "refine_load": {
+            "gas_used": 0,
+            "imports": 0,
+            "extrinsic_count": 0,
+            "extrinsic_size": 0,
+            "exports": 0
+          }
+        }
+      ],
+      "auth_gas_used": 0
+    },
+    "slot": 1211259,
+    "signatures": [
+      {
+        "validator_index": 0,
+        "signature": "0xabf754dc8260d34882e45ecfe9cc729309d9f63f21eacd034fcb606621e71ca75b29b190d80bd7f71f73ed4643fe355f8646dd55dae27231d2d620cf65714302"
+      },
+      {
+        "validator_index": 2,
+        "signature": "0x3bcd1b499819004a04a75c11e91c76ab926b5238c617cc242799b35fa3f059c0bf05cfc782c340449f454c0ce5393e44d5675b07f5c4d4a9390092407b0d0307"
+      },
+      {
+        "validator_index": 4,
+        "signature": "0x6dd59007f21e6157d7d662ac2f6224b2c382eb819aafb3e78d389d56b3d329525b6cbfed5007703ec9647b7a0eb61b32ee67621bc18a6b79001568611dd19804"
+      }
+    ]
+  },
+  "spec_derivation": {
+    "bClubs": [
+      "0x8f6242a927cd55b84c55c8863b432faf5b1e12babecc285af800d008c404a8fa",
+      "0x5ee81c41fe544d89eed24f554b13a403c6adc8e3c4a4b0290206e83cfb0dd5bc",
+      "0x9e91b73504a90dae3cfeeb2a63dc505bdcecae25e936063c59f71971e6b24c31",
+      "0x5ce166ce2ae6c646a32046fcdb1d2f07e941d7604738b4e63fe94808ebe4417c",
+      "0xdaf51cd2b0ee4c6e1cf3affb9cef6c8733cd0af5de211178f62cfecb5f3c2e12",
+      "0xcff61868339ccfe45bbd34e06aa9e824d2429ee3ec5d433f977696a8fc2b68e6"
+    ],
+    "sClubs": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "bundle_chunks": [
+      {
+        "data": "AjB4AAAAAMFjJkMrWzIT39FglJXhPGsnbLR01nlkUzflwsCfGbU8ACTUn6vBb8uKvPGmPbXHAn2xRhOGUZ0LW2tNJOBVQpB9IteQRBUzwGWcVLlQgeiEOyiatJNl251hbPnJ6vy/kaJkB7IWYqvJqvZZS7C253OrTHvLb2Oqiz2ycJSTwbQU/RUh"
+      },
+      {
+        "data": "LjKo2k0iqxLVFTocQHrJ6iM33Us//9nEMk6sT+1Qe3sSAAGRw9MFvtXue7eU9zTE/yyYjOdEChjDuhks5gzUQjGauwGNpKMm2PV50HLebB0A3poom9SyWAcdeOR8ffV/iarhiK+lyWoI43a4DFx6+JToAwAAAAAAAKCGAQAAAAAAAAAAAAABAAEA"
+      },
+      {
+        "data": "S7HSq7WUZ4hM1DGIgeVt6Teb8soJ0OS1maPj4zihlc2ulZaZbDcl9GfM+YJXqo4/Do61zSkhDP4UAh5VqVR3e+5mbx56O/OOITXTSUUspVvDnwsW7nA6jaC5n+8b/97CCGf+Y2KeAPjrYe3O7uA6Nn+p9kJMgNR6+gx/4+h5Yy+S28Cbok0xuzIa"
+      },
+      {
+        "data": "Z7MCcfi2zFv650i/mq233MXMuxTXE1ZWx1k7eqyVvYFZV1eXtlEcSpb2HZ4CMnFxTVOLfHuiBJtm/hT/HsWoYrSx8P+i3cDV2xc63SLBCSNfFShu9EwM7o8+U5gCWbbc7TTWATGEWDCHhSlggBeJZB0YvvL6Z6fRttcyjYvT6BIgq1QIY/kkRiY7"
+      },
+      {
+        "data": "ldCS1+NweSyWMxIeRsa0TIY3vFAbhjcYlPAGS4N6YpAO3tOVSG3KgsItMeDjXyfq2alZsZ61BaolpR9I0K5YEiEfvSYJd++WIK6JctK3ZlDAtzTxp40F4wrJmh7tvTI8xtZxNNP5trKwqaPevUBOgSjVJjgzRuNhJy6ksLlk/s2mUqS9BjpcGlma"
+      },
+      {
+        "data": "udJCDa5S0v8gAGspXY5ueXRg9Y7FRYX7ygre0hdOStz5HBKbkgvzPDMX1fy2x9ikmnRnAMw2Dc9XWRXiZz+HC3vIIsfRkdzN2oxg5rVayihcPReJvbEzgCVOVmn0G1oiI4VZVoDj7nrcTWdw07f900pkboiFoZDKa/Xp3trOdfAUIjAux45J5027"
+      }
+    ],
+    "segment_chunks": [
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      },
+      {
+        "data": null
+      }
+    ]
+  }
+}
