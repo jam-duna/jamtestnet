@@ -217,10 +217,26 @@ export interface CoreStatistics{
   popularity: number;
 }
 
+export interface ServiceStatistics {
+  provided_count: number;
+  provided_size: number;
+  refinement_count: number;
+  refinement_gas_used: number;
+  imports: number;
+  exports: number;
+  extrinsic_size: number;
+  extrinsic_count: number;
+  accumulate_count: number;
+  accumulate_gas_used: number;
+  on_transfers_count: number;
+  on_transfers_gas_used: number;
+}
+
 export interface PiItem {
   current: PiEntry[];
   last: PiEntry[];
   cores: CoreStatistics[];
+  services: Record<string, ServiceStatistics>;
 }
 
 export interface PsiItem {
@@ -277,7 +293,6 @@ export interface AccountItem {
   id: number;
   data: AccountData;
 }
-
 
 export interface ServiceInfo {
   metadata: string;

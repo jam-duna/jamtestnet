@@ -1,5 +1,5 @@
 import { Block, db, State } from "@/db/db";
-import { Preimage, Result } from "@/types";
+import { Preimage, Result, ServiceStatistics } from "@/types";
 import { error } from "console";
 
 export const sortBlocks = async () : Promise<Block[]> => {
@@ -107,4 +107,25 @@ export const filterPreimagesFromService = async (serviceId: number) : Promise<Pr
     })
 
     return fetchedData;
+}
+
+export const fetchServiceStatisticsFromId = async (serviceId: number) : Promise<ServiceStatistics | null> => {
+    const sortedStates = await sortStates();
+
+    let data : ServiceStatistics | null = null;
+
+    sortedStates.forEach((state) => {
+        if (state.pi.services === null || state.pi.services === undefined)
+            return;
+        Object.entries(state.pi.services).forEach(([serviceName, stats]) => {
+            if (serviceName === serviceId.toString()) {
+                data = stats;
+                return;
+            }
+        });
+        if (data !== null)
+            return;
+    });
+
+    return data;
 }

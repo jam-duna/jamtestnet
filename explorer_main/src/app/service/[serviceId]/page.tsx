@@ -13,12 +13,12 @@ import {
 } from "@mui/material";
 import { fetchService } from "@/hooks/service";
 import { DEFAULT_WS_URL } from "@/utils/helper";
-import { ServiceInfo } from "@/types";
-import { BlockListGrid, RecentPreimages, RecentWorkPackages, ServiceInfoTable } from "@/components/service";
+import { ServiceInfo, ServiceStatistics } from "@/types";
+import { BlockListGrid, RecentPreimages, RecentWorkPackages, ServiceInfoTable, ServiceStatsGrid } from "@/components/service";
 import { Block, State } from "@/db/db";
 import { GridData, parseBlocksToGridData } from "@/utils/parseBlocksToGridData";
 import { useInsertMockDataIfEmpty } from "@/utils/debug";
-import { filterBlocks, filterPreimagesFromService, filterStates, filterWorkPackagesFromService, PreimageProps } from "@/utils/blockAnalyzer";
+import { fetchServiceStatisticsFromId, filterBlocks, filterPreimagesFromService, filterStates, filterWorkPackagesFromService, PreimageProps } from "@/utils/blockAnalyzer";
 import { useFetchRpc } from "@/hooks/home/useFetchRpc";
 export default function ServiceDetail() {
   const params = useParams();
@@ -31,6 +31,7 @@ export default function ServiceDetail() {
   const [filteredStates, setFilteredStates] = useState<State[]>([]);
   const [activeStates, setActiveStates] = useState<State[]>([]);
   const [recentPreimages, setRecentPreimages] = useState<PreimageProps[]>([]);
+  const [serviceStatistics, setServiceStatistics] = useState<ServiceStatistics | null>(null);
   const [gridData, setGridData] = useState<GridData>({
     data: {},
     timeslots: [],
@@ -39,12 +40,12 @@ export default function ServiceDetail() {
     coreStatistics: {},
   });
 
-  //useInsertMockDataIfEmpty();
+  useInsertMockDataIfEmpty();
 
-  useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
-    setCurrentBlock(blockRecord);
-    setCurrentState(stateRecord);
-  }});
+  // useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
+  //   setCurrentBlock(blockRecord);
+  //   setCurrentState(stateRecord);
+  // }});
 
   useEffect(() => {
     const fetchBlocks = async() => {
@@ -63,11 +64,16 @@ export default function ServiceDetail() {
       const preimages = await filterPreimagesFromService(Number.parseInt(serviceId));
       setRecentPreimages(preimages);
     }
+    const fetchServiceStatistics = async() => {
+      const data = await fetchServiceStatisticsFromId(Number.parseInt(serviceId));
+      setServiceStatistics(data);
+    }
 
     fetchBlocks();
     fetchStates();
     fetchActiveStates();
     fetchRecentPreimages();
+    fetchServiceStatistics();
   }, [currentBlock]);
 
   useEffect(() => {
@@ -113,6 +119,11 @@ export default function ServiceDetail() {
           serviceId={serviceId}
         />
       </Box>
+
+      {serviceStatistics ? 
+        (<ServiceStatsGrid stats={serviceStatistics}/>) :
+        (<Typography variant="h6">Loading service stats...</Typography>)
+      }
 
       <Grid sx={{ my: 5 }} container spacing={4}>
           <Grid item xs={12} md={6}>
