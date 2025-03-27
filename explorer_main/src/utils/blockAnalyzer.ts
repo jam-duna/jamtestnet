@@ -1,4 +1,5 @@
 import { Block, db, State } from "@/db/db";
+import { Preimage, Result } from "@/types";
 import { error } from "console";
 
 export const sortBlocks = async () : Promise<Block[]> => {
@@ -62,4 +63,48 @@ export const filterWorkPackages = async(coreIndex: number) : Promise<State[]> =>
         return filteredRhos !== null && filteredRhos.length > 0;
     });
     return filteredStates;
+}
+
+export const filterWorkPackagesFromService = async(serviceId: number) : Promise<State[]> => {
+    const sortedStates = await sortStates();
+    const filteredStates = sortedStates.filter((state) => {
+        const filteredRhos = state.rho.filter((rhoItem) => {
+            const filteredResults : (Result[] | undefined) = rhoItem?.report.results.filter((resultItem) => {
+                return resultItem.service_id === serviceId;
+            });
+            return filteredResults !== undefined && filteredResults.length > 0;
+        });
+        return filteredRhos !== null && filteredRhos.length > 0;
+    });
+    return filteredStates;
+}
+
+export interface PreimageProps {
+    preimage: Preimage;
+    package_hash: string;
+    timestamp: number;
+}
+
+export const filterPreimagesFromService = async (serviceId: number) : Promise<PreimageProps[]> => {
+    let fetchedData : PreimageProps[] = [];
+
+    const sortedBlocks = await sortBlocks();
+    sortedBlocks.forEach((block) => {
+        block.extrinsic.preimages.forEach((preimg) => {
+            if (preimg.requester === serviceId) {
+                let hashes = "";
+                block.extrinsic.guarantees.forEach((guarantee) => {
+                    hashes = hashes + (guarantee.report.package_spec.hash + " ");
+                })
+                const preimage : PreimageProps = {
+                    preimage: preimg,
+                    package_hash: hashes,
+                    timestamp: block.overview?.createdAt || 0
+                };
+                fetchedData.push(preimage);
+            }
+        })
+    })
+
+    return fetchedData;
 }

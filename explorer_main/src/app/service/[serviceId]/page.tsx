@@ -9,15 +9,17 @@ import {
   Divider,
   Link as MuiLink,
   Box,
+  Grid,
 } from "@mui/material";
 import { fetchService } from "@/hooks/service";
 import { DEFAULT_WS_URL } from "@/utils/helper";
 import { ServiceInfo } from "@/types";
-import { BlockListGrid, ServiceInfoTable } from "@/components/service";
+import { BlockListGrid, RecentPreimages, RecentWorkPackages, ServiceInfoTable } from "@/components/service";
 import { Block, State } from "@/db/db";
 import { GridData, parseBlocksToGridData } from "@/utils/parseBlocksToGridData";
 import { useInsertMockDataIfEmpty } from "@/utils/debug";
-import { filterBlocks, filterStates } from "@/utils/blockAnalyzer";
+import { filterBlocks, filterPreimagesFromService, filterStates, filterWorkPackagesFromService, PreimageProps } from "@/utils/blockAnalyzer";
+import { useFetchRpc } from "@/hooks/home/useFetchRpc";
 export default function ServiceDetail() {
   const params = useParams();
   const serviceId = params.serviceId as string;
@@ -27,7 +29,8 @@ export default function ServiceDetail() {
   const [currentState, setCurrentState] = useState<unknown>(null);
   const [filteredBlocks, setFilteredBlocks] = useState<Block[]>([]);
   const [filteredStates, setFilteredStates] = useState<State[]>([]);
-  // const [activeStates, setActiveStates] = useState<State[]>([]);
+  const [activeStates, setActiveStates] = useState<State[]>([]);
+  const [recentPreimages, setRecentPreimages] = useState<PreimageProps[]>([]);
   const [gridData, setGridData] = useState<GridData>({
     data: {},
     timeslots: [],
@@ -36,12 +39,12 @@ export default function ServiceDetail() {
     coreStatistics: {},
   });
 
-  useInsertMockDataIfEmpty();
+  //useInsertMockDataIfEmpty();
 
-  // useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
-  //   setCurrentBlock(blockRecord);
-  //   setCurrentState(stateRecord);
-  // }});
+  useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
+    setCurrentBlock(blockRecord);
+    setCurrentState(stateRecord);
+  }});
 
   useEffect(() => {
     const fetchBlocks = async() => {
@@ -52,14 +55,19 @@ export default function ServiceDetail() {
       const states = await filterStates(8);
       setFilteredStates(states);
     }
-    // const fetchActiveStates = async() => {
-    //   const states = await filterWorkPackages(Number.parseInt(coreIndex));
-    //   setActiveStates(states);
-    // }
-  
+    const fetchActiveStates = async() => {
+      const states = await filterWorkPackagesFromService(Number.parseInt(serviceId));
+      setActiveStates(states);
+    }
+    const fetchRecentPreimages = async() => {
+      const preimages = await filterPreimagesFromService(Number.parseInt(serviceId));
+      setRecentPreimages(preimages);
+    }
+
     fetchBlocks();
     fetchStates();
-    // fetchActiveStates();
+    fetchActiveStates();
+    fetchRecentPreimages();
   }, [currentBlock]);
 
   useEffect(() => {
@@ -105,6 +113,15 @@ export default function ServiceDetail() {
           serviceId={serviceId}
         />
       </Box>
+
+      <Grid sx={{ my: 5 }} container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <RecentWorkPackages states={activeStates} serviceId={Number.parseInt(serviceId)} />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <RecentPreimages preimages={recentPreimages}/>
+          </Grid>
+      </Grid>
     </Container>
   );
 }
