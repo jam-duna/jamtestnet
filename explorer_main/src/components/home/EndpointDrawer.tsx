@@ -179,7 +179,10 @@ export default function EndpointDrawer({
                 }}
                 sx={{
                   backgroundColor:
-                    wsEndpoint === DEFAULT_WS_URL ? "primary.light" : "inherit",
+                    normalizeEndpoint(wsEndpoint) ===
+                    normalizeEndpoint(DEFAULT_WS_URL)
+                      ? "primary.light"
+                      : "inherit",
                   fontSize: "0.8rem",
                   borderTop: "1px solid #eee",
                 }}
@@ -188,10 +191,15 @@ export default function EndpointDrawer({
               </ListItemButton>
             </Tooltip>
             <ListItemButton
-              onClick={() => setShowCustomInput((prev) => !prev)}
+              onClick={() => {
+                setShowCustomInput((prev) => !prev);
+              }}
               sx={{
                 backgroundColor:
-                  wsEndpoint !== DEFAULT_WS_URL ? "primary.light" : "inherit",
+                  normalizeEndpoint(wsEndpoint) !==
+                  normalizeEndpoint(DEFAULT_WS_URL)
+                    ? "primary.light"
+                    : "inherit",
                 mb: 1,
                 borderBottom: "1px solid #eee",
               }}
@@ -217,7 +225,7 @@ export default function EndpointDrawer({
               </Button>
             </Box>
           )}
-          <Divider sx={{ my: 3 }} />
+
           {savedEndpoints.length > 0 && (
             <Box sx={{ mt: 2 }}>
               <Typography variant="h6" gutterBottom>

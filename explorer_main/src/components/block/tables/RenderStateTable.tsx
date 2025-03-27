@@ -81,10 +81,12 @@ const getTableConfigs = (
     predicate: (data): data is GammaItem => data !== undefined && data !== null,
     render: (data) => <GammaTable data={[data]} />,
   },
+  /*
   pi: {
     predicate: (data): data is PiItem => data !== undefined && data !== null,
     render: (data) => <PiTable data={data} />,
   },
+  */
   psi: {
     predicate: (data): data is PsiItem => data !== undefined && data !== null,
     render: (data) => <PsiTable data={data} />,
@@ -115,6 +117,8 @@ export const renderTable = (
   key: keyof State,
   headerHash: string
 ) => {
+  // console.log("the state is here:");
+  // console.log(stateData);
   const tableConfigs = getTableConfigs(headerHash);
   const config = tableConfigs[key];
   if (!config) return null;

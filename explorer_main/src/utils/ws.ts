@@ -36,7 +36,7 @@ export function getRpcUrlFromWs(wsEndpoint: string): string {
       urlStr = urlStr + "/rpc";
     }
 
-    console.log("rpc endpoint: ", urlStr);
+    console.log("[RPC] ws to ws endpoint: ", urlStr);
 
     return urlStr;
   }

@@ -58,17 +58,17 @@ export function useWsRpc({
         console.log(`[OPEN] | ${normalEndpoint}`);
         localStorage.setItem("customWsEndpoint", normalEndpoint);
 
-        if (normalEndpoint === normalizeEndpoint(DEFAULT_WS_URL)) return;
-
-        setSavedEndpoints((prev) => {
-          if (!prev.includes(wsEndpoint)) {
-            const updated = [...prev, wsEndpoint];
-            localStorage.setItem("savedWsEndpoints", JSON.stringify(updated));
-            return updated;
-          }
-          return prev;
-        });
-        // localStorage.setItem("customWsEndpoint", wsEndpoint);
+        if (normalEndpoint !== normalizeEndpoint(DEFAULT_WS_URL)) {
+          setSavedEndpoints((prev) => {
+            if (!prev.includes(wsEndpoint)) {
+              const updated = [...prev, wsEndpoint];
+              localStorage.setItem("savedWsEndpoints", JSON.stringify(updated));
+              return updated;
+            }
+            return prev;
+          });
+          // localStorage.setItem("customWsEndpoint", wsEndpoint);
+        }
       };
 
       wsRef.current.onmessage = (event) => {
@@ -80,6 +80,7 @@ export function useWsRpc({
 
             if (msg.method === "BlockAnnouncement" && msg.result) {
               localStorage.setItem("customWsEndpoint", wsEndpoint);
+              /*
               setSavedEndpoints((prev) => {
                 if (!prev.includes(wsEndpoint)) {
                   const updated = [...prev, wsEndpoint];
@@ -91,16 +92,17 @@ export function useWsRpc({
                 }
                 return prev;
               });
+              */
 
               const { headerHash, blockHash } = msg.result;
               const rpcUrl = getRpcUrlFromWs(wsEndpoint);
               console.log("RPC URL:", rpcUrl);
 
-              const fetchedBlock = await fetchBlock(headerHash, rpcUrl);
+              const fetchedBlock = await fetchBlock(headerHash, rpcUrl, "hash");
               const fetchedState = await fetchState(headerHash, rpcUrl);
 
-              console.log("block data:", fetchedBlock);
-              console.log("state data:", fetchedState);
+              // console.log("block data:", fetchedBlock);
+              // console.log("state data:", fetchedState);
 
               const nowTimestamp = Date.now();
               const overview = {

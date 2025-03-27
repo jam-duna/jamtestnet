@@ -93,9 +93,7 @@ export default function WorkReportListPage() {
         <Typography variant="body1" gutterBottom>
           A total of {workReports.length} work{" "}
           {pluralize("report", workReports.length)} found on block{" "}
-          <Link href={`/block/${headerHash}?type=headerHash`}>
-            {headerHash}
-          </Link>
+          <Link href={`/block/${headerHash}?type=hash`}>{headerHash}</Link>
         </Typography>
       </Box>
       <Paper variant="outlined">
@@ -142,7 +140,7 @@ export default function WorkReportListPage() {
                         sx={{ color: "blue" }}
                         onClick={(e) => {
                           e.stopPropagation();
-                          router.push(`/block/${headerHash}?type=headerHash`);
+                          router.push(`/block/${headerHash}?type=hash`);
                         }}
                       >
                         {truncateHash(headerHash)}

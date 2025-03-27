@@ -49,10 +49,10 @@ export function BlockTab({
               prevHash={prevHash}
               nextHash={nextHash}
               onPrev={() => {
-                if (prevHash) router.push(`/block/${prevHash}?type=headerHash`);
+                if (prevHash) router.push(`/block/${prevHash}?type=hash`);
               }}
               onNext={() => {
-                if (nextHash) router.push(`/block/${nextHash}?type=headerHash`);
+                if (nextHash) router.push(`/block/${nextHash}?type=hash`);
               }}
             />
           )}

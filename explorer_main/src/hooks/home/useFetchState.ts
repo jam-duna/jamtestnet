@@ -4,7 +4,7 @@ export async function fetchState(
   hash: string,
   rpcUrl: string
 ): Promise<State | null> {
-  console.log("fetching state for hash: ", hash);
+  console.log("[LOG] Fetching state for hash: ", hash);
   const payload = {
     jsonrpc: "2.0",
     id: 2,

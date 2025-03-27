@@ -49,7 +49,7 @@ export default function ExtrinsicDetails() {
       label: "Header Hash:",
       tooltip: "The unique hash of the block header.",
       value: (
-        <Link href={`/block/${blockRecord?.overview?.headerHash}`}>
+        <Link href={`/block/${blockRecord?.overview?.headerHash}?type=hash`}>
           {blockRecord?.overview?.headerHash}
         </Link>
       ),

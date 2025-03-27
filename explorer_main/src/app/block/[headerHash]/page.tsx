@@ -12,11 +12,11 @@ export default function BlockOverviewPage() {
   const params = useParams();
   const headerHash = params.headerHash as string;
   const searchParams = useSearchParams();
-  const hashType = searchParams.get("type") as string;
+  const queryType = searchParams.get("type") as "hash" | "slot";
 
   const { blockRecord, stateRecord, prevHash, nextHash } = useBlockOverview(
     headerHash,
-    hashType
+    queryType
   );
 
   const [selectedTab, setSelectedTab] = useState<"block" | "state">("block");
@@ -56,16 +56,20 @@ export default function BlockOverviewPage() {
         <BlockTab
           blockRecord={blockRecord}
           hash={headerHash}
-          type={hashType}
+          type={queryType}
           prevHash={prevHash}
           nextHash={nextHash}
         />
       )}
 
-      {selectedTab === "state" && stateRecord ? (
+      {selectedTab === "state" && stateRecord && (
         <StateTab stateRecord={stateRecord} />
-      ) : (
-        <Typography>Loading state details...</Typography>
+      )}
+
+      {selectedTab === "state" && !stateRecord && (
+        <Paper variant="outlined" sx={{ p: 3 }}>
+          <Typography variant="body2">No state data available.</Typography>
+        </Paper>
       )}
     </Container>
   );

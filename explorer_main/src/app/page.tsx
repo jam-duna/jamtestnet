@@ -226,7 +226,7 @@ export default function HomePage() {
           data={gridData.data}
         />
 
-        {piData && <PiTable data={piData} isHomePage={true} />}
+        {/* {piData && <PiTable data={piData} isHomePage={true} />} */}
 
         <Grid sx={{ my: 5 }} container spacing={4}>
           <Grid item xs={12} md={6}>
