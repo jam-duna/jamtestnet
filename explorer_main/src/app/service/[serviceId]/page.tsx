@@ -40,12 +40,12 @@ export default function ServiceDetail() {
     coreStatistics: {},
   });
 
-  useInsertMockDataIfEmpty();
+  // useInsertMockDataIfEmpty();
 
-  // useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
-  //   setCurrentBlock(blockRecord);
-  //   setCurrentState(stateRecord);
-  // }});
+  useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
+    setCurrentBlock(blockRecord);
+    setCurrentState(stateRecord);
+  }});
 
   useEffect(() => {
     const fetchBlocks = async() => {

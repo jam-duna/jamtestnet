@@ -149,10 +149,10 @@ export interface AccordionSubSection {
 
 // Overview data
 export interface Overview {
-  headerHash?: string;
+  headerHash: string;
   blockHash: string;
-  createdAt?: number;
-  slot?: number;
+  createdAt: number;
+  slot: number;
 }
 
 //

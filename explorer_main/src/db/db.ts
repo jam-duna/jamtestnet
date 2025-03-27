@@ -18,7 +18,7 @@ import {
 export interface Block {
   header: Header;
   extrinsic: Extrinsic;
-  overview?: Overview;
+  overview: Overview;
 }
 
 // State details
@@ -39,7 +39,7 @@ export interface State {
   varphi: string[][];
   xi: string[][];
   accounts: AccountItem | null;
-  overview?: Overview;
+  overview: Overview;
 }
 
 // Dexie database class
@@ -53,8 +53,8 @@ export class JamDB extends Dexie {
     super("JamDB");
     // Include "block.header.slot" so we can query by slot.
     this.version(1).stores({
-      blocks: "overview.headerHash,overview.slot",
-      states: "overview.headerHash,overview.slot",
+      blocks: "overview.headerHash,overview.slot,overview.createdAt",
+      states: "overview.headerHash,overview.slot,overview.createdAt",
       blocksFetchBlockHash: "overview.blockHash",
       statesFetchBlockHash: "overview.blockHash",
     });
@@ -62,3 +62,5 @@ export class JamDB extends Dexie {
 }
 
 export const db = new JamDB();
+
+export const DB_LIMIT = 30;

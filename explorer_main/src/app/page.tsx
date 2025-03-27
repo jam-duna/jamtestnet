@@ -120,14 +120,14 @@ export default function HomePage() {
   //   setSavedEndpoints,
   // });
 
-  useInsertMockDataIfEmpty();
+  //useInsertMockDataIfEmpty();
 
   // nicolas patch start
   // this patch is for fetching blocks using rpc
-  // useFetchRpc({rpcUrl: wsEndpoint, onNewBlock: (blockRecord, stateRecord) => {
-  //   setCurrentBlock(blockRecord);
-  //   setCurrentState(stateRecord);
-  // }});
+  useFetchRpc({rpcUrl: wsEndpoint, onNewBlock: (blockRecord, stateRecord) => {
+    setCurrentBlock(blockRecord);
+    setCurrentState(stateRecord);
+  }});
   // nicolas patch end
 
   useEffect(() => {
