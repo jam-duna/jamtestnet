@@ -35,7 +35,7 @@ export function pluralize(word: string, count: number): string {
 }
 
 export function formatDate(timestamp: number) {
-  return new Date(timestamp).toLocaleString("en-US", {
+  return new Date(timestamp * 1000).toLocaleString("en-US", {
     timeZone: "UTC",
     year: "numeric",
     month: "short",

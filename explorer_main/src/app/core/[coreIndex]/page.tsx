@@ -60,6 +60,7 @@ export default function CoreDetailPage() {
     const data = parseBlocksToGridData(filteredBlocks, filteredStates);
     data.cores = [Number.parseInt(coreIndex)];
     setGridData(data);
+    console.log(data);
   }, [filteredBlocks]);
 
   return (
