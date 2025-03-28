@@ -26,7 +26,7 @@ const JsonRedirectButton: React.FC<JsonRedirectButtonProps> = ({
     if (nodeData.key === "header_hash") {
       // For "header_hash", use nodeData.value as headerHash
       const localHeaderHash = nodeData.value as string;
-      router.push(`/block/${localHeaderHash}?type=headerHash`);
+      router.push(`/block/${localHeaderHash}?type=hash`);
     } else if (nodeData.key === "hash") {
       // For "hash", nodeData.value is the workPackageHash
       const workPackageHash = nodeData.value as string;
@@ -49,9 +49,9 @@ const JsonRedirectButton: React.FC<JsonRedirectButtonProps> = ({
 };
 
 export const JsonRedirectButtonDefinition = {
-  condition: (key: string, value: any) =>
+  condition: (key: string, value: unknown) =>
     key === "header_hash" || key === "hash",
-  matches: (key: string, value: any): key is "header_hash" | "hash" =>
+  matches: (key: string, value: unknown): key is "header_hash" | "hash" =>
     key === "header_hash" || key === "hash",
   Element: JsonRedirectButton,
   onClick: (nodeData: NodeData, e: React.MouseEvent) => {

@@ -23,7 +23,7 @@ export default function BlockListItem({ blockItem }: BlockListItemProps) {
   return (
     <Link
       key={headerHash}
-      href={`/block/${headerHash}/?type=headerHash`}
+      href={`/block/${headerHash}?type=hash`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <Box

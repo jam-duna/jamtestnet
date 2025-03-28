@@ -1,16 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 "use client";
 
-import { useEffect } from "react";
-import { db, Block, State } from "@/db/db";
+import { useEffect, useRef } from "react";
+import { db, Block, State, DB_LIMIT } from "@/db/db";
+import { Overview } from "@/types";
 import { fetchBlock } from "./useFetchBlock";
 import { fetchState } from "./useFetchState";
 import { getRpcUrlFromWs, normalizeEndpoint } from "@/utils/ws";
-import { useInsertMockDataIfEmpty } from "@/utils/debug";
+import { DEFAULT_WS_URL } from "@/utils/helper";
 
 interface UseWsRpcParams {
   wsEndpoint: string;
-  setWsEndpoint: (endpoint: string) => void;
-  defaultWsUrl: string;
   onNewBlock: (blockRecord: Block, stateRecord: State) => void;
   onUpdateNow: (timestamp: number) => void;
   setSavedEndpoints: React.Dispatch<React.SetStateAction<string[]>>;
@@ -18,111 +19,152 @@ interface UseWsRpcParams {
 
 export function useWsRpc({
   wsEndpoint,
-  defaultWsUrl,
   onNewBlock,
   onUpdateNow,
   setSavedEndpoints,
-  setWsEndpoint,
 }: UseWsRpcParams) {
-  // useInsertMockDataIfEmpty();
+  // Create a ref to store the WebSocket instance.
+  const wsRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    console.log(
-      "[START] | Connecting via native WebSocket to",
-      wsEndpoint,
-      "..."
-    );
     const normalEndpoint = normalizeEndpoint(wsEndpoint);
+    console.log("=========================");
+    console.log("[INPUT] | Using endpoint:", normalEndpoint);
 
-    const ws = new WebSocket(normalEndpoint);
+    // If there's an existing connection, but its URL does not match the new normalized endpoint,
+    // close it so we can create a new one.
+    if (wsRef.current && wsRef.current.url !== normalEndpoint) {
+      console.log(
+        "[INFO] Endpoint changed. Closing old connection:",
+        wsRef.current.url
+      );
+      wsRef.current.close();
+      wsRef.current = null;
+    }
 
-    ws.onopen = () => {
-      console.log(`[OPEN] | ${normalEndpoint}`);
-    };
+    // If there is no connection, create a new one.
+    if (!wsRef.current) {
+      console.log(
+        "[START] | Connecting via native WebSocket to",
+        normalEndpoint,
+        "..."
+      );
 
-    ws.onmessage = (event) => {
-      // Delay processing by 1 second.
-      setTimeout(async () => {
-        try {
-          const msg = JSON.parse(event.data);
-          console.log(`[MESSAGE] | Received msg ->`, msg);
+      // debug purposes
+      // localStorage.setItem("customWsEndpoint", normalEndpoint);
 
-          if (msg.method === "BlockAnnouncement" && msg.result) {
-            localStorage.setItem("customWsEndpoint", wsEndpoint);
-            // Only add if it is not already saved.
-            setSavedEndpoints((prev) => {
-              const updated = prev.includes(wsEndpoint)
-                ? prev
-                : [...prev, wsEndpoint];
+      wsRef.current = new WebSocket(normalEndpoint);
+
+      wsRef.current.onopen = () => {
+        console.log(`[OPEN] | ${normalEndpoint}`);
+        localStorage.setItem("customWsEndpoint", normalEndpoint);
+
+        if (normalEndpoint !== normalizeEndpoint(DEFAULT_WS_URL)) {
+          setSavedEndpoints((prev) => {
+            if (!prev.includes(wsEndpoint)) {
+              const updated = [...prev, wsEndpoint];
               localStorage.setItem("savedWsEndpoints", JSON.stringify(updated));
               return updated;
-            });
-
-            const headerHash = msg.result.headerHash;
-            const blockHash = msg.result.blockHash;
-
-            const rpcUrl = getRpcUrlFromWs(wsEndpoint);
-            console.log("RPC URL:", rpcUrl);
-
-            const fetchedBlock = await fetchBlock(headerHash, rpcUrl);
-            const fetchedState = await fetchState(headerHash, rpcUrl);
-
-            console.log("block data:");
-            console.log(fetchedBlock);
-            console.log("state data:");
-            console.log(fetchedState);
-
-            const nowTimestamp = Date.now();
-            const overview = {
-              headerHash,
-              blockHash,
-              createdAt: nowTimestamp,
-              slot: fetchedBlock.header.slot,
-            };
-
-            if (fetchedBlock.header && fetchedBlock.extrinsic) {
-              const blockRecord: Block = { overview, ...fetchedBlock };
-              await db.blocks.put(blockRecord);
-
-              if (fetchedState) {
-                const stateRecord: State = { overview, ...fetchedState };
-                await db.states.put(stateRecord);
-                onNewBlock(blockRecord, stateRecord);
-              }
             }
-            onUpdateNow(nowTimestamp);
-
-            setSavedEndpoints((prev) =>
-              prev.includes(wsEndpoint) ? prev : [...prev, wsEndpoint]
-            );
-
-            onUpdateNow(Date.now());
-          }
-        } catch (err) {
-          console.log("Error parsing WebSocket message ->", err);
+            return prev;
+          });
+          // localStorage.setItem("customWsEndpoint", wsEndpoint);
         }
-      }, 1000);
-    };
+      };
 
-    ws.onerror = (error) => {
-      console.log(`[ERROR] | ${normalEndpoint} ->`, error);
-      // console.error("WebSocket error:", error);
-      // ws.close();
-    };
+      wsRef.current.onmessage = (event) => {
+        setTimeout(async () => {
+          try {
+            const msg = JSON.parse(event.data);
+            console.log(`[MESSAGE] | Received msg ->`, msg);
 
-    ws.onclose = () => {
-      console.log(`[CLOSED] | ${normalEndpoint}`);
-    };
+            if (msg.method === "BlockAnnouncement" && msg.result) {
+              localStorage.setItem("customWsEndpoint", wsEndpoint);
+              const { headerHash, blockHash } = msg.result;
+              const rpcUrl = getRpcUrlFromWs(wsEndpoint);
+              console.log("RPC URL:", rpcUrl);
 
+              const fetchedBlock = await fetchBlock(headerHash, rpcUrl, "hash");
+              const fetchedState = await fetchState(headerHash, rpcUrl);
+
+              const nowTimestamp = Date.now();
+              // Ensure slot is a number, using -1 as a fallback if not present.
+              const slot =
+                fetchedBlock?.header?.slot !== undefined
+                  ? fetchedBlock.header.slot
+                  : -1;
+              const overview: Overview = {
+                headerHash,
+                blockHash,
+                createdAt: nowTimestamp,
+                slot,
+              };
+
+              if (fetchedBlock?.header && fetchedBlock?.extrinsic) {
+                let blockRecord: Block;
+                if (fetchedBlock.overview) {
+                  // Remove existing overview property and replace with our computed one.
+                  const { overview: _, ...restOfBlock } = fetchedBlock;
+                  blockRecord = { ...restOfBlock, overview };
+                } else {
+                  blockRecord = { ...fetchedBlock, overview };
+                }
+
+                // Insert the new block into the database.
+                await db.blocks.put(blockRecord);
+
+                if (fetchedState) {
+                  const stateRecord: State = { overview, ...fetchedState };
+                  await db.states.put(stateRecord);
+                  onNewBlock(blockRecord, stateRecord);
+                }
+
+                // --- Clean-up Logic Using DB_LIMIT ---
+
+                // For blocks:
+                const blockCount = await db.blocks.count();
+                if (blockCount > DB_LIMIT) {
+                  const oldestBlock = await db.blocks
+                    .orderBy("overview.createdAt")
+                    .first();
+                  if (oldestBlock?.overview) {
+                    await db.blocks.delete(oldestBlock.overview.headerHash);
+                  }
+                }
+
+                // For states:
+                const stateCount = await db.states.count();
+                if (stateCount > DB_LIMIT) {
+                  const oldestState = await db.states
+                    .orderBy("overview.createdAt")
+                    .first();
+                  if (oldestState?.overview) {
+                    await db.states.delete(oldestState.overview.headerHash);
+                  }
+                }
+              }
+              onUpdateNow(nowTimestamp);
+            }
+          } catch (err) {
+            console.log("Error parsing WebSocket message ->", err);
+          }
+        }, 1000);
+      };
+
+      wsRef.current.onerror = (error) => {
+        console.log(`[ERROR] | ${normalEndpoint} ->`, error);
+      };
+
+      wsRef.current.onclose = () => {
+        console.log(`[CLOSED] | ${normalEndpoint}`);
+        // You might implement reconnection logic here if needed.
+      };
+    }
+
+    // Do not close the connection on cleanup so that it persists.
     return () => {
-      ws.close();
+      // If you want to persist the connection across component unmounts,
+      // do not close the WebSocket here.
     };
-  }, [
-    wsEndpoint,
-    defaultWsUrl,
-    onNewBlock,
-    onUpdateNow,
-    setSavedEndpoints,
-    setWsEndpoint,
-  ]);
+  }, [wsEndpoint]);
 }

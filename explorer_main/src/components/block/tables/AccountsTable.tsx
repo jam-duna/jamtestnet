@@ -20,6 +20,8 @@ interface AccountAccordionProps {
 }
 
 export default function AccountAccordion({ accounts }: AccountAccordionProps) {
+  // console.log("Accounts: ");
+  // console.log(accounts);
   // Reusable custom AccordionSummary style (similar to your ReportTable example)
   const customAccordionSummary = (title: string, tooltipText: string) => (
     <AccordionSummary
@@ -122,12 +124,12 @@ export default function AccountAccordion({ accounts }: AccountAccordionProps) {
                         tooltip="Preimage details"
                         value={
                           <>
-                            <Typography variant="body2">
+                            <Box>
                               Hash: <ToggleHash hash={preimage.hash} />
-                            </Typography>
-                            <Typography variant="body2">
+                            </Box>
+                            <Box>
                               Blob: <ToggleHash hash={preimage.blob} />
-                            </Typography>
+                            </Box>
                           </>
                         }
                       />
@@ -160,15 +162,11 @@ export default function AccountAccordion({ accounts }: AccountAccordionProps) {
                         tooltip="Lookup meta details"
                         value={
                           <>
-                            <Typography variant="body2">
+                            <Box>
                               Key Hash: <ToggleHash hash={lookup.key.hash} />
-                            </Typography>
-                            <Typography variant="body2">
-                              Key Length: {lookup.key.length}
-                            </Typography>
-                            <Typography variant="body2">
-                              Value: {lookup.value.join(", ")}
-                            </Typography>
+                            </Box>
+                            <Box>Key Length: {lookup.key.length}</Box>
+                            <Box>Value: {lookup.value.join(", ")}</Box>
                           </>
                         }
                       />

@@ -18,7 +18,7 @@ import {
 export interface Block {
   header: Header;
   extrinsic: Extrinsic;
-  overview: Overview;
+  overview?: Overview;
 }
 
 // State details
@@ -38,8 +38,8 @@ export interface State {
   theta: ThetaItem;
   varphi: string[][];
   xi: string[][];
-  accounts: AccountItem | null;
-  overview: Overview;
+  accounts: AccountItem[] | null;
+  overview?: Overview;
 }
 
 // Dexie database class

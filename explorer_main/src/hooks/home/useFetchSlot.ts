@@ -1,8 +1,10 @@
+import { Block } from "@/db/db";
+
 export async function fetchBlockBySlot(
   slot: string,
   rpcUrl: string
 ): Promise<any> {
-  //console.log("fetching block for slot: ", slot);
+  console.log("[LOG] Fetching block for slot: ", slot);
   const payload = {
     jsonrpc: "2.0",
     id: 1,

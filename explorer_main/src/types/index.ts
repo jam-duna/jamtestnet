@@ -161,6 +161,7 @@ export interface KeyedItem {
   ed25519: string;
   bls: string;
   metadata: string;
+  [key: string]: unknown;
 }
 
 export interface BetaItem {
@@ -179,17 +180,19 @@ export interface ChiItem {
   chi_m: number;
   chi_a: number;
   chi_v: number;
-  chi_g: {};
+  chi_g: object;
 }
 
 export interface GammaItem {
   gamma_k: KeyedItem[];
   gamma_z: string;
   gamma_s: {
-    tickets: {
-      id: string;
-      attempt: number;
-    }[];
+    tickets:
+      | {
+          id: string;
+          attempt: number;
+        }[]
+      | null;
   };
   gamma_a: {
     id: string;
@@ -206,7 +209,7 @@ export interface PiEntry {
   assurances: number;
 }
 
-export interface CoreStatistics{
+export interface CoreStatistics {
   gas_used: number;
   imports: number;
   extrinsic_count: number;
@@ -286,7 +289,7 @@ export interface AccountData {
   service: AccountService;
   preimages: AccountPreimage[];
   lookup_meta: AccountLookupMeta[];
-  storage: any | null; // could be null or some object
+  storage: unknown | null; // could be null or some object
 }
 
 export interface AccountItem {

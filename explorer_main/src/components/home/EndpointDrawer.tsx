@@ -6,17 +6,19 @@ import {
   List,
   ListItemButton,
   ListItemText,
+  ListItemSecondaryAction,
   TextField,
   Typography,
   Button,
   Paper,
   Divider,
-  Tooltip, // Import Tooltip here
+  Tooltip,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { normalizeEndpoint } from "@/utils/ws";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { DEFAULT_WS_URL } from "@/utils/helper";
+import { normalizeEndpoint } from "@/utils/ws";
 
 interface EndpointDrawerProps {
   wsEndpoint: string;
@@ -31,26 +33,26 @@ export default function EndpointDrawer({
   savedEndpoints,
   setSavedEndpoints,
 }: EndpointDrawerProps) {
-  // Helper to remove "ws://" and trailing "/ws" from endpoint for display
-  const cleanEndpointText = (endpoint: string) => {
-    return endpoint.replace(/^ws:\/\//, "").replace(/\/ws$/, "");
-  };
+  const cleanEndpointText = (endpoint: string) =>
+    endpoint.replace(/^ws:\/\//, "").replace(/\/ws$/, "");
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [showCustomInput, setShowCustomInput] = useState<boolean>(false);
   const [customEndpoint, setCustomEndpoint] = useState<string>("");
 
-  // On mount, retrieve stored values
+  // New state to track connection status: "open" or "closed"
+  const [connectionStatus, setConnectionStatus] = useState<
+    "open" | "closed" | "onmessage"
+  >("closed");
+
   useEffect(() => {
     const storedEndpoint = localStorage.getItem("customWsEndpoint");
-
     if (storedEndpoint) {
       setWsEndpoint(storedEndpoint);
     } else {
       setWsEndpoint(DEFAULT_WS_URL);
     }
     const storedEndpoints = localStorage.getItem("savedWsEndpoints");
-
     if (storedEndpoints) {
       try {
         const endpointsArray = JSON.parse(storedEndpoints) as string[];
@@ -61,31 +63,60 @@ export default function EndpointDrawer({
     }
   }, [setWsEndpoint, setSavedEndpoints]);
 
+  useEffect(() => {
+    localStorage.setItem("savedWsEndpoints", JSON.stringify(savedEndpoints));
+  }, [savedEndpoints]);
+
+  // Simulate connection status update based on wsEndpoint change
+  useEffect(() => {
+    // Here you should integrate your actual WebSocket connection status.
+    // For now, we'll assume that if an endpoint is set, it's open.
+    if (wsEndpoint) {
+      setConnectionStatus("open");
+    } else {
+      setConnectionStatus("closed");
+    }
+  }, [wsEndpoint]);
+
   const handleToggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
   const handleSaveCustomEndpoint = () => {
-    console.log("User input: ", customEndpoint);
+    const newEndpoint = normalizeEndpoint(customEndpoint.trim());
+    if (newEndpoint === "") return;
 
-    if (customEndpoint.trim() !== "") {
-      const trimmed = customEndpoint.trim();
-      const newEndpoint = normalizeEndpoint(trimmed);
-      console.log("Switching to the new endpoint", newEndpoint);
-
+    if (newEndpoint === normalizeEndpoint(DEFAULT_WS_URL)) {
+      setWsEndpoint(DEFAULT_WS_URL);
+      localStorage.setItem("customWsEndpoint", DEFAULT_WS_URL);
+    } else {
       setWsEndpoint(newEndpoint);
-      setSavedEndpoints((prev) =>
-        prev.includes(newEndpoint) ? prev : [...prev, newEndpoint]
-      );
-      setMenuOpen(false);
-      setShowCustomInput(false);
-      setCustomEndpoint("");
+      if (!savedEndpoints.includes(newEndpoint)) {
+        setSavedEndpoints([...savedEndpoints, newEndpoint]);
+      }
+      localStorage.setItem("customWsEndpoint", newEndpoint);
+    }
+    setMenuOpen(false);
+    setShowCustomInput(false);
+    setCustomEndpoint("");
+  };
+
+  // Define a helper function to determine the indicator color
+  const getStatusColor = () => {
+    switch (connectionStatus) {
+      case "closed":
+        return "red";
+      case "open":
+        return "yellow";
+      case "onmessage":
+        return "green";
+      default:
+        return "grey";
     }
   };
 
   return (
     <>
-      {/* Hamburger Menu Icon */}
       <Box sx={{ position: "fixed", top: 16, left: 16, zIndex: 1300 }}>
         <IconButton onClick={handleToggleMenu}>
           {menuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -93,55 +124,87 @@ export default function EndpointDrawer({
       </Box>
 
       <Drawer anchor="left" open={menuOpen} onClose={() => setMenuOpen(false)}>
-        <Paper variant="outlined" sx={{ width: 250, p: 2, mt: 10 }}>
+        <Paper variant="outlined" sx={{ width: 250, p: 2, mt: 8 }}>
+          {/* New status indicator with mini circle */}
+          <Box sx={{ display: "flex", alignItems: "center", ml: 1, mb: 2 }}>
+            <Box>
+              {/*
+              <Box display="flex" alignItems="center" sx={{ mb: 1 }}>
+                <Typography sx={{ fontSize: "0.8rem", mr: 1 }}>
+                  Status:{" "}
+                </Typography>
+                <Box display="flex" alignItems="center">
+                  <Box
+                    sx={{
+                      width: 15,
+                      height: 15,
+                      borderRadius: "50%",
+                      bgcolor: getStatusColor(),
+                      mr: 1,
+                      border: "1px solid #bbb",
+                    }}
+                  />
+                  <Typography sx={{ fontSize: "0.8rem", color: "#494848" }}>
+                    {connectionStatus === "open"
+                      ? "Open"
+                      : connectionStatus === "onmessage"
+                      ? "On Message"
+                      : "Closed"}{" "}
+                  </Typography>
+                </Box>
+              </Box>
+              */}
+              <Box>
+                <Typography sx={{ fontSize: "0.8rem" }}>Endpoint:</Typography>
+                <Typography sx={{ fontSize: "0.8rem", color: "#494848" }}>
+                  {cleanEndpointText(wsEndpoint)}
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+
+          <Divider sx={{ my: 2 }} />
+
           <Typography variant="h6" sx={{ ml: 1, mb: 1 }}>
             Menu
           </Typography>
           <List>
-            {/* Default option with Tooltip */}
             <Tooltip title={DEFAULT_WS_URL} arrow>
               <ListItemButton
                 onClick={() => {
                   setWsEndpoint(DEFAULT_WS_URL);
+                  localStorage.setItem("customWsEndpoint", DEFAULT_WS_URL);
                   setShowCustomInput(false);
                   setMenuOpen(false);
                 }}
                 sx={{
                   backgroundColor:
-                    wsEndpoint === DEFAULT_WS_URL ? "primary.light" : "inherit",
+                    normalizeEndpoint(wsEndpoint) ===
+                    normalizeEndpoint(DEFAULT_WS_URL)
+                      ? "primary.light"
+                      : "inherit",
                   fontSize: "0.8rem",
                   borderTop: "1px solid #eee",
                 }}
               >
-                <ListItemText
-                  primary="Default"
-                  primaryTypographyProps={{
-                    sx: {
-                      fontSize: "0.9rem",
-                    },
-                  }}
-                />
+                <ListItemText primary="Default" />
               </ListItemButton>
             </Tooltip>
-
-            {/* Custom option - toggles the input */}
             <ListItemButton
-              onClick={() => setShowCustomInput((prev) => !prev)}
+              onClick={() => {
+                setShowCustomInput((prev) => !prev);
+              }}
               sx={{
                 backgroundColor:
-                  wsEndpoint !== DEFAULT_WS_URL ? "primary.light" : "inherit",
+                  normalizeEndpoint(wsEndpoint) !==
+                  normalizeEndpoint(DEFAULT_WS_URL)
+                    ? "primary.light"
+                    : "inherit",
                 mb: 1,
                 borderBottom: "1px solid #eee",
               }}
             >
-              <ListItemText
-                primary="Custom"
-                primaryTypographyProps={{
-                  sx: {
-                    fontSize: "0.9rem",
-                  },
-                }}
-              />
+              <ListItemText primary="Custom" />
             </ListItemButton>
           </List>
           {showCustomInput && (
@@ -163,8 +226,6 @@ export default function EndpointDrawer({
             </Box>
           )}
 
-          <Divider sx={{ my: 3 }} />
-          {/* Always render saved endpoints list */}
           {savedEndpoints.length > 0 && (
             <Box sx={{ mt: 2 }}>
               <Typography variant="h6" gutterBottom>
@@ -200,6 +261,26 @@ export default function EndpointDrawer({
                         },
                       }}
                     />
+                    <ListItemSecondaryAction>
+                      <IconButton
+                        edge="end"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSavedEndpoints((prev) =>
+                            prev.filter((ept) => ept !== endpoint)
+                          );
+                          if (wsEndpoint === endpoint) {
+                            setWsEndpoint(DEFAULT_WS_URL);
+                            localStorage.setItem(
+                              "customWsEndpoint",
+                              DEFAULT_WS_URL
+                            );
+                          }
+                        }}
+                      >
+                        <DeleteIcon fontSize="small" />
+                      </IconButton>
+                    </ListItemSecondaryAction>
                   </ListItemButton>
                 ))}
               </List>

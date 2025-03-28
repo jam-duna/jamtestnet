@@ -8,19 +8,18 @@
     <div id="log"></div>
 
     <script>
-      /*
       const log = (msg) => {
         document.getElementById("log").innerHTML += `<p>${msg}</p>`;
       };
 
-      const url = "ws://jamops.jamduna.org:13372/ws";
+      // const url = "ws://jamops.jamduna.org:13372/ws";
+      const url = "ws://jam-0.jamduna.org:10900/ws";
       const ws = new WebSocket(url);
 
       ws.onopen = () => log(`✅ Connected to: ${url}`);
       ws.onmessage = (event) => log("📩 Message: " + event.data);
       ws.onclose = () => log("❌ Disconnected");
       ws.onerror = (err) => log("⚠️ Error: " + err);
-     */
     </script>
   </body>
 </html>

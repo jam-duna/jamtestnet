@@ -3,12 +3,12 @@ import { NodeData } from "json-edit-react";
 import JsonRedirectButton from "./JsonRedirectButton";
 
 export const createJsonRedirectButtonDefinition = (headerHash: string) => {
-  console.log("the header is:", headerHash);
+  // console.log("the header is:", headerHash);
 
   return {
-    condition: (key: string, value: any) =>
+    condition: (key: string, value: unknown) =>
       key === "header_hash" || key === "hash",
-    matches: (key: string, value: any): key is "header_hash" | "hash" =>
+    matches: (key: string, value: unknown): key is "header_hash" | "hash" =>
       key === "header_hash" || key === "hash",
     // Wrap the JsonRedirectButton and supply headerHash as a prop.
     Element: (props: { nodeData: NodeData }) => (

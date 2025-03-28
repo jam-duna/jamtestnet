@@ -1,6 +1,7 @@
 // src/utils/extrinsics.ts
 
 import { Block } from "@/db/db";
+import { Extrinsic } from "@/types";
 
 export interface ExtrinsicCounts {
   ticketsCount: number;
@@ -11,7 +12,9 @@ export interface ExtrinsicCounts {
   totalExtrinsics: number;
 }
 
-export function calculateExtrinsicCounts(extrinsic: any): ExtrinsicCounts {
+export function calculateExtrinsicCounts(
+  extrinsic: Extrinsic
+): ExtrinsicCounts {
   const ticketsCount = Array.isArray(extrinsic.tickets)
     ? extrinsic.tickets.length
     : 0;

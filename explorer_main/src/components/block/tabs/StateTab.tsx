@@ -10,8 +10,10 @@ import { State } from "@/db/db";
 import { useParams } from "next/navigation";
 import { renderTable } from "../tables/RenderStateTable"; // Adjust the import path as needed
 
+type AllowedStateKey = keyof State;
+
 interface StateTabProps {
-  stateRecord: any; // Replace with your actual type if available.
+  stateRecord: State; // Replace with your actual type if available.
 }
 
 export function StateTab({ stateRecord }: StateTabProps) {
@@ -62,6 +64,7 @@ export function StateTab({ stateRecord }: StateTabProps) {
     },
   ];
 
+  // console.log(stateRecord);
   const jamState = { ...stateRecord, accounts: testData };
   const [viewMode, setViewMode] = useState<"json" | "table">("json");
 
@@ -71,53 +74,46 @@ export function StateTab({ stateRecord }: StateTabProps) {
   return (
     <Paper variant="outlined" sx={{ p: 3 }}>
       <Button variant="contained" onClick={toggleView} sx={{ mb: 2 }}>
-        Toggle View ({viewMode})
+        {viewMode === "json" ? "table" : "json"} View
       </Button>
-      {jamState ? (
-        <>
-          {Object.entries(jamStateMapping).map(([key, { label, tooltip }]) => {
-            const rawValue = jamState[key];
-            let displayValue: React.ReactNode;
+      {Object.entries(jamStateMapping).map(([key, { label, tooltip }]) => {
+        const stateKey = key as AllowedStateKey;
+        const rawValue = jamState[stateKey];
+        let displayValue: React.ReactNode;
 
-            if (typeof rawValue === "object") {
-              displayValue =
-                viewMode === "json" ? (
-                  <JsonEditor
-                    data={rawValue}
-                    viewOnly={true}
-                    collapse={true}
-                    theme={githubLightTheme}
-                    customButtons={[
-                      createJsonRedirectButtonDefinition(headerHash),
-                    ]}
-                  />
-                ) : (
-                  renderTable(jamState, key as keyof State, headerHash) ?? (
-                    <Typography variant="body2">
-                      Table view not available for key "{key}"
-                    </Typography>
-                  )
-                );
-            } else {
-              displayValue = rawValue ?? "N/A";
-            }
-
-            return (
-              <React.Fragment key={key}>
-                <LabeledRow
-                  label={label}
-                  tooltip={tooltip}
-                  value={<Box component="div">{displayValue}</Box>}
-                  labelWidth={300}
-                />
-                <Divider sx={{ my: 3 }} />
-              </React.Fragment>
+        if (typeof rawValue === "object") {
+          displayValue =
+            viewMode === "json" ? (
+              <JsonEditor
+                data={rawValue}
+                viewOnly={true}
+                collapse={true}
+                theme={githubLightTheme}
+                customButtons={[createJsonRedirectButtonDefinition(headerHash)]}
+              />
+            ) : (
+              renderTable(jamState, key as keyof State, headerHash) ?? (
+                <Typography variant="body2">
+                  {`Table view not available for key '${key}'`}
+                </Typography>
+              )
             );
-          })}
-        </>
-      ) : (
-        <Typography variant="body2">No state data available.</Typography>
-      )}
+        } else {
+          displayValue = rawValue ?? "N/A";
+        }
+
+        return (
+          <React.Fragment key={key}>
+            <LabeledRow
+              label={label}
+              tooltip={tooltip}
+              value={<Box component="div">{displayValue}</Box>}
+              labelWidth={300}
+            />
+            <Divider sx={{ my: 3 }} />
+          </React.Fragment>
+        );
+      })}
     </Paper>
   );
 }

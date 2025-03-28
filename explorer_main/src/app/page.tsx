@@ -92,9 +92,14 @@ function parseBlocksToGridData(blocks: Block[]): GridData {
 }
 
 export default function HomePage() {
-  const [currentBlock, setCurrentBlock] = useState<unknown>(null);
-  const [currentState, setCurrentState] = useState<unknown>(null);
-  const [wsEndpoint, setWsEndpoint] = useState<string>(DEFAULT_WS_URL);
+  const [currentBlock, setCurrentBlock] = useState<Block | null>(null);
+  const [currentState, setCurrentState] = useState<State | null>(null);
+  const [wsEndpoint, setWsEndpoint] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("customWsEndpoint") || DEFAULT_WS_URL;
+    }
+    return DEFAULT_WS_URL;
+  });
   const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
   const [latestBlocks, setLatestBlocks] = useState<Block[]>([]);
   const [latestStates, setLatestStates] = useState<State[]>([]);
@@ -106,28 +111,31 @@ export default function HomePage() {
   });
   const [showOnlyWorkPackages, setShowOnlyWorkPackages] = useState(false);
 
-  // useWsRpc({
-  //   wsEndpoint,
-  //   setWsEndpoint,
-  //   defaultWsUrl: DEFAULT_WS_URL,
-  //   onNewBlock: (blockRecord, stateRecord) => {
-  //     console.log(blockRecord);
-  //     setCurrentBlock(blockRecord);
-  //     console.log(stateRecord);
-  //     setCurrentState(stateRecord);
-  //   },
-  //   onUpdateNow: setNow,
-  //   setSavedEndpoints,
-  // });
+  // useInsertMockDataIfEmpty();
+
+  useWsRpc({
+    wsEndpoint,
+    onNewBlock: (blockRecord, stateRecord) => {
+      setCurrentBlock(blockRecord);
+      setCurrentState(stateRecord);
+    },
+    onUpdateNow: setNow,
+    setSavedEndpoints,
+  });
 
   //useInsertMockDataIfEmpty();
 
   // nicolas patch start
   // this patch is for fetching blocks using rpc
-  useFetchRpc({rpcUrl: wsEndpoint, onNewBlock: (blockRecord, stateRecord) => {
-    setCurrentBlock(blockRecord);
-    setCurrentState(stateRecord);
-  }});
+  /*
+  useFetchRpc({
+    rpcUrl: wsEndpoint,
+    onNewBlock: (blockRecord, stateRecord) => {
+      setCurrentBlock(blockRecord);
+      setCurrentState(stateRecord);
+    },
+  });
+  */
   // nicolas patch end
 
   useEffect(() => {
@@ -218,7 +226,7 @@ export default function HomePage() {
           data={gridData.data}
         />
 
-        {piData && <PiTable data={piData} isHomePage={true} />}
+        {/* {piData && <PiTable data={piData} isHomePage={true} />} */}
 
         <Grid sx={{ my: 5 }} container spacing={4}>
           <Grid item xs={12} md={6}>

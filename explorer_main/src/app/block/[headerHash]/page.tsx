@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { Container, Paper, Typography, Box } from "@mui/material";
 import DetailToggleButtons from "@/components/block/DetailToggleButtons";
 import { BlockTab } from "@/components/block/tabs/BlockTab";
@@ -12,20 +12,14 @@ export default function BlockOverviewPage() {
   const params = useParams();
   const headerHash = params.headerHash as string;
   const searchParams = useSearchParams();
-  const hashType = searchParams.get("type") as string;
+  const queryType = searchParams.get("type") as "hash" | "slot";
 
   const { blockRecord, stateRecord, prevHash, nextHash } = useBlockOverview(
     headerHash,
-    hashType
+    queryType
   );
 
-  console.log("state");
-  console.log(stateRecord);
-
   const [selectedTab, setSelectedTab] = useState<"block" | "state">("block");
-
-  console.log("selected");
-  console.log(selectedTab);
 
   if (!blockRecord) {
     return (
@@ -58,16 +52,24 @@ export default function BlockOverviewPage() {
         onTabChange={(tab) => setSelectedTab(tab)}
       />
 
-      {selectedTab === "block" ? (
+      {selectedTab === "block" && (
         <BlockTab
           blockRecord={blockRecord}
           hash={headerHash}
-          type={hashType}
+          type={queryType}
           prevHash={prevHash}
           nextHash={nextHash}
         />
-      ) : (
+      )}
+
+      {selectedTab === "state" && stateRecord && (
         <StateTab stateRecord={stateRecord} />
+      )}
+
+      {selectedTab === "state" && !stateRecord && (
+        <Paper variant="outlined" sx={{ p: 3 }}>
+          <Typography variant="body2">No state data available.</Typography>
+        </Paper>
       )}
     </Container>
   );
