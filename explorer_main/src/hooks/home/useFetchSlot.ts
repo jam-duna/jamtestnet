@@ -3,7 +3,7 @@ import { Block } from "@/db/db";
 export async function fetchBlockBySlot(
   slot: string,
   rpcUrl: string
-): Promise<Block | null> {
+): Promise<any> {
   console.log("[LOG] Fetching block for slot: ", slot);
   const payload = {
     jsonrpc: "2.0",

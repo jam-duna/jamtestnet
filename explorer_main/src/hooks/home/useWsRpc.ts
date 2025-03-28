@@ -109,11 +109,12 @@ export function useWsRpc({
                 headerHash,
                 blockHash,
                 createdAt: nowTimestamp,
-                slot: fetchedBlock?.header.slot,
+                slot: fetchedBlock?.header.slot ?? -1,
               };
 
               if (fetchedBlock?.header && fetchedBlock?.extrinsic) {
-                const blockRecord: Block = { overview, ...fetchedBlock };
+                const { overview: _, ...restOfBlock } = fetchedBlock;
+                const blockRecord = { ...restOfBlock, overview };
                 await db.blocks.put(blockRecord);
 
                 if (fetchedState) {

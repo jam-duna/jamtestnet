@@ -18,7 +18,7 @@ import {
 export interface Block {
   header: Header;
   extrinsic: Extrinsic;
-  overview: Overview;
+  overview?: Overview;
 }
 
 // State details

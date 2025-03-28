@@ -27,10 +27,13 @@ export function useInsertMockDataIfEmpty() {
             "No state data found in IndexedDB. Inserting mock data..."
           );
 
-          for (const mockState of mockStates) {
-            await db.states.put(mockState as State);
-          }
-          console.log("Mock data inserted.");
+          /**
+            for (const mockState of mockStates) {
+              await db.states.put(mockState as State);
+              await db.states.put(mockState as State);
+            }
+            console.log("Mock data inserted.");
+            */
         }
       } catch (error) {
         console.error("Error inserting mock data", error);

@@ -111,24 +111,23 @@ export default function HomePage() {
   });
   const [showOnlyWorkPackages, setShowOnlyWorkPackages] = useState(false);
 
-  // useWsRpc({
-  //   wsEndpoint,
-  //   setWsEndpoint,
-  //   defaultWsUrl: DEFAULT_WS_URL,
-  //   onNewBlock: (blockRecord, stateRecord) => {
-  //     console.log(blockRecord);
-  //     setCurrentBlock(blockRecord);
-  //     console.log(stateRecord);
-  //     setCurrentState(stateRecord);
-  //   },
-  //   onUpdateNow: setNow,
-  //   setSavedEndpoints,
-  // });
+  useInsertMockDataIfEmpty();
+
+  useWsRpc({
+    wsEndpoint,
+    onNewBlock: (blockRecord, stateRecord) => {
+      setCurrentBlock(blockRecord);
+      setCurrentState(stateRecord);
+    },
+    onUpdateNow: setNow,
+    setSavedEndpoints,
+  });
 
   //useInsertMockDataIfEmpty();
 
   // nicolas patch start
   // this patch is for fetching blocks using rpc
+  /*
   useFetchRpc({
     rpcUrl: wsEndpoint,
     onNewBlock: (blockRecord, stateRecord) => {
@@ -136,6 +135,7 @@ export default function HomePage() {
       setCurrentState(stateRecord);
     },
   });
+  */
   // nicolas patch end
 
   useEffect(() => {

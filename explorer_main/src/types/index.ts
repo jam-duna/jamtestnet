@@ -187,10 +187,12 @@ export interface GammaItem {
   gamma_k: KeyedItem[];
   gamma_z: string;
   gamma_s: {
-    tickets: {
-      id: string;
-      attempt: number;
-    }[];
+    tickets:
+      | {
+          id: string;
+          attempt: number;
+        }[]
+      | null;
   };
   gamma_a: {
     id: string;
@@ -207,7 +209,7 @@ export interface PiEntry {
   assurances: number;
 }
 
-export interface CoreStatistics{
+export interface CoreStatistics {
   gas_used: number;
   imports: number;
   extrinsic_count: number;
