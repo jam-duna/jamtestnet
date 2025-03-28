@@ -26,6 +26,16 @@ import { PiItem, PiEntry } from "@/types";
 
 // Helper to sum an array of PiEntry values.
 function sumEntries(entries: PiEntry[]): PiEntry {
+  if (!entries) {
+    return {
+      blocks: 0,
+      tickets: 0,
+      pre_images: 0,
+      pre_images_size: 0,
+      guarantees: 0,
+      assurances: 0,
+    };
+  }
   return entries.reduce(
     (acc, entry) => ({
       blocks: acc.blocks + entry.blocks,

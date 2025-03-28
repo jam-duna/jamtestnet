@@ -1,8 +1,8 @@
 export async function fetchBlockBySlot(
-  slot: number,
+  slot: string,
   rpcUrl: string
 ): Promise<any> {
-  console.log("fetching block for slot: ", slot);
+  //console.log("fetching block for slot: ", slot);
   const payload = {
     jsonrpc: "2.0",
     id: 1,
@@ -17,7 +17,7 @@ export async function fetchBlockBySlot(
     });
     return await response.json();
   } catch (err) {
-    console.error("Error fetching block:", err);
+    //console.error("Error fetching block:", err);
     return null;
   }
 }

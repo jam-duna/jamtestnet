@@ -793,6 +793,86 @@ export const mockStates = [
           assurances: 0,
         },
       ],
+      "cores": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 3366,
+                "da_load": 3031,
+                "popularity": 60
+            },
+            {
+                "gas_used": 280,
+                "imports": 12,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 14,
+                "bundle_size": 52197,
+                "da_load": 52211,
+                "popularity": 42
+            }
+        ],
+        "services": {
+            "1540381983": {
+                "provided_count": 0,
+                "provided_size": 0,
+                "refinement_count": 1,
+                "refinement_gas_used": 0,
+                "imports": 0,
+                "exports": 0,
+                "extrinsic_size": 0,
+                "extrinsic_count": 0,
+                "accumulate_count": 1,
+                "accumulate_gas_used": 740,
+                "on_transfers_count": 0,
+                "on_transfers_gas_used": 0
+            },
+            "272334947": {
+                "provided_count": 0,
+                "provided_size": 0,
+                "refinement_count": 0,
+                "refinement_gas_used": 0,
+                "imports": 0,
+                "exports": 0,
+                "extrinsic_size": 0,
+                "extrinsic_count": 0,
+                "accumulate_count": 1,
+                "accumulate_gas_used": 10,
+                "on_transfers_count": 6,
+                "on_transfers_gas_used": 60
+            },
+            "3940234085": {
+                "provided_count": 0,
+                "provided_size": 0,
+                "refinement_count": 1,
+                "refinement_gas_used": 0,
+                "imports": 0,
+                "exports": 0,
+                "extrinsic_size": 0,
+                "extrinsic_count": 0,
+                "accumulate_count": 1,
+                "accumulate_gas_used": 20,
+                "on_transfers_count": 0,
+                "on_transfers_gas_used": 0
+            },
+            "552088286": {
+                "provided_count": 0,
+                "provided_size": 0,
+                "refinement_count": 0,
+                "refinement_gas_used": 0,
+                "imports": 0,
+                "exports": 0,
+                "extrinsic_size": 0,
+                "extrinsic_count": 0,
+                "accumulate_count": 1,
+                "accumulate_gas_used": 10,
+                "on_transfers_count": 0,
+                "on_transfers_gas_used": 0
+            }
+        },
     },
     theta: [[], [], [], [], [], [], [], [], [], [], [], []],
     xi: [

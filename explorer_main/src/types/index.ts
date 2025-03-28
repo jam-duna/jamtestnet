@@ -149,10 +149,10 @@ export interface AccordionSubSection {
 
 // Overview data
 export interface Overview {
-  headerHash?: string;
+  headerHash: string;
   blockHash: string;
-  createdAt?: number;
-  slot?: number;
+  createdAt: number;
+  slot: number;
 }
 
 //
@@ -206,9 +206,37 @@ export interface PiEntry {
   assurances: number;
 }
 
+export interface CoreStatistics{
+  gas_used: number;
+  imports: number;
+  extrinsic_count: number;
+  extrinsic_size: number;
+  exports: number;
+  bundle_size: number;
+  da_load: number;
+  popularity: number;
+}
+
+export interface ServiceStatistics {
+  provided_count: number;
+  provided_size: number;
+  refinement_count: number;
+  refinement_gas_used: number;
+  imports: number;
+  exports: number;
+  extrinsic_size: number;
+  extrinsic_count: number;
+  accumulate_count: number;
+  accumulate_gas_used: number;
+  on_transfers_count: number;
+  on_transfers_gas_used: number;
+}
+
 export interface PiItem {
   current: PiEntry[];
   last: PiEntry[];
+  cores: CoreStatistics[];
+  services: Record<string, ServiceStatistics>;
 }
 
 export interface PsiItem {
@@ -264,4 +292,15 @@ export interface AccountData {
 export interface AccountItem {
   id: number;
   data: AccountData;
+}
+
+export interface ServiceInfo {
+  metadata: string;
+  service_index: number;
+  balance: number;
+  min_item_gas: number;
+  min_memo_gas: number;
+  code_size: number;
+  items: number;
+  code_hash: string;
 }
