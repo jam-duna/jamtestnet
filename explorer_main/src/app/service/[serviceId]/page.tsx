@@ -23,7 +23,6 @@ import {
 } from "@/components/service";
 import { Block, State } from "@/db/db";
 import { GridData, parseBlocksToGridData } from "@/utils/parseBlocksToGridData";
-import { useInsertMockDataIfEmpty } from "@/utils/debug";
 import {
   fetchServiceStatisticsFromId,
   filterBlocks,
@@ -32,8 +31,8 @@ import {
   filterWorkPackagesFromService,
   PreimageProps,
 } from "@/utils/blockAnalyzer";
-import { useFetchRpc } from "@/hooks/home/useFetchRpc";
 import { getRpcUrlFromWs } from "@/utils/ws";
+import { useWsRpc } from "@/hooks/home/useWsRpc";
 export default function ServiceDetail() {
   const params = useParams();
   const serviceId = params.serviceId as string;
@@ -55,14 +54,17 @@ export default function ServiceDetail() {
     coreStatistics: {},
   });
 
-  // useInsertMockDataIfEmpty();
+  const [now, setNow] = useState(Date.now());
+  const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
 
-  useFetchRpc({
-    rpcUrl: DEFAULT_WS_URL,
+  useWsRpc({
+    wsEndpoint: DEFAULT_WS_URL,
     onNewBlock: (blockRecord, stateRecord) => {
       setCurrentBlock(blockRecord);
       setCurrentState(stateRecord);
     },
+    onUpdateNow: setNow,
+    setSavedEndpoints,
   });
 
   useEffect(() => {

@@ -4,13 +4,11 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Container, Typography, Link as MuiLink, Box, Grid } from "@mui/material";
 import { Block, State } from "@/db/db";
-import { useFetchRpc } from "@/hooks/home/useFetchRpc";
 import { DEFAULT_WS_URL } from "@/utils/helper";
 import { filterBlocks, filterStates, filterWorkPackages, sortBlocks, sortStates } from "@/utils/blockAnalyzer";
-import MainViewGrid, { SquareContent } from "@/components/home/MainViewGrid";
 import { GridData, parseBlocksToGridData } from "@/utils/parseBlocksToGridData";
 import { BlockListGrid, CoreStatsGrid, RecentServices, RecentWorkPackages } from "@/components/core";
-import { useInsertMockDataIfEmpty } from "@/utils/debug";
+import { useWsRpc } from "@/hooks/home/useWsRpc";
 
 
 export default function CoreDetailPage() {
@@ -30,12 +28,18 @@ export default function CoreDetailPage() {
     coreStatistics: {},
   });
 
-  //useInsertMockDataIfEmpty();
+  const [now, setNow] = useState(Date.now());
+  const [savedEndpoints, setSavedEndpoints] = useState<string[]>([]);
 
-  useFetchRpc({rpcUrl: DEFAULT_WS_URL, onNewBlock: (blockRecord, stateRecord) => {
-    setCurrentBlock(blockRecord);
-    setCurrentState(stateRecord);
-  }});
+  useWsRpc({
+    wsEndpoint: DEFAULT_WS_URL,
+    onNewBlock: (blockRecord, stateRecord) => {
+      setCurrentBlock(blockRecord);
+      setCurrentState(stateRecord);
+    },
+    onUpdateNow: setNow,
+    setSavedEndpoints,
+  });
 
   useEffect(() => {
     const fetchBlocks = async() => {
