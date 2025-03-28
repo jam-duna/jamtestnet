@@ -1,102 +1,1175 @@
-INFO [03-25|22:41:21.562] JAMTEST                                  jam=safrole targetN=48
+INFO [03-28|03:22:28.084] JAMTEST                                  jam=safrole targetN=48
 Graph server listening on port 12030
 RPC server started, using IPC: /tmp/jam-5.sock
-DEBUG[03-25|22:41:26.156] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000]
-INFO [03-25|22:41:26.195] [N4] proposeBlock fallback               p=03c6..db92 h=3fcf..c766 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=c07c..290a  EpochMarker(η1'=6f6a..af2a, η2'=835a..4eaf)"
-DEBUG[03-25|22:41:33.890] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5]
-INFO [03-25|22:41:34.073] [N4] proposeBlock fallback               p=3fcf..c766 h=6fd5..11de e'=1 m'=1 "len(γ_a')"=3 blk="H_t=13 H_r=70b9..c1c6  |E_T|=3"
-DEBUG[03-25|22:41:40.164] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5]
-INFO [03-25|22:41:40.299] [N4] proposeBlock fallback               p=6fd5..11de h=6933..9304 e'=1 m'=2 "len(γ_a')"=6 blk="H_t=14 H_r=47e5..712c  |E_T|=3"
-DEBUG[03-25|22:41:44.760] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
-INFO [03-25|22:41:44.794] [N5] proposeBlock fallback               p=6933..9304 h=b1c7..3208 e'=1 m'=3 "len(γ_a')"=9 blk="H_t=15 H_r=9f2e..bf04  |E_T|=3"
-DEBUG[03-25|22:41:50.560] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
-INFO [03-25|22:41:50.595] [N0] proposeBlock fallback               p=b1c7..3208 h=144d..c0b1 e'=1 m'=4 "len(γ_a')"=12 blk="H_t=16 H_r=cdfc..b67e  |E_T|=3"
-DEBUG[03-25|22:41:56.179] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
-INFO [03-25|22:41:56.221] [N4] proposeBlock fallback               p=144d..c0b1 h=9a0a..d1d7 e'=1 m'=5 "len(γ_a')"=12 blk="H_t=17 H_r=e58c..c86f "
-DEBUG[03-25|22:42:02.123] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
-INFO [03-25|22:42:02.168] [N0] proposeBlock fallback               p=9a0a..d1d7 h=06ad..bf52 e'=1 m'=6 "len(γ_a')"=12 blk="H_t=18 H_r=efe4..5785 "
-DEBUG[03-25|22:42:08.163] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
-INFO [03-25|22:42:08.207] [N4] proposeBlock fallback               p=06ad..bf52 h=4937..0fff e'=1 m'=7 "len(γ_a')"=12 blk="H_t=19 H_r=c23c..a3ff "
-DEBUG[03-25|22:42:14.144] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
-INFO [03-25|22:42:14.183] [N1] proposeBlock fallback               p=4937..0fff h=895d..cb94 e'=1 m'=8 "len(γ_a')"=12 blk="H_t=20 H_r=85e1..cf72 "
-DEBUG[03-25|22:42:20.101] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
-INFO [03-25|22:42:20.219] [N0] proposeBlock fallback               p=895d..cb94 h=6412..af63 e'=1 m'=9 "len(γ_a')"=12 blk="H_t=21 H_r=2c73..e395 "
-DEBUG[03-25|22:42:26.108] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
-INFO [03-25|22:42:26.148] [N1] proposeBlock fallback               p=6412..af63 h=dd3e..fe24 e'=1 m'=10 "len(γ_a')"=12 blk="H_t=22 H_r=1cd3..ffe4   WinningTickets(12)"
-DEBUG[03-25|22:42:34.463] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
-INFO [03-25|22:42:34.949] [N4] proposeBlock fallback               p=dd3e..fe24 h=6f2b..1109 e'=1 m'=11 "len(γ_a')"=12 blk="H_t=23 H_r=8b79..eb3d "
-DEBUG[03-25|22:42:39.958] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
-INFO [03-25|22:42:40.003] [N2] proposeBlock safrole                p=6f2b..1109 h=a7e7..cbb7 e'=2 m'=0  "len(γ_a')"=3  blk="H_t=24 H_r=eac9..568c  EpochMarker(η1'=767a..23ae, η2'=6f6a..af2a) |E_T|=3"
-DEBUG[03-25|22:42:44.750] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
-INFO [03-25|22:42:44.786] [N5] proposeBlock safrole                p=a7e7..cbb7 h=d98a..8e44 e'=2 m'=1  "len(γ_a')"=6  blk="H_t=25 H_r=bb56..7e4e  |E_T|=3"
-DEBUG[03-25|22:42:50.691] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
-INFO [03-25|22:42:50.726] [N4] proposeBlock safrole                p=d98a..8e44 h=580f..b8a0 e'=2 m'=2  "len(γ_a')"=9  blk="H_t=26 H_r=6938..d788  |E_T|=3"
-DEBUG[03-25|22:42:56.636] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:42:56.672] [N3] proposeBlock safrole                p=580f..b8a0 h=2c4b..25d4 e'=2 m'=3  "len(γ_a')"=12 blk="H_t=27 H_r=a29f..ba14  |E_T|=3"
-DEBUG[03-25|22:43:02.236] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:02.281] [N5] proposeBlock safrole                p=2c4b..25d4 h=00c9..fcb7 e'=2 m'=4  "len(γ_a')"=12 blk="H_t=28 H_r=802f..3dd6 "
-DEBUG[03-25|22:43:08.133] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:08.173] [N1] proposeBlock safrole                p=00c9..fcb7 h=4444..d54e e'=2 m'=5  "len(γ_a')"=12 blk="H_t=29 H_r=0cf6..a3ae "
-DEBUG[03-25|22:43:14.171] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:14.212] [N3] proposeBlock safrole                p=4444..d54e h=3076..026e e'=2 m'=6  "len(γ_a')"=12 blk="H_t=30 H_r=2654..9842 "
-DEBUG[03-25|22:43:20.170] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:20.209] [N2] proposeBlock safrole                p=3076..026e h=8aed..3a4f e'=2 m'=7  "len(γ_a')"=12 blk="H_t=31 H_r=b895..4bd2 "
-DEBUG[03-25|22:43:26.121] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:26.162] [N0] proposeBlock safrole                p=8aed..3a4f h=e0d3..629b e'=2 m'=8  "len(γ_a')"=12 blk="H_t=32 H_r=b7da..90f9 "
-DEBUG[03-25|22:43:32.111] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:32.153] [N1] proposeBlock safrole                p=e0d3..629b h=cffb..6c7c e'=2 m'=9  "len(γ_a')"=12 blk="H_t=33 H_r=7e08..a102 "
-DEBUG[03-25|22:43:38.171] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:38.212] [N5] proposeBlock safrole                p=cffb..6c7c h=deec..e893 e'=2 m'=10 "len(γ_a')"=12 blk="H_t=34 H_r=ad73..f340   WinningTickets(12)"
-DEBUG[03-25|22:43:46.544] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:46.686] [N3] proposeBlock safrole                p=deec..e893 h=ebef..a477 e'=2 m'=11 "len(γ_a')"=12 blk="H_t=35 H_r=f172..d1f1 "
-DEBUG[03-25|22:43:51.303] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:51.493] [N0] proposeBlock safrole                p=ebef..a477 h=7875..b4a9 e'=3 m'=0  "len(γ_a')"=2  blk="H_t=36 H_r=6a4b..3e80  EpochMarker(η1'=7e4f..8ff9, η2'=767a..23ae) |E_T|=2"
-DEBUG[03-25|22:43:56.631] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:43:56.665] [N0] proposeBlock safrole                p=7875..b4a9 h=4927..5585 e'=3 m'=1  "len(γ_a')"=5  blk="H_t=37 H_r=fd4d..4188  |E_T|=3"
-DEBUG[03-25|22:44:02.683] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:44:02.721] [N5] proposeBlock safrole                p=4927..5585 h=cceb..65fe e'=3 m'=2  "len(γ_a')"=8  blk="H_t=38 H_r=dc18..e3c9  |E_T|=3"
-DEBUG[03-25|22:44:08.619] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:44:08.654] [N2] proposeBlock safrole                p=cceb..65fe h=e8f1..de93 e'=3 m'=3  "len(γ_a')"=11 blk="H_t=39 H_r=e820..8ba7  |E_T|=3"
-DEBUG[03-25|22:44:14.350] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:44:14.385] [N5] proposeBlock safrole                p=e8f1..de93 h=7039..be02 e'=3 m'=4  "len(γ_a')"=12 blk="H_t=40 H_r=cf20..9707  |E_T|=1"
-DEBUG[03-25|22:44:20.171] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:44:20.214] [N2] proposeBlock safrole                p=7039..be02 h=5395..35a8 e'=3 m'=5  "len(γ_a')"=12 blk="H_t=41 H_r=4ef4..99c4 "
-DEBUG[03-25|22:44:26.175] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344]
-INFO [03-25|22:44:26.216] [N3] proposeBlock safrole                p=5395..35a8 h=5751..b551 e'=3 m'=6  "len(γ_a')"=12 blk="H_t=42 H_r=0063..1a11 "
-DEBUG[03-25|22:44:32.166] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,nil,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:44:32.207] [N1] proposeBlock safrole                p=5751..b551 h=a43c..ab8e e'=3 m'=7  "len(γ_a')"=12 blk="H_t=43 H_r=247a..0a68 "
-DEBUG[03-25|22:44:38.149] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,nil,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:44:38.189] [N3] proposeBlock safrole                p=a43c..ab8e h=5d4e..c063 e'=3 m'=8  "len(γ_a')"=12 blk="H_t=44 H_r=515c..b2cf "
-DEBUG[03-25|22:44:44.208] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,nil,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:44:44.251] [N4] proposeBlock safrole                p=5d4e..c063 h=e635..7e08 e'=3 m'=9  "len(γ_a')"=12 blk="H_t=45 H_r=ec29..8b10 "
-DEBUG[03-25|22:44:50.171] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,nil,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:44:50.210] [N5] proposeBlock safrole                p=e635..7e08 h=c545..6fe0 e'=3 m'=10 "len(γ_a')"=12 blk="H_t=46 H_r=aa87..71a5   WinningTickets(12)"
-DEBUG[03-25|22:44:58.268] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,nil,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:44:58.368] [N2] proposeBlock safrole                p=c545..6fe0 h=8292..a56a e'=3 m'=11 "len(γ_a')"=12 blk="H_t=47 H_r=52e5..2c37 "
-DEBUG[03-25|22:45:03.983] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,nil,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:04.120] [N2] proposeBlock safrole                p=8292..a56a h=e6f0..73ac e'=4 m'=0  "len(γ_a')"=3  blk="H_t=48 H_r=fa83..688b  EpochMarker(η1'=30a1..cbf9, η2'=7e4f..8ff9) |E_T|=3"
-DEBUG[03-25|22:45:08.879] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,nil,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:08.916] [N0] proposeBlock safrole                p=e6f0..73ac h=fb31..ffa6 e'=4 m'=1  "len(γ_a')"=6  blk="H_t=49 H_r=07e5..e0c8  |E_T|=3"
-DEBUG[03-25|22:45:14.810] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,nil,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:14.844] [N0] proposeBlock safrole                p=fb31..ffa6 h=c218..2d9a e'=4 m'=2  "len(γ_a')"=9  blk="H_t=50 H_r=7c22..6b8d  |E_T|=3"
-DEBUG[03-25|22:45:20.646] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:20.681] [N4] proposeBlock safrole                p=c218..2d9a h=7aa2..19ee e'=4 m'=3  "len(γ_a')"=12 blk="H_t=51 H_r=3676..9a9d  |E_T|=3"
-DEBUG[03-25|22:45:26.203] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:26.245] [N4] proposeBlock safrole                p=7aa2..19ee h=f74c..9241 e'=4 m'=4  "len(γ_a')"=12 blk="H_t=52 H_r=0088..d7e3 "
-DEBUG[03-25|22:45:32.165] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:32.205] [N4] proposeBlock safrole                p=f74c..9241 h=9a47..f4b7 e'=4 m'=5  "len(γ_a')"=12 blk="H_t=53 H_r=35d2..4d50 "
-DEBUG[03-25|22:45:38.145] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:38.189] [N1] proposeBlock safrole                p=9a47..f4b7 h=0817..2c38 e'=4 m'=6  "len(γ_a')"=12 blk="H_t=54 H_r=627b..1775 "
-DEBUG[03-25|22:45:44.165] BETA computation                         n=2 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:44.205] [N2] proposeBlock safrole                p=0817..2c38 h=3f57..e3b8 e'=4 m'=7  "len(γ_a')"=12 blk="H_t=55 H_r=75e9..6ef3 "
-DEBUG[03-25|22:45:50.171] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:50.211] [N3] proposeBlock safrole                p=3f57..e3b8 h=efe5..ed30 e'=4 m'=8  "len(γ_a')"=12 blk="H_t=56 H_r=b6c7..65ec "
-DEBUG[03-25|22:45:56.124] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:45:56.182] [N1] proposeBlock safrole                p=efe5..ed30 h=b7a3..958c e'=4 m'=9  "len(γ_a')"=12 blk="H_t=57 H_r=bcc2..6f1f "
-DEBUG[03-25|22:46:02.139] BETA computation                         n=3 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85,nil,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:46:02.180] [N3] proposeBlock safrole                p=b7a3..958c h=26f1..ebe2 e'=4 m'=10 "len(γ_a')"=12 blk="H_t=58 H_r=931f..bea8   WinningTickets(12)"
-DEBUG[03-25|22:46:10.247] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:46:10.432] [N1] proposeBlock safrole                p=26f1..ebe2 h=3c62..5cc6 e'=4 m'=11 "len(γ_a')"=12 blk="H_t=59 H_r=c5b2..c5c9 "
-DEBUG[03-25|22:46:15.637] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,nil,0xe58769b32a1beaf1ea27375a44095a0d1fb664ce2dd358e7fcbfb78c26a19344,0x0eb01ebfc9ed27500cd4dfc979272d1f0913cc9f66540d7e8005811109e1cf2d]
-INFO [03-25|22:46:15.800] [N4] proposeBlock safrole                p=3c62..5cc6 h=9ecf..c27d e'=5 m'=0  "len(γ_a')"=3  blk="H_t=60 H_r=f75f..5707  EpochMarker(η1'=4fef..7681, η2'=30a1..cbf9) |E_T|=3"
-INFO [03-25|22:46:18.562] Completed
+DEBUG[03-28|03:22:32.279] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000]
+INFO [03-28|03:22:32.339] [N4] proposeBlock fallback               p=03c6..db92 h=3fcf..c766 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=c07c..290a  EpochMarker(η1'=6f6a..af2a, η2'=835a..4eaf)"
+DEBUG[03-28|03:22:39.582] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5]
+INFO [03-28|03:22:39.807] [N4] proposeBlock fallback               p=3fcf..c766 h=13f9..a124 e'=1 m'=1 "len(γ_a')"=1 blk="H_t=13 H_r=bcf3..2aed  |E_T|=1"
+DEBUG[03-28|03:22:47.091] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5]
+INFO [03-28|03:22:47.298] [N4] proposeBlock fallback               p=13f9..a124 h=cb3d..d82d e'=1 m'=2 "len(γ_a')"=4 blk="H_t=14 H_r=4814..374e  |E_T|=3"
+DEBUG[03-28|03:22:53.118] BETA computation                         n=5 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5]
+INFO [03-28|03:22:53.295] [N5] proposeBlock fallback               p=13f9..a124 h=4645..0c30 e'=1 m'=3 "len(γ_a')"=4 blk="H_t=15 H_r=4814..374e  |E_T|=3"
+DEBUG[03-28|03:22:58.304] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:22:58.428] [N0] proposeBlock fallback               p=cb3d..d82d h=1dd0..c555 e'=1 m'=4 "len(γ_a')"=7 blk="H_t=16 H_r=3cd1..b54d  |E_T|=3"
+DEBUG[03-28|03:23:03.870] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:23:03.964] [N4] proposeBlock fallback               p=cb3d..d82d h=9faf..5a31 e'=1 m'=5 "len(γ_a')"=7 blk="H_t=17 H_r=3cd1..b54d  |E_T|=3"
+DEBUG[03-28|03:23:09.740] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:23:09.827] [N0] proposeBlock fallback               p=1dd0..c555 h=3112..0183 e'=1 m'=6 "len(γ_a')"=10 blk="H_t=18 H_r=4084..6dc6  |E_T|=3"
+DEBUG[03-28|03:23:15.344] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:23:15.426] [N4] proposeBlock fallback               p=9faf..5a31 h=0968..a50a e'=1 m'=7 "len(γ_a')"=10 blk="H_t=19 H_r=4332..2518  |E_T|=3"
+DEBUG[03-28|03:23:21.972] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:23:22.080] [N1] proposeBlock fallback               p=cb3d..d82d h=63da..c74d e'=1 m'=8 "len(γ_a')"=7  blk="H_t=20 H_r=3cd1..b54d  |E_T|=3"
+DEBUG[03-28|03:23:27.004] BETA computation                         n=0 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:23:27.123] [N0] proposeBlock fallback               p=3112..0183 h=0720..d8b1 e'=1 m'=9 "len(γ_a')"=12 blk="H_t=21 H_r=5d65..5d5e  |E_T|=2"
+DEBUG[03-28|03:23:32.201] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:23:32.347] [N1] proposeBlock fallback               p=63da..c74d h=215b..0ef3 e'=1 m'=10 "len(γ_a')"=7  blk="H_t=22 H_r=3dab..394d "
+DEBUG[03-28|03:23:38.332] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:23:38.506] [N4] proposeBlock fallback               p=0968..a50a h=8209..9921 e'=1 m'=11 "len(γ_a')"=10 blk="H_t=23 H_r=9d4d..e3a7 "
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:23:45.136] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:23:45.136] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:23:45.852] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:23:45.853] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:23:46.752] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:23:46.753] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:23:47.514] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:23:47.514] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:23:48.283] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:23:48.283] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:23:48.845] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:23:48.845] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:23:49.418] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:23:49.419] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:23:50.098] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:23:50.099] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+DEBUG[03-28|03:23:56.197] BETA computation                         n=1 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:23:56.363] [N1] proposeBlock fallback               p=215b..0ef3 h=2dad..f98c e'=2 m'=2  "len(γ_a')"=0  blk="H_t=26 H_r=aa9a..60c8  EpochMarker(η1'=e82f..ac66, η2'=6f6a..af2a)"
+DEBUG[03-28|03:24:02.931] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30]
+INFO [03-28|03:24:03.028] [N4] proposeBlock fallback               p=8209..9921 h=4f76..8a28 e'=2 m'=3  "len(γ_a')"=2  blk="H_t=27 H_r=0248..d850  EpochMarker(η1'=1d43..820a, η2'=6f6a..af2a) |E_T|=2"
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:09.364] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:09.364] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:10.471] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:10.471] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:11.405] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:11.405] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:12.491] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:12.492] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:13.610] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:13.610] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:14.551] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:14.551] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:15.765] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:15.765] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:16.838] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:16.838] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:17.755] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:17.755] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:18.838] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:18.838] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:19.715] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:19.715] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+DEBUG[03-28|03:24:20.097] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
+INFO [03-28|03:24:20.249] [N4] proposeBlock fallback               p=4f76..8a28 h=3fa2..d800 e'=2 m'=6  "len(γ_a')"=2  blk="H_t=30 H_r=0447..0a87 "
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:21.028] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:21.033] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:27.345] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:27.345] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:28.490] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:28.490] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:29.635] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:29.635] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:30.828] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:30.828] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:32.090] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:32.090] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:32.950] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:32.950] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:34.042] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:34.042] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:34.796] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:34.797] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:35.925] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:35.925] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:37.125] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:37.125] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:37.998] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:37.999] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:39.168] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:39.168] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:39.584] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:39.585] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:39.913] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:39.914] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:40.531] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:40.531] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:41.154] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:41.154] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:41.747] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:41.748] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:42.369] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:42.369] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:42.982] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:42.982] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:43.599] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:43.599] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:24:44.258] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:44.258] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+ERROR[03-28|03:24:45.149] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:45.149] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:46.220] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:46.220] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:47.116] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:47.116] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:48.022] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:48.022] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:48.828] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:48.828] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:49.832] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:49.833] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:50.812] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:50.813] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:50.851] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:50.851] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:51.471] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:51.471] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:51.908] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:51.909] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:52.378] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:52.378] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:52.789] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:52.790] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:53.417] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:53.417] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:54.038] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:54.038] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:54.483] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:54.484] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:55.124] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:55.124] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:55.792] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:55.792] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+DEBUG[03-28|03:24:56.296] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
+INFO [03-28|03:24:56.431] [N4] proposeBlock fallback               p=3fa2..d800 h=7931..866c e'=3 m'=0  "len(γ_a')"=0  blk="H_t=36 H_r=64bd..6a2d  EpochMarker(η1'=12bd..2375, η2'=1d43..820a)"
+ERROR[03-28|03:24:56.798] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:24:56.798] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:24:58.573] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:24:58.590] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:24:58.716] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:24:58.773] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:24:59.478] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:24:59.801] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:24:59.802] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+ERROR[03-28|03:25:00.033] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:25:00.052] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:25:00.205] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:25:00.343] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:25:00.914] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:25:01.272] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:25:01.496] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:01.701] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:01.701] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+ERROR[03-28|03:25:01.852] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:25:01.861] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:25:01.941] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:02.702] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:02.702] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:08.558] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:08.559] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:08.840] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:08.840] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:09.209] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:09.209] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:09.488] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:09.488] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:09.761] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:09.761] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:10.021] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:10.021] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:10.283] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:10.283] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:10.573] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:10.574] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:10.940] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:10.940] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:11.251] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:11.251] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:11.585] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:11.585] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:11.902] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:11.902] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:12.187] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:12.187] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:12.473] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:12.473] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:12.774] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:12.774] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:13.101] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:13.101] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:13.424] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:13.424] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:13.707] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:13.707] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:13.952] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:13.952] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:25:14.224] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:14.224] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:21.170] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:21.170] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:22.349] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:22.349] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:23.239] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:23.239] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:24.245] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:24.246] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:25.365] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:25.366] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:26.475] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:26.475] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:27.579] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:27.579] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:28.666] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:28.667] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:29.663] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:29.663] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:30.789] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:30.789] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:31.752] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:31.752] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:32.868] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:32.868] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+DEBUG[03-28|03:25:38.086] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
+INFO [03-28|03:25:38.224] [N4] proposeBlock fallback               p=7931..866c h=f53a..6eb4 e'=3 m'=7  "len(γ_a')"=0  blk="H_t=43 H_r=0bef..e8c2 "
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:39.106] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:39.106] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:40.202] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:40.203] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:41.357] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:41.357] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:42.314] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:42.315] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:43.349] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:43.350] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+DEBUG[03-28|03:25:44.275] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,0xad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb5,nil,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:44.314] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:44.314] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+INFO [03-28|03:25:44.383] [N4] proposeBlock fallback               p=f53a..6eb4 h=b5db..1ef1 e'=3 m'=8  "len(γ_a')"=0  blk="H_t=44 H_r=37b6..bc6b "
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:45.653] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:45.653] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:46.680] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:46.680] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:47.713] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:47.713] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:48.717] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:48.717] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:49.788] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:49.788] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:50.911] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:50.911] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:25:51.310] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:51.310] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:51.625] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:51.626] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:52.280] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:52.281] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:52.823] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:52.824] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:53.390] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:53.392] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:54.009] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:54.009] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:54.541] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:54.541] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:55.036] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:55.037] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:55.611] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:55.612] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:25:56.249] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:25:56.249] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+ERROR[03-28|03:25:56.296] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:56.296] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:56.497] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:56.497] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:56.674] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:56.674] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:56.861] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:56.861] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:57.134] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:57.135] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:57.202] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:57.202] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:57.272] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:57.272] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:57.487] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:57.488] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:57.675] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:57.676] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:57.904] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:57.905] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:58.076] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:58.077] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:58.118] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:58.118] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:58.337] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:58.337] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:58.480] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:58.480] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:58.685] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:58.685] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:58.889] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:58.889] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:59.018] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:59.018] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:59.093] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:59.093] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:59.324] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:59.324] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:59.517] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:59.518] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:59.668] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:59.669] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:59.894] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:59.894] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:25:59.906] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:25:59.906] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:00.095] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:00.095] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:00.275] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:00.276] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:00.534] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:00.535] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:00.694] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:00.694] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:00.811] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:00.812] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:00.863] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:00.863] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:01.112] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:01.112] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:01.297] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:01.297] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:01.520] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:01.520] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:01.706] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:01.706] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:01.710] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:01.711] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:01.928] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:01.928] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:02.126] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:02.126] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:02.610] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:02.610] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:02.890] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:02.890] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:03.217] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:03.218] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:03.893] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:03.893] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:04.331] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:04.331] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:05.047] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:05.047] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:05.617] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:05.618] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:06.116] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:06.117] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:06.798] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:06.798] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:07.549] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:07.549] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:08.013] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:08.013] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:26:08.668] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:26:08.668] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:09.273] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:09.273] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:09.915] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:09.916] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:10.770] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:10.770] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:11.634] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:11.634] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:12.404] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:12.404] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:13.359] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:13.359] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:14.127] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:14.127] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:20.463] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:20.463] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:20.884] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:20.884] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:21.172] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:21.172] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:21.451] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:21.452] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:21.778] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:21.778] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:22.140] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:22.140] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:22.439] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:22.440] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:22.726] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:22.726] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:23.039] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:23.039] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:23.374] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:23.374] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:23.707] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:23.707] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:23.985] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:23.985] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:24.263] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:24.263] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:24.522] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:24.523] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:24.839] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:24.839] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:25.179] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:25.179] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:25.571] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:25.572] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:25.872] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:25.872] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:26:26.180] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:26.180] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:33.043] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:33.043] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:33.959] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:33.959] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:35.010] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:35.011] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:35.845] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:35.845] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:36.617] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:36.617] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:37.753] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:37.754] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:38.612] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:38.612] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:39.500] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:39.501] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:40.277] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:40.277] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:41.064] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:41.064] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:42.215] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:42.215] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:44.002] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:44.002] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:45.254] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:45.254] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+DEBUG[03-28|03:26:50.322] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[nil,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
+INFO [03-28|03:26:50.499] [N4] proposeBlock fallback               p=b5db..1ef1 h=b7c5..b26a e'=4 m'=7  "len(γ_a')"=0  blk="H_t=55 H_r=89e9..c06f  EpochMarker(η1'=1e3e..cd07, η2'=12bd..2375)"
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:51.433] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:51.434] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:52.376] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:52.376] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:53.580] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:53.580] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:54.581] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:54.581] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:55.666] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:55.666] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:56.589] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:56.589] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:57.577] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:57.578] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:58.403] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:58.403] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:26:59.584] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:26:59.585] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:00.462] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:00.463] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:01.631] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:01.631] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:02.881] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:02.881] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:02.989] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:02.989] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:03.660] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:03.660] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:04.333] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:04.333] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:04.930] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:04.930] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:05.481] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:05.482] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:06.057] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:06.057] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:06.599] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:06.600] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:07.212] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:07.212] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:07.947] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:07.948] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+ERROR[03-28|03:27:08.322] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:08.322] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:08.510] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:08.511] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+Failed to validate ticket 0x23bd628fd365a0f3ecd10db746dd04ec5efe61f96da19ae070c44b97d3c9a7b8
+ERROR[03-28|03:27:08.614] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:08.614] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N5] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+ERROR[03-28|03:27:08.682] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:08.683] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:08.933] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:08.933] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:09.083] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:09.084] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:09.269] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:09.270] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:09.434] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:09.434] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:09.491] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:09.491] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:09.715] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:09.715] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:09.856] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:09.856] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:10.113] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:10.113] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:10.328] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:10.332] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:10.378] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:10.378] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:10.512] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:10.512] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:10.720] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:10.721] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:10.963] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:10.964] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:11.093] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:11.093] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:11.259] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:11.260] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:11.313] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:11.315] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:11.479] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:11.480] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:11.670] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:11.670] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:11.891] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:11.891] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:12.109] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:12.109] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:12.141] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:12.141] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:12.286] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:12.286] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:12.513] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:12.513] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:12.674] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:12.675] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:12.926] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:12.926] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:12.963] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:12.963] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:13.104] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:13.105] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:13.284] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:13.285] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:13.494] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:13.494] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:13.731] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:13.731] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:13.933] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:13.934] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:13.941] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:13.942] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:14.098] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:14.099] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N1] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:15.999] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:16.007] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:16.049] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:16.049] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N2] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:16.101] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:16.117] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:16.371] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:16.371] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:16.717] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:17.041] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:17.521] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:17.858] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:18.065] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:18.077] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:18.128] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:18.128] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:18.141] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:19.055] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:19.055] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:19.176] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:19.188] processTicket:ValidateIncomingTicket     err="T4|BadRingProof: Submit tickets with a bad ring proof."
+ERROR[03-28|03:27:19.301] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:19.301] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:19.945] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:19.946] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+ERROR[03-28|03:27:20.401] ApplyStateTransitionTickets              err=EpochLotteryOver
+ERROR[03-28|03:27:20.402] ProcessState:ApplyStateTransitionFromBlock err="T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over."
+[N3] ProcessState ERROR: T5|EpochLotteryOver: Submit tickets when the epoch's lottery is over.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:21.171] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:21.172] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:21.929] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:21.929] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:22.589] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:22.589] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:23.220] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:23.220] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:24.075] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:24.075] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:24.865] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:24.865] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:25.704] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:25.705] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+DEBUG[03-28|03:27:26.318] BETA computation                         n=4 accumulationRoot=0x0000000000000000000000000000000000000000000000000000000000000000 mmr=[0x0000000000000000000000000000000000000000000000000000000000000000,nil,0xb4c11951957c6f8f642c4af61cd6b24640fec6dc7fc607ee8206a99e92410d30,0x21ddb9a356815c3fac1026b6dec5df3124afbadb485c9ba5a3e3398a04b7ba85]
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:26.381] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:26.382] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N3] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+INFO [03-28|03:27:26.452] [N4] proposeBlock fallback               p=b7c5..b26a h=7dd7..697c e'=5 m'=1  "len(γ_a')"=0  blk="H_t=61 H_r=cae2..0580  EpochMarker(η1'=405d..fe79, η2'=1e3e..cd07)"
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:32.559] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:32.559] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:32.918] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:32.918] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:33.140] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:33.140] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:33.448] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:33.448] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:33.723] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:33.723] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:34.004] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:34.004] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:34.296] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:34.296] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:34.604] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:34.604] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:34.882] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:34.882] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:35.200] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:35.200] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:35.496] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:35.496] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:35.826] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:35.826] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:36.188] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:36.188] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:36.503] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:36.504] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:36.865] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:36.865] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:37.150] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:37.151] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:37.447] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:37.447] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:37.742] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:37.742] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x63ba41959f0b6b2f1f84b1dc9bf291658ed27aaa131d8c80b975bdea1359b4df
+ERROR[03-28|03:27:38.091] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:38.092] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N1] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:45.106] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:45.106] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:46.125] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:46.126] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:46.853] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:46.854] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:48.049] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:48.049] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:49.199] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:49.199] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:50.106] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:50.106] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+Failed to validate ticket 0x1912baa74049a4cad89dc3f0646144459b691b926cf8b9c1c4a5bbfa1ee0c331
+ERROR[03-28|03:27:51.258] ApplyStateTransitionTickets              err=BadRingProof
+ERROR[03-28|03:27:51.258] ProcessState:ApplyStateTransitionFromBlock err="T4|BadRingProof: Submit tickets with a bad ring proof."
+[N2] ProcessState ERROR: T4|BadRingProof: Submit tickets with a bad ring proof.
+    node_test.go:93: [safrole] Failed: [TIMEOUT] H_t=15 e'=1,m'=3 | missing 3 Slot!
+--- FAIL: TestSafrole (324.29s)
+FAIL
+exit status 1
+FAIL	github.com/colorfulnotion/jam/node	324.356s
+make: *** [Makefile:21: safrole] Error 1
