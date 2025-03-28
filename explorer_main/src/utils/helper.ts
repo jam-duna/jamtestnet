@@ -1,7 +1,7 @@
 import { time } from "console";
 import { format } from "date-fns";
 
-// export const DEFAULT_WS_URL = "http://jam-0.jamduna.org:10900/rpc"; // polling
+//export const DEFAULT_WS_URL = "http://jam-0.jamduna.org:10900/rpc"; // polling
 export const DEFAULT_WS_URL = "jam-0.jamduna.org:10900";
 
 export function truncateHash(hash: string): string {
