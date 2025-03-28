@@ -33,6 +33,7 @@ import {
   PreimageProps,
 } from "@/utils/blockAnalyzer";
 import { useFetchRpc } from "@/hooks/home/useFetchRpc";
+import { getRpcUrlFromWs } from "@/utils/ws";
 export default function ServiceDetail() {
   const params = useParams();
   const serviceId = params.serviceId as string;
@@ -107,7 +108,10 @@ export default function ServiceDetail() {
   useEffect(() => {
     if (serviceId) {
       (async () => {
-        const info = await fetchService(serviceId, DEFAULT_WS_URL);
+        const info = await fetchService(
+          serviceId,
+          getRpcUrlFromWs(DEFAULT_WS_URL)
+        );
         setServiceInfo(info);
       })();
     }

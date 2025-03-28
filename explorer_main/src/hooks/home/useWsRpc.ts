@@ -3,7 +3,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { db, Block, State } from "@/db/db";
+import { db, Block, State, DB_LIMIT } from "@/db/db";
+import { Overview } from "@/types";
 import { fetchBlock } from "./useFetchBlock";
 import { fetchState } from "./useFetchState";
 import { getRpcUrlFromWs, normalizeEndpoint } from "@/utils/ws";
@@ -72,7 +73,6 @@ export function useWsRpc({
       };
 
       wsRef.current.onmessage = (event) => {
-        // Delay processing by 1 second.
         setTimeout(async () => {
           try {
             const msg = JSON.parse(event.data);
@@ -80,20 +80,6 @@ export function useWsRpc({
 
             if (msg.method === "BlockAnnouncement" && msg.result) {
               localStorage.setItem("customWsEndpoint", wsEndpoint);
-              /*
-              setSavedEndpoints((prev) => {
-                if (!prev.includes(wsEndpoint)) {
-                  const updated = [...prev, wsEndpoint];
-                  localStorage.setItem(
-                    "savedWsEndpoints",
-                    JSON.stringify(updated)
-                  );
-                  return updated;
-                }
-                return prev;
-              });
-              */
-
               const { headerHash, blockHash } = msg.result;
               const rpcUrl = getRpcUrlFromWs(wsEndpoint);
               console.log("RPC URL:", rpcUrl);
@@ -101,26 +87,60 @@ export function useWsRpc({
               const fetchedBlock = await fetchBlock(headerHash, rpcUrl, "hash");
               const fetchedState = await fetchState(headerHash, rpcUrl);
 
-              // console.log("block data:", fetchedBlock);
-              // console.log("state data:", fetchedState);
-
               const nowTimestamp = Date.now();
-              const overview = {
+              // Ensure slot is a number, using -1 as a fallback if not present.
+              const slot =
+                fetchedBlock?.header?.slot !== undefined
+                  ? fetchedBlock.header.slot
+                  : -1;
+              const overview: Overview = {
                 headerHash,
                 blockHash,
                 createdAt: nowTimestamp,
-                slot: fetchedBlock?.header.slot ?? -1,
+                slot,
               };
 
               if (fetchedBlock?.header && fetchedBlock?.extrinsic) {
-                const { overview: _, ...restOfBlock } = fetchedBlock;
-                const blockRecord = { ...restOfBlock, overview };
+                let blockRecord: Block;
+                if (fetchedBlock.overview) {
+                  // Remove existing overview property and replace with our computed one.
+                  const { overview: _, ...restOfBlock } = fetchedBlock;
+                  blockRecord = { ...restOfBlock, overview };
+                } else {
+                  blockRecord = { ...fetchedBlock, overview };
+                }
+
+                // Insert the new block into the database.
                 await db.blocks.put(blockRecord);
 
                 if (fetchedState) {
                   const stateRecord: State = { overview, ...fetchedState };
                   await db.states.put(stateRecord);
                   onNewBlock(blockRecord, stateRecord);
+                }
+
+                // --- Clean-up Logic Using DB_LIMIT ---
+
+                // For blocks:
+                const blockCount = await db.blocks.count();
+                if (blockCount > DB_LIMIT) {
+                  const oldestBlock = await db.blocks
+                    .orderBy("overview.createdAt")
+                    .first();
+                  if (oldestBlock?.overview) {
+                    await db.blocks.delete(oldestBlock.overview.headerHash);
+                  }
+                }
+
+                // For states:
+                const stateCount = await db.states.count();
+                if (stateCount > DB_LIMIT) {
+                  const oldestState = await db.states
+                    .orderBy("overview.createdAt")
+                    .first();
+                  if (oldestState?.overview) {
+                    await db.states.delete(oldestState.overview.headerHash);
+                  }
                 }
               }
               onUpdateNow(nowTimestamp);

@@ -111,7 +111,7 @@ export default function HomePage() {
   });
   const [showOnlyWorkPackages, setShowOnlyWorkPackages] = useState(false);
 
-  useInsertMockDataIfEmpty();
+  // useInsertMockDataIfEmpty();
 
   useWsRpc({
     wsEndpoint,
