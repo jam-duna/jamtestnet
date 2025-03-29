@@ -6,8 +6,8 @@ package configs
 const (
 	// Medium testnet : Tickets only
 	Network                     = "medium"
-	TotalValidators             = 48 // V: The total number of validators.
-	TotalCores                  = 16 // C: The total number of cores.
+	TotalValidators             = 18 // V: The total number of validators.
+	TotalCores                  = 6  // C: The total number of cores.
 	TicketEntriesPerValidator   = 6  // N: The number of ticket entries per validator.
 	EpochLength                 = 60 // E: The length of an epoch in timeslots.
 	TicketSubmissionEndSlot     = 50 // Y: The number of slots into an epoch at which ticket-submission ends.
