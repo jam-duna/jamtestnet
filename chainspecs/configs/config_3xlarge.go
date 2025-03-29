@@ -6,8 +6,8 @@ package configs
 const (
 	// 3xlarge testnet : Tickets only
 	Network                     = "3xlarge"
-	TotalValidators             = 576 // V: The total number of validators.
-	TotalCores                  = 192 // C: The total number of cores.
+	TotalValidators             = 684 // V: The total number of validators.
+	TotalCores                  = 228 // C: The total number of cores.
 	TicketEntriesPerValidator   = 2   // N: The number of ticket entries per validator.
 	EpochLength                 = 600 // E: The length of an epoch in timeslots.
 	TicketSubmissionEndSlot     = 500 // Y: The number of slots into an epoch at which ticket-submission ends.
