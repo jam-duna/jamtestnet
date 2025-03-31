@@ -1,7 +1,10 @@
-export async function fetchWorkPackage(hash: string, rpcUrl: string): Promise<any> {
+export async function fetchWorkPackage(
+  hash: string,
+  rpcUrl: string
+): Promise<any> {
     const payload = {
       jsonrpc: "2.0",
-      id: 2,
+      id: 1,
       method: "jam.GetWorkPackageByHash",
       params: [hash],
     };

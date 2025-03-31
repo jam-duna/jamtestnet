@@ -21,7 +21,7 @@ import {
   ServiceInfoTable,
   ServiceStatsGrid,
 } from "@/components/service";
-import { Block, State } from "@/db/db";
+import { Block, DB_LIMIT, State } from "@/db/db";
 import { GridData, parseBlocksToGridData } from "@/utils/parseBlocksToGridData";
 import {
   fetchServiceStatisticsFromId,
@@ -69,11 +69,11 @@ export default function ServiceDetail() {
 
   useEffect(() => {
     const fetchBlocks = async () => {
-      const blocks = await filterBlocks(8);
+      const blocks = await filterBlocks(DB_LIMIT);
       setFilteredBlocks(blocks);
     };
     const fetchStates = async () => {
-      const states = await filterStates(8);
+      const states = await filterStates(DB_LIMIT);
       setFilteredStates(states);
     };
     const fetchActiveStates = async () => {
