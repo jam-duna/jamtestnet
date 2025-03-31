@@ -11,13 +11,14 @@ import { PreimageProps } from "@/utils/blockAnalyzer";
 
 function PreimageListItem(data: PreimageProps) {
     const createdAt = data.timestamp;
-    const preimageHash = data.package_hash;
+    const workpackageHash = data.package_hash;
+    const preimageHash = data.preimage.blob;
     const preimageSize = data.preimage.blob.length;
   
     return (
       <Link
         key={preimageHash}
-        href={`/workpackage/${preimageHash}/`}
+        href={`/workpackage/${workpackageHash}/`}
         style={{ textDecoration: "none", color: "inherit" }}
       >
         <Box

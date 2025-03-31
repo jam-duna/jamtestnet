@@ -63,4 +63,4 @@ export class JamDB extends Dexie {
 
 export const db = new JamDB();
 
-export const DB_LIMIT = 30;
+export const DB_LIMIT = 50;

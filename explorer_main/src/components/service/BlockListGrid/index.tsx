@@ -43,6 +43,28 @@ export function BlockListGrid({
 }: BlockListGridProps) {
   const router = useRouter();
 
+  // Compute filtered cores and timeslots when toggle is on.
+  const { filteredCores, filteredTimestamps } = useMemo(() => {
+    // Build a map of busy cells: busyCells[core] is a Set of slots that are busy.
+    const busyCells: Record<number, Set<number>> = {};
+    for (const core of cores) {
+      for (const slot of timestamps) {
+        if (data[core]?.[slot]?.isBusy && data[core]?.[slot]?.serviceName === serviceId) {
+          if (!busyCells[core]) busyCells[core] = new Set();
+          busyCells[core].add(slot);
+        }
+      }
+    }
+    // Filter cores that have at least one busy cell.
+    const filteredCores = cores.filter((core) => busyCells[core]?.size);
+    // Filter timeslots that appear in at least one busy cell in the filtered cores.
+    let filteredTimestamps = timestamps.filter((slot) =>
+      filteredCores.some((core) => busyCells[core].has(slot))
+    );
+    filteredTimestamps = filteredTimestamps.slice(0, 8);
+    return { filteredCores, filteredTimestamps };
+  }, [cores, timestamps, data]);
+
   return (
     <Box width={"100%"}
         display={"flex"}
@@ -75,30 +97,30 @@ export function BlockListGrid({
                 </Typography>
               </TableCell>
               {/* Timeslot headers */}
-              {timestamps.map((timestampValue, timestampIndex) => (
-                <TableCell
-                  key={timestampIndex}
-                  align="center"
-                  sx={{
-                    border: "1px solid #ddd",
-                    backgroundColor: "#eee",
-                    cursor: "pointer",
-                    transition: "all .5s ease-in-out",
-                    ":hover": {
-                        backgroundColor: "#ddd",
-                    }
-                  }}
-                  onClick={() => {router.push(`/block/${timeslots[timestampIndex]}`)}}
-                >
-                  <Typography variant="subtitle2">
-                    {formatDate(timestampValue)}
-                  </Typography>
-                </TableCell>
+              {filteredTimestamps.map((timestampValue, timestampIndex) => (
+                    <TableCell
+                      key={timestampIndex}
+                      align="center"
+                      sx={{
+                        border: "1px solid #ddd",
+                        backgroundColor: "#eee",
+                        cursor: "pointer",
+                        transition: "all .5s ease-in-out",
+                        ":hover": {
+                            backgroundColor: "#ddd",
+                        }
+                      }}
+                      onClick={() => {router.push(`/block/${timeslots[timestampIndex]}`)}}
+                    >
+                      <Typography variant="subtitle2">
+                        {formatDate(timestampValue)}
+                      </Typography>
+                    </TableCell>
               ))}
             </TableRow>
           </TableHead>
           <TableBody>
-            {cores.map((coreIndex) => (
+            {filteredCores.map((coreIndex) => (
               <TableRow key={coreIndex}>
                 {/* Left cell: Core */}
                 <TableCell
@@ -119,7 +141,7 @@ export function BlockListGrid({
                   </Typography>
                 </TableCell>
                 {/* Data cells for each timeslot */}
-                {timestamps.map((timestampValue, timestampIndex) => {
+                {filteredTimestamps.map((timestampValue, timestampIndex) => {
                   const cell = data[coreIndex]?.[timestampValue];
                   return (
                     <TableCell

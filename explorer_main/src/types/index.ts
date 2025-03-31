@@ -235,11 +235,16 @@ export interface ServiceStatistics {
   on_transfers_gas_used: number;
 }
 
+export interface ServiceStatsSet {
+  id: string;
+  record: ServiceStatistics;
+}
+
 export interface PiItem {
   current: PiEntry[];
   last: PiEntry[];
   cores: CoreStatistics[];
-  services: Record<string, ServiceStatistics>;
+  services: ServiceStatsSet[];
 }
 
 export interface PsiItem {

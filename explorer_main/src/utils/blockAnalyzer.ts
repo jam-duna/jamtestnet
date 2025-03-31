@@ -117,9 +117,9 @@ export const fetchServiceStatisticsFromId = async (serviceId: number) : Promise<
     sortedStates.forEach((state) => {
         if (state.pi.services === null || state.pi.services === undefined)
             return;
-        Object.entries(state.pi.services).forEach(([serviceName, stats]) => {
-            if (serviceName === serviceId.toString()) {
-                data = stats;
+        Object.entries(state.pi.services).forEach(([index, stats]) => {
+            if (stats.id.toString() === serviceId.toString()) {
+                data = stats.record;
                 return;
             }
         });
