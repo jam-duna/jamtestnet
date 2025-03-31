@@ -102,7 +102,7 @@ export default function WorkPackageDetail() {
 
   useEffect(() => {
     (async () => {
-      const data = await fetchWorkPackage(workPackageHash, `https://${DEFAULT_WS_URL}/rpc`);
+      const data = await fetchWorkPackage(workPackageHash, `http://${DEFAULT_WS_URL}/rpc`);
       if (!!data) {
         setWorkPackageInfo(data);
       }
