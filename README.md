@@ -1,8 +1,9 @@
-# JAM Testnet 
+# JAM DUNA Unofficial Import Blocks dataset
 
 [JAM](https://jam.web3.foundation/) is the anticipated future protocol for Polkadot, being implemented by multiple teams across different programming languages. The [JAM Gray Paper](https://graypaper.com/) outlines the protocol, and the Web3 Foundation has shared initial test vectors with participating teams [here](https://github.com/w3f/jamtestvectors).
 
-This repository serves as a collaborative space for teams to develop and test JAM Testnets independently and work towards cross-team compatibility in the JAM Toaster.   See [docs.jamcha.in](https://docs.jamcha.in/). 
+This repository aims to serve as a space for teams to develop and test GP compliant State Transitions + Blocks and work towards cross-team compatibility in
+the JAM Toaster.  See [docs.jamcha.in](https://docs.jamcha.in/).  
 
 ## Dev Accounts, Chain specs, Genesis States
 
@@ -61,10 +62,6 @@ See [services](https://github.com/colorfulnotion/polkavm/tree/dev/services) for 
 | Bootstrap Services        |           |             |     x       |     x      |x|
 | Ordered Accumulation      |           |             |             |     x      |x|
 
-As of Feb 2025, several teams have reported success at importing both fallback and safrole,
-and as of March 2025, several teams have reported 100% alignment on `assurances` and `orderedaccumulation` for this [0.6.2.12](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.12) dataset.  
-
-As of late March 2025, we are starting again with [0.6.4.x](https://github.com/jam-duna/jamtestnet/releases/)
 
 #### Assurances
 
@@ -115,17 +112,8 @@ The ordered accumulation data, after setting up a Fib+Trib+Megatron service, has
 
 You can see the results of these in [orderedaccumulation.txt](./orderedaccumulation.txt).
 
-#### Guarantees
+#### Disputes
 
-In the `guarantees` folder you will see many guarantee test vectors generated in assurances and ordered accumulation tests.  Each JSON file contains a signed guarantee along with the work report and availability specifier AND the following:
-* work package bundle (with the work package, imported segments, justifications) and segment root lookup
-* guarantee derivation components: bclub, sclub, and bundle chunks and segment chunks
-
-10 of the guarantee test vectors are an indepedent run Fib(1)-Fib(10) (see [assurances.txt](./assurances.txt)), and FETCH and EXPORT a matching number of segments.
-
-Having community alignment on this will prove an essential prerequisite to a multi-client testnet that can refine work packages.
-
-#### Dispute
 - made by any mode with guarantee and assurance
 - only the availible workreports can be disputed (the dispute always happen after audit)
 - we choose the STF vectors that contain availible workreports and ramdomly assign to goodset,badset and wonkeyset
@@ -228,10 +216,6 @@ Only the following network chain specs are supported at present:
 
 - `tiny`: [Doc Reference](https://docs.jamcha.in/basics/dev-accounts)
 
-# Feedback?
-
-[JAM Testnet on Telegram](https://t.me/jamtestnet)
-
 
 ### JAM DUNA 
 
@@ -248,17 +232,17 @@ Dec 2024:
 * state_transitions output with service k,v metadata
 
 Feb - early March 2025:
-* [0.6.2.x Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.12)
+* [0.6.2.12 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.12)
 
-Late March 2025:
-* [0.6.4.x Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.0)
-
+Late March 2025 - Early April 2025:
+* [0.6.4.x Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.4)
 
 ## Found an Issue?
 
-Terrific - submit an issue with your findings!   See the [Releases](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.12) for how we resolved previous issues with others.   Please avoid sharing code, however, and instead use GP references and links to a specific state transition file.  We have been able solve almost all problems within 48-72 hours or raise questions in the W3F repo or GP Chat room.  
+Terrific - submit an issue with your findings!   See the [Releases](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.4) for how we resolved previous issues with others.   Please avoid sharing code, however, and instead use GP references and links to a specific state transition file.  We have been able solve almost all problems within 48-72 hours or raise questions in the W3F repo or GP Chat room.  In addition, you may find many JAM Implementers here, which are *100% open to all*:
+
+* [Matrix Room - PUBLIC JAM Implementers Room](https://matrix.to/#/!KKOmuUpvYKPcniwOzw:matrix.org?via=matrix.org&via=parity.io)
+* [Discord Room - PUBLIC JAM DAO #general](https://discord.gg/ADWefR9m)
 
 
-## Join us on Telegram
 
-* [JAM Testnet on Telegram](https://t.me/jamtestnet) - Public, anyone can join
