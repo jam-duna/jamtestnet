@@ -10,9 +10,42 @@ const msgTypeTicket = '131';
 const msgTypeWorkPackage = '0';
 const msgTypeNewService = '143';
 const msgTypeSegment = '3';
+const jceStart = Date.UTC(2025, 0, 1, 12, 0, 0) // JCE start: 2025-01-01T12:00:00Z
+
+function isoToUnixSeconds(isoString) {
+    const date = new Date(isoString);
+    // date.getTime() → milliseconds; divide by 1000 → seconds
+    return Math.floor(date.getTime() / 1000);
+}
+
+function unixToJCE(unixSeconds) {
+    const jceStartSec = Date.UTC(2025, 0, 1, 12, 0, 0) / 1000;
+    const diffSec = unixSeconds - jceStartSec;
+    return Math.floor(diffSec / 6);
+}
+
+function isoToJCE(isoString) {
+    const date = new Date(isoString);
+    const unixSeconds = Math.floor(date.getTime() / 1000);
+    return unixToJCE(unixSeconds);
+}
 
 // temporary scaffolding
 function hash(input) {
-  return crypto.createHash('sha256').update(input).digest('hex');
+    return crypto.createHash('sha256').update(input).digest('hex');
 }
 
+module.exports = {
+    msgTypeBlock,
+    msgTypeStatistics,
+    msgTypeWorkReport,
+    msgTypePreimage,
+    msgTypeAssurance,
+    msgTypeTicket,
+    msgTypeWorkPackage,
+    msgTypeNewService,
+    msgTypeSegment,
+    hash,
+    isoToUnixSeconds,
+    isoToJCE
+}
