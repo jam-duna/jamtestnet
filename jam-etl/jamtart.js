@@ -19,10 +19,12 @@ module.exports = {
   msgTypePreimage: "142",
   msgTypeAssurance: "141",
   msgTypeTicket: "131",
-  msgTypeWorkPackage: "0",
+  msgTypeWorkPackageBundle: "133",
   msgTypeNewService: "143",
-  msgTypeSegment: "3",
+  msgTypeSegment: "135",
   extractMetadata,
   // temp
   hash: (input) => crypto.createHash("sha256").update(input).digest("hex"),
 };
+
+

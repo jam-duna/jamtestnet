@@ -169,24 +169,31 @@ async function handleTicket(parsed) {
   });
 }
 
-async function handleWorkPackage(parsed) {
-  const metaRow = parseMetaRow(parsed);
-  const ctx = parsed.json_encoded.context || {};
-  const work_package_hash = jamtart.hash(JSON.stringify(parsed.json_encoded));
 
-  await insertRow("workpackages", {
+async function handleWorkPackageBundle(parsed) {
+  const metaRow = parseMetaRow(parsed);
+  const bundle = parsed.json_encoded;
+  const wp = bundle.work_package;
+  const ctx = wp.context || {};
+  const work_package_hash = jamtart.hash(JSON.stringify(bundle));
+
+  await insertRow("workpackagebundles", {
     ...metaRow,
-    authorization: parsed.json_encoded.authorization,
-    auth_code_host: parsed.json_encoded.auth_code_host,
-    authorization_code_hash: parsed.json_encoded.authorization_code_hash,
-    parameterization_blob: parsed.json_encoded.parameterization_blob,
+    work_package_hash,
+    authorization: wp.authorization,
+    auth_code_host: wp.auth_code_host,
+    authorization_code_hash: wp.authorization_code_hash,
+    parameterization_blob: wp.parameterization_blob,
     anchor: ctx.anchor,
     state_root: ctx.state_root,
     beefy_root: ctx.beefy_root,
     lookup_anchor: ctx.lookup_anchor,
     lookup_anchor_slot: ctx.lookup_anchor_slot,
     prerequisites: ctx.prerequisites ? JSON.stringify(ctx.prerequisites) : null,
-    work_items: JSON.stringify(parsed.json_encoded.items || []),
+    work_items: JSON.stringify(wp.items || []),
+    extrinsics: JSON.stringify(bundle.extrinsics),
+    import_segments: JSON.stringify(bundle.import_segments),
+    justifications: JSON.stringify(bundle.justifications),
   });
 }
 
@@ -225,7 +232,7 @@ async function processLine(line) {
       case jamtart.msgTypePreimage: return handlePreimage(parsed);
       case jamtart.msgTypeAssurance: return handleAssurance(parsed);
       case jamtart.msgTypeTicket: return handleTicket(parsed);
-      case jamtart.msgTypeWorkPackage: return handleWorkPackage(parsed);
+      case jamtart.msgTypeWorkPackageBundle: return handleWorkPackageBundle(parsed);
       case jamtart.msgTypeNewService: return handleNewService(parsed);
       case jamtart.msgTypeSegment: return handleSegment(parsed);
       default:

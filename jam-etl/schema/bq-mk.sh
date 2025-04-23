@@ -7,7 +7,7 @@ bq mk --table awesome-web3:jam.services services.json
 bq mk --table awesome-web3:jam.servicestatistics servicestatistics.json
 bq mk --table awesome-web3:jam.tickets tickets.json
 bq mk --table awesome-web3:jam.validatorstatistics validatorstatistics.json
-bq mk --table awesome-web3:jam.workpackages workpackages.json
+bq mk --table awesome-web3:jam.workpackagebundles workpackagebundles.json
 bq mk --table awesome-web3:jam.workreports workreports.json
 
 

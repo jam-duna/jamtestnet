@@ -1,0 +1,22 @@
+[
+  { "name": "time", "type": "TIMESTAMP" },
+  { "name": "team", "type": "STRING" },
+  { "name": "sender_id", "type": "STRING" },
+  { "name": "elapsed", "type": "INTEGER" },
+  { "name": "codec_encoded", "type": "STRING" },
+  { "name": "work_package_hash", "type": "STRING" },
+  { "name": "authorization", "type": "BYTES" },
+  { "name": "auth_code_host", "type": "INTEGER" },
+  { "name": "authorization_code_hash", "type": "STRING" },
+  { "name": "parameterization_blob", "type": "BYTES" },
+  { "name": "anchor", "type": "STRING" },
+  { "name": "state_root", "type": "STRING" },
+  { "name": "beefy_root", "type": "STRING" },
+  { "name": "lookup_anchor", "type": "STRING" },
+  { "name": "lookup_anchor_slot", "type": "INTEGER" },
+  { "name": "prerequisites", "type": "STRING" },        
+  { "name": "work_items", "type": "STRING" },           
+  { "name": "extrinsics", "type": "STRING" },           
+  { "name": "import_segments", "type": "STRING" },      
+  { "name": "justifications", "type": "STRING" }        
+]
