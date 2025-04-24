@@ -1,0 +1,16 @@
+[
+    { "name": "time",           "type": "timestamp" },
+    { "name": "slot",           "type": "bigint"    },
+    { "name": "team",           "type": "varchar"   },
+    { "name": "sender_id",      "type": "varchar"   },
+    { "name": "elapsed",        "type": "integer",   "nullable": true },
+    { "name": "core",           "type": "integer"   },
+    { "name": "da_load",        "type": "integer"   },
+    { "name": "popularity",     "type": "integer"   },
+    { "name": "imports",        "type": "integer"   },
+    { "name": "exports",        "type": "integer"   },
+    { "name": "extrinsic_size", "type": "integer"   },
+    { "name": "extrinsic_count","type": "integer"   },
+    { "name": "bundle_size",    "type": "integer"   },
+    { "name": "gas_used",       "type": "integer"   }
+  ]

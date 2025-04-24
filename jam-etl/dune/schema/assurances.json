@@ -1,0 +1,12 @@
+[
+    { "name": "time",            "type": "timestamp" },
+    { "name": "slot",            "type": "bigint"    },
+    { "name": "team",            "type": "varchar"   },
+    { "name": "sender_id",       "type": "varchar"   },
+    { "name": "elapsed",         "type": "integer"   },
+    { "name": "anchor",          "type": "varchar"   },
+    { "name": "bitfield",        "type": "varchar"   },
+    { "name": "validator_index", "type": "integer"   },
+    { "name": "signature",       "type": "varchar"   },
+    { "name": "codec_encoded",   "type": "varchar", "nullable": true}
+  ]
