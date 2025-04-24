@@ -132,7 +132,7 @@ StateTransition Errors are organized into 4 categories, tracking W3F official er
   * [ ] **G** - Guarantee & Work Reports Errors 
   * [ ] **D** - Disputes Errors
 
-We enumerate them below.
+We enumerate them below.  Fuzzing is aspirational -- we may move this into the live testnet only.
 
 ### Safrole Ticket Errors
 
@@ -235,14 +235,17 @@ Feb - early March 2025:
 * [0.6.2.12 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.12)
 
 Late March 2025 - Early April 2025:
-* [0.6.4.x Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.4)
+* [0.6.4.4 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.4)
+
+Late April 2025:
+* [0.6.5.0 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.5.0)
 
 ## Found an Issue?
 
 Terrific - submit an issue with your findings!   See the [Releases](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.4) for how we resolved previous issues with others.   Please avoid sharing code, however, and instead use GP references and links to a specific state transition file.  We have been able solve almost all problems within 48-72 hours or raise questions in the W3F repo or GP Chat room.  In addition, you may find many JAM Implementers here, which are *100% open to all*:
 
 * [Matrix Room - PUBLIC JAM Implementers Room](https://matrix.to/#/!KKOmuUpvYKPcniwOzw:matrix.org?via=matrix.org&via=parity.io)
-* [Discord Room - PUBLIC JAM DAO #general](https://discord.gg/ADWefR9m)
+* [Discord Room - PUBLIC JAM DAO #implementers](https://discord.gg/aGUV82SP)
 
 
 
