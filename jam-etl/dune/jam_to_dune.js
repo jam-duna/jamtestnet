@@ -10,6 +10,29 @@ const OUTPUT_DIR = './dune_jam';
 const DATA_DIR = '../logs';
 const debug = false;
 
+function simulateTeam(senderId, teams = ["Colorful Notion", "Jam-Duna"]) {
+    if (senderId === "unknown" ||
+        typeof senderId !== "string" ||
+        !/^0x[0-9A-Fa-f]{2}/.test(senderId)
+    ) {
+        return "unknown";
+    }
+
+    const byteHex = senderId.slice(2, 4);
+    const val = parseInt(byteHex, 16);
+    const n = teams.length;
+    const bucketSize = Math.floor(256 / n);
+    const maxAssigned = bucketSize * n; // values ≥ this go to "unknown"
+
+    if (val >= maxAssigned) {
+        return "unknown";
+    }
+    const idx = Math.floor(val / bucketSize);
+    const team = teams[idx];
+    //console.log(`senderId: ${senderId} | byteHex: ${byteHex} | val: ${val} | idx: ${idx} | team: ${team}`);
+    return team;
+}
+
 function extractMetadata(metaString) {
     const out = {};
     metaString.split('|').forEach(kv => {
@@ -30,6 +53,7 @@ function extractMetadata(metaString) {
     };
 }
 
+
 function ensureDir(dir) {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, {
         recursive: true
@@ -43,6 +67,7 @@ function writeRow(tableName, row) {
 
 function handleBlock(parsed) {
     const {
+        sender_id,
         jce,
         time,
         json_encoded,
@@ -51,6 +76,7 @@ function handleBlock(parsed) {
         metadata
     } = parsed;
     const meta = extractMetadata(metadata || '');
+    const team = simulateTeam(sender_id);
     const header = json_encoded.header;
     const extrinsic = json_encoded.extrinsic;
     const disputes = extrinsic.disputes || {};
@@ -61,8 +87,8 @@ function handleBlock(parsed) {
     const row = {
         time,
         slot: header.slot,
-        team: meta.team,
-        sender_id: meta.sender_id,
+        team: team,
+        sender_id: sender_id,
         elapsed: elapsed || nil,
         parent: header.parent,
         parent_state_root: header.parent_state_root,
@@ -87,6 +113,7 @@ function handleBlock(parsed) {
 // missing timeslot
 function handleStatistics(parsed) {
     const {
+        sender_id,
         jce,
         time,
         json_encoded,
@@ -95,6 +122,7 @@ function handleStatistics(parsed) {
         metadata
     } = parsed;
     const meta = extractMetadata(metadata || '');
+    const team = simulateTeam(sender_id);
 
     // validatorstatistics
     json_encoded.vals_current.forEach((current, validatorIdx) => {
@@ -102,8 +130,8 @@ function handleStatistics(parsed) {
         const row = {
             time,
             slot: jce,
-            team: meta.team,
-            sender_id: meta.sender_id,
+            team: team,
+            sender_id: sender_id,
             elapsed,
             validator_id: validatorIdx,
             current_blocks: current.blocks,
@@ -130,8 +158,8 @@ function handleStatistics(parsed) {
         const row = {
             time,
             slot: jce,
-            team: meta.team,
-            sender_id: meta.sender_id,
+            team: team,
+            sender_id: sender_id,
             elapsed,
             core: coreIdx,
             da_load: core.da_load,
@@ -157,8 +185,8 @@ function handleStatistics(parsed) {
         const row = {
             time,
             slot: jce,
-            team: meta.team,
-            sender_id: meta.sender_id,
+            team: team,
+            sender_id: sender_id,
             elapsed,
             service_id: serviceIdx,
             ...svc.record,
@@ -180,14 +208,15 @@ function handleWorkReport(parsed) {
         metadata
     } = parsed;
     const meta = extractMetadata(metadata || '');
+    const team = simulateTeam(sender_id);
     const ps = json_encoded.package_spec;
     const ctx = json_encoded.context;
 
     const row = {
         time,
         slot: jce,
-        team: meta.team,
-        sender_id: meta.sender_id,
+        team: team,
+        sender_id: sender_id,
         elapsed,
         work_package_hash: ps.hash,
         bundle_length: ps.length,
@@ -217,6 +246,7 @@ function handleWorkReport(parsed) {
 
 function handlePreimage(parsed) {
     const {
+        sender_id,
         time,
         json_encoded,
         elapsed,
@@ -224,12 +254,13 @@ function handlePreimage(parsed) {
         metadata
     } = parsed;
     const meta = extractMetadata(metadata || '');
+    const team = simulateTeam(sender_id);
     const preimageHash = json_encoded.blob ? jamutil.blake2b256AsHex(json_encoded.blob) : null;
     const row = {
         time,
         slot: jce,
-        team: meta.team,
-        sender_id: meta.sender_id,
+        team: team,
+        sender_id: sender_id,
         elapsed,
         requester: json_encoded.requester,
         preimage_hash: preimageHash,
@@ -243,6 +274,7 @@ function handlePreimage(parsed) {
 
 function handleAssurance(parsed) {
     const {
+        sender_id,
         jce,
         time,
         json_encoded,
@@ -251,11 +283,12 @@ function handleAssurance(parsed) {
         metadata
     } = parsed;
     const meta = extractMetadata(metadata || '');
+    const team = simulateTeam(sender_id);
     const row = {
         time,
         slot: jce,
-        team: meta.team,
-        sender_id: meta.sender_id,
+        team: team,
+        sender_id: sender_id,
         elapsed,
         anchor: json_encoded.anchor,
         bitfield: json_encoded.bitfield,
@@ -269,6 +302,7 @@ function handleAssurance(parsed) {
 
 function handleTicket(parsed) {
     const {
+        sender_id,
         jce,
         time,
         json_encoded,
@@ -277,11 +311,12 @@ function handleTicket(parsed) {
         metadata
     } = parsed;
     const meta = extractMetadata(metadata || '');
+    const team = simulateTeam(sender_id);
     const row = {
         time,
         slot: jce,
-        team: meta.team,
-        sender_id: meta.sender_id,
+        team: team,
+        sender_id: sender_id,
         elapsed,
         attempt: json_encoded.attempt,
         signature: json_encoded.signature,
@@ -291,8 +326,9 @@ function handleTicket(parsed) {
     writeRow('tickets', row);
 }
 
-function handleWorkPackage(parsed) {
+function handleWorkPackageBundle(parsed) {
     const {
+        sender_id,
         jce,
         time,
         json_encoded,
@@ -300,33 +336,40 @@ function handleWorkPackage(parsed) {
         codec_encoded,
         metadata
     } = parsed;
+    if (debug) console.log('workpackagebundles:', JSON.stringify(parsed, null, 2));
     const meta = extractMetadata(metadata || '');
-    const ctx = json_encoded.context;
+    const team = simulateTeam(sender_id);
+    const ctx = json_encoded.work_package.context;
     const row = {
+        sender_id,
         time,
         slot: jce,
-        team: meta.team,
-        sender_id: meta.sender_id,
+        team: team,
+        sender_id: sender_id,
         elapsed,
-        authorization: json_encoded.authorization,
-        auth_code_host: json_encoded.auth_code_host,
-        authorization_code_hash: json_encoded.authorization_code_hash,
-        parameterization_blob: json_encoded.parameterization_blob,
+        authorization: json_encoded.work_package.authorization,
+        auth_code_host: json_encoded.work_package.auth_code_host,
+        authorizer_code_hash: json_encoded.work_package.authorizer.code_hash,
+        authorizer_params: json_encoded.work_package.authorizer.params,
         anchor: ctx.anchor,
         state_root: ctx.state_root,
         beefy_root: ctx.beefy_root,
         lookup_anchor: ctx.lookup_anchor,
         lookup_anchor_slot: ctx.lookup_anchor_slot,
-        prerequisites: ctx.prerequisites ? JSON.stringify(ctx.prerequisites) : null,
+        prerequisites: ctx.prerequisites ? JSON.stringify(ctx.prerequisites) : null, //[]common.Hash
         work_items: JSON.stringify(json_encoded.items),
+        extrinsics: JSON.stringify(json_encoded.extrinsics),
+        import_segments: JSON.stringify(json_encoded.import_segments),
+        justifications: JSON.stringify(json_encoded.justifications),
         codec_encoded,
     };
-    if (debug) console.log('workpackages:', row);
-    writeRow('workpackages', row);
+    if (debug) console.log('workpackagebundles flat:', JSON.stringify(row, null, 2));
+    writeRow('workpackagebundles', row);
 }
 
 function handleNewService(parsed) {
     const {
+        sender_id,
         jce,
         time,
         json_encoded,
@@ -334,12 +377,14 @@ function handleNewService(parsed) {
         codec_encoded,
         metadata
     } = parsed;
+    if (debug) console.log('services:', JSON.stringify(parsed, null, 2));
     const meta = extractMetadata(metadata || '');
+    const team = simulateTeam(sender_id);
     const row = {
         time,
         slot: jce,
-        team: meta.team,
-        sender_id: meta.sender_id,
+        team: team,
+        sender_id: sender_id,
         elapsed,
         service_index: json_encoded.service_index,
         code_hash: json_encoded.code_hash,
@@ -350,12 +395,13 @@ function handleNewService(parsed) {
         items: json_encoded.items,
         codec_encoded,
     };
-    if (debug) console.log('services:', row);
+    if (debug) console.log('services flat:', JSON.stringify(row, null, 2));
     writeRow('services', row);
 }
 
 function handleSegment(parsed) {
     const {
+        sender_id,
         jce,
         time,
         json_encoded,
@@ -363,19 +409,29 @@ function handleSegment(parsed) {
         codec_encoded,
         metadata
     } = parsed;
-    const meta = extractMetadata(metadata || '');
+    if (debug) console.log('segments:', JSON.stringify(parsed, null, 2));
+
+    const meta = extractMetadata(metadata || ''); //wph=0xa1423e26daa56a507cc642db7a7a0e6e6d9c01133231c87d7d8ca97723876d0d|c=0|len=2
+    const team = simulateTeam(sender_id);
+    var segment_data = null;
+    var segment_length = 0
+    if (json_encoded != undefined) {
+        segment_data = json_encoded;
+        segment_length = json_encoded.length
+    }
     const row = {
         time,
         slot: jce,
-        team: meta.team,
-        sender_id: meta.sender_id,
+        team: team,
+        sender_id: sender_id,
         elapsed,
-        work_package_hash: json_encoded.work_package_hash,
-        index: json_encoded.index,
-        data: json_encoded.data,
+        work_package_hash: meta.wph,
+        index: meta.index,
+        segment_length: segment_length,
+        data: JSON.stringify(segment_data),
         codec_encoded,
     };
-    if (debug) console.log('segments:', row);
+    if (debug) console.log('segments flat:', JSON.stringify(row, null, 2));
     writeRow('segments', row);
 }
 
@@ -402,7 +458,12 @@ function JSONParse(line) {
 async function processLine(line) {
     try {
         const parsed = JSONParse(line);
-        const msg_type = parsed.msg_type;
+        const msg_type = +parsed.msg_type;
+        if (Number.isNaN(msg_type)) {
+            console.error("invalid msg_type, not a number:", parsed.msg_type);
+            return;
+        }
+
         switch (msg_type) {
             case jamutil.msgTypeBlock:
                 return handleBlock(parsed);
@@ -416,14 +477,14 @@ async function processLine(line) {
                 return handleAssurance(parsed);
             case jamutil.msgTypeTicket:
                 return handleTicket(parsed);
-            case jamutil.msgTypeWorkPackage:
-                return handleWorkPackage(parsed);
+            case jamutil.msgTypeWorkPackageBundle:
+                return handleWorkPackageBundle(parsed);
             case jamutil.msgTypeNewService:
                 return handleNewService(parsed);
             case jamutil.msgTypeSegment:
                 return handleSegment(parsed);
             default:
-                console.warn('Unhandled msg_type:', msg_type);
+                //console.warn('Unhandled msg_type:', msg_type);
         }
     } catch (err) {
         console.error('Failed to process line:', err);

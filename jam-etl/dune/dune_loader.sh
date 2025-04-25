@@ -15,6 +15,7 @@ DATA_DIR=./dune_jam
 
 # ——— DEBUG: if you only want to run a few tables, list them here (without the “jam_” prefix):
 # e.g. DEBUG_TABLES=(workreports blocks)
+#DEBUG_TABLES=(segments workpackagebundles)
 DEBUG_TABLES=()
 
 # Build list of schema files to process:
