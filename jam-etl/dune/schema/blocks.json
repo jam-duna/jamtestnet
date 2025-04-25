@@ -1,0 +1,22 @@
+[
+    { "name": "time",                "type": "timestamp" },
+    { "name": "slot",                "type": "bigint"    },
+    { "name": "team",                "type": "varchar"   },
+    { "name": "sender_id",           "type": "varchar"   },
+    { "name": "elapsed",             "type": "integer"   },
+    { "name": "parent",              "type": "varchar"   },
+    { "name": "parent_state_root",   "type": "varchar"   },
+    { "name": "extrinsic_hash",      "type": "varchar"   },
+    { "name": "header_slot",         "type": "integer"   },
+    { "name": "author_index",        "type": "integer"   },
+    { "name": "entropy_source",      "type": "varchar"   },
+    { "name": "seal",                "type": "varchar"   },
+    { "name": "num_tickets",         "type": "integer"   },
+    { "name": "num_preimages",       "type": "integer"   },
+    { "name": "num_guarantees",      "type": "integer"   },
+    { "name": "num_assurances",      "type": "integer"   },
+    { "name": "num_verdicts",        "type": "integer"   },
+    { "name": "num_culprits",        "type": "integer"   },
+    { "name": "num_faults",          "type": "integer"   },
+    { "name": "codec_encoded", "type": "varchar",    "nullable": true}
+  ]

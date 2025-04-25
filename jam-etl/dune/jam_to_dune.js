@@ -4,7 +4,7 @@
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
-const jamutil = require('../jamtart')
+const jamutil = require('../jamutil')
 
 const OUTPUT_DIR = './dune_jam';
 const DATA_DIR = '../logs';
@@ -67,7 +67,7 @@ function handleBlock(parsed) {
         parent: header.parent,
         parent_state_root: header.parent_state_root,
         extrinsic_hash: header.extrinsic_hash,
-        //slot: header.slot,
+        header_slot: header.slot,
         author_index: header.author_index,
         entropy_source: header.entropy_source,
         seal: header.seal,
@@ -118,10 +118,10 @@ function handleStatistics(parsed) {
             last_pre_images_size: last.pre_images_size,
             last_guarantees: last.guarantees,
             last_assurances: last.assurances,
-            codec_encoded: null
+            //codec_encoded: null
         };
-        console.log(`validatorstatistics[${validatorIdx}]:\n`, JSON.stringify(current, null, 2), `\n`, JSON.stringify(last, null, 2));
-        console.log(`validatorstatistics[${validatorIdx}]:`, row);
+        if (debug) console.log(`validatorstatistics[${validatorIdx}]:\n`, JSON.stringify(current, null, 2), `\n`, JSON.stringify(last, null, 2));
+        if (debug) console.log(`validatorstatistics[${validatorIdx}]:`, row);
         writeRow('validatorstatistics', row);
     });
 
@@ -142,7 +142,7 @@ function handleStatistics(parsed) {
             extrinsic_count: core.extrinsic_count,
             bundle_size: core.bundle_size,
             gas_used: core.gas_used,
-            codec_encoded: null
+            //codec_encoded: null
         };
         if (debug) {
             console.log(`corestatistics[${coreIdx}]:\n`, JSON.stringify(core, null, 2));
@@ -162,10 +162,10 @@ function handleStatistics(parsed) {
             elapsed,
             service_id: serviceIdx,
             ...svc.record,
-            codec_encoded: null
+            //codec_encoded: null
         };
-        console.log(`servicestatistics ${serviceIdx}\n`, JSON.stringify(svc, null, 2));
-        console.log(`servicestatistics ${serviceIdx}`, row);
+        if (debug) console.log(`servicestatistics ${serviceIdx}\n`, JSON.stringify(svc, null, 2));
+        if (debug) console.log(`servicestatistics ${serviceIdx}`, row);
         writeRow('servicestatistics', row);
     });
 }
@@ -224,6 +224,7 @@ function handlePreimage(parsed) {
         metadata
     } = parsed;
     const meta = extractMetadata(metadata || '');
+    const preimageHash = json_encoded.blob ? jamutil.blake2b256AsHex(json_encoded.blob) : null;
     const row = {
         time,
         slot: jce,
@@ -231,6 +232,7 @@ function handlePreimage(parsed) {
         sender_id: meta.sender_id,
         elapsed,
         requester: json_encoded.requester,
+        preimage_hash: preimageHash,
         blob: json_encoded.blob,
         codec_encoded,
     };
@@ -283,7 +285,7 @@ function handleTicket(parsed) {
         elapsed,
         attempt: json_encoded.attempt,
         signature: json_encoded.signature,
-        codec_encoded,
+        //codec_encoded,
     };
     if (debug) console.log('tickets:', row);
     writeRow('tickets', row);
@@ -383,7 +385,12 @@ function JSONParse(line) {
         if (parsed.elapsed == undefined) {
             parsed.elapsed = null;
         }
-        parsed.jce = jamutil.isoToJCE(parsed.time);
+        jce = jamutil.isoToJCE(parsed.time);
+        if (jce < 0) {
+            console.log(`invalid slot: ${time} | jce=${jce}`);
+            panic('slot < 0');
+        }
+        parsed.jce = jce;
         //console.log('Parsed JSON:', parsed);
         return parsed
     } catch (err) {
@@ -425,14 +432,21 @@ async function processLine(line) {
 
 async function exportAllFilesSequentially() {
     ensureDir(OUTPUT_DIR);
+    // —————— clear out any old jsonl files ——————
+    fs.readdirSync(OUTPUT_DIR)
+        .filter(f => f.endsWith('.jsonl'))
+        .forEach(f => fs.unlinkSync(path.join(OUTPUT_DIR, f)));
+
     const postfix = '.log';
     const files = fs.readdirSync(DATA_DIR)
         .filter(f => f.endsWith(postfix))
         .sort();
 
+    var cnt = 0;
     for (const file of files) {
         const filePath = path.join(DATA_DIR, file);
-        console.log(`Processing ${filePath}`);
+        console.log(`${cnt} - ${filePath}`);
+        cnt++
         const rl = readline.createInterface({
             input: fs.createReadStream(filePath),
             crlfDelay: Infinity
