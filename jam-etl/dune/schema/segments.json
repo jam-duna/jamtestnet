@@ -1,0 +1,10 @@
+[
+    { "name": "time",           "type": "timestamp" },
+    { "name": "slot",           "type": "bigint"    },
+    { "name": "team",           "type": "varchar"   },
+    { "name": "sender_id",      "type": "varchar"   },
+    { "name": "elapsed",        "type": "integer",  "nullable": true },
+    { "name": "segment_length", "type": "integer"   },
+    { "name": "data",           "type": "varchar",  "nullable": true },
+    { "name": "codec_encoded",  "type": "varchar",  "nullable": true }
+  ]

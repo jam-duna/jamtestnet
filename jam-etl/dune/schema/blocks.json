@@ -7,7 +7,7 @@
     { "name": "parent",              "type": "varchar"   },
     { "name": "parent_state_root",   "type": "varchar"   },
     { "name": "extrinsic_hash",      "type": "varchar"   },
-    { "name": "header_slot",         "type": "integer"   },
+    { "name": "header_slot",         "type": "bigint"    },
     { "name": "author_index",        "type": "integer"   },
     { "name": "entropy_source",      "type": "varchar"   },
     { "name": "seal",                "type": "varchar"   },
