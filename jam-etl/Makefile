@@ -15,7 +15,12 @@ dune_load_dry: dune_log
 	@$(DUNE_LOADER) --dry-run
 
 dune_load_run: dune_log
-	@echo "Dry-run dune loader..."
+	@echo "Run dune loader..."
+	@$(DUNE_LOADER) --run
+
+dune_loader_only: 
+	@echo "Run dune loader only..."
+	@cd dune
 	@$(DUNE_LOADER) --run
 
 bq_log:

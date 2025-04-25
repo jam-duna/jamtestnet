@@ -13,8 +13,7 @@ fi
 SCHEMA_DIR=./schema
 DATA_DIR=./dune_jam
 
-# ——— DEBUG: if you only want to run a few tables, list them here (without the “jam_” prefix):
-# e.g. DEBUG_TABLES=(workreports blocks)
+#DEBUG_TABLES=(segments workpackagebundles)
 DEBUG_TABLES=()
 
 # Build list of schema files to process:
@@ -29,9 +28,23 @@ if [ ${#DEBUG_TABLES[@]} -gt 0 ]; then
     fi
   done
 else
-  # no debug list → pick up everything
   mapfile -t schemas < <(printf "%s\n" "$SCHEMA_DIR"/*.json)
 fi
+
+do_insert() {
+  local datafile=$1 table=$2
+  if [ ! -s "$datafile" ]; then
+    echo "⚠️  No data or empty file for $table → skipping INSERT"
+    return
+  fi
+  if $DRY_RUN; then
+    echo "    → node dune_rec_insert.js --dry-run \"$datafile\" \"$table\""
+    node ./dune_rec_insert.js --dry-run "$datafile" "$table"
+  else
+    echo "    → node dune_rec_insert.js \"$datafile\" \"$table\""
+    node ./dune_rec_insert.js "$datafile" "$table"
+  fi
+}
 
 for schema in "${schemas[@]}"; do
   name=$(basename "$schema" .json)
@@ -40,24 +53,22 @@ for schema in "${schemas[@]}"; do
 
   echo
   echo "=== Processing table: $table ==="
+  echo "Step 1 → CREATE | Step 2 → CLEAR | Step 3 → INSERT"
 
+  echo "  Step 1 → CREATE"
   if $DRY_RUN; then
-    echo "[DRY-RUN] $schema"
-    echo "Step 1 → CREATE | Step 2 → CLEAR | Step 3 → INSERT"
-    echo "  Step 1 → CREATE"
     node ./dune_tbl_create.js --dry-run "$schema" "$table" "JAM ${name^}"
-    echo "  Step 2 → CLEAR"
-    node ./dune_tbl_clear.js "$table"
-    echo "  Step 3 → INSERT"
-    node ./dune_rec_insert.js --dry-run "$datafile" "$table"
   else
-    echo "[RUN] $schema"
-    echo "Step 1 → CREATE | Step 2 → CLEAR | Step 3 → INSERT"
-    echo "  Step 1 → CREATE"
     node ./dune_tbl_create.js "$schema" "$table" "JAM ${name^}"
-    echo "  Step 2 → CLEAR"
-    node ./dune_tbl_clear.js --run "$table"
-    echo "  Step 3 → INSERT"
-    node ./dune_rec_insert.js "$datafile" "$table"
   fi
+
+  echo "  Step 2 → CLEAR"
+  if $DRY_RUN; then
+    node ./dune_tbl_clear.js "$table"
+  else
+    node ./dune_tbl_clear.js --run "$table"
+  fi
+
+  echo "  Step 3 → INSERT"
+  do_insert "$datafile" "$table"
 done

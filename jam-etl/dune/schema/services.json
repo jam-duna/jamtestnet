@@ -1,0 +1,15 @@
+[
+    { "name": "time",           "type": "timestamp" },
+    { "name": "slot",           "type": "bigint"   },
+    { "name": "team",           "type": "varchar"   },
+    { "name": "sender_id",      "type": "varchar"   },
+    { "name": "elapsed",        "type": "integer",  "nullable": true },
+    { "name": "service_index",  "type": "bigint"    },
+    { "name": "code_hash",      "type": "varchar"   },
+    { "name": "balance",        "type": "integer"   },
+    { "name": "min_item_gas",   "type": "integer"   },
+    { "name": "min_memo_gas",   "type": "integer"   },
+    { "name": "code_size",      "type": "integer"   },
+    { "name": "items",          "type": "integer"   },
+    { "name": "codec_encoded",  "type": "varchar",  "nullable": true }
+  ]

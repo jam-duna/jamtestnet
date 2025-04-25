@@ -13,7 +13,7 @@
     { "name": "state_root",            "type": "varchar"   },
     { "name": "beefy_root",            "type": "varchar"   },
     { "name": "lookup_anchor",         "type": "varchar"   },
-    { "name": "lookup_anchor_slot",    "type": "integer"   },
+    { "name": "lookup_anchor_slot",    "type": "bigint"    },
     { "name": "prerequisites",         "type": "varchar", "nullable": true},
     { "name": "core_index",            "type": "integer"   },
     { "name": "authorizer_hash",       "type": "varchar"   },

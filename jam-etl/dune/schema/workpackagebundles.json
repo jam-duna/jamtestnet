@@ -1,0 +1,21 @@
+[
+    { "name": "time",                    "type": "timestamp" },
+    { "name": "slot",                    "type": "bigint"    },
+    { "name": "team",                    "type": "varchar"   },
+    { "name": "sender_id",               "type": "varchar"   },
+    { "name": "elapsed",                 "type": "integer",  "nullable": true },
+    { "name": "authorization",           "type": "varchar"   },
+    { "name": "auth_code_host",          "type": "integer"   },
+    { "name": "authorizer_code_hash",    "type": "varchar"   },
+    { "name": "authorizer_params",       "type": "varchar"   },
+    { "name": "anchor",                  "type": "varchar"   },
+    { "name": "state_root",              "type": "varchar"   },
+    { "name": "beefy_root",              "type": "varchar"   },
+    { "name": "lookup_anchor",           "type": "varchar"   },
+    { "name": "lookup_anchor_slot",      "type": "bigint"    },
+    { "name": "prerequisites",           "type": "varchar",   "nullable": true },
+    { "name": "extrinsics",              "type": "varchar"   },
+    { "name": "import_segments",         "type": "varchar"   },
+    { "name": "justifications",          "type": "varchar"   },
+    { "name": "codec_encoded",           "type": "varchar",   "nullable": true }
+  ]

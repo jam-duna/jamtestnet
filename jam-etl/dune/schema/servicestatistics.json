@@ -1,6 +1,6 @@
 [
     { "name": "time",                 "type": "timestamp" },
-    { "name": "slot",                 "type": "integer"   },
+    { "name": "slot",                 "type": "bigint"   },
     { "name": "team",                 "type": "varchar"   },
     { "name": "sender_id",            "type": "varchar"   },
     { "name": "elapsed",              "type": "integer",   "nullable": true },
