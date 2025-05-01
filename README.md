@@ -84,10 +84,11 @@ The assurances dataset, after setting up a "Bootstrap" and "Fib" service (setup 
 * WRITE
 * YIELD
 * LOG
+* PROVIDE
 
-See [assurances.txt](./assurances.txt).  As of 0.6.4 we use the [LOG host function call](https://hackmd.io/@polkadot/jip1) liberally, which shows writes out the result of the host function result in many of the calls along with the gas result.  
+See [assurances.txt](./assurances.txt).  As of 0.6.5 we use the [LOG host function call](https://hackmd.io/@polkadot/jip1) liberally, which shows writes out the result of the host function result in many of the calls along with the gas result.  
 
-As of 0.6.4, we have `refine` using all of the following:
+As of 0.6.5, we have `refine` using all of the following:
 
 * EXPORT
 * EXPUNGE
@@ -237,8 +238,8 @@ Feb - early March 2025:
 Late March 2025 - Early April 2025:
 * [0.6.4.4 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.4)
 
-Late April 2025:
-* [0.6.5.0 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.5.0)
+Late April 2025 - Early May 2025:
+* [0.6.5.1 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.5.1)
 
 ## Found an Issue?
 
