@@ -1,0 +1,1005 @@
+INFO [05-05|15:16:57.041] JAMTEST                                  jam=fib2 targetN=10
+Test PreReq: false
+RPC server started, listening on :11105
+INFO [05-05|15:17:01.264] proposeBlock                             mode=fallback s.ID=4 p=03c6..db92 h=5176..4c69 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=5e11..9ce3  EpochMarker(η1'=6f6a..af2a, η2'=835a..4eaf)"
+jamtest: setupJceManager returned.
+jamtest: JCE Mode: fast
+INFO [05-05|15:17:04.042] corevm                                   codeHash=0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 len=26762
+INFO [05-05|15:17:04.042] auth_copy                                codeHash=0xd5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37c len=1214
+INFO [05-05|15:17:04.042] Waiting for the first block to be ready...
+INFO [05-05|15:17:07.289] proposeBlock                             mode=fallback s.ID=4 p=5176..4c69 h=9428..909f e'=1 m'=1 "len(γ_a')"=0 blk="H_t=13 H_r=e99c..e012 "
+INFO [05-05|15:17:09.151] proposeBlock                             mode=fallback s.ID=4 p=9428..909f h=7ccf..014a e'=1 m'=2 "len(γ_a')"=3 blk="H_t=14 H_r=a084..e2b8  |E_T|=3"
+INFO [05-05|15:17:15.366] proposeBlock                             mode=fallback s.ID=5 p=7ccf..014a h=c5ba..a1c5 e'=1 m'=3 "len(γ_a')"=6 blk="H_t=15 H_r=f177..1467  |E_T|=3"
+INFO [05-05|15:17:16.042] Work package submitted                   identifier="NewService(corevm, 2f8f..2a00)" hash=0xdec115fbf63069107cfddc1d59373e7dc75fc7c6264c84ea7239c632b848585b core=0
+INFO [05-05|15:17:21.242] proposeBlock                             mode=fallback s.ID=0 p=c5ba..a1c5 h=2799..4cab e'=1 m'=4 "len(γ_a')"=9 blk="H_t=16 H_r=9756..ff82  |E_T|=3 |E_G|=1"
+DEBUG[05-05|15:17:27.058] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0xdec115fbf63069107cfddc1d59373e7dc75fc7c6264c84ea7239c632b848585b","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x1d38851248f8f839c3b40f47ca355a579c80b1837c6ef6ba63f6d0b8d58d7496","G":1000000,"D":"0x00242f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a008a680000"}'
+DEBUG[05-05|15:17:27.058] NEW                                      reg="[10 4278058832 0 0 0 4278124686 1 4278124687 26762 100 100 0 64]" gasCharged=10 beforeGas=999,839 afterGas=999,829
+DEBUG[05-05|15:17:27.058] bootstrap_accumulate: NEW OK             SERVICE=2953942612 code_hash_ptr=feff008f code_hash_ptr=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 code_len=26762 min_item_gas=100 min_memo_gas=100
+DEBUG[05-05|15:17:27.058] WRITE                                    reg="[10 4278058832 0 0 0 2953942612 1 4278058852 4 4278058840 4 0 64]" gasCharged=10 beforeGas=999,822 afterGas=999,812
+DEBUG[05-05|15:17:27.058] bootstrap_accumulate: WRITE NONE         numStorageItems=5 StorageSize=5932 s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=549611b0 vlen=4
+DEBUG[05-05|15:17:27.058] bootstrap_accumulate: WRITE storage      s=0 a_o=5932 a_i=5
+DEBUG[05-05|15:17:27.058] TRANSFER                                 reg="[12 4278058832 0 128 0 2953942612 1 2953942612 500000 100 4278058856 4278058984 0]" gasCharged=110 beforeGas=999,740 afterGas=999,630
+DEBUG[05-05|15:17:27.058] bootstrap_accumulate: TRANSFER OK        sender=0 receiver=2953942612 amount=500000 gaslimit=100
+DEBUG[05-05|15:17:27.058] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0x549611b000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:17:27.058] ProcessDeferredTransfers                 service=0 gasUsed=0 transferCount=0
+DEBUG[05-05|15:17:27.058] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=1
+DEBUG[05-05|15:17:27.058] BEEFY-C                                  s=0 h=0x549611b000000000000000000000000000000000000000000000000000000000 encoded=00000000549611b000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:17:27.058] BEEFY accumulation root                  r=0x253e7b79a6f60c38d85fa99ae8f0fbf3072e5bb869d39e4319ef609b0395e14b
+INFO [05-05|15:17:27.086] proposeBlock                             mode=fallback s.ID=4 p=2799..4cab h=2fa5..2e56 e'=1 m'=5 "len(γ_a')"=12 blk="H_t=17 H_r=0b17..5e63  |E_T|=3 |E_A|=6"
+INFO [05-05|15:17:28.043] Work package accumulated                 hash=0xdec115fbf63069107cfddc1d59373e7dc75fc7c6264c84ea7239c632b848585b count=1
+INFO [05-05|15:17:28.043] All work packages accumulated
+INFO [05-05|15:17:28.043] SubmitAndWaitForPreimage SUBMITTED       id=2953942612 preimageHash=0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 len=26762
+INFO [05-05|15:17:33.219] proposeBlock                             mode=fallback s.ID=0 p=2fa5..2e56 h=0ddf..740a e'=1 m'=6 "len(γ_a')"=12 blk="H_t=18 H_r=137a..43b3  |E_P|=1"
+INFO [05-05|15:17:35.043] SubmitAndWaitForPreimage ON-CHAIN        id=2953942612 preimageHash=0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 len=26762
+INFO [05-05|15:17:35.043] ----- NEW SERVICE                        service=corevm     service_idx=2,953,942,612
+INFO [05-05|15:17:35.043] Work package submitted                   identifier="NewService(auth_copy, d5b1..b37c)" hash=0x3da87be3d8e46e44a70eca7578d7e256a18b30ec8f2fb7c126ca2dd2a6468c3e core=0
+INFO [05-05|15:17:39.274] proposeBlock                             mode=fallback s.ID=4 p=0ddf..740a h=4929..e96a e'=1 m'=7 "len(γ_a')"=12 blk="H_t=19 H_r=379e..6bcf  |E_G|=1"
+DEBUG[05-05|15:17:45.227] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0x3da87be3d8e46e44a70eca7578d7e256a18b30ec8f2fb7c126ca2dd2a6468c3e","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x46f2131d1d909d716994fa83b45369b7e97332107d490ec3e866fe1adc61c972","G":1000000,"D":"0x0024d5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37cbe040000"}'
+DEBUG[05-05|15:17:45.228] NEW                                      reg="[10 4278058832 0 0 0 4278124686 1 4278124687 1214 100 100 0 64]" gasCharged=10  beforeGas=999,839 afterGas=999,829
+DEBUG[05-05|15:17:45.228] bootstrap_accumulate: NEW OK             SERVICE=1065941251 code_hash_ptr=feff008f code_hash_ptr=d5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37c code_len=1214  min_item_gas=100 min_memo_gas=100
+DEBUG[05-05|15:17:45.228] WRITE                                    reg="[10 4278058832 0 0 0 1065941251 1 4278058852 4 4278058840 4 0 64]" gasCharged=10  beforeGas=999,822 afterGas=999,812
+DEBUG[05-05|15:17:45.228] bootstrap_accumulate: WRITE OK           numStorageItems=5 StorageSize=5932 l=4 s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=03f9883f vlen=4
+DEBUG[05-05|15:17:45.228] bootstrap_accumulate: WRITE storage      s=0 a_o=5932 a_i=5
+DEBUG[05-05|15:17:45.228] TRANSFER                                 reg="[12 4278058832 0 128 0 1065941251 1 1065941251 500000 100 4278058856 4278058984 0]" gasCharged=110 beforeGas=999,740 afterGas=999,630
+DEBUG[05-05|15:17:45.228] bootstrap_accumulate: TRANSFER OK        sender=0 receiver=1065941251 amount=500000 gaslimit=100
+DEBUG[05-05|15:17:45.228] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0x03f9883f00000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:17:45.228] ProcessDeferredTransfers                 service=0          gasUsed=0 transferCount=0
+DEBUG[05-05|15:17:45.228] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=1
+DEBUG[05-05|15:17:45.231] BEEFY-C                                  s=0 h=0x03f9883f00000000000000000000000000000000000000000000000000000000 encoded=0000000003f9883f00000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:17:45.231] BEEFY accumulation root                  r=0xe44237e17cf280e766b1279774ab870d6f811a4800b6053d7dfb141b36b9258a
+INFO [05-05|15:17:45.259] proposeBlock                             mode=fallback s.ID=1 p=4929..e96a h=cf39..f1d2 e'=1 m'=8 "len(γ_a')"=12 blk="H_t=20 H_r=7815..1ff4  |E_A|=6"
+INFO [05-05|15:17:47.043] Work package accumulated                 hash=0x3da87be3d8e46e44a70eca7578d7e256a18b30ec8f2fb7c126ca2dd2a6468c3e count=1
+INFO [05-05|15:17:47.043] All work packages accumulated
+INFO [05-05|15:17:47.043] SubmitAndWaitForPreimage SUBMITTED       id=1065941251 preimageHash=0xd5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37c len=1214
+INFO [05-05|15:17:51.005] proposeBlock                             mode=fallback s.ID=0 p=cf39..f1d2 h=28a9..7831 e'=1 m'=9 "len(γ_a')"=12 blk="H_t=21 H_r=b29b..2752  |E_P|=1"
+INFO [05-05|15:17:52.044] SubmitAndWaitForPreimage ON-CHAIN        id=1065941251 preimageHash=0xd5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37c len=1214
+INFO [05-05|15:17:52.044] ----- NEW SERVICE                        service=auth_copy  service_idx=1,065,941,251
+INFO [05-05|15:17:52.044] testServices Loaded                      jam=fib2 testServices="map[auth_copy:0x1400414c800 corevm:0x1400414c780]" targetN=10
+INFO [05-05|15:17:52.044] FIB2 START
+INFO [05-05|15:17:52.044] corevm_child                             codeHash=0xacdae28ab9945b8db015ee1ed59268014b7d2b45bde861d61785f8b237b45ce4 len=4789
+INFO [05-05|15:17:52.044] Work package submitted                   identifier=FIB2(init)                          hash=0xc1dcc24f76b078145ec332e76b1952efbbf951e444c7da9e28226112b4c1ff66 core=1
+INFO [05-05|15:17:57.255] proposeBlock                             mode=fallback s.ID=1 p=28a9..7831 h=8b53..8a66 e'=1 m'=10 "len(γ_a')"=12 blk="H_t=22 H_r=2499..a7a4   WinningTickets(12) |E_G|=1"
+DEBUG[05-05|15:18:03.235] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0xc1dcc24f76b078145ec332e76b1952efbbf951e444c7da9e28226112b4c1ff66","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x0024acdae28ab9945b8db015ee1ed59268014b7d2b45bde861d61785f8b237b45ce4b5120000"}'
+DEBUG[05-05|15:18:03.237] SOLICIT                                  reg="[134 4278055872 0 0 0 4278124687 1 4278124687 4789 0 36 0 64]" gasCharged=10  beforeGas=999,834 afterGas=999,824
+DEBUG[05-05|15:18:03.237] corevm_accumulate: SOLICIT OK            h=0xacdae28ab9945b8db015ee1ed59268014b7d2b45bde861d61785f8b237b45ce4 z=4789 newvalue=[]
+DEBUG[05-05|15:18:03.237] BEEFY OK-HALT with yield @SINGLE ACCUMULATE s=2953942612 B=0x0000000000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:03.237] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0xc1dcc24f76b078145ec332e76b1952efbbf951e444c7da9e28226112b4c1ff66","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:18:03.239] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:18:03.239] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:18:03.239] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:18:03.239] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:18:03.240] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:03.240] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:03.240] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:03.240] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:03.240] BEEFY accumulation root                  r=0x80e16278c1e787bc09d8cdf3e6fa5e2c7808d658ac5526b24fd1d8c2f4dd6650
+INFO [05-05|15:18:03.268] proposeBlock                             mode=fallback s.ID=4 p=8b53..8a66 h=b655..a647 e'=1 m'=11 "len(γ_a')"=12 blk="H_t=23 H_r=a0d9..c365  |E_A|=6"
+INFO [05-05|15:18:04.045] Work package accumulated                 hash=0xc1dcc24f76b078145ec332e76b1952efbbf951e444c7da9e28226112b4c1ff66 count=1
+INFO [05-05|15:18:04.045] All work packages accumulated
+INFO [05-05|15:18:04.045] Fib2-(init) result key 0                 result=
+INFO [05-05|15:18:04.045] Fib2-(init) result key 1                 result=
+INFO [05-05|15:18:04.045] Fib2-(init) result key 2                 result=
+INFO [05-05|15:18:04.045] Fib2-(init) result key 5                 result=
+INFO [05-05|15:18:04.045] Fib2-(init) result key 6                 result=
+INFO [05-05|15:18:04.045] Fib2-(init) result key 7                 result=
+INFO [05-05|15:18:04.045] Fib2-(init) result key 8                 result=
+INFO [05-05|15:18:04.045] Fib2-(init) result key 9                 result=
+INFO [05-05|15:18:04.045] SubmitAndWaitForPreimage SUBMITTED       id=2953942612 preimageHash=0xacdae28ab9945b8db015ee1ed59268014b7d2b45bde861d61785f8b237b45ce4 len=4789
+INFO [05-05|15:18:09.298] proposeBlock                             mode=safrole  s.ID=2 p=b655..a647 h=eb12..cb2b e'=2 m'=0  "len(γ_a')"=3  blk="H_t=24 H_r=be37..12f1  EpochMarker(η1'=767a..23ae, η2'=6f6a..af2a) |E_T|=3 |E_P|=1"
+INFO [05-05|15:18:10.045] SubmitAndWaitForPreimage ON-CHAIN        id=2953942612 preimageHash=0xacdae28ab9945b8db015ee1ed59268014b7d2b45bde861d61785f8b237b45ce4 len=4789
+INFO [05-05|15:18:10.045] COREVM CHILD LOADED
+INFO [05-05|15:18:10.045] Work package submitted                   identifier=FIB2(0)                             hash=0x73e858bd8a7105040f200484cbfc60a1ca0e517bc9c46ff3eaa64f0d68eaf54a core=1
+INFO [05-05|15:18:15.130] proposeBlock                             mode=safrole  s.ID=5 p=eb12..cb2b h=1bb1..af61 e'=2 m'=1  "len(γ_a')"=6  blk="H_t=25 H_r=42a4..70f7  |E_T|=3 |E_G|=1"
+DEBUG[05-05|15:18:21.082] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x73e858bd8a7105040f200484cbfc60a1ca0e517bc9c46ff3eaa64f0d68eaf54a","E":"0x101ccbad1251e6e9c54a86ebeb93acd77950593411cb101d52a89b26a8a6c45c","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x8b620d24e8e7082d3ba0ef8a673e10aa6f8c523e991dbcde8eb3c50d32b44efc","G":1000000,"D":"0x000c000000000100000000000000"}'
+DEBUG[05-05|15:18:21.084] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:18:21.084] corevm_accumulate: WRITE NONE            numStorageItems=5 StorageSize=31757 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=000000000100000000000000 vlen=12
+DEBUG[05-05|15:18:21.084] corevm_accumulate: WRITE storage         s=2953942612 a_o=31757 a_i=5
+DEBUG[05-05|15:18:21.084] INFO                                     reg="[136 4278055872 0 256 0 4278124687 4278058848 2953942612 4278056024 0 4278056280 4278056280 0]" gasCharged=10  beforeGas=999,609 afterGas=999,599
+DEBUG[05-05|15:18:21.084] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 31907 100 100 5 31757]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000a37c00000000000064000000000000006400000000000000050000000d7c000000000000
+DEBUG[05-05|15:18:21.084] WRITE                                    reg="[368 4278055608 0 256 0 1 4278055623 4278055623 1 4278055624 8 4278056280 0]" gasCharged=10  beforeGas=999,582 afterGas=999,572
+DEBUG[05-05|15:18:21.084] corevm_accumulate: WRITE NONE            numStorageItems=6 StorageSize=31797 s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:18:21.084] corevm_accumulate: WRITE storage         s=2953942612 a_o=31797 a_i=6
+DEBUG[05-05|15:18:21.085] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=998,699 afterGas=998,699
+DEBUG[05-05|15:18:21.085] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:18:21.085] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=997,923 afterGas=997,923
+DEBUG[05-05|15:18:21.085] INFO#corevm                              m="info@n=0: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:18:21.085] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=997,908 afterGas=997,898
+DEBUG[05-05|15:18:21.085] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=997,879 afterGas=997,869
+DEBUG[05-05|15:18:21.085] corevm_accumulate: WRITE NONE            numStorageItems=7 StorageSize=31837 s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=003a0f0000000000         vlen=8
+DEBUG[05-05|15:18:21.085] corevm_accumulate: WRITE storage         s=2953942612 a_o=31837 a_i=7
+DEBUG[05-05|15:18:21.085] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=996,928 afterGas=996,928
+DEBUG[05-05|15:18:21.085] INFO#corevm                              m="write_result key=[9], result=f3a00"
+DEBUG[05-05|15:18:21.085] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=996,347 afterGas=996,347
+DEBUG[05-05|15:18:21.085] CHECKPOINT                               reg="[380 4278055872 17 69380 16 196633 4278058848 51 0 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=996,241 afterGas=996,231
+DEBUG[05-05|15:18:21.085] corevm_accumulate: CHECKPOINT            g=996231
+DEBUG[05-05|15:18:21.085] LOG                                      reg="[380 4278055872 17 69380 16 196633 4278058848 3 0 0 69432 17 69400]" gasCharged=0   beforeGas=996,226 afterGas=996,226
+DEBUG[05-05|15:18:21.085] DEBUG#corevm                             m="corevm checkpoint"
+DEBUG[05-05|15:18:21.085] WRITE                                    reg="[382 4278055608 17 69380 16 1 4278055623 4278055623 1 4278055624 8 17 69400]" gasCharged=10  beforeGas=996,208 afterGas=996,198
+DEBUG[05-05|15:18:21.085] corevm_accumulate: WRITE NONE            numStorageItems=8 StorageSize=31877 s=2953942612 mu_k=07       k=0xf7a0c652460cce77eaf3fab8ac01aea98f44a37b42e74561531c941f6df0c8e4 v=2a00000000000000         vlen=8
+DEBUG[05-05|15:18:21.085] corevm_accumulate: WRITE storage         s=2953942612 a_o=31877 a_i=8
+DEBUG[05-05|15:18:21.085] LOG                                      reg="[478 4278055608 1114112 16 2 1245196 52 2 0 0 1245196 31 404]" gasCharged=0   beforeGas=995,308 afterGas=995,308
+DEBUG[05-05|15:18:21.085] INFO#corevm                              m="write_result key=[7], result=2a"
+DEBUG[05-05|15:18:21.085] getArgumentOutputs - PANIC               service=corevm
+DEBUG[05-05|15:18:21.085] BEEFY PANIC @SINGLE ACCUMULATE           s=2953942612 B=0x0000000000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:21.085] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x73e858bd8a7105040f200484cbfc60a1ca0e517bc9c46ff3eaa64f0d68eaf54a","E":"0x101ccbad1251e6e9c54a86ebeb93acd77950593411cb101d52a89b26a8a6c45c","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:18:21.086] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:18:21.086] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:18:21.086] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:18:21.086] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:18:21.086] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:21.086] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:21.086] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:21.088] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:21.088] BEEFY accumulation root                  r=0x80e16278c1e787bc09d8cdf3e6fa5e2c7808d658ac5526b24fd1d8c2f4dd6650
+INFO [05-05|15:18:21.116] proposeBlock                             mode=safrole  s.ID=4 p=1bb1..af61 h=c4c4..70d4 e'=2 m'=2  "len(γ_a')"=9  blk="H_t=26 H_r=8d3b..99e6  |E_T|=3 |E_A|=6"
+WARN [05-05|15:18:21.602] sendQuicBytes-length                     peerID=4 err="Application error 0x0 (local): stream open failed" code=144 msgLen=132 msg=0xc4c44e874b2c62b4d42b026f60ed93c6fe8bc76597e1dd431c5b1ea806a570d4000101000e3f803c1f241ab07e1a8242f0fbd9cf5c5c5b778ff08d7d12b5b38a0c1901753676307fae37020585d8836eb96d2f9fac5e42b9d6c510c81775f5d36d6492cb066c6b301b4f10657603c52aa6e9fd469e559ccc83a6579fd5882d7d22320c0c
+WARN [05-05|15:18:21.602] SendAuditAnnouncement                    n=[N5] tranche0=0 err="sendQuicBytes[AUDIT_ANNOUNCEMENT]: Application error 0x0 (local): stream open failed"
+INFO [05-05|15:18:22.046] Work package accumulated                 hash=0x73e858bd8a7105040f200484cbfc60a1ca0e517bc9c46ff3eaa64f0d68eaf54a count=1
+INFO [05-05|15:18:22.046] All work packages accumulated
+INFO [05-05|15:18:22.046] Fib2-(0) result key 0                    result=000000000100000000000000
+INFO [05-05|15:18:22.046] Fib2-(0) result key 1                    result=
+INFO [05-05|15:18:22.046] Fib2-(0) result key 2                    result=
+INFO [05-05|15:18:22.046] Fib2-(0) result key 5                    result=
+INFO [05-05|15:18:22.046] Fib2-(0) result key 6                    result=
+INFO [05-05|15:18:22.046] Fib2-(0) result key 7                    result=
+INFO [05-05|15:18:22.046] Fib2-(0) result key 8                    result=0000000000000000
+INFO [05-05|15:18:22.046] Fib2-(0) result key 9                    result=003a0f0000000000
+INFO [05-05|15:18:22.046] Work package submitted                   identifier=FIB2(1)                             hash=0x479f528fe57286a8b394711760739bd66621896838e3fb751c02f92e74c45964 core=1
+INFO [05-05|15:18:27.269] proposeBlock                             mode=safrole  s.ID=3 p=c4c4..70d4 h=ea5f..65d0 e'=2 m'=3  "len(γ_a')"=12 blk="H_t=27 H_r=8ef0..240d  |E_T|=3 |E_G|=1"
+DEBUG[05-05|15:18:33.264] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0x479f528fe57286a8b394711760739bd66621896838e3fb751c02f92e74c45964] "W^*-wphs of accumulatable work reports)"=[0x479f528fe57286a8b394711760739bd66621896838e3fb751c02f92e74c45964]
+DEBUG[05-05|15:18:33.264] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x479f528fe57286a8b394711760739bd66621896838e3fb751c02f92e74c45964","E":"0x17c013652ab4ed5105f2176800edc11da2a4d4b22a29880cd35ab9756c6231da","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x4acf7ec4bb5a342dc54dcc3b267f7d76cb6f27903e005e48ac81d87a333feb74","G":1000000,"D":"0x000c010000000100000001000000"}'
+DEBUG[05-05|15:18:33.268] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:18:33.268] corevm_accumulate: WRITE OK              numStorageItems=7 StorageSize=31837 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=010000000100000001000000 vlen=12
+DEBUG[05-05|15:18:33.268] corevm_accumulate: WRITE storage         s=2953942612 a_o=31837 a_i=7
+DEBUG[05-05|15:18:33.268] READ                                     reg="[136 4278055872 0 256 0 4278124687 4278058848 2953942612 4278055954 3 4278056024 0 256]" gasCharged=10  beforeGas=999,601 afterGas=999,591
+DEBUG[05-05|15:18:33.268] corevm_accumulate: READ NONE             s=2953942612 mu_k=6a616d   k=0xdecedb51effc9737c5fea18873dbf428c55f0d5d3b522672f234a9b1b1acca2d ok=false val= len(val)=0
+DEBUG[05-05|15:18:33.268] LOG                                      reg="[142 4278055872 13 67011 8 112 1245136 2 0 0 1245136 77 67024]" gasCharged=0   beforeGas=998,576 afterGas=998,576
+DEBUG[05-05|15:18:33.268] INFO#corevm                              m="read from jam @n=1: expect NONE, got 18446744073709551615 (recorded at key 1)"
+DEBUG[05-05|15:18:33.268] WRITE                                    reg="[144 4278055608 13 67011 8 1 4278055623 4278055623 1 4278055624 8 77 67024]" gasCharged=10  beforeGas=998,542 afterGas=998,532
+DEBUG[05-05|15:18:33.268] corevm_accumulate: WRITE NONE            numStorageItems=8 StorageSize=31877 s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:18:33.268] corevm_accumulate: WRITE storage         s=2953942612 a_o=31877 a_i=8
+DEBUG[05-05|15:18:33.268] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=997,411 afterGas=997,411
+DEBUG[05-05|15:18:33.268] INFO#corevm                              m="write_result key=[1], result=ffffffffffffffff"
+DEBUG[05-05|15:18:33.268] WRITE                                    reg="[144 4278055872 9 4278055399 8 112 4278058848 4278055954 3 4278055957 3 0 4278055408]" gasCharged=10  beforeGas=997,385 afterGas=997,375
+DEBUG[05-05|15:18:33.268] corevm_accumulate: WRITE NONE            numStorageItems=9 StorageSize=31912 s=2953942612 mu_k=6a616d   k=0xdecedb51effc9737c5fea18873dbf428c55f0d5d3b522672f234a9b1b1acca2d v=444f54                   vlen=3
+DEBUG[05-05|15:18:33.268] corevm_accumulate: WRITE storage         s=2953942612 a_o=31912 a_i=9
+DEBUG[05-05|15:18:33.268] LOG                                      reg="[148 4278055872 14 67078 8 1245138 110 2 0 0 1245138 76 67088]" gasCharged=0   beforeGas=996,319 afterGas=996,319
+DEBUG[05-05|15:18:33.269] INFO#corevm                              m="write to jam @n=1: expect NONE, got 18446744073709551615 (recorded at key 2)"
+DEBUG[05-05|15:18:33.269] WRITE                                    reg="[150 4278055608 14 67078 8 1 4278055623 4278055623 1 4278055624 8 76 67088]" gasCharged=10  beforeGas=996,284 afterGas=996,274
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE NONE            numStorageItems=10 StorageSize=31952 s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE storage         s=2953942612 a_o=31952 a_i=10
+DEBUG[05-05|15:18:33.269] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=995,153 afterGas=995,153
+DEBUG[05-05|15:18:33.269] INFO#corevm                              m="write_result key=[2], result=ffffffffffffffff"
+DEBUG[05-05|15:18:33.269] READ                                     reg="[150 4278055872 9 4278055399 8 4278058848 2 2953942612 4278055954 3 4278056024 0 256]" gasCharged=10  beforeGas=995,125 afterGas=995,115
+DEBUG[05-05|15:18:33.269] corevm_accumulate: READ OK               s=2953942612 mu_k=6a616d   k=0xdecedb51effc9737c5fea18873dbf428c55f0d5d3b522672f234a9b1b1acca2d ok=true  val=444f54 len(val)=3
+DEBUG[05-05|15:18:33.269] LOG                                      reg="[154 4278055872 13 67151 8 106 1245142 2 0 0 1245142 55 67160]" gasCharged=0   beforeGas=994,314 afterGas=994,314
+DEBUG[05-05|15:18:33.269] INFO#corevm                              m="read from jam @n=1: expect 3, got 3 (recorded at key 5)"
+DEBUG[05-05|15:18:33.269] WRITE                                    reg="[156 4278055608 13 67151 8 1 4278055623 4278055623 1 4278055624 8 55 67160]" gasCharged=10  beforeGas=994,280 afterGas=994,270
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE NONE            numStorageItems=11 StorageSize=31992 s=2953942612 mu_k=05       k=0x664ab67165b2f74555d033f970ad1c7af9d2adde9e979592bfb48128d1231f50 v=0300000000000000         vlen=8
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE storage         s=2953942612 a_o=31992 a_i=11
+DEBUG[05-05|15:18:33.269] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=993,397 afterGas=993,397
+DEBUG[05-05|15:18:33.269] INFO#corevm                              m="write_result key=[5], result=3"
+DEBUG[05-05|15:18:33.269] FORGET                                   reg="[156 4278055872 1114112 16 1 106 4278058848 4278055954 0 0 52 0 404]" gasCharged=10  beforeGas=993,373 afterGas=993,363
+DEBUG[05-05|15:18:33.269] corevm_accumulate: FORGET HUH            h=0x6a616d444f546a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c o=4,278,055,954
+DEBUG[05-05|15:18:33.269] LOG                                      reg="[160 4278055872 17 67251 16 1245144 104 2 0 0 1245144 73 67272]" gasCharged=0   beforeGas=992,348 afterGas=992,348
+DEBUG[05-05|15:18:33.269] INFO#corevm                              m="forget jam @n=1: expect HUH, got 18446744073709551607 (recorded at key 6)"
+DEBUG[05-05|15:18:33.269] WRITE                                    reg="[366 4278055608 17 67251 16 1 4278055623 4278055623 1 4278055624 8 73 67272]" gasCharged=10  beforeGas=992,313 afterGas=992,303
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE NONE            numStorageItems=12 StorageSize=32032 s=2953942612 mu_k=06       k=0x6ed0d9695e0faf6502d55bb73af9dc1dfef8adc2f16cf70cac4d94ebb4cdf289 v=f7ffffffffffffff         vlen=8
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE storage         s=2953942612 a_o=32032 a_i=12
+DEBUG[05-05|15:18:33.269] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=991,182 afterGas=991,182
+DEBUG[05-05|15:18:33.269] INFO#corevm                              m="write_result key=[6], result=fffffffffffffff7"
+DEBUG[05-05|15:18:33.269] INFO                                     reg="[366 4278055872 9 4278055399 8 1245144 4278058848 2953942612 4278056024 0 52 0 4278055408]" gasCharged=10  beforeGas=991,158 afterGas=991,148
+DEBUG[05-05|15:18:33.269] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32252 100 100 12 32032]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000fc7d000000000000640000000000000064000000000000000c000000207d000000000000
+DEBUG[05-05|15:18:33.269] WRITE                                    reg="[368 4278055608 9 4278055399 8 1 4278055623 4278055623 1 4278055624 8 0 4278055408]" gasCharged=10  beforeGas=991,131 afterGas=991,121
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE OK              numStorageItems=12 StorageSize=32032 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE storage         s=2953942612 a_o=32032 a_i=12
+DEBUG[05-05|15:18:33.269] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=990,248 afterGas=990,248
+DEBUG[05-05|15:18:33.269] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:18:33.269] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=989,472 afterGas=989,472
+DEBUG[05-05|15:18:33.269] INFO#corevm                              m="info@n=1: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:18:33.269] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=989,457 afterGas=989,447
+DEBUG[05-05|15:18:33.269] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=989,428 afterGas=989,418
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE OK              numStorageItems=12 StorageSize=32032 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=fd180f0000000000         vlen=8
+DEBUG[05-05|15:18:33.269] corevm_accumulate: WRITE storage         s=2953942612 a_o=32032 a_i=12
+DEBUG[05-05|15:18:33.270] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=988,477 afterGas=988,477
+DEBUG[05-05|15:18:33.270] INFO#corevm                              m="write_result key=[9], result=f18fd"
+DEBUG[05-05|15:18:33.270] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=987,896 afterGas=987,896
+DEBUG[05-05|15:18:33.270] YIELD                                    reg="[380 4278055872 17 69380 16 196633 4278058848 196633 1 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=987,791 afterGas=987,781
+DEBUG[05-05|15:18:33.270] corevm_accumulate: YIELD OK              h=0x0100000001000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:33.270] LOG                                      reg="[386 4278055872 1114112 0 1 50 1245198 2 0 0 1245198 27 404]" gasCharged=0   beforeGas=987,157 afterGas=987,157
+DEBUG[05-05|15:18:33.270] INFO#corevm                              m="yield@n=1: expect OK, got 0"
+DEBUG[05-05|15:18:33.270] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0100000001000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:33.270] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x479f528fe57286a8b394711760739bd66621896838e3fb751c02f92e74c45964","E":"0x17c013652ab4ed5105f2176800edc11da2a4d4b22a29880cd35ab9756c6231da","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:18:33.274] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:18:33.274] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:18:33.274] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:18:33.274] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:18:33.274] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:33.274] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:33.274] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:33.278] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:33.278] BEEFY-C                                  s=2953942612 h=0x0100000001000000010000000000000000000000000000000000000000000000 encoded=549611b00100000001000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:33.278] BEEFY accumulation root                  r=0x47a61e84f276e120f28820801bba9b4906a888fb3404a693290bd973f361cc7f
+INFO [05-05|15:18:33.326] proposeBlock                             mode=safrole  s.ID=5 p=ea5f..65d0 h=af76..80b7 e'=2 m'=4  "len(γ_a')"=12 blk="H_t=28 H_r=d396..b7f3  |E_A|=6"
+INFO [05-05|15:18:34.046] Work package accumulated                 hash=0x479f528fe57286a8b394711760739bd66621896838e3fb751c02f92e74c45964 count=1
+INFO [05-05|15:18:34.046] All work packages accumulated
+INFO [05-05|15:18:34.046] Fib2-(1) result key 0                    result=010000000100000001000000
+INFO [05-05|15:18:34.046] Fib2-(1) result key 1                    result=ffffffffffffffff
+INFO [05-05|15:18:34.046] Fib2-(1) result key 2                    result=ffffffffffffffff
+INFO [05-05|15:18:34.046] Fib2-(1) result key 5                    result=0300000000000000
+INFO [05-05|15:18:34.046] Fib2-(1) result key 6                    result=f7ffffffffffffff
+INFO [05-05|15:18:34.046] Fib2-(1) result key 7                    result=
+INFO [05-05|15:18:34.046] Fib2-(1) result key 8                    result=0000000000000000
+INFO [05-05|15:18:34.046] Fib2-(1) result key 9                    result=fd180f0000000000
+INFO [05-05|15:18:34.046] Work package submitted                   identifier=FIB2(2)                             hash=0xe7a1c9aba3adee68a638e8d969c54f3de413f401586e892a54a8ae0e123a86e8 core=1
+INFO [05-05|15:18:39.231] proposeBlock                             mode=safrole  s.ID=1 p=af76..80b7 h=8681..3fb8 e'=2 m'=5  "len(γ_a')"=12 blk="H_t=29 H_r=0278..3a61  |E_G|=1"
+DEBUG[05-05|15:18:45.236] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0xe7a1c9aba3adee68a638e8d969c54f3de413f401586e892a54a8ae0e123a86e8] "W^*-wphs of accumulatable work reports)"=[0xe7a1c9aba3adee68a638e8d969c54f3de413f401586e892a54a8ae0e123a86e8]
+DEBUG[05-05|15:18:45.236] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0xe7a1c9aba3adee68a638e8d969c54f3de413f401586e892a54a8ae0e123a86e8","E":"0x812525a8a0eafa7d79067d78d3405a6a6934f5d7a3d809c3964727ceb102bad0","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x9f98826d4b7918c5cacfabda03cc09282a18c5567efc35c688e2eb7316389c79","G":1000000,"D":"0x000c020000000200000001000000"}'
+DEBUG[05-05|15:18:45.238] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE OK              numStorageItems=12 StorageSize=32032 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=020000000200000001000000 vlen=12
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE storage         s=2953942612 a_o=32032 a_i=12
+DEBUG[05-05|15:18:45.239] READ                                     reg="[136 4278055872 0 256 0 4278124687 4278058848 2953942612 4278055954 3 4278056024 0 256]" gasCharged=10  beforeGas=999,601 afterGas=999,591
+DEBUG[05-05|15:18:45.239] corevm_accumulate: READ OK               s=2953942612 mu_k=6a616d   k=0xdecedb51effc9737c5fea18873dbf428c55f0d5d3b522672f234a9b1b1acca2d ok=true  val=444f54 len(val)=3
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[166 4278055872 19 67005 16 94 1245154 2 0 0 1245154 49 67024]" gasCharged=0   beforeGas=998,817 afterGas=998,817
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="read jam@n=2: expect 3, got 3 (recorded at key 1)"
+DEBUG[05-05|15:18:45.239] WRITE                                    reg="[168 4278055608 19 67005 16 1 4278055623 4278055623 1 4278055624 8 49 67024]" gasCharged=10  beforeGas=998,783 afterGas=998,773
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE OK              numStorageItems=12 StorageSize=32032 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=0300000000000000         vlen=8
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE storage         s=2953942612 a_o=32032 a_i=12
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=997,900 afterGas=997,900
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="write_result key=[1], result=3"
+DEBUG[05-05|15:18:45.239] WRITE                                    reg="[168 4278055872 1114112 16 1 94 4278058848 4278055954 3 0 0 0 404]" gasCharged=10  beforeGas=997,874 afterGas=997,864
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE (as DELETE) NONE  numStorageItems=11 StorageSize=31997 l=3  s=2953942612 mu_k=6a616d   k=0xdecedb51effc9737c5fea18873dbf428c55f0d5d3b522672f234a9b1b1acca2d v=                         vlen=0
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE storage         s=2953942612 a_o=31997 a_i=11
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[172 4278055872 17 67075 16 1245118 130 2 0 0 1245118 67 67096]" gasCharged=0   beforeGas=997,061 afterGas=997,061
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="write deleted jam@n=2: expect prev len 3, got 3 (recorded at key 2)"
+DEBUG[05-05|15:18:45.239] WRITE                                    reg="[174 4278055608 17 67075 16 1 4278055623 4278055623 1 4278055624 8 67 67096]" gasCharged=10  beforeGas=997,026 afterGas=997,016
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE OK              numStorageItems=11 StorageSize=31997 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=0300000000000000         vlen=8
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE storage         s=2953942612 a_o=31997 a_i=11
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=996,143 afterGas=996,143
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="write_result key=[2], result=3"
+DEBUG[05-05|15:18:45.239] READ                                     reg="[174 4278055872 1114112 16 1 2 4278058848 2953942612 4278055954 3 4278056024 0 256]" gasCharged=10  beforeGas=996,115 afterGas=996,105
+DEBUG[05-05|15:18:45.239] corevm_accumulate: READ NONE             s=2953942612 mu_k=6a616d   k=0xdecedb51effc9737c5fea18873dbf428c55f0d5d3b522672f234a9b1b1acca2d ok=false val=       len(val)=0
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[178 4278055872 19 67145 16 1245148 100 2 0 0 1245148 71 67168]" gasCharged=0   beforeGas=995,103 afterGas=995,103
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="read jam@n=2: expect NONE, got 18446744073709551615 (recorded at key 5)"
+DEBUG[05-05|15:18:45.239] WRITE                                    reg="[366 4278055608 19 67145 16 1 4278055623 4278055623 1 4278055624 8 0 67168]" gasCharged=10  beforeGas=995,065 afterGas=995,055
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE OK              numStorageItems=11 StorageSize=31997 l=8  s=2953942612 mu_k=05       k=0x664ab67165b2f74555d033f970ad1c7af9d2adde9e979592bfb48128d1231f50 v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE storage         s=2953942612 a_o=31997 a_i=11
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=993,934 afterGas=993,934
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="write_result key=[5], result=ffffffffffffffff"
+DEBUG[05-05|15:18:45.239] INFO                                     reg="[366 4278055872 9 4278055399 8 1245148 4278058848 2953942612 4278056024 0 52 0 4278055408]" gasCharged=10  beforeGas=993,910 afterGas=993,900
+DEBUG[05-05|15:18:45.239] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32207 100 100 11 31997]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000cf7d000000000000640000000000000064000000000000000b000000fd7c000000000000
+DEBUG[05-05|15:18:45.239] WRITE                                    reg="[368 4278055608 9 4278055399 8 1 4278055623 4278055623 1 4278055624 8 0 4278055408]" gasCharged=10  beforeGas=993,883 afterGas=993,873
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE OK              numStorageItems=11 StorageSize=31997 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE storage         s=2953942612 a_o=31997 a_i=11
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=993,000 afterGas=993,000
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=992,224 afterGas=992,224
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="info@n=2: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:18:45.239] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=992,209 afterGas=992,199
+DEBUG[05-05|15:18:45.239] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=992,180 afterGas=992,170
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE OK              numStorageItems=11 StorageSize=31997 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=bd230f0000000000         vlen=8
+DEBUG[05-05|15:18:45.239] corevm_accumulate: WRITE storage         s=2953942612 a_o=31997 a_i=11
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=991,229 afterGas=991,229
+DEBUG[05-05|15:18:45.239] INFO#corevm                              m="write_result key=[9], result=f23bd"
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=990,648 afterGas=990,648
+DEBUG[05-05|15:18:45.239] YIELD                                    reg="[380 4278055872 17 69380 16 196633 4278058848 196633 2 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=990,543 afterGas=990,533
+DEBUG[05-05|15:18:45.239] corevm_accumulate: YIELD OK              h=0x0200000002000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:45.239] LOG                                      reg="[386 4278055872 1114112 0 1 50 1245198 2 0 0 1245198 27 404]" gasCharged=0   beforeGas=989,909 afterGas=989,909
+DEBUG[05-05|15:18:45.240] INFO#corevm                              m="yield@n=2: expect OK, got 0"
+DEBUG[05-05|15:18:45.240] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0200000002000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:45.240] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0xe7a1c9aba3adee68a638e8d969c54f3de413f401586e892a54a8ae0e123a86e8","E":"0x812525a8a0eafa7d79067d78d3405a6a6934f5d7a3d809c3964727ceb102bad0","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:18:45.241] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:18:45.241] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:18:45.241] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:18:45.241] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:18:45.241] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:45.241] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:45.241] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:45.242] writeAccount DELETE                      service_idx=2,953,942,612 rawkey=0xdecedb51effc9737c5fea18873dbf428c55f0d5d3b522672f234a9b1b1acca2d storage.Accessed=true storage.Deleted=true
+DEBUG[05-05|15:18:45.248] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:45.248] BEEFY-C                                  s=2953942612 h=0x0200000002000000010000000000000000000000000000000000000000000000 encoded=549611b00200000002000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:45.249] BEEFY accumulation root                  r=0x65d2e220d601def8664141a3db2fc8bcd6b0ad0cb87dc58f497529c714925c8b
+INFO [05-05|15:18:45.277] proposeBlock                             mode=safrole  s.ID=3 p=8681..3fb8 h=756c..6a9d e'=2 m'=6  "len(γ_a')"=12 blk="H_t=30 H_r=12f1..4e34  |E_A|=6"
+INFO [05-05|15:18:46.046] Work package accumulated                 hash=0xe7a1c9aba3adee68a638e8d969c54f3de413f401586e892a54a8ae0e123a86e8 count=1
+INFO [05-05|15:18:46.046] All work packages accumulated
+INFO [05-05|15:18:46.047] Fib2-(2) result key 0                    result=020000000200000001000000
+INFO [05-05|15:18:46.047] Fib2-(2) result key 1                    result=0300000000000000
+INFO [05-05|15:18:46.047] Fib2-(2) result key 2                    result=0300000000000000
+INFO [05-05|15:18:46.047] Fib2-(2) result key 5                    result=ffffffffffffffff
+INFO [05-05|15:18:46.047] Fib2-(2) result key 6                    result=f7ffffffffffffff
+INFO [05-05|15:18:46.047] Fib2-(2) result key 7                    result=
+INFO [05-05|15:18:46.047] Fib2-(2) result key 8                    result=0000000000000000
+INFO [05-05|15:18:46.047] Fib2-(2) result key 9                    result=bd230f0000000000
+INFO [05-05|15:18:46.047] Work package submitted                   identifier=FIB2(3)                             hash=0x8bba926ca682861a60a441689f4355e6c62128c586449844a88f9f17b9743344 core=1
+INFO [05-05|15:18:51.051] proposeBlock                             mode=safrole  s.ID=2 p=756c..6a9d h=8fa8..a2a8 e'=2 m'=7  "len(γ_a')"=12 blk="H_t=31 H_r=fd3e..029f  |E_G|=1"
+DEBUG[05-05|15:18:57.188] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0x8bba926ca682861a60a441689f4355e6c62128c586449844a88f9f17b9743344] "W^*-wphs of accumulatable work reports)"=[0x8bba926ca682861a60a441689f4355e6c62128c586449844a88f9f17b9743344]
+DEBUG[05-05|15:18:57.189] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x8bba926ca682861a60a441689f4355e6c62128c586449844a88f9f17b9743344","E":"0x688862e58263a407d80d63eff7340967287258f42fb6a687af40cae469363e8a","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x6ee70a5aacece4221c1564c3ecd0891e232b815a93bddff929791b03658597f3","G":1000000,"D":"0x000c030000000300000002000000"}'
+DEBUG[05-05|15:18:57.191] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE OK              numStorageItems=11 StorageSize=31997 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=030000000300000002000000 vlen=12
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE storage         s=2953942612 a_o=31997 a_i=11
+DEBUG[05-05|15:18:57.191] SOLICIT                                  reg="[136 4278055872 0 256 0 3 4278058848 4278055960 3 0 4278056280 4278056280 0]" gasCharged=10  beforeGas=999,604 afterGas=999,594
+DEBUG[05-05|15:18:57.191] corevm_accumulate: SOLICIT OK            h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    newvalue=[]
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[184 4278055872 17 67007 16 114 1245134 2 0 0 1245134 59 67024]" gasCharged=0   beforeGas=998,798 afterGas=998,798
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="solicit hash(jam)@n=3: expect OK, got 0 (recorded at key 1)"
+DEBUG[05-05|15:18:57.191] WRITE                                    reg="[186 4278055608 17 67007 16 1 4278055623 4278055623 1 4278055624 8 59 67024]" gasCharged=10  beforeGas=998,764 afterGas=998,754
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=0000000000000000         vlen=8
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=997,881 afterGas=997,881
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="write_result key=[1], result=0"
+DEBUG[05-05|15:18:57.191] QUERY                                    reg="[186 4278055872 1114112 16 1 114 4278058848 4278055960 3 0 52 0 404]" gasCharged=10  beforeGas=997,857 afterGas=997,847
+DEBUG[05-05|15:18:57.191] corevm_accumulate: QUERY OK              h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    w7=0 w8=0 len(anchor_timeslot)=0
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[190 4278055872 18 67074 16 1245120 128 2 0 0 1245120 66 67096]" gasCharged=0   beforeGas=997,068 afterGas=997,068
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="query hash(jam)@n=3: expect zero result, got 0 (recorded at key 2)"
+DEBUG[05-05|15:18:57.191] WRITE                                    reg="[192 4278055608 18 67074 16 1 4278055623 4278055623 1 4278055624 8 66 67096]" gasCharged=10  beforeGas=997,033 afterGas=997,023
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=0000000000000000         vlen=8
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=996,150 afterGas=996,150
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="write_result key=[2], result=0"
+DEBUG[05-05|15:18:57.191] QUERY                                    reg="[192 4278055872 1114112 16 1 2 4278058848 4278055992 3 0 52 0 404]" gasCharged=10  beforeGas=996,126 afterGas=996,116
+DEBUG[05-05|15:18:57.191] corevm_accumulate: QUERY NONE            h=0xbfa9bb0fa4968747e63d3cf1e74a49ddc4a6eca89a6a6f339da3337fd2eb5507 z=3
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[196 4278055872 20 67144 16 1245134 114 2 0 0 1245134 78 4278055640]" gasCharged=0   beforeGas=995,162 afterGas=995,162
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="query hash(dot)@n=3: expect NONE, got 18446744073709551615 (recorded at key 5)"
+DEBUG[05-05|15:18:57.191] WRITE                                    reg="[366 4278055608 20 67144 16 1 4278055623 4278055623 1 4278055624 8 78 4278055640]" gasCharged=10  beforeGas=995,127 afterGas=995,117
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=05       k=0x664ab67165b2f74555d033f970ad1c7af9d2adde9e979592bfb48128d1231f50 v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=993,996 afterGas=993,996
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="write_result key=[5], result=ffffffffffffffff"
+DEBUG[05-05|15:18:57.191] INFO                                     reg="[366 4278055872 9 4278055399 8 1245134 4278058848 2953942612 4278056024 0 52 0 4278055408]" gasCharged=10  beforeGas=993,972 afterGas=993,962
+DEBUG[05-05|15:18:57.191] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32311 100 100 13 32081]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000377e000000000000640000000000000064000000000000000d000000517d000000000000
+DEBUG[05-05|15:18:57.191] WRITE                                    reg="[368 4278055608 9 4278055399 8 1 4278055623 4278055623 1 4278055624 8 0 4278055408]" gasCharged=10  beforeGas=993,945 afterGas=993,935
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=993,062 afterGas=993,062
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=992,286 afterGas=992,286
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="info@n=3: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:18:57.191] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=992,271 afterGas=992,261
+DEBUG[05-05|15:18:57.191] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=992,242 afterGas=992,232
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=fb230f0000000000         vlen=8
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=991,291 afterGas=991,291
+DEBUG[05-05|15:18:57.191] INFO#corevm                              m="write_result key=[9], result=f23fb"
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=990,710 afterGas=990,710
+DEBUG[05-05|15:18:57.191] CHECKPOINT                               reg="[380 4278055872 17 69380 16 196633 4278058848 51 3 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=990,604 afterGas=990,594
+DEBUG[05-05|15:18:57.191] corevm_accumulate: CHECKPOINT            g=990594
+DEBUG[05-05|15:18:57.191] LOG                                      reg="[380 4278055872 17 69380 16 196633 4278058848 3 0 0 69432 17 69400]" gasCharged=0   beforeGas=990,589 afterGas=990,589
+DEBUG[05-05|15:18:57.191] DEBUG#corevm                             m="corevm checkpoint"
+DEBUG[05-05|15:18:57.191] WRITE                                    reg="[382 4278055608 17 69380 16 1 4278055623 4278055623 1 4278055624 8 17 69400]" gasCharged=10  beforeGas=990,571 afterGas=990,561
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE NONE            numStorageItems=14 StorageSize=32121 s=2953942612 mu_k=07       k=0xf7a0c652460cce77eaf3fab8ac01aea98f44a37b42e74561531c941f6df0c8e4 v=2d00000000000000         vlen=8
+DEBUG[05-05|15:18:57.191] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:18:57.192] LOG                                      reg="[478 4278055608 1114112 16 2 1245196 52 2 0 0 1245196 31 404]" gasCharged=0   beforeGas=989,671 afterGas=989,671
+DEBUG[05-05|15:18:57.192] INFO#corevm                              m="write_result key=[7], result=2d"
+DEBUG[05-05|15:18:57.192] getArgumentOutputs - PANIC               service=corevm
+DEBUG[05-05|15:18:57.192] BEEFY PANIC @SINGLE ACCUMULATE           s=2953942612 B=0x0000000000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:18:57.192] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x8bba926ca682861a60a441689f4355e6c62128c586449844a88f9f17b9743344","E":"0x688862e58263a407d80d63eff7340967287258f42fb6a687af40cae469363e8a","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:18:57.193] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:18:57.193] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:18:57.193] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:18:57.193] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:18:57.193] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:57.193] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:57.193] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:18:57.196] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:18:57.196] BEEFY accumulation root                  r=0x80e16278c1e787bc09d8cdf3e6fa5e2c7808d658ac5526b24fd1d8c2f4dd6650
+INFO [05-05|15:18:57.225] proposeBlock                             mode=safrole  s.ID=0 p=8fa8..a2a8 h=bb25..c00d e'=2 m'=8  "len(γ_a')"=12 blk="H_t=32 H_r=7924..371e  |E_A|=6"
+INFO [05-05|15:18:58.047] Work package accumulated                 hash=0x8bba926ca682861a60a441689f4355e6c62128c586449844a88f9f17b9743344 count=1
+INFO [05-05|15:18:58.047] All work packages accumulated
+INFO [05-05|15:18:58.047] Fib2-(3) result key 0                    result=030000000300000002000000
+INFO [05-05|15:18:58.047] Fib2-(3) result key 1                    result=0000000000000000
+INFO [05-05|15:18:58.047] Fib2-(3) result key 2                    result=0000000000000000
+INFO [05-05|15:18:58.047] Fib2-(3) result key 5                    result=ffffffffffffffff
+INFO [05-05|15:18:58.047] Fib2-(3) result key 6                    result=f7ffffffffffffff
+INFO [05-05|15:18:58.047] Fib2-(3) result key 7                    result=
+INFO [05-05|15:18:58.047] Fib2-(3) result key 8                    result=0000000000000000
+INFO [05-05|15:18:58.047] Fib2-(3) result key 9                    result=fb230f0000000000
+INFO [05-05|15:18:58.047] SubmitAndWaitForPreimage SUBMITTED       id=2953942612 preimageHash=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 len=3
+INFO [05-05|15:19:03.022] proposeBlock                             mode=safrole  s.ID=1 p=bb25..c00d h=75ae..dffa e'=2 m'=9  "len(γ_a')"=12 blk="H_t=33 H_r=af08..528c  |E_P|=1"
+INFO [05-05|15:19:03.048] SubmitAndWaitForPreimage ON-CHAIN        id=2953942612 preimageHash=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 len=3
+INFO [05-05|15:19:03.048] Work package submitted                   identifier=FIB2(4)                             hash=0x0d30188bca70d1a98f12cd7e243e7fd08bcd89277d91f4c584d37b12c8f7c02d core=1
+INFO [05-05|15:19:09.357] proposeBlock                             mode=safrole  s.ID=5 p=75ae..dffa h=0923..29c3 e'=2 m'=10 "len(γ_a')"=12 blk="H_t=34 H_r=387f..1dbf   WinningTickets(12) |E_G|=1"
+DEBUG[05-05|15:19:15.021] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0x0d30188bca70d1a98f12cd7e243e7fd08bcd89277d91f4c584d37b12c8f7c02d] "W^*-wphs of accumulatable work reports)"=[0x0d30188bca70d1a98f12cd7e243e7fd08bcd89277d91f4c584d37b12c8f7c02d]
+DEBUG[05-05|15:19:15.021] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x0d30188bca70d1a98f12cd7e243e7fd08bcd89277d91f4c584d37b12c8f7c02d","E":"0x915fce947a38d324d290ba8829ec5a9939856e3160ef81b519bcd6d082f8f0a2","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x2d4d6d31c9a5662b84b735133fed4be209a3a5c2a9852a4e026da686b087c724","G":1000000,"D":"0x000c040000000500000003000000"}'
+DEBUG[05-05|15:19:15.024] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:19:15.024] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=040000000500000003000000 vlen=12
+DEBUG[05-05|15:19:15.024] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:19:15.024] FORGET                                   reg="[136 4278055872 0 256 0 3 4278058848 4278055960 3 0 4278056280 4278056280 0]" gasCharged=10  beforeGas=999,604 afterGas=999,594
+DEBUG[05-05|15:19:15.024] corevm_accumulate: FORGET OK2            h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    newvalue="[33 35]"
+DEBUG[05-05|15:19:15.024] LOG                                      reg="[202 4278055872 18 67006 16 112 1245136 2 0 0 1245136 58 67024]" gasCharged=0   beforeGas=998,832 afterGas=998,832
+DEBUG[05-05|15:19:15.024] INFO#corevm                              m="forget hash(jam)@n=4: expect OK, got 0 (recorded at key 1)"
+DEBUG[05-05|15:19:15.024] WRITE                                    reg="[204 4278055608 18 67006 16 1 4278055623 4278055623 1 4278055624 8 58 67024]" gasCharged=10  beforeGas=998,798 afterGas=998,788
+DEBUG[05-05|15:19:15.024] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=0000000000000000         vlen=8
+DEBUG[05-05|15:19:15.024] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=997,915 afterGas=997,915
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="write_result key=[1], result=0"
+DEBUG[05-05|15:19:15.025] QUERY                                    reg="[204 4278055872 1114112 16 1 112 4278058848 4278055960 3 0 52 0 404]" gasCharged=10  beforeGas=997,891 afterGas=997,881
+DEBUG[05-05|15:19:15.025] corevm_accumulate: QUERY 2               x=33 y=35
+DEBUG[05-05|15:19:15.025] corevm_accumulate: QUERY OK              h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    w7=141,733,920,770 w8=35 len(anchor_timeslot)=2
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[208 4278055872 16 67076 16 1245126 122 2 0 0 1245126 74 67096]" gasCharged=0   beforeGas=996,957 afterGas=996,957
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="query hash(jam)@n=4: expect non-zero, got 141733920770 (recorded at key 2)"
+DEBUG[05-05|15:19:15.025] WRITE                                    reg="[210 4278055608 16 67076 16 1 4278055623 4278055623 1 4278055624 8 74 67096]" gasCharged=10  beforeGas=996,922 afterGas=996,912
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=0200000021000000         vlen=8
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[478 4278055608 1114112 16 10 1245196 52 2 0 0 1245196 39 404]" gasCharged=0   beforeGas=995,886 afterGas=995,886
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="write_result key=[2], result=2100000002"
+DEBUG[05-05|15:19:15.025] LOOKUP                                   reg="[210 4278055872 1114112 16 10 4278058848 2 2953942612 4278055992 4278056024 0 3 404]" gasCharged=10  beforeGas=995,859 afterGas=995,849
+DEBUG[05-05|15:19:15.025] corevm_accumulate: LOOKUP NONE           s=2953942612 h=0xbfa9bb0fa4968747e63d3cf1e74a49ddc4a6eca89a6a6f339da3337fd2eb5507
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[214 4278055872 19 67145 16 116 1245132 2 0 0 1245132 79 67168]" gasCharged=0   beforeGas=994,811 afterGas=994,811
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="lookup hash(dot)@n=4: expect NONE, got 18446744073709551615 (recorded at key 5)"
+DEBUG[05-05|15:19:15.025] WRITE                                    reg="[216 4278055608 19 67145 16 1 4278055623 4278055623 1 4278055624 8 79 67168]" gasCharged=10  beforeGas=994,777 afterGas=994,767
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=05       k=0x664ab67165b2f74555d033f970ad1c7af9d2adde9e979592bfb48128d1231f50 v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=993,646 afterGas=993,646
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="write_result key=[5], result=ffffffffffffffff"
+DEBUG[05-05|15:19:15.025] ASSIGN                                   reg="[216 4278055872 9 4278055399 8 116 4278058848 1000 4278055954 0 52 0 4278055408]" gasCharged=10  beforeGas=993,622 afterGas=993,612
+DEBUG[05-05|15:19:15.025] corevm_accumulate: ASSIGN CORE           c=1000
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[220 4278055872 17 67251 16 1245144 104 2 0 0 1245144 73 67272]" gasCharged=0   beforeGas=992,595 afterGas=992,595
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="assign jam@n=4: expect CORE, got 18446744073709551610 (recorded at key 6)"
+DEBUG[05-05|15:19:15.025] WRITE                                    reg="[222 4278055608 17 67251 16 1 4278055623 4278055623 1 4278055624 8 73 67272]" gasCharged=10  beforeGas=992,561 afterGas=992,551
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE OK              numStorageItems=13 StorageSize=32081 l=8  s=2953942612 mu_k=06       k=0x6ed0d9695e0faf6502d55bb73af9dc1dfef8adc2f16cf70cac4d94ebb4cdf289 v=faffffffffffffff         vlen=8
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32081 a_i=13
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=991,430 afterGas=991,430
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="write_result key=[6], result=fffffffffffffffa"
+DEBUG[05-05|15:19:15.025] PROVIDE                                  reg="[222 4278055872 9 4278055399 8 4278058848 104 666 4278055960 3 52 0 4278055408]" gasCharged=10  beforeGas=991,405 afterGas=991,395
+DEBUG[05-05|15:19:15.025] corevm_accumulate: PROVIDE WHO           omega_7=666
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[226 4278055872 13 68122 8 110 1245138 2 0 0 1245138 67 68136]" gasCharged=0   beforeGas=990,659 afterGas=990,659
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="provide hash(jam): expect WHO, got 141733920770 (recorded at key 7)"
+DEBUG[05-05|15:19:15.025] WRITE                                    reg="[228 4278055608 13 68122 8 1 4278055623 4278055623 1 4278055624 8 67 68136]" gasCharged=10  beforeGas=990,627 afterGas=990,617
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE NONE            numStorageItems=14 StorageSize=32121 s=2953942612 mu_k=07       k=0xf7a0c652460cce77eaf3fab8ac01aea98f44a37b42e74561531c941f6df0c8e4 v=fcffffffffffffff         vlen=8
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=989,496 afterGas=989,496
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="write_result key=[7], result=fffffffffffffffc"
+DEBUG[05-05|15:19:15.025] PROVIDE                                  reg="[228 4278055872 9 4278055399 8 110 1245138 2953942612 4278055960 3 52 0 4278055408]" gasCharged=10  beforeGas=989,471 afterGas=989,461
+DEBUG[05-05|15:19:15.025] corevm_accumulate: PROVIDE OK            omega_7=2,953,942,612 h=0xcf969183dde6e185ba5761b5ac342466ecb5a067c3be5d5b795e94e5614dee61 z=3
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[232 4278055872 19 68203 16 1245140 108 2 0 0 1245140 55 68224]" gasCharged=0   beforeGas=988,911 afterGas=988,911
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="provide hash(jam): expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:19:15.025] WRITE                                    reg="[234 4278055608 19 68203 16 1 4278055623 4278055623 1 4278055624 8 55 68224]" gasCharged=10  beforeGas=988,879 afterGas=988,869
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=fcffffffffffffff         vlen=8
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:15.025] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=987,748 afterGas=987,748
+DEBUG[05-05|15:19:15.025] INFO#corevm                              m="write_result key=[8], result=fffffffffffffffc"
+DEBUG[05-05|15:19:15.025] INFO                                     reg="[234 4278055872 9 4278055399 8 1245140 4278058848 2953942612 4278056024 0 52 0 4278055408]" gasCharged=10  beforeGas=987,721 afterGas=987,711
+DEBUG[05-05|15:19:15.025] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32361 100 100 14 32121]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000697e000000000000640000000000000064000000000000000e000000797d000000000000
+DEBUG[05-05|15:19:15.025] WRITE                                    reg="[368 4278055608 9 4278055399 8 1 4278055623 4278055623 1 4278055624 8 0 4278055408]" gasCharged=10  beforeGas=987,694 afterGas=987,684
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:19:15.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:15.026] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=986,811 afterGas=986,811
+DEBUG[05-05|15:19:15.026] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:19:15.026] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=986,035 afterGas=986,035
+DEBUG[05-05|15:19:15.026] INFO#corevm                              m="info@n=4: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:19:15.026] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=986,020 afterGas=986,010
+DEBUG[05-05|15:19:15.026] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=985,991 afterGas=985,981
+DEBUG[05-05|15:19:15.026] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=900b0f0000000000         vlen=8
+DEBUG[05-05|15:19:15.026] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:15.026] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=985,040 afterGas=985,040
+DEBUG[05-05|15:19:15.026] INFO#corevm                              m="write_result key=[9], result=f0b90"
+DEBUG[05-05|15:19:15.026] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=984,459 afterGas=984,459
+DEBUG[05-05|15:19:15.026] YIELD                                    reg="[380 4278055872 17 69380 16 196633 4278058848 196633 4 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=984,354 afterGas=984,344
+DEBUG[05-05|15:19:15.026] corevm_accumulate: YIELD OK              h=0x0400000005000000030000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:15.026] LOG                                      reg="[386 4278055872 1114112 0 1 50 1245198 2 0 0 1245198 27 404]" gasCharged=0   beforeGas=983,720 afterGas=983,720
+DEBUG[05-05|15:19:15.026] INFO#corevm                              m="yield@n=4: expect OK, got 0"
+DEBUG[05-05|15:19:15.026] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0400000005000000030000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:15.026] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x0d30188bca70d1a98f12cd7e243e7fd08bcd89277d91f4c584d37b12c8f7c02d","E":"0x915fce947a38d324d290ba8829ec5a9939856e3160ef81b519bcd6d082f8f0a2","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:19:15.027] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:19:15.027] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:19:15.027] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:19:15.027] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:19:15.027] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:19:15.027] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:19:15.027] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:19:15.031] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:19:15.031] BEEFY-C                                  s=2953942612 h=0x0400000005000000030000000000000000000000000000000000000000000000 encoded=549611b00400000005000000030000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:15.031] BEEFY accumulation root                  r=0x23dd1f2b944b543965af75d962aeb0d31da2c52838d26802200d489e7960168e
+INFO [05-05|15:19:15.062] proposeBlock                             mode=safrole  s.ID=3 p=0923..29c3 h=cccd..8444 e'=2 m'=11 "len(γ_a')"=12 blk="H_t=35 H_r=97fe..88dd  |E_A|=6"
+INFO [05-05|15:19:17.048] Work package accumulated                 hash=0x0d30188bca70d1a98f12cd7e243e7fd08bcd89277d91f4c584d37b12c8f7c02d count=1
+INFO [05-05|15:19:17.048] All work packages accumulated
+INFO [05-05|15:19:17.048] Fib2-(4) result key 0                    result=040000000500000003000000
+INFO [05-05|15:19:17.048] Fib2-(4) result key 1                    result=0000000000000000
+INFO [05-05|15:19:17.048] Fib2-(4) result key 2                    result=0200000021000000
+INFO [05-05|15:19:17.048] Fib2-(4) result key 5                    result=ffffffffffffffff
+INFO [05-05|15:19:17.048] Fib2-(4) result key 6                    result=faffffffffffffff
+INFO [05-05|15:19:17.048] Fib2-(4) result key 7                    result=fcffffffffffffff
+INFO [05-05|15:19:17.048] Fib2-(4) result key 8                    result=0000000000000000
+INFO [05-05|15:19:17.048] Fib2-(4) result key 9                    result=900b0f0000000000
+INFO [05-05|15:19:17.049] Work package submitted                   identifier=FIB2(5)                             hash=0x3b8a394fa4b08bf27f4caf666478ee46fd4c6485163b6c9417647d6f633c2b50 core=1
+INFO [05-05|15:19:21.303] proposeBlock                             mode=safrole  s.ID=0 p=cccd..8444 h=752c..1042 e'=3 m'=0  "len(γ_a')"=3  blk="H_t=36 H_r=cf2d..60e7  EpochMarker(η1'=7e4f..8ff9, η2'=767a..23ae) |E_T|=3 |E_G|=1"
+DEBUG[05-05|15:19:27.236] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0x3b8a394fa4b08bf27f4caf666478ee46fd4c6485163b6c9417647d6f633c2b50] "W^*-wphs of accumulatable work reports)"=[0x3b8a394fa4b08bf27f4caf666478ee46fd4c6485163b6c9417647d6f633c2b50]
+DEBUG[05-05|15:19:27.236] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x3b8a394fa4b08bf27f4caf666478ee46fd4c6485163b6c9417647d6f633c2b50","E":"0x2ab6846151c8925b7953f5e988967f351a806765824f1cab9706f9a53564469c","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x2d6b8695924cff858a50a7ca69aa5775848d29b5f7f69332f44bd865f0630526","G":1000000,"D":"0x000c050000000800000005000000"}'
+DEBUG[05-05|15:19:27.239] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:19:27.239] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=050000000800000005000000 vlen=12
+DEBUG[05-05|15:19:27.239] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOOKUP                                   reg="[136 4278055872 0 256 0 3 4278058848 2953942612 4278055960 4278056024 0 3 0]" gasCharged=10  beforeGas=999,601 afterGas=999,591
+DEBUG[05-05|15:19:27.240] corevm_accumulate: LOOKUP OK             s=2953942612 h=4,278,055,960 len(v)=3
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[240 4278055872 19 67005 16 110 1245138 2 0 0 1245138 57 67024]" gasCharged=0   beforeGas=998,785 afterGas=998,785
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="lookup hash(jam)@n=5: expect 3, got 3 (recorded at key 1)"
+DEBUG[05-05|15:19:27.240] WRITE                                    reg="[242 4278055608 19 67005 16 1 4278055623 4278055623 1 4278055624 8 57 67024]" gasCharged=10  beforeGas=998,753 afterGas=998,743
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=0300000000000000         vlen=8
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=997,870 afterGas=997,870
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="write_result key=[1], result=3"
+DEBUG[05-05|15:19:27.240] QUERY                                    reg="[242 4278055872 1114112 16 1 110 1245138 4278055960 3 0 52 0 404]" gasCharged=10  beforeGas=997,846 afterGas=997,836
+DEBUG[05-05|15:19:27.240] corevm_accumulate: QUERY 2               x=33 y=35
+DEBUG[05-05|15:19:27.240] corevm_accumulate: QUERY OK              h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    w7=141,733,920,770 w8=35 len(anchor_timeslot)=2
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[246 4278055872 16 67076 16 1245126 122 2 0 0 1245126 74 67096]" gasCharged=0   beforeGas=996,910 afterGas=996,910
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="query hash(jam)@n=5: expect non-zero, got 141733920770 (recorded at key 2)"
+DEBUG[05-05|15:19:27.240] WRITE                                    reg="[248 4278055608 16 67076 16 1 4278055623 4278055623 1 4278055624 8 74 67096]" gasCharged=10  beforeGas=996,875 afterGas=996,865
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=0200000021000000         vlen=8
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[478 4278055608 1114112 16 10 1245196 52 2 0 0 1245196 39 404]" gasCharged=0   beforeGas=995,839 afterGas=995,839
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="write_result key=[2], result=2100000002"
+DEBUG[05-05|15:19:27.240] EJECT                                    reg="[248 4278055872 1114112 16 10 4278058848 2 2953942612 4278055960 0 52 0 404]" gasCharged=10  beforeGas=995,815 afterGas=995,805
+DEBUG[05-05|15:19:27.240] corevm_accumulate: EJECT WHO             d=2953942612
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[252 4278055872 15 67149 8 92 1245156 2 0 0 1245156 67 67160]" gasCharged=0   beforeGas=994,786 afterGas=994,786
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="eject@n=5: expect WHO, got 18446744073709551612 (recorded at key 5)"
+DEBUG[05-05|15:19:27.240] WRITE                                    reg="[254 4278055608 15 67149 8 1 4278055623 4278055623 1 4278055624 8 67 67160]" gasCharged=10  beforeGas=994,752 afterGas=994,742
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=05       k=0x664ab67165b2f74555d033f970ad1c7af9d2adde9e979592bfb48128d1231f50 v=fcffffffffffffff         vlen=8
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=993,621 afterGas=993,621
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="write_result key=[5], result=fffffffffffffffc"
+DEBUG[05-05|15:19:27.240] BLESS                                    reg="[254 4278055872 9 4278055399 8 92 4278058848 281474976710655 0 0 4278055960 0 4278055408]" gasCharged=10  beforeGas=993,594 afterGas=993,584
+DEBUG[05-05|15:19:27.240] corevm_accumulate: BLESS WHO             m=281474976710655                      a=0 v=0
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[258 4278055872 15 67253 8 1245156 92 2 0 0 1245156 67 67264]" gasCharged=0   beforeGas=992,566 afterGas=992,566
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="bless@n=5: expect WHO, got 18446744073709551612 (recorded at key 6)"
+DEBUG[05-05|15:19:27.240] WRITE                                    reg="[260 4278055608 15 67253 8 1 4278055623 4278055623 1 4278055624 8 67 67264]" gasCharged=10  beforeGas=992,532 afterGas=992,522
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=06       k=0x6ed0d9695e0faf6502d55bb73af9dc1dfef8adc2f16cf70cac4d94ebb4cdf289 v=fcffffffffffffff         vlen=8
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=991,401 afterGas=991,401
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="write_result key=[6], result=fffffffffffffffc"
+DEBUG[05-05|15:19:27.240] PROVIDE                                  reg="[260 4278055872 9 4278055399 8 1245156 4278058848 2953942612 4278055960 3 52 0 4278055408]" gasCharged=10  beforeGas=991,376 afterGas=991,366
+DEBUG[05-05|15:19:27.240] corevm_accumulate: PROVIDE OK            omega_7=2,953,942,612 h=0xcf969183dde6e185ba5761b5ac342466ecb5a067c3be5d5b795e94e5614dee61 z=3
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[264 4278055872 19 68116 16 1245140 108 2 0 0 1245140 55 68136]" gasCharged=0   beforeGas=990,815 afterGas=990,815
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="provide hash(jam): expect OK, got 0 (recorded at key 7)"
+DEBUG[05-05|15:19:27.240] WRITE                                    reg="[266 4278055608 19 68116 16 1 4278055623 4278055623 1 4278055624 8 55 68136]" gasCharged=10  beforeGas=990,781 afterGas=990,771
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=07       k=0xf7a0c652460cce77eaf3fab8ac01aea98f44a37b42e74561531c941f6df0c8e4 v=0000000000000000         vlen=8
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=989,898 afterGas=989,898
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="write_result key=[7], result=0"
+DEBUG[05-05|15:19:27.240] PROVIDE                                  reg="[266 4278055872 1114112 16 1 1245140 4278058848 2953942612 4278055960 3 52 0 404]" gasCharged=10  beforeGas=989,873 afterGas=989,863
+DEBUG[05-05|15:19:27.240] corevm_accumulate: PROVIDE HUH           omega_7=2,953,942,612 h=0xcf969183dde6e185ba5761b5ac342466ecb5a067c3be5d5b795e94e5614dee61 z=3
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[270 4278055872 13 68209 8 1245138 110 2 0 0 1245138 75 68224]" gasCharged=0   beforeGas=989,068 afterGas=989,068
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="provide hash(jam): expect HUH, got 18446744073709551607 (recorded at key 8)"
+DEBUG[05-05|15:19:27.240] WRITE                                    reg="[366 4278055608 13 68209 8 1 4278055623 4278055623 1 4278055624 8 75 68224]" gasCharged=10  beforeGas=989,033 afterGas=989,023
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=f7ffffffffffffff         vlen=8
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=987,902 afterGas=987,902
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="write_result key=[8], result=fffffffffffffff7"
+DEBUG[05-05|15:19:27.240] INFO                                     reg="[366 4278055872 9 4278055399 8 1245138 4278058848 2953942612 4278056024 0 52 0 4278055408]" gasCharged=10  beforeGas=987,878 afterGas=987,868
+DEBUG[05-05|15:19:27.240] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32361 100 100 14 32121]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000697e000000000000640000000000000064000000000000000e000000797d000000000000
+DEBUG[05-05|15:19:27.240] WRITE                                    reg="[368 4278055608 9 4278055399 8 1 4278055623 4278055623 1 4278055624 8 0 4278055408]" gasCharged=10  beforeGas=987,851 afterGas=987,841
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=986,968 afterGas=986,968
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=986,192 afterGas=986,192
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="info@n=5: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:19:27.240] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=986,177 afterGas=986,167
+DEBUG[05-05|15:19:27.240] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=986,148 afterGas=986,138
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=2d0c0f0000000000         vlen=8
+DEBUG[05-05|15:19:27.240] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=985,197 afterGas=985,197
+DEBUG[05-05|15:19:27.240] INFO#corevm                              m="write_result key=[9], result=f0c2d"
+DEBUG[05-05|15:19:27.240] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=984,616 afterGas=984,616
+DEBUG[05-05|15:19:27.240] YIELD                                    reg="[380 4278055872 17 69380 16 196633 4278058848 196633 5 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=984,511 afterGas=984,501
+DEBUG[05-05|15:19:27.240] corevm_accumulate: YIELD OK              h=0x0500000008000000050000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:27.241] LOG                                      reg="[386 4278055872 1114112 0 1 50 1245198 2 0 0 1245198 27 404]" gasCharged=0   beforeGas=983,877 afterGas=983,877
+DEBUG[05-05|15:19:27.241] INFO#corevm                              m="yield@n=5: expect OK, got 0"
+DEBUG[05-05|15:19:27.241] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0500000008000000050000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:27.241] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x3b8a394fa4b08bf27f4caf666478ee46fd4c6485163b6c9417647d6f633c2b50","E":"0x2ab6846151c8925b7953f5e988967f351a806765824f1cab9706f9a53564469c","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:19:27.241] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:19:27.241] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:19:27.241] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:19:27.241] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:19:27.241] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:19:27.241] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:19:27.241] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:19:27.243] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:19:27.243] BEEFY-C                                  s=2953942612 h=0x0500000008000000050000000000000000000000000000000000000000000000 encoded=549611b00500000008000000050000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:27.243] BEEFY accumulation root                  r=0x3dbf1e0512a511cff356719fee837b66ff7ba2ab985bb229a38ca028f3ecaa5a
+INFO [05-05|15:19:27.273] proposeBlock                             mode=safrole  s.ID=0 p=752c..1042 h=43e2..9141    e'=3 m'=1  "len(γ_a')"=6  blk="H_t=37 H_r=af8d..553f  |E_T|=3 |E_A|=6"
+INFO [05-05|15:19:29.049] Work package accumulated                 hash=0x3b8a394fa4b08bf27f4caf666478ee46fd4c6485163b6c9417647d6f633c2b50 count=1
+INFO [05-05|15:19:29.049] All work packages accumulated
+INFO [05-05|15:19:29.049] Fib2-(5) result key 0                    result=050000000800000005000000
+INFO [05-05|15:19:29.049] Fib2-(5) result key 1                    result=0300000000000000
+INFO [05-05|15:19:29.049] Fib2-(5) result key 2                    result=0200000021000000
+INFO [05-05|15:19:29.049] Fib2-(5) result key 5                    result=fcffffffffffffff
+INFO [05-05|15:19:29.049] Fib2-(5) result key 6                    result=fcffffffffffffff
+INFO [05-05|15:19:29.049] Fib2-(5) result key 7                    result=0000000000000000
+INFO [05-05|15:19:29.049] Fib2-(5) result key 8                    result=0000000000000000
+INFO [05-05|15:19:29.049] Fib2-(5) result key 9                    result=2d0c0f0000000000
+INFO [05-05|15:19:29.049] Work package submitted                   identifier=FIB2(6)                             hash=0x205ff97f740ef2c410192c71eeb7ae6b490a1c82b27fd8ec85142123f6f78d65 core=1
+INFO [05-05|15:19:33.299] proposeBlock                             mode=safrole  s.ID=5 p=43e2..9141 h=bef7..85ab    e'=3 m'=2  "len(γ_a')"=9  blk="H_t=38 H_r=6466..39b9  |E_T|=3 |E_G|=1"
+DEBUG[05-05|15:19:39.031] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0x205ff97f740ef2c410192c71eeb7ae6b490a1c82b27fd8ec85142123f6f78d65] "W^*-wphs of accumulatable work reports)"=[0x205ff97f740ef2c410192c71eeb7ae6b490a1c82b27fd8ec85142123f6f78d65]
+DEBUG[05-05|15:19:39.031] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x205ff97f740ef2c410192c71eeb7ae6b490a1c82b27fd8ec85142123f6f78d65","E":"0xda6c0868ba2b38b51dbfa0dac8507dbf1b91ff3c2af941dd9880bf8ed2bc3fce","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x082abde8ae6218b2b61078ea523c2f35713cfa9c2ecae3ab47ce89061707cce9","G":1000000,"D":"0x000c060000000d00000008000000"}'
+DEBUG[05-05|15:19:39.035] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:19:39.035] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=060000000d00000008000000 vlen=12
+DEBUG[05-05|15:19:39.035] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:39.035] SOLICIT                                  reg="[136 4278055872 0 256 0 3 4278058848 4278055960 3 0 4278056280 4278056280 0]" gasCharged=10  beforeGas=999,604 afterGas=999,594
+DEBUG[05-05|15:19:39.035] corevm_accumulate: SOLICIT OK BBB        h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    newvalue="[33 35 39]"
+DEBUG[05-05|15:19:39.035] WRITE                                    reg="[274 4278055608 0 256 0 1 4278055623 4278055623 1 4278055624 8 4278056280 0]" gasCharged=10  beforeGas=999,578 afterGas=999,568
+DEBUG[05-05|15:19:39.035] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=0000000000000000         vlen=8
+DEBUG[05-05|15:19:39.035] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:39.035] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=998,695 afterGas=998,695
+DEBUG[05-05|15:19:39.035] INFO#corevm                              m="write_result key=[1], result=0"
+DEBUG[05-05|15:19:39.035] LOG                                      reg="[278 4278055872 17 67007 16 114 1245134 2 0 0 1245134 59 67024]" gasCharged=0   beforeGas=997,877 afterGas=997,877
+DEBUG[05-05|15:19:39.035] INFO#corevm                              m="solicit hash(jam)@n=6: expect OK, got 0 (recorded at key 1)"
+DEBUG[05-05|15:19:39.035] QUERY                                    reg="[278 4278055872 17 67007 16 114 1245134 4278055960 3 0 114 59 67024]" gasCharged=10  beforeGas=997,859 afterGas=997,849
+DEBUG[05-05|15:19:39.035] corevm_accumulate: QUERY 3               x=33 y=35 z=39
+DEBUG[05-05|15:19:39.035] corevm_accumulate: QUERY OK              h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    w7=141,733,920,771 w8=167,503,724,579 len(anchor_timeslot)=3
+DEBUG[05-05|15:19:39.035] LOG                                      reg="[282 4278055872 16 67076 16 4278056288 1245126 2 0 0 1245126 74 67096]" gasCharged=0   beforeGas=996,917 afterGas=996,917
+DEBUG[05-05|15:19:39.035] INFO#corevm                              m="query hash(jam)@n=6: expect 2+2^32*x, got 141733920771 (recorded at key 2)"
+DEBUG[05-05|15:19:39.035] WRITE                                    reg="[284 4278055608 16 67076 16 1 4278055623 4278055623 1 4278055624 8 74 122]" gasCharged=10  beforeGas=996,882 afterGas=996,872
+DEBUG[05-05|15:19:39.035] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=0300000021000000         vlen=8
+DEBUG[05-05|15:19:39.035] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:39.035] LOG                                      reg="[478 4278055608 1114112 16 10 1245196 52 2 0 0 1245196 39 404]" gasCharged=0   beforeGas=995,846 afterGas=995,846
+DEBUG[05-05|15:19:39.035] INFO#corevm                              m="write_result key=[2], result=2100000003"
+DEBUG[05-05|15:19:39.035] ASSIGN                                   reg="[288 4278055872 32 4278055960 32 4278058848 0 0 4278056288 0 4278058848 4278058848 0]" gasCharged=10  beforeGas=990,599 afterGas=990,589
+DEBUG[05-05|15:19:39.036] corevm_accumulate: ASSIGN OK             c=0
+DEBUG[05-05|15:19:39.036] LOG                                      reg="[292 4278055872 20 67144 16 92 1245156 2 0 0 1245156 48 404]" gasCharged=0   beforeGas=989,828 afterGas=989,828
+DEBUG[05-05|15:19:39.036] INFO#corevm                              m="assign@n=6: expect OK, got 0 (recorded at key 5)"
+DEBUG[05-05|15:19:39.036] WRITE                                    reg="[366 4278055608 20 67144 16 1 4278055623 4278055623 1 4278055624 8 0 404]" gasCharged=10  beforeGas=989,790 afterGas=989,780
+DEBUG[05-05|15:19:39.036] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=05       k=0x664ab67165b2f74555d033f970ad1c7af9d2adde9e979592bfb48128d1231f50 v=0000000000000000         vlen=8
+DEBUG[05-05|15:19:39.036] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:39.036] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=988,907 afterGas=988,907
+DEBUG[05-05|15:19:39.036] INFO#corevm                              m="write_result key=[5], result=0"
+DEBUG[05-05|15:19:39.036] INFO                                     reg="[366 4278055872 1114112 16 1 92 4278058848 2953942612 4278056024 0 52 0 404]" gasCharged=10  beforeGas=988,883 afterGas=988,873
+DEBUG[05-05|15:19:39.036] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32361 100 100 14 32121]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000697e000000000000640000000000000064000000000000000e000000797d000000000000
+DEBUG[05-05|15:19:39.036] WRITE                                    reg="[368 4278055608 1114112 16 1 1 4278055623 4278055623 1 4278055624 8 0 404]" gasCharged=10  beforeGas=988,856 afterGas=988,846
+DEBUG[05-05|15:19:39.036] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:19:39.036] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:39.036] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=987,973 afterGas=987,973
+DEBUG[05-05|15:19:39.036] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:19:39.036] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=987,197 afterGas=987,197
+DEBUG[05-05|15:19:39.036] INFO#corevm                              m="info@n=6: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:19:39.036] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=987,182 afterGas=987,172
+DEBUG[05-05|15:19:39.036] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=987,153 afterGas=987,143
+DEBUG[05-05|15:19:39.036] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=1a100f0000000000         vlen=8
+DEBUG[05-05|15:19:39.036] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:39.036] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=986,202 afterGas=986,202
+DEBUG[05-05|15:19:39.036] INFO#corevm                              m="write_result key=[9], result=f101a"
+DEBUG[05-05|15:19:39.036] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=985,621 afterGas=985,621
+DEBUG[05-05|15:19:39.036] CHECKPOINT                               reg="[380 4278055872 17 69380 16 196633 4278058848 51 6 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=985,515 afterGas=985,505
+DEBUG[05-05|15:19:39.036] corevm_accumulate: CHECKPOINT            g=985505
+DEBUG[05-05|15:19:39.036] LOG                                      reg="[380 4278055872 17 69380 16 196633 4278058848 3 0 0 69432 17 69400]" gasCharged=0   beforeGas=985,500 afterGas=985,500
+DEBUG[05-05|15:19:39.036] DEBUG#corevm                             m="corevm checkpoint"
+DEBUG[05-05|15:19:39.036] WRITE                                    reg="[382 4278055608 17 69380 16 1 4278055623 4278055623 1 4278055624 8 17 69400]" gasCharged=10  beforeGas=985,482 afterGas=985,472
+DEBUG[05-05|15:19:39.036] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=07       k=0xf7a0c652460cce77eaf3fab8ac01aea98f44a37b42e74561531c941f6df0c8e4 v=3000000000000000         vlen=8
+DEBUG[05-05|15:19:39.036] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:39.036] LOG                                      reg="[478 4278055608 1114112 16 2 1245196 52 2 0 0 1245196 31 404]" gasCharged=0   beforeGas=984,582 afterGas=984,582
+DEBUG[05-05|15:19:39.036] INFO#corevm                              m="write_result key=[7], result=30"
+DEBUG[05-05|15:19:39.036] getArgumentOutputs - PANIC               service=corevm
+DEBUG[05-05|15:19:39.036] BEEFY PANIC @SINGLE ACCUMULATE           s=2953942612 B=0x0000000000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:39.036] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x205ff97f740ef2c410192c71eeb7ae6b490a1c82b27fd8ec85142123f6f78d65","E":"0xda6c0868ba2b38b51dbfa0dac8507dbf1b91ff3c2af941dd9880bf8ed2bc3fce","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:19:39.037] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:19:39.037] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:19:39.037] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:19:39.037] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:19:39.037] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:19:39.037] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:19:39.037] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:19:39.039] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:19:39.039] BEEFY accumulation root                  r=0x80e16278c1e787bc09d8cdf3e6fa5e2c7808d658ac5526b24fd1d8c2f4dd6650
+INFO [05-05|15:19:39.067] proposeBlock                             mode=safrole  s.ID=2 p=bef7..85ab h=4782..07d2    e'=3 m'=3  "len(γ_a')"=12 blk="H_t=39 H_r=ed22..5aaa  |E_T|=3 |E_A|=6"
+INFO [05-05|15:19:41.050] Work package accumulated                 hash=0x205ff97f740ef2c410192c71eeb7ae6b490a1c82b27fd8ec85142123f6f78d65 count=1
+INFO [05-05|15:19:41.050] All work packages accumulated
+INFO [05-05|15:19:41.050] Fib2-(6) result key 0                    result=060000000d00000008000000
+INFO [05-05|15:19:41.050] Fib2-(6) result key 1                    result=0000000000000000
+INFO [05-05|15:19:41.050] Fib2-(6) result key 2                    result=0300000021000000
+INFO [05-05|15:19:41.050] Fib2-(6) result key 5                    result=0000000000000000
+INFO [05-05|15:19:41.050] Fib2-(6) result key 6                    result=fcffffffffffffff
+INFO [05-05|15:19:41.050] Fib2-(6) result key 7                    result=0000000000000000
+INFO [05-05|15:19:41.050] Fib2-(6) result key 8                    result=0000000000000000
+INFO [05-05|15:19:41.050] Fib2-(6) result key 9                    result=1a100f0000000000
+INFO [05-05|15:19:41.050] SubmitAndWaitForPreimage SUBMITTED       id=2953942612 preimageHash=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 len=3
+INFO [05-05|15:19:42.051] SubmitAndWaitForPreimage ON-CHAIN        id=2953942612 preimageHash=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 len=3
+INFO [05-05|15:19:42.051] Work package submitted                   identifier=FIB2(7)                             hash=0x42788d7945f43c77d717142cff33f3c0464bd26b4c5e6d1aa49571363dbac28f core=1
+INFO [05-05|15:19:45.282] proposeBlock                             mode=safrole  s.ID=5 p=4782..07d2 h=dd2e..a776    e'=3 m'=4  "len(γ_a')"=12 blk="H_t=40 H_r=67bb..9b03  |E_G|=1"
+DEBUG[05-05|15:19:51.021] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0x42788d7945f43c77d717142cff33f3c0464bd26b4c5e6d1aa49571363dbac28f] "W^*-wphs of accumulatable work reports)"=[0x42788d7945f43c77d717142cff33f3c0464bd26b4c5e6d1aa49571363dbac28f]
+DEBUG[05-05|15:19:51.021] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x42788d7945f43c77d717142cff33f3c0464bd26b4c5e6d1aa49571363dbac28f","E":"0xca947086ed9d34e36f4eef9a73415f9a8aca99e701f3d77867ff70330fde8f8f","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x3e529520f3a200df322f81a9d952e89b44cec08ec05de39c42a2a204f19275f9","G":1000000,"D":"0x000c07000000150000000d000000"}'
+DEBUG[05-05|15:19:51.025] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=07000000150000000d000000 vlen=12
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:51.025] LOOKUP                                   reg="[136 4278055872 0 256 0 3 4278058848 2953942612 4278055960 4278056024 0 3 0]" gasCharged=10  beforeGas=999,601 afterGas=999,591
+DEBUG[05-05|15:19:51.025] corevm_accumulate: LOOKUP OK             s=2953942612 h=4,278,055,960 len(v)=3
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[298 4278055872 18 67006 16 112 1245136 2 0 0 1245136 58 67024]" gasCharged=0   beforeGas=998,817 afterGas=998,817
+DEBUG[05-05|15:19:51.025] INFO#corevm                              m="lookup hash(jam)@n=7:: expect 3, got 3 (recorded at key 1)"
+DEBUG[05-05|15:19:51.025] WRITE                                    reg="[300 4278055608 18 67006 16 1 4278055623 4278055623 1 4278055624 8 58 67024]" gasCharged=10  beforeGas=998,783 afterGas=998,773
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=0300000000000000         vlen=8
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=997,900 afterGas=997,900
+DEBUG[05-05|15:19:51.025] INFO#corevm                              m="write_result key=[1], result=3"
+DEBUG[05-05|15:19:51.025] QUERY                                    reg="[300 4278055872 1114112 16 1 112 4278058848 4278055960 3 0 52 0 404]" gasCharged=10  beforeGas=997,876 afterGas=997,866
+DEBUG[05-05|15:19:51.025] corevm_accumulate: QUERY 3               x=33 y=35 z=39
+DEBUG[05-05|15:19:51.025] corevm_accumulate: QUERY OK              h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    w7=141,733,920,771 w8=167,503,724,579 len(anchor_timeslot)=3
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[304 4278055872 16 67076 16 1245126 122 2 0 0 1245126 74 67096]" gasCharged=0   beforeGas=996,944 afterGas=996,944
+DEBUG[05-05|15:19:51.025] INFO#corevm                              m="query hash(jam)@n=7: expect non-zero, got 141733920771 (recorded at key 2)"
+DEBUG[05-05|15:19:51.025] WRITE                                    reg="[366 4278055608 16 67076 16 1 4278055623 4278055623 1 4278055624 8 0 67096]" gasCharged=10  beforeGas=996,906 afterGas=996,896
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=0300000021000000         vlen=8
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[478 4278055608 1114112 16 10 1245196 52 2 0 0 1245196 39 404]" gasCharged=0   beforeGas=995,870 afterGas=995,870
+DEBUG[05-05|15:19:51.025] INFO#corevm                              m="write_result key=[2], result=2100000003"
+DEBUG[05-05|15:19:51.025] INFO                                     reg="[366 4278055872 1114112 16 10 1245126 4278058848 2953942612 4278056024 0 52 0 404]" gasCharged=10  beforeGas=995,846 afterGas=995,836
+DEBUG[05-05|15:19:51.025] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32361 100 100 14 32121]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000697e000000000000640000000000000064000000000000000e000000797d000000000000
+DEBUG[05-05|15:19:51.025] WRITE                                    reg="[368 4278055608 1114112 16 10 1 4278055623 4278055623 1 4278055624 8 0 404]" gasCharged=10  beforeGas=995,819 afterGas=995,809
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=994,936 afterGas=994,936
+DEBUG[05-05|15:19:51.025] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=994,160 afterGas=994,160
+DEBUG[05-05|15:19:51.025] INFO#corevm                              m="info@n=7: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:19:51.025] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=994,145 afterGas=994,135
+DEBUG[05-05|15:19:51.025] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=994,116 afterGas=994,106
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=4d2b0f0000000000         vlen=8
+DEBUG[05-05|15:19:51.025] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=993,165 afterGas=993,165
+DEBUG[05-05|15:19:51.025] INFO#corevm                              m="write_result key=[9], result=f2b4d"
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=992,584 afterGas=992,584
+DEBUG[05-05|15:19:51.025] YIELD                                    reg="[380 4278055872 17 69380 16 196633 4278058848 196633 7 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=992,479 afterGas=992,469
+DEBUG[05-05|15:19:51.025] corevm_accumulate: YIELD OK              h=0x07000000150000000d0000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:51.025] LOG                                      reg="[386 4278055872 1114112 0 1 50 1245198 2 0 0 1245198 27 404]" gasCharged=0   beforeGas=991,845 afterGas=991,845
+DEBUG[05-05|15:19:51.025] INFO#corevm                              m="yield@n=7: expect OK, got 0"
+DEBUG[05-05|15:19:51.025] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x07000000150000000d0000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:51.025] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x42788d7945f43c77d717142cff33f3c0464bd26b4c5e6d1aa49571363dbac28f","E":"0xca947086ed9d34e36f4eef9a73415f9a8aca99e701f3d77867ff70330fde8f8f","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:19:51.026] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:19:51.026] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:19:51.026] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:19:51.026] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:19:51.026] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:19:51.026] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:19:51.026] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:19:51.027] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:19:51.027] BEEFY-C                                  s=2953942612 h=0x07000000150000000d0000000000000000000000000000000000000000000000 encoded=549611b007000000150000000d0000000000000000000000000000000000000000000000
+DEBUG[05-05|15:19:51.027] BEEFY accumulation root                  r=0x10fdabc9e7e3fc22b0550f8ef9cef73c0b41d5d715fd5483f7ea11dca5811ba5
+INFO [05-05|15:19:51.055] proposeBlock                             mode=safrole  s.ID=2 p=dd2e..a776 h=30c6..3c40    e'=3 m'=5  "len(γ_a')"=12 blk="H_t=41 H_r=0da8..d6d4  |E_A|=6"
+INFO [05-05|15:19:52.052] Work package accumulated                 hash=0x42788d7945f43c77d717142cff33f3c0464bd26b4c5e6d1aa49571363dbac28f count=1
+INFO [05-05|15:19:52.052] All work packages accumulated
+INFO [05-05|15:19:52.052] Fib2-(7) result key 0                    result=07000000150000000d000000
+INFO [05-05|15:19:52.052] Fib2-(7) result key 1                    result=0300000000000000
+INFO [05-05|15:19:52.052] Fib2-(7) result key 2                    result=0300000021000000
+INFO [05-05|15:19:52.052] Fib2-(7) result key 5                    result=0000000000000000
+INFO [05-05|15:19:52.052] Fib2-(7) result key 6                    result=fcffffffffffffff
+INFO [05-05|15:19:52.052] Fib2-(7) result key 7                    result=0000000000000000
+INFO [05-05|15:19:52.052] Fib2-(7) result key 8                    result=0000000000000000
+INFO [05-05|15:19:52.052] Fib2-(7) result key 9                    result=4d2b0f0000000000
+INFO [05-05|15:19:52.052] Work package submitted                   identifier=FIB2(8)                             hash=0xf1368e345a3074c43ac281c5ac738923bff0452e6463cca5b4e21988578d526e core=1
+INFO [05-05|15:19:57.064] proposeBlock                             mode=safrole  s.ID=3 p=30c6..3c40 h=3945..e7b1    e'=3 m'=6  "len(γ_a')"=12 blk="H_t=42 H_r=9cc3..5f82  |E_G|=1"
+DEBUG[05-05|15:20:03.215] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0xf1368e345a3074c43ac281c5ac738923bff0452e6463cca5b4e21988578d526e] "W^*-wphs of accumulatable work reports)"=[0xf1368e345a3074c43ac281c5ac738923bff0452e6463cca5b4e21988578d526e]
+DEBUG[05-05|15:20:03.215] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0xf1368e345a3074c43ac281c5ac738923bff0452e6463cca5b4e21988578d526e","E":"0x155dd15d2fb228c74051fee2cb18a9d2b06ba2a34cc5c8b4ee879aeda389ab5d","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x708b17d68fb4871e93aa4d5e623a5b6e2d60d57236f78aed90f3caa85cfa5ed9","G":1000000,"D":"0x000c080000002200000015000000"}'
+DEBUG[05-05|15:20:03.217] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:20:03.217] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=080000002200000015000000 vlen=12
+DEBUG[05-05|15:20:03.217] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:03.217] FORGET                                   reg="[136 4278055872 0 256 0 3 4278058848 4278055960 3 0 4278056280 4278056280 0]" gasCharged=10  beforeGas=999,604 afterGas=999,594
+DEBUG[05-05|15:20:03.217] corevm_accumulate: FORGET OK3            h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    newvalue="[39 43]"
+DEBUG[05-05|15:20:03.217] LOG                                      reg="[310 4278055872 18 67006 16 112 1245136 2 0 0 1245136 58 67024]" gasCharged=0   beforeGas=998,832 afterGas=998,832
+DEBUG[05-05|15:20:03.217] INFO#corevm                              m="forget hash(jam)@n=8: expect OK, got 0 (recorded at key 1)"
+DEBUG[05-05|15:20:03.218] WRITE                                    reg="[312 4278055608 18 67006 16 1 4278055623 4278055623 1 4278055624 8 58 67024]" gasCharged=10  beforeGas=998,798 afterGas=998,788
+DEBUG[05-05|15:20:03.218] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=0000000000000000         vlen=8
+DEBUG[05-05|15:20:03.218] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:03.218] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=997,915 afterGas=997,915
+DEBUG[05-05|15:20:03.218] INFO#corevm                              m="write_result key=[1], result=0"
+DEBUG[05-05|15:20:03.218] QUERY                                    reg="[312 4278055872 1114112 16 1 112 4278058848 4278055960 3 0 52 0 404]" gasCharged=10  beforeGas=997,891 afterGas=997,881
+DEBUG[05-05|15:20:03.218] corevm_accumulate: QUERY 2               x=39 y=43
+DEBUG[05-05|15:20:03.218] corevm_accumulate: QUERY OK              h=0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 z=3    w7=167,503,724,546 w8=43              len(anchor_timeslot)=2
+DEBUG[05-05|15:20:03.218] LOG                                      reg="[316 4278055872 16 67008 16 1245126 122 2 0 0 1245126 74 67008]" gasCharged=0   beforeGas=996,974 afterGas=996,974
+DEBUG[05-05|15:20:03.218] INFO#corevm                              m="query hash(jam)@n=8: expect non-zero, got 167503724546 (recorded at key 1)"
+DEBUG[05-05|15:20:03.218] WRITE                                    reg="[366 4278055608 16 67008 16 1 4278055623 4278055623 1 4278055624 8 74 67008]" gasCharged=10  beforeGas=996,939 afterGas=996,929
+DEBUG[05-05|15:20:03.218] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=0200000027000000         vlen=8
+DEBUG[05-05|15:20:03.218] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:03.218] LOG                                      reg="[478 4278055608 1114112 16 10 1245196 52 2 0 0 1245196 39 404]" gasCharged=0   beforeGas=995,903 afterGas=995,903
+DEBUG[05-05|15:20:03.218] INFO#corevm                              m="write_result key=[2], result=2700000002"
+DEBUG[05-05|15:20:03.218] INFO                                     reg="[366 4278055872 1114112 16 10 1245126 4278058848 2953942612 4278056024 0 52 0 404]" gasCharged=10  beforeGas=995,879 afterGas=995,869
+DEBUG[05-05|15:20:03.218] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32361 100 100 14 32121]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000697e000000000000640000000000000064000000000000000e000000797d000000000000
+DEBUG[05-05|15:20:03.218] WRITE                                    reg="[368 4278055608 1114112 16 10 1 4278055623 4278055623 1 4278055624 8 0 404]" gasCharged=10  beforeGas=995,852 afterGas=995,842
+DEBUG[05-05|15:20:03.218] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:20:03.218] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:03.218] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=994,969 afterGas=994,969
+DEBUG[05-05|15:20:03.218] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:20:03.218] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=994,193 afterGas=994,193
+DEBUG[05-05|15:20:03.218] INFO#corevm                              m="info@n=8: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:20:03.218] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=994,178 afterGas=994,168
+DEBUG[05-05|15:20:03.218] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=994,149 afterGas=994,139
+DEBUG[05-05|15:20:03.218] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=6e2b0f0000000000         vlen=8
+DEBUG[05-05|15:20:03.219] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:03.219] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=993,198 afterGas=993,198
+DEBUG[05-05|15:20:03.219] INFO#corevm                              m="write_result key=[9], result=f2b6e"
+DEBUG[05-05|15:20:03.219] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=992,617 afterGas=992,617
+DEBUG[05-05|15:20:03.219] YIELD                                    reg="[380 4278055872 17 69380 16 196633 4278058848 196633 8 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=992,512 afterGas=992,502
+DEBUG[05-05|15:20:03.219] corevm_accumulate: YIELD OK              h=0x0800000022000000150000000000000000000000000000000000000000000000
+DEBUG[05-05|15:20:03.219] LOG                                      reg="[386 4278055872 1114112 0 1 50 1245198 2 0 0 1245198 27 404]" gasCharged=0   beforeGas=991,878 afterGas=991,878
+DEBUG[05-05|15:20:03.219] INFO#corevm                              m="yield@n=8: expect OK, got 0"
+DEBUG[05-05|15:20:03.219] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0800000022000000150000000000000000000000000000000000000000000000
+DEBUG[05-05|15:20:03.219] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0xf1368e345a3074c43ac281c5ac738923bff0452e6463cca5b4e21988578d526e","E":"0x155dd15d2fb228c74051fee2cb18a9d2b06ba2a34cc5c8b4ee879aeda389ab5d","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:20:03.220] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:20:03.220] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:20:03.220] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:20:03.220] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:20:03.220] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:20:03.220] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:20:03.220] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:20:03.222] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:20:03.222] BEEFY-C                                  s=2953942612 h=0x0800000022000000150000000000000000000000000000000000000000000000 encoded=549611b00800000022000000150000000000000000000000000000000000000000000000
+DEBUG[05-05|15:20:03.222] BEEFY accumulation root                  r=0x52d7bbe2c0694ec9e741853ce7148964eddb84dd28bb62422a1ae938af2712c9
+INFO [05-05|15:20:03.250] proposeBlock                             mode=safrole  s.ID=1 p=3945..e7b1 h=c552..4f40    e'=3 m'=7  "len(γ_a')"=12 blk="H_t=43 H_r=2d74..f0fb  |E_P|=1 |E_A|=6"
+INFO [05-05|15:20:04.053] Work package accumulated                 hash=0xf1368e345a3074c43ac281c5ac738923bff0452e6463cca5b4e21988578d526e count=1
+INFO [05-05|15:20:04.053] All work packages accumulated
+INFO [05-05|15:20:04.053] Fib2-(8) result key 0                    result=080000002200000015000000
+INFO [05-05|15:20:04.053] Fib2-(8) result key 1                    result=0000000000000000
+INFO [05-05|15:20:04.053] Fib2-(8) result key 2                    result=0200000027000000
+INFO [05-05|15:20:04.053] Fib2-(8) result key 5                    result=0000000000000000
+INFO [05-05|15:20:04.053] Fib2-(8) result key 6                    result=fcffffffffffffff
+INFO [05-05|15:20:04.053] Fib2-(8) result key 7                    result=0000000000000000
+INFO [05-05|15:20:04.053] Fib2-(8) result key 8                    result=0000000000000000
+INFO [05-05|15:20:04.053] Fib2-(8) result key 9                    result=6e2b0f0000000000
+INFO [05-05|15:20:04.053] Work package submitted                   identifier=FIB2(9)                             hash=0xfcbe367ee568b9aa527a085d360edb5549621208b83809cc640968880cfd03e5 core=1
+INFO [05-05|15:20:09.256] proposeBlock                             mode=safrole  s.ID=3 p=c552..4f40 h=bbef..a765    e'=3 m'=8  "len(γ_a')"=12 blk="H_t=44 H_r=2861..16bf  |E_G|=1"
+DEBUG[05-05|15:20:15.052] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0xfcbe367ee568b9aa527a085d360edb5549621208b83809cc640968880cfd03e5] "W^*-wphs of accumulatable work reports)"=[0xfcbe367ee568b9aa527a085d360edb5549621208b83809cc640968880cfd03e5]
+DEBUG[05-05|15:20:15.052] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0xfcbe367ee568b9aa527a085d360edb5549621208b83809cc640968880cfd03e5","E":"0x53d7fdd9de7b2fa6506e188a8636328fd2f19b2d639417d5e058898fc8f134bc","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x387c6d452fe6331290c7e06f58f4d55274c1f0e4de269b598a25c9c8736c0309","G":1000000,"D":"0x000c090000003700000022000000"}'
+DEBUG[05-05|15:20:15.054] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=090000003700000022000000 vlen=12
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:15.054] NEW                                      reg="[136 4278055872 0 256 0 3 4278058848 4278055960 3 911 911 4278056280 0]" gasCharged=10  beforeGas=999,602 afterGas=999,592
+DEBUG[05-05|15:20:15.054] corevm_accumulate: NEW OK                SERVICE=3808219695 code_hash_ptr=fefdf418 code_hash_ptr=6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 code_len=3     min_item_gas=911 min_memo_gas=911
+DEBUG[05-05|15:20:15.054] LOG                                      reg="[322 4278055872 20 67004 16 110 1245138 2 0 0 1245138 66 67024]" gasCharged=0   beforeGas=998,683 afterGas=998,683
+DEBUG[05-05|15:20:15.054] INFO#corevm                              m="new @n=9: expect service_index, got 3808219695 (recorded at key 1)"
+DEBUG[05-05|15:20:15.054] WRITE                                    reg="[324 4278055608 20 67004 16 1 4278055623 4278055623 1 4278055624 8 66 67024]" gasCharged=10  beforeGas=998,649 afterGas=998,639
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=2fd2fce200000000         vlen=8
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:15.054] LOG                                      reg="[478 4278055608 1114112 16 8 1245196 52 2 0 0 1245196 37 404]" gasCharged=0   beforeGas=997,647 afterGas=997,647
+DEBUG[05-05|15:20:15.054] INFO#corevm                              m="write_result key=[1], result=e2fcd22f"
+DEBUG[05-05|15:20:15.054] UPGRADE                                  reg="[324 4278055872 1114112 16 8 110 4278058848 4278055960 911 911 52 0 404]" gasCharged=10  beforeGas=997,622 afterGas=997,612
+DEBUG[05-05|15:20:15.054] corevm_accumulate: UPGRADE OK            code_hash=fefdf418 code_hash_ptr=6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 min_item_gas=911 min_memo_gas=911
+DEBUG[05-05|15:20:15.054] LOG                                      reg="[328 4278055872 18 67074 16 1245152 96 2 0 0 1245152 50 67096]" gasCharged=0   beforeGas=996,837 afterGas=996,837
+DEBUG[05-05|15:20:15.054] INFO#corevm                              m="upgrade @n=9: expect OK, got 0 (recorded at key 2)"
+DEBUG[05-05|15:20:15.054] WRITE                                    reg="[330 4278055608 18 67074 16 1 4278055623 4278055623 1 4278055624 8 50 67096]" gasCharged=10  beforeGas=996,802 afterGas=996,792
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=0000000000000000         vlen=8
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:15.054] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=995,919 afterGas=995,919
+DEBUG[05-05|15:20:15.054] INFO#corevm                              m="write_result key=[2], result=0"
+DEBUG[05-05|15:20:15.054] BLESS                                    reg="[330 4278055872 1114112 16 1 4278058848 2 0 1 1 4278058848 1 404]" gasCharged=10  beforeGas=995,888 afterGas=995,878
+DEBUG[05-05|15:20:15.054] corevm_accumulate: BLESS OK              m=0                                       a=1 v=1                        g=map[911:911]
+DEBUG[05-05|15:20:15.054] LOG                                      reg="[334 4278055872 20 67144 16 92 1245156 2 0 0 1245156 48 404]" gasCharged=0   beforeGas=995,120 afterGas=995,120
+DEBUG[05-05|15:20:15.054] INFO#corevm                              m="bless @n=9: expect OK, got 0 (recorded at key 5)"
+DEBUG[05-05|15:20:15.054] WRITE                                    reg="[366 4278055608 20 67144 16 1 4278055623 4278055623 1 4278055624 8 48 404]" gasCharged=10  beforeGas=995,085 afterGas=995,075
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=05       k=0x664ab67165b2f74555d033f970ad1c7af9d2adde9e979592bfb48128d1231f50 v=0000000000000000         vlen=8
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:15.054] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=994,202 afterGas=994,202
+DEBUG[05-05|15:20:15.054] INFO#corevm                              m="write_result key=[5], result=0"
+DEBUG[05-05|15:20:15.054] INFO                                     reg="[366 4278055872 1114112 16 1 92 4278058848 2953942612 4278056024 0 52 0 404]" gasCharged=10  beforeGas=994,178 afterGas=994,168
+DEBUG[05-05|15:20:15.054] corevm_accumulate: INFO OK               s=2953942612 info="[0x6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7 526759 32361 911 911 14 32121]" bytes=6a0d4a19d199505713fc65f531038e73f1d885645632c8ae503c4f0c4d5e19a7a709080000000000697e0000000000008f030000000000008f030000000000000e000000797d000000000000
+DEBUG[05-05|15:20:15.054] WRITE                                    reg="[368 4278055608 1114112 16 1 1 4278055623 4278055623 1 4278055624 8 0 404]" gasCharged=10  beforeGas=994,151 afterGas=994,141
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:20:15.054] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:15.054] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=993,268 afterGas=993,268
+DEBUG[05-05|15:20:15.054] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:20:15.055] LOG                                      reg="[372 4278055872 14 68208 8 88 1245160 2 0 0 1245160 46 68208]" gasCharged=0   beforeGas=992,492 afterGas=992,492
+DEBUG[05-05|15:20:15.055] INFO#corevm                              m="info@n=9: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:20:15.055] GAS                                      reg="[372 4278055872 14 68208 8 88 1245160 1245248 88 0 88 46 68208]" gasCharged=10  beforeGas=992,477 afterGas=992,467
+DEBUG[05-05|15:20:15.055] WRITE                                    reg="[374 4278055608 14 68208 8 1 4278055623 4278055623 1 4278055624 8 46 68208]" gasCharged=10  beforeGas=992,448 afterGas=992,438
+DEBUG[05-05|15:20:15.055] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=c9240f0000000000         vlen=8
+DEBUG[05-05|15:20:15.055] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:15.055] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=991,497 afterGas=991,497
+DEBUG[05-05|15:20:15.055] INFO#corevm                              m="write_result key=[9], result=f24c9"
+DEBUG[05-05|15:20:15.055] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=990,916 afterGas=990,916
+DEBUG[05-05|15:20:15.055] WRITE                                    reg="[382 4278055608 17 69380 16 1 4278055623 4278055623 1 4278055624 8 0 69400]" gasCharged=10  beforeGas=990,795 afterGas=990,785
+DEBUG[05-05|15:20:15.055] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=07       k=0xf7a0c652460cce77eaf3fab8ac01aea98f44a37b42e74561531c941f6df0c8e4 v=3300000000000000         vlen=8
+DEBUG[05-05|15:20:15.055] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:15.055] LOG                                      reg="[478 4278055608 1114112 16 2 1245196 52 2 0 0 1245196 31 404]" gasCharged=0   beforeGas=989,895 afterGas=989,895
+DEBUG[05-05|15:20:15.055] INFO#corevm                              m="write_result key=[7], result=33"
+DEBUG[05-05|15:20:15.055] getArgumentOutputs - PANIC               service=corevm
+DEBUG[05-05|15:20:15.055] BEEFY PANIC @SINGLE ACCUMULATE           s=2953942612 B=0x0000000000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:20:15.055] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0xfcbe367ee568b9aa527a085d360edb5549621208b83809cc640968880cfd03e5","E":"0x53d7fdd9de7b2fa6506e188a8636328fd2f19b2d639417d5e058898fc8f134bc","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:20:15.056] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:20:15.056] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:20:15.056] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:20:15.056] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:20:15.056] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:20:15.056] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:20:15.057] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:20:15.057] BEEFY accumulation root                  r=0x80e16278c1e787bc09d8cdf3e6fa5e2c7808d658ac5526b24fd1d8c2f4dd6650
+INFO [05-05|15:20:15.086] proposeBlock                             mode=safrole  s.ID=4 p=bbef..a765 h=c943..c8b8    e'=3 m'=9  "len(γ_a')"=12 blk="H_t=45 H_r=37c9..18ef  |E_A|=6"
+INFO [05-05|15:20:16.053] Work package accumulated                 hash=0xfcbe367ee568b9aa527a085d360edb5549621208b83809cc640968880cfd03e5 count=1
+INFO [05-05|15:20:16.053] All work packages accumulated
+INFO [05-05|15:20:16.053] Fib2-(9) result key 0                    result=080000002200000015000000
+INFO [05-05|15:20:16.053] Fib2-(9) result key 1                    result=0000000000000000
+INFO [05-05|15:20:16.053] Fib2-(9) result key 2                    result=0200000027000000
+INFO [05-05|15:20:16.053] Fib2-(9) result key 5                    result=0000000000000000
+INFO [05-05|15:20:16.053] Fib2-(9) result key 6                    result=fcffffffffffffff
+INFO [05-05|15:20:16.053] Fib2-(9) result key 7                    result=0000000000000000
+INFO [05-05|15:20:16.053] Fib2-(9) result key 8                    result=0000000000000000
+INFO [05-05|15:20:16.053] Fib2-(9) result key 9                    result=6e2b0f0000000000
+INFO [05-05|15:20:16.053] Work package submitted                   identifier=FIB2(10)                            hash=0x66fc4ee5b65987f369012504109ed0f16638afeaa7932ba983faac757019ce93 core=1
+INFO [05-05|15:20:21.398] proposeBlock                             mode=safrole  s.ID=5 p=c943..c8b8 h=c209..cb23    e'=3 m'=10 "len(γ_a')"=12 blk="H_t=46 H_r=6517..3476   WinningTickets(12) |E_G|=1"
+DEBUG[05-05|15:20:27.211] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q=[[]] "Q(q)-priority queue result"=[0x66fc4ee5b65987f369012504109ed0f16638afeaa7932ba983faac757019ce93] "W^*-wphs of accumulatable work reports)"=[0x66fc4ee5b65987f369012504109ed0f16638afeaa7932ba983faac757019ce93]
+DEBUG[05-05|15:20:27.211] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x66fc4ee5b65987f369012504109ed0f16638afeaa7932ba983faac757019ce93","E":"0x4a01d004095c0328783e60f1a451198d22be1ac2b1de845b88cb1c782ef1b252","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x46090e1520f0664af9bfd333855c91ae7cffd628b1e7a580e93141725da9f4dc","G":1000000,"D":"0x000c0a0000005900000037000000"}'
+DEBUG[05-05|15:20:27.216] WRITE                                    reg="[134 4278055872 0 0 0 4278124687 1 4278055943 1 4278124687 12 2952790016 64]" gasCharged=10  beforeGas=999,817 afterGas=999,807
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=0a0000005900000037000000 vlen=12
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.216] WRITE                                    reg="[136 4278055872 0 256 0 3 4278058848 4278055957 3 0 0 4278056280 0]" gasCharged=10  beforeGas=999,602 afterGas=999,592
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.216] LOG                                      reg="[340 4278055872 18 67006 16 120 1245128 2 0 0 1245128 82 67024]" gasCharged=0   beforeGas=998,578 afterGas=998,578
+DEBUG[05-05|15:20:27.216] INFO#corevm                              m="write deleted DOT @n=10: expect NONE, got 18446744073709551615 (recorded at key 1)"
+DEBUG[05-05|15:20:27.216] WRITE                                    reg="[342 4278055608 18 67006 16 1 4278055623 4278055623 1 4278055624 8 82 67024]" gasCharged=10  beforeGas=998,544 afterGas=998,534
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=01       k=0x9e2fa1cdbaa2b499a03e9f2e8a4f103cfadf271d552e453d9eef1bb2e3d0928a v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.216] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=997,413 afterGas=997,413
+DEBUG[05-05|15:20:27.216] INFO#corevm                              m="write_result key=[1], result=ffffffffffffffff"
+DEBUG[05-05|15:20:27.216] WRITE                                    reg="[342 4278055872 9 4278055399 8 120 4278058848 4278055957 3 4278055954 3 0 4278055408]" gasCharged=10  beforeGas=997,387 afterGas=997,377
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE NONE            numStorageItems=15 StorageSize=32156 s=2953942612 mu_k=444f54   k=0xa06b596abe97129f2261320bcfb613da68b0afa832c17487fa05638fb52e1942 v=6a616d                   vlen=3
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE storage         s=2953942612 a_o=32156 a_i=15
+DEBUG[05-05|15:20:27.216] LOG                                      reg="[346 4278055872 15 67009 8 1245138 110 2 0 0 1245138 77 67024]" gasCharged=0   beforeGas=996,311 afterGas=996,311
+DEBUG[05-05|15:20:27.216] INFO#corevm                              m="write to DOT @n=10: expect NONE, got 18446744073709551615 (recorded at key 1)"
+DEBUG[05-05|15:20:27.216] WRITE                                    reg="[348 4278055608 15 67009 8 1 4278055623 4278055623 1 4278055624 8 77 67024]" gasCharged=10  beforeGas=996,277 afterGas=996,267
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE OK              numStorageItems=15 StorageSize=32156 l=8  s=2953942612 mu_k=02       k=0x224a951b43ef0e32e21a5b970bd6c2ce1fd39e6530d8af731bec76eb7283ec97 v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE storage         s=2953942612 a_o=32156 a_i=15
+DEBUG[05-05|15:20:27.216] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=995,146 afterGas=995,146
+DEBUG[05-05|15:20:27.216] INFO#corevm                              m="write_result key=[2], result=ffffffffffffffff"
+DEBUG[05-05|15:20:27.216] WRITE                                    reg="[348 4278055872 9 4278055399 8 4278058848 3 4278055957 3 0 0 0 4278055408]" gasCharged=10  beforeGas=995,119 afterGas=995,109
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE (as DELETE) NONE  numStorageItems=14 StorageSize=32121 l=3  s=2953942612 mu_k=444f54   k=0xa06b596abe97129f2261320bcfb613da68b0afa832c17487fa05638fb52e1942 v=                         vlen=0
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.216] LOG                                      reg="[352 4278055872 17 67147 16 132 1245116 2 0 0 1245116 69 67168]" gasCharged=0   beforeGas=994,290 afterGas=994,290
+DEBUG[05-05|15:20:27.216] INFO#corevm                              m="write deleted DOT @n=10: expect prev len 3, got 3 (recorded at key 5)"
+DEBUG[05-05|15:20:27.216] WRITE                                    reg="[354 4278055608 17 67147 16 1 4278055623 4278055623 1 4278055624 8 69 67168]" gasCharged=10  beforeGas=994,256 afterGas=994,246
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=05       k=0x664ab67165b2f74555d033f970ad1c7af9d2adde9e979592bfb48128d1231f50 v=0300000000000000         vlen=8
+DEBUG[05-05|15:20:27.216] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.216] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=993,373 afterGas=993,373
+DEBUG[05-05|15:20:27.216] INFO#corevm                              m="write_result key=[5], result=3"
+DEBUG[05-05|15:20:27.216] READ                                     reg="[354 4278055872 1114112 16 1 132 4278058848 2953942612 4278055957 3 4278056024 0 256]" gasCharged=10  beforeGas=993,345 afterGas=993,335
+DEBUG[05-05|15:20:27.216] corevm_accumulate: READ NONE             s=2953942612 mu_k=444f54   k=0xa06b596abe97129f2261320bcfb613da68b0afa832c17487fa05638fb52e1942 ok=false val=       len(val)=0
+DEBUG[05-05|15:20:27.216] LOG                                      reg="[358 4278055872 14 67254 8 1245136 112 2 0 0 1245136 78 67264]" gasCharged=0   beforeGas=992,313 afterGas=992,313
+DEBUG[05-05|15:20:27.216] INFO#corevm                              m="read from DOT @n=10: expect NONE, got 18446744073709551615 (recorded at key 6)"
+DEBUG[05-05|15:20:27.216] WRITE                                    reg="[360 4278055608 14 67254 8 1 4278055623 4278055623 1 4278055624 8 78 67264]" gasCharged=10  beforeGas=992,279 afterGas=992,269
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=06       k=0x6ed0d9695e0faf6502d55bb73af9dc1dfef8adc2f16cf70cac4d94ebb4cdf289 v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.217] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=991,148 afterGas=991,148
+DEBUG[05-05|15:20:27.217] INFO#corevm                              m="write_result key=[6], result=ffffffffffffffff"
+DEBUG[05-05|15:20:27.217] WRITE                                    reg="[360 4278055872 9 4278055399 8 4278058848 3 4278055957 3 0 0 0 4278055408]" gasCharged=10  beforeGas=991,121 afterGas=991,111
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.217] LOG                                      reg="[364 4278055872 18 68117 16 120 1245128 2 0 0 1245128 82 68136]" gasCharged=0   beforeGas=990,102 afterGas=990,102
+DEBUG[05-05|15:20:27.217] INFO#corevm                              m="write deleted DOT @n=10: expect NONE, got 18446744073709551615 (recorded at key 7)"
+DEBUG[05-05|15:20:27.217] WRITE                                    reg="[366 4278055608 18 68117 16 1 4278055623 4278055623 1 4278055624 8 82 68136]" gasCharged=10  beforeGas=990,068 afterGas=990,058
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=07       k=0xf7a0c652460cce77eaf3fab8ac01aea98f44a37b42e74561531c941f6df0c8e4 v=ffffffffffffffff         vlen=8
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.217] LOG                                      reg="[478 4278055608 9 4278055399 8 1245196 52 2 0 0 1245196 45 4278055408]" gasCharged=0   beforeGas=988,937 afterGas=988,937
+DEBUG[05-05|15:20:27.217] INFO#corevm                              m="write_result key=[7], result=ffffffffffffffff"
+DEBUG[05-05|15:20:27.217] INFO                                     reg="[366 4278055872 9 4278055399 8 120 4278058848 2953942612 4278056024 0 52 0 4278055408]" gasCharged=10  beforeGas=988,913 afterGas=988,903
+DEBUG[05-05|15:20:27.217] corevm_accumulate: INFO OK               s=2953942612 info="[0x2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00 526963 32361 100 100 14 32121]" bytes=2f8f33aa8ee15b8a366405e7d4aaa6893197cbd84423a5ef39fa289980272a00730a080000000000697e000000000000640000000000000064000000000000000e000000797d000000000000
+DEBUG[05-05|15:20:27.217] WRITE                                    reg="[368 4278055608 9 4278055399 8 1 4278055623 4278055623 1 4278055624 8 0 4278055408]" gasCharged=10  beforeGas=988,886 afterGas=988,876
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=08       k=0x410363b26bae688043fad50812984b9799cac0a858bb785621384ac40a4d0b41 v=0000000000000000         vlen=8
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.217] LOG                                      reg="[478 4278055608 1114112 16 1 1245196 52 2 0 0 1245196 30 404]" gasCharged=0   beforeGas=988,003 afterGas=988,003
+DEBUG[05-05|15:20:27.217] INFO#corevm                              m="write_result key=[8], result=0"
+DEBUG[05-05|15:20:27.217] LOG                                      reg="[372 4278055872 15 68207 8 88 1245160 2 0 0 1245160 47 68216]" gasCharged=0   beforeGas=987,172 afterGas=987,172
+DEBUG[05-05|15:20:27.217] INFO#corevm                              m="info@n=10: expect OK, got 0 (recorded at key 8)"
+DEBUG[05-05|15:20:27.217] GAS                                      reg="[372 4278055872 15 68207 8 88 1245160 1245248 88 0 88 47 68216]" gasCharged=10  beforeGas=987,157 afterGas=987,147
+DEBUG[05-05|15:20:27.217] WRITE                                    reg="[374 4278055608 15 68207 8 1 4278055623 4278055623 1 4278055624 8 47 68216]" gasCharged=10  beforeGas=987,128 afterGas=987,118
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE OK              numStorageItems=14 StorageSize=32121 l=8  s=2953942612 mu_k=09       k=0x45a9b220d02e801806ff5003bf4c15741f800e75320eaa2208d18e088a82da69 v=01100f0000000000         vlen=8
+DEBUG[05-05|15:20:27.217] corevm_accumulate: WRITE storage         s=2953942612 a_o=32121 a_i=14
+DEBUG[05-05|15:20:27.217] LOG                                      reg="[478 4278055608 1114112 16 5 1245196 52 2 0 0 1245196 34 404]" gasCharged=0   beforeGas=986,177 afterGas=986,177
+DEBUG[05-05|15:20:27.217] INFO#corevm                              m="write_result key=[9], result=f1001"
+DEBUG[05-05|15:20:27.217] LOG                                      reg="[378 4278055872 17 69380 16 1245190 58 4 0 0 1245190 35 69400]" gasCharged=0   beforeGas=985,596 afterGas=985,596
+DEBUG[05-05|15:20:27.217] YIELD                                    reg="[380 4278055872 17 69380 16 196633 4278058848 196633 10 6148914691236517206 196645 0 69400]" gasCharged=10  beforeGas=985,491 afterGas=985,481
+DEBUG[05-05|15:20:27.217] corevm_accumulate: YIELD OK              h=0x0a00000059000000370000000000000000000000000000000000000000000000
+DEBUG[05-05|15:20:27.217] LOG                                      reg="[386 4278055872 1114112 0 1 50 1245198 2 0 0 1245198 28 404]" gasCharged=0   beforeGas=984,848 afterGas=984,848
+DEBUG[05-05|15:20:27.217] INFO#corevm                              m="yield@n=10: expect OK, got 0"
+DEBUG[05-05|15:20:27.217] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0a00000059000000370000000000000000000000000000000000000000000000
+DEBUG[05-05|15:20:27.217] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x66fc4ee5b65987f369012504109ed0f16638afeaa7932ba983faac757019ce93","E":"0x4a01d004095c0328783e60f1a451198d22be1ac2b1de845b88cb1c782ef1b252","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:20:27.218] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:20:27.218] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:20:27.218] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10  beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:20:27.218] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:20:27.218] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:20:27.218] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:20:27.218] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=0
+DEBUG[05-05|15:20:27.221] writeAccount DELETE                      service_idx=2,953,942,612 rawkey=0xa06b596abe97129f2261320bcfb613da68b0afa832c17487fa05638fb52e1942 storage.Accessed=false storage.Deleted=true
+DEBUG[05-05|15:20:27.221] BEEFY-C                                  s=1065941251 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=03f9883f3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:20:27.221] BEEFY-C                                  s=2953942612 h=0x0a00000059000000370000000000000000000000000000000000000000000000 encoded=549611b00a00000059000000370000000000000000000000000000000000000000000000
+DEBUG[05-05|15:20:27.221] BEEFY accumulation root                  r=0xc02a96ac35fc0f0adae1369c5ec6cf6ff3039da4de195d05e1e0b0304f13a258
+INFO [05-05|15:20:27.259] proposeBlock                             mode=safrole  s.ID=2 p=c209..cb23 h=8ce5..709a    e'=3 m'=11 "len(γ_a')"=12 blk="H_t=47 H_r=f3bb..92e4  |E_A|=6"
+INFO [05-05|15:20:28.054] Work package accumulated                 hash=0x66fc4ee5b65987f369012504109ed0f16638afeaa7932ba983faac757019ce93 count=1
+INFO [05-05|15:20:28.054] All work packages accumulated
+INFO [05-05|15:20:28.054] Fib2-(10) result key 0                   result=0a0000005900000037000000
+INFO [05-05|15:20:28.054] Fib2-(10) result key 1                   result=ffffffffffffffff
+INFO [05-05|15:20:28.054] Fib2-(10) result key 2                   result=ffffffffffffffff
+INFO [05-05|15:20:28.054] Fib2-(10) result key 5                   result=0300000000000000
+INFO [05-05|15:20:28.054] Fib2-(10) result key 6                   result=ffffffffffffffff
+INFO [05-05|15:20:28.054] Fib2-(10) result key 7                   result=ffffffffffffffff
+INFO [05-05|15:20:28.054] Fib2-(10) result key 8                   result=0000000000000000
+INFO [05-05|15:20:28.054] Fib2-(10) result key 9                   result=01100f0000000000
