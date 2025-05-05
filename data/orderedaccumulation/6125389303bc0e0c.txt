@@ -1,0 +1,909 @@
+INFO [05-05|15:14:09.408] JAMTEST                                  jam=megatron targetN=10
+Test PreReq: false
+RPC server started, listening on :11105
+INFO [05-05|15:14:14.227] proposeBlock                             mode=fallback s.ID=4 p=03c6..db92 h=5176..4c69 e'=1 m'=0 "len(γ_a')"=0 blk="H_t=12 H_r=5e11..9ce3  EpochMarker(η1'=6f6a..af2a, η2'=835a..4eaf)"
+jamtest: setupJceManager returned.
+jamtest: JCE Mode: fast
+INFO [05-05|15:14:16.409] fib                                      codeHash=0x177adab963abdbb897b72c9ad9fd120cfc298482a6996a53967a4363808ce2c2 len=8381
+INFO [05-05|15:14:16.410] tribonacci                               codeHash=0xcf59d39a7489ae42bec9ddbe12a0bfc125a6dcb7c2910551bd1e34bc087c37ab len=8408
+INFO [05-05|15:14:16.410] megatron                                 codeHash=0xae9f78f136f7734001ce300a38b9f3aabe2ca4b339026cc53fb870275fb17918 len=9272
+INFO [05-05|15:14:16.410] auth_copy                                codeHash=0xd5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37c len=1214
+INFO [05-05|15:14:16.410] Waiting for the first block to be ready...
+INFO [05-05|15:14:20.486] proposeBlock                             mode=fallback s.ID=4 p=5176..4c69 h=9428..909f e'=1 m'=1 "len(γ_a')"=0 blk="H_t=13 H_r=e99c..e012 "
+INFO [05-05|15:14:21.673] proposeBlock                             mode=fallback s.ID=4 p=9428..909f h=bb9a..e589 e'=1 m'=2 "len(γ_a')"=3 blk="H_t=14 H_r=a084..e2b8  |E_T|=3"
+INFO [05-05|15:14:27.699] proposeBlock                             mode=fallback s.ID=5 p=bb9a..e589 h=0c55..5a79 e'=1 m'=3 "len(γ_a')"=6 blk="H_t=15 H_r=7aca..bf22  |E_T|=3"
+INFO [05-05|15:14:28.412] Work package submitted                   identifier="NewService(fib, 177a..e2c2)" hash=0xa17aa6bd40511ab1188459ea30d8ac8d457de7aa9fcbe9eace958eb353b163a9 core=0
+INFO [05-05|15:14:33.415] proposeBlock                             mode=fallback s.ID=0 p=0c55..5a79 h=76a6..5c5c e'=1 m'=4 "len(γ_a')"=9 blk="H_t=16 H_r=02ef..c021  |E_T|=3 |E_G|=1"
+DEBUG[05-05|15:14:39.622] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0xa17aa6bd40511ab1188459ea30d8ac8d457de7aa9fcbe9eace958eb353b163a9","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x3dd740b051b67102d9464f659caa7dc9f1ea2609c45b40e78329d79232c54d1b","G":1000000,"D":"0x0024177adab963abdbb897b72c9ad9fd120cfc298482a6996a53967a4363808ce2c2bd200000"}'
+DEBUG[05-05|15:14:39.623] NEW                                      reg="[10 4278058832 0 0 0 4278124686 1 4278124687 8381 100 100 0 64]" gasCharged=10 beforeGas=999,839 afterGas=999,829
+DEBUG[05-05|15:14:39.623] bootstrap_accumulate: NEW OK             SERVICE=2953942612 code_hash_ptr=feff008f code_hash_ptr=177adab963abdbb897b72c9ad9fd120cfc298482a6996a53967a4363808ce2c2 code_len=8381 min_item_gas=100 min_memo_gas=100
+DEBUG[05-05|15:14:39.623] WRITE                                    reg="[10 4278058832 0 0 0 2953942612 1 4278058852 4 4278058840 4 0 64]" gasCharged=10 beforeGas=999,822 afterGas=999,812
+DEBUG[05-05|15:14:39.623] bootstrap_accumulate: WRITE NONE         numStorageItems=5 StorageSize=5932 s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=549611b0 vlen=4
+DEBUG[05-05|15:14:39.623] bootstrap_accumulate: WRITE storage      s=0 a_o=5932 a_i=5
+DEBUG[05-05|15:14:39.623] TRANSFER                                 reg="[12 4278058832 0 128 0 2953942612 1 2953942612 500000 100 4278058856 4278058984 0]" gasCharged=110 beforeGas=999,740 afterGas=999,630
+DEBUG[05-05|15:14:39.623] bootstrap_accumulate: TRANSFER OK        sender=0 receiver=2953942612 amount=500000 gaslimit=100
+DEBUG[05-05|15:14:39.623] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0x549611b000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:14:39.623] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=1
+DEBUG[05-05|15:14:39.623] ProcessDeferredTransfers                 service=0          gasUsed=0 transferCount=0
+DEBUG[05-05|15:14:39.623] BEEFY-C                                  s=0 h=0x549611b000000000000000000000000000000000000000000000000000000000 encoded=00000000549611b000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:14:39.623] BEEFY accumulation root                  r=0x253e7b79a6f60c38d85fa99ae8f0fbf3072e5bb869d39e4319ef609b0395e14b
+INFO [05-05|15:14:39.651] proposeBlock                             mode=fallback s.ID=4 p=76a6..5c5c h=3f46..f287 e'=1 m'=5 "len(γ_a')"=12 blk="H_t=17 H_r=2692..24f6  |E_T|=3 |E_A|=6"
+INFO [05-05|15:14:40.412] Work package accumulated                 hash=0xa17aa6bd40511ab1188459ea30d8ac8d457de7aa9fcbe9eace958eb353b163a9 count=1
+INFO [05-05|15:14:40.412] All work packages accumulated
+INFO [05-05|15:14:40.412] SubmitAndWaitForPreimage SUBMITTED       id=2953942612 preimageHash=0x177adab963abdbb897b72c9ad9fd120cfc298482a6996a53967a4363808ce2c2 len=8381
+INFO [05-05|15:14:45.387] proposeBlock                             mode=fallback s.ID=0 p=3f46..f287 h=706f..fa18 e'=1 m'=6 "len(γ_a')"=12 blk="H_t=18 H_r=615a..a425  |E_P|=1"
+INFO [05-05|15:14:46.413] SubmitAndWaitForPreimage ON-CHAIN        id=2953942612 preimageHash=0x177adab963abdbb897b72c9ad9fd120cfc298482a6996a53967a4363808ce2c2 len=8381
+INFO [05-05|15:14:46.413] ----- NEW SERVICE                        service=fib        service_idx=2,953,942,612
+INFO [05-05|15:14:46.413] Work package submitted                   identifier="NewService(tribonacci, cf59..37ab)" hash=0x1caeb278ec8421e7b3da02d4f504af688447c314d6e604be056880605b66c508 core=0
+INFO [05-05|15:14:51.637] proposeBlock                             mode=fallback s.ID=4 p=706f..fa18 h=6826..9dfa e'=1 m'=7 "len(γ_a')"=12 blk="H_t=19 H_r=b53c..f67f  |E_G|=1"
+DEBUG[05-05|15:14:57.377] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0x1caeb278ec8421e7b3da02d4f504af688447c314d6e604be056880605b66c508","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x64ad0d496e183f4df8210b3182299e2e3f3c65a7ff409f0d6cceab577e8b36de","G":1000000,"D":"0x0024cf59d39a7489ae42bec9ddbe12a0bfc125a6dcb7c2910551bd1e34bc087c37abd8200000"}'
+DEBUG[05-05|15:14:57.377] NEW                                      reg="[10 4278058832 0 0 0 4278124686 1 4278124687 8408 100 100 0 64]" gasCharged=10  beforeGas=999,839 afterGas=999,829
+DEBUG[05-05|15:14:57.377] bootstrap_accumulate: NEW OK             SERVICE=1065941251 code_hash_ptr=feff008f code_hash_ptr=cf59d39a7489ae42bec9ddbe12a0bfc125a6dcb7c2910551bd1e34bc087c37ab code_len=8408 min_item_gas=100 min_memo_gas=100
+DEBUG[05-05|15:14:57.377] WRITE                                    reg="[10 4278058832 0 0 0 1065941251 1 4278058852 4 4278058840 4 0 64]" gasCharged=10  beforeGas=999,822 afterGas=999,812
+DEBUG[05-05|15:14:57.377] bootstrap_accumulate: WRITE OK           numStorageItems=5 StorageSize=5932 l=4 s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=03f9883f vlen=4
+DEBUG[05-05|15:14:57.377] bootstrap_accumulate: WRITE storage      s=0 a_o=5932 a_i=5
+DEBUG[05-05|15:14:57.377] TRANSFER                                 reg="[12 4278058832 0 128 0 1065941251 1 1065941251 500000 100 4278058856 4278058984 0]" gasCharged=110 beforeGas=999,740 afterGas=999,630
+DEBUG[05-05|15:14:57.377] bootstrap_accumulate: TRANSFER OK        sender=0 receiver=1065941251 amount=500000 gaslimit=100
+DEBUG[05-05|15:14:57.377] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0x03f9883f00000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:14:57.377] ProcessDeferredTransfers                 service=0          gasUsed=0 transferCount=0
+DEBUG[05-05|15:14:57.377] ProcessDeferredTransfers                 service=1065941251 gasUsed=0 transferCount=1
+DEBUG[05-05|15:14:57.378] BEEFY-C                                  s=0 h=0x03f9883f00000000000000000000000000000000000000000000000000000000 encoded=0000000003f9883f00000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:14:57.378] BEEFY accumulation root                  r=0xe44237e17cf280e766b1279774ab870d6f811a4800b6053d7dfb141b36b9258a
+INFO [05-05|15:14:57.405] proposeBlock                             mode=fallback s.ID=1 p=6826..9dfa h=f820..9ebc e'=1 m'=8 "len(γ_a')"=12 blk="H_t=20 H_r=5cf7..5a42  |E_A|=6"
+INFO [05-05|15:14:58.413] Work package accumulated                 hash=0x1caeb278ec8421e7b3da02d4f504af688447c314d6e604be056880605b66c508 count=1
+INFO [05-05|15:14:58.413] All work packages accumulated
+INFO [05-05|15:14:58.413] SubmitAndWaitForPreimage SUBMITTED       id=1065941251 preimageHash=0xcf59d39a7489ae42bec9ddbe12a0bfc125a6dcb7c2910551bd1e34bc087c37ab len=8408
+INFO [05-05|15:15:03.381] proposeBlock                             mode=fallback s.ID=0 p=f820..9ebc h=cd4d..01b1 e'=1 m'=9 "len(γ_a')"=12 blk="H_t=21 H_r=8b3e..6b0f  |E_P|=1"
+INFO [05-05|15:15:04.414] SubmitAndWaitForPreimage ON-CHAIN        id=1065941251 preimageHash=0xcf59d39a7489ae42bec9ddbe12a0bfc125a6dcb7c2910551bd1e34bc087c37ab len=8408
+INFO [05-05|15:15:04.414] ----- NEW SERVICE                        service=tribonacci service_idx=1,065,941,251
+INFO [05-05|15:15:04.414] Work package submitted                   identifier="NewService(megatron, ae9f..7918)"   hash=0x7779dbb26ed95021286baeb35a2de33b32e7011f06cc12f54710dfebda6f9d85 core=0
+INFO [05-05|15:15:09.388] proposeBlock                             mode=fallback s.ID=1 p=cd4d..01b1 h=eaec..d300 e'=1 m'=10 "len(γ_a')"=12 blk="H_t=22 H_r=e659..8c93   WinningTickets(12) |E_G|=1"
+DEBUG[05-05|15:15:15.400] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0x7779dbb26ed95021286baeb35a2de33b32e7011f06cc12f54710dfebda6f9d85","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0xeac02bb53ba54d929de945d15c04d99765012603ccdb8fef62c88af5a63fe7ea","G":1000000,"D":"0x0024ae9f78f136f7734001ce300a38b9f3aabe2ca4b339026cc53fb870275fb1791838240000"}'
+DEBUG[05-05|15:15:15.400] NEW                                      reg="[10 4278058832 0 0 0 4278124686 1 4278124687 9272 100 100 0 64]" gasCharged=10  beforeGas=999,839 afterGas=999,829
+DEBUG[05-05|15:15:15.400] bootstrap_accumulate: NEW OK             SERVICE=1343007977 code_hash_ptr=feff008f code_hash_ptr=ae9f78f136f7734001ce300a38b9f3aabe2ca4b339026cc53fb870275fb17918 code_len=9272 min_item_gas=100 min_memo_gas=100
+DEBUG[05-05|15:15:15.400] WRITE                                    reg="[10 4278058832 0 0 0 1343007977 1 4278058852 4 4278058840 4 0 64]" gasCharged=10  beforeGas=999,822 afterGas=999,812
+DEBUG[05-05|15:15:15.400] bootstrap_accumulate: WRITE OK           numStorageItems=5 StorageSize=5932 l=4 s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=e9ac0c50 vlen=4
+DEBUG[05-05|15:15:15.400] bootstrap_accumulate: WRITE storage      s=0 a_o=5932 a_i=5
+DEBUG[05-05|15:15:15.400] TRANSFER                                 reg="[12 4278058832 0 128 0 1343007977 1 1343007977 500000 100 4278058856 4278058984 0]" gasCharged=110 beforeGas=999,740 afterGas=999,630
+DEBUG[05-05|15:15:15.400] bootstrap_accumulate: TRANSFER OK        sender=0 receiver=1343007977 amount=500000 gaslimit=100
+DEBUG[05-05|15:15:15.400] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0xe9ac0c5000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:15.400] ProcessDeferredTransfers                 service=0          gasUsed=0 transferCount=0
+DEBUG[05-05|15:15:15.400] ProcessDeferredTransfers                 service=1343007977 gasUsed=0 transferCount=1
+DEBUG[05-05|15:15:15.401] BEEFY-C                                  s=0 h=0xe9ac0c5000000000000000000000000000000000000000000000000000000000 encoded=00000000e9ac0c5000000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:15.401] BEEFY accumulation root                  r=0xef0ca6fdcc0b6784190855d8e6f762a315e3a1a684f78f7e39c9c9ff7f01250b
+INFO [05-05|15:15:15.428] proposeBlock                             mode=fallback s.ID=4 p=eaec..d300 h=6dbd..545d e'=1 m'=11 "len(γ_a')"=12 blk="H_t=23 H_r=6178..5f2f  |E_A|=6"
+INFO [05-05|15:15:16.414] Work package accumulated                 hash=0x7779dbb26ed95021286baeb35a2de33b32e7011f06cc12f54710dfebda6f9d85 count=1
+INFO [05-05|15:15:16.414] All work packages accumulated
+INFO [05-05|15:15:16.414] SubmitAndWaitForPreimage SUBMITTED       id=1343007977 preimageHash=0xae9f78f136f7734001ce300a38b9f3aabe2ca4b339026cc53fb870275fb17918 len=9272
+INFO [05-05|15:15:21.497] proposeBlock                             mode=safrole  s.ID=2 p=6dbd..545d h=c484..73c8 e'=2 m'=0  "len(γ_a')"=3  blk="H_t=24 H_r=ac9e..c1b6  EpochMarker(η1'=767a..23ae, η2'=6f6a..af2a) |E_T|=3 |E_P|=1"
+INFO [05-05|15:15:22.414] SubmitAndWaitForPreimage ON-CHAIN        id=1343007977 preimageHash=0xae9f78f136f7734001ce300a38b9f3aabe2ca4b339026cc53fb870275fb17918 len=9272
+INFO [05-05|15:15:22.414] ----- NEW SERVICE                        service=megatron   service_idx=1,343,007,977
+INFO [05-05|15:15:22.414] Work package submitted                   identifier="NewService(auth_copy, d5b1..b37c)"  hash=0xd85176d47e68a7753a4a0951e82950496e16c68b970cabad8a0849cc2c1297aa core=0
+INFO [05-05|15:15:27.524] proposeBlock                             mode=safrole  s.ID=5 p=c484..73c8 h=657f..5850 e'=2 m'=1  "len(γ_a')"=6  blk="H_t=25 H_r=546b..4342  |E_T|=3 |E_G|=1"
+DEBUG[05-05|15:15:33.441] SINGLE ACCUMULATE                        s=0 wrangledResults='{"H":"0xd85176d47e68a7753a4a0951e82950496e16c68b970cabad8a0849cc2c1297aa","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x46f2131d1d909d716994fa83b45369b7e97332107d490ec3e866fe1adc61c972","G":1000000,"D":"0x0024d5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37cbe040000"}'
+DEBUG[05-05|15:15:33.442] NEW                                      reg="[10 4278058832 0 0 0 4278124686 1 4278124687 1214 100 100 0 64]" gasCharged=10  beforeGas=999,839 afterGas=999,829
+DEBUG[05-05|15:15:33.442] bootstrap_accumulate: NEW OK             SERVICE=3273088977 code_hash_ptr=feff008f code_hash_ptr=d5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37c code_len=1214 min_item_gas=100 min_memo_gas=100
+DEBUG[05-05|15:15:33.442] WRITE                                    reg="[10 4278058832 0 0 0 3273088977 1 4278058852 4 4278058840 4 0 64]" gasCharged=10  beforeGas=999,822 afterGas=999,812
+DEBUG[05-05|15:15:33.442] bootstrap_accumulate: WRITE OK           numStorageItems=5 StorageSize=5932 l=4 s=0 mu_k=00000000 k=0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c v=d15f17c3 vlen=4
+DEBUG[05-05|15:15:33.442] bootstrap_accumulate: WRITE storage      s=0 a_o=5932 a_i=5
+DEBUG[05-05|15:15:33.442] TRANSFER                                 reg="[12 4278058832 0 128 0 3273088977 1 3273088977 500000 100 4278058856 4278058984 0]" gasCharged=110 beforeGas=999,740 afterGas=999,630
+DEBUG[05-05|15:15:33.442] bootstrap_accumulate: TRANSFER OK        sender=0 receiver=3273088977 amount=500000 gaslimit=100
+DEBUG[05-05|15:15:33.442] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=0 B=0xd15f17c300000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:33.442] ProcessDeferredTransfers                 service=3273088977 gasUsed=0 transferCount=1
+DEBUG[05-05|15:15:33.442] ProcessDeferredTransfers                 service=0          gasUsed=0 transferCount=0
+DEBUG[05-05|15:15:33.442] BEEFY-C                                  s=0 h=0xd15f17c300000000000000000000000000000000000000000000000000000000 encoded=00000000d15f17c300000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:33.442] BEEFY accumulation root                  r=0x7bf4ce93bf991081ff8960532d65c5f4fdc77a3de7e65957afb2fdea675d73e2
+INFO [05-05|15:15:33.470] proposeBlock                             mode=safrole  s.ID=4 p=657f..5850 h=96d0..49ed e'=2 m'=2  "len(γ_a')"=9  blk="H_t=26 H_r=277f..127c  |E_T|=3 |E_A|=6"
+INFO [05-05|15:15:34.415] Work package accumulated                 hash=0xd85176d47e68a7753a4a0951e82950496e16c68b970cabad8a0849cc2c1297aa count=1
+INFO [05-05|15:15:34.415] All work packages accumulated
+INFO [05-05|15:15:34.415] SubmitAndWaitForPreimage SUBMITTED       id=3273088977 preimageHash=0xd5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37c len=1214
+INFO [05-05|15:15:39.639] proposeBlock                             mode=safrole  s.ID=3 p=96d0..49ed h=cc4c..921d e'=2 m'=3  "len(γ_a')"=12 blk="H_t=27 H_r=a974..4bfe  |E_T|=3 |E_P|=1"
+INFO [05-05|15:15:40.415] SubmitAndWaitForPreimage ON-CHAIN        id=3273088977 preimageHash=0xd5b11cadfd6c724deb5a15eb55c6173a3f4798166e13072459dccaba47a2b37c len=1214
+INFO [05-05|15:15:40.415] ----- NEW SERVICE                        service=auth_copy  service_idx=3,273,088,977
+INFO [05-05|15:15:40.415] testServices Loaded                      jam=megatron testServices="map[auth_copy:0x1400338ab00 fib:0x1400338a900 megatron:0x1400338aa00 tribonacci:0x1400338a980]" targetN=10
+INFO [05-05|15:15:40.415] Work package submitted                   identifier=fibtrib                              hash=0xb1f444aab3e3dc62e99d2654947ebc7169281b9b0991cf76057403f232882b2c core=0
+INFO [05-05|15:15:40.416] Work package submitted                   identifier=meg                                  hash=0xedff5459aa959aec45957fc13cc1d1a2105d0cee3351a18d52a0dde118d592f0 core=1
+INFO [05-05|15:15:45.660] proposeBlock                             mode=safrole  s.ID=5 p=cc4c..921d h=6c85..1fd7 e'=2 m'=4  "len(γ_a')"=12 blk="H_t=28 H_r=d1b1..85a2  |E_G|=2"
+DEBUG[05-05|15:15:51.368] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[0xb1f444aab3e3dc62e99d2654947ebc7169281b9b0991cf76057403f232882b2c] q=[[]] "Q(q)-priority queue result"=[0xedff5459aa959aec45957fc13cc1d1a2105d0cee3351a18d52a0dde118d592f0] "W^*-wphs of accumulatable work reports)"="[0xb1f444aab3e3dc62e99d2654947ebc7169281b9b0991cf76057403f232882b2c 0xedff5459aa959aec45957fc13cc1d1a2105d0cee3351a18d52a0dde118d592f0]"
+DEBUG[05-05|15:15:51.368] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0xb1f444aab3e3dc62e99d2654947ebc7169281b9b0991cf76057403f232882b2c","E":"0x1df9f0675dae767abeddafdf7b82f00b6d3cecbe09ee2a09bc41839c5abf6c60","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35","G":1000000,"D":"0x000c010000000100000000000000"}'
+DEBUG[05-05|15:15:51.369] WRITE                                    reg="[24 4278058968 0 0 0 12 4278124687 4278058982 1 4278124687 12 0 64]" gasCharged=10  beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:15:51.369] fib_accumulate: WRITE NONE               numStorageItems=3 StorageSize=8506 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=010000000100000000000000 vlen=12
+DEBUG[05-05|15:15:51.369] fib_accumulate: WRITE storage            s=2953942612 a_o=8506 a_i=3
+DEBUG[05-05|15:15:51.369] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0100000001000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:51.369] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0xb1f444aab3e3dc62e99d2654947ebc7169281b9b0991cf76057403f232882b2c","E":"0x1df9f0675dae767abeddafdf7b82f00b6d3cecbe09ee2a09bc41839c5abf6c60","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35","G":1000000,"D":"0x001001000000010000000000000000000000"}'
+DEBUG[05-05|15:15:51.372] WRITE                                    reg="[24 4278058968 0 0 0 16 4278124687 4278058982 1 4278124687 16 0 64]" gasCharged=10  beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:15:51.372] tribonacci_accumulate: WRITE NONE        numStorageItems=3 StorageSize=8537 s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=01000000010000000000000000000000 vlen=16
+DEBUG[05-05|15:15:51.372] tribonacci_accumulate: WRITE storage     s=1065941251 a_o=8537 a_i=3
+DEBUG[05-05|15:15:51.372] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x0100000001000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:51.372] SINGLE ACCUMULATE                        s=1343007977 wrangledResults='{"H":"0xedff5459aa959aec45957fc13cc1d1a2105d0cee3351a18d52a0dde118d592f0","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x3d32dd4d2316b8458bde7a3100c2e9e9836277f4e3374cd8b99c1de97cd187b7","G":1000000,"D":"0x0008549611b003f9883f"}'
+DEBUG[05-05|15:15:51.372] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 2953942612 4278058615 1 4278058584 0 12]" gasCharged=10  beforeGas=999,828 afterGas=999,818
+DEBUG[05-05|15:15:51.372] megatron_accumulate: READ OK             s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val=010000000100000000000000 len(val)=12
+DEBUG[05-05|15:15:51.372] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 1065941251 4278058615 1 4278058600 0 12]" gasCharged=10  beforeGas=999,812 afterGas=999,802
+DEBUG[05-05|15:15:51.372] megatron_accumulate: READ OK             s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val=01000000010000000000000000000000 len(val)=16
+DEBUG[05-05|15:15:51.372] LOG                                      reg="[26 4278058488 1114112 5243 295394 262144 64 2 0 0 262144 45 70]" gasCharged=0   beforeGas=998,585 afterGas=998,585
+DEBUG[05-05|15:15:51.372] INFO#megatron                            m="meg 1 read from service 2953942612 fib(n=1)=1"
+DEBUG[05-05|15:15:51.372] LOG                                      reg="[30 4278058488 1114112 5243 106594 262142 66 2 0 0 262142 46 70]" gasCharged=0   beforeGas=997,327 afterGas=997,327
+DEBUG[05-05|15:15:51.372] INFO#megatron                            m="meg 1 read from service 1065941251 trib(n=1)=1"
+DEBUG[05-05|15:15:51.372] TRANSFER                                 reg="[32 4278058488 0 128 106594 0 262208 1065941251 3 40000 4278058664 4278058792 0]" gasCharged=40010 beforeGas=997,191 afterGas=957,181
+DEBUG[05-05|15:15:51.372] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=3      gaslimit=40000
+DEBUG[05-05|15:15:51.373] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=955,637 afterGas=955,637
+DEBUG[05-05|15:15:51.373] INFO#megatron                            m="0 transfer(dest:1065941251, amount=3, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:15:51.373] LOG                                      reg="[44 4278058488 1114112 5243 40000 262196 12 2 0 0 262196 8 70]" gasCharged=0     beforeGas=955,032 afterGas=955,032
+DEBUG[05-05|15:15:51.373] INFO#megatron                            m="meg(1)=2"
+DEBUG[05-05|15:15:51.373] WRITE                                    reg="[44 4278058488 1114112 5243 40000 262196 12 4278058615 1 4278058616 12 8 70]" gasCharged=10    beforeGas=955,012 afterGas=955,002
+DEBUG[05-05|15:15:51.373] megatron_accumulate: WRITE NONE          numStorageItems=3 StorageSize=9397 s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=010000000200000000000000         vlen=12
+DEBUG[05-05|15:15:51.373] megatron_accumulate: WRITE storage       s=1343007977 a_o=9397 a_i=3
+DEBUG[05-05|15:15:51.373] LOG                                      reg="[48 4278058488 1114112 65772 8 262150 58 2 0 0 262150 32 70]" gasCharged=0     beforeGas=954,104 afterGas=954,104
+DEBUG[05-05|15:15:51.373] INFO#megatron                            m="meg 1 write(n=2) num_transfers=1"
+DEBUG[05-05|15:15:51.373] YIELD                                    reg="[50 4278058488 1114112 65772 8 196625 58 196625 4278058628 196637 196637 0 70]" gasCharged=10    beforeGas=954,007 afterGas=953,997
+DEBUG[05-05|15:15:51.373] megatron_accumulate: YIELD OK            h=0x0100000002000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:51.373] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1343007977 B=0x0100000002000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:51.373] SINGLE ACCUMULATE                        s=3273088977 wrangledResults='{"H":"0xedff5459aa959aec45957fc13cc1d1a2105d0cee3351a18d52a0dde118d592f0","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:15:51.373] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:15:51.373] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:15:51.373] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:15:51.373] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:15:51.373] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3273088977 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:15:51.373] ProcessDeferredTransfers                 service=2953942612 gasUsed=0 transferCount=0
+DEBUG[05-05|15:15:51.376] LOG                                      reg="[36 4278058352 1114112 0 5 261018 680 2 0 0 261018 507 56]" gasCharged=0     beforeGas=5637    afterGas=5637
+DEBUG[05-05|15:15:51.376] INFO#tribonacci                          m="TRIB on_transfer: timeslot=29 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=3 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:15:51.376] WRITE                                    reg="[36 4278058352 1114112 0 5 261018 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=5617    afterGas=5607
+DEBUG[05-05|15:15:51.376] tribonacci_transfer: WRITE NONE          numStorageItems=4 StorageSize=8697 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:15:51.376] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8697 a_i=4
+DEBUG[05-05|15:15:51.376] GAS                                      reg="[36 4278058352 1114112 0 5 261018 680 18446744073709551615 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=5607    afterGas=5597
+DEBUG[05-05|15:15:51.376] WRITE                                    reg="[36 4278058352 1114112 0 5 261018 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=5589    afterGas=5579
+DEBUG[05-05|15:15:51.376] tribonacci_transfer: WRITE NONE          numStorageItems=5 StorageSize=8737 s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=d315000000000000                 vlen=8
+DEBUG[05-05|15:15:51.376] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:15:51.376] LOG                                      reg="[40 4278058352 1114112 16 4 261646 52 2 0 0 261646 33 56]" gasCharged=0     beforeGas=4654    afterGas=4654
+DEBUG[05-05|15:15:51.376] INFO#tribonacci                          m="write_result key=[4], result=15d3"
+DEBUG[05-05|15:15:51.376] LOG                                      reg="[44 4278058352 16 65766 16 261606 92 2 0 0 261606 50 65784]" gasCharged=0     beforeGas=4102    afterGas=4102
+DEBUG[05-05|15:15:51.376] INFO#tribonacci                          m="TRIB on_transfer gas: got 5587 (recorded at key 4)"
+DEBUG[05-05|15:15:51.376] ProcessDeferredTransfers                 service=1065941251 gasUsed=35977 transferCount=1
+DEBUG[05-05|15:15:51.376] ProcessDeferredTransfers                 service=1343007977 gasUsed=0     transferCount=0
+DEBUG[05-05|15:15:51.376] ProcessDeferredTransfers                 service=3273088977 gasUsed=0     transferCount=0
+DEBUG[05-05|15:15:51.377] BEEFY-C                                  s=1065941251 h=0x0100000001000000000000000000000000000000000000000000000000000000 encoded=03f9883f0100000001000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:51.377] BEEFY-C                                  s=1343007977 h=0x0100000002000000000000000000000000000000000000000000000000000000 encoded=e9ac0c500100000002000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:51.377] BEEFY-C                                  s=2953942612 h=0x0100000001000000000000000000000000000000000000000000000000000000 encoded=549611b00100000001000000000000000000000000000000000000000000000000000000
+DEBUG[05-05|15:15:51.377] BEEFY-C                                  s=3273088977 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=d15f17c33cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:15:51.377] BEEFY accumulation root                  r=0x9b7d37825ca8672b28a6c3ab1d215e776986889fdc04dd83246c42918c6696d0
+INFO [05-05|15:15:51.407] proposeBlock                             mode=safrole  s.ID=1 p=6c85..1fd7 h=b535..3bf1 e'=2 m'=5  "len(γ_a')"=12 blk="H_t=29 H_r=a022..e9ca  |E_A|=6"
+INFO [05-05|15:15:52.416] Work package accumulated                 hash=0xb1f444aab3e3dc62e99d2654947ebc7169281b9b0991cf76057403f232882b2c count=1
+INFO [05-05|15:15:52.416] Work package accumulated                 hash=0xedff5459aa959aec45957fc13cc1d1a2105d0cee3351a18d52a0dde118d592f0 count=2
+INFO [05-05|15:15:52.416] All work packages accumulated
+fib: 010000000100000000000000
+trib: 01000000010000000000000000000000
+meg: 010000000200000000000000
+INFO [05-05|15:15:52.416] Work package submitted                   identifier=fibtrib                              hash=0xe561a8ce5ed39efc57d06190a84484f69770451455afd8b0edba6fc73a32460e core=0
+INFO [05-05|15:15:52.416] Work package submitted                   identifier=meg                                  hash=0x4cf83debc9b14d4d8674fe5183f586c37447de60b0158ee6a1d6b854481bb119 core=1
+INFO [05-05|15:15:57.425] proposeBlock                             mode=safrole  s.ID=3 p=b535..3bf1 h=7c97..1272 e'=2 m'=6  "len(γ_a')"=12 blk="H_t=30 H_r=36e5..fd04  |E_G|=2"
+DEBUG[05-05|15:16:03.587] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[] [0xe561a8ce5ed39efc57d06190a84484f69770451455afd8b0edba6fc73a32460e]]" "Q(q)-priority queue result"="[0xe561a8ce5ed39efc57d06190a84484f69770451455afd8b0edba6fc73a32460e 0x4cf83debc9b14d4d8674fe5183f586c37447de60b0158ee6a1d6b854481bb119]" "W^*-wphs of accumulatable work reports)"="[0xe561a8ce5ed39efc57d06190a84484f69770451455afd8b0edba6fc73a32460e 0x4cf83debc9b14d4d8674fe5183f586c37447de60b0158ee6a1d6b854481bb119]"
+DEBUG[05-05|15:16:03.587] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0xe561a8ce5ed39efc57d06190a84484f69770451455afd8b0edba6fc73a32460e","E":"0x5762cd9e2114823afa1dc15291febbc0b564d5f8ee962427a6bd9df57844aa22","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x7b0aa1735e5ba58d3236316c671fe4f00ed366ee72417c9ed02a53a8019e85b8","G":1000000,"D":"0x000c020000000100000001000000"}'
+DEBUG[05-05|15:16:03.588] WRITE                                    reg="[24 4278058968 0 0 0 12 4278124687 4278058982 1 4278124687 12 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:03.588] fib_accumulate: WRITE OK                 numStorageItems=3 StorageSize=8506 l=12 s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=020000000100000001000000         vlen=12
+DEBUG[05-05|15:16:03.588] fib_accumulate: WRITE storage            s=2953942612 a_o=8506 a_i=3
+DEBUG[05-05|15:16:03.588] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0200000001000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:03.588] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0xe561a8ce5ed39efc57d06190a84484f69770451455afd8b0edba6fc73a32460e","E":"0x5762cd9e2114823afa1dc15291febbc0b564d5f8ee962427a6bd9df57844aa22","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x7b0aa1735e5ba58d3236316c671fe4f00ed366ee72417c9ed02a53a8019e85b8","G":1000000,"D":"0x001002000000010000000100000000000000"}'
+DEBUG[05-05|15:16:03.589] WRITE                                    reg="[24 4278058968 0 0 0 16 4278124687 4278058982 1 4278124687 16 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:03.589] tribonacci_accumulate: WRITE OK          numStorageItems=5 StorageSize=8737 l=16 s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=02000000010000000100000000000000 vlen=16
+DEBUG[05-05|15:16:03.589] tribonacci_accumulate: WRITE storage     s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:03.589] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x0200000001000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:03.589] SINGLE ACCUMULATE                        s=1343007977 wrangledResults='{"H":"0x4cf83debc9b14d4d8674fe5183f586c37447de60b0158ee6a1d6b854481bb119","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x3d32dd4d2316b8458bde7a3100c2e9e9836277f4e3374cd8b99c1de97cd187b7","G":1000000,"D":"0x0008549611b003f9883f"}'
+DEBUG[05-05|15:16:03.591] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 2953942612 4278058615 1 4278058584 0 12]" gasCharged=10    beforeGas=999,828 afterGas=999,818
+DEBUG[05-05|15:16:03.591] megatron_accumulate: READ OK             s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val=020000000100000001000000         len(val)=12
+DEBUG[05-05|15:16:03.591] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 1065941251 4278058615 1 4278058600 0 12]" gasCharged=10    beforeGas=999,812 afterGas=999,802
+DEBUG[05-05|15:16:03.591] megatron_accumulate: READ OK             s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val=02000000010000000100000000000000 len(val)=16
+DEBUG[05-05|15:16:03.591] LOG                                      reg="[26 4278058488 1114112 5243 295394 262144 64 2 0 0 262144 45 70]" gasCharged=0     beforeGas=998,585 afterGas=998,585
+DEBUG[05-05|15:16:03.591] INFO#megatron                            m="meg 2 read from service 2953942612 fib(n=2)=1"
+DEBUG[05-05|15:16:03.591] LOG                                      reg="[30 4278058488 1114112 5243 106594 262142 66 2 0 0 262142 46 70]" gasCharged=0     beforeGas=997,327 afterGas=997,327
+DEBUG[05-05|15:16:03.591] INFO#megatron                            m="meg 2 read from service 1065941251 trib(n=2)=1"
+DEBUG[05-05|15:16:03.591] TRANSFER                                 reg="[32 4278058488 0 128 106594 0 262208 2953942612 2 40000 4278058664 4278058792 0]" gasCharged=40010 beforeGas=997,193 afterGas=957,183
+DEBUG[05-05|15:16:03.592] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=2      gaslimit=40000
+DEBUG[05-05|15:16:03.592] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=955,639 afterGas=955,639
+DEBUG[05-05|15:16:03.592] INFO#megatron                            m="0 transfer(dest:2953942612, amount=2, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:03.592] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 1 262208 1065941251 5 40000 4278058664 92 70]" gasCharged=40010 beforeGas=955,617 afterGas=915,607
+DEBUG[05-05|15:16:03.592] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=5      gaslimit=40000
+DEBUG[05-05|15:16:03.592] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=914,063 afterGas=914,063
+DEBUG[05-05|15:16:03.592] INFO#megatron                            m="0 transfer(dest:1065941251, amount=5, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:03.592] TRANSFER                                 reg="[40 4278058488 1114112 5243 40000 2 262208 2953942612 2 40000 4278058664 92 70]" gasCharged=40010 beforeGas=914,032 afterGas=874,022
+DEBUG[05-05|15:16:03.592] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=2      gaslimit=40000
+DEBUG[05-05|15:16:03.592] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=872,478 afterGas=872,478
+DEBUG[05-05|15:16:03.592] INFO#megatron                            m="1 transfer(dest:2953942612, amount=2, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:03.592] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 3 262208 1065941251 5 40000 4278058664 92 70]" gasCharged=40010 beforeGas=872,456 afterGas=832,446
+DEBUG[05-05|15:16:03.592] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=5      gaslimit=40000
+DEBUG[05-05|15:16:03.592] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=830,902 afterGas=830,902
+DEBUG[05-05|15:16:03.592] INFO#megatron                            m="1 transfer(dest:1065941251, amount=5, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:03.592] LOG                                      reg="[44 4278058488 1114112 5243 40000 262196 12 2 0 0 262196 8 70]" gasCharged=0     beforeGas=830,297 afterGas=830,297
+DEBUG[05-05|15:16:03.592] INFO#megatron                            m="meg(2)=2"
+DEBUG[05-05|15:16:03.592] WRITE                                    reg="[44 4278058488 1114112 5243 40000 262196 12 4278058615 1 4278058616 12 8 70]" gasCharged=10    beforeGas=830,277 afterGas=830,267
+DEBUG[05-05|15:16:03.592] megatron_accumulate: WRITE OK            numStorageItems=3 StorageSize=9397 l=12 s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=020000000200000002000000         vlen=12
+DEBUG[05-05|15:16:03.592] megatron_accumulate: WRITE storage       s=1343007977 a_o=9397 a_i=3
+DEBUG[05-05|15:16:03.592] LOG                                      reg="[48 4278058488 1114112 65772 8 262150 58 2 0 0 262150 32 70]" gasCharged=0     beforeGas=829,369 afterGas=829,369
+DEBUG[05-05|15:16:03.592] INFO#megatron                            m="meg 2 write(n=2) num_transfers=4"
+DEBUG[05-05|15:16:03.592] YIELD                                    reg="[50 4278058488 1114112 65772 8 196625 58 196625 4278058628 196637 196637 0 70]" gasCharged=10    beforeGas=829,272 afterGas=829,262
+DEBUG[05-05|15:16:03.592] megatron_accumulate: YIELD OK            h=0x0200000002000000020000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:03.592] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1343007977 B=0x0200000002000000020000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:03.592] SINGLE ACCUMULATE                        s=3273088977 wrangledResults='{"H":"0x4cf83debc9b14d4d8674fe5183f586c37447de60b0158ee6a1d6b854481bb119","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:16:03.593] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:16:03.593] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:16:03.593] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:16:03.593] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:16:03.593] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3273088977 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:03.593] ProcessDeferredTransfers                 service=3273088977 gasUsed=0     transferCount=0
+DEBUG[05-05|15:16:03.596] LOG                                      reg="[36 4278058352 1114112 0 5 261032 672 2 0 0 261032 506 56]" gasCharged=0     beforeGas=45861   afterGas=45861
+DEBUG[05-05|15:16:03.596] INFO#fib                                 m="FIB on_transfer: timeslot=31 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=2 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:03.596] WRITE                                    reg="[36 4278058352 1114112 0 5 261032 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=45841   afterGas=45831
+DEBUG[05-05|15:16:03.596] fib_transfer: WRITE NONE                 numStorageItems=4 StorageSize=8666 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:03.596] fib_transfer: WRITE storage              s=2953942612 a_o=8666 a_i=4
+DEBUG[05-05|15:16:03.596] GAS                                      reg="[36 4278058352 1114112 0 5 261032 672 18446744073709551615 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=45831   afterGas=45821
+DEBUG[05-05|15:16:03.596] WRITE                                    reg="[36 4278058352 1114112 0 5 261032 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=45813   afterGas=45803
+DEBUG[05-05|15:16:03.596] fib_transfer: WRITE NONE                 numStorageItems=5 StorageSize=8706 s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=f3b2000000000000                 vlen=8
+DEBUG[05-05|15:16:03.596] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:03.596] LOG                                      reg="[40 4278058352 1114112 16 4 261652 52 2 0 0 261652 33 56]" gasCharged=0     beforeGas=44889   afterGas=44889
+DEBUG[05-05|15:16:03.596] INFO#fib                                 m="write_result key=[4], result=b2f3"
+DEBUG[05-05|15:16:03.596] LOG                                      reg="[44 4278058352 16 65765 16 261614 90 2 0 0 261614 50 65784]" gasCharged=0     beforeGas=44289   afterGas=44289
+DEBUG[05-05|15:16:03.596] INFO#fib                                 m="FIB on_transfer gas: got 45811 (recorded at key 4)"
+DEBUG[05-05|15:16:03.597] LOG                                      reg="[36 4278058352 1114112 0 5 260528 672 2 0 0 260528 506 56]" gasCharged=0     beforeGas=10155   afterGas=10155
+DEBUG[05-05|15:16:03.597] INFO#fib                                 m="FIB on_transfer: timeslot=31 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=2 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:03.597] WRITE                                    reg="[36 4278058352 1114112 0 5 260528 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=10135   afterGas=10125
+DEBUG[05-05|15:16:03.597] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:03.597] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:03.597] GAS                                      reg="[36 4278058352 1114112 0 5 260528 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=10125   afterGas=10115
+DEBUG[05-05|15:16:03.597] WRITE                                    reg="[36 4278058352 1114112 0 5 260528 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=10107   afterGas=10097
+DEBUG[05-05|15:16:03.597] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=7927000000000000                 vlen=8
+DEBUG[05-05|15:16:03.597] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:03.598] LOG                                      reg="[40 4278058352 1114112 16 4 261148 52 2 0 0 261148 33 56]" gasCharged=0     beforeGas=9183    afterGas=9183
+DEBUG[05-05|15:16:03.598] INFO#fib                                 m="write_result key=[4], result=2779"
+DEBUG[05-05|15:16:03.598] LOG                                      reg="[44 4278058352 16 65765 16 261110 90 2 0 0 261110 50 65784]" gasCharged=0     beforeGas=8583    afterGas=8583
+DEBUG[05-05|15:16:03.598] INFO#fib                                 m="FIB on_transfer gas: got 10105 (recorded at key 4)"
+DEBUG[05-05|15:16:03.598] ProcessDeferredTransfers                 service=2953942612 gasUsed=71496 transferCount=2
+DEBUG[05-05|15:16:03.600] LOG                                      reg="[36 4278058352 1114112 0 5 261018 680 2 0 0 261018 507 56]" gasCharged=0     beforeGas=45637   afterGas=45637
+DEBUG[05-05|15:16:03.600] INFO#tribonacci                          m="TRIB on_transfer: timeslot=31 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=5 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:03.600] WRITE                                    reg="[36 4278058352 1114112 0 5 261018 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=45617   afterGas=45607
+DEBUG[05-05|15:16:03.600] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:03.600] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:03.600] GAS                                      reg="[36 4278058352 1114112 0 5 261018 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=45607   afterGas=45597
+DEBUG[05-05|15:16:03.600] WRITE                                    reg="[36 4278058352 1114112 0 5 261018 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=45589   afterGas=45579
+DEBUG[05-05|15:16:03.600] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=13b2000000000000                 vlen=8
+DEBUG[05-05|15:16:03.600] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:03.600] LOG                                      reg="[40 4278058352 1114112 16 4 261646 52 2 0 0 261646 33 56]" gasCharged=0     beforeGas=44654   afterGas=44654
+DEBUG[05-05|15:16:03.600] INFO#tribonacci                          m="write_result key=[4], result=b213"
+DEBUG[05-05|15:16:03.600] LOG                                      reg="[44 4278058352 17 65765 16 261606 92 2 0 0 261606 51 65784]" gasCharged=0     beforeGas=44080   afterGas=44080
+DEBUG[05-05|15:16:03.600] INFO#tribonacci                          m="TRIB on_transfer gas: got 45587 (recorded at key 4)"
+DEBUG[05-05|15:16:03.602] LOG                                      reg="[36 4278058352 1114112 0 5 260508 680 2 0 0 260508 507 56]" gasCharged=0     beforeGas=9781    afterGas=9781
+DEBUG[05-05|15:16:03.602] INFO#tribonacci                          m="TRIB on_transfer: timeslot=31 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=5 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:03.602] WRITE                                    reg="[36 4278058352 1114112 0 5 260508 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=9761    afterGas=9751
+DEBUG[05-05|15:16:03.602] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:03.602] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:03.602] GAS                                      reg="[36 4278058352 1114112 0 5 260508 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=9751    afterGas=9741
+DEBUG[05-05|15:16:03.602] WRITE                                    reg="[36 4278058352 1114112 0 5 260508 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=9733    afterGas=9723
+DEBUG[05-05|15:16:03.602] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=0326000000000000                 vlen=8
+DEBUG[05-05|15:16:03.602] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:03.602] LOG                                      reg="[40 4278058352 1114112 16 4 261136 52 2 0 0 261136 33 56]" gasCharged=0     beforeGas=8832    afterGas=8832
+DEBUG[05-05|15:16:03.602] INFO#tribonacci                          m="write_result key=[4], result=2603"
+DEBUG[05-05|15:16:03.602] LOG                                      reg="[44 4278058352 18 65764 16 261096 92 2 0 0 261096 50 65784]" gasCharged=0     beforeGas=8298    afterGas=8298
+DEBUG[05-05|15:16:03.602] INFO#tribonacci                          m="TRIB on_transfer gas: got 9731 (recorded at key 4)"
+DEBUG[05-05|15:16:03.602] ProcessDeferredTransfers                 service=1065941251 gasUsed=71781 transferCount=2
+DEBUG[05-05|15:16:03.602] ProcessDeferredTransfers                 service=1343007977 gasUsed=0     transferCount=0
+DEBUG[05-05|15:16:03.603] BEEFY-C                                  s=1065941251 h=0x0200000001000000010000000000000000000000000000000000000000000000 encoded=03f9883f0200000001000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:03.603] BEEFY-C                                  s=1343007977 h=0x0200000002000000020000000000000000000000000000000000000000000000 encoded=e9ac0c500200000002000000020000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:03.603] BEEFY-C                                  s=2953942612 h=0x0200000001000000010000000000000000000000000000000000000000000000 encoded=549611b00200000001000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:03.603] BEEFY-C                                  s=3273088977 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=d15f17c33cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:03.603] BEEFY accumulation root                  r=0x2d1549e428b7f6144ff948feb814e08bf9be5f39eb24a1d651b35896a3e421ea
+INFO [05-05|15:16:03.631] proposeBlock                             mode=safrole  s.ID=2 p=7c97..1272 h=7a9b..52d5 e'=2 m'=7  "len(γ_a')"=12 blk="H_t=31 H_r=e0c5..0ead  |E_A|=6"
+INFO [05-05|15:16:04.417] Work package accumulated                 hash=0x4cf83debc9b14d4d8674fe5183f586c37447de60b0158ee6a1d6b854481bb119 count=1
+INFO [05-05|15:16:04.417] Work package accumulated                 hash=0xe561a8ce5ed39efc57d06190a84484f69770451455afd8b0edba6fc73a32460e count=2
+INFO [05-05|15:16:04.417] All work packages accumulated
+fib: 020000000100000001000000
+trib: 02000000010000000100000000000000
+meg: 020000000200000002000000
+INFO [05-05|15:16:04.417] Work package submitted                   identifier=fibtrib                              hash=0xafdb64cef4719542a530b8502a053e949cf8d3d75d40b7bb73dad1722df1321b core=0
+INFO [05-05|15:16:04.417] Work package submitted                   identifier=meg                                  hash=0xef4eb0e929e1cafb9b789ccbb6601847727eedfa4b219cc73cac7a1ee77e58c2 core=1
+INFO [05-05|15:16:09.394] proposeBlock                             mode=safrole  s.ID=0 p=7a9b..52d5 h=d38a..db38 e'=2 m'=8  "len(γ_a')"=12 blk="H_t=32 H_r=054d..9b05  |E_G|=2"
+DEBUG[05-05|15:16:15.563] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[] [0xafdb64cef4719542a530b8502a053e949cf8d3d75d40b7bb73dad1722df1321b]]" "Q(q)-priority queue result"="[0xafdb64cef4719542a530b8502a053e949cf8d3d75d40b7bb73dad1722df1321b 0xef4eb0e929e1cafb9b789ccbb6601847727eedfa4b219cc73cac7a1ee77e58c2]" "W^*-wphs of accumulatable work reports)"="[0xafdb64cef4719542a530b8502a053e949cf8d3d75d40b7bb73dad1722df1321b 0xef4eb0e929e1cafb9b789ccbb6601847727eedfa4b219cc73cac7a1ee77e58c2]"
+DEBUG[05-05|15:16:15.563] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0xafdb64cef4719542a530b8502a053e949cf8d3d75d40b7bb73dad1722df1321b","E":"0x95f6aa9782b6e20fe952856dad8b37ae930936a0c8f571b53198512f712c4409","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x8c039ff7caa17ccebfcadc44bd9fce6a4b6699c4d03de2e3349aa1dc11193cd7","G":1000000,"D":"0x000c030000000200000001000000"}'
+DEBUG[05-05|15:16:15.564] WRITE                                    reg="[24 4278058968 0 0 0 12 4278124687 4278058982 1 4278124687 12 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:15.564] fib_accumulate: WRITE OK                 numStorageItems=5 StorageSize=8706 l=12  s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=030000000200000001000000         vlen=12
+DEBUG[05-05|15:16:15.564] fib_accumulate: WRITE storage            s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:15.564] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0300000002000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:15.564] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0xafdb64cef4719542a530b8502a053e949cf8d3d75d40b7bb73dad1722df1321b","E":"0x95f6aa9782b6e20fe952856dad8b37ae930936a0c8f571b53198512f712c4409","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x8c039ff7caa17ccebfcadc44bd9fce6a4b6699c4d03de2e3349aa1dc11193cd7","G":1000000,"D":"0x001003000000020000000100000001000000"}'
+DEBUG[05-05|15:16:15.567] WRITE                                    reg="[24 4278058968 0 0 0 16 4278124687 4278058982 1 4278124687 16 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:15.567] tribonacci_accumulate: WRITE OK          numStorageItems=5 StorageSize=8737 l=16  s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=03000000020000000100000001000000 vlen=16
+DEBUG[05-05|15:16:15.567] tribonacci_accumulate: WRITE storage     s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:15.567] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x0300000002000000010000000100000000000000000000000000000000000000
+DEBUG[05-05|15:16:15.567] SINGLE ACCUMULATE                        s=1343007977 wrangledResults='{"H":"0xef4eb0e929e1cafb9b789ccbb6601847727eedfa4b219cc73cac7a1ee77e58c2","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x3d32dd4d2316b8458bde7a3100c2e9e9836277f4e3374cd8b99c1de97cd187b7","G":1000000,"D":"0x0008549611b003f9883f"}'
+DEBUG[05-05|15:16:15.568] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 2953942612 4278058615 1 4278058584 0 12]" gasCharged=10    beforeGas=999,828 afterGas=999,818
+DEBUG[05-05|15:16:15.568] megatron_accumulate: READ OK             s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val=030000000200000001000000         len(val)=12
+DEBUG[05-05|15:16:15.568] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 1065941251 4278058615 1 4278058600 0 12]" gasCharged=10    beforeGas=999,812 afterGas=999,802
+DEBUG[05-05|15:16:15.568] megatron_accumulate: READ OK             s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val=03000000020000000100000001000000 len(val)=16
+DEBUG[05-05|15:16:15.568] LOG                                      reg="[26 4278058488 1114112 5243 295394 262144 64 2 0 0 262144 45 70]" gasCharged=0     beforeGas=998,585 afterGas=998,585
+DEBUG[05-05|15:16:15.568] INFO#megatron                            m="meg 3 read from service 2953942612 fib(n=3)=2"
+DEBUG[05-05|15:16:15.568] LOG                                      reg="[30 4278058488 1114112 5243 106594 262142 66 2 0 0 262142 46 70]" gasCharged=0     beforeGas=997,327 afterGas=997,327
+DEBUG[05-05|15:16:15.568] INFO#megatron                            m="meg 3 read from service 1065941251 trib(n=3)=2"
+DEBUG[05-05|15:16:15.568] TRANSFER                                 reg="[32 4278058488 0 128 106594 0 262208 2953942612 3 40000 4278058664 4278058792 0]" gasCharged=40010 beforeGas=997,193 afterGas=957,183
+DEBUG[05-05|15:16:15.568] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=3      gaslimit=40000
+DEBUG[05-05|15:16:15.568] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=955,639 afterGas=955,639
+DEBUG[05-05|15:16:15.568] INFO#megatron                            m="0 transfer(dest:2953942612, amount=3, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:15.568] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 1 262208 2953942612 3 40000 4278058664 92 70]" gasCharged=40010 beforeGas=955,610 afterGas=915,600
+DEBUG[05-05|15:16:15.568] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=3      gaslimit=40000
+DEBUG[05-05|15:16:15.569] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=914,056 afterGas=914,056
+DEBUG[05-05|15:16:15.569] INFO#megatron                            m="1 transfer(dest:2953942612, amount=3, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:15.569] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 2 262208 2953942612 3 40000 4278058664 92 70]" gasCharged=40010 beforeGas=914,027 afterGas=874,017
+DEBUG[05-05|15:16:15.569] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=3      gaslimit=40000
+DEBUG[05-05|15:16:15.569] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=872,473 afterGas=872,473
+DEBUG[05-05|15:16:15.569] INFO#megatron                            m="2 transfer(dest:2953942612, amount=3, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:15.569] LOG                                      reg="[44 4278058488 1114112 5243 40000 262196 12 2 0 0 262196 8 70]" gasCharged=0     beforeGas=871,870 afterGas=871,870
+DEBUG[05-05|15:16:15.569] INFO#megatron                            m="meg(3)=4"
+DEBUG[05-05|15:16:15.569] WRITE                                    reg="[44 4278058488 1114112 5243 40000 262196 12 4278058615 1 4278058616 12 8 70]" gasCharged=10    beforeGas=871,850 afterGas=871,840
+DEBUG[05-05|15:16:15.569] megatron_accumulate: WRITE OK            numStorageItems=3 StorageSize=9397 l=12  s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=030000000400000002000000         vlen=12
+DEBUG[05-05|15:16:15.569] megatron_accumulate: WRITE storage       s=1343007977 a_o=9397 a_i=3
+DEBUG[05-05|15:16:15.569] LOG                                      reg="[48 4278058488 1114112 65772 8 262150 58 2 0 0 262150 32 70]" gasCharged=0     beforeGas=870,942 afterGas=870,942
+DEBUG[05-05|15:16:15.569] INFO#megatron                            m="meg 3 write(n=4) num_transfers=3"
+DEBUG[05-05|15:16:15.569] YIELD                                    reg="[50 4278058488 1114112 65772 8 196625 58 196625 4278058628 196637 196637 0 70]" gasCharged=10    beforeGas=870,845 afterGas=870,835
+DEBUG[05-05|15:16:15.569] megatron_accumulate: YIELD OK            h=0x0300000004000000020000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:15.569] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1343007977 B=0x0300000004000000020000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:15.569] SINGLE ACCUMULATE                        s=3273088977 wrangledResults='{"H":"0xef4eb0e929e1cafb9b789ccbb6601847727eedfa4b219cc73cac7a1ee77e58c2","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:16:15.570] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:16:15.570] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:16:15.570] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:16:15.570] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:16:15.570] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3273088977 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:15.574] LOG                                      reg="[36 4278058352 1114112 0 5 261032 672 2 0 0 261032 506 56]" gasCharged=0     beforeGas=85861   afterGas=85861
+DEBUG[05-05|15:16:15.574] INFO#fib                                 m="FIB on_transfer: timeslot=33 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=3 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:15.574] WRITE                                    reg="[36 4278058352 1114112 0 5 261032 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=85841   afterGas=85831
+DEBUG[05-05|15:16:15.574] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:15.574] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:15.574] GAS                                      reg="[36 4278058352 1114112 0 5 261032 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=85831   afterGas=85821
+DEBUG[05-05|15:16:15.574] WRITE                                    reg="[36 4278058352 1114112 0 5 261032 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=85813   afterGas=85803
+DEBUG[05-05|15:16:15.574] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=334f010000000000                 vlen=8
+DEBUG[05-05|15:16:15.574] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:15.574] LOG                                      reg="[40 4278058352 1114112 16 5 261652 52 2 0 0 261652 34 56]" gasCharged=0     beforeGas=84872   afterGas=84872
+DEBUG[05-05|15:16:15.574] INFO#fib                                 m="write_result key=[4], result=14f33"
+DEBUG[05-05|15:16:15.574] LOG                                      reg="[44 4278058352 16 65765 16 261614 90 2 0 0 261614 50 65784]" gasCharged=0     beforeGas=84272   afterGas=84272
+DEBUG[05-05|15:16:15.574] INFO#fib                                 m="FIB on_transfer gas: got 85811 (recorded at key 4)"
+DEBUG[05-05|15:16:15.576] LOG                                      reg="[36 4278058352 1114112 0 5 260528 672 2 0 0 260528 506 56]" gasCharged=0     beforeGas=50138   afterGas=50138
+DEBUG[05-05|15:16:15.576] INFO#fib                                 m="FIB on_transfer: timeslot=33 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=3 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:15.576] WRITE                                    reg="[36 4278058352 1114112 0 5 260528 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=50118   afterGas=50108
+DEBUG[05-05|15:16:15.576] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:15.576] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:15.576] GAS                                      reg="[36 4278058352 1114112 0 5 260528 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=50108   afterGas=50098
+DEBUG[05-05|15:16:15.576] WRITE                                    reg="[36 4278058352 1114112 0 5 260528 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=50090   afterGas=50080
+DEBUG[05-05|15:16:15.576] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=a8c3000000000000                 vlen=8
+DEBUG[05-05|15:16:15.576] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:15.576] LOG                                      reg="[40 4278058352 1114112 16 4 261148 52 2 0 0 261148 33 56]" gasCharged=0     beforeGas=49166   afterGas=49166
+DEBUG[05-05|15:16:15.576] INFO#fib                                 m="write_result key=[4], result=c3a8"
+DEBUG[05-05|15:16:15.576] LOG                                      reg="[44 4278058352 16 65765 16 261110 90 2 0 0 261110 50 65784]" gasCharged=0     beforeGas=48566   afterGas=48566
+DEBUG[05-05|15:16:15.576] INFO#fib                                 m="FIB on_transfer gas: got 50088 (recorded at key 4)"
+DEBUG[05-05|15:16:15.578] LOG                                      reg="[36 4278058352 1114112 0 5 260024 672 2 0 0 260024 506 56]" gasCharged=0     beforeGas=14422   afterGas=14422
+DEBUG[05-05|15:16:15.578] INFO#fib                                 m="FIB on_transfer: timeslot=33 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=3 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:15.578] WRITE                                    reg="[36 4278058352 1114112 0 5 260024 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=14402   afterGas=14392
+DEBUG[05-05|15:16:15.578] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:15.578] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:15.578] GAS                                      reg="[36 4278058352 1114112 0 5 260024 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=14392   afterGas=14382
+DEBUG[05-05|15:16:15.578] WRITE                                    reg="[36 4278058352 1114112 0 5 260024 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=14374   afterGas=14364
+DEBUG[05-05|15:16:15.578] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=2438000000000000                 vlen=8
+DEBUG[05-05|15:16:15.578] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:15.578] LOG                                      reg="[40 4278058352 1114112 16 4 260644 52 2 0 0 260644 33 56]" gasCharged=0     beforeGas=13450   afterGas=13450
+DEBUG[05-05|15:16:15.578] INFO#fib                                 m="write_result key=[4], result=3824"
+DEBUG[05-05|15:16:15.578] LOG                                      reg="[44 4278058352 16 65765 16 260606 90 2 0 0 260606 50 65784]" gasCharged=0     beforeGas=12850   afterGas=12850
+DEBUG[05-05|15:16:15.578] INFO#fib                                 m="FIB on_transfer gas: got 14372 (recorded at key 4)"
+DEBUG[05-05|15:16:15.578] ProcessDeferredTransfers                 service=2953942612 gasUsed=107,229 transferCount=3
+DEBUG[05-05|15:16:15.578] ProcessDeferredTransfers                 service=1065941251 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:15.578] ProcessDeferredTransfers                 service=1343007977 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:15.578] ProcessDeferredTransfers                 service=3273088977 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:15.579] BEEFY-C                                  s=1065941251 h=0x0300000002000000010000000100000000000000000000000000000000000000 encoded=03f9883f0300000002000000010000000100000000000000000000000000000000000000
+DEBUG[05-05|15:16:15.579] BEEFY-C                                  s=1343007977 h=0x0300000004000000020000000000000000000000000000000000000000000000 encoded=e9ac0c500300000004000000020000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:15.579] BEEFY-C                                  s=2953942612 h=0x0300000002000000010000000000000000000000000000000000000000000000 encoded=549611b00300000002000000010000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:15.579] BEEFY-C                                  s=3273088977 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=d15f17c33cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:15.579] BEEFY accumulation root                  r=0x1cbe921765de844dfb92ff88e47bdc4cd4f527c9b4b947b88c264f7054e45bd1
+INFO [05-05|15:16:15.607] proposeBlock                             mode=safrole  s.ID=1 p=d38a..db38 h=637a..2724 e'=2 m'=9  "len(γ_a')"=12 blk="H_t=33 H_r=fd0d..9109  |E_A|=6"
+INFO [05-05|15:16:16.417] Work package accumulated                 hash=0xafdb64cef4719542a530b8502a053e949cf8d3d75d40b7bb73dad1722df1321b count=1
+INFO [05-05|15:16:16.417] Work package accumulated                 hash=0xef4eb0e929e1cafb9b789ccbb6601847727eedfa4b219cc73cac7a1ee77e58c2 count=2
+INFO [05-05|15:16:16.417] All work packages accumulated
+fib: 030000000200000001000000
+trib: 03000000020000000100000001000000
+meg: 030000000400000002000000
+INFO [05-05|15:16:16.417] Work package submitted                   identifier=fibtrib                              hash=0x8d0c8a2a8d113b8d205042311ae05e4b222e5dbe12d86a9be2b5c74d89843f69 core=0
+INFO [05-05|15:16:16.417] Work package submitted                   identifier=meg                                  hash=0xe83a568628dbb209f5a0ab7ee221f45b3f18ec28441c14badd513692c6a6165a core=1
+INFO [05-05|15:16:21.724] proposeBlock                             mode=safrole  s.ID=5 p=637a..2724 h=225e..b53a e'=2 m'=10 "len(γ_a')"=12 blk="H_t=34 H_r=c158..3690   WinningTickets(12) |E_G|=2"
+DEBUG[05-05|15:16:27.387] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[] [0x8d0c8a2a8d113b8d205042311ae05e4b222e5dbe12d86a9be2b5c74d89843f69]]" "Q(q)-priority queue result"="[0x8d0c8a2a8d113b8d205042311ae05e4b222e5dbe12d86a9be2b5c74d89843f69 0xe83a568628dbb209f5a0ab7ee221f45b3f18ec28441c14badd513692c6a6165a]" "W^*-wphs of accumulatable work reports)"="[0x8d0c8a2a8d113b8d205042311ae05e4b222e5dbe12d86a9be2b5c74d89843f69 0xe83a568628dbb209f5a0ab7ee221f45b3f18ec28441c14badd513692c6a6165a]"
+DEBUG[05-05|15:16:27.387] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x8d0c8a2a8d113b8d205042311ae05e4b222e5dbe12d86a9be2b5c74d89843f69","E":"0x030c2e7e86c8d83824ffd466b01bca529ab464efe9f6da47bc514454bff7f5ab","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x26a08e4d0c5190f01871e0569b6290b86760085d99f17eb4e7e6b58feb8d6249","G":1000000,"D":"0x000c040000000300000002000000"}'
+DEBUG[05-05|15:16:27.388] WRITE                                    reg="[24 4278058968 0 0 0 12 4278124687 4278058982 1 4278124687 12 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:27.388] fib_accumulate: WRITE OK                 numStorageItems=5 StorageSize=8706 l=12  s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=040000000300000002000000         vlen=12
+DEBUG[05-05|15:16:27.388] fib_accumulate: WRITE storage            s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:27.388] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0400000003000000020000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:27.388] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x8d0c8a2a8d113b8d205042311ae05e4b222e5dbe12d86a9be2b5c74d89843f69","E":"0x030c2e7e86c8d83824ffd466b01bca529ab464efe9f6da47bc514454bff7f5ab","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x26a08e4d0c5190f01871e0569b6290b86760085d99f17eb4e7e6b58feb8d6249","G":1000000,"D":"0x001004000000040000000200000001000000"}'
+DEBUG[05-05|15:16:27.389] WRITE                                    reg="[24 4278058968 0 0 0 16 4278124687 4278058982 1 4278124687 16 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:27.389] tribonacci_accumulate: WRITE OK          numStorageItems=5 StorageSize=8737 l=16  s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=04000000040000000200000001000000 vlen=16
+DEBUG[05-05|15:16:27.389] tribonacci_accumulate: WRITE storage     s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.389] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x0400000004000000020000000100000000000000000000000000000000000000
+DEBUG[05-05|15:16:27.389] SINGLE ACCUMULATE                        s=1343007977 wrangledResults='{"H":"0xe83a568628dbb209f5a0ab7ee221f45b3f18ec28441c14badd513692c6a6165a","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x3d32dd4d2316b8458bde7a3100c2e9e9836277f4e3374cd8b99c1de97cd187b7","G":1000000,"D":"0x0008549611b003f9883f"}'
+DEBUG[05-05|15:16:27.390] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 2953942612 4278058615 1 4278058584 0 12]" gasCharged=10    beforeGas=999,828 afterGas=999,818
+DEBUG[05-05|15:16:27.391] megatron_accumulate: READ OK             s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val=040000000300000002000000         len(val)=12
+DEBUG[05-05|15:16:27.391] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 1065941251 4278058615 1 4278058600 0 12]" gasCharged=10    beforeGas=999,812 afterGas=999,802
+DEBUG[05-05|15:16:27.391] megatron_accumulate: READ OK             s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val=04000000040000000200000001000000 len(val)=16
+DEBUG[05-05|15:16:27.391] LOG                                      reg="[26 4278058488 1114112 5243 295394 262144 64 2 0 0 262144 45 70]" gasCharged=0     beforeGas=998,585 afterGas=998,585
+DEBUG[05-05|15:16:27.391] INFO#megatron                            m="meg 4 read from service 2953942612 fib(n=4)=3"
+DEBUG[05-05|15:16:27.391] LOG                                      reg="[30 4278058488 1114112 5243 106594 262142 66 2 0 0 262142 46 70]" gasCharged=0     beforeGas=997,327 afterGas=997,327
+DEBUG[05-05|15:16:27.391] INFO#megatron                            m="meg 4 read from service 1065941251 trib(n=4)=4"
+DEBUG[05-05|15:16:27.391] TRANSFER                                 reg="[32 4278058488 0 128 106594 0 262208 1065941251 9 40000 4278058664 4278058792 0]" gasCharged=40010 beforeGas=997,191 afterGas=957,181
+DEBUG[05-05|15:16:27.391] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=9      gaslimit=40000
+DEBUG[05-05|15:16:27.392] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=955,637 afterGas=955,637
+DEBUG[05-05|15:16:27.392] INFO#megatron                            m="0 transfer(dest:1065941251, amount=9, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:27.392] TRANSFER                                 reg="[40 4278058488 1114112 5243 40000 1 262208 1065941251 9 40000 4278058664 92 70]" gasCharged=40010 beforeGas=955,604 afterGas=915,594
+DEBUG[05-05|15:16:27.392] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=9      gaslimit=40000
+DEBUG[05-05|15:16:27.392] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=914,050 afterGas=914,050
+DEBUG[05-05|15:16:27.392] INFO#megatron                            m="1 transfer(dest:1065941251, amount=9, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:27.392] TRANSFER                                 reg="[40 4278058488 1114112 5243 40000 2 262208 1065941251 9 40000 4278058664 92 70]" gasCharged=40010 beforeGas=914,017 afterGas=874,007
+DEBUG[05-05|15:16:27.392] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=9      gaslimit=40000
+DEBUG[05-05|15:16:27.392] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=872,463 afterGas=872,463
+DEBUG[05-05|15:16:27.392] INFO#megatron                            m="2 transfer(dest:1065941251, amount=9, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:27.392] TRANSFER                                 reg="[40 4278058488 1114112 5243 40000 3 262208 1065941251 9 40000 4278058664 92 70]" gasCharged=40010 beforeGas=872,430 afterGas=832,420
+DEBUG[05-05|15:16:27.392] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=9      gaslimit=40000
+DEBUG[05-05|15:16:27.393] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=830,876 afterGas=830,876
+DEBUG[05-05|15:16:27.393] INFO#megatron                            m="3 transfer(dest:1065941251, amount=9, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:27.393] LOG                                      reg="[44 4278058488 1114112 5243 40000 262196 12 2 0 0 262196 8 70]" gasCharged=0     beforeGas=830,271 afterGas=830,271
+DEBUG[05-05|15:16:27.393] INFO#megatron                            m="meg(4)=7"
+DEBUG[05-05|15:16:27.393] WRITE                                    reg="[44 4278058488 1114112 5243 40000 262196 12 4278058615 1 4278058616 12 8 70]" gasCharged=10    beforeGas=830,251 afterGas=830,241
+DEBUG[05-05|15:16:27.393] megatron_accumulate: WRITE OK            numStorageItems=3 StorageSize=9397 l=12  s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=040000000700000004000000         vlen=12
+DEBUG[05-05|15:16:27.393] megatron_accumulate: WRITE storage       s=1343007977 a_o=9397 a_i=3
+DEBUG[05-05|15:16:27.393] LOG                                      reg="[48 4278058488 1114112 65772 8 262150 58 2 0 0 262150 32 70]" gasCharged=0     beforeGas=829,343 afterGas=829,343
+DEBUG[05-05|15:16:27.393] INFO#megatron                            m="meg 4 write(n=7) num_transfers=4"
+DEBUG[05-05|15:16:27.393] YIELD                                    reg="[50 4278058488 1114112 65772 8 196625 58 196625 4278058628 196637 196637 0 70]" gasCharged=10    beforeGas=829,246 afterGas=829,236
+DEBUG[05-05|15:16:27.393] megatron_accumulate: YIELD OK            h=0x0400000007000000040000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:27.393] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1343007977 B=0x0400000007000000040000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:27.393] SINGLE ACCUMULATE                        s=3273088977 wrangledResults='{"H":"0xe83a568628dbb209f5a0ab7ee221f45b3f18ec28441c14badd513692c6a6165a","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:16:27.394] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:16:27.394] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:16:27.394] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:16:27.394] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:16:27.394] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3273088977 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:27.394] ProcessDeferredTransfers                 service=1343007977 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:27.394] ProcessDeferredTransfers                 service=3273088977 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:27.394] ProcessDeferredTransfers                 service=2953942612 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:27.396] LOG                                      reg="[36 4278058352 1114112 0 5 261018 680 2 0 0 261018 507 56]" gasCharged=0     beforeGas=125,637 afterGas=125,637
+DEBUG[05-05|15:16:27.396] INFO#tribonacci                          m="TRIB on_transfer: timeslot=35 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=9 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:27.396] WRITE                                    reg="[36 4278058352 1114112 0 5 261018 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=125,617 afterGas=125,607
+DEBUG[05-05|15:16:27.396] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:27.396] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.396] GAS                                      reg="[36 4278058352 1114112 0 5 261018 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=125,607 afterGas=125,597
+DEBUG[05-05|15:16:27.396] WRITE                                    reg="[36 4278058352 1114112 0 5 261018 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=125,589 afterGas=125,579
+DEBUG[05-05|15:16:27.396] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=93ea010000000000                 vlen=8
+DEBUG[05-05|15:16:27.396] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.396] LOG                                      reg="[40 4278058352 1114112 16 5 261646 52 2 0 0 261646 34 56]" gasCharged=0     beforeGas=124,637 afterGas=124,637
+DEBUG[05-05|15:16:27.396] INFO#tribonacci                          m="write_result key=[4], result=1ea93"
+DEBUG[05-05|15:16:27.396] LOG                                      reg="[44 4278058352 18 65764 16 261606 92 2 0 0 261606 52 65784]" gasCharged=0     beforeGas=124,053 afterGas=124,053
+DEBUG[05-05|15:16:27.396] INFO#tribonacci                          m="TRIB on_transfer gas: got 125587 (recorded at key 4)"
+DEBUG[05-05|15:16:27.398] LOG                                      reg="[36 4278058352 1114112 0 5 260508 680 2 0 0 260508 507 56]" gasCharged=0     beforeGas=89754   afterGas=89754
+DEBUG[05-05|15:16:27.398] INFO#tribonacci                          m="TRIB on_transfer: timeslot=35 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=9 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:27.398] WRITE                                    reg="[36 4278058352 1114112 0 5 260508 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=89734   afterGas=89724
+DEBUG[05-05|15:16:27.398] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:27.398] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.398] GAS                                      reg="[36 4278058352 1114112 0 5 260508 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=89724   afterGas=89714
+DEBUG[05-05|15:16:27.398] WRITE                                    reg="[36 4278058352 1114112 0 5 260508 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=89706   afterGas=89696
+DEBUG[05-05|15:16:27.398] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=685e010000000000                 vlen=8
+DEBUG[05-05|15:16:27.398] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.398] LOG                                      reg="[40 4278058352 1114112 16 5 261136 52 2 0 0 261136 34 56]" gasCharged=0     beforeGas=88788   afterGas=88788
+DEBUG[05-05|15:16:27.398] INFO#tribonacci                          m="write_result key=[4], result=15e68"
+DEBUG[05-05|15:16:27.398] LOG                                      reg="[44 4278058352 19 65763 16 261096 92 2 0 0 261096 51 65784]" gasCharged=0     beforeGas=88234   afterGas=88234
+DEBUG[05-05|15:16:27.398] INFO#tribonacci                          m="TRIB on_transfer gas: got 89704 (recorded at key 4)"
+DEBUG[05-05|15:16:27.400] LOG                                      reg="[36 4278058352 1114112 0 5 259998 680 2 0 0 259998 507 56]" gasCharged=0     beforeGas=53903   afterGas=53903
+DEBUG[05-05|15:16:27.400] INFO#tribonacci                          m="TRIB on_transfer: timeslot=35 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=9 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:27.400] WRITE                                    reg="[36 4278058352 1114112 0 5 259998 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=53883   afterGas=53873
+DEBUG[05-05|15:16:27.400] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:27.400] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.400] GAS                                      reg="[36 4278058352 1114112 0 5 259998 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=53873   afterGas=53863
+DEBUG[05-05|15:16:27.400] WRITE                                    reg="[36 4278058352 1114112 0 5 259998 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=53855   afterGas=53845
+DEBUG[05-05|15:16:27.400] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=5dd2000000000000                 vlen=8
+DEBUG[05-05|15:16:27.400] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.400] LOG                                      reg="[40 4278058352 1114112 16 4 260626 52 2 0 0 260626 33 56]" gasCharged=0     beforeGas=52920   afterGas=52920
+DEBUG[05-05|15:16:27.400] INFO#tribonacci                          m="write_result key=[4], result=d25d"
+DEBUG[05-05|15:16:27.400] LOG                                      reg="[44 4278058352 13 65769 8 260586 92 2 0 0 260586 51 65784]" gasCharged=0     beforeGas=52282   afterGas=52282
+DEBUG[05-05|15:16:27.400] INFO#tribonacci                          m="TRIB on_transfer gas: got 53853 (recorded at key 4)"
+DEBUG[05-05|15:16:27.402] LOG                                      reg="[36 4278058352 1114112 0 5 259488 680 2 0 0 259488 507 56]" gasCharged=0     beforeGas=17945   afterGas=17945
+DEBUG[05-05|15:16:27.402] INFO#tribonacci                          m="TRIB on_transfer: timeslot=35 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=9 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:27.402] WRITE                                    reg="[36 4278058352 1114112 0 5 259488 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=17925   afterGas=17915
+DEBUG[05-05|15:16:27.402] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:27.402] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.402] GAS                                      reg="[36 4278058352 1114112 0 5 259488 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=17915   afterGas=17905
+DEBUG[05-05|15:16:27.402] WRITE                                    reg="[36 4278058352 1114112 0 5 259488 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=17897   afterGas=17887
+DEBUG[05-05|15:16:27.402] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=e745000000000000                 vlen=8
+DEBUG[05-05|15:16:27.402] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:27.402] LOG                                      reg="[40 4278058352 1114112 16 4 260116 52 2 0 0 260116 33 56]" gasCharged=0     beforeGas=16973   afterGas=16973
+DEBUG[05-05|15:16:27.402] INFO#tribonacci                          m="write_result key=[4], result=45e7"
+DEBUG[05-05|15:16:27.402] LOG                                      reg="[44 4278058352 15 65767 8 260076 92 2 0 0 260076 51 65776]" gasCharged=0     beforeGas=16335   afterGas=16335
+DEBUG[05-05|15:16:27.402] INFO#tribonacci                          m="TRIB on_transfer gas: got 17895 (recorded at key 4)"
+DEBUG[05-05|15:16:27.402] ProcessDeferredTransfers                 service=1065941251 gasUsed=143,744 transferCount=4
+DEBUG[05-05|15:16:27.403] BEEFY-C                                  s=1065941251 h=0x0400000004000000020000000100000000000000000000000000000000000000 encoded=03f9883f0400000004000000020000000100000000000000000000000000000000000000
+DEBUG[05-05|15:16:27.403] BEEFY-C                                  s=1343007977 h=0x0400000007000000040000000000000000000000000000000000000000000000 encoded=e9ac0c500400000007000000040000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:27.403] BEEFY-C                                  s=2953942612 h=0x0400000003000000020000000000000000000000000000000000000000000000 encoded=549611b00400000003000000020000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:27.403] BEEFY-C                                  s=3273088977 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=d15f17c33cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:27.403] BEEFY accumulation root                  r=0xd670afee7b1a30f2d46c6953e0296dc2c8687b3646936fbc8b041fad47de74a0
+INFO [05-05|15:16:27.431] proposeBlock                             mode=safrole  s.ID=3 p=225e..b53a h=6015..ebf1 e'=2 m'=11 "len(γ_a')"=12 blk="H_t=35 H_r=757a..6044  |E_A|=6"
+INFO [05-05|15:16:28.418] Work package accumulated                 hash=0x8d0c8a2a8d113b8d205042311ae05e4b222e5dbe12d86a9be2b5c74d89843f69 count=1
+INFO [05-05|15:16:28.418] Work package accumulated                 hash=0xe83a568628dbb209f5a0ab7ee221f45b3f18ec28441c14badd513692c6a6165a count=2
+INFO [05-05|15:16:28.418] All work packages accumulated
+fib: 040000000300000002000000
+trib: 04000000040000000200000001000000
+meg: 040000000700000004000000
+INFO [05-05|15:16:28.418] Work package submitted                   identifier=fibtrib                              hash=0x35ceb4c3a777cf59a4a2808b378de42aac8c173b31e9d483aab9b1734d6b8d2f core=0
+INFO [05-05|15:16:28.418] Work package submitted                   identifier=meg                                  hash=0x3a882731e52c6cb37cdf91473237390722a70ce55e5cc137d483b4197e32c3cb core=1
+INFO [05-05|15:16:33.681] proposeBlock                             mode=safrole  s.ID=0 p=6015..ebf1 h=05d1..ceb4 e'=3 m'=0  "len(γ_a')"=3  blk="H_t=36 H_r=12b3..ca5b  EpochMarker(η1'=7e4f..8ff9, η2'=767a..23ae) |E_T|=3 |E_G|=2"
+DEBUG[05-05|15:16:39.609] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[] [0x35ceb4c3a777cf59a4a2808b378de42aac8c173b31e9d483aab9b1734d6b8d2f]]" "Q(q)-priority queue result"="[0x35ceb4c3a777cf59a4a2808b378de42aac8c173b31e9d483aab9b1734d6b8d2f 0x3a882731e52c6cb37cdf91473237390722a70ce55e5cc137d483b4197e32c3cb]" "W^*-wphs of accumulatable work reports)"="[0x35ceb4c3a777cf59a4a2808b378de42aac8c173b31e9d483aab9b1734d6b8d2f 0x3a882731e52c6cb37cdf91473237390722a70ce55e5cc137d483b4197e32c3cb]"
+DEBUG[05-05|15:16:39.609] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0x35ceb4c3a777cf59a4a2808b378de42aac8c173b31e9d483aab9b1734d6b8d2f","E":"0xfc0551466f6d2d5434b430a993a0bfb12f1bd98722cb2e58584afe289dc35a75","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x8c35d22f459d77ca4c0b0b5035869766d60d182b9716ab3e8879e066478899a8","G":1000000,"D":"0x000c050000000500000003000000"}'
+DEBUG[05-05|15:16:39.610] WRITE                                    reg="[24 4278058968 0 0 0 12 4278124687 4278058982 1 4278124687 12 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:39.610] fib_accumulate: WRITE OK                 numStorageItems=5 StorageSize=8706 l=12  s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=050000000500000003000000         vlen=12
+DEBUG[05-05|15:16:39.610] fib_accumulate: WRITE storage            s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.610] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0500000005000000030000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:39.610] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0x35ceb4c3a777cf59a4a2808b378de42aac8c173b31e9d483aab9b1734d6b8d2f","E":"0xfc0551466f6d2d5434b430a993a0bfb12f1bd98722cb2e58584afe289dc35a75","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x8c35d22f459d77ca4c0b0b5035869766d60d182b9716ab3e8879e066478899a8","G":1000000,"D":"0x001005000000070000000400000002000000"}'
+DEBUG[05-05|15:16:39.610] WRITE                                    reg="[24 4278058968 0 0 0 16 4278124687 4278058982 1 4278124687 16 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:39.610] tribonacci_accumulate: WRITE OK          numStorageItems=5 StorageSize=8737 l=16  s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=05000000070000000400000002000000 vlen=16
+DEBUG[05-05|15:16:39.610] tribonacci_accumulate: WRITE storage     s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.610] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x0500000007000000040000000200000000000000000000000000000000000000
+DEBUG[05-05|15:16:39.610] SINGLE ACCUMULATE                        s=1343007977 wrangledResults='{"H":"0x3a882731e52c6cb37cdf91473237390722a70ce55e5cc137d483b4197e32c3cb","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x3d32dd4d2316b8458bde7a3100c2e9e9836277f4e3374cd8b99c1de97cd187b7","G":1000000,"D":"0x0008549611b003f9883f"}'
+DEBUG[05-05|15:16:39.611] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 2953942612 4278058615 1 4278058584 0 12]" gasCharged=10    beforeGas=999,828 afterGas=999,818
+DEBUG[05-05|15:16:39.611] megatron_accumulate: READ OK             s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val=050000000500000003000000         len(val)=12
+DEBUG[05-05|15:16:39.611] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 1065941251 4278058615 1 4278058600 0 12]" gasCharged=10    beforeGas=999,812 afterGas=999,802
+DEBUG[05-05|15:16:39.611] megatron_accumulate: READ OK             s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val=05000000070000000400000002000000 len(val)=16
+DEBUG[05-05|15:16:39.611] LOG                                      reg="[26 4278058488 1114112 5243 295394 262144 64 2 0 0 262144 45 70]" gasCharged=0     beforeGas=998,585 afterGas=998,585
+DEBUG[05-05|15:16:39.611] INFO#megatron                            m="meg 5 read from service 2953942612 fib(n=5)=5"
+DEBUG[05-05|15:16:39.611] LOG                                      reg="[30 4278058488 1114112 5243 106594 262142 66 2 0 0 262142 46 70]" gasCharged=0     beforeGas=997,327 afterGas=997,327
+DEBUG[05-05|15:16:39.611] INFO#megatron                            m="meg 5 read from service 1065941251 trib(n=5)=7"
+DEBUG[05-05|15:16:39.611] TRANSFER                                 reg="[32 4278058488 0 128 106594 0 262208 2953942612 5 40000 4278058664 4278058792 0]" gasCharged=40010 beforeGas=997,193 afterGas=957,183
+DEBUG[05-05|15:16:39.611] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=5      gaslimit=40000
+DEBUG[05-05|15:16:39.611] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=955,639 afterGas=955,639
+DEBUG[05-05|15:16:39.611] INFO#megatron                            m="0 transfer(dest:2953942612, amount=5, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.611] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 1 262208 1065941251 11 40000 4278058664 92 70]" gasCharged=40010 beforeGas=955,617 afterGas=915,607
+DEBUG[05-05|15:16:39.611] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=11     gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 65 70]" gasCharged=0     beforeGas=914,053 afterGas=914,053
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="0 transfer(dest:1065941251, amount=11, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] TRANSFER                                 reg="[40 4278058488 1114112 5243 40000 2 262208 2953942612 5 40000 4278058664 92 70]" gasCharged=40010 beforeGas=914,022 afterGas=874,012
+DEBUG[05-05|15:16:39.612] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=5      gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=872,468 afterGas=872,468
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="1 transfer(dest:2953942612, amount=5, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 3 262208 1065941251 11 40000 4278058664 92 70]" gasCharged=40010 beforeGas=872,446 afterGas=832,436
+DEBUG[05-05|15:16:39.612] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=11     gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 65 70]" gasCharged=0     beforeGas=830,882 afterGas=830,882
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="1 transfer(dest:1065941251, amount=11, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] TRANSFER                                 reg="[40 4278058488 1114112 5243 40000 4 262208 2953942612 5 40000 4278058664 92 70]" gasCharged=40010 beforeGas=830,851 afterGas=790,841
+DEBUG[05-05|15:16:39.612] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=5      gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=789,297 afterGas=789,297
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="2 transfer(dest:2953942612, amount=5, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 5 262208 1065941251 11 40000 4278058664 92 70]" gasCharged=40010 beforeGas=789,275 afterGas=749,265
+DEBUG[05-05|15:16:39.612] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=11     gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 65 70]" gasCharged=0     beforeGas=747,711 afterGas=747,711
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="2 transfer(dest:1065941251, amount=11, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] TRANSFER                                 reg="[40 4278058488 1114112 5243 40000 6 262208 2953942612 5 40000 4278058664 92 70]" gasCharged=40010 beforeGas=747,680 afterGas=707,670
+DEBUG[05-05|15:16:39.612] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=5      gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=706,126 afterGas=706,126
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="3 transfer(dest:2953942612, amount=5, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 7 262208 1065941251 11 40000 4278058664 92 70]" gasCharged=40010 beforeGas=706,104 afterGas=666,094
+DEBUG[05-05|15:16:39.612] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=11     gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 65 70]" gasCharged=0     beforeGas=664,540 afterGas=664,540
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="3 transfer(dest:1065941251, amount=11, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] TRANSFER                                 reg="[40 4278058488 1114112 5243 40000 8 262208 2953942612 5 40000 4278058664 92 70]" gasCharged=40010 beforeGas=664,509 afterGas=624,499
+DEBUG[05-05|15:16:39.612] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=5      gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=622,955 afterGas=622,955
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="4 transfer(dest:2953942612, amount=5, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 9 262208 1065941251 11 40000 4278058664 92 70]" gasCharged=40010 beforeGas=622,933 afterGas=582,923
+DEBUG[05-05|15:16:39.612] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=1065941251 amount=11     gaslimit=40000
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[40 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 65 70]" gasCharged=0     beforeGas=581,369 afterGas=581,369
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="4 transfer(dest:1065941251, amount=11, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:39.612] LOG                                      reg="[44 4278058488 1114112 5243 40000 262196 12 2 0 0 262196 9 70]" gasCharged=0     beforeGas=580,754 afterGas=580,754
+DEBUG[05-05|15:16:39.612] INFO#megatron                            m="meg(5)=12"
+DEBUG[05-05|15:16:39.612] WRITE                                    reg="[44 4278058488 1114112 5243 40000 262196 12 4278058615 1 4278058616 12 9 70]" gasCharged=10    beforeGas=580,734 afterGas=580,724
+DEBUG[05-05|15:16:39.612] megatron_accumulate: WRITE OK            numStorageItems=3 StorageSize=9397 l=12  s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=050000000c00000007000000         vlen=12
+DEBUG[05-05|15:16:39.612] megatron_accumulate: WRITE storage       s=1343007977 a_o=9397 a_i=3
+DEBUG[05-05|15:16:39.613] LOG                                      reg="[48 4278058488 1114112 65771 8 262150 58 2 0 0 262150 34 70]" gasCharged=0     beforeGas=579,806 afterGas=579,806
+DEBUG[05-05|15:16:39.613] INFO#megatron                            m="meg 5 write(n=12) num_transfers=10"
+DEBUG[05-05|15:16:39.613] YIELD                                    reg="[50 4278058488 1114112 65771 8 196625 58 196625 4278058628 196637 196637 0 70]" gasCharged=10    beforeGas=579,709 afterGas=579,699
+DEBUG[05-05|15:16:39.613] megatron_accumulate: YIELD OK            h=0x050000000c000000070000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:39.613] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1343007977 B=0x050000000c000000070000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:39.613] SINGLE ACCUMULATE                        s=3273088977 wrangledResults='{"H":"0x3a882731e52c6cb37cdf91473237390722a70ce55e5cc137d483b4197e32c3cb","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:16:39.613] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:16:39.613] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:16:39.613] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:16:39.613] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:16:39.613] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3273088977 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:39.613] ProcessDeferredTransfers                 service=3273088977 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:39.616] LOG                                      reg="[36 4278058352 1114112 0 5 261032 672 2 0 0 261032 506 56]" gasCharged=0     beforeGas=165,861 afterGas=165,861
+DEBUG[05-05|15:16:39.616] INFO#fib                                 m="FIB on_transfer: timeslot=37 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=5 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.616] WRITE                                    reg="[36 4278058352 1114112 0 5 261032 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=165,841 afterGas=165,831
+DEBUG[05-05|15:16:39.616] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.616] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.616] GAS                                      reg="[36 4278058352 1114112 0 5 261032 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=165,831 afterGas=165,821
+DEBUG[05-05|15:16:39.616] WRITE                                    reg="[36 4278058352 1114112 0 5 261032 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=165,813 afterGas=165,803
+DEBUG[05-05|15:16:39.616] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=b387020000000000                 vlen=8
+DEBUG[05-05|15:16:39.616] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.616] LOG                                      reg="[40 4278058352 1114112 16 5 261652 52 2 0 0 261652 34 56]" gasCharged=0     beforeGas=164,872 afterGas=164,872
+DEBUG[05-05|15:16:39.616] INFO#fib                                 m="write_result key=[4], result=287b3"
+DEBUG[05-05|15:16:39.616] LOG                                      reg="[44 4278058352 17 65764 16 261614 90 2 0 0 261614 51 65784]" gasCharged=0     beforeGas=164,260 afterGas=164,260
+DEBUG[05-05|15:16:39.616] INFO#fib                                 m="FIB on_transfer gas: got 165811 (recorded at key 4)"
+DEBUG[05-05|15:16:39.618] LOG                                      reg="[36 4278058352 1114112 0 5 260528 672 2 0 0 260528 506 56]" gasCharged=0     beforeGas=130,126 afterGas=130,126
+DEBUG[05-05|15:16:39.618] INFO#fib                                 m="FIB on_transfer: timeslot=37 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=5 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.618] WRITE                                    reg="[36 4278058352 1114112 0 5 260528 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=130,106 afterGas=130,096
+DEBUG[05-05|15:16:39.618] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.618] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.618] GAS                                      reg="[36 4278058352 1114112 0 5 260528 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=130,096 afterGas=130,086
+DEBUG[05-05|15:16:39.618] WRITE                                    reg="[36 4278058352 1114112 0 5 260528 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=130,078 afterGas=130,068
+DEBUG[05-05|15:16:39.618] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=1cfc010000000000                 vlen=8
+DEBUG[05-05|15:16:39.618] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.618] LOG                                      reg="[40 4278058352 1114112 16 5 261148 52 2 0 0 261148 34 56]" gasCharged=0     beforeGas=129,137 afterGas=129,137
+DEBUG[05-05|15:16:39.618] INFO#fib                                 m="write_result key=[4], result=1fc1c"
+DEBUG[05-05|15:16:39.619] LOG                                      reg="[44 4278058352 17 65764 16 261110 90 2 0 0 261110 51 65784]" gasCharged=0     beforeGas=128,525 afterGas=128,525
+DEBUG[05-05|15:16:39.619] INFO#fib                                 m="FIB on_transfer gas: got 130076 (recorded at key 4)"
+DEBUG[05-05|15:16:39.620] LOG                                      reg="[36 4278058352 1114112 0 5 260024 672 2 0 0 260024 506 56]" gasCharged=0     beforeGas=94381   afterGas=94381
+DEBUG[05-05|15:16:39.620] INFO#fib                                 m="FIB on_transfer: timeslot=37 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=5 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.620] WRITE                                    reg="[36 4278058352 1114112 0 5 260024 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=94361   afterGas=94351
+DEBUG[05-05|15:16:39.620] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.620] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.620] GAS                                      reg="[36 4278058352 1114112 0 5 260024 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=94351   afterGas=94341
+DEBUG[05-05|15:16:39.620] WRITE                                    reg="[36 4278058352 1114112 0 5 260024 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=94333   afterGas=94323
+DEBUG[05-05|15:16:39.620] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=7b70010000000000                 vlen=8
+DEBUG[05-05|15:16:39.620] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.620] LOG                                      reg="[40 4278058352 1114112 16 5 260644 52 2 0 0 260644 34 56]" gasCharged=0     beforeGas=93392   afterGas=93392
+DEBUG[05-05|15:16:39.621] INFO#fib                                 m="write_result key=[4], result=1707b"
+DEBUG[05-05|15:16:39.621] LOG                                      reg="[44 4278058352 16 65765 16 260606 90 2 0 0 260606 50 65784]" gasCharged=0     beforeGas=92792   afterGas=92792
+DEBUG[05-05|15:16:39.621] INFO#fib                                 m="FIB on_transfer gas: got 94331 (recorded at key 4)"
+DEBUG[05-05|15:16:39.622] LOG                                      reg="[36 4278058352 1114112 0 5 259520 672 2 0 0 259520 506 56]" gasCharged=0     beforeGas=58638   afterGas=58638
+DEBUG[05-05|15:16:39.622] INFO#fib                                 m="FIB on_transfer: timeslot=37 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=5 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.622] WRITE                                    reg="[36 4278058352 1114112 0 5 259520 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=58618   afterGas=58608
+DEBUG[05-05|15:16:39.622] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.622] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.622] GAS                                      reg="[36 4278058352 1114112 0 5 259520 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=58608   afterGas=58598
+DEBUG[05-05|15:16:39.622] WRITE                                    reg="[36 4278058352 1114112 0 5 259520 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=58590   afterGas=58580
+DEBUG[05-05|15:16:39.622] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=dce4000000000000                 vlen=8
+DEBUG[05-05|15:16:39.622] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.622] LOG                                      reg="[40 4278058352 1114112 16 4 260140 52 2 0 0 260140 33 56]" gasCharged=0     beforeGas=57666   afterGas=57666
+DEBUG[05-05|15:16:39.622] INFO#fib                                 m="write_result key=[4], result=e4dc"
+DEBUG[05-05|15:16:39.623] LOG                                      reg="[44 4278058352 16 65765 16 260102 90 2 0 0 260102 50 65784]" gasCharged=0     beforeGas=57066   afterGas=57066
+DEBUG[05-05|15:16:39.623] INFO#fib                                 m="FIB on_transfer gas: got 58588 (recorded at key 4)"
+DEBUG[05-05|15:16:39.624] LOG                                      reg="[36 4278058352 1114112 0 5 259016 672 2 0 0 259016 506 56]" gasCharged=0     beforeGas=22902   afterGas=22902
+DEBUG[05-05|15:16:39.624] INFO#fib                                 m="FIB on_transfer: timeslot=37 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=5 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.624] WRITE                                    reg="[36 4278058352 1114112 0 5 259016 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=22882   afterGas=22872
+DEBUG[05-05|15:16:39.624] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.624] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.624] GAS                                      reg="[36 4278058352 1114112 0 5 259016 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=22872   afterGas=22862
+DEBUG[05-05|15:16:39.624] WRITE                                    reg="[36 4278058352 1114112 0 5 259016 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=22854   afterGas=22844
+DEBUG[05-05|15:16:39.624] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=4459000000000000                 vlen=8
+DEBUG[05-05|15:16:39.624] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:39.624] LOG                                      reg="[40 4278058352 1114112 16 4 259636 52 2 0 0 259636 33 56]" gasCharged=0     beforeGas=21930   afterGas=21930
+DEBUG[05-05|15:16:39.624] INFO#fib                                 m="write_result key=[4], result=5944"
+DEBUG[05-05|15:16:39.624] LOG                                      reg="[44 4278058352 16 65765 16 259598 90 2 0 0 259598 50 65784]" gasCharged=0     beforeGas=21330   afterGas=21330
+DEBUG[05-05|15:16:39.624] INFO#fib                                 m="FIB on_transfer gas: got 22852 (recorded at key 4)"
+DEBUG[05-05|15:16:39.624] ProcessDeferredTransfers                 service=2953942612 gasUsed=178,749 transferCount=5
+DEBUG[05-05|15:16:39.627] LOG                                      reg="[36 4278058352 1114112 0 5 261018 680 2 0 0 261018 508 56]" gasCharged=0     beforeGas=165,627 afterGas=165,627
+DEBUG[05-05|15:16:39.627] INFO#tribonacci                          m="TRIB on_transfer: timeslot=37 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=11 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.627] WRITE                                    reg="[36 4278058352 1114112 0 5 261018 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=165,607 afterGas=165,597
+DEBUG[05-05|15:16:39.627] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.627] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.627] GAS                                      reg="[36 4278058352 1114112 0 5 261018 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=165,597 afterGas=165,587
+DEBUG[05-05|15:16:39.627] WRITE                                    reg="[36 4278058352 1114112 0 5 261018 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=165,579 afterGas=165,569
+DEBUG[05-05|15:16:39.627] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=c986020000000000                 vlen=8
+DEBUG[05-05|15:16:39.627] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.627] LOG                                      reg="[40 4278058352 1114112 16 5 261646 52 2 0 0 261646 34 56]" gasCharged=0     beforeGas=164,627 afterGas=164,627
+DEBUG[05-05|15:16:39.627] INFO#tribonacci                          m="write_result key=[4], result=286c9"
+DEBUG[05-05|15:16:39.627] LOG                                      reg="[44 4278058352 18 65764 16 261606 92 2 0 0 261606 52 65784]" gasCharged=0     beforeGas=164,043 afterGas=164,043
+DEBUG[05-05|15:16:39.627] INFO#tribonacci                          m="TRIB on_transfer gas: got 165577 (recorded at key 4)"
+DEBUG[05-05|15:16:39.629] LOG                                      reg="[36 4278058352 1114112 0 5 260508 680 2 0 0 260508 508 56]" gasCharged=0     beforeGas=129,734 afterGas=129,734
+DEBUG[05-05|15:16:39.629] INFO#tribonacci                          m="TRIB on_transfer: timeslot=37 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=11 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.629] WRITE                                    reg="[36 4278058352 1114112 0 5 260508 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=129,714 afterGas=129,704
+DEBUG[05-05|15:16:39.629] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.629] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.629] GAS                                      reg="[36 4278058352 1114112 0 5 260508 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=129,704 afterGas=129,694
+DEBUG[05-05|15:16:39.629] WRITE                                    reg="[36 4278058352 1114112 0 5 260508 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=129,686 afterGas=129,676
+DEBUG[05-05|15:16:39.629] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=94fa010000000000                 vlen=8
+DEBUG[05-05|15:16:39.629] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.629] LOG                                      reg="[40 4278058352 1114112 16 5 261136 52 2 0 0 261136 34 56]" gasCharged=0     beforeGas=128,768 afterGas=128,768
+DEBUG[05-05|15:16:39.629] INFO#tribonacci                          m="write_result key=[4], result=1fa94"
+DEBUG[05-05|15:16:39.629] LOG                                      reg="[44 4278058352 20 65762 16 261096 92 2 0 0 261096 52 65784]" gasCharged=0     beforeGas=128,207 afterGas=128,207
+DEBUG[05-05|15:16:39.629] INFO#tribonacci                          m="TRIB on_transfer gas: got 129684 (recorded at key 4)"
+DEBUG[05-05|15:16:39.631] LOG                                      reg="[36 4278058352 1114112 0 5 259998 680 2 0 0 259998 508 56]" gasCharged=0     beforeGas=93866   afterGas=93866
+DEBUG[05-05|15:16:39.631] INFO#tribonacci                          m="TRIB on_transfer: timeslot=37 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=11 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.631] WRITE                                    reg="[36 4278058352 1114112 0 5 259998 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=93846   afterGas=93836
+DEBUG[05-05|15:16:39.631] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.631] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.631] GAS                                      reg="[36 4278058352 1114112 0 5 259998 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=93836   afterGas=93826
+DEBUG[05-05|15:16:39.631] WRITE                                    reg="[36 4278058352 1114112 0 5 259998 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=93818   afterGas=93808
+DEBUG[05-05|15:16:39.631] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=786e010000000000                 vlen=8
+DEBUG[05-05|15:16:39.631] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.631] LOG                                      reg="[40 4278058352 1114112 16 5 260626 52 2 0 0 260626 34 56]" gasCharged=0     beforeGas=92866   afterGas=92866
+DEBUG[05-05|15:16:39.631] INFO#tribonacci                          m="write_result key=[4], result=16e78"
+DEBUG[05-05|15:16:39.631] LOG                                      reg="[44 4278058352 13 65769 8 260586 92 2 0 0 260586 51 65784]" gasCharged=0     beforeGas=92228   afterGas=92228
+DEBUG[05-05|15:16:39.631] INFO#tribonacci                          m="TRIB on_transfer gas: got 93816 (recorded at key 4)"
+DEBUG[05-05|15:16:39.633] LOG                                      reg="[36 4278058352 1114112 0 5 259488 680 2 0 0 259488 508 56]" gasCharged=0     beforeGas=57881   afterGas=57881
+DEBUG[05-05|15:16:39.633] INFO#tribonacci                          m="TRIB on_transfer: timeslot=37 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=11 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.633] WRITE                                    reg="[36 4278058352 1114112 0 5 259488 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=57861   afterGas=57851
+DEBUG[05-05|15:16:39.633] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.633] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.633] GAS                                      reg="[36 4278058352 1114112 0 5 259488 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=57851   afterGas=57841
+DEBUG[05-05|15:16:39.633] WRITE                                    reg="[36 4278058352 1114112 0 5 259488 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=57833   afterGas=57823
+DEBUG[05-05|15:16:39.633] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=e7e1000000000000                 vlen=8
+DEBUG[05-05|15:16:39.633] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.633] LOG                                      reg="[40 4278058352 1114112 16 4 260116 52 2 0 0 260116 33 56]" gasCharged=0     beforeGas=56909   afterGas=56909
+DEBUG[05-05|15:16:39.633] INFO#tribonacci                          m="write_result key=[4], result=e1e7"
+DEBUG[05-05|15:16:39.633] LOG                                      reg="[44 4278058352 15 65767 8 260076 92 2 0 0 260076 51 65776]" gasCharged=0     beforeGas=56271   afterGas=56271
+DEBUG[05-05|15:16:39.633] INFO#tribonacci                          m="TRIB on_transfer gas: got 57831 (recorded at key 4)"
+DEBUG[05-05|15:16:39.635] LOG                                      reg="[36 4278058352 1114112 0 5 258978 680 2 0 0 258978 508 56]" gasCharged=0     beforeGas=21873   afterGas=21873
+DEBUG[05-05|15:16:39.635] INFO#tribonacci                          m="TRIB on_transfer: timeslot=37 service_index=1065941251 sender=1343007977 receiver=1065941251 amount=11 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:39.635] WRITE                                    reg="[36 4278058352 1114112 0 5 258978 680 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=21853   afterGas=21843
+DEBUG[05-05|15:16:39.635] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=128 s=1065941251 mu_k=03f9883f k=0xa84c8a2dc071040f8729779884ade4b83dc0d387f7bb40106d4a2252f88cc035 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:39.635] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.635] GAS                                      reg="[36 4278058352 1114112 0 5 258978 680 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=21843   afterGas=21833
+DEBUG[05-05|15:16:39.635] WRITE                                    reg="[36 4278058352 1114112 0 5 258978 680 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=21825   afterGas=21815
+DEBUG[05-05|15:16:39.635] tribonacci_transfer: WRITE OK            numStorageItems=5 StorageSize=8737 l=8   s=1065941251 mu_k=04       k=0x03f9c022f74f0e6ec7427018d6c3482014866ad4b9de6b3f86a2bca183904617 v=3f55000000000000                 vlen=8
+DEBUG[05-05|15:16:39.635] tribonacci_transfer: WRITE storage       s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:39.635] LOG                                      reg="[40 4278058352 1114112 16 4 259606 52 2 0 0 259606 33 56]" gasCharged=0     beforeGas=20890   afterGas=20890
+DEBUG[05-05|15:16:39.635] INFO#tribonacci                          m="write_result key=[4], result=553f"
+DEBUG[05-05|15:16:39.635] LOG                                      reg="[44 4278058352 17 65765 16 259566 92 2 0 0 259566 51 65784]" gasCharged=0     beforeGas=20316   afterGas=20316
+DEBUG[05-05|15:16:39.635] INFO#tribonacci                          m="TRIB on_transfer gas: got 21823 (recorded at key 4)"
+DEBUG[05-05|15:16:39.635] ProcessDeferredTransfers                 service=1065941251 gasUsed=179,763 transferCount=5
+DEBUG[05-05|15:16:39.635] ProcessDeferredTransfers                 service=1343007977 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:39.637] BEEFY-C                                  s=1065941251 h=0x0500000007000000040000000200000000000000000000000000000000000000 encoded=03f9883f0500000007000000040000000200000000000000000000000000000000000000
+DEBUG[05-05|15:16:39.637] BEEFY-C                                  s=1343007977 h=0x050000000c000000070000000000000000000000000000000000000000000000 encoded=e9ac0c50050000000c000000070000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:39.637] BEEFY-C                                  s=2953942612 h=0x0500000005000000030000000000000000000000000000000000000000000000 encoded=549611b00500000005000000030000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:39.637] BEEFY-C                                  s=3273088977 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=d15f17c33cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:39.637] BEEFY accumulation root                  r=0xf581b4ac164e482a90efed7b68d96b424b03a6e777d858b55a04546b48b57428
+INFO [05-05|15:16:39.666] proposeBlock                             mode=safrole  s.ID=0 p=05d1..ceb4 h=bae6..c797 e'=3 m'=1  "len(γ_a')"=6  blk="H_t=37 H_r=bb0a..5616  |E_T|=3 |E_A|=6"
+INFO [05-05|15:16:40.418] Work package accumulated                 hash=0x35ceb4c3a777cf59a4a2808b378de42aac8c173b31e9d483aab9b1734d6b8d2f count=1
+INFO [05-05|15:16:40.418] Work package accumulated                 hash=0x3a882731e52c6cb37cdf91473237390722a70ce55e5cc137d483b4197e32c3cb count=2
+INFO [05-05|15:16:40.418] All work packages accumulated
+fib: 050000000500000003000000
+trib: 05000000070000000400000002000000
+meg: 050000000c00000007000000
+INFO [05-05|15:16:40.418] Work package submitted                   identifier=fibtrib                              hash=0xc6216e6e009dc8981843119e82e7ecfc267fa876d30bfdde9eb3026c7015c0d2 core=0
+INFO [05-05|15:16:40.418] Work package submitted                   identifier=meg                                  hash=0x76273bfb2cc832c0fd80408035ee18b738a84e227e387833539d8ebecf612c00 core=1
+INFO [05-05|15:16:45.508] proposeBlock                             mode=safrole  s.ID=5 p=bae6..c797 h=f59c..38d5 e'=3 m'=2  "len(γ_a')"=9  blk="H_t=38 H_r=1c67..6f73  |E_T|=3 |E_G|=2"
+DEBUG[05-05|15:16:51.400] ORDERED ACCUMULATION                     "W^! (wphs accumulated immediately)"=[] q="[[] [0xc6216e6e009dc8981843119e82e7ecfc267fa876d30bfdde9eb3026c7015c0d2]]" "Q(q)-priority queue result"="[0xc6216e6e009dc8981843119e82e7ecfc267fa876d30bfdde9eb3026c7015c0d2 0x76273bfb2cc832c0fd80408035ee18b738a84e227e387833539d8ebecf612c00]" "W^*-wphs of accumulatable work reports)"="[0xc6216e6e009dc8981843119e82e7ecfc267fa876d30bfdde9eb3026c7015c0d2 0x76273bfb2cc832c0fd80408035ee18b738a84e227e387833539d8ebecf612c00]"
+DEBUG[05-05|15:16:51.400] SINGLE ACCUMULATE                        s=2953942612 wrangledResults='{"H":"0xc6216e6e009dc8981843119e82e7ecfc267fa876d30bfdde9eb3026c7015c0d2","E":"0x047620635f55d26fcb431cff6ba99847cae1e17c8febcd034c00ec07c1b2b10c","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0xf4aac2fbe33f03554bfeb559ea2690ed8521caa4be961e61c91ac9a1530dce7a","G":1000000,"D":"0x000c060000000800000005000000"}'
+DEBUG[05-05|15:16:51.401] WRITE                                    reg="[24 4278058968 0 0 0 12 4278124687 4278058982 1 4278124687 12 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:51.401] fib_accumulate: WRITE OK                 numStorageItems=5 StorageSize=8706 l=12  s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 v=060000000800000005000000         vlen=12
+DEBUG[05-05|15:16:51.401] fib_accumulate: WRITE storage            s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.401] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=2953942612 B=0x0600000008000000050000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:51.401] SINGLE ACCUMULATE                        s=1065941251 wrangledResults='{"H":"0xc6216e6e009dc8981843119e82e7ecfc267fa876d30bfdde9eb3026c7015c0d2","E":"0x047620635f55d26fcb431cff6ba99847cae1e17c8febcd034c00ec07c1b2b10c","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0xf4aac2fbe33f03554bfeb559ea2690ed8521caa4be961e61c91ac9a1530dce7a","G":1000000,"D":"0x0010060000000d0000000700000004000000"}'
+DEBUG[05-05|15:16:51.402] WRITE                                    reg="[24 4278058968 0 0 0 16 4278124687 4278058982 1 4278124687 16 0 64]" gasCharged=10    beforeGas=999,841 afterGas=999,831
+DEBUG[05-05|15:16:51.402] tribonacci_accumulate: WRITE OK          numStorageItems=5 StorageSize=8737 l=16  s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 v=060000000d0000000700000004000000 vlen=16
+DEBUG[05-05|15:16:51.402] tribonacci_accumulate: WRITE storage     s=1065941251 a_o=8737 a_i=5
+DEBUG[05-05|15:16:51.402] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1065941251 B=0x060000000d000000070000000400000000000000000000000000000000000000
+DEBUG[05-05|15:16:51.402] SINGLE ACCUMULATE                        s=1343007977 wrangledResults='{"H":"0x76273bfb2cc832c0fd80408035ee18b738a84e227e387833539d8ebecf612c00","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x3d32dd4d2316b8458bde7a3100c2e9e9836277f4e3374cd8b99c1de97cd187b7","G":1000000,"D":"0x0008549611b003f9883f"}'
+DEBUG[05-05|15:16:51.403] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 2953942612 4278058615 1 4278058584 0 12]" gasCharged=10    beforeGas=999,828 afterGas=999,818
+DEBUG[05-05|15:16:51.403] megatron_accumulate: READ OK             s=2953942612 mu_k=00       k=0xaba994d8ff9cf9993de2448a9aef435f2f96058e4cb5f938da68d82bbf36d9c5 ok=true val=060000000800000005000000         len(val)=12
+DEBUG[05-05|15:16:51.403] READ                                     reg="[22 4278058488 0 0 0 4278124687 1 1065941251 4278058615 1 4278058600 0 12]" gasCharged=10    beforeGas=999,812 afterGas=999,802
+DEBUG[05-05|15:16:51.403] megatron_accumulate: READ OK             s=1065941251 mu_k=00       k=0xbabf3aefad528a545568c79995303036352215df7c130c4a1b6e9ea838b1f7b1 ok=true val=060000000d0000000700000004000000 len(val)=16
+DEBUG[05-05|15:16:51.403] LOG                                      reg="[26 4278058488 1114112 5243 295394 262144 64 2 0 0 262144 45 70]" gasCharged=0     beforeGas=998,585 afterGas=998,585
+DEBUG[05-05|15:16:51.403] INFO#megatron                            m="meg 6 read from service 2953942612 fib(n=6)=8"
+DEBUG[05-05|15:16:51.403] LOG                                      reg="[30 4278058488 1114112 5243 106594 262142 66 2 0 0 262142 47 70]" gasCharged=0     beforeGas=997,317 afterGas=997,317
+DEBUG[05-05|15:16:51.403] INFO#megatron                            m="meg 6 read from service 1065941251 trib(n=6)=13"
+DEBUG[05-05|15:16:51.403] TRANSFER                                 reg="[32 4278058488 0 128 106594 0 262208 2953942612 6 40000 4278058664 4278058792 0]" gasCharged=40010 beforeGas=997,183 afterGas=957,173
+DEBUG[05-05|15:16:51.403] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=6      gaslimit=40000
+DEBUG[05-05|15:16:51.403] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=955,629 afterGas=955,629
+DEBUG[05-05|15:16:51.403] INFO#megatron                            m="0 transfer(dest:2953942612, amount=6, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:51.403] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 1 262208 2953942612 6 40000 4278058664 92 70]" gasCharged=40010 beforeGas=955,600 afterGas=915,590
+DEBUG[05-05|15:16:51.403] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=6      gaslimit=40000
+DEBUG[05-05|15:16:51.403] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=914,046 afterGas=914,046
+DEBUG[05-05|15:16:51.403] INFO#megatron                            m="1 transfer(dest:2953942612, amount=6, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:51.403] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 2 262208 2953942612 6 40000 4278058664 92 70]" gasCharged=40010 beforeGas=914,017 afterGas=874,007
+DEBUG[05-05|15:16:51.403] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=6      gaslimit=40000
+DEBUG[05-05|15:16:51.403] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=872,463 afterGas=872,463
+DEBUG[05-05|15:16:51.403] INFO#megatron                            m="2 transfer(dest:2953942612, amount=6, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:51.403] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 3 262208 2953942612 6 40000 4278058664 92 70]" gasCharged=40010 beforeGas=872,434 afterGas=832,424
+DEBUG[05-05|15:16:51.403] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=6      gaslimit=40000
+DEBUG[05-05|15:16:51.404] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=830,880 afterGas=830,880
+DEBUG[05-05|15:16:51.404] INFO#megatron                            m="3 transfer(dest:2953942612, amount=6, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:51.404] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 4 262208 2953942612 6 40000 4278058664 92 70]" gasCharged=40010 beforeGas=830,851 afterGas=790,841
+DEBUG[05-05|15:16:51.404] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=6      gaslimit=40000
+DEBUG[05-05|15:16:51.404] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=789,297 afterGas=789,297
+DEBUG[05-05|15:16:51.404] INFO#megatron                            m="4 transfer(dest:2953942612, amount=6, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:51.404] TRANSFER                                 reg="[36 4278058488 1114112 5243 40000 5 262208 2953942612 6 40000 4278058664 92 70]" gasCharged=40010 beforeGas=789,268 afterGas=749,258
+DEBUG[05-05|15:16:51.404] megatron_accumulate: TRANSFER OK         sender=1343007977 receiver=2953942612 amount=6      gaslimit=40000
+DEBUG[05-05|15:16:51.404] LOG                                      reg="[36 4278058488 1114112 5243 40000 262116 262208 2 0 0 262116 64 70]" gasCharged=0     beforeGas=747,714 afterGas=747,714
+DEBUG[05-05|15:16:51.404] INFO#megatron                            m="5 transfer(dest:2953942612, amount=6, gas_avail=40000) Result: 0"
+DEBUG[05-05|15:16:51.404] LOG                                      reg="[44 4278058488 1114112 5243 40000 262196 12 2 0 0 262196 9 70]" gasCharged=0     beforeGas=747,101 afterGas=747,101
+DEBUG[05-05|15:16:51.404] INFO#megatron                            m="meg(6)=21"
+DEBUG[05-05|15:16:51.404] WRITE                                    reg="[44 4278058488 1114112 5243 40000 262196 12 4278058615 1 4278058616 12 9 70]" gasCharged=10    beforeGas=747,081 afterGas=747,071
+DEBUG[05-05|15:16:51.404] megatron_accumulate: WRITE OK            numStorageItems=3 StorageSize=9397 l=12  s=1343007977 mu_k=00       k=0x836e0d2825d66e6a2a5e79a4649fafc0daa9b132296fc37a8475ba60eb1f5c37 v=06000000150000000c000000         vlen=12
+DEBUG[05-05|15:16:51.404] megatron_accumulate: WRITE storage       s=1343007977 a_o=9397 a_i=3
+DEBUG[05-05|15:16:51.404] LOG                                      reg="[48 4278058488 1114112 65771 8 262150 58 2 0 0 262150 33 70]" gasCharged=0     beforeGas=746,163 afterGas=746,163
+DEBUG[05-05|15:16:51.404] INFO#megatron                            m="meg 6 write(n=21) num_transfers=6"
+DEBUG[05-05|15:16:51.404] YIELD                                    reg="[50 4278058488 1114112 65771 8 196625 58 196625 4278058628 196637 196637 0 70]" gasCharged=10    beforeGas=746,066 afterGas=746,056
+DEBUG[05-05|15:16:51.404] megatron_accumulate: YIELD OK            h=0x06000000150000000c0000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:51.404] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=1343007977 B=0x06000000150000000c0000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:51.404] SINGLE ACCUMULATE                        s=3273088977 wrangledResults='{"H":"0x76273bfb2cc832c0fd80408035ee18b738a84e227e387833539d8ebecf612c00","E":"0x0000000000000000000000000000000000000000000000000000000000000000","A":"0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8","O":"","Y":"0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8","G":1000000,"D":"0x00203cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8"}'
+DEBUG[05-05|15:16:51.405] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 0 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,777 afterGas=992,767
+DEBUG[05-05|15:16:51.405] auth_copy_accumulate: ASSIGN OK          c=0
+DEBUG[05-05|15:16:51.405] ASSIGN                                   reg="[12 4278056408 32 4278124687 32 0 4278058984 1 4278056424 0 4278058984 4278058984 4278124720]" gasCharged=10    beforeGas=992,765 afterGas=992,755
+DEBUG[05-05|15:16:51.405] auth_copy_accumulate: ASSIGN OK          c=1
+DEBUG[05-05|15:16:51.405] BEEFY OK-HALT with 32byte @SINGLE ACCUMULATE s=3273088977 B=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:51.405] ProcessDeferredTransfers                 service=1065941251 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:51.405] ProcessDeferredTransfers                 service=1343007977 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:51.405] ProcessDeferredTransfers                 service=3273088977 gasUsed=0       transferCount=0
+DEBUG[05-05|15:16:51.409] LOG                                      reg="[36 4278058352 1114112 0 5 261032 672 2 0 0 261032 506 56]" gasCharged=0     beforeGas=205,861 afterGas=205,861
+DEBUG[05-05|15:16:51.409] INFO#fib                                 m="FIB on_transfer: timeslot=39 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=6 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:51.409] WRITE                                    reg="[36 4278058352 1114112 0 5 261032 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=205,841 afterGas=205,831
+DEBUG[05-05|15:16:51.409] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:51.409] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.409] GAS                                      reg="[36 4278058352 1114112 0 5 261032 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=205,831 afterGas=205,821
+DEBUG[05-05|15:16:51.409] WRITE                                    reg="[36 4278058352 1114112 0 5 261032 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=205,813 afterGas=205,803
+DEBUG[05-05|15:16:51.409] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=f323030000000000                 vlen=8
+DEBUG[05-05|15:16:51.409] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.409] LOG                                      reg="[40 4278058352 1114112 16 5 261652 52 2 0 0 261652 34 56]" gasCharged=0     beforeGas=204,872 afterGas=204,872
+DEBUG[05-05|15:16:51.409] INFO#fib                                 m="write_result key=[4], result=323f3"
+DEBUG[05-05|15:16:51.409] LOG                                      reg="[44 4278058352 17 65764 16 261614 90 2 0 0 261614 51 65784]" gasCharged=0     beforeGas=204,260 afterGas=204,260
+DEBUG[05-05|15:16:51.409] INFO#fib                                 m="FIB on_transfer gas: got 205811 (recorded at key 4)"
+DEBUG[05-05|15:16:51.411] LOG                                      reg="[36 4278058352 1114112 0 5 260528 672 2 0 0 260528 506 56]" gasCharged=0     beforeGas=170,126 afterGas=170,126
+DEBUG[05-05|15:16:51.411] INFO#fib                                 m="FIB on_transfer: timeslot=39 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=6 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:51.411] WRITE                                    reg="[36 4278058352 1114112 0 5 260528 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=170,106 afterGas=170,096
+DEBUG[05-05|15:16:51.411] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:51.411] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.411] GAS                                      reg="[36 4278058352 1114112 0 5 260528 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=170,096 afterGas=170,086
+DEBUG[05-05|15:16:51.411] WRITE                                    reg="[36 4278058352 1114112 0 5 260528 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=170,078 afterGas=170,068
+DEBUG[05-05|15:16:51.411] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=5c98020000000000                 vlen=8
+DEBUG[05-05|15:16:51.411] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.411] LOG                                      reg="[40 4278058352 1114112 16 5 261148 52 2 0 0 261148 34 56]" gasCharged=0     beforeGas=169,137 afterGas=169,137
+DEBUG[05-05|15:16:51.411] INFO#fib                                 m="write_result key=[4], result=2985c"
+DEBUG[05-05|15:16:51.411] LOG                                      reg="[44 4278058352 17 65764 16 261110 90 2 0 0 261110 51 65784]" gasCharged=0     beforeGas=168,525 afterGas=168,525
+DEBUG[05-05|15:16:51.411] INFO#fib                                 m="FIB on_transfer gas: got 170076 (recorded at key 4)"
+DEBUG[05-05|15:16:51.418] LOG                                      reg="[36 4278058352 1114112 0 5 260024 672 2 0 0 260024 506 56]" gasCharged=0     beforeGas=134,381 afterGas=134,381
+DEBUG[05-05|15:16:51.418] INFO#fib                                 m="FIB on_transfer: timeslot=39 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=6 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:51.418] WRITE                                    reg="[36 4278058352 1114112 0 5 260024 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=134,361 afterGas=134,351
+DEBUG[05-05|15:16:51.418] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:51.418] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.418] GAS                                      reg="[36 4278058352 1114112 0 5 260024 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=134,351 afterGas=134,341
+DEBUG[05-05|15:16:51.418] WRITE                                    reg="[36 4278058352 1114112 0 5 260024 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=134,333 afterGas=134,323
+DEBUG[05-05|15:16:51.418] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=bb0c020000000000                 vlen=8
+DEBUG[05-05|15:16:51.418] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.418] LOG                                      reg="[40 4278058352 1114112 16 5 260644 52 2 0 0 260644 34 56]" gasCharged=0     beforeGas=133,392 afterGas=133,392
+DEBUG[05-05|15:16:51.418] INFO#fib                                 m="write_result key=[4], result=20cbb"
+DEBUG[05-05|15:16:51.418] LOG                                      reg="[44 4278058352 17 65764 16 260606 90 2 0 0 260606 51 65784]" gasCharged=0     beforeGas=132,780 afterGas=132,780
+DEBUG[05-05|15:16:51.418] INFO#fib                                 m="FIB on_transfer gas: got 134331 (recorded at key 4)"
+DEBUG[05-05|15:16:51.420] LOG                                      reg="[36 4278058352 1114112 0 5 259520 672 2 0 0 259520 506 56]" gasCharged=0     beforeGas=98626   afterGas=98626
+DEBUG[05-05|15:16:51.420] INFO#fib                                 m="FIB on_transfer: timeslot=39 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=6 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:51.420] WRITE                                    reg="[36 4278058352 1114112 0 5 259520 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=98606   afterGas=98596
+DEBUG[05-05|15:16:51.420] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:51.420] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.420] GAS                                      reg="[36 4278058352 1114112 0 5 259520 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=98596   afterGas=98586
+DEBUG[05-05|15:16:51.420] WRITE                                    reg="[36 4278058352 1114112 0 5 259520 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=98578   afterGas=98568
+DEBUG[05-05|15:16:51.420] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=1081010000000000                 vlen=8
+DEBUG[05-05|15:16:51.420] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.420] LOG                                      reg="[40 4278058352 1114112 16 5 260140 52 2 0 0 260140 34 56]" gasCharged=0     beforeGas=97637   afterGas=97637
+DEBUG[05-05|15:16:51.420] INFO#fib                                 m="write_result key=[4], result=18110"
+DEBUG[05-05|15:16:51.420] LOG                                      reg="[44 4278058352 16 65765 16 260102 90 2 0 0 260102 50 65784]" gasCharged=0     beforeGas=97037   afterGas=97037
+DEBUG[05-05|15:16:51.420] INFO#fib                                 m="FIB on_transfer gas: got 98576 (recorded at key 4)"
+DEBUG[05-05|15:16:51.422] LOG                                      reg="[36 4278058352 1114112 0 5 259016 672 2 0 0 259016 506 56]" gasCharged=0     beforeGas=62873   afterGas=62873
+DEBUG[05-05|15:16:51.422] INFO#fib                                 m="FIB on_transfer: timeslot=39 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=6 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:51.422] WRITE                                    reg="[36 4278058352 1114112 0 5 259016 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=62853   afterGas=62843
+DEBUG[05-05|15:16:51.422] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:51.422] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.422] GAS                                      reg="[36 4278058352 1114112 0 5 259016 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=62843   afterGas=62833
+DEBUG[05-05|15:16:51.422] WRITE                                    reg="[36 4278058352 1114112 0 5 259016 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=62825   afterGas=62815
+DEBUG[05-05|15:16:51.422] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=67f5000000000000                 vlen=8
+DEBUG[05-05|15:16:51.422] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.422] LOG                                      reg="[40 4278058352 1114112 16 4 259636 52 2 0 0 259636 33 56]" gasCharged=0     beforeGas=61901   afterGas=61901
+DEBUG[05-05|15:16:51.422] INFO#fib                                 m="write_result key=[4], result=f567"
+DEBUG[05-05|15:16:51.422] LOG                                      reg="[44 4278058352 16 65765 16 259598 90 2 0 0 259598 50 65784]" gasCharged=0     beforeGas=61301   afterGas=61301
+DEBUG[05-05|15:16:51.422] INFO#fib                                 m="FIB on_transfer gas: got 62823 (recorded at key 4)"
+DEBUG[05-05|15:16:51.424] LOG                                      reg="[36 4278058352 1114112 0 5 258512 672 2 0 0 258512 506 56]" gasCharged=0     beforeGas=27127   afterGas=27127
+DEBUG[05-05|15:16:51.424] INFO#fib                                 m="FIB on_transfer: timeslot=39 service_index=2953942612 sender=1343007977 receiver=2953942612 amount=6 memo=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] gas_limit=40000"
+DEBUG[05-05|15:16:51.424] WRITE                                    reg="[36 4278058352 1114112 0 5 258512 672 4278058844 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=27107   afterGas=27097
+DEBUG[05-05|15:16:51.424] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=128 s=2953942612 mu_k=549611b0 k=0xdb05a1f374022f56d130d249ff600bcce18d969388df7fd84ed5dbeaef6abf08 v=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 vlen=128
+DEBUG[05-05|15:16:51.424] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.424] GAS                                      reg="[36 4278058352 1114112 0 5 258512 672 128 4 4278058576 128 262208 56]" gasCharged=10    beforeGas=27097   afterGas=27087
+DEBUG[05-05|15:16:51.424] WRITE                                    reg="[36 4278058352 1114112 0 5 258512 672 4278058871 1 4278058872 8 262208 56]" gasCharged=10    beforeGas=27079   afterGas=27069
+DEBUG[05-05|15:16:51.424] fib_transfer: WRITE OK                   numStorageItems=5 StorageSize=8706 l=8   s=2953942612 mu_k=04       k=0x708c4854b9f40b07d1070f1fdc8f73697dc1928073960173146bf1dce0a34585 v=c569000000000000                 vlen=8
+DEBUG[05-05|15:16:51.424] fib_transfer: WRITE storage              s=2953942612 a_o=8706 a_i=5
+DEBUG[05-05|15:16:51.424] LOG                                      reg="[40 4278058352 1114112 16 4 259132 52 2 0 0 259132 33 56]" gasCharged=0     beforeGas=26155   afterGas=26155
+DEBUG[05-05|15:16:51.424] INFO#fib                                 m="write_result key=[4], result=69c5"
+DEBUG[05-05|15:16:51.425] LOG                                      reg="[44 4278058352 16 65765 16 259094 90 2 0 0 259094 50 65784]" gasCharged=0     beforeGas=25555   afterGas=25555
+DEBUG[05-05|15:16:51.425] INFO#fib                                 m="FIB on_transfer gas: got 27077 (recorded at key 4)"
+DEBUG[05-05|15:16:51.425] ProcessDeferredTransfers                 service=2953942612 gasUsed=214,524 transferCount=6
+DEBUG[05-05|15:16:51.428] BEEFY-C                                  s=1065941251 h=0x060000000d000000070000000400000000000000000000000000000000000000 encoded=03f9883f060000000d000000070000000400000000000000000000000000000000000000
+DEBUG[05-05|15:16:51.428] BEEFY-C                                  s=1343007977 h=0x06000000150000000c0000000000000000000000000000000000000000000000 encoded=e9ac0c5006000000150000000c0000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:51.428] BEEFY-C                                  s=2953942612 h=0x0600000008000000050000000000000000000000000000000000000000000000 encoded=549611b00600000008000000050000000000000000000000000000000000000000000000
+DEBUG[05-05|15:16:51.428] BEEFY-C                                  s=3273088977 h=0x3cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8 encoded=d15f17c33cd36dd9ef53b9ba511a9b80d155c78627fccf80f294e02cf068991a457a06e8
+DEBUG[05-05|15:16:51.428] BEEFY accumulation root                  r=0xed761b2b339d059cd3075e88dca2a3e1d0cdcbff480f391e618ac8a7a8852e62
+INFO [05-05|15:16:51.457] proposeBlock                             mode=safrole  s.ID=2 p=f59c..38d5 h=7031..2add e'=3 m'=3  "len(γ_a')"=12 blk="H_t=39 H_r=d03d..23c3  |E_T|=3 |E_A|=6"
+INFO [05-05|15:16:52.419] Work package accumulated                 hash=0x76273bfb2cc832c0fd80408035ee18b738a84e227e387833539d8ebecf612c00 count=1
+INFO [05-05|15:16:52.419] Work package accumulated                 hash=0xc6216e6e009dc8981843119e82e7ecfc267fa876d30bfdde9eb3026c7015c0d2 count=2
+INFO [05-05|15:16:52.419] All work packages accumulated
+fib: 060000000800000005000000
+trib: 060000000d0000000700000004000000
+meg: 06000000150000000c000000
