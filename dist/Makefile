@@ -24,12 +24,17 @@ run_many: jam_clean
 	@echo "Starting $(NUM_NODES) validator nodes with net_spec=$(NET_SPEC)..."
 	@START_TIME="$(START_TIME)"; \
 	NET_SPEC="$(NET_SPEC)"; \
+	PEER_LIST="$(PEER_LIST)"; \
 	seq 0 $(shell expr $(NUM_NODES) - 1) | \
-	xargs -I{} -P $(NUM_NODES) sh -c '\
-		echo "Starting validator index={}"; \
+	xargs -n 1 -P $(NUM_NODES) sh -c '\
+		validator_index="$$0"; \
+		echo "Starting validator index=$$validator_index"; \
 		"$(JAM_BIN)" \
-			-net_spec "$$2" \
-			-validator_index "$$1" \
-			-start_time "$$3" \
-			-peerlist "$(PEER_LIST)" \
-	' _ {} "$$NET_SPEC" "$$START_TIME"
+			-net_spec "$$NET_SPEC" \
+			-validator_index "$$validator_index" \
+			-start_time "$$START_TIME" \
+			-peerlist "$$PEER_LIST" \
+	' 
+
+	' 
+

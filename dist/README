@@ -1,0 +1,88 @@
+# Jam Node - Minimal Validator Runner
+
+This project contains tooling to build and run a JAM blockchain validator node in local test environments.
+
+## 🧱 Environment Setup
+
+1. Go to the `dist` folder:
+   ```bash
+   cd dist
+   ```
+
+2. Set required environment variables:
+   ```bash
+   export CARGO_MANIFEST_DIR=$(pwd)
+   export JAM_PATH=$(pwd)
+   export HOME=/path/to/your/leveldb/storage  # This controls where validator db will be written under ~/.jam
+   ```
+
+---
+
+## 🛠 Makefile Commands
+
+You can use the included `Makefile` to simplify running validator nodes.
+
+### `make run_node`
+
+Runs a single validator node. You may specify the validator index and mode:
+
+```bash
+make run_node VALIDATOR_INDEX=0 NET_SPEC=tiny_with_metadata
+```
+
+Optional:  
+Use `PEER_LIST` to specify a peerlist JSON file path.
+
+```bash
+make run_node VALIDATOR_INDEX=1 NET_SPEC=tiny PEER_LIST=./peerlist.json
+```
+
+### `make run_many`
+
+Launches multiple validator nodes in parallel. You can configure the number of nodes like so:
+
+```bash
+make run_many NET_SPEC=tiny_with_metadata
+```
+
+Or for peerlist-based mode:
+
+```bash
+make run_many NET_SPEC=tiny PEER_LIST=./peerlist.json
+```
+
+---
+
+## ⚙️ Modes Explained
+
+There are two supported modes for launching nodes:
+
+### 1. `tiny with metadata`
+
+- Uses genesis state metadata for bootstrapping.
+- No peerlist file is required.
+
+### 2. `tiny with peerlist`
+
+- Requires a `peerlist.json` file via `PEER_LIST=...`.
+- Nodes use this static peer list to connect (ignore metadata)
+
+---
+
+## 🧼 Clean Data
+
+Before launching, the `Makefile` auto-cleans prior validator data under:
+
+```bash
+~/.jam/jam-*
+```
+
+You can also manually clean via:
+
+```bash
+make jam_clean
+```
+
+## Q&A
+
+> For any questions, pls open an issue.
