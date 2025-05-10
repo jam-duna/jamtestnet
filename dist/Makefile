@@ -10,13 +10,13 @@ jam_clean:
 
 # Run a single validator node
 VALIDATOR_INDEX ?= 0
+# Run a single validator node
 run_node: jam_clean
 	@echo "Starting node with validator index $(VALIDATOR_INDEX)..."
-	$(JAM_BIN) \
-		-net_spec "$(NET_SPEC)" \
-		-validator_index $(VALIDATOR_INDEX) \
-		-start_time "$(START_TIME)"
-		-peerlist "$(PEER_LIST)" \
+	$(JAM_BIN) run \
+		--net_spec "$(NET_SPEC)" \
+		--validator_index $(VALIDATOR_INDEX) \
+		--start_time "$(START_TIME)" 
 
 # Run multiple validator nodes in parallel using xargs
 NUM_NODES ?= 6
@@ -25,16 +25,13 @@ run_many: jam_clean
 	@START_TIME="$(START_TIME)"; \
 	NET_SPEC="$(NET_SPEC)"; \
 	PEER_LIST="$(PEER_LIST)"; \
-	seq 0 $(shell expr $(NUM_NODES) - 1) | \
-	xargs -n 1 -P $(NUM_NODES) sh -c '\
-		validator_index="$$0"; \
-		echo "Starting validator index=$$validator_index"; \
-		"$(JAM_BIN)" \
-			-net_spec "$$NET_SPEC" \
-			-validator_index "$$validator_index" \
-			-start_time "$$START_TIME" \
-			-peerlist "$$PEER_LIST" \
-	' 
+	seq 0 $$(expr $(NUM_NODES) - 1) | \
+	xargs -n 1 -P $(NUM_NODES) -I {} sh -c '\
+		echo "Starting validator index={}"; \
+		"$(JAM_BIN)" run \
+			--net_spec "$$NET_SPEC" \
+			--validator_index "{}" \
+			--start_time "$$START_TIME" 
+	'
 
-	' 
 
