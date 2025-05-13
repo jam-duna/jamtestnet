@@ -10,13 +10,14 @@ This runs a polkajam dev-validator 2 on port 40002 (Carol [here](https://docs.ja
 This go test connects to "Carol":
 ```
 root@coretime:~/go/src/github.com/jam-duna/jamtestnet/client# go test -run TestPolkajam
+SAN check failed: received cert.DNSNames[0] = egxdzq3l6mlws7rvweuyeajlg4dszlgyj7hdt3vs2byluzyz3pgaa
 --- FAIL: TestPolkajam (0.02s)
-    client_test.go:123: client connect failed: CRYPTO_ERROR 0x12a (local): SAN mismatch: expected e42haz57snrm7sy5vqrrafursptelydco76gltk6uaexzu4o6z4aa, got egxdzq3l6mlws7rvweuyeajlg4dszlgyj7hdt3vs2byluzyz3pgaa
+    client_test.go:126: client connect failed: CRYPTO_ERROR 0x12a (local): SAN mismatch: expected e42haz57snrm7sy5vqrrafursptelydco76gltk6uaexzu4o6z4aa, got egxdzq3l6mlws7rvweuyeajlg4dszlgyj7hdt3vs2byluzyz3pgaa
         Expected PubKey (hex): e68e0cf7f26c59f963b5846202d2327cc8bc0c4eff8cb9abd4012f9a71decf00
         Actual PubKey (hex):   e68e0cf7f26c59f963b5846202d2327cc8bc0c4eff8cb9abd4012f9a71decf00
 FAIL
 exit status 1
-FAIL	github.com/jam-duna/jamtestnet/client	0.021s
+FAIL	github.com/jam-duna/jamtestnet/client	0.026s
 ```
 
 However, we are seeing a SAN mismatch where we expect `e42haz57snrm7sy5vqrrafursptelydco76gltk6uaexzu4o6z4aa` but actually get `egxdzq3l6mlws7rvweuyeajlg4dszlgyj7hdt3vs2byluzyz3pgaa`
@@ -33,3 +34,7 @@ root@coretime:~/go/src/github.com/jam-duna/jamtestnet/client# go test -run TestD
 FAIL
 exit status 1
 ```
+
+Not entirely sure why the SANs revealed presented do not match up 
+
+A simple workaround is simply to not check SANs but check pubkey

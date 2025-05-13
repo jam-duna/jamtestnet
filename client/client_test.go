@@ -107,6 +107,9 @@ func TestPolkajam(t *testing.T) {
 			if actualSAN != expected {
 				expectedPubHex := fmt.Sprintf("%x", pubKey)
 				actualPubHex := fmt.Sprintf("%x", cert.PublicKey.(ed25519.PublicKey))
+				for i := 0; i < len(cert.DNSNames); i++ {
+					fmt.Printf("SAN check failed: received cert.DNSNames[%d] = %s\n", i, cert.DNSNames[i])
+				}
 
 				return fmt.Errorf("SAN mismatch: expected %s, got %s\nExpected PubKey (hex): %s\nActual PubKey (hex):   %s",
 					expected, actualSAN, expectedPubHex, actualPubHex)
