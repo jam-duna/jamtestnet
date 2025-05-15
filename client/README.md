@@ -87,6 +87,11 @@ Use "./jamduna [command] --help" for more information about a command.
 ---
 ## QuickStart - Local Testnet 
 
+### export the JAM_PATH
+```
+export JAM_PATH=path/to/stf_file_dir (tiny-00000000.json for example)
+```
+### run_local_testnet.sh
 `run_local_testnet.sh` script provides an convenient way to spin up the local testnet:
 
 
@@ -186,6 +191,18 @@ echo; echo "Background jobs:"; jobs
 # Terminate all JamDuna instances
 pkill -f "$JAMDUNA"
 ```
+
+## Note
+If you want to run it using the --chain flag instead of --net-spec, you can replace:
+```
+--net-spec tiny
+```
+with
+```
+--chain path/to/chainspec.json
+```
+⚠️ --chain and --net-spec are mutually exclusive flags — you should not use them together, otherwise it will result in a conflict.
+
 
 ## Q&A
 
