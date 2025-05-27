@@ -1,19 +1,20 @@
 
 
-## JIP-4 Chainspecs
+## jamduna Chainspec
 
 
-[JIP-4](https://github.com/polkadot-fellows/JIPs/pull/1) chainspecs here:
+You can generate the [JIP-4](https://github.com/polkadot-fellows/JIPs/pull/1) chainspec using [dev-config.json](./dev-config.json) using the new [JIP-5 seeds](https://github.com/polkadot-fellows/JIPs/pull/3) with the `gen-spec` command.
 
-* [polkajam](./polkajam-spec.json)
-* [jamduna](./jamduna-spec.json)
+To generate a [jamduna-spec.json](./jamduna-spec.json) with `jamduna`:
 
-
-Goal: jam binaries should be able to map [dev-config.json](./dev-config.json) into JIP-4 chainspecs:
-
-```
-./polkajam gen-spec dev-config.json polkajam-spec.json
-./jamduna  gen-spec dev-config.json jamduna-spec.json
+```bash
+bin/jamduna  gen-spec dev-config.json jamduna-spec.json
 ```
 
+## polkajam Chainspec
 
+To generate the `dev` chainspec in `polkajam`:
+
+```bash
+bin/polkajam  gen-spec dev-config.json polkajam-spec.json
+```
