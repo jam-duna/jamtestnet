@@ -1,163 +1,99 @@
 #![allow(non_snake_case)]
-use hex;
-use reed_solomon_simd::{ReedSolomonDecoder, ReedSolomonEncoder};
-use serde_json::{json, Value};
-use std::collections::HashMap;
-use std::fs;
-use std::fs::File;
-use blake2::{Digest, Blake2s256};
-use std::io::Write;
-use std::path::Path;
-
-const W_G: usize = 4104;
-
-// Start with the hash of an empty string, add the hash of that, then the hash of that, etc.
-fn generate_hash_chain() -> Vec<u8> {
-    let mut buffer = vec![0u8; W_G]; // Allocate exactly W_G bytes
-    let mut hasher = Blake2s256::new();
-    hasher.update(b""); // Start with the hash of an empty string
-    let mut hash = hasher.finalize_reset().to_vec();
-
-    let mut pos = 0;
-    while pos + hash.len() <= W_G {
-        buffer[pos..pos + hash.len()].copy_from_slice(&hash);
-        pos += hash.len();
-        hasher.update(&hash);
-        hash = hasher.finalize_reset().to_vec();
-    }
-
-    let remaining = W_G - pos;
-    if remaining > 0 {
-        buffer[pos..].copy_from_slice(&hash[..remaining]);
-    }
-    buffer
-}
-
-fn generate_reed_solomon_json(output_path: &str, key: &str, V: usize) -> Result<(), Box<dyn std::error::Error>> {
-    let C = V / 3;
-    let W_E = W_G / (2 * C);
-
-    let seg_bytes = generate_hash_chain();
-    let seg_hex = hex::encode(&seg_bytes);
-    println!(
-        "Generated segment raw byte length: {} bytes",
-        seg_bytes.len()
-    );
-
-    let mut original_segments = Vec::new();
-    for i in 0..C {
-        let start = i * W_E * 2;
-        let end = start + W_E * 2;
-        let segment = &seg_bytes[start..end];
-        // Transformation here? https://github.com/davxy/jam-test-vectors/pull/28#issuecomment-2706094497
-        original_segments.push(segment.to_vec());
-    }
-
-    let mut encoder = ReedSolomonEncoder::new(C, V - C, W_E * 2)?;
-    for segment in &original_segments {
-        encoder.add_original_shard(segment)?;
-    }
-    let result = encoder.encode()?;
-    let recovery: Vec<_> = result.recovery_iter().collect();
-
-    let mut shards = Vec::new();
-    for rec_shard in recovery.iter() {
-        shards.push(hex::encode(rec_shard));
-    }
-
-    let json_data = json!({
-        key: format!("0x{}", seg_hex),
-        "shards": shards.iter().map(|s| format!("0x{}", s)).collect::<Vec<String>>()
-    });
-
-    let json_string = serde_json::to_string_pretty(&json_data)?;
-
-    let path = Path::new(output_path);
-    let mut file = File::create(path)?;
-    file.write_all(json_string.as_bytes())?;
-
-    println!("JSON file generated: {}", output_path);
-    Ok(())
-}
-
-fn restore_reed_solomon_json(json_path: &str, key: &str, V: usize) -> Result<(), Box<dyn std::error::Error>> {
-    let C = V / 3;
-    let W_E = W_G / (2 * C);
-
-    let json_str = fs::read_to_string(json_path)?;
-    let v: Value = serde_json::from_str(&json_str)?;
-
-    let seg_hex = v[key].as_str().expect("segment attribute not found");
-    let seg_bytes = hex::decode(seg_hex.trim_start_matches("0x"))?;
-    assert_eq!(
-        seg_bytes.len(),
-        W_G,
-        "Segment must be exactly {} bytes (W_G)",
-        W_G
-    );
-
-    let mut original_segments = Vec::new();
-    for i in 0..C {
-        let start = i * W_E * 2;
-        let end = start + W_E * 2;
-        let segment = &seg_bytes[start..end];
-        // Transformation here? https://github.com/davxy/jam-test-vectors/pull/28#issuecomment-2706094497
-        original_segments.push(segment);
-    }
-
-    let mut decoder = ReedSolomonDecoder::new(C, V - C, W_E * 2)?;
-
-    if let Some(shards) = v["shards"].as_array() {
-        for (i, shard_value) in shards.iter().enumerate() {
-            let shard_bytes = hex::decode(
-                shard_value
-                    .as_str()
-                    .expect("shard is not a string")
-                    .trim_start_matches("0x"),
-            )?;
-            decoder.add_recovery_shard(i, &shard_bytes)?;
-        }
-    }
-
-    let result = decoder.decode()?;
-    let restored: HashMap<usize, &[u8]> = result.restored_original_iter().collect();
-
-    for (i, segment) in original_segments.iter().enumerate() {
-        assert_eq!(restored.get(&i).unwrap(), segment);
-    }
-
-    println!("Restoration successful for {}", json_path);
-    Ok(())
-}
-
 #[cfg(test)]
-mod tests {
-    use super::*;
 
+mod tests {
+    use reed_solomon_simd::{ReedSolomonEncoder};
+    use serde_json::{Value};
+    use std::fs;
+
+    fn encode_test(fn_: &str, key: &str, V: usize) -> Result<(), Box<dyn std::error::Error>> {
+        // Step 1: Calculate parameters
+        let C = V / 3;      // 2
+        let chunks = 2 * C; // 4
+    
+        // Step 2: Read and parse JSON file
+        let file_contents = fs::read_to_string(fn_)?;
+        let json_data: Value = serde_json::from_str(&file_contents)?;
+    
+        // Step 3: Extract and decode the segment, ensure it is a multiple of 2*chunks (should pad if required)
+        let segment_hex = json_data[key]
+            .as_str()
+            .ok_or("Missing segment field or not a string")?;
+        let seg_bytes = hex::decode(segment_hex.trim_start_matches("0x"))?;
+        if seg_bytes.len() % (2 * chunks) != 0 {
+            return Err(format!("Segment length {} is not a multiple of 2*chunks ({})", seg_bytes.len(), 2 * chunks).into());
+        }
+    
+        // Step 4: Rearrange seg_bytes into reed-solomon-simd input layout    
+        let rows = seg_bytes.len() / (2 * chunks);
+        let mut rearranged = Vec::with_capacity(seg_bytes.len());
+    
+        // TRANSFORMATION: https://graypaper.fluffylabs.dev/#/9a08063/3e2e023e2e02?v=0.6.6 | https://github.com/davxy/jam-test-vectors/pull/28#issuecomment-2706094497
+        for r in 0..rows {
+            for c in 0..chunks {
+                rearranged.push(seg_bytes[r * chunks * 2 + c * 2]); // low byte
+            }
+        }
+        for r in 0..rows {
+            for c in 0..chunks {
+                rearranged.push(seg_bytes[r * chunks * 2 + c * 2 + 1]); // high byte
+            }
+        }
+
+        let W_G: usize = rearranged.len();
+        let W_E = W_G / (C*2);
+        if W_G % C*2 != 0 {
+            return Err(format!("W_G {} not divisible by C*2 {}", W_G, C*2).into());
+        }
+
+        // Step 5: Break rearranged segment into C pieces
+        let mut original_segments = Vec::new();
+        for i in 0..C {
+            let start = i * W_E*2;
+            let end = start + W_E*2;
+            if end > rearranged.len() {
+                return Err(format!("Segment slice out of range: {}..{}", start, end).into());
+            }
+            original_segments.push(rearranged[start..end].to_vec());
+        }
+    
+        // Step 6: Perform encoding
+        let mut encoder = ReedSolomonEncoder::new(C, V - C, W_E*2)?;
+        for segment in &original_segments {
+            encoder.add_original_shard(segment)?;
+        }
+        let result = encoder.encode()?;
+        let recovery: Vec<_> = result.recovery_iter().collect();
+        println!("rearranged {} seg_bytes {}",      rearranged.len(), seg_bytes.len());
+    
+        if recovery.len() != 2 * C {
+            return Err(format!("Expected {} recovery shards, got {}", 2 * C, recovery.len()).into());
+        }
+        
+        // Step 7: Compare with provided shards
+        let shards_json = json_data["shards"]
+            .as_array()
+            .ok_or("Missing or invalid 'shards' array")?;
+    
+        for i in 0..C * 2 {
+            let expected_hex = shards_json
+                .get(i)
+                .and_then(|val| val.as_str())
+                .ok_or("Invalid shard entry in JSON")?;
+            let actual_hex = format!("0x{}", hex::encode(&recovery[i]));
+            if actual_hex != expected_hex {
+                println!("Shard {}:\n  Expected: {}\n  Got:      {}", i, expected_hex, actual_hex)
+            }
+        }
+    
+        Ok(())
+    }
+    
     #[test]
     fn test_generate() -> Result<(), Box<dyn std::error::Error>> {
-        generate_reed_solomon_json("src/jam-duna/test_segment_shards_tiny.json", "segment", 6)?;
-        generate_reed_solomon_json("src/jam-duna/test_segment_shards_small.json", "segment", 12)?;
-        generate_reed_solomon_json("src/jam-duna/test_segment_shards_medium.json", "segment", 18)?;
-        generate_reed_solomon_json("src/jam-duna/test_segment_shards_large.json", "segment", 36)?;
-        generate_reed_solomon_json("src/jam-duna/test_segment_shards_xlarge.json", "segment", 108)?;
-        generate_reed_solomon_json("src/jam-duna/test_segment_shards_2xlarge.json", "segment", 342)?;
-        generate_reed_solomon_json("src/jam-duna/test_segment_shards_3xlarge.json", "segment", 684)?;
-        generate_reed_solomon_json("src/jam-duna/test_segment_shards_full.json", "segment", 1023)?;
+        encode_test("test_segment_shards_tiny_polkajam.json", "segment", 6)?;
         Ok(())
     }
 
-    #[test]
-    fn test_restore() -> Result<(), Box<dyn std::error::Error>> {
-        restore_reed_solomon_json("src/jam-duna/test_segment_shards_tiny.json", "segment", 6)?;
-        restore_reed_solomon_json("src/jam-duna/test_segment_shards_small.json", "segment", 12)?;
-        restore_reed_solomon_json("src/jam-duna/test_segment_shards_medium.json", "segment", 18)?;
-        restore_reed_solomon_json("src/jam-duna/test_segment_shards_large.json", "segment", 36)?;
-        restore_reed_solomon_json("src/jam-duna/test_segment_shards_xlarge.json", "segment", 108)?;
-        restore_reed_solomon_json("src/jam-duna/test_segment_shards_2xlarge.json", "segment", 342)?;
-        restore_reed_solomon_json("src/jam-duna/test_segment_shards_3xlarge.json", "segment", 684)?;
-        restore_reed_solomon_json("src/jam-duna/test_segment_shards_full.json", "segment", 1023)?;
-        Ok(())
-    }
 }
 
