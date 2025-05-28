@@ -1,93 +1,19 @@
-# Erasure coding with reed-solomon-simd 3.0.1
+# Erasure encoding with reed-solomon-simd 3.0.1 to match polkajam
 
-This demonstrates use of [reed-solomon-simd
-3.0.1](https://docs.rs/reed-solomon-simd/3.0.1/reed_solomon_simd/)
-(which supports 2-byte alignment and no longer requires 64 byte
-alignment) to generate test vectors (and check recovery) for all 8
-chain specs for a W_G=4104 segment.  Similar test vectors for bundles
-of arbitrary length can be published.
+This attempts use of [reed-solomon-simd 3.0.1](https://docs.rs/reed-solomon-simd/3.0.1/reed_solomon_simd/)
+(which supports 2-byte alignment and no longer requires 64 byte alignment) to encode a bundle and generate the same 6 shards as observed from a polkajam guarantor in a tiny test, who must respond to CE137 requests for any of the 6 shard indexes.
 
-This will enable teams to build FFIs against [reed-solomon-simd
-3.0.1](https://docs.rs/reed-solomon-simd/3.0.1/reed_solomon_simd/) and
-participate in a tiny/small/medium/large/xlarge/2xlarge/3xlarge
-testnet, with accompanying [JAMNP test
-vectors](https://github.com/jam-duna/jamtestnet/pull/109).
+[`test_segment_shards_tiny_polkajam.json`](./test_segment_shards_tiny_polkajam.json) has the original data (shards 0 and 1) and 4 additional shards (shards 2,3,4,5), obtained by:
+* setting up a 5+1 polkajam + jamduna testnet, and modifying the jamduna node get all 6 shards with CE137 requests from the guarantor upon a CE135 Work Report distribution.
+* running `jamt` for some new service
+* recording all 6 shards from the CE137 response
 
-It may be desirable to have transformation mirroring Appendix H, which
-may be done in these datasets:
+The test here takes the file, reads the work package bundle, attempts to do a transformation, encodes the data, and checks if the encoding matches that of the the guarantor.
 
-* [davxy](https://github.com/davxy/jam-test-vectors/tree/erasure_coding)
-* [javajam](https://github.com/javajamio/javajam-trace/tree/main/erasure_coding)
+The goal is figure out the exact transformation required for tiny (if any) to generate the 4 additional shards.
 
-We believe a transformation is _not_ required, and that it is
-acceptable to have something that does not do Appendix H
-transformations for V<1023 "full".  However, if a transformation is
-believed to be required, please submit a PR with matching test vectors.
+Currently, we don't know what the exact transformation is to pass this test:
 
-All that matters is alignment in pre-full configurations.
-
-
-## Generate test vectors
-
-
+```rust
+cargo test -- --nocapture
 ```
-# cargo test test_generate -- --nocapture
-   Compiling erasure-coding v0.1.0 (/root/go/src/github.com/jam-duna/jamtestnet/erasurecoding)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.61s
-     Running unittests src/lib.rs (target/debug/deps/erasure_coding-cc2b9cff1a650983)
-
-running 1 test
-Generated segment raw byte length: 4104 bytes
-JSON file generated: src/jam-duna/test_segment_shards_tiny.json
-Generated segment raw byte length: 4104 bytes
-JSON file generated: src/jam-duna/test_segment_shards_small.json
-Generated segment raw byte length: 4104 bytes
-JSON file generated: src/jam-duna/test_segment_shards_medium.json
-Generated segment raw byte length: 4104 bytes
-JSON file generated: src/jam-duna/test_segment_shards_large.json
-Generated segment raw byte length: 4104 bytes
-JSON file generated: src/jam-duna/test_segment_shards_xlarge.json
-Generated segment raw byte length: 4104 bytes
-JSON file generated: src/jam-duna/test_segment_shards_2xlarge.json
-Generated segment raw byte length: 4104 bytes
-JSON file generated: src/jam-duna/test_segment_shards_3xlarge.json
-Generated segment raw byte length: 4104 bytes
-JSON file generated: src/jam-duna/test_segment_shards_full.json
-test tests::test_generate ... ok
-
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.15s
-```
-
-## Test Restore
-
-```
-# cargo test test_restore -- --nocapture
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
-     Running unittests src/lib.rs (target/debug/deps/erasure_coding-cc2b9cff1a650983)
-
-running 1 test
-Restoration successful for src/jam-duna/test_segment_shards_tiny.json
-Restoration successful for src/jam-duna/test_segment_shards_small.json
-Restoration successful for src/jam-duna/test_segment_shards_medium.json
-Restoration successful for src/jam-duna/test_segment_shards_large.json
-Restoration successful for src/jam-duna/test_segment_shards_xlarge.json
-Restoration successful for src/jam-duna/test_segment_shards_2xlarge.json
-Restoration successful for src/jam-duna/test_segment_shards_3xlarge.json
-Restoration successful for src/jam-duna/test_segment_shards_full.json
-test tests::test_restore ... ok
-
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.31s
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
