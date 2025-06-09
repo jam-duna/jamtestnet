@@ -2,13 +2,28 @@
 
 [JAM](https://jam.web3.foundation/) is the anticipated future protocol for Polkadot, being implemented by multiple teams across different programming languages. The [JAM Gray Paper](https://graypaper.com/) outlines the protocol, and the Web3 Foundation has shared initial test vectors with participating teams [here](https://github.com/w3f/jamtestvectors).
 
-This repo contains the latest `jamduna` binaries (Linux + Mac) targeting 0.6.5 and some [data](./data).  
+This repo contains the latest `jamduna` binaries (Linux + Mac) targeting 0.6.5 and how to get a multiclient **tiny** testnet going.
 
 ## Status
 
-Current release is 0.6.5.x -- the `jamduna` binary can do fallback + safrole with `polkajam` in tiny testnets (1+5, 2+4, 3+3, 4+2, 5+1).  
+Current release is 0.6.5.x -- the `jamduna` binary can do fallback + safrole with both `polkajam` and `javajam` in tiny testnets.  We have gotten first work report hash to match (CE137) as well with 3-way guaranteeing!  Working together, we expect assuring and auditing followed by 0.6.7 compliance. 
 
-## Quickstart Guide
+## Launch a Local MULTI-CLIENT "Tiny" Testnet
+
+The approach is Makefile based.  To launch a 6 client testnet with THREE clients:
+
+1. Get the latest binaries from 3 clients:
+   - [jamduna](https://github.com/jam-duna/jamtestnet) [Go]
+   - [polkajam](https://github.com/paritytech/polkajam-releases/releases) [Rust]
+   - [javajam](https://github.com/javajamio/javajam-releases) [Java] 
+2. Do `make runtiny` 
+3. To shut down `make kill`
+
+Our testing has been on Mac with [jamduna-spec.json](conf/jamduna-spec.json).
+
+## JAM DUNA Guide
+
+For the `jamduna` binary, we attempted to match that of `polkajam` and request that other teams match this closely.
 
 ```bash
 % jamduna -h
@@ -29,33 +44,11 @@ Available Commands:
 Flags:
   -c, --config string      Path to the config file
   -h, --help               Displays help information about the commands and flags.
-  -l, --log-level string   Log level (debug, info, warn, error) (default "trace")
+  -l, --log-level string   Log level (trace, debug, info, warn, error) (default "debug")
   -t, --temp               Use a temporary data directory, removed on exit. Conflicts with data-path
   -v, --version            Prints the version of the program.
 
 Use "./jamduna [command] --help" for more information about a command.
-```
-
-## Run a Single Local Node
-
-```bash
-rm -rf ~/.jamduna; bin/jamduna gen-keys \
-bin/jamduna run --chain chainspecs/jamduna-spec.go --dev-validator 0
-```
-
-## Launch a Local "Tiny" Testnet
-
-```bash
-rm -rf ~/.jamduna; bin/jamduna gen-keys \
-for i in $(seq 0 5); do \
-  bin/jamduna run --chain chainspecs/jamduna-spec.json --dev-validator "$i"  & \
-done; \
-```
-
-## Shutdown All Local Nodes
-
-```bash
-pkill -f jamduna
 ```
 
 # History
@@ -72,8 +65,9 @@ Late March 2025 - Early April 2025:
 May 2025:
 * [0.6.5.2 jamduna binary](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.5.2) 
 
+June 2025:
+* Multiclient JAM Testnet with polkajam, javajam and others.  
 
-# Found an Issue?
+# Got JAM?  Lets JAM!
 
-Terrific - submit an issue with your findings!   See the [Releases](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.4) for how we resolved previous issues with others.   Please avoid sharing code, however, and instead use GP references and links to a specific state transition file.  We have been able solve almost all problems within 48-72 hours or raise questions in the W3F repo or [Lets JAM Matrix Room](https://matrix.to/#/#jam:polkadot.io)
-
+Terrific - please let everyone know in [Lets JAM Matrix Room](https://matrix.to/#/#jam:polkadot.io)
