@@ -1,9 +1,9 @@
 SHELL := bash
 
 # Paths & parameters
-CHAIN        := conf/jamduna-spec.json
+CHAIN        := conf/polkajam-spec.json
 PARAMS       := tiny
-DATA_DIR     := data
+DATA_DIR     := jamtestnetdata
 LOG_DIR      := logs
 RPC_BASE     := 19800
 QUIC_BASE    := 40000
@@ -13,18 +13,17 @@ POLKAJAM     := bin/polkajam
 JAMDUNA      := bin/jamduna
 
 # Validator sets
-JAVAJAM_VALS  := 0 1
-POLKAJAM_VALS := 2 3
-JAMDUNA_VALS  := 4 5
+POLKAJAM_VALS := 0 1 2 3 4
+JAMDUNA_VALS  := 5
 
-.PHONY: runtiny prepare-dirs kill clean
+.PHONY: jamtestnet prepare-dirs kill clean
 
-runtiny: prepare-dirs
+jamtestnet: prepare-dirs
 	@echo "→ Clearing old data and configs…"
 	@rm -rf $(HOME)/.jamduna/jam-* $(DATA_DIR)
 	@echo "→ Launching PolkaJAM validators ($(POLKAJAM_VALS))…"
 	@for i in $(POLKAJAM_VALS); do \
-	  $(POLKAJAM) \
+	  RUST_LOG=polkavm=trace,jam_node=trace $(POLKAJAM) \
 	    --chain $(CHAIN) \
 	    --parameters $(PARAMS) run --temp \
 	    --dev-validator $$i \
@@ -38,16 +37,6 @@ runtiny: prepare-dirs
 	    --dev-validator $$i \
 	    --rpc-port=$$(( $(RPC_BASE) + $$i )) \
 	  >$(LOG_DIR)/jamduna-$$i.log 2>&1 & \
-	done
-	@echo "→ Launching JavaJAM validators ($(JAVAJAM_VALS))…"
-	@for i in $(JAVAJAM_VALS); do \
-	  $(JAVAJAM) \
-	    --chain jamduna-spec.json \
-	    --data-path $(DATA_DIR)/datadir$$i \
-	    --parameters $(PARAMS) run \
-	    --dev-validator $$i \
-	    --port $$(( $(QUIC_BASE) + $$i )) \
-	    --rpc-port $$(( $(RPC_BASE) + $$i )) & \
 	done
 
 prepare-dirs:
