@@ -1,7 +1,7 @@
 SHELL := bash
 
 # Paths & parameters
-CHAIN        := conf/polkajam-spec.json
+CHAIN        := conf/jamduna-spec.json
 PARAMS       := tiny
 DATA_DIR     := jamtestnetdata
 LOG_DIR      := logs
@@ -35,6 +35,7 @@ jamtestnet: prepare-dirs
 	  $(JAMDUNA) run \
 	    --chain $(CHAIN) \
 	    --dev-validator $$i \
+	    --debug rotation,guarantees \
 	    --rpc-port=$$(( $(RPC_BASE) + $$i )) \
 	  >$(LOG_DIR)/jamduna-$$i.log 2>&1 & \
 	done
