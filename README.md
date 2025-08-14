@@ -2,54 +2,68 @@
 
 [JAM](https://jam.web3.foundation/) is the anticipated future protocol for Polkadot, being implemented by multiple teams across different programming languages. The [JAM Gray Paper](https://graypaper.com/) outlines the protocol, and the Web3 Foundation has shared initial test vectors with participating teams [here](https://github.com/w3f/jamtestvectors).
 
-This repo contains the latest `jamduna` binaries (Linux + Mac) targeting 0.6.5 and how to get a multiclient **tiny** testnet going.
+This repo contains the latest `jamduna` fuzzer (Linux + Mac) targeting 0.6.7 and some useful test banks.  
 
-## Status
+After we get to 0.7.x conformance, we will get back to a multiclient **tiny** testnet going, with a high performance recompiler that can do 1B gas/sec.
 
-Current release is 0.6.5.x -- the `jamduna` binary can do fallback + safrole with both `polkajam` and `javajam` in tiny testnets.  We have gotten first work report hash to match (CE137) as well with 3-way guaranteeing!  Working together, we expect assuring and auditing followed by 0.6.7 compliance. 
+## Fuzzer: Quick start
 
-## Launch a Local MULTI-CLIENT "Tiny" Testnet
+1. Run your Fuzzer target: (e.g. with https://github.com/jamzig/conformance-releases)
 
-The approach is Makefile based.  To launch a 6 client testnet with THREE clients:
-
-1. Get the latest binaries from 3 clients:
-   - [jamduna](https://github.com/jam-duna/jamtestnet) [Go]
-   - [polkajam](https://github.com/paritytech/polkajam-releases/releases) [Rust]
-   - [javajam](https://github.com/javajamio/javajam-releases) [Java] 
-2. Do `make runtiny` 
-3. To shut down `make kill`
-
-Our testing has been on Mac with [jamduna-spec.json](conf/jamduna-spec.json).
-
-## JAM DUNA Guide
-
-For the `jamduna` binary, we attempted to match that of `polkajam` and request that other teams match this closely.
-
-```bash
-% jamduna -h
-JAM DUNA node
-
-Usage:
-  ./jamduna [command]
-
-Available Commands:
-  gen-keys    Generate keys for validators, pls generate keys for all validators before running the node
-  gen-spec    Generate new chain spec from the spec config
-  help        Help about any command
-  list-keys   List keys for validators
-  print-spec  Generate new chain spec from the spec config
-  run         Run the JAM DUNA node
-  test-stf    Run the STF Validation
-
-Flags:
-  -c, --config string      Path to the config file
-  -h, --help               Displays help information about the commands and flags.
-  -l, --log-level string   Log level (trace, debug, info, warn, error) (default "debug")
-  -t, --temp               Use a temporary data directory, removed on exit. Conflicts with data-path
-  -v, --version            Prints the version of the program.
-
-Use "./jamduna [command] --help" for more information about a command.
+Example: JamZig
 ```
+% ./conformance-releases/tiny/macos/aarch64/jam_conformance_target
+JAM Conformance Target Server
+=============================
+Socket path: /tmp/jam_conformance.sock
+
+Starting server...
+Listening on Unix socket: /tmp/jam_conformance.sock
+Press Ctrl+C to stop
+```
+
+Example: JavaJam
+```
+% bin/javajam fuzz /tmp/jam_conformance.sock
+❤ JavaJAM
+
+22:00:11.265 INFO  FuzzServer -- Fuzzer server listening on /tmp/jam_conformance.sock 
+22:00:11.266 INFO  FuzzServer -- ChainSpec: TINY 
+```
+
+2. Run the *jamduna fuzzer* with the above target socket endpoint and a test bank
+
+Example 1: `algo` (found [here](https://github.com/jam-duna/jamtestnet/tree/main/0.6.7/algo))
+```
+./duna_fuzzer_mac --test-dir ~/Desktop/jamtestnet/0.6.7/algo  --socket=/tmp/jam_conformance.sock
+```
+
+Example 2: `jam-conformance` (found [here](https://github.com/jam-duna/jamtestnet/tree/main/0.6.7/jam-conformance))
+```
+./duna_fuzzer_mac --test-dir ~/Desktop/jamtestnet/0.6.7/jam-conformance  --socket=/tmp/jam_conformance.sock
+```
+
+The above 2 test banks are in this repo, but others should work too.
+
+## Result
+
+If everything is working you should see this from the fuzzer:
+
+<img width="1098" height="725" alt="Image" src="https://github.com/user-attachments/assets/e6010a8e-546f-486e-9e32-a37b375ed0a0" />
+
+If the fuzzer runs into a failure you get an execution report:
+```
+[big giant JSON object with the prestate, block, poststate]
+Diff on 1 keys: [0x1000000000000000000000000000000000000000000000000000000000000000]
+========================================
+State Key: c16 (0x1000000000000000000000000000000000000000000000000000000000000000)
+c16        | PreState : 0x0114000000ce07e7687972cccfbfe304e4217db58cde9b833750fe557d4e543771b2214db7
+c16        | Expected: 0x00000000000000000000000000000000000000000000000000000000000000000000000000
+c16        | Actual:   0x0114000000ce07e7687972cccfbfe304e4217db58cde9b833750fe557d4e543771b2214db7
+------ c16 JSON DONE ------
+```
+
+If you find a discrepancy between the fuzzer and your target, please file an issue!
 
 # History
 
@@ -66,7 +80,15 @@ May 2025:
 * [0.6.5.2 jamduna binary](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.5.2) 
 
 June 2025:
-* Multiclient JAM Testnet with polkajam, javajam and others.  
+* First contact with Multiclient JAM Testnet with polkajam + javajam
+
+July 2025:
+* 0.6.5 Recompiler success with Doom + Algo 
+
+August 2025:
+* 0.6.7 [Fuzzer Target](https://github.com/jam-duna/jamduna-target-releases) released 
+* 0.6.7 [Fuzzer](https://github.com/jam-duna/jamtestnet) released 
+
 
 # Got JAM?  Lets JAM!
 
