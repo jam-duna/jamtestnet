@@ -1,0 +1,40 @@
+{
+  "package_spec": {
+    "hash": "0x8ece017a42ffe47bdd3bcc9645382f6b01ba70a8d0253238d2fe813288219e7a",
+    "length": 38679,
+    "erasure_root": "0xea51e98280ef07279bb7129285e47d41ca9caa4af1d6120bcca92d4196c1a347",
+    "exports_root": "0x95323f00dcc4f2564ade0031e963b2cb607f7cfe91a61502584e667501638b16",
+    "exports_count": 9
+  },
+  "context": {
+    "anchor": "0x11d5efba65e5dbc982270a4b0d4b28842500b00ea8be89d354e7e524da09fba4",
+    "state_root": "0xafc068959ceb61c7c7fc44f52ed1612222a87fac9d107b3cad287921e5d6e141",
+    "beefy_root": "0x7675f0e516b757c311cab18cf530d0f3762d09e07da2a0ee374f199ab20b4547",
+    "lookup_anchor": "0x11d5efba65e5dbc982270a4b0d4b28842500b00ea8be89d354e7e524da09fba4",
+    "lookup_anchor_slot": 3259014,
+    "prerequisites": []
+  },
+  "core_index": 0,
+  "authorizer_hash": "0xce07e7687972cccfbfe304e4217db58cde9b833750fe557d4e543771b2214db7",
+  "auth_output": "0x",
+  "segment_root_lookup": [],
+  "results": [
+    {
+      "service_id": 30,
+      "code_hash": "0x35d8c3ee264b40d758be2e633b0db863349bb28ef2a132cddc33559652808ad0",
+      "payload_hash": "0xcb0be4ed79e693a96c48679acc9db782c47b9e23dfa73d4128cebef52c63a1dd",
+      "accumulate_gas": 4000000,
+      "result": {
+        "ok": "0x"
+      },
+      "refine_load": {
+        "gas_used": 105626,
+        "imports": 9,
+        "extrinsic_count": 0,
+        "extrinsic_size": 0,
+        "exports": 9
+      }
+    }
+  ],
+  "auth_gas_used": 8
+}
