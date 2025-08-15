@@ -45,12 +45,18 @@ Example 1: `algo` (found [here](https://github.com/jam-duna/jamtestnet/tree/main
 ./duna_fuzzer_mac --test-dir ~/Desktop/jamtestnet/0.6.7/algo  --socket=/tmp/jam_target.sock
 ```
 
-Example 2: `jam-conformance` (found [here](https://github.com/jam-duna/jamtestnet/tree/main/0.6.7/jam-conformance))
+Example 2: `game_of_life` (found [here](https://github.com/jam-duna/jamtestnet/tree/main/0.6.7/game_of_life))
+```
+./duna_fuzzer_mac --test-dir ~/Desktop/jamtestnet/0.6.7/game_of_life --socket=/tmp/jam_target.sock
+```
+
+Example 3: `jam-conformance` (found [here](https://github.com/jam-duna/jamtestnet/tree/main/0.6.7/jam-conformance))
 ```
 ./duna_fuzzer_mac --test-dir ~/Desktop/jamtestnet/0.6.7/jam-conformance  --socket=/tmp/jam_target.sock
 ```
+(This is a rapidly changing dataset -- we'll try to update it every time we publish a new fuzzer/target version)
 
-The above 2 test banks are in this repo, but others should work too.
+The above 3 test banks are in this repo, but others should work too.
 
 #### Result
 
@@ -129,6 +135,9 @@ TRACE polkavm::interpreter u64 [0xfefdffe8] = s1 = 0x0
 
 If you find a discrepancy between implementations, please create an issue with a link to a test file and your trace formatted in identical form to the `debug` trace.
 
+## 
+
+
 
 # History
 
@@ -151,7 +160,9 @@ July 2025:
 * 0.6.5 Recompiler success with Doom + Algo 
 
 August 2025:
-* 0.6.7 [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet)  released 
+* 0.6.7 [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet)  released, demonstrated approximate parity of recompiler performance on Game of Life, see [Game of Life Recompiler Comparison -- JAM DUNA vs Polkajam](https://docs.google.com/spreadsheets/d/1ZzAhksLEs7mI9jidRvjdnBzbDDqF-oVtrgXQ1_P6t_A/edit?usp=sharing):
+
+
 
 
 # Got JAM?  Lets JAM!
