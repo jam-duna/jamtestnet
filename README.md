@@ -135,8 +135,24 @@ TRACE polkavm::interpreter u64 [0xfefdffe8] = s1 = 0x0
 
 If you find a discrepancy between implementations, please create an issue with a link to a test file and your trace formatted in identical form to the `debug` trace.
 
-## 
+## Game of Life Recompiler Performance
 
+JAM DUNA is happy to report initial recompiler performance results on [game of life](https://github.com/colorfulnotion/polkavm/tree/dev/services/game_of_life) match up closely with that of polkajam in 0.6.7 tiny testnets:
+
+| WP  | # steps | RefineGasUsed | Compile (ms) | Execution (ms) | Total  | Polkajam node 1 | Polkajam node 2 | Average 1+2 | Comparison |
+|----:|--------:|--------------:|-------------:|---------------:|-------:|----------------:|----------------:|------------:|-----------:|
+| 1   | 10      | 73,579         | 4.8          | 5.6            | 10.4   | 8.0             | 10.8            | 9.4         | 90.41%     |
+| 2   | 30      | 73,579         | 5.2          | 12.8           | 18.0   | 16.8            | 18.9            | 17.9        | 99.51%     |
+| 3   | 50      | 104,816        | 4.4          | 18.2           | 22.6   | 20.4            | 22.3            | 21.3        | 94.48%     |
+| 4   | 70      | 104,816        | 4.8          | 23.4           | 28.2   | 26.7            | 30.6            | 28.7        | 101.46%    |
+| 5   | 90      | 104,816        | 5.2          | 31.0           | 36.3   | 51.5            | 53.4            | 52.5        | 144.76%    |
+| 6   | 110     | 104,835        | 4.4          | 46.1           | 50.5   | 62.4            | 63.5            | 63.0        | 124.62%    |
+| 7   | 130     | 104,661        | 4.5          | 37.0           | 41.5   | 54.8            | 53.5            | 54.1        | 130.35%    |
+| 8   | 150     | 105,626        | 7.8          | 37.0           | 44.9   | 44.5            | 53.9            | 49.2        | 109.67%    |
+| 9   | 170     | 105,626        | 5.1          | 38.4           | 43.5   | 37.1            | 37.3            | 37.2        | 85.52%     |
+| 10  | 190     | 105,626        | 4.6          | 38.9           | 43.5   | 43.3            | 48.6            | 46.0        | 105.69%    |
+| 11  | 210     | 105,621        | 8.8          | 41.2           | 50.0   | 44.3            | 46.5            | 45.4        | 90.91%     |
+|     |         |               |              |                | 389.3  |                 |                 | 424.6       | 109.07%    |
 
 
 # History
@@ -160,7 +176,7 @@ July 2025:
 * 0.6.5 Recompiler success with Doom + Algo 
 
 August 2025:
-* 0.6.7 [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet)  released, demonstrated approximate parity of recompiler performance on Game of Life, see [Game of Life Recompiler Comparison -- JAM DUNA vs Polkajam](https://docs.google.com/spreadsheets/d/1ZzAhksLEs7mI9jidRvjdnBzbDDqF-oVtrgXQ1_P6t_A/edit?usp=sharing):
+* 0.6.7 [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet)  released, demonstrated approximate parity of recompiler performance on Game of Life, see [Game of Life Recompiler Comparison -- JAM DUNA vs Polkajam](https://docs.google.com/spreadsheets/d/1ZzAhksLEs7mI9jidRvjdnBzbDDqF-oVtrgXQ1_P6t_A/edit?usp=sharing) (data above, raw data from  [jamduna](./0.6.7/game_of_life/jamduna_record.txt) and [polkajam](./0.6.7/game_of_life/polkajam_record.txt)) 
 
 
 
