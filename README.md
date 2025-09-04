@@ -10,55 +10,19 @@ After we get to 0.7.x conformance, we will get back to getting a multiclient **t
 
 1. Run a *Fuzzer target*: (see [jam-conformance repo](https://github.com/davxy/jam-conformance/issues) for active teams)
 
-Example 1: [JAM DUNA](https://github.com/jamduna/jamtestnet)
+Example:
 ```
 % ./duna_target_mac --pvm-logging trace
 2025/08/14 14:17:47 Starting target on socket: /tmp/jam_target.sock
 2025/08/14 14:17:47 Target listening on /tmp/jam_target.sock
 ```
 
-Example 2: [JavaJam](https://github.com/javajamio/javajam-releases)
-```
-% bin/javajam fuzz /tmp/jam_target.sock
-❤ JavaJAM
+2. Run the *fuzzer* with the above target socket endpoint and a test bank in the `./rawdata` directory and the fuzzer will send to the fuzz target:
 
-22:00:11.265 INFO  FuzzServer -- Fuzzer server listening on /tmp/jam_target.sock 
-22:00:11.266 INFO  FuzzServer -- ChainSpec: TINY 
+Example: 
 ```
-
-Example 3: [JamZig](https://github.com/jamzig/conformance-releases)
+./duna_fuzzer_mac  --socket=/tmp/jam_target.sock
 ```
-% ./conformance-releases/tiny/macos/aarch64/jam_conformance_target
-JAM Conformance Target Server
-=============================
-Socket path: /tmp/jam_conformance.sock
-
-Starting server...
-Listening on Unix socket: /tmp/jam_conformance.sock
-Press Ctrl+C to stop
-```
-
-2. Run the *fuzzer* with the above target socket endpoint and a test bank:
-
-Example 1: `algo` (found [here](https://github.com/jam-duna/jamtestnet/tree/main/0.6.7/algo))
-```
-./duna_fuzzer_mac --test-dir ~/Desktop/jamtestnet/0.6.7/algo  --socket=/tmp/jam_target.sock
-```
-
-Example 2: `game_of_life` (found [here](https://github.com/jam-duna/jamtestnet/tree/main/0.6.7/game_of_life))
-```
-./duna_fuzzer_mac --test-dir ~/Desktop/jamtestnet/0.6.7/game_of_life --socket=/tmp/jam_target.sock
-```
-
-Example 3: `jam-conformance` (found [here](https://github.com/jam-duna/jamtestnet/tree/main/0.6.7/jam-conformance))
-```
-./duna_fuzzer_mac --test-dir ~/Desktop/jamtestnet/0.6.7/jam-conformance  --socket=/tmp/jam_target.sock
-```
-(This is a rapidly changing dataset -- we'll try to update it every time we publish a new fuzzer/target version)
-
-The above 3 test banks are in this repo, but others should work too.
-
-#### Result
 
 If everything is working you should see this from the fuzzer:
 
@@ -175,11 +139,13 @@ July 2025:
 * 0.6.5 Recompiler success with Doom + Algo 
 
 August 2025:
-* 0.6.7 [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet)  released, demonstrated approximate parity of recompiler performance on Game of Life, see [Game of Life Recompiler Comparison -- JAM DUNA vs Polkajam](https://docs.google.com/spreadsheets/d/1ZzAhksLEs7mI9jidRvjdnBzbDDqF-oVtrgXQ1_P6t_A/edit?usp=sharing) (data above, raw data from  [jamduna](./0.6.7/game_of_life/jamduna_record.txt) and [polkajam](./0.6.7/game_of_life/polkajam_record.txt)) 
+* 0.6.7.x [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet)  released
+* Demonstrated approximate parity of recompiler performance on Game of Life, see [Game of Life Recompiler Comparison -- JAM DUNA vs Polkajam](https://docs.google.com/spreadsheets/d/1ZzAhksLEs7mI9jidRvjdnBzbDDqF-oVtrgXQ1_P6t_A/edit?usp=sharing) (data above, raw data from  [jamduna](./0.6.7/game_of_life/jamduna_record.txt) and [polkajam](./0.6.7/game_of_life/polkajam_record.txt)) 
+
+September 2025:
+* 0.7.0.x [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet) -- now optimizing for [JAM Conformance](https://paritytech.github.io/jam-conformance-dashboard/) and implementing fuzzing with refine 
 
 
+# Got JAM?  Lets JAM!  Lets Conform!  
 
-
-# Got JAM?  Lets JAM!
-
-Terrific - please let everyone know in [Lets JAM Matrix Room](https://matrix.to/#/#jam:polkadot.io)
+Terrific - please let everyone know in [JAM Conformance Matrix Room](https://matrix.to/#/#jam-conformance:polkadot.io)
