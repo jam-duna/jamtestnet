@@ -143,8 +143,10 @@ August 2025:
 * Demonstrated approximate parity of recompiler performance on Game of Life, see [Game of Life Recompiler Comparison -- JAM DUNA vs Polkajam](https://docs.google.com/spreadsheets/d/1ZzAhksLEs7mI9jidRvjdnBzbDDqF-oVtrgXQ1_P6t_A/edit?usp=sharing) (data above, raw data from  [jamduna](./0.6.7/game_of_life/jamduna_record.txt) and [polkajam](./0.6.7/game_of_life/polkajam_record.txt)) 
 
 September 2025:
-* 0.7.0.x [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet) -- now optimizing for [JAM Conformance](https://paritytech.github.io/jam-conformance-dashboard/) and implementing fuzzing with refine 
+* 0.7.0.x [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet) -- now optimizing for [JAM Conformance](https://paritytech.github.io/jam-conformance-dashboard/), implemented fuzzing with refine 
 
+October/November 2025:
+* 0.7.1 [jam-test-vectors + jam-conformance PVM traces vectors](https://github.com/jam-duna/jamtestnet) -- trace vectors passed with recompiler
 
 # Got JAM?  Lets JAM!  Lets Conform!  
 
