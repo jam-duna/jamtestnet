@@ -1,52 +1,277 @@
 # JAM DUNA Releases
 
-[JAM](https://jam.web3.foundation/) is the anticipated future protocol for Polkadot, being implemented by multiple teams across different programming languages. The [JAM Gray Paper](https://graypaper.com/) outlines the protocol, and the Web3 Foundation has shared [jamtestvectors](https://github.com/w3f/jamtestvectors) and a basic [jam-conformance](https://github.com/davxy/jam-conformance) fuzzing process.
+[JAM](https://jam.web3.foundation/) is the anticipated future protocol for Polkadot, being implemented by multiple teams across different programming languages. The [JAM Gray Paper](https://graypaper.com/) outlines the protocol, and the Web3 Foundation has many 20+ teams undergoing [jam-conformance](https://github.com/w3f/jam-conformance) fuzzing processes.    
 
-This repo contains the latest `duna_fuzzer` and `duna_target` (Linux) @ 0.7.2 along with a 0.7.1 test bank.
+This repo contains the latest `duna_target` in support of [JAM DUNA M1 milestone delivery](https://github.com/w3f/jam-milestone-delivery/pull/22) and a [JAM DUNA PoC JAM Toaster release](https://github.com/jam-duna/jamtestnet/releases/tag/v0.7.2.13-toaster) (Linux AMD64) suitable for PoC JAM Toaster testing.
 
-We are at 0.7.2 conformance, ready to file our M1 report, and are looking for getting multiclient **tiny** testnet with other teams who have Doom WP package refinement and polkajam connectivity.
+# JAM DUNA PoC JAM Toaster Release 
 
-## Doom Work package refinement
+This repo contains JAM DUNA binary releases suitable to start testing in the JAM Toaster: (GP 0.7.2 Linux)
+- bring up a reproducible tiny JAM testnet (6 validators) either in a single-machine local testnet (same as corevm/doom) or multi-machine deployment (a few nodes in a JAM Toaster)
+- run FIB flow (`fib-stream-runner`) after validators are healthy (optional)
 
-We have gotten very close (down to just 1 byte representing 5 gas diff between child and parent) to matching polkajam's doom!
+It is expected this can support further testing with real services (smart contract/privacy services) in larger testnets in a multi-client settingg.
 
-[Download doom.zip (907MB)](https://cdn.jamduna.org/doom.zip) which is the modular PVM Trace for [doom bundle](https://github.com/jam-duna/jamtestnet/blob/main/examples/doom/refine/04918460_0xf1166dc1eb7baff3d1c2450f319358c5c6789fe31313d331d4f035908045ad02_0_5_guarantor.json) ([state](https://github.com/jam-duna/jamtestnet/blob/main/examples/doom/refine/04918460.json))
+## Choose Your Path First
 
-See [PVM Modular Tracing](./TRACING.md) for details.
+Use this bundle in one of these modes:
 
-# History
+1. Single-machine local testnet (recommended)
+- Use the included `Makefile` directly.
+- This is the default and documented path.
 
-Nov 2024 - Dec 2024:
-* initial setup of fallback/safrole datasets, now covered in [this dataset](https://github.com/davxy/jam-test-vectors/pull/45)
+2. Multi-machine deployment (JAM Toaster)
+- Use your own deployment/orchestration system (nomad)
+- See **Multi-machine flow** at the end.
 
-Feb - early March 2025:
-* [0.6.2.12 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.2.12)
+If you are not sure, use **single-machine**.
 
-Late March 2025 - Early April 2025:
-* [0.6.4.4 Dataset](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.4.4)
+## What Is Included
 
-May 2025:
-* [0.6.5.2 jamduna binary](https://github.com/jam-duna/jamtestnet/releases/tag/0.6.5.2) 
+- `jamduna`
+- `fib-stream-runner`
+- bundled FIB deps:
+  - `runner/fib-builder`
+  - `runner/fib-feeder`
+- minimal genesis bundle for `gen-spec`:
+  - `release_genesis_services/auth_copy.pvm`
+  - `release_genesis_services/fib.jam`
+  - `release_genesis_services/null_authorizer.pvm`
+- `chainspecs/local-dev-config.json`
+- `chainspecs/jamduna-spec.json`
+- `Makefile`
 
-June 2025:
-* First contact with Multiclient JAM Testnet with polkajam + javajam
+## Prerequisites
 
-July 2025:
-* 0.6.5 Recompiler success with Doom + Algo 
+- Linux AMD64
+- `bash`, `make`
+- Free local ports:
+  - P2P: `40000..40005`
+  - JSON-RPC: `19800..19805`
+  - FIB RPC (optional): `8601`
 
-August 2025:
-* 0.6.7.x [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet)  released
-* Demonstrated approximate parity of recompiler performance on Game of Life, see [Game of Life Recompiler Comparison -- JAM DUNA vs Polkajam](https://docs.google.com/spreadsheets/d/1ZzAhksLEs7mI9jidRvjdnBzbDDqF-oVtrgXQ1_P6t_A/edit?usp=sharing) (data above, raw data from  [jamduna](./0.6.7/game_of_life/jamduna_record.txt) and [polkajam](./0.6.7/game_of_life/polkajam_record.txt)) 
+## Single-Machine Quick Start (Recommended)
 
-September 2025:
-* 0.7.0.x [Fuzzer + Fuzzer Target](https://github.com/jam-duna/jamtestnet) -- now optimizing for [JAM Conformance](https://paritytech.github.io/jam-conformance-dashboard/), implemented fuzzing with refine 
+Run from this release directory (the folder containing this README and Makefile).
 
-October/November 2025:
-* 0.7.1 [jam-test-vectors + jam-conformance PVM traces vectors](https://github.com/jam-duna/jamtestnet) -- trace vectors passed with recompiler
+### 0) Always reset local state first
 
-December 2025:
-* 0.7.2 with Doom WP refinement (with Go Interpreter, with just one byte difference) + Grandpa finality using CE149-153.
+If this folder was reused or unpacked from someone else, reset first:
 
-# Got JAM?  Lets JAM!  Lets Conform!  
+```bash
+make clean-state
+```
 
-Terrific - please let everyone know in [JAM Conformance Matrix Room](https://matrix.to/#/#jam-conformance:polkadot.io)
+### 1) See available targets
+
+```bash
+make help
+```
+
+### 2) Generate keys
+
+```bash
+make gen-keys
+```
+
+This creates `seed_0..seed_6` under `state/keys/`.
+
+Important:
+- validators are `0..5`
+- `seed_6` is reserved for optional builder role (FIB), not a validator process
+
+### 3) Generate chainspec
+
+```bash
+make gen-spec
+```
+
+### 4) Start validators
+
+```bash
+make run-validators
+```
+
+### 5) Check process and activity health
+
+```bash
+make status
+make health
+```
+
+`make health` checks:
+- validator logs for `Imported Block`
+- optional FIB logs for submission activity patterns
+
+## Optional FIB Flow (After Validators Are Healthy)
+
+You have two ways to run FIB:
+
+1. Foreground mode:
+```bash
+make run-fib-stream
+```
+- blocks current shell
+- stop with `Ctrl+C`
+
+2. Background mode:
+```bash
+make run-fib-stream-bg
+```
+- daemon-like behavior for ops workflows
+- stop with:
+```bash
+make stop-fib
+```
+
+## Operational Checks (Concrete)
+
+Validator block production (example for validator 0):
+
+```bash
+grep -n "Imported Block" logs/jamduna-v0.log | tail
+```
+
+FIB work-package submissions (if FIB is running):
+
+```bash
+grep -n "Work package SUBMITTED\|SubmitBundleToCore CE146 SUCCESS" logs/fib-builder-stream-runner.log | tail
+```
+
+Feeder submission activity:
+
+```bash
+grep -n "submitted call=" logs/fib-feeder-stream-runner.log | tail
+```
+
+## Cleanup
+
+Stop validators and background FIB runner:
+
+```bash
+make stop
+```
+
+Reset state:
+
+```bash
+make clean-state
+```
+
+## Using `jamduna` Binary Directly
+
+If your deployment system manages startup itself, you can bypass the release Makefile.
+
+1. Generate keys:
+
+```bash
+./jamduna gen-keys --data-path /var/lib/jamduna
+```
+
+2. Generate chainspec:
+
+```bash
+./jamduna gen-spec /etc/jam/chain-config.json /etc/jam/jamduna-spec.json
+```
+
+3. Start validator node (example index 0):
+
+```bash
+./jamduna run \
+  --data-path /var/lib/jamduna \
+  --chain /etc/jam/jamduna-spec.json \
+  --dev-validator 0 \
+  --pvm-backend compiler \
+  --rpc-port 19800
+```
+
+Repeat for `--dev-validator 1..5`.
+
+## Minimal Multi-Machine Example (3 Machines, 6 Validators)
+
+Use this when you want a concrete deployment shape, not just principles.
+
+### A) Topology
+
+- Machine A (`10.0.0.11`): validator `0`, `1`
+- Machine B (`10.0.0.12`): validator `2`, `3`
+- Machine C (`10.0.0.13`): validator `4`, `5`
+
+Optional proxy/builder node:
+- Machine C also runs `--dev-validator 6 --role builder`
+
+### B) Chain config (do this once on deploy controller)
+
+Create a multi-machine chain config (do not use localhost addresses):
+
+```json
+{
+  "genesis_validators": [
+    {"index": 0, "net_addr": "10.0.0.11:40000"},
+    {"index": 1, "net_addr": "10.0.0.11:40001"},
+    {"index": 2, "net_addr": "10.0.0.12:40002"},
+    {"index": 3, "net_addr": "10.0.0.12:40003"},
+    {"index": 4, "net_addr": "10.0.0.13:40004"},
+    {"index": 5, "net_addr": "10.0.0.13:40005"}
+  ]
+}
+```
+
+Then generate one shared chainspec:
+
+```bash
+./jamduna gen-spec /etc/jam/chain-config.json /etc/jam/jamduna-spec.json
+```
+
+Distribute exactly the same `jamduna` binary and `jamduna-spec.json` to all machines.
+
+### C) Start commands per machine
+
+Machine A:
+
+```bash
+./jamduna run --data-path /var/lib/jamduna --chain /etc/jam/jamduna-spec.json --dev-validator 0 --pvm-backend compiler --rpc-port 19800
+./jamduna run --data-path /var/lib/jamduna --chain /etc/jam/jamduna-spec.json --dev-validator 1 --pvm-backend compiler --rpc-port 19801
+```
+
+Machine B:
+
+```bash
+./jamduna run --data-path /var/lib/jamduna --chain /etc/jam/jamduna-spec.json --dev-validator 2 --pvm-backend compiler --rpc-port 19802
+./jamduna run --data-path /var/lib/jamduna --chain /etc/jam/jamduna-spec.json --dev-validator 3 --pvm-backend compiler --rpc-port 19803
+```
+
+Machine C:
+
+```bash
+./jamduna run --data-path /var/lib/jamduna --chain /etc/jam/jamduna-spec.json --dev-validator 4 --pvm-backend compiler --rpc-port 19804
+./jamduna run --data-path /var/lib/jamduna --chain /etc/jam/jamduna-spec.json --dev-validator 5 --pvm-backend compiler --rpc-port 19805
+```
+
+Builder on Machine C: (optional)
+
+```bash
+./jamduna run --data-path /var/lib/jamduna --chain /etc/jam/jamduna-spec.json --dev-validator 6 --role builder --pvm-backend compiler --rpc-port 19806
+```
+
+### D) Rollout order
+
+1. Start all validator processes (`0..5`) in a tight rollout window.
+2. Verify each node shows block import activity in logs.
+3. Start optional builder/proxy node (`6`) only after validator network is stable.
+
+## Multi-Machine Flow 
+
+Use this only when validators run on separate machines.
+
+1. Generate one shared chainspec from one chain config.
+2. Distribute the exact same `jamduna` binary and chainspec to all machines.
+3. Distribute keys so node `i` has access to `seed_i` under its `--data-path/keys/`.
+4. Start validator processes (`0..5`) in a tight rollout window.
+5. Optionally run a proxy/builder node as `--dev-validator 6 --role builder` for external sync/debug integration.
+
+This release bundle remains optimized for single-machine testing; multi-machine is an extension for now.
+
+# Join JAM Community
+
+If you want to join the JAM community, join [Let's JAM Matrix Room](https://matrix.to/#/#jam:polkadot.io) and [JAM Conformance Matrix Room](https://matrix.to/#/#jam-conformance:matrix.org)
