@@ -28,7 +28,7 @@ If you are not sure, use **single-machine**.
 
 ## Download the latest release
 
-Download  the latest release [here](https://github.com/jam-duna/jamtestnet/releases/tag/v0.7.2.13-toaster) to a folder of your choice. 
+Download  the latest release of [jamduna-release-linux-amd64.zip](https://github.com/jam-duna/jamtestnet/releases/tag/v0.7.2.13-toaster) to a folder of your choice and unzip the file
 
 ## What Is Included
 
