@@ -26,6 +26,10 @@ Use this bundle in one of these modes:
 
 If you are not sure, use **single-machine**.
 
+## Download the latest release
+
+Download  the latest release [here](https://github.com/jam-duna/jamtestnet/releases/tag/v0.7.2.13-toaster) to a folder of your choice. 
+
 ## What Is Included
 
 - `jamduna`
